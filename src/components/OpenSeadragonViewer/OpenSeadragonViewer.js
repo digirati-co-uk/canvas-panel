@@ -39,8 +39,7 @@ class OpenSeadragonViewer extends Component {
   componentWillReceiveProps(newProps) {
     const {tileSource} = this.props;
 
-    if (newProps.tileSource) {
-      console.log('Updating viewer...', );
+    if (newProps.tileSource !== tileSource) {
       this.viewer.close();
       this.asyncAddTile({tileSource: newProps.tileSource}).then(e => {
         this.viewer.viewport.goHome(true);
