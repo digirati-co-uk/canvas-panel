@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 
 function LocaleString(props) {
-  console.log(props);
   return Manifesto.TranslationCollection.getValue(props.children);
 }
 
