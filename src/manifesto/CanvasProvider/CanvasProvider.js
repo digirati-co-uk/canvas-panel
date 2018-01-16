@@ -12,14 +12,14 @@ class CanvasProvider extends Component {
 
   static propTypes = {
     sequence: PropTypes.number,
-    atCanvas: PropTypes.number,
+    startCanvas: PropTypes.number,
     manifest: PropTypes.instanceOf(Manifesto.Manifest),
     children: FunctionOrMapChildrenType
   };
 
   static defaultProps = {
     sequence: 0,
-    atCanvas: 0,
+    startCanvas: 0,
   };
 
   static NEXT_CANVAS = 'NEXT_CANVAS';
@@ -44,8 +44,8 @@ class CanvasProvider extends Component {
   }
 
   componentWillMount() {
-    if (this.props.atCanvas !== this.state.currentCanvas) {
-      this.setState({currentCanvas: this.props.atCanvas});
+    if (this.props.startCanvas !== this.state.currentCanvas) {
+      this.setState({currentCanvas: this.props.startCanvas});
     }
   }
 
@@ -54,7 +54,7 @@ class CanvasProvider extends Component {
   };
 
   render() {
-    const {manifest, atCanvas, children} = this.props;
+    const {manifest, startCanvas, children} = this.props;
     const {currentCanvas} = this.state;
 
     const sequence = manifest.getSequenceByIndex(this.props.sequence);
@@ -64,7 +64,7 @@ class CanvasProvider extends Component {
       manifest,
       sequence,
       canvas,
-      atCanvas,
+      startCanvas,
       currentCanvas,
       dispatch: this.dispatch,
       width: canvas.getWidth(),

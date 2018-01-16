@@ -2,8 +2,8 @@ Viewport is how you control, or hand over control of the viewport for viewing II
 
 ```js
 <Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
-  <CanvasProvider atCanvas={4}>
-      <TileSource>
+  <CanvasProvider startCanvas={4}>
+      <SingleTileSource>
         <Viewport maxWidth={500}>
           <OpenSeadragonViewport viewportController={true}>
             <OpenSeadragonViewer maxHeight={1000} />
@@ -14,7 +14,7 @@ Viewport is how you control, or hand over control of the viewport for viewing II
             <div top={1000} left={1900} height={200} width={500} style={{ border: '1px solid green' }}>three</div>
           </CanvasRepresentation>
         </Viewport>
-    </TileSource>
+    </SingleTileSource>
   </CanvasProvider>
 </Manifest>
 ```

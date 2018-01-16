@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import CanvasProvider from '../CanvasProvider/CanvasProvider';
+import CanvasProvider from '../../manifesto/CanvasProvider/CanvasProvider';
 
 class CanvasNavigation extends Component {
 

@@ -2,11 +2,11 @@
 
 ```js
 <Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
-  <CanvasProvider atCanvas={3}>
+  <CanvasProvider startCanvas={3}>
     <CanvasNavigation />
-    <TileSource>
+    <SingleTileSource>
       <OpenSeadragonViewer maxHeight={500} />
-    </TileSource>
+    </SingleTileSource>
   </CanvasProvider>
 </Manifest>
 ```

@@ -4,8 +4,8 @@ Example image.
 
 ```js
 <Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
-  <CanvasProvider atCanvas={3}>
-    <TileSource />
+  <CanvasProvider startCanvas={3}>
+    <SingleTileSource />
   </CanvasProvider>
 </Manifest>
 ```
@@ -16,8 +16,8 @@ This example grabs the tile source id that can be passed down to other component
 
 ```js
 <Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
-  <CanvasProvider atCanvas={3}>
-    <TileSource>
+  <CanvasProvider startCanvas={3}>
+    <SingleTileSource>
       {({ imageUri, tileSource }) => (
         <div>
           <strong>Image Uri:</strong> <a href={imageUri}>{imageUri}</a>
@@ -26,7 +26,7 @@ This example grabs the tile source id that can be passed down to other component
           </pre>
         </div>
       )}
-    </TileSource>
+    </SingleTileSource>
   </CanvasProvider>
 </Manifest>
 ```

@@ -4,7 +4,7 @@ import Manifesto from 'manifesto.js';
 import getDataUriFromCanvas from '../../utility/getDataUriFromCanvas';
 import functionOrMapChildren, {FunctionOrMapChildrenType} from '../../utility/functionOrMapChildren';
 
-class TileSource extends Component {
+class SingleTileSource extends Component {
 
   state = {
     imageUri: null,
@@ -35,12 +35,12 @@ class TileSource extends Component {
       return null;
     }
 
-    if (!TileSource.cache[imageUri]) {
-      TileSource.cache[imageUri] = fetch(imageUri)
+    if (!SingleTileSource.cache[imageUri]) {
+      SingleTileSource.cache[imageUri] = fetch(imageUri)
         .then(resp => resp.json());
     }
 
-    return TileSource.cache[imageUri].then(tileSource => {
+    return SingleTileSource.cache[imageUri].then(tileSource => {
       this.setState({
         imageUri,
         tileSource,
@@ -88,4 +88,4 @@ class TileSource extends Component {
   }
 }
 
-export default TileSource;
+export default SingleTileSource;
