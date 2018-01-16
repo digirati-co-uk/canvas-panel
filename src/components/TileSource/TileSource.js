@@ -12,8 +12,8 @@ class TileSource extends Component {
   };
 
   static propTypes = {
-    canvas: PropTypes.oneOfType(Manifesto.Canvas).isRequired,
-    manifest: PropTypes.oneOfType(Manifesto.Manifest).isRequired,
+    canvas: PropTypes.instanceOf(Manifesto.Canvas),
+    manifest: PropTypes.instanceOf(Manifesto.Manifest),
     preLoad: PropTypes.func,
     children: FunctionOrMapChildrenType,
     fallbackWidth: PropTypes.number,

@@ -21,16 +21,16 @@ class Viewport extends Component {
     const { maxWidth, children, ...props } = this.props;
 
     return (
-        <div style={{ width: maxWidth, position: 'relative', overflow: 'hidden' }}>
+        <div style={{ maxWidth, position: 'relative', display: 'inline-block', overflow: 'hidden' }}>
           {
             React.Children.map(children, child => {
               if (child.props.viewportController === true) {
-                return React.cloneElement(child, { getPosition: this.onUpdateViewport, ...props })
+                return React.cloneElement(child, { getPosition: this.onUpdateViewport, maxWidth, ...props })
               }
               const ratio = child.props.ratio || 1;
               return React.cloneElement(child, {
                 style: {
-                  transform: `translate(${x }px,${y}px) scale(${zoom * scale / ratio}) rotate(${rotation})`,
+                  transform: `translate(${x}px,${y}px) scale(${zoom * scale / ratio}) rotate(${rotation})`,
                   transformOrigin: '0 0 0',
                   ...child.props.style,
                   width: this.props.width * ratio,
@@ -41,6 +41,7 @@ class Viewport extends Component {
                   pointerEvents: 'none',
                 },
                 position: {x: x* ratio, y: y * ratio, zoom, scale: scale / ratio, rotation},
+                maxWidth,
                 ...props
               });
             })

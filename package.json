@@ -17,7 +17,8 @@
     "manifesto.js": "^2.2.10",
     "openseadragon": "^2.3.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-draggable": "^3.0.5"
   },
   "devDependencies": {
     "create-nwb-webpack-config": "^1.0.0",

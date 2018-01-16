@@ -13,7 +13,7 @@ class CanvasProvider extends Component {
   static propTypes = {
     sequence: PropTypes.number,
     atCanvas: PropTypes.number,
-    manifest: PropTypes.instanceOf(Manifesto).isRequired,
+    manifest: PropTypes.instanceOf(Manifesto.Manifest),
     children: FunctionOrMapChildrenType
   };
 

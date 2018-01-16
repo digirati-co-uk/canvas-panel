@@ -106,23 +106,26 @@ class OpenSeadragonViewer extends Component {
   setRef = el => this.element = el;
 
   render() {
-    const {height, width, maxHeight = Infinity, scale, showControls} = this.props;
-
-    const actualHeight = (height * scale) < maxHeight ? height * scale : maxHeight;
+    const {height, width, maxWidth, maxHeight, showControls} = this.props;
+    const heightRatio = maxHeight ? maxHeight / height : height;
+    const widthRatio = maxWidth ? maxWidth / width : width;
+    const scale = heightRatio < widthRatio ? heightRatio : widthRatio;
+    const actualHeight = height * scale;
+    const actualWidth = width * scale;
 
     if (this.state.fallback) {
       return null;
     }
 
     return (
-      <div style={{position: 'relative', height: actualHeight, width: width * scale}}>
+      <div style={{position: 'relative', height: actualHeight, width: actualWidth}}>
         {showControls ? (
           <div>
             <div onClick={this.zoomIn}>{`+`}</div>
             <div onClick={this.zoomOut}>{`-`}</div>
           </div>
         ) : null}
-        <div ref={this.setRef} style={{height: actualHeight, width: width * scale}}/>
+        <div ref={this.setRef} style={{height: actualHeight, width: actualWidth}}/>
       </div>
     );
   }

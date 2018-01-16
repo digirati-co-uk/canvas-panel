@@ -5,7 +5,7 @@
   <CanvasProvider atCanvas={3}>
     <CanvasNavigation />
     <TileSource>
-      <OpenSeadragonViewer maxHeight={300} />
+      <OpenSeadragonViewer maxHeight={500} />
     </TileSource>
   </CanvasProvider>
 </Manifest>

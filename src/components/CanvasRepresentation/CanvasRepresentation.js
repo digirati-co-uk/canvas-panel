@@ -5,7 +5,7 @@ import Manifesto from 'manifesto.js';
 class CanvasRepresentation extends Component {
 
   static propTypes = {
-    canvas: PropTypes.oneOfType(Manifesto.Canvas)
+    canvas: PropTypes.instanceOf(Manifesto.Canvas)
   };
 
   static defaultProps = {
@@ -29,6 +29,7 @@ class CanvasRepresentation extends Component {
         }}>
           {
             React.Children.map(children, child => {
+              const propsForEl = child.type === 'div' ? {} : props;
               return React.cloneElement(child, {
                 canvas,
                 style: {
@@ -39,7 +40,7 @@ class CanvasRepresentation extends Component {
                   height: child.props.height * ratio,
                   width: child.props.width * ratio,
                 },
-                ...props,
+                ...propsForEl,
               })
             })
           }
