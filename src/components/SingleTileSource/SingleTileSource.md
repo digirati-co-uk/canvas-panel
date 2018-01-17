@@ -3,7 +3,7 @@ Example image.
 
 
 ```js
-<Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={3}>
     <SingleTileSource />
   </CanvasProvider>
@@ -15,7 +15,7 @@ Example image.
 This example grabs the tile source id that can be passed down to other components like OSD viewer.
 
 ```js
-<Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={3}>
     <SingleTileSource>
       {({ imageUri, tileSource }) => (

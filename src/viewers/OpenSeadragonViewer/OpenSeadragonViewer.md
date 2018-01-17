@@ -1,7 +1,7 @@
 ### Simple example
 
 ```js
-<Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={3}>
     <CanvasNavigation />
     <SingleTileSource>

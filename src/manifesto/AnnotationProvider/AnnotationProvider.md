@@ -6,7 +6,7 @@ annotations as an array which you can loop through.
 
 You can extract the information and display it out, no viewer required.
 ```js
-<Manifest url="https://iiif.library.nuigalway.ie/manifests/p135/memoir.json">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={82}>
     <CanvasNavigation />  
     <AnnotationListProvider>
@@ -36,7 +36,7 @@ You can extract the information and display it out, no viewer required.
 Or you can you use it to compose a [CanvasRepresentation](#canvasrepresentation) and paint 
 the annotations to the canvas space. 
 ```js
-<Manifest url="https://iiif.library.nuigalway.ie/manifests/p135/memoir.json">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={82}>
     <CanvasNavigation />
     <Viewport maxWidth={500}>

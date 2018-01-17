@@ -2,7 +2,7 @@ The annotation list provider will call its children for every annotation list, a
 of the annotations available on the manifest. It passes down props, so you can compose into CanvasRepresentations
 for displaying the annotations.
 ```js
-<Manifest url="https://iiif.library.nuigalway.ie/manifests/p135/memoir.json">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={72}>
     <AnnotationListProvider>
       { ({ annotationList }) => annotationList.getResources().map((resource, key) => ( 

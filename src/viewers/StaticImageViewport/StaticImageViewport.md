@@ -2,7 +2,7 @@
 Static image viewport.
 
 ```js
-<Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={4}>
     <Viewport maxWidth={500}>
       <StaticImageViewport viewportController={true} maxHeight={500} maxWidth={500} />

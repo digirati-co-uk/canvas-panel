@@ -2,7 +2,7 @@
 Loading a manifest:
 ```jsx static
 (
-    <Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+    <Manifest url={manifests.main}>
 	    ...
     </Manifest>
 )
@@ -11,7 +11,7 @@ When you use this component, much like all the other data-driven components, whe
 
 ```jsx static
 (
-    <Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+    <Manifest url={manifests.main}>
       {({manifest}) => (
          <div>{ manifest.getDefaultLabel() }</div>
       )}
@@ -32,7 +32,7 @@ class MyAwesomeComponent extends React.Component {
   }
 }
 (
-    <Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+    <Manifest url={manifests.main}>
       <MyAwesomeComponent />
     </Manifest>
 )

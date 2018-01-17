@@ -1,7 +1,7 @@
 Viewport is how you control, or hand over control of the viewport for viewing IIIF resources.
 
 ```js
-<Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={4}>
       <SingleTileSource>
         <Viewport maxWidth={500}>

@@ -34,9 +34,15 @@ class Viewport extends Component {
     this.viewer = viewer;
   };
 
-  goToRect = (bounds, padding) => {
+  goToRect = (bounds, padding, speed) => {
     if (this.viewer && this.viewer.goToRect) {
-      this.viewer.goToRect(bounds, padding);
+      this.viewer.goToRect(bounds, padding, speed);
+    }
+  };
+
+  resetView = (speed) => {
+    if (this.viewer && this.viewer.resetView) {
+      this.viewer.resetView(speed);
     }
   };
 

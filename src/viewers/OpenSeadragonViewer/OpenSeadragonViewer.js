@@ -1,7 +1,17 @@
 import OpenSeadragon from 'openseadragon';
 import React, {Component} from 'react';
 
+declare type OpenSeadragon = {
+  viewport: OpenSeadragon.Viewport,
+  Point: OpenSeadragon.Point,
+  Rect: OpenSeadragon.Rect,
+  close: Function,
+  addTiledImage: Function
+}|OpenSeadragon.Viewer;
+
 class OpenSeadragonViewer extends Component {
+
+  viewer: ?OpenSeadragon = null;
 
   asyncAddTile(args) {
     return new Promise((success, err) => {
@@ -93,17 +103,19 @@ class OpenSeadragonViewer extends Component {
     });
   }
 
-  zoomIn = (e) => {
-    e.preventDefault();
-    this.viewer.viewport.zoomBy(1 / 0.7);
+  zoomIn = (speed) => {
+    this.viewportAction('zoomBy', [ 1 / 0.7 ], speed);
   };
 
-  zoomOut = (e) => {
-    e.preventDefault();
-    this.viewer.viewport.zoomBy(0.7);
+  zoomOut = (speed) => {
+    this.viewportAction('zoomBy', [0.7], speed);
   };
 
-  goToRect({ x, y, width, height }, padding = 0) {
+  resetView(speed) {
+    this.viewportAction('goHome', [], speed);
+  }
+
+  goToRect({ x, y, width, height }, padding = 0, speed) {
     const selectHighlight = this.viewer.viewport.imageToViewportRectangle(new OpenSeadragon.Rect(
       x - (padding / 2),
       y - (padding / 2),
@@ -111,15 +123,42 @@ class OpenSeadragonViewer extends Component {
       height + padding,
       0
     ));
-    this.viewer.viewport.fitBounds(selectHighlight);
+
+    this.viewportAction('fitBounds', [selectHighlight], speed)
   }
 
-  panTo(x, y) {
-    this.viewer.viewport.panTo(new OpenSeadragon.Point(x, y));
+  panTo(x, y, speed) {
+    this.viewportAction('panTo', [new OpenSeadragon.Point(x, y)], speed);
   }
 
-  zoomTo(zoom, refPoint = null, immediately = false) {
-    this.viewer.viewport.zoomTo(zoom, refPoint, immediately);
+  zoomTo(zoom, refPoint = null, immediately = false, speed) {
+    this.viewportAction('zoomTo', [zoom, refPoint, immediately], speed);
+  }
+
+  viewportAction(name, args = [], speed) {
+    const func = this.viewer.viewport[name];
+    if (func) {
+      if (speed) {
+        return this.runAtSpeed(speed, () => func.apply(this.viewer.viewport, args));
+      }
+      return func.apply(this.viewer.viewport, args);
+    }
+  }
+
+  runAtSpeed(speed, callback) {
+    const centerSpringX = this.viewer.viewport.centerSpringX.animationTime;
+    const centerSpringY = this.viewer.viewport.centerSpringY.animationTime;
+    const zoomSprint = this.viewer.viewport.zoomSpring.animationTime;
+
+    this.viewer.viewport.centerSpringX.animationTime = speed;
+    this.viewer.viewport.centerSpringY.animationTime = speed;
+    this.viewer.viewport.zoomSpring.animationTime = speed;
+
+    callback();
+
+    this.viewer.viewport.centerSpringX.animationTime = centerSpringX;
+    this.viewer.viewport.centerSpringY.animationTime = centerSpringY;
+    this.viewer.viewport.zoomSpring.animationTime = zoomSprint;
   }
 
   getPosition() {

@@ -1,7 +1,12 @@
+var path = require('path');
 var createNwbWebpackConfig = require('create-nwb-webpack-config');
 
 module.exports = {
   webpackConfig: createNwbWebpackConfig(),
+  previewDelay: 1000,
+  context: {
+    manifests: path.resolve(__dirname, 'config/manifests.js'),
+  },
   components: 'src/**/[A-Z]*.js',
   sections: [
     {

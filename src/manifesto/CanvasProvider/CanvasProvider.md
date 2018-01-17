@@ -2,7 +2,7 @@
 This is the absolute minimum viewer for IIIF manifest. 
 
 ```js
-<Manifest url="https://iiif.riksarkivet.se/arkis!C0000263/manifest">
+<Manifest url={manifests.main}>
   <CanvasProvider startCanvas={3}>
   {
     ({ sequence, manifest, canvas, currentCanvas, startCanvas, dispatch }) => (
