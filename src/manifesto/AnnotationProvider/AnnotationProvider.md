@@ -40,7 +40,11 @@ the annotations to the canvas space.
   <CanvasProvider startCanvas={82}>
     <CanvasNavigation />
     <Viewport maxWidth={500}>
-      <StaticImageViewport viewportController={true} maxHeight={500} maxWidth={500} />
+      <SingleTileSource viewportController={true}>
+        <OpenSeadragonViewport>
+          <OpenSeadragonViewer maxHeight={1000} />
+        </OpenSeadragonViewport>
+      </SingleTileSource> 
       <AnnotationListProvider ratio={0.1}>
        <AnnotationProvider>
         { ({annotations, ...props}) => (
