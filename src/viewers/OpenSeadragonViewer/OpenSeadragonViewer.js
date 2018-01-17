@@ -103,6 +103,34 @@ class OpenSeadragonViewer extends Component {
     this.viewer.viewport.zoomBy(0.7);
   };
 
+  goToRect({ x, y, width, height }, padding = 0) {
+    const selectHighlight = this.viewer.viewport.imageToViewportRectangle(new OpenSeadragon.Rect(
+      x - (padding / 2),
+      y - (padding / 2),
+      width + padding,
+      height + padding,
+      0
+    ));
+    this.viewer.viewport.fitBounds(selectHighlight);
+  }
+
+  panTo(x, y) {
+    this.viewer.viewport.panTo(new OpenSeadragon.Point(x, y));
+  }
+
+  zoomTo(zoom, refPoint = null, immediately = false) {
+    this.viewer.viewport.zoomTo(zoom, refPoint, immediately);
+  }
+
+  getPosition() {
+    if (!this.viewer) {
+      return null;
+    }
+
+    const { x, y } = this.viewer.viewport.getCenter();
+    return { x, y, zoom: this.viewer.viewport.getZoom() }
+  }
+
   setRef = el => this.element = el;
 
   render() {

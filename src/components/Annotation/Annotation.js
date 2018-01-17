@@ -13,7 +13,12 @@ class Annotation extends Component {
     height: PropTypes.number,
   };
 
-  handleClick = (e) => this.props.onClick ? this.props.onClick(this.props.annotation, this.props.on, e) : null;
+  handleClick = (e) => this.props.onClick ? this.props.onClick(this.props.annotation, {
+    x: this.props.x,
+    y: this.props.y,
+    width: this.props.width,
+    height: this.props.height,
+  }, e) : null;
 
   render() {
     const {style} = this.props;

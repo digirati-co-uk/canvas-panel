@@ -10,10 +10,34 @@ class Viewport extends Component {
     rotation: 0,
   };
 
+  componentDidMount() {
+    if (this.props.setRef) {
+      this.props.setRef(this);
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.setRef !== newProps.setRef) {
+      newProps.setRef(this);
+    }
+  }
+
   onUpdateViewport = ({ x, y, zoom, scale, rotation }) => {
     this.setState({
       x, y, zoom, scale, rotation
     });
+  };
+
+  viewer = null;
+
+  getRef = (viewer) => {
+    this.viewer = viewer;
+  };
+
+  goToRect = (bounds, padding) => {
+    if (this.viewer && this.viewer.goToRect) {
+      this.viewer.goToRect(bounds, padding);
+    }
   };
 
   render() {
@@ -25,7 +49,7 @@ class Viewport extends Component {
           {
             React.Children.map(children, child => {
               if (child.props.viewportController === true) {
-                return React.cloneElement(child, { getPosition: this.onUpdateViewport, maxWidth, ...props })
+                return React.cloneElement(child, { getPosition: this.onUpdateViewport, getRef: this.getRef, maxWidth, ...props })
               }
               const ratio = child.props.ratio || child.props.scale || 1;
               return React.cloneElement(child, {

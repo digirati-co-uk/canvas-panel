@@ -14,7 +14,7 @@ class CanvasRepresentation extends Component {
   };
 
   render() {
-    const {canvas, style, ratio, children, ...props} = this.props;
+    const {canvas, style, ratio, children, height, width, ...props} = this.props;
 
     const canvasHeight = canvas.getHeight();
     const canvasWidth = canvas.getWidth();
