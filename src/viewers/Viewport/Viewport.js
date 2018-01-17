@@ -27,7 +27,7 @@ class Viewport extends Component {
               if (child.props.viewportController === true) {
                 return React.cloneElement(child, { getPosition: this.onUpdateViewport, maxWidth, ...props })
               }
-              const ratio = child.props.ratio || 1;
+              const ratio = child.props.ratio || child.props.scale || 1;
               return React.cloneElement(child, {
                 style: {
                   transform: `translate(${x}px,${y}px) scale(${zoom * scale / ratio}) rotate(${rotation})`,

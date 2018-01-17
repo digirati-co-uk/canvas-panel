@@ -29,14 +29,13 @@ class CanvasRepresentation extends Component {
         }}>
           {
             React.Children.map(children, child => {
-              const propsForEl = child.type === 'div' ? {} : props;
+              const propsForEl = child.type === 'div' ? {} : {canvas, ...props};
               return React.cloneElement(child, {
-                canvas,
                 style: {
                   ...child.props.style,
                   position: 'absolute',
-                  top: child.props.top * ratio,
-                  left: child.props.left * ratio,
+                  top: child.props.y * ratio,
+                  left: child.props.x * ratio,
                   height: child.props.height * ratio,
                   width: child.props.width * ratio,
                 },
