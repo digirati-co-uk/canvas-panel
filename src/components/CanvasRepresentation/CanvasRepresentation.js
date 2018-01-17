@@ -25,6 +25,7 @@ class CanvasRepresentation extends Component {
           position: 'relative',
           height: canvasHeight * ratio,
           width: canvasWidth * ratio,
+          pointerEvents: 'none',
           ...style,
         }}>
           {
@@ -38,6 +39,7 @@ class CanvasRepresentation extends Component {
                   left: child.props.x * ratio,
                   height: child.props.height * ratio,
                   width: child.props.width * ratio,
+                  pointerEvents: 'initial',
                 },
                 ...propsForEl,
               })

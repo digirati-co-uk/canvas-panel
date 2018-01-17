@@ -38,7 +38,6 @@ class Viewport extends Component {
                   position: 'absolute',
                   top: 0,
                   left: 0,
-                  pointerEvents: 'none',
                 },
                 position: {x: x* ratio, y: y * ratio, zoom, scale: scale / ratio, rotation},
                 maxWidth,

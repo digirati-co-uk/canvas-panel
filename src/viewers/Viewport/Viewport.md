@@ -9,9 +9,9 @@ Viewport is how you control, or hand over control of the viewport for viewing II
             <OpenSeadragonViewer maxHeight={1000} />
           </OpenSeadragonViewport> 
           <CanvasRepresentation ratio={0.1}>
-            <div y={1000} x={1000} height={500} width={500} style={{ border: '1px solid green' }}>one</div>
-            <div y={2000} x={1000} height={200} width={500} style={{ border: '1px solid green' }}>two</div>
-            <div y={1000} x={1900} height={200} width={500} style={{ border: '1px solid green' }}>three</div>
+            <div y={1000} x={1000} height={500} width={500} style={{ outline: '1px solid green' }} onClick={() => alert('I was clicked')}>click me</div>
+            <div y={2000} x={1000} height={200} width={500} style={{ outline: '1px solid green' }}>two</div>
+            <div y={1000} x={1900} height={200} width={500} style={{ outline: '1px solid green' }}>three</div>
           </CanvasRepresentation>
         </Viewport>
     </SingleTileSource>

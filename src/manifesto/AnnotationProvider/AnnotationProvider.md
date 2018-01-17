@@ -52,7 +52,7 @@ the annotations to the canvas space.
                y={on.selector.y} 
                height={on.selector.height} 
                width={on.selector.width} 
-               style={{ border: '1px solid orange' }}
+               style={{ outline: '1px solid orange' }}
              />
             )) }
          </CanvasRepresentation>
