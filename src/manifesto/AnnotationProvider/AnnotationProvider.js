@@ -27,8 +27,6 @@ class AnnotationProvider extends Component {
       return null;
     }
 
-    console.log(props);
-
     const parsedList = annotationList.getResources().map(annotation => ({ annotationList, annotation, ...this.parseAnnotation(annotation) }));
 
     return functionOrMapChildren(children, { annotationList, annotations: parsedList, ...props, });

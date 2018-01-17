@@ -45,18 +45,18 @@ the annotations to the canvas space.
           <OpenSeadragonViewer maxHeight={1000} />
         </OpenSeadragonViewport>
       </SingleTileSource> 
-      <AnnotationListProvider ratio={0.1}>
+      <AnnotationListProvider ratio={0.1} scale={1}>
        <AnnotationProvider>
         { ({annotations, ...props}) => (
          <CanvasRepresentation {...props}>
            { annotations.map(({ annotation, on }, key) => (
-             <div 
+             <Annotation 
                key={key} 
                x={on.selector.x} 
                y={on.selector.y} 
                height={on.selector.height} 
-               width={on.selector.width} 
-               style={{ outline: '1px solid orange' }}
+               width={on.selector.width}
+               annotation={annotation} 
              />
             )) }
          </CanvasRepresentation>
