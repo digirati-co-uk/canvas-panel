@@ -47,23 +47,28 @@ class OpenSeadragonViewer extends Component {
   };
 
   componentWillReceiveProps(newProps) {
-    const {tileSource} = this.props;
+    const {tileSources} = this.props;
 
-    if (newProps.tileSource !== tileSource) {
+    if (newProps.tileSources !== tileSources) {
       this.viewer.close();
-      this.asyncAddTile({tileSource: newProps.tileSource}).then(e => {
-        this.viewer.viewport.goHome(true);
-        if (newProps.onImageLoaded) {
-          newProps.onImageLoaded(this.viewer, e);
+      Promise.all(
+        newProps.tileSources.map(
+          tileSource => this.asyncAddTile({tileSource: tileSource})
+        )
+      ).then(e => {
+          this.viewer.viewport.goHome(true);
+          if (newProps.onImageLoaded) {
+            newProps.onImageLoaded(this.viewer, e);
+          }
         }
-      });
+      );
     }
 
   }
 
   componentDidMount() {
-    const {getRef, onImageLoaded, tileSource} = this.props;
-    if (!tileSource) {
+    const {getRef, onImageLoaded, tileSources} = this.props;
+    if (!tileSources) {
       console.error('Something went wrong, we cannot display the open sea dragon');
       this.setState({ fallback: true });
       return;
@@ -95,7 +100,11 @@ class OpenSeadragonViewer extends Component {
       getRef(this);
     }
 
-    this.asyncAddTile({tileSource}).then(e => {
+    Promise.all(
+      tileSources.map(
+        tileSource => this.asyncAddTile({tileSource})
+      )
+    ).then(e => {
       this.viewer.viewport.goHome(true);
       if (onImageLoaded) {
         onImageLoaded(this.viewer, e);

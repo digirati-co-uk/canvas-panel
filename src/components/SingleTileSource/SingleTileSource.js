@@ -8,7 +8,7 @@ class SingleTileSource extends Component {
 
   state = {
     imageUri: null,
-    tileSource: null,
+    tileSources: [],
   };
 
   static propTypes = {
@@ -43,7 +43,7 @@ class SingleTileSource extends Component {
     return SingleTileSource.cache[imageUri].then(tileSource => {
       this.setState({
         imageUri,
-        tileSource,
+        tileSources: [tileSource],
       })
     });
   }
@@ -66,15 +66,15 @@ class SingleTileSource extends Component {
 
   render() {
     const {children, fallbackWidth, canvas, preLoad, ...props} = this.props;
-    const {imageUri, tileSource} = this.state;
+    const {imageUri, tileSources} = this.state;
 
-    if (tileSource === null) {
+    if (tileSources === null) {
       return 'loading tile source';
     }
 
     // Render children if they exist.
     if (children) {
-      const childrenRender = functionOrMapChildren(children, { canvas, imageUri, tileSource, ...props });
+      const childrenRender = functionOrMapChildren(children, { canvas, imageUri, tileSources, ...props });
       if (childrenRender) {
         return childrenRender;
       }

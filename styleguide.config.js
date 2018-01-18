@@ -7,7 +7,7 @@ module.exports = {
   context: {
     manifests: path.resolve(__dirname, 'config/manifests.js'),
   },
-  components: 'src/**/[A-Z]*.js',
+  components: 'src/[components|manifesto|viewers]/[A-Z]*.js',
   sections: [
     {
       name: 'Introduction',

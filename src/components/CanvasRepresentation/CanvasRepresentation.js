@@ -16,15 +16,15 @@ class CanvasRepresentation extends Component {
   render() {
     const {canvas, style, ratio, children, height, width, ...props} = this.props;
 
-    const canvasHeight = canvas.getHeight();
-    const canvasWidth = canvas.getWidth();
+    // const canvasHeight = canvas.getHeight();
+    // const canvasWidth = canvas.getWidth();
 
 
     return (
         <div style={{
           position: 'relative',
-          height: canvasHeight * ratio,
-          width: canvasWidth * ratio,
+          height: height * ratio,
+          width: width * ratio,
           pointerEvents: 'none',
           ...style,
         }}>
