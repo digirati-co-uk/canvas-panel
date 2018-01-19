@@ -25,14 +25,15 @@ initialState = { annotation: null, viewport: null };
     </Manifest>
   </div>
   <div style={{ width: 300, display: 'inline-block', padding: 30 }}>
-  { state.annotation ? (
-    <AnnotationDetail 
-      annotation={state.annotation} 
-      onClose={() => { 
-        setState({ annotation: null }); 
-        viewport.resetView(animationSpeed); 
-      }} />
-  ) : 'Click annotation to see more.' }
+    { state.annotation ? (
+      <AnnotationDetail 
+        annotation={state.annotation} 
+        onClose={() => { 
+          setState({ annotation: null }); 
+          viewport.resetView(animationSpeed); 
+        }} 
+      />
+    ) : 'Click annotation to see more.' }
   </div>
 </div>
 ```
