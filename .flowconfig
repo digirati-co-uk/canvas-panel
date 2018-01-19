@@ -1,9 +1,8 @@
 [ignore]
+/packages/**/node_modules
 
 [include]
 
 [libs]
-
-[lints]
 
 [options]
