@@ -1,37 +1,71 @@
+/**
+ * @flow
+ */
+
 import OpenSeadragon from 'openseadragon';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-declare type OpenSeadragon = {
-  viewport: OpenSeadragon.Viewport,
-  Point: OpenSeadragon.Point,
-  Rect: OpenSeadragon.Rect,
-  close: Function,
-  addTiledImage: Function
-}|OpenSeadragon.Viewer;
+declare type OpenSeadragonType =
+  | {
+      viewport: OpenSeadragon.Viewport,
+      Point: OpenSeadragon.Point,
+      Rect: OpenSeadragon.Rect,
+      close: Function,
+      addTiledImage: Function,
+    }
+  | OpenSeadragon.Viewer;
 
-class OpenSeadragonViewer extends Component {
+type OpenSeadragonViewerPropTypes = {
+  width: number,
+  height: number,
+  tileSources: Array<any>,
+  onImageLoaded: OpenSeadragonType => any,
+  maxWidth: ?number,
+  maxHeight: ?number,
+  showControls: ?boolean,
+};
 
-  viewer: ?OpenSeadragon = null;
+type OpenSeadragonViewerState = {
+  fallback: boolean,
+};
 
-  asyncAddTile(args) {
+class OpenSeadragonViewer extends Component<
+  OpenSeadragonViewerPropTypes,
+  OpenSeadragonViewerState
+> {
+  viewer: ?OpenSeadragonType = null;
+  element: any;
+
+  asyncAddTile(args: any): Promise<void> {
     return new Promise((success, err) => {
+      if (!this.viewer) {
+        return null;
+      }
+
       try {
-        this.viewer.addTiledImage.call(this.viewer, {success, ...args});
+        this.viewer.addTiledImage.call(this.viewer, { success, ...args });
       } catch (e) {
         err(e);
       }
     });
   }
 
-  createRelativePoint(x, y) {
+  createRelativePoint(x: number, y: number): ?OpenSeadragon.Point {
+    if (!this.viewer) {
+      return null;
+    }
+
     return this.viewer.viewport.viewerElementToImageCoordinates(
-      new OpenSeadragon.Point(x, y),
+      new OpenSeadragon.Point(x, y)
     );
   }
 
-  createViewportPoint(x, y) {
+  createViewportPoint(x: number, y: number) {
+    if (!this.viewer) {
+      return null;
+    }
     return this.viewer.viewport.imageToViewerElementCoordinates(
-      new OpenSeadragon.Point(x, y),
+      new OpenSeadragon.Point(x, y)
     );
   }
 
@@ -46,30 +80,32 @@ class OpenSeadragonViewer extends Component {
     fallback: false,
   };
 
-  componentWillReceiveProps(newProps) {
-    const {tileSources} = this.props;
+  componentWillReceiveProps(newProps: OpenSeadragonViewerPropTypes) {
+    const { tileSources } = this.props;
 
-    if (newProps.tileSources !== tileSources) {
+    if (newProps.tileSources !== tileSources && this.viewer) {
       this.viewer.close();
       Promise.all(
-        newProps.tileSources.map(
-          tileSource => this.asyncAddTile({tileSource})
+        newProps.tileSources.map(tileSource =>
+          this.asyncAddTile({ tileSource })
         )
       ).then(e => {
+        if (this.viewer) {
           this.viewer.viewport.goHome(true);
           if (newProps.onImageLoaded) {
             newProps.onImageLoaded(this.viewer, e);
           }
         }
-      );
+      });
     }
-
   }
 
   componentDidMount() {
-    const {getRef, onImageLoaded, tileSources} = this.props;
+    const { getRef, onImageLoaded, tileSources } = this.props;
     if (!tileSources) {
-      console.error('Something went wrong, we cannot display the open sea dragon');
+      console.error(
+        'Something went wrong, we cannot display the open sea dragon'
+      );
       this.setState({ fallback: true });
       return;
     }
@@ -101,60 +137,89 @@ class OpenSeadragonViewer extends Component {
     }
 
     Promise.all(
-      tileSources.map(
-        tileSource => this.asyncAddTile({tileSource})
-      )
+      tileSources.map(tileSource => this.asyncAddTile({ tileSource }))
     ).then(e => {
-      this.viewer.viewport.goHome(true);
+      if (this.viewer) {
+        this.viewer.viewport.goHome(true);
+      }
       if (onImageLoaded) {
         onImageLoaded(this.viewer, e);
       }
     });
   }
 
-  zoomIn = (speed) => {
-    this.viewportAction('zoomBy', [ 1 / 0.7 ], speed);
+  zoomIn = (speed: number) => {
+    this.viewportAction('zoomBy', [1 / 0.7], speed);
   };
 
-  zoomOut = (speed) => {
+  zoomOut = (speed: number) => {
     this.viewportAction('zoomBy', [0.7], speed);
   };
 
-  resetView(speed) {
+  resetView = (speed: number) => {
     this.viewportAction('goHome', [], speed);
+  };
+
+  goToRect(
+    {
+      x,
+      y,
+      width,
+      height,
+    }: { x: number, y: number, width: number, height: number },
+    padding: number = 0,
+    speed: ?number
+  ) {
+    if (!this.viewer) {
+      return null;
+    }
+    const selectHighlight = this.viewer.viewport.imageToViewportRectangle(
+      new OpenSeadragon.Rect(
+        x - padding / 2,
+        y - padding / 2,
+        width + padding,
+        height + padding,
+        0
+      )
+    );
+
+    this.viewportAction('fitBounds', [selectHighlight], speed);
   }
 
-  goToRect({ x, y, width, height }, padding = 0, speed) {
-    const selectHighlight = this.viewer.viewport.imageToViewportRectangle(new OpenSeadragon.Rect(
-      x - (padding / 2),
-      y - (padding / 2),
-      width + padding,
-      height + padding,
-      0
-    ));
-
-    this.viewportAction('fitBounds', [selectHighlight], speed)
-  }
-
-  panTo(x, y, speed) {
+  panTo(x: number, y: number, speed: number) {
     this.viewportAction('panTo', [new OpenSeadragon.Point(x, y)], speed);
   }
 
-  zoomTo(zoom, refPoint = null, immediately = false, speed) {
+  zoomTo(
+    zoom: number,
+    refPoint: OpenSeadragon.Point = null,
+    immediately: boolean = false,
+    speed: number
+  ) {
     this.viewportAction('zoomTo', [zoom, refPoint, immediately], speed);
   }
 
-  viewportAction(name, args = [], speed) {
+  viewportAction(name: string, args: Array<any> = [], speed: number) {
+    if (!this.viewer) {
+      return null;
+    }
     const func = this.viewer.viewport[name];
     if (func) {
       if (speed) {
-        return this.runAtSpeed(speed, () => func.apply(this.viewer.viewport, args));
+        return this.runAtSpeed(
+          speed,
+          () => (this.viewer ? func.apply(this.viewer.viewport, args) : null)
+        );
       }
-      return func.apply(this.viewer.viewport, args);
+      return this.viewer ? func.apply(this.viewer.viewport, args) : null;
     }
   }
 
-  runAtSpeed(speed, callback) {
+  runAtSpeed(speed: number, callback: () => any) {
+    if (!this.viewer) {
+      return null;
+    }
+
     const centerSpringX = this.viewer.viewport.centerSpringX.animationTime;
     const centerSpringY = this.viewer.viewport.centerSpringY.animationTime;
     const zoomSprint = this.viewer.viewport.zoomSpring.animationTime;
@@ -164,6 +229,10 @@ class OpenSeadragonViewer extends Component {
     this.viewer.viewport.zoomSpring.animationTime = speed;
 
     callback();
+
+    if (!this.viewer) {
+      return null;
+    }
 
     this.viewer.viewport.centerSpringX.animationTime = centerSpringX;
     this.viewer.viewport.centerSpringY.animationTime = centerSpringY;
@@ -176,13 +245,18 @@ class OpenSeadragonViewer extends Component {
     }
 
     const { x, y } = this.viewer.viewport.getCenter();
-    return { x, y, zoom: this.viewer.viewport.getZoom() }
+
+    if (!this.viewer) {
+      return null;
+    }
+
+    return { x, y, zoom: this.viewer.viewport.getZoom() };
   }
 
-  setRef = el => this.element = el;
+  setRef = (el: any) => (this.element = el);
 
   render() {
-    const {height, width, maxWidth, maxHeight, showControls} = this.props;
+    const { height, width, maxWidth, maxHeight, showControls } = this.props;
     const heightRatio = maxHeight ? maxHeight / height : height;
     const widthRatio = maxWidth ? maxWidth / width : width;
     const scale = heightRatio < widthRatio ? heightRatio : widthRatio;
@@ -194,14 +268,23 @@ class OpenSeadragonViewer extends Component {
     }
 
     return (
-      <div style={{position: 'relative', height: actualHeight, width: actualWidth}}>
+      <div
+        style={{
+          position: 'relative',
+          height: actualHeight,
+          width: actualWidth,
+        }}
+      >
         {showControls ? (
           <div>
             <div onClick={this.zoomIn}>{`+`}</div>
             <div onClick={this.zoomOut}>{`-`}</div>
           </div>
         ) : null}
-        <div ref={this.setRef} style={{height: actualHeight, width: actualWidth}}/>
+        <div
+          ref={this.setRef}
+          style={{ height: actualHeight, width: actualWidth }}
+        />
       </div>
     );
   }

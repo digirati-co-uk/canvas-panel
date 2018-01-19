@@ -7,12 +7,12 @@ export default function functionOrMapChildren(children, withProps) {
   }
 
   return React.Children.map(children, child => {
-    return React.cloneElement(child, withProps)
-  })
+    return React.cloneElement(child, withProps);
+  });
 }
 
 export const FunctionOrMapChildrenType = PropTypes.oneOfType([
   PropTypes.func,
   PropTypes.arrayOf(PropTypes.node),
-  PropTypes.node
+  PropTypes.node,
 ]);

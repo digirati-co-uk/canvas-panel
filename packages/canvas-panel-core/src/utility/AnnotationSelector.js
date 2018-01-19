@@ -1,5 +1,4 @@
 export default class AnnotationSelector {
-
   static DIRECTION_LTR = 'ltr';
   static DIRECTION_RTL = 'rtl';
   static DIRECTION_AUTO = 'auto';
@@ -10,18 +9,25 @@ export default class AnnotationSelector {
   }
 
   static fromArray(multipleSelectors) {
-    return multipleSelectors.map(
-      annotation => AnnotationSelector.parse(annotation),
+    return multipleSelectors.map(annotation =>
+      AnnotationSelector.parse(annotation)
     );
   }
 
-  constructor(id, scale, format, language, processingLanguage, textDirection, selector) {
+  constructor(
+    id,
+    scale,
+    format,
+    language,
+    processingLanguage,
+    textDirection,
+    selector
+  ) {
     if (
-      textDirection && (
-        textDirection !== AnnotationSelector.DIRECTION_AUTO &&
+      textDirection &&
+      (textDirection !== AnnotationSelector.DIRECTION_AUTO &&
         textDirection !== AnnotationSelector.DIRECTION_LTR &&
-        textDirection !== AnnotationSelector.DIRECTION_RTL
-      )
+        textDirection !== AnnotationSelector.DIRECTION_RTL)
     ) {
       throw new Error('textDirection must be ONE of [ltr, rtl, auto]');
     }
@@ -55,8 +61,8 @@ export default class AnnotationSelector {
         text.format,
         text.language,
         text.processingLanguage,
-        text.textDirection,
-      )
+        text.textDirection
+      );
     }
 
     // https://www.w3.org/TR/annotation-model/#selectors
@@ -68,7 +74,7 @@ export default class AnnotationSelector {
         text.language,
         text.processingLanguage,
         text.textDirection,
-        text.selector,
+        text.selector
       );
     }
 
@@ -84,9 +90,11 @@ export default class AnnotationSelector {
 
     const match = AnnotationSelector.W3C_SELECTOR.exec(toParse);
     if (match) {
-      const [_, __, x, y, width, height] = match.map(v => parseInt(v, 10) * scale);
+      const [_, __, x, y, width, height] = match.map(
+        v => parseInt(v, 10) * scale
+      );
       return {
-        unit: (match[1] === 'percent:' ? 'percent' : 'pixel'),
+        unit: match[1] === 'percent:' ? 'percent' : 'pixel',
         scale,
         expanded: true,
         x,
@@ -95,7 +103,7 @@ export default class AnnotationSelector {
         height,
         toString() {
           return source.split('#')[0];
-        }
+        },
       };
     }
     return source;
@@ -104,20 +112,28 @@ export default class AnnotationSelector {
   toJSON() {
     if (
       !this.selector ||
-      this.selector.x === null || isNaN(Math.floor(this.selector.x)) ||
-      this.selector.y === null || isNaN(Math.floor(this.selector.y))
+      this.selector.x === null ||
+      isNaN(Math.floor(this.selector.x)) ||
+      this.selector.y === null ||
+      isNaN(Math.floor(this.selector.y))
     ) {
       return this.source;
     }
 
     if (
-      this.selector.width === null || isNaN(this.selector.width) ||
-      this.selector.height === null || isNaN(this.selector.height)
+      this.selector.width === null ||
+      isNaN(this.selector.width) ||
+      this.selector.height === null ||
+      isNaN(this.selector.height)
     ) {
-      return `${this.source}#xywh=${Math.floor(this.selector.x)},${Math.floor(this.selector.y)},0,0`;
+      return `${this.source}#xywh=${Math.floor(this.selector.x)},${Math.floor(
+        this.selector.y
+      )},0,0`;
     }
 
-    return `${this.source}#xywh=${Math.floor(this.selector.x)},${Math.floor(this.selector.y)},${Math.floor(this.selector.width)},${Math.floor(this.selector.height)}`;
+    return `${this.source}#xywh=${Math.floor(this.selector.x)},${Math.floor(
+      this.selector.y
+    )},${Math.floor(this.selector.width)},${Math.floor(this.selector.height)}`;
   }
 
   toString() {

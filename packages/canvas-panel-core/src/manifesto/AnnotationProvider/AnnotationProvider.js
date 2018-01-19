@@ -7,7 +7,6 @@ import parseSelectorTarget from '../../utility/parseSelectorTarget';
 import AnnotationSelector from '../../utility/AnnotationSelector';
 
 class AnnotationProvider extends Component {
-
   static propTypes = {
     canvas: PropTypes.instanceOf(Manifesto.Canvas),
     children: FunctionOrMapChildrenType,
@@ -16,7 +15,7 @@ class AnnotationProvider extends Component {
   parseAnnotation(annotation) {
     const on = annotation.getOn();
     return {
-      on: AnnotationSelector.parse(on)
+      on: AnnotationSelector.parse(on),
     };
   }
 
@@ -27,12 +26,18 @@ class AnnotationProvider extends Component {
       return null;
     }
 
-    const parsedList = annotationList.getResources().map(annotation => ({ annotationList, annotation, ...this.parseAnnotation(annotation) }));
+    const parsedList = annotationList.getResources().map(annotation => ({
+      annotationList,
+      annotation,
+      ...this.parseAnnotation(annotation),
+    }));
 
-    return functionOrMapChildren(children, { annotationList, annotations: parsedList, ...props, });
+    return functionOrMapChildren(children, {
+      annotationList,
+      annotations: parsedList,
+      ...props,
+    });
   }
-
-
 }
 
 export default AnnotationProvider;

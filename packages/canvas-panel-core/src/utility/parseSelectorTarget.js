@@ -7,7 +7,7 @@ export default function parseSelectorTarget(toParse, scale = 1) {
 
   if (match) {
     return {
-      unit: (match[2] === 'percent:' ? 'percent' : 'pixel'),
+      unit: match[2] === 'percent:' ? 'percent' : 'pixel',
       scale,
       expanded: true,
       x: parseFloat(match[3]) * scale,

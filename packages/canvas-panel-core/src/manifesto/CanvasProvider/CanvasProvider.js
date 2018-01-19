@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Manifesto from 'manifesto.js';
 import LocaleString from '../LocaleString/LocaleString';
-import functionOrMapChildren, {FunctionOrMapChildrenType} from '../../utility/functionOrMapChildren';
+import functionOrMapChildren, {
+  FunctionOrMapChildrenType,
+} from '../../utility/functionOrMapChildren';
 
 class CanvasProvider extends Component {
-
   state = {
     currentCanvas: null,
   };
@@ -14,7 +15,7 @@ class CanvasProvider extends Component {
     sequence: PropTypes.number,
     startCanvas: PropTypes.number,
     manifest: PropTypes.instanceOf(Manifesto.Manifest),
-    children: FunctionOrMapChildrenType
+    children: FunctionOrMapChildrenType,
   };
 
   static defaultProps = {
@@ -28,24 +29,28 @@ class CanvasProvider extends Component {
   static reducer(state, action) {
     switch (action.type) {
       case CanvasProvider.NEXT_CANVAS:
-        return {...state, currentCanvas: state.currentCanvas + 1};
+        return { ...state, currentCanvas: state.currentCanvas + 1 };
       case CanvasProvider.PREV_CANVAS:
-        return {...state, currentCanvas: state.currentCanvas === 0 ? 0 : state.currentCanvas - 1};
+        return {
+          ...state,
+          currentCanvas:
+            state.currentCanvas === 0 ? 0 : state.currentCanvas - 1,
+        };
     }
     return state;
   }
 
   static nextCanvas() {
-    return {type: CanvasProvider.NEXT_CANVAS};
+    return { type: CanvasProvider.NEXT_CANVAS };
   }
 
   static prevCanvas() {
-    return {type: CanvasProvider.PREV_CANVAS};
+    return { type: CanvasProvider.PREV_CANVAS };
   }
 
   componentWillMount() {
     if (this.props.startCanvas !== this.state.currentCanvas) {
-      this.setState({currentCanvas: this.props.startCanvas});
+      this.setState({ currentCanvas: this.props.startCanvas });
     }
   }
 
@@ -54,8 +59,8 @@ class CanvasProvider extends Component {
   };
 
   render() {
-    const {manifest, startCanvas, children} = this.props;
-    const {currentCanvas} = this.state;
+    const { manifest, startCanvas, children } = this.props;
+    const { currentCanvas } = this.state;
 
     const sequence = manifest.getSequenceByIndex(this.props.sequence);
     const canvas = sequence.getCanvasByIndex(currentCanvas);

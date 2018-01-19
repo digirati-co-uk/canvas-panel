@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Manifesto from 'manifesto.js';
-import functionOrMapChildren, { FunctionOrMapChildrenType } from '../../utility/functionOrMapChildren';
-
+import functionOrMapChildren, {
+  FunctionOrMapChildrenType,
+} from '../../utility/functionOrMapChildren';
 
 class AnnotationListProvider extends Component {
-
   state = { annotationLists: null };
 
   static propTypes = {
@@ -44,7 +44,11 @@ class AnnotationListProvider extends Component {
       <div>
         {annotationLists.map((annotationList, key) => (
           <div key={key}>
-            { functionOrMapChildren(children, { canvas, annotationList, ...props }) }
+            {functionOrMapChildren(children, {
+              canvas,
+              annotationList,
+              ...props,
+            })}
           </div>
         ))}
       </div>

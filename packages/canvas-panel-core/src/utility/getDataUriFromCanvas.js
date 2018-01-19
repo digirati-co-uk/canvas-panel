@@ -10,8 +10,7 @@ export default function getDataUriFromCanvas(canvas) {
       return annotationBody[0].id;
     }
     return null;
-  }
-  else if (images && images.length) {
+  } else if (images && images.length) {
     let infoUri = null;
     const firstImage = images[0];
     const resource = firstImage.getResource();
@@ -31,8 +30,7 @@ export default function getDataUriFromCanvas(canvas) {
     }
     // no image services. return the image id
     return resource.id;
-  }
-  else {
+  } else {
     // Legacy IxIF
     const service = canvas.getService(manifesto.ServiceProfile.ixif());
     if (service) {

@@ -5,7 +5,6 @@ import AnnotationProvider from '../../manifesto/AnnotationProvider/AnnotationPro
 import AnnotationRepresentation from '../AnnotationRepresentation/AnnotationRepresentation';
 
 class AnnotationCanvasRepresentation extends Component {
-
   static propTypes = {
     annotationStyle: PropTypes.object,
     onClickAnnotation: PropTypes.func,
@@ -21,7 +20,10 @@ class AnnotationCanvasRepresentation extends Component {
     return (
       <AnnotationListProvider {...props}>
         <AnnotationProvider>
-          <AnnotationRepresentation onClickAnnotation={onClickAnnotation} annotationStyle={annotationStyle}/>
+          <AnnotationRepresentation
+            onClickAnnotation={onClickAnnotation}
+            annotationStyle={annotationStyle}
+          />
         </AnnotationProvider>
       </AnnotationListProvider>
     );

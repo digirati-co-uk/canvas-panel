@@ -4,7 +4,12 @@ import Annotation from '../Annotation/Annotation';
 
 class AnnotationRepresentation extends Component {
   render() {
-    const {annotations, onClickAnnotation, annotationStyle, ...props} = this.props;
+    const {
+      annotations,
+      onClickAnnotation,
+      annotationStyle,
+      ...props
+    } = this.props;
     return (
       <CanvasRepresentation {...props}>
         {annotations.map(({ annotation, on }, key) => (
@@ -20,7 +25,7 @@ class AnnotationRepresentation extends Component {
           />
         ))}
       </CanvasRepresentation>
-    )
+    );
   }
 }
 

@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
 import Manifesto from 'manifesto.js';
 
 class StaticImageViewport extends Component {
-
   state = { dragging: false };
 
   static propTypes = {
@@ -35,14 +34,13 @@ class StaticImageViewport extends Component {
   }
 
   getRatio() {
-    const {height, width, maxHeight, maxWidth} = this.props;
+    const { height, width, maxHeight, maxWidth } = this.props;
     const heightRatio = height / (maxHeight || 500);
     const widthRatio = width / (maxWidth || maxHeight || 500);
     return heightRatio > widthRatio ? heightRatio : widthRatio;
   }
 
-  onDrag = (ratio) => (e, data) => {
-
+  onDrag = ratio => (e, data) => {
     if (this.props.getPosition) {
       this.props.getPosition({
         x: data.x,
@@ -55,20 +53,24 @@ class StaticImageViewport extends Component {
   };
 
   render() {
-    const {canvas, width} = this.props;
+    const { canvas, width } = this.props;
     const ratio = this.getRatio();
     const targetWidth = Math.floor(width / ratio);
     const pixelRatio = window.devicePixelRatio || 1;
 
     return (
-        <Draggable onDrag={this.onDrag(ratio)}>
-          <div>
-            <img src={canvas.getCanonicalImageUri(Math.floor(targetWidth * pixelRatio))} style={{ width: width / ratio, pointerEvents: 'none' }}/>
-          </div>
-        </Draggable>
+      <Draggable onDrag={this.onDrag(ratio)}>
+        <div>
+          <img
+            src={canvas.getCanonicalImageUri(
+              Math.floor(targetWidth * pixelRatio)
+            )}
+            style={{ width: width / ratio, pointerEvents: 'none' }}
+          />
+        </div>
+      </Draggable>
     );
   }
-
 }
 
 export default StaticImageViewport;
