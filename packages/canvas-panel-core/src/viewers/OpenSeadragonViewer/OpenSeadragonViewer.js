@@ -20,6 +20,8 @@ type OpenSeadragonViewerState = {
   fallback: boolean,
 };
 
+type Bounds = { x: number, y: number, width: number, height: number };
+
 class OpenSeadragonViewer extends Component<
   OpenSeadragonViewerPropTypes,
   OpenSeadragonViewerState
@@ -151,12 +153,7 @@ class OpenSeadragonViewer extends Component<
   };
 
   goToRect(
-    {
-      x,
-      y,
-      width,
-      height,
-    }: { x: number, y: number, width: number, height: number },
+    { x, y, width, height }: Bounds,
     padding: number = 0,
     speed: ?number
   ) {
