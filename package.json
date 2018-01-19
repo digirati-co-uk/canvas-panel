@@ -26,5 +26,8 @@
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
     "*.{js,json,scss,md}": ["prettier --write", "git add"]
+  },
+  "dependencies": {
+    "@types/react": "^16.0.34"
   }
 }

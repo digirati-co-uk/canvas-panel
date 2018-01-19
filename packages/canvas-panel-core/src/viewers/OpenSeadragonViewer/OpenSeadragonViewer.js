@@ -5,21 +5,11 @@
 import OpenSeadragon from 'openseadragon';
 import React, { Component } from 'react';
 
-declare type OpenSeadragonType =
-  | {
-      viewport: OpenSeadragon.Viewport,
-      Point: OpenSeadragon.Point,
-      Rect: OpenSeadragon.Rect,
-      close: Function,
-      addTiledImage: Function,
-    }
-  | OpenSeadragon.Viewer;
-
 type OpenSeadragonViewerPropTypes = {
   width: number,
   height: number,
   tileSources: Array<any>,
-  onImageLoaded: (OpenSeadragonType, any) => any,
+  onImageLoaded: (OpenSeadragon, any) => any,
   maxWidth: ?number,
   maxHeight: ?number,
   showControls: ?boolean,
@@ -37,7 +27,7 @@ class OpenSeadragonViewer extends Component<
   state = {
     fallback: false,
   };
-  viewer: ?OpenSeadragonType = null;
+  viewer: ?OpenSeadragon = null;
   element: any;
 
   asyncAddTile(args: any): Promise<void> {

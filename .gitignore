@@ -5,3 +5,5 @@
 /packages/*/dist
 npm-debug.log*
 /packages/*/styleguide
+package.lock
+*.log
