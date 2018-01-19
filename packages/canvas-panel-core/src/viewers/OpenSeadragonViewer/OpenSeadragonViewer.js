@@ -19,10 +19,11 @@ type OpenSeadragonViewerPropTypes = {
   width: number,
   height: number,
   tileSources: Array<any>,
-  onImageLoaded: OpenSeadragonType => any,
+  onImageLoaded: (OpenSeadragonType, any) => any,
   maxWidth: ?number,
   maxHeight: ?number,
   showControls: ?boolean,
+  getRef: any => void,
 };
 
 type OpenSeadragonViewerState = {
@@ -33,6 +34,9 @@ class OpenSeadragonViewer extends Component<
   OpenSeadragonViewerPropTypes,
   OpenSeadragonViewerState
 > {
+  state = {
+    fallback: false,
+  };
   viewer: ?OpenSeadragonType = null;
   element: any;
 
@@ -75,10 +79,6 @@ class OpenSeadragonViewer extends Component<
       height: this.props.height,
     };
   }
-
-  state = {
-    fallback: false,
-  };
 
   componentWillReceiveProps(newProps: OpenSeadragonViewerPropTypes) {
     const { tileSources } = this.props;
@@ -183,7 +183,7 @@ class OpenSeadragonViewer extends Component<
       )
     );
 
-    this.viewportAction('fitBounds', [selectHighlight], speed);
+    this.viewportAction('fitBounds', [selectHighlight], speed || 1);
   }
 
   panTo(x: number, y: number, speed: number) {
