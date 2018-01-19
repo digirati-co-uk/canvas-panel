@@ -53,7 +53,7 @@ class OpenSeadragonViewer extends Component {
       this.viewer.close();
       Promise.all(
         newProps.tileSources.map(
-          tileSource => this.asyncAddTile({tileSource: tileSource})
+          tileSource => this.asyncAddTile({tileSource})
         )
       ).then(e => {
           this.viewer.viewport.goHome(true);

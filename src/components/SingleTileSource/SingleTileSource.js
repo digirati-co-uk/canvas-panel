@@ -50,7 +50,7 @@ class SingleTileSource extends Component {
 
   componentWillReceiveProps(newProps) {
     const imageUri = getDataUriFromCanvas(newProps.canvas);
-    if (imageUri !== this.props.imageUri) {
+    if (imageUri !== this.state.imageUri) {
       this.updateImageUri(imageUri);
     }
   }
