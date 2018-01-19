@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Manifesto from 'manifesto.js';
+import * as PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
 
 class CanvasRepresentation extends Component {
   static propTypes = {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Manifesto from 'manifesto.js';
-import AnnotationSelector from '../../utility/AnnotationSelector';
+import * as PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
 
 class Annotation extends Component {
   static propTypes = {

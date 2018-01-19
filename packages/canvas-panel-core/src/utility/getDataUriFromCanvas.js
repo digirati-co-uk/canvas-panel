@@ -1,4 +1,4 @@
-import manifesto from 'manifesto.js';
+import * as Manifesto from 'manifesto.js';
 
 export default function getDataUriFromCanvas(canvas) {
   const content = canvas.getContent();
@@ -22,7 +22,7 @@ export default function getDataUriFromCanvas(canvas) {
         if (!id.endsWith('/')) {
           id += '/';
         }
-        if (manifesto.Utils.isImageProfile(service.getProfile())) {
+        if (Manifesto.Utils.isImageProfile(service.getProfile())) {
           infoUri = id + 'info.json';
         }
       }

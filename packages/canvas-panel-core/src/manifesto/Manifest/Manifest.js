@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import manifesto from 'manifesto.js';
-import PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
+import * as PropTypes from 'prop-types';
 import functionOrMapChildren, {
   FunctionOrMapChildrenType,
 } from '../../utility/functionOrMapChildren';
@@ -24,7 +24,7 @@ class Manifest extends Component {
       .then(j => j.json())
       .then(jsonLd => {
         this.setState({
-          manifest: manifesto.create(jsonLd, { locale: 'en-GB' }),
+          manifest: Manifesto.create(jsonLd, { locale: 'en-GB' }),
         });
       })
       .catch(error => {

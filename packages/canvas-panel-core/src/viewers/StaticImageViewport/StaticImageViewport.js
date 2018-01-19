@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
-import Manifesto from 'manifesto.js';
+import * as Manifesto from 'manifesto.js';
 
 class StaticImageViewport extends Component {
   state = { dragging: false };

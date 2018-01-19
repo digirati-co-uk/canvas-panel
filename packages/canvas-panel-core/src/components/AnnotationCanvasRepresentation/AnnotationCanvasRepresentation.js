@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import AnnotationListProvider from '../../manifesto/AnnotationListProvider/AnnotationListProvider';
 import AnnotationProvider from '../../manifesto/AnnotationProvider/AnnotationProvider';
 import AnnotationRepresentation from '../AnnotationRepresentation/AnnotationRepresentation';

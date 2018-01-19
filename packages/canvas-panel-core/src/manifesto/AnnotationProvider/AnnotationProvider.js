@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Manifesto from 'manifesto.js';
+import * as PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
 import { FunctionOrMapChildrenType } from '../../utility/functionOrMapChildren';
 import functionOrMapChildren from '../../utility/functionOrMapChildren';
 import parseSelectorTarget from '../../utility/parseSelectorTarget';
