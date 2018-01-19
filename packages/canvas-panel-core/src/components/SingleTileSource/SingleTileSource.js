@@ -36,6 +36,19 @@ class SingleTileSource extends Component {
       return null;
     }
 
+    if (!imageUri.endsWith('/info.json')) {
+      this.setState({
+        imageUri,
+        tileSources: [
+          {
+            type: 'image',
+            url: imageUri,
+          },
+        ],
+      });
+      return;
+    }
+
     if (!SingleTileSource.cache[imageUri]) {
       SingleTileSource.cache[imageUri] = fetch(imageUri).then(resp =>
         resp.json()
@@ -59,9 +72,18 @@ class SingleTileSource extends Component {
 
   renderFallback() {
     const { canvas, fallbackWidth } = this.props;
+    const { tileSources } = this.state;
+
+    const tileSource = tileSources[0];
+
+    const fallbackImageUrl =
+      tileSource && tileSource.type === 'image'
+        ? tileSource.url
+        : canvas.getCanonicalImageUri(fallbackWidth);
+
     return (
       <div>
-        <img src={canvas.getCanonicalImageUri(fallbackWidth)} />
+        <img width={fallbackWidth} src={fallbackImageUrl} />
       </div>
     );
   }

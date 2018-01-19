@@ -13,18 +13,30 @@ class Manifest extends Component {
 
   static propTypes = {
     /** URL of IIIF Manifest to load */
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string,
     /** Function children that will be passed a manifest, and return JSX */
     children: FunctionOrMapChildrenType.isRequired,
+    /** Locale to fetch the manifest */
+    locale: PropTypes.string,
+  };
+
+  static defaultProps = {
+    locale: 'en-GB',
   };
 
   componentWillMount() {
-    const { url } = this.props;
+    const { url, jsonLd } = this.props;
+
+    if (jsonLd) {
+      this.setState({ manifest: this.create(jsonLd) });
+      return;
+    }
+
     fetch(url, { cache: 'force-cache' })
       .then(j => j.json())
-      .then(jsonLd => {
+      .then(fetchedJsonLd => {
         this.setState({
-          manifest: Manifesto.create(jsonLd, { locale: 'en-GB' }),
+          manifest: this.create(fetchedJsonLd),
         });
       })
       .catch(error => {
@@ -32,6 +44,10 @@ class Manifest extends Component {
           error: 'something went wrong fetching this manifest.',
         });
       });
+  }
+
+  create(jsonLd) {
+    return Manifesto.create(jsonLd, { locale: this.props.locale });
   }
 
   render() {
