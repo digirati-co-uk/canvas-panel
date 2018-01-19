@@ -1,32 +1,5 @@
 {
-  "name": "canvas-panel-proto",
-  "version": "1.0.0",
-  "description": "Describe canvas-panel-proto here",
-  "private": true,
-  "scripts": {
-    "build": "nwb build-react-app",
-    "clean": "nwb clean-app",
-    "start": "nwb serve-react-app",
-    "test": "nwb test-react",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
-  },
-  "dependencies": {
-    "manifesto.js": "^2.2.10",
-    "openseadragon": "^2.3.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-draggable": "^3.0.5"
-  },
-  "devDependencies": {
-    "create-nwb-webpack-config": "^1.0.0",
-    "nwb": "0.18.x",
-    "prop-types": "^15.6.0",
-    "react-styleguidist": "^6.1.0"
-  },
-  "author": "",
-  "license": "MIT",
-  "repository": ""
+	"devDependencies": {
+		"lerna": "^2.4.0"
+	}
 }
