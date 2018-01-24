@@ -15,7 +15,8 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "manifesto.js": "git://github.com/stephenwf/manifesto.git#feature/p3-alpha",
+    "manifesto.js":
+      "git://github.com/stephenwf/manifesto.git#5398c43831ad8d003cfe84e6c6f185ac44a37149",
     "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
     "openseadragon": "^2.3.1",
     "react": "^16.2.0",
