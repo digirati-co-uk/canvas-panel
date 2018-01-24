@@ -13,7 +13,7 @@ class AnnotationProvider extends Component {
   };
 
   parseAnnotation(annotation) {
-    const on = annotation.getOn();
+    const on = annotation.getOn() || annotation.getTarget();
     return {
       on: AnnotationSelector.parse(on),
     };

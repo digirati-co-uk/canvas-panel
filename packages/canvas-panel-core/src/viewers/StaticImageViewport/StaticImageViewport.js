@@ -58,12 +58,6 @@ class StaticImageViewport extends Component {
     const targetWidth = Math.floor(width / ratio);
     const pixelRatio = window.devicePixelRatio || 1;
 
-    const firstImage = [...canvas.getImages()].shift();
-
-    if (firstImage) {
-      console.log(firstImage);
-    }
-
     return (
       <Draggable onDrag={this.onDrag(ratio)}>
         <div>

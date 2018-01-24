@@ -11,6 +11,25 @@ class AnnotationDetail extends Component {
   render() {
     const { annotation, onClose } = this.props;
     const resource = annotation.getResource();
+    const bodies = annotation.getBody();
+
+    if (bodies) {
+      return (
+        <div>
+          {bodies.map((body, key) => {
+            return (
+              <div>
+                {body.__jsonld.label ? <h1>{body.__jsonld.label}</h1> : null}
+                <div
+                  key={key}
+                  dangerouslySetInnerHTML={{ __html: body.__jsonld.value }}
+                />
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
 
     if (resource && resource.getProperty('within')) {
       const toDisplay = resource.getProperty('within');

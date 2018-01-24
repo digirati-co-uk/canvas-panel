@@ -24,41 +24,26 @@ function getDataUriFromImages(images) {
 }
 
 export default function getDataUriFromCanvas(canvas) {
-  // const external = new Manifold.ExternalResource(canvas, {});
-  //
-  // return external.dataUri;
-  const content = canvas.getContent();
-  let images = canvas.getImages();
+  const images = canvas.getImages();
+  const p3Images = canvas.getP3Images();
 
-  if (content && content.length) {
-    const annotation = content[0];
-    const annotationBody = annotation.getBody();
-
-    if (annotation.getProperty('motivation') === 'painting' && annotationBody) {
-      let infoUri = null;
-      const service = annotationBody[0].__jsonld.service;
-      let id = service.id;
-      if (!id.endsWith('/')) {
-        id += '/';
-      }
-      if (service.profile) {
-        infoUri = id + 'info.json';
-      }
-      return infoUri;
-    }
-
-    if (annotationBody.length) {
-      return annotationBody[0].id;
-    }
-  } else if (images && images.length) {
-    return getDataUriFromImages(images);
-  } else {
-    // Legacy IxIF
-    const service = canvas.getService(Manifesto.ServiceProfile.ixif());
+  if (p3Images.length) {
+    const firstP3Image = p3Images.shift();
+    const service = firstP3Image.getImageService();
     if (service) {
       return service.getInfoUri();
     }
-    // return the canvas id.
-    return canvas.id;
   }
+
+  if (images && images.length) {
+    return getDataUriFromImages(images);
+  }
+
+  // Legacy IxIF
+  const service = canvas.getService(Manifesto.ServiceProfile.ixif());
+  if (service) {
+    return service.getInfoUri();
+  }
+  // return the canvas id.
+  return canvas.id;
 }

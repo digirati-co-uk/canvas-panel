@@ -29,6 +29,10 @@ class AnnotationListProvider extends Component {
       canvas.getOtherContent().then(content => {
         this.setState({ annotationLists: content });
       });
+
+      canvas.getAnnotations().then(annotations => {
+        this.setState({ annotationLists: annotations });
+      });
     }
   }
 
