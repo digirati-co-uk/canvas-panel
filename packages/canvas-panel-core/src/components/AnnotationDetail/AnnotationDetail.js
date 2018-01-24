@@ -24,6 +24,7 @@ class AnnotationDetail extends Component {
                   key={key}
                   dangerouslySetInnerHTML={{ __html: body.__jsonld.value }}
                 />
+                {onClose ? <button onClick={onClose}>close</button> : null}
               </div>
             );
           })}
