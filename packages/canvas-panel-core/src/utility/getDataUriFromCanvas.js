@@ -24,7 +24,6 @@ function getDataUriFromImages(images) {
 }
 
 export default function getDataUriFromCanvas(canvas) {
-  const images = canvas.getImages();
   const p3Images = canvas.getP3Images();
 
   if (p3Images.length) {
@@ -35,6 +34,7 @@ export default function getDataUriFromCanvas(canvas) {
     }
   }
 
+  const images = canvas.getImages();
   if (images && images.length) {
     return getDataUriFromImages(images);
   }
