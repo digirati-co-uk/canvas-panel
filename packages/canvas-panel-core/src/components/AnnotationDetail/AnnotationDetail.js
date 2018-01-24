@@ -13,7 +13,7 @@ class AnnotationDetail extends Component {
     const resource = annotation.getResource();
     const bodies = annotation.getBody();
 
-    if (bodies) {
+    if (bodies.length) {
       return (
         <div>
           {bodies.map((body, key) => {
