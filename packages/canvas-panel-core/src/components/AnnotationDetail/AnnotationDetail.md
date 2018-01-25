@@ -3,7 +3,7 @@ for this particular manifest. This could however be expanded greatly into a gene
 
 ```js
 let viewport;
-const animationSpeed = 4;
+const animationSpeed = 1;
 initialState = { annotation: null, viewport: null };
 <div style={{ padding: 10 }}>
   <div style={{ width: 450, display: 'inline-block' }}>
@@ -22,6 +22,8 @@ initialState = { annotation: null, viewport: null };
           </SingleTileSource>
           <AnnotationCanvasRepresentation
             ratio={0.1}
+            annotationStyle={{ outline: '2px solid purple' }}
+            growthStyle="fixed"
             onClickAnnotation={(annotation, bounds) => {
               setState({ annotation });
               viewport.goToRect(bounds, 300, animationSpeed);
@@ -51,7 +53,7 @@ initialState = { annotation: null, viewport: null };
 
 ```js
 let viewport;
-const animationSpeed = 4;
+const animationSpeed = 1;
 initialState = { annotation: null, viewport: null };
 <div style={{ padding: 10 }}>
   <div style={{ width: 450, display: 'inline-block' }}>

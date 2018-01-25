@@ -12,6 +12,39 @@ class CanvasRepresentation extends Component {
     ratio: 1,
   };
 
+  processChildStyle(child) {
+    const { position, ratio } = this.props;
+
+    if (child.props.growthStyle === 'fixed') {
+      const zam = position ? position.zoom * (1 / ratio) : 1;
+      return {
+        ...child.props.style,
+        position: 'absolute',
+        top: child.props.y * ratio,
+        left: child.props.x * ratio,
+        height: child.props.height * ratio * zam,
+        width: child.props.width * ratio * zam,
+        transform: 'scale(' + 1 / zam + ')',
+        transformOrigin: 'top left',
+        pointerEvents: 'initial',
+      };
+    }
+
+    if (child.props.growthStyle === 'absolute') {
+      // Do opposite of above, make double the size and scale it down.
+    }
+
+    return {
+      ...child.props.style,
+      position: 'absolute',
+      top: child.props.y * ratio,
+      left: child.props.x * ratio,
+      height: child.props.height * ratio,
+      width: child.props.width * ratio,
+      pointerEvents: 'initial',
+    };
+  }
+
   render() {
     const {
       canvas,
@@ -22,9 +55,6 @@ class CanvasRepresentation extends Component {
       width,
       ...props
     } = this.props;
-
-    // const canvasHeight = canvas.getHeight();
-    // const canvasWidth = canvas.getWidth();
 
     return (
       <div
@@ -39,15 +69,7 @@ class CanvasRepresentation extends Component {
         {React.Children.map(children, child => {
           const propsForEl = child.type === 'div' ? {} : { canvas, ...props };
           return React.cloneElement(child, {
-            style: {
-              ...child.props.style,
-              position: 'absolute',
-              top: child.props.y * ratio,
-              left: child.props.x * ratio,
-              height: child.props.height * ratio,
-              width: child.props.width * ratio,
-              pointerEvents: 'initial',
-            },
+            style: this.processChildStyle(child),
             ...propsForEl,
           });
         })}

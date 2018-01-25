@@ -12,7 +12,7 @@ class AnnotationProvider extends Component {
     children: FunctionOrMapChildrenType,
   };
 
-  parseAnnotation(annotation) {
+  static parseAnnotation(annotation) {
     const on = annotation.getOn() || annotation.getTarget();
     return {
       on: AnnotationSelector.parse(on),
@@ -29,7 +29,7 @@ class AnnotationProvider extends Component {
     const parsedList = annotationList.getResources().map(annotation => ({
       annotationList,
       annotation,
-      ...this.parseAnnotation(annotation),
+      ...AnnotationProvider.parseAnnotation(annotation),
     }));
 
     return functionOrMapChildren(children, {

@@ -6,10 +6,16 @@ class AnnotationDetail extends Component {
   static propTypes = {
     annotation: PropTypes.instanceOf(Manifesto.Annotation),
     onClose: PropTypes.func,
+    closeText: PropTypes.string,
+    closeClassName: PropTypes.string,
+  };
+
+  static defaultProps = {
+    closeText: 'close',
   };
 
   render() {
-    const { annotation, onClose } = this.props;
+    const { annotation, onClose, closeText, closeClassName } = this.props;
     const resource = annotation.getResource();
     const bodies = annotation.getBody();
 
@@ -24,7 +30,11 @@ class AnnotationDetail extends Component {
                   key={key}
                   dangerouslySetInnerHTML={{ __html: body.__jsonld.value }}
                 />
-                {onClose ? <button onClick={onClose}>close</button> : null}
+                {onClose ? (
+                  <button className={closeClassName} onClick={onClose}>
+                    {closeText}
+                  </button>
+                ) : null}
               </div>
             );
           })}
@@ -38,7 +48,11 @@ class AnnotationDetail extends Component {
         <div>
           <h1>{toDisplay.label}</h1>
           <p>{toDisplay.description}</p>
-          {onClose ? <button onClick={onClose}>close</button> : null}
+          {onClose ? (
+            <button className={closeClassName} onClick={onClose}>
+              {closeText}
+            </button>
+          ) : null}
         </div>
       );
     }
@@ -47,7 +61,11 @@ class AnnotationDetail extends Component {
       <div>
         <h1>{annotation.getLabel()}</h1>
         <p>{annotation.getProperty('description')}</p>
-        {onClose ? <button onClick={onClose}>close</button> : null}
+        {onClose ? (
+          <button className={closeClassName} onClick={onClose}>
+            {closeText}
+          </button>
+        ) : null}
       </div>
     );
   }

@@ -26,13 +26,9 @@ class Annotation extends Component {
       : null;
 
   render() {
-    const { style } = this.props;
-
+    const { style, className } = this.props;
     return (
-      <div
-        style={{ outline: '1px solid orange', ...style }}
-        onClick={this.handleClick}
-      />
+      <div className={className} style={style} onClick={this.handleClick} />
     );
   }
 }

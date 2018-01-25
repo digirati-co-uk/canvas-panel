@@ -7,7 +7,9 @@ class AnnotationRepresentation extends Component {
     const {
       annotations,
       onClickAnnotation,
+      annotationClassName,
       annotationStyle,
+      growthStyle,
       ...props
     } = this.props;
     return (
@@ -22,7 +24,9 @@ class AnnotationRepresentation extends Component {
               width={on.selector.width}
               annotation={annotation}
               style={annotationStyle}
+              className={annotationClassName}
               onClick={onClickAnnotation}
+              growthStyle={growthStyle}
             />
           );
         })}
