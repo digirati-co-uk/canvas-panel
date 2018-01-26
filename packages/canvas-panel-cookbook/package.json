@@ -14,7 +14,8 @@
   "dependencies": {
     "@canvas-panel/core": "^0.0.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "nwb": "0.18.x"
