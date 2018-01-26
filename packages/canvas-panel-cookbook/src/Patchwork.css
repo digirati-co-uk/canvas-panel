@@ -63,6 +63,9 @@
 .patchwork-container {
   position: relative;
   background: #000;
+  maxWidth: 1200px;
+  width: 100%;
+  height: 500px;
 }
 
 .annotation-close {

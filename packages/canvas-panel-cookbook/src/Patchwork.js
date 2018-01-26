@@ -35,10 +35,7 @@ class Patchwork extends Component {
     const state = this.state;
     return (
       <AnnWest>
-        <div
-          className="patchwork-container"
-          style={{ width: 1200, height: 500 }}
-        >
+        <div className="patchwork-container">
           <Manifest jsonLd={p3manifest}>
             <CanvasProvider>
               <Viewport
@@ -58,7 +55,6 @@ class Patchwork extends Component {
                   </OpenSeadragonViewport>
                 </SingleTileSource>
                 <AnnotationCanvasRepresentation
-                  ratio={0.1}
                   growthStyle="fixed"
                   onClickAnnotation={this.onClickAnnotation}
                   annotationClassName="annotation-pin"
