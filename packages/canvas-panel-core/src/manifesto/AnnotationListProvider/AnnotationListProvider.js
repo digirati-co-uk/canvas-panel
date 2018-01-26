@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Manifesto from 'manifesto.js';
+import * as PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
 import functionOrMapChildren, {
   FunctionOrMapChildrenType,
 } from '../../utility/functionOrMapChildren';
@@ -28,6 +28,10 @@ class AnnotationListProvider extends Component {
       this.setState({ annotationLists: null });
       canvas.getOtherContent().then(content => {
         this.setState({ annotationLists: content });
+      });
+
+      canvas.getAnnotations().then(annotations => {
+        this.setState({ annotationLists: annotations });
       });
     }
   }

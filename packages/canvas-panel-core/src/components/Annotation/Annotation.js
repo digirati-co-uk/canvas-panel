@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Manifesto from 'manifesto.js';
-import AnnotationSelector from '../../utility/AnnotationSelector';
+import * as PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
 
 class Annotation extends Component {
   static propTypes = {
@@ -27,13 +26,9 @@ class Annotation extends Component {
       : null;
 
   render() {
-    const { style } = this.props;
-
+    const { style, className } = this.props;
     return (
-      <div
-        style={{ outline: '1px solid orange', ...style }}
-        onClick={this.handleClick}
-      />
+      <div className={className} style={style} onClick={this.handleClick} />
     );
   }
 }

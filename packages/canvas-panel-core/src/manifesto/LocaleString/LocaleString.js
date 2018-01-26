@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import Manifesto from 'manifesto.js';
-import PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
+import * as PropTypes from 'prop-types';
 
 class LocaleString extends PureComponent {
   static propTypes = {

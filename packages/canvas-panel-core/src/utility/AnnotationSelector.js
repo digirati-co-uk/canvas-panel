@@ -2,7 +2,7 @@ export default class AnnotationSelector {
   static DIRECTION_LTR = 'ltr';
   static DIRECTION_RTL = 'rtl';
   static DIRECTION_AUTO = 'auto';
-  static W3C_SELECTOR = /[#&\?]xywh\=(pixel\:|percent\:)?(\d+),(\d+),(\d+),(\d+)/;
+  static W3C_SELECTOR = /[#&?]xywh=(pixel:|percent:)?(\d+),(\d+),(\d+),(\d+)/;
 
   static fromJsonLD(jsonLd) {
     return AnnotationSelector.parse(jsonLd);

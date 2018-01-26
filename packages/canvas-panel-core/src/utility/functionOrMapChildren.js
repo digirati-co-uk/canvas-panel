@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 
 export default function functionOrMapChildren(children, withProps) {
   if (children && children.constructor && children.call && children.apply) {

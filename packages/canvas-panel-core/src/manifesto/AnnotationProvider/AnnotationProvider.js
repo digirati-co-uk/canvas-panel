@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Manifesto from 'manifesto.js';
+import * as PropTypes from 'prop-types';
+import * as Manifesto from 'manifesto.js';
 import { FunctionOrMapChildrenType } from '../../utility/functionOrMapChildren';
 import functionOrMapChildren from '../../utility/functionOrMapChildren';
 import parseSelectorTarget from '../../utility/parseSelectorTarget';
@@ -12,8 +12,8 @@ class AnnotationProvider extends Component {
     children: FunctionOrMapChildrenType,
   };
 
-  parseAnnotation(annotation) {
-    const on = annotation.getOn();
+  static parseAnnotation(annotation) {
+    const on = annotation.getOn() || annotation.getTarget();
     return {
       on: AnnotationSelector.parse(on),
     };
@@ -29,7 +29,7 @@ class AnnotationProvider extends Component {
     const parsedList = annotationList.getResources().map(annotation => ({
       annotationList,
       annotation,
-      ...this.parseAnnotation(annotation),
+      ...AnnotationProvider.parseAnnotation(annotation),
     }));
 
     return functionOrMapChildren(children, {

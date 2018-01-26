@@ -3,6 +3,8 @@
   "name": "canvas-panel",
   "workspaces": ["packages/*"],
   "devDependencies": {
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.0.34",
     "babel-eslint": "^8.1.0",
     "eslint": "^3.10.2",
     "eslint-plugin-babel": "^3.3.0",
@@ -13,8 +15,7 @@
     "husky": "^0.14.3",
     "lerna": "^2.4.0",
     "lint-staged": "^6.0.0",
-    "prettier": "^1.9.2",
-    "@types/react": "^16.0.34"
+    "prettier": "^1.9.2"
   },
   "devEngines": {
     "node": "8.x"

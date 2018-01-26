@@ -54,6 +54,14 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@types/jquery@^2.0.40":
+  version "2.0.48"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.48.tgz#3e90d8cde2d29015e5583017f7830cb3975b2eef"
+
+"@types/prop-types@^15.5.2":
+  version "15.5.2"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.2.tgz#3c6b8dceb2906cc87fe4358e809f9d20c8d59be1"
+
 "@types/react@^16.0.34":
   version "16.0.34"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.34.tgz#7a8f795afd8a404a9c4af9539b24c75d3996914e"
@@ -5892,12 +5900,18 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
-manifesto.js@^2.2.10:
+"manifesto.js@git://github.com/stephenwf/manifesto.git#feature/p3-alpha":
   version "2.2.10"
-  resolved "https://registry.yarnpkg.com/manifesto.js/-/manifesto.js-2.2.10.tgz#c7969481cce3be44ecc15f1cf2e76d1713613a99"
+  resolved "git://github.com/stephenwf/manifesto.git#ca24ee6858f77a7d820573e1538584cfa2a97539"
   dependencies:
     exjs BSick7/exjs#0.5.0
     http-status-codes edsilv/http-status-codes#v0.0.7
+
+"manifold@git://github.com/IIIF-Commons/manifold.git#v1.2.16":
+  version "1.2.16"
+  resolved "git://github.com/IIIF-Commons/manifold.git#13078d7c0fe201735a0bc9fe8a69d3642b0664ae"
+  dependencies:
+    "@types/jquery" "^2.0.40"
 
 map-cache@^0.2.2:
   version "0.2.2"

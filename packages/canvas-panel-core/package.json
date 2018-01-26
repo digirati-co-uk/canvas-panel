@@ -1,12 +1,16 @@
 {
   "name": "@canvas-panel/core",
   "version": "0.0.1",
-  "description": "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
+  "description":
+    "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
   "private": true,
+  "main": "lib/index.js",
+  "module": "es/index",
+  "jsnext:main": "es/index",
   "scripts": {
-    "build": "nwb build-react-app",
+    "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-app",
-    "start": "nwb serve-react-app",
+    "start": "npm run styleguide",
     "test": "nwb test-react",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
@@ -14,7 +18,9 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "manifesto.js": "^2.2.10",
+    "manifesto.js":
+      "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
+    "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
     "openseadragon": "^2.3.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

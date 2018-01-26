@@ -1,0 +1,80 @@
+.annotation-detail {
+  position: absolute;
+  background: #fff;
+  top: 30px;
+  left: 30px;
+  width: 320px;
+  border-radius: 3px;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.annotation-detail h2,
+.annotation-detail h1 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+
+.annotation-pin {
+  position: relative;
+  outline: none;
+  pointer-events: none;
+}
+
+.annotation-pin:hover {
+  /*outline: 2px dotted rgba(0, 0, 0, .6);*/
+  /*border: 1px solid #fff;*/
+}
+
+.annotation-pin:before {
+  pointer-events: initial;
+  content: '+';
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -15px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  top: -20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.annotation-pin:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  left: 50%;
+  margin-left: -2px;
+  width: 4px;
+  height: 20px;
+  top: 9px;
+  text-align: center;
+  line-height: 28px;
+}
+
+.patchwork-container {
+  position: relative;
+  background: #000;
+  maxWidth: 1200px;
+  width: 100%;
+  height: 500px;
+}
+
+.annotation-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  line-height: 30px;
+}

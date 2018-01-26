@@ -14,6 +14,7 @@ type OpenSeadragonViewerPropTypes = {
   maxHeight: ?number,
   showControls: ?boolean,
   getRef: any => void,
+  osdOptions: any,
 };
 
 type OpenSeadragonViewerState = {
@@ -31,6 +32,9 @@ class OpenSeadragonViewer extends Component<
   };
   viewer: ?OpenSeadragon = null;
   element: any;
+  static defaultProps = {
+    osdOptions: {},
+  };
 
   asyncAddTile(args: any): Promise<void> {
     return new Promise((success, err) => {
@@ -93,7 +97,7 @@ class OpenSeadragonViewer extends Component<
   }
 
   componentDidMount() {
-    const { getRef, onImageLoaded, tileSources } = this.props;
+    const { getRef, onImageLoaded, tileSources, osdOptions } = this.props;
     if (!tileSources) {
       console.error(
         'Something went wrong, we cannot display the open sea dragon'
@@ -123,6 +127,7 @@ class OpenSeadragonViewer extends Component<
       showHomeControl: false,
       showFullPageControl: false,
       sequenceMode: true,
+      ...osdOptions,
     });
     if (getRef) {
       getRef(this);
@@ -259,7 +264,7 @@ class OpenSeadragonViewer extends Component<
         style={{
           position: 'relative',
           height: actualHeight,
-          width: actualWidth,
+          width: '100%',
         }}
       >
         {showControls ? (
@@ -270,7 +275,7 @@ class OpenSeadragonViewer extends Component<
         ) : null}
         <div
           ref={this.setRef}
-          style={{ height: actualHeight, width: actualWidth }}
+          style={{ height: actualHeight, width: '100%' }}
         />
       </div>
     );

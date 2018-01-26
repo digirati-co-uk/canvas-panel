@@ -51,15 +51,17 @@ class Viewport extends Component {
 
   render() {
     const { x, y, zoom, scale, rotation } = this.state;
-    const { maxWidth, children, ...props } = this.props;
+    const { maxWidth, maxHeight, children, ...props } = this.props;
 
     return (
       <div
         style={{
           maxWidth,
+          maxHeight,
           position: 'relative',
           display: 'inline-block',
           overflow: 'hidden',
+          width: '100%',
         }}
       >
         {React.Children.map(children, child => {
@@ -68,6 +70,7 @@ class Viewport extends Component {
               getPosition: this.onUpdateViewport,
               getRef: this.getRef,
               maxWidth,
+              maxHeight,
               ...props,
             });
           }
@@ -78,6 +81,7 @@ class Viewport extends Component {
                 scale /
                 ratio}) rotate(${rotation})`,
               transformOrigin: '0 0 0',
+              maxHeight,
               ...child.props.style,
               width: this.props.width * ratio,
               height: this.props.height * ratio,
