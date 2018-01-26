@@ -249,8 +249,8 @@ class OpenSeadragonViewer extends Component<
 
   render() {
     const { height, width, maxWidth, maxHeight, showControls } = this.props;
-    const heightRatio = maxHeight ? maxHeight / height : height;
-    const widthRatio = maxWidth ? maxWidth / width : width;
+    const heightRatio = maxHeight ? maxHeight / height : 1;
+    const widthRatio = maxWidth ? maxWidth / width : 1;
     const scale = heightRatio < widthRatio ? heightRatio : widthRatio;
     const actualHeight = height * scale;
     const actualWidth = width * scale;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './Patchwork';
+import FullPagePatchwork from './FullPagePatchwork';
 import './App.css';
 
 const About = () => (
@@ -19,6 +20,11 @@ const App = () => (
       <header>
         <ul className="app-navigation">
           <li>
+            <NavLink activeClassName="navigation-active" to="/">
+              Cookbook
+            </NavLink>
+          </li>
+          <li>
             <NavLink activeClassName="navigation-active" to="/about">
               About
             </NavLink>
@@ -28,11 +34,17 @@ const App = () => (
               Patchwork
             </NavLink>
           </li>
+          <li>
+            <NavLink activeClassName="navigation-active" to="/fullpage">
+              Full page
+            </NavLink>
+          </li>
         </ul>
       </header>
 
       <Route exact path="/about" component={About} />
       <Route path="/patchwork" component={Patchwork} />
+      <Route path="/fullpage" component={FullPagePatchwork} />
     </main>
   </Router>
 );

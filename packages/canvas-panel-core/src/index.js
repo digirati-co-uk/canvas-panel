@@ -14,6 +14,7 @@ import OpenSeadragonViewer from './viewers/OpenSeadragonViewer/OpenSeadragonView
 import OpenSeadragonViewport from './viewers/OpenSeadragonViewport/OpenSeadragonViewport';
 import StaticImageViewport from './viewers/StaticImageViewport/StaticImageViewport';
 import Viewport from './viewers/Viewport/Viewport';
+import functionOrMapChildren from './utility/functionOrMapChildren';
 
 export {
   // Components.
@@ -35,4 +36,6 @@ export {
   OpenSeadragonViewport,
   StaticImageViewport,
   Viewport,
+  // Utils
+  functionOrMapChildren,
 };
