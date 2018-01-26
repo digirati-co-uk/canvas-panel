@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+watchman-make -p 'src/**/*.js' 'src/**/*.scss' --make="npm run build && echo " -t .

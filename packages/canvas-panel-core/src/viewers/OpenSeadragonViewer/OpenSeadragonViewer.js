@@ -264,7 +264,7 @@ class OpenSeadragonViewer extends Component<
         style={{
           position: 'relative',
           height: actualHeight,
-          width: actualWidth,
+          width: '100%',
         }}
       >
         {showControls ? (
@@ -275,7 +275,7 @@ class OpenSeadragonViewer extends Component<
         ) : null}
         <div
           ref={this.setRef}
-          style={{ height: actualHeight, width: actualWidth }}
+          style={{ height: actualHeight, width: '100%' }}
         />
       </div>
     );
