@@ -24,7 +24,7 @@ class AnnotationDetail extends Component {
         <div>
           {bodies.map((body, key) => {
             return (
-              <div>
+              <div key={key}>
                 {body.__jsonld.label ? <h1>{body.__jsonld.label}</h1> : null}
                 <div
                   key={key}

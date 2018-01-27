@@ -51,7 +51,7 @@ class Viewport extends Component {
 
   render() {
     const { x, y, zoom, scale, rotation } = this.state;
-    const { maxWidth, maxHeight, children, ...props } = this.props;
+    const { maxWidth, maxHeight, children, style, ...props } = this.props;
 
     return (
       <div
@@ -62,6 +62,7 @@ class Viewport extends Component {
           display: 'inline-block',
           overflow: 'hidden',
           width: '100%',
+          ...style,
         }}
       >
         {React.Children.map(children, child => {

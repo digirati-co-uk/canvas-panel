@@ -10,10 +10,13 @@ import AnnotationListProvider from './manifesto/AnnotationListProvider/Annotatio
 import AnnotationProvider from './manifesto/AnnotationProvider/AnnotationProvider';
 import CanvasProvider from './manifesto/CanvasProvider/CanvasProvider';
 import LocaleString from './manifesto/LocaleString/LocaleString';
+import FullPageViewport from './viewers/FullPageViewport/FullPageViewport';
 import OpenSeadragonViewer from './viewers/OpenSeadragonViewer/OpenSeadragonViewer';
 import OpenSeadragonViewport from './viewers/OpenSeadragonViewport/OpenSeadragonViewport';
+import SizedViewport from './viewers/SizedViewport/SizedViewport';
 import StaticImageViewport from './viewers/StaticImageViewport/StaticImageViewport';
 import Viewport from './viewers/Viewport/Viewport';
+import functionOrMapChildren from './utility/functionOrMapChildren';
 
 export {
   // Components.
@@ -31,8 +34,12 @@ export {
   LocaleString,
   Manifest,
   // Viewers
+  FullPageViewport,
   OpenSeadragonViewer,
   OpenSeadragonViewport,
+  SizedViewport,
   StaticImageViewport,
   Viewport,
+  // Utils
+  functionOrMapChildren,
 };

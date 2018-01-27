@@ -22,8 +22,10 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "build-docs":
-      "lerna link && cd packages/canvas-panel-core && yarn run styleguide:build"
+    "link": "lerna link",
+    "build-core": "cd packages/canvas-panel-core && yarn run build",
+    "build-docs": "cd packages/canvas-panel-core && yarn run styleguide:build",
+    "build-cookbook": "cd packages/canvas-panel-cookbook && yarn run build"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
