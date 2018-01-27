@@ -32,6 +32,9 @@ that look and act differently in full screen. This is a lengthy example, but dem
 a more complex use case. We are also making use of the FullPageViewport in this example too,
 which by default fills up all the available space.
 
+In this example, we are rendering a static image, prompting the user to click which opens
+a fullscreen OSD viewer. This is useful on mobile where it won't interfere with touch events.
+
 ```js
 <Manifest url={manifests.main}>
   <CanvasProvider startCanvas={72}>
@@ -61,7 +64,7 @@ which by default fills up all the available space.
             {isFullscreen ? (
               <button onClick={exitFullscreen}>Exit fullscreen</button>
             ) : (
-              <button onClick={goFullscreen}>Go fullscreen</button>
+              'Click the image to go fullscreen'
             )}
             <CanvasNavigation {...props} />
           </div>
@@ -81,9 +84,9 @@ which by default fills up all the available space.
             <SingleTileSource {...props}>
               {/* this is the view when we are not full screen */}
               <Viewport maxWidth={500}>
-                <OpenSeadragonViewport
+                <StaticImageViewport
                   viewportController={true}
-                  maxHeight={500}
+                  onClick={goFullscreen}
                 />
                 <AnnotationCanvasRepresentation
                   ratio={0.1}

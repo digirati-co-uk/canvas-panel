@@ -7,6 +7,7 @@ Static image viewport.
   <CanvasProvider startCanvas={4}>
     <Viewport maxWidth={500}>
       <StaticImageViewport
+        draggable={true}
         viewportController={true}
         maxHeight={500}
         maxWidth={500}
