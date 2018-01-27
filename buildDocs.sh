@@ -3,12 +3,12 @@
 rm -rf ./dist
 
 # Link dependencies correctly.
-npm run link
+yarn run link
 
 # Build cookbook example site (base)
-npm run build-cookbook
+yarn run build-cookbook
 mv ./packages/canvas-panel-cookbook/dist .
 
 # Build documentation
-npm run build-docs
+yarn run build-docs
 mv ./packages/canvas-panel-core/styleguide ./dist
