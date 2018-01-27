@@ -6,7 +6,7 @@ IIIF Presentation 3 specification.
 
 For more information and background, see [About CanvasPanel](about.md)
 
-## [View demo](https://canvas-panel-proto.netlify.com/)
+## [View demo](https://canvas-panel.netlify.com/)
 
 To install the project, run from the root
 
