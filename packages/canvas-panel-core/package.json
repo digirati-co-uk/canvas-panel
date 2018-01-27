@@ -25,7 +25,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-draggable": "^3.0.5",
-    "react-measure": "^2.0.2"
+    "react-measure": "^2.0.2",
+    "screenfull": "^3.3.2"
   },
   "devDependencies": {
     "create-nwb-webpack-config": "^1.0.0",
