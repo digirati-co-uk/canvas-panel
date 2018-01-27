@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './Patchwork';
 import FullPagePatchwork from './FullPagePatchwork';
 import './App.css';
