@@ -12,3 +12,28 @@
   font-family: sans-serif;
   font-weight: 300;
 }
+
+.title-panel__inner {
+  color: #fff;
+  font-weight: 300;
+  padding: 30px;
+  margin: auto;
+  text-align: center;
+}
+
+.page-panel {
+  width: 500px;
+  height: 100vh;
+}
+
+.page-panel__inner {
+  background: #fff;
+  padding: 30px;
+  margin-left: 40px;
+  box-shadow: 0px 10px 40px 0px rgba(0,0,0,.1);
+}
+
+.full-page-container {
+  z-index: 1;
+  position: relative;
+}

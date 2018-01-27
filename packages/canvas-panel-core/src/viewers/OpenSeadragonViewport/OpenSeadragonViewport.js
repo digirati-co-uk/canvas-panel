@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OpenSeadragon from 'openseadragon';
+import OpenSeadragonViewer from '../OpenSeadragonViewer/OpenSeadragonViewer';
 import functionOrMapChildren from '../../utility/functionOrMapChildren';
 
 class OpenSeadragonViewport extends Component {
@@ -86,6 +87,16 @@ class OpenSeadragonViewport extends Component {
   render() {
     const { canvasScale } = this.state;
     const { children, ...props } = this.props;
+
+    if (!children) {
+      return (
+        <OpenSeadragonViewer
+          {...props}
+          canvasScale={canvasScale}
+          onImageLoaded={this.setViewer}
+        />
+      );
+    }
 
     return functionOrMapChildren(children, {
       canvasScale: canvasScale,

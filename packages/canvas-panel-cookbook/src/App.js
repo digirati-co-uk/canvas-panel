@@ -39,6 +39,9 @@ const App = () => (
               Full page
             </NavLink>
           </li>
+          <li>
+            <a href="/styleguide">Documentation</a>
+          </li>
         </ul>
       </header>
 

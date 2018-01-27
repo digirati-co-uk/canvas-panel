@@ -1,60 +1,18 @@
 import React, { Component } from 'react';
-import Measure from 'react-measure';
 import {
   Manifest,
   CanvasProvider,
-  Viewport,
   SingleTileSource,
   OpenSeadragonViewer,
   OpenSeadragonViewport,
   AnnotationDetail,
-  AnnotationCanvasRepresentation,
   AnnotationListProvider,
   AnnotationProvider,
+  FullPageViewport,
   functionOrMapChildren,
 } from '@canvas-panel/core';
+
 import './FullPagePatchwork.css';
-
-class FullPageViewport extends Component {
-  state = {
-    dimensions: {
-      width: -1,
-      height: -1,
-    },
-  };
-
-  render() {
-    const { osdOptions, ...props } = this.props;
-    const { width, height } = this.state.dimensions;
-    return (
-      <Measure
-        bounds
-        onResize={contentRect => {
-          this.setState({ dimensions: contentRect.bounds });
-        }}
-      >
-        {({ measureRef }) => (
-          <div
-            ref={measureRef}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              bottom: 0,
-              right: 0,
-              zIndex: 0,
-              pointerEvents: 'none',
-            }}
-          >
-            <Viewport maxHeight={height} maxWidth={width} {...props}>
-              {this.props.children}
-            </Viewport>
-          </div>
-        )}
-      </Measure>
-    );
-  }
-}
 
 class Container extends Component {
   lastScrollY = -1;
@@ -67,8 +25,8 @@ class Container extends Component {
   };
 
   componentWillMount() {
+    // Double tilde quicker than Math.floor, useful for scroll events.
     const current = ~~(this.lastScrollY / this.props.windowHeight);
-    console.log(current);
     this.setState(() => ({ current }));
   }
 
@@ -95,6 +53,7 @@ class Container extends Component {
 
   handleScroll = () => {
     this.scheduledAnimationFrame = false;
+    // Double tilde quicker than Math.floor, useful for scroll events.
     const current = ~~(this.lastScrollY / this.props.windowHeight);
     if (current !== this.state.current) {
       this.setState(() => ({
@@ -104,16 +63,11 @@ class Container extends Component {
   };
 
   render() {
-    const { children, ...props } = this.props;
+    const { children, style, ...props } = this.props;
     const { current } = this.state;
 
     return (
-      <div
-        style={{
-          zIndex: 1,
-          position: 'relative',
-        }}
-      >
+      <div className="full-page-container" style={style}>
         {functionOrMapChildren(children, { ...props, current })}
       </div>
     );
@@ -124,17 +78,7 @@ class TitlePanel extends Component {
   render() {
     return (
       <div className="title-panel">
-        <div
-          style={{
-            color: '#fff',
-            fontWeight: 300,
-            padding: 30,
-            margin: 'auto',
-            textAlign: 'center',
-          }}
-        >
-          {this.props.children}
-        </div>
+        <div className="title-panel__inner">{this.props.children}</div>
       </div>
     );
   }
@@ -143,17 +87,8 @@ class TitlePanel extends Component {
 class PagePanel extends Component {
   render() {
     return (
-      <div style={{ width: '500px', height: '100vh' }}>
-        <div
-          style={{
-            background: '#fff',
-            padding: 30,
-            marginLeft: 40,
-            boxShadow: '0px 10px 40px 0px rgba(0,0,0,.1)',
-          }}
-        >
-          {this.props.children}
-        </div>
+      <div className="page-panel">
+        <div className="page-panel__inner">{this.props.children}</div>
       </div>
     );
   }
@@ -205,6 +140,7 @@ class AnnotationListView extends Component {
 
 class FullPagePatchwork extends Component {
   state = { viewport: null };
+
   setViewport = viewport => {
     this.setState({ viewport });
   };
@@ -216,13 +152,11 @@ class FullPagePatchwork extends Component {
           <CanvasProvider>
             <FullPageViewport setRef={this.setViewport}>
               <SingleTileSource viewportController={true}>
-                <OpenSeadragonViewport>
-                  <OpenSeadragonViewer
-                    osdOptions={{
-                      immediateRender: false,
-                    }}
-                  />
-                </OpenSeadragonViewport>
+                <OpenSeadragonViewport
+                  osdOptions={{
+                    immediateRender: false,
+                  }}
+                />
               </SingleTileSource>
             </FullPageViewport>
             <Container>
