@@ -23,6 +23,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "link": "lerna link",
+    "build-core": "cd packages/canvas-panel-core && yarn run build",
     "build-docs": "cd packages/canvas-panel-core && yarn run styleguide:build",
     "build-cookbook": "cd packages/canvas-panel-cookbook && yarn run build"
   },
