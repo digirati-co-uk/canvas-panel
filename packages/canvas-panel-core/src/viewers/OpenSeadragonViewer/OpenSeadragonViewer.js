@@ -120,6 +120,7 @@ class OpenSeadragonViewer extends Component<
       blendTime: 0.1,
       minPixelRatio: 0.5,
       visibilityRatio: 0.65,
+      minZoomImageRatio: 1,
       constrainDuringPan: false,
       showSequenceControl: false,
       showNavigationControl: false,
@@ -144,6 +145,27 @@ class OpenSeadragonViewer extends Component<
       }
     });
   }
+
+  getMinZoom = () => {
+    if (this.viewer) {
+      return this.viewer.viewport.getMinZoom();
+    }
+    return 0;
+  };
+
+  getMaxZoom = () => {
+    if (this.viewer) {
+      return this.viewer.viewport.getMaxZoom();
+    }
+    return 1;
+  };
+
+  getZoom = () => {
+    if (this.viewer) {
+      return this.viewer.viewport.getZoom();
+    }
+    return 0;
+  };
 
   zoomIn = (speed: number) => {
     this.viewportAction('zoomBy', [1 / 0.7], speed);
@@ -242,7 +264,7 @@ class OpenSeadragonViewer extends Component<
       return null;
     }
 
-    return { x, y, zoom: this.viewer.viewport.getZoom() };
+    return { x, y, zoom: this.getZoom() };
   }
 
   setRef = (el: any) => (this.element = el);

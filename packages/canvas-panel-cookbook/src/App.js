@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './Patchwork';
 import FullPagePatchwork from './FullPagePatchwork';
 import './App.css';
+import PopOut from './PopOut';
 
 const Homepage = () => (
   <section
@@ -713,6 +714,11 @@ const App = () => (
             </NavLink>
           </li>
           <li>
+            <NavLink activeClassName="navigation-active" to="/popout">
+              Pop out
+            </NavLink>
+          </li>
+          <li>
             <a href="/styleguide">Documentation</a>
           </li>
         </ul>
@@ -722,6 +728,7 @@ const App = () => (
       <Route exact path="/about" component={About} />
       <Route path="/patchwork" component={Patchwork} />
       <Route path="/fullpage" component={FullPagePatchwork} />
+      <Route path="/popout" component={PopOut} />
     </main>
   </Router>
 );

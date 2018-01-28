@@ -45,6 +45,14 @@ class OpenSeadragonViewport extends Component {
     // Redraw
     const viewportZoom = viewer.viewport.getZoom(true);
     const zoom = firstImage.viewportToImageZoom(viewportZoom);
+    const imageRatio =
+      firstImage._scaleSpring.current.value *
+      firstImage.viewport._containerInnerSize.x /
+      firstImage.source.dimensions.x;
+
+    const isZoomedOut =
+      viewportZoom.toFixed(2) === viewer.viewport.getMinZoom().toFixed(2);
+
     const rotation = viewer.viewport.getRotation();
 
     const x =
@@ -65,6 +73,8 @@ class OpenSeadragonViewport extends Component {
           zoom,
           scale: this.state.scale,
           rotation,
+          imageRatio,
+          isZoomedOut,
         });
       }
 
