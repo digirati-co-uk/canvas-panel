@@ -21,14 +21,36 @@ class Viewport extends Component {
     }
   }
 
-  onUpdateViewport = ({ x, y, zoom, scale, rotation }) => {
+  onUpdateViewport = ({
+    x,
+    y,
+    zoom,
+    scale,
+    rotation,
+    imageRatio,
+    isZoomedOut = true,
+  }) => {
     this.setState({
       x,
       y,
       zoom,
       scale,
       rotation,
+      imageRatio,
+      isZoomedOut,
     });
+
+    if (this.props.onUpdateViewport) {
+      this.props.onUpdateViewport({
+        x,
+        y,
+        zoom,
+        scale,
+        rotation,
+        imageRatio,
+        isZoomedOut,
+      });
+    }
   };
 
   viewer = null;
@@ -43,6 +65,39 @@ class Viewport extends Component {
     }
   };
 
+  getMinZoom = () => {
+    if (this.viewer && this.viewer.getMinZoom) {
+      return this.viewer.getMinZoom();
+    }
+    return 1;
+  };
+
+  getMaxZoom = () => {
+    if (this.viewer && this.viewer.getMaxZoom) {
+      return this.viewer.getMaxZoom();
+    }
+    return 0;
+  };
+
+  getZoom = () => {
+    if (this.viewer && this.viewer.getZoom) {
+      return this.viewer.getZoom();
+    }
+    return 0;
+  };
+
+  zoomIn = speed => {
+    if (this.viewer && this.viewer.zoomIn) {
+      this.viewer.zoomIn(speed);
+    }
+  };
+
+  zoomOut = speed => {
+    if (this.viewer && this.viewer.zoomOut) {
+      this.viewer.zoomOut(speed);
+    }
+  };
+
   resetView = speed => {
     if (this.viewer && this.viewer.resetView) {
       this.viewer.resetView(speed);
@@ -50,7 +105,7 @@ class Viewport extends Component {
   };
 
   render() {
-    const { x, y, zoom, scale, rotation } = this.state;
+    const { x, y, zoom, scale, rotation, imageRatio, isZoomedOut } = this.state;
     const { maxWidth, maxHeight, children, style, ...props } = this.props;
 
     return (
@@ -96,6 +151,8 @@ class Viewport extends Component {
               zoom,
               scale: scale / ratio,
               rotation,
+              imageRatio,
+              isZoomedOut,
             },
             maxWidth,
             ...props,
