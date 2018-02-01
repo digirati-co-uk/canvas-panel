@@ -7,29 +7,25 @@ class AnnotationRepresentation extends Component {
     const {
       annotations,
       onClickAnnotation,
-      annotationClassName,
       annotationStyle,
       growthStyle,
       ...props
     } = this.props;
     return (
       <CanvasRepresentation {...props}>
-        {annotations.map(({ annotation, on }, key) => {
-          return (
-            <Annotation
-              key={key}
-              x={on.selector.x}
-              y={on.selector.y}
-              height={on.selector.height}
-              width={on.selector.width}
-              annotation={annotation}
-              style={annotationStyle}
-              className={annotationClassName}
-              onClick={onClickAnnotation}
-              growthStyle={growthStyle}
-            />
-          );
-        })}
+        {annotations.map(({ annotation, on }, key) => (
+          <Annotation
+            key={key}
+            x={on.selector.x}
+            y={on.selector.y}
+            height={on.selector.height}
+            width={on.selector.width}
+            annotation={annotation}
+            style={annotationStyle}
+            onClick={onClickAnnotation}
+            growthStyle={growthStyle}
+          />
+        ))}
       </CanvasRepresentation>
     );
   }

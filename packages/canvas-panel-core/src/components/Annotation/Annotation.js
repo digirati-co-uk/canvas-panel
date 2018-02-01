@@ -1,23 +1,39 @@
+/**
+ * @flow
+ */
+
 import React, { Component } from 'react';
-import * as PropTypes from 'prop-types';
 import * as Manifesto from 'manifesto.js';
+import { withBemClass } from '../Bem/Bem';
+import type { BemBlockType } from '../Bem/Bem';
 
-class Annotation extends Component {
-  static propTypes = {
-    annotation: PropTypes.instanceOf(Manifesto.Annotation),
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
-    width: PropTypes.number,
-    height: PropTypes.number,
-  };
+type Vector = {
+  x: number,
+  y: number,
+  width?: number,
+  height?: number,
+};
 
+type Props = {
+  ...Vector,
+  annotation: Manifesto.Annotation,
+  bem: BemBlockType,
+  style: { [string]: any },
+  onClick: (
+    annotation: Manifesto.Annotation,
+    vect: Vector,
+    e: MouseEvent
+  ) => void,
+};
+
+class Annotation extends Component<Props> {
   handleClick = e =>
     this.props.onClick
       ? this.props.onClick(
           this.props.annotation,
           {
-            x: this.props.x,
-            y: this.props.y,
+            x: this.props.x || 0,
+            y: this.props.y || 0,
             width: this.props.width,
             height: this.props.height,
           },
@@ -26,11 +42,9 @@ class Annotation extends Component {
       : null;
 
   render() {
-    const { style, className } = this.props;
-    return (
-      <div className={className} style={style} onClick={this.handleClick} />
-    );
+    const { style, bem } = this.props;
+    return <div className={bem} style={style} onClick={this.handleClick} />;
   }
 }
 
-export default Annotation;
+export default withBemClass('annotation')(Annotation);

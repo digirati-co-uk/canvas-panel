@@ -47,6 +47,7 @@ module.exports = {
     'no-shadow': ERROR,
     'no-unused-expressions': ERROR,
     'no-useless-concat': OFF,
+    'flowtype/no-types-missing-file-annotation': OFF,
     quotes: [
       ERROR,
       'single',

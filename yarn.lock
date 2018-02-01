@@ -1288,7 +1288,13 @@ babel-preset-env@1.6.1:
     invariant "^2.2.2"
     semver "^5.3.0"
 
-babel-preset-es2015@6.24.1:
+babel-preset-es2015-native-modules@^6.9.4:
+  version "6.9.4"
+  resolved "https://registry.yarnpkg.com/babel-preset-es2015-native-modules/-/babel-preset-es2015-native-modules-6.9.4.tgz#ad2e0ff3a2cd879c1d8fc994ab33b4b80d2b5057"
+  dependencies:
+    babel-preset-es2015 latest
+
+babel-preset-es2015@6.24.1, babel-preset-es2015@latest:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-es2015/-/babel-preset-es2015-6.24.1.tgz#d44050d6bc2c9feea702aaf38d727a0210538939"
   dependencies:
@@ -2738,6 +2744,10 @@ create-nwb-webpack-config@^1.0.0:
   dependencies:
     nwb "^0.19.1"
 
+create-react-context@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.1.4.tgz#67da7ca1f5db00b7df1932f82940c468b04267cc"
+
 cross-spawn@5.1.0, cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -3206,6 +3216,10 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+digirati-bem-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/digirati-bem-js/-/digirati-bem-js-1.0.0.tgz#4bbd890cdf4f4ec138ebf8ee370f2f04844bfac4"
 
 dir-glob@^2.0.0:
   version "2.0.0"
@@ -7561,7 +7575,7 @@ nwb@0.18.x:
     webpack-merge "4.1.0"
     whatwg-fetch "2.0.3"
 
-nwb@^0.19.1:
+nwb@0.19.x, nwb@^0.19.1:
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/nwb/-/nwb-0.19.2.tgz#a2c7eb57fe151961eacd660b8e7810f01ae33366"
   dependencies:

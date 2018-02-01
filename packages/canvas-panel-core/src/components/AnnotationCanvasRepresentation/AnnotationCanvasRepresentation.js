@@ -8,7 +8,6 @@ class AnnotationCanvasRepresentation extends Component {
   static propTypes = {
     annotationStyle: PropTypes.object,
     onClickAnnotation: PropTypes.func,
-    annotationClassName: PropTypes.string,
     growthStyle: PropTypes.oneOf(['fixed', 'scaled', 'absolute']),
   };
 
@@ -20,7 +19,6 @@ class AnnotationCanvasRepresentation extends Component {
     const {
       annotationStyle,
       growthStyle,
-      annotationClassName,
       onClickAnnotation,
       ...props
     } = this.props;
@@ -32,7 +30,6 @@ class AnnotationCanvasRepresentation extends Component {
             onClickAnnotation={onClickAnnotation}
             annotationStyle={annotationStyle}
             growthStyle={growthStyle}
-            annotationClassName={annotationClassName}
           />
         </AnnotationProvider>
       </AnnotationListProvider>

@@ -688,6 +688,11 @@ const About = () => (
   </section>
 );
 
+const ScrollToTop = () => {
+  window.scrollTo(0, 0);
+  return null;
+};
+
 const App = () => (
   <Router>
     <main>
@@ -723,7 +728,7 @@ const App = () => (
           </li>
         </ul>
       </header>
-
+      <Route component={ScrollToTop} />
       <Route exact path="/" component={Homepage} />
       <Route exact path="/about" component={About} />
       <Route path="/patchwork" component={Patchwork} />
