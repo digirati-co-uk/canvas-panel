@@ -19,7 +19,7 @@ Here are some potential usage scenarios:
 * [The Garden of Earthly Delights](https://tuinderlusten-jheronimusbosch.ntr.nl/en)
 * [Sleep Stories](http://ghp.wellcomecollection.org/annotation-viewer/quilt/) (and [dev version with tagging annotations](http://ghp.wellcomecollection.org/annotation-viewer/quilt.html))
 * [Ann West’s Patchwork](https://www.vam.ac.uk/articles/ann-wests-patchwork), and [a variant UI](https://www.google.com/culturalinstitute/beta/story/AgISuICLClPdIQ)
-* (central panel of) [O’Shaughnessy memoir](https://exhibitions.library.nuigalway.ie/oshaughnessy-memoir/) (with linking annotations)
+* (central panel of) [O’Shaughnessy memoir](https://exhibitions.library.nuigalway.ie/oshaughnessy-memoir/) (prototype, with linking annotations) / [latest build](https://deploy-preview-49--galway-viewer.netlify.com/)
 * Digirati [Annotation Studio](https://github.com/digirati-co-uk/annotation-studio)
 * UV’s OpenSeadragon Extension
 * Mirador’s central panel
