@@ -33,6 +33,7 @@ const defaultConfiguration = {
   growthStyle: 'fixed',
   closeText: '×',
   relativeContainer: true,
+  clickToClose: true,
 };
 
 class Main extends Component {
@@ -47,7 +48,16 @@ class Main extends Component {
   setViewport = viewport => (this.viewport = viewport);
 
   onClickAnnotation = (annotation, bounds) => {
+    const { clickToClose } = this.props;
     this.dispatch('onClickAnnotation', { annotation, bounds });
+
+    if (
+      clickToClose &&
+      (this.state.annotation && this.state.annotation.id === annotation.id)
+    ) {
+      return this.onClose();
+    }
+
     this.setState({ annotation });
     this.viewport.goToRect(
       bounds,
@@ -117,6 +127,11 @@ class Main extends Component {
                 </SingleTileSource>
                 <AnnotationCanvasRepresentation
                   growthStyle={growthStyle}
+                  bemModifiers={annotation => ({
+                    selected: state.annotation
+                      ? state.annotation.id === annotation.id
+                      : null,
+                  })}
                   onClickAnnotation={this.onClickAnnotation}
                 />
               </Viewport>

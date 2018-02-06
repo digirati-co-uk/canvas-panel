@@ -14,6 +14,7 @@ const defaultContext = {
 export type BemBlockType = {
   element(name: string): BemElementType | string,
   modifier(name: string): BemBlockType | string,
+  modifiers({ [string]: boolean }): BemBlockType | string,
 };
 
 export type BemElementType = {

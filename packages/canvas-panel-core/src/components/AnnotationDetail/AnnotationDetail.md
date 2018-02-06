@@ -7,31 +7,45 @@ const animationSpeed = 1;
 initialState = { annotation: null, viewport: null };
 <div style={{ padding: 10 }}>
   <div style={{ width: 450, display: 'inline-block' }}>
-    <Manifest url={manifests.main}>
-      <CanvasProvider startCanvas={72}>
-        <Viewport
-          maxWidth={450}
-          setRef={v => {
-            viewport = v;
-          }}
-        >
-          <SingleTileSource viewportController={true}>
-            <OpenSeadragonViewport>
-              <OpenSeadragonViewer maxHeight={1000} />
-            </OpenSeadragonViewport>
-          </SingleTileSource>
-          <AnnotationCanvasRepresentation
-            ratio={0.1}
-            annotationStyle={{ outline: '2px solid purple' }}
-            growthStyle="fixed"
-            onClickAnnotation={(annotation, bounds) => {
-              setState({ annotation });
-              viewport.goToRect(bounds, 300, animationSpeed);
+    <Bem cssClassMap={{ annotation: 'annotation-detail-md-annotation' }}>
+      <Manifest url={manifests.main}>
+        <CanvasProvider startCanvas={72}>
+          <Viewport
+            maxWidth={450}
+            setRef={v => {
+              viewport = v;
             }}
-          />
-        </Viewport>
-      </CanvasProvider>
-    </Manifest>
+          >
+            <SingleTileSource viewportController={true}>
+              <OpenSeadragonViewport>
+                <OpenSeadragonViewer maxHeight={1000} />
+              </OpenSeadragonViewport>
+            </SingleTileSource>
+            <AnnotationCanvasRepresentation
+              ratio={0.1}
+              growthStyle="fixed"
+              bemModifiers={annotation => ({
+                selected: state.annotation
+                  ? state.annotation.id === annotation.id
+                  : null,
+              })}
+              onClickAnnotation={(annotation, bounds) => {
+                setState({ annotation });
+                viewport.goToRect(bounds, 300, animationSpeed);
+              }}
+            />
+          </Viewport>
+        </CanvasProvider>
+      </Manifest>
+    </Bem>
+    <style>{`
+      .annotation-detail-md-annotation {
+        outline: 2px solid purple;
+      }
+      .annotation-detail-md-annotation--selected {
+        outline: 2px solid orange;
+      }
+      `}</style>
   </div>
   <div style={{ width: 300, display: 'inline-block', padding: 30 }}>
     {state.annotation ? (

@@ -13,6 +13,10 @@ type Props = {
 };
 
 class AnnotationDetail extends Component<Props> {
+  static defaultProps = {
+    closeText: 'close',
+  };
+
   render() {
     const { annotation, onClose, closeText, bem } = this.props;
     const resource = annotation.getResource();

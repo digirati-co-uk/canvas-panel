@@ -9,6 +9,7 @@ class AnnotationRepresentation extends Component {
       onClickAnnotation,
       annotationStyle,
       growthStyle,
+      bemModifiers,
       ...props
     } = this.props;
     return (
@@ -24,6 +25,7 @@ class AnnotationRepresentation extends Component {
             style={annotationStyle}
             onClick={onClickAnnotation}
             growthStyle={growthStyle}
+            bemModifiers={bemModifiers}
           />
         ))}
       </CanvasRepresentation>
