@@ -1,37 +1,41 @@
+/**
+ * @flow
+ */
 import React, { Component } from 'react';
-import * as PropTypes from 'prop-types';
 import * as Manifesto from 'manifesto.js';
+import { withBemClass, type BemBlockType } from '../Bem/Bem';
 
-class AnnotationDetail extends Component {
-  static propTypes = {
-    annotation: PropTypes.instanceOf(Manifesto.Annotation),
-    onClose: PropTypes.func,
-    closeText: PropTypes.string,
-    closeClassName: PropTypes.string,
-  };
+type Props = {
+  annotation: Manifesto.Annotation,
+  onClose: (e: MouseEvent) => void,
+  closeText: string,
+  bem: BemBlockType,
+};
 
-  static defaultProps = {
-    closeText: 'close',
-  };
-
+class AnnotationDetail extends Component<Props> {
   render() {
-    const { annotation, onClose, closeText, closeClassName } = this.props;
+    const { annotation, onClose, closeText, bem } = this.props;
     const resource = annotation.getResource();
     const bodies = annotation.getBody();
 
     if (bodies.length) {
       return (
-        <div>
+        <div className={bem}>
           {bodies.map((body, key) => {
             return (
               <div key={key}>
-                {body.__jsonld.label ? <h1>{body.__jsonld.label}</h1> : null}
+                {body.__jsonld.label ? (
+                  <h1 className={bem.element('label')}>
+                    {body.__jsonld.label}
+                  </h1>
+                ) : null}
                 <div
+                  className={bem.element('value')}
                   key={key}
                   dangerouslySetInnerHTML={{ __html: body.__jsonld.value }}
                 />
                 {onClose ? (
-                  <button className={closeClassName} onClick={onClose}>
+                  <button className={bem.element('close')} onClick={onClose}>
                     {closeText}
                   </button>
                 ) : null}
@@ -45,11 +49,11 @@ class AnnotationDetail extends Component {
     if (resource && resource.getProperty('within')) {
       const toDisplay = resource.getProperty('within');
       return (
-        <div>
-          <h1>{toDisplay.label}</h1>
-          <p>{toDisplay.description}</p>
+        <div className={bem}>
+          <h1 className={bem.element('label')}>{toDisplay.label}</h1>
+          <p className={bem.element('description')}>{toDisplay.description}</p>
           {onClose ? (
-            <button className={closeClassName} onClick={onClose}>
+            <button className={bem.element('close')} onClick={onClose}>
               {closeText}
             </button>
           ) : null}
@@ -58,11 +62,13 @@ class AnnotationDetail extends Component {
     }
 
     return (
-      <div>
-        <h1>{annotation.getLabel()}</h1>
-        <p>{annotation.getProperty('description')}</p>
+      <div className={bem}>
+        <h1 className={bem.element('label')}>{annotation.getLabel()}</h1>
+        <p className={bem.element('description')}>
+          {annotation.getProperty('description')}
+        </p>
         {onClose ? (
-          <button className={closeClassName} onClick={onClose}>
+          <button className={bem.element('close')} onClick={onClose}>
             {closeText}
           </button>
         ) : null}
@@ -71,4 +77,4 @@ class AnnotationDetail extends Component {
   }
 }
 
-export default AnnotationDetail;
+export default withBemClass('annotation-detail')(AnnotationDetail);

@@ -3,6 +3,7 @@ import Annotation from './components/Annotation/Annotation';
 import AnnotationCanvasRepresentation from './components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation';
 import AnnotationDetail from './components/AnnotationDetail/AnnotationDetail';
 import AnnotationRepresentation from './components/AnnotationRepresentation/AnnotationRepresentation';
+import Bem from './components/Bem/Bem';
 import CanvasNavigation from './components/CanvasNavigation/CanvasNavigation';
 import CanvasRepresentation from './components/CanvasRepresentation/CanvasRepresentation';
 import SingleTileSource from './components/SingleTileSource/SingleTileSource';
@@ -24,6 +25,7 @@ export {
   AnnotationCanvasRepresentation,
   AnnotationDetail,
   AnnotationRepresentation,
+  Bem,
   CanvasNavigation,
   CanvasRepresentation,
   SingleTileSource,

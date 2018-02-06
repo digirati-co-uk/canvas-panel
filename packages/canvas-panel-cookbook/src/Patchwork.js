@@ -8,6 +8,7 @@ import {
   OpenSeadragonViewport,
   AnnotationDetail,
   AnnotationCanvasRepresentation,
+  Bem,
 } from '@canvas-panel/core';
 
 import p3manifest from '../../../tests/patchwork';
@@ -36,42 +37,45 @@ class Patchwork extends Component {
     return (
       <AnnWest>
         <div className="patchwork-container">
-          <Manifest jsonLd={p3manifest}>
-            <CanvasProvider>
-              <Viewport
-                maxWidth={1200}
-                maxHeight={500}
-                setRef={this.setViewport}
-              >
-                <SingleTileSource viewportController={true}>
-                  <OpenSeadragonViewport>
-                    <OpenSeadragonViewer
-                      osdOptions={{
-                        visibilityRatio: 1,
-                        constrainDuringPan: true,
-                        showNavigator: false,
-                      }}
-                    />
-                  </OpenSeadragonViewport>
-                </SingleTileSource>
-                <AnnotationCanvasRepresentation
-                  growthStyle="fixed"
-                  onClickAnnotation={this.onClickAnnotation}
-                  annotationClassName="annotation-pin"
-                />
-              </Viewport>
-            </CanvasProvider>
-          </Manifest>
-          {state.annotation ? (
-            <div className="annotation-detail">
+          <Bem
+            cssClassMap={{
+              annotation: 'annotation-pin',
+            }}
+            prefix="patchwork-"
+          >
+            <Manifest jsonLd={p3manifest}>
+              <CanvasProvider>
+                <Viewport
+                  maxWidth={1200}
+                  maxHeight={500}
+                  setRef={this.setViewport}
+                >
+                  <SingleTileSource viewportController={true}>
+                    <OpenSeadragonViewport>
+                      <OpenSeadragonViewer
+                        osdOptions={{
+                          visibilityRatio: 1,
+                          constrainDuringPan: true,
+                          showNavigator: false,
+                        }}
+                      />
+                    </OpenSeadragonViewport>
+                  </SingleTileSource>
+                  <AnnotationCanvasRepresentation
+                    growthStyle="fixed"
+                    onClickAnnotation={this.onClickAnnotation}
+                  />
+                </Viewport>
+              </CanvasProvider>
+            </Manifest>
+            {state.annotation ? (
               <AnnotationDetail
-                closeClassName="annotation-close"
                 closeText="&times;"
                 annotation={state.annotation}
                 onClose={this.onClose}
               />
-            </div>
-          ) : null}
+            ) : null}
+          </Bem>
         </div>
       </AnnWest>
     );
