@@ -159,6 +159,23 @@
                       "http://digirati-co-uk.github.io/canvas-panel-proto/tests/patchwork/canvas/1#xywh=20000,20000,500,500",
                     "type": "Canvas"
                   }
+                },
+                {
+                  "id":
+                    "http://digirati-co-uk.github.io/canvas-panel-proto/tests/patchwork/canvas/1/marker-annos/5",
+                  "type": "Annotation",
+                  "motivation": "describing",
+                  "body": {
+                    "type": "TextualBody",
+                    "value":
+                      "<h2>Variation 5</h2><p>HTML, heading provided by markup. <img src=\"https://picsum.photos/200/300/?random\"/></p>",
+                    "format": "text/html"
+                  },
+                  "target": {
+                    "id":
+                      "http://digirati-co-uk.github.io/canvas-panel-proto/tests/patchwork/canvas/1#xywh=22000,6000,1000,2000",
+                    "type": "Canvas"
+                  }
                 }
               ]
             }
