@@ -28,9 +28,10 @@ class Fullscreen extends Component<any, State> {
   }
 
   toggleFullscreen = () => {
-    const node = ReactDOM.findDOMNode(this);
-    if (node) {
-      screenfull.toggle(node);
+    if (this.state.isFullscreen) {
+      this.exitFullscreen();
+    } else {
+      this.goFullscreen();
     }
   };
 

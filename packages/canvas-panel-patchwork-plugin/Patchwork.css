@@ -29,6 +29,50 @@
   /*border: 1px solid #fff;*/
 }
 
+.patchwork-fullscreen-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .4);
+}
+
+.patchwork-fullscreen-toggle {
+  color: #1d1e20;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  padding: 9px 16px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #eee;
+  border-radius: 3px;
+  border: none;
+}
+
+.patchwork-fullscreen-toggle--is-mobile {
+  background: #F3F935;
+  color: #000;
+  width: 200px;
+  top: 50%;
+  right: 50%;
+  margin-right: -100px;
+}
+
+.patchwork-fullscreen-toggle--is-mobile.patchwork-fullscreen-toggle--is-fullscreen {
+  background: #eee;
+  color: #1d1e20;
+  width: initial;
+  top: 20px;
+  right: 20px;
+  margin-right: auto;
+}
+
 .patchwork-annotation-pin:before {
   cursor: pointer;
   pointer-events: initial;
@@ -74,9 +118,9 @@
 .patchwork-container {
   position: relative;
   background: #000;
-  maxWidth: 1200px;
+  max-width: 1200px;
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
 
 .patchwork-annotation-detail__close {
