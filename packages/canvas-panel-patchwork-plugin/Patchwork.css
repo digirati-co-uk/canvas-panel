@@ -30,6 +30,7 @@
 }
 
 .patchwork-annotation-pin:before {
+  cursor: pointer;
   pointer-events: initial;
   content: '+';
   position: absolute;
@@ -46,6 +47,12 @@
   line-height: 28px;
 }
 
+.patchwork-annotation-pin--selected:before {
+  content: '×';
+  background: #000;
+  color: #fff;
+}
+
 .patchwork-annotation-pin:after {
   content: '';
   position: absolute;
@@ -57,6 +64,11 @@
   top: 9px;
   text-align: center;
   line-height: 28px;
+}
+
+.patchwork-annotation-pin--selected:after {
+  background: #000;
+  color: #fff;
 }
 
 .patchwork-container {

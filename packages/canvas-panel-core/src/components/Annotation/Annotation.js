@@ -19,6 +19,10 @@ type Props = {
   annotation: Manifesto.Annotation,
   bem: BemBlockType,
   style: { [string]: any },
+  bemModifiers: (
+    annotation: Manifesto.Annotation,
+    props: Props
+  ) => { [string]: boolean },
   onClick: (
     annotation: Manifesto.Annotation,
     vect: Vector,
@@ -42,8 +46,18 @@ class Annotation extends Component<Props> {
       : null;
 
   render() {
-    const { style, bem } = this.props;
-    return <div className={bem} style={style} onClick={this.handleClick} />;
+    const { style, bem, bemModifiers, annotation } = this.props;
+    const modifiers = bemModifiers
+      ? bemModifiers(annotation, this.props)
+      : null;
+
+    return (
+      <div
+        className={modifiers ? bem.modifiers(modifiers) : bem}
+        style={style}
+        onClick={this.handleClick}
+      />
+    );
   }
 }
 
