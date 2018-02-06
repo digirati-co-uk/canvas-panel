@@ -9,7 +9,10 @@ import {
   OpenSeadragonViewport,
   AnnotationDetail,
   AnnotationCanvasRepresentation,
+  Fullscreen,
+  FullPageViewport,
   Bem,
+  withBemClass,
 } from '@canvas-panel/core';
 
 const defaultConfiguration = {
@@ -18,7 +21,7 @@ const defaultConfiguration = {
   animationSpeed: 500,
   animationSpeedMap: {},
   // @todo allow growing containers
-  // fitContainer: true,
+  fitContainer: true,
   // fixedSize: null, // { x, y }
   height: 500,
   annotationMargin: 600,
@@ -35,6 +38,52 @@ const defaultConfiguration = {
   relativeContainer: true,
   clickToClose: true,
 };
+
+const AdaptiveViewport = ({
+  fullViewport,
+  isFullscreen,
+  maxWidth,
+  maxHeight,
+  ...props
+}) => {
+  if (fullViewport || isFullscreen) {
+    return (
+      <FullPageViewport interactive={true} {...props}>
+        {props.children}
+      </FullPageViewport>
+    );
+  }
+
+  return (
+    <Viewport maxWidth={maxWidth} maxHeight={maxHeight} {...props}>
+      {props.children}
+    </Viewport>
+  );
+};
+
+const FullScreenToggle = withBemClass('fullscreen-toggle')(
+  ({ bem, toggleFullscreen, isFullscreen, mobileBreakpoint }) => (
+    <button
+      className={bem.modifiers({
+        'is-fullscreen': isFullscreen,
+        'is-mobile': window.innerWidth < mobileBreakpoint,
+      })}
+      onClick={toggleFullscreen}
+    >
+      {isFullscreen
+        ? 'exit'
+        : window.innerWidth < mobileBreakpoint
+          ? 'explore in fullscreen'
+          : 'fullscreen'}
+    </button>
+  )
+);
+
+const FullscreenCover = withBemClass('fullscreen-cover')(
+  ({ toggleFullscreen, bem }) => (
+    <div className={bem} onClick={toggleFullscreen} />
+  )
+);
 
 class Main extends Component {
   viewport = null;
@@ -100,51 +149,73 @@ class Main extends Component {
       growthStyle,
       closeText,
       relativeContainer,
+      fitContainer,
+      mobileBreakpoint,
     } = this.props;
 
     const state = this.state;
+
     return (
       <div style={relativeContainer ? { position: 'relative' } : {}}>
-        <Bem cssClassMap={cssClassMap} prefix={cssClassPrefix}>
-          <Manifest url={manifest}>
-            <CanvasProvider startCanvas={canvas}>
-              <Viewport
-                maxWidth={width}
-                maxHeight={height}
-                setRef={this.setViewport}
-              >
-                <SingleTileSource viewportController={true}>
-                  <OpenSeadragonViewport>
-                    <OpenSeadragonViewer
-                      osdOptions={{
-                        visibilityRatio: 1,
-                        constrainDuringPan: true,
-                        showNavigator: false,
-                        ...osdOptions,
-                      }}
-                    />
-                  </OpenSeadragonViewport>
-                </SingleTileSource>
-                <AnnotationCanvasRepresentation
-                  growthStyle={growthStyle}
-                  bemModifiers={annotation => ({
-                    selected: state.annotation
-                      ? state.annotation.id === annotation.id
-                      : null,
-                  })}
-                  onClickAnnotation={this.onClickAnnotation}
-                />
-              </Viewport>
-            </CanvasProvider>
-          </Manifest>
-          {state.annotation ? (
-            <AnnotationDetail
-              closeText={closeText}
-              annotation={state.annotation}
-              onClose={this.onClose}
-            />
-          ) : null}
-        </Bem>
+        <Fullscreen>
+          {({ isFullscreen, toggleFullscreen }) => (
+            <div>
+              <Bem cssClassMap={cssClassMap} prefix={cssClassPrefix}>
+                <Manifest url={manifest}>
+                  <CanvasProvider startCanvas={canvas}>
+                    <AdaptiveViewport
+                      isFullscreen={isFullscreen}
+                      fullViewport={fitContainer}
+                      maxWidth={width}
+                      maxHeight={height}
+                      setRef={this.setViewport}
+                    >
+                      <SingleTileSource viewportController={true}>
+                        <OpenSeadragonViewport>
+                          <OpenSeadragonViewer
+                            osdOptions={{
+                              visibilityRatio: 1,
+                              constrainDuringPan: true,
+                              showNavigator: false,
+                              ...osdOptions,
+                            }}
+                          />
+                        </OpenSeadragonViewport>
+                      </SingleTileSource>
+                      <AnnotationCanvasRepresentation
+                        growthStyle={growthStyle}
+                        bemModifiers={annotation => ({
+                          selected: state.annotation
+                            ? state.annotation.id === annotation.id
+                            : null,
+                        })}
+                        onClickAnnotation={this.onClickAnnotation}
+                      />
+                      {window.innerWidth < mobileBreakpoint &&
+                      isFullscreen === false ? (
+                        <FullscreenCover toggleFullscreen={toggleFullscreen} />
+                      ) : (
+                        <div />
+                      )}
+                      <FullScreenToggle
+                        isFullscreen={isFullscreen}
+                        toggleFullscreen={toggleFullscreen}
+                        mobileBreakpoint={mobileBreakpoint}
+                      />
+                    </AdaptiveViewport>
+                  </CanvasProvider>
+                </Manifest>
+                {state.annotation ? (
+                  <AnnotationDetail
+                    closeText={closeText}
+                    annotation={state.annotation}
+                    onClose={this.onClose}
+                  />
+                ) : null}
+              </Bem>
+            </div>
+          )}
+        </Fullscreen>
       </div>
     );
   }

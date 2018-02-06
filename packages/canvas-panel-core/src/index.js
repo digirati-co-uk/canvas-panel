@@ -3,9 +3,10 @@ import Annotation from './components/Annotation/Annotation';
 import AnnotationCanvasRepresentation from './components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation';
 import AnnotationDetail from './components/AnnotationDetail/AnnotationDetail';
 import AnnotationRepresentation from './components/AnnotationRepresentation/AnnotationRepresentation';
-import Bem from './components/Bem/Bem';
+import Bem, { withBemClass } from './components/Bem/Bem';
 import CanvasNavigation from './components/CanvasNavigation/CanvasNavigation';
 import CanvasRepresentation from './components/CanvasRepresentation/CanvasRepresentation';
+import Fullscreen from './components/Fullscreen/Fullscreen';
 import SingleTileSource from './components/SingleTileSource/SingleTileSource';
 import AnnotationListProvider from './manifesto/AnnotationListProvider/AnnotationListProvider';
 import AnnotationProvider from './manifesto/AnnotationProvider/AnnotationProvider';
@@ -28,6 +29,7 @@ export {
   Bem,
   CanvasNavigation,
   CanvasRepresentation,
+  Fullscreen,
   SingleTileSource,
   // Manifesto
   AnnotationListProvider,
@@ -44,4 +46,5 @@ export {
   Viewport,
   // Utils
   functionOrMapChildren,
+  withBemClass,
 };
