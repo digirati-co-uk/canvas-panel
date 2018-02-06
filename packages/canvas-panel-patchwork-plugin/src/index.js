@@ -17,11 +17,12 @@ import {
 
 const defaultConfiguration = {
   cssClassPrefix: '',
+  manifest: null,
+  jsonLdManifest: null,
   cssClassMap: {},
   animationSpeed: 500,
   animationSpeedMap: {},
-  // @todo allow growing containers
-  fitContainer: true,
+  fitContainer: false,
   // fixedSize: null, // { x, y }
   height: 500,
   annotationMargin: 600,
@@ -85,7 +86,7 @@ const FullscreenCover = withBemClass('fullscreen-cover')(
   )
 );
 
-class Main extends Component {
+class PatchworkPlugin extends Component {
   viewport = null;
   animationSpeed = 1;
   state = { annotation: null };
@@ -140,6 +141,7 @@ class Main extends Component {
   render() {
     const {
       manifest,
+      jsonLdManifest,
       canvas,
       height,
       width,
@@ -161,7 +163,7 @@ class Main extends Component {
           {({ isFullscreen, toggleFullscreen }) => (
             <div>
               <Bem cssClassMap={cssClassMap} prefix={cssClassPrefix}>
-                <Manifest url={manifest}>
+                <Manifest url={manifest} jsonLd={jsonLdManifest}>
                   <CanvasProvider startCanvas={canvas}>
                     <AdaptiveViewport
                       isFullscreen={isFullscreen}
@@ -223,15 +225,15 @@ class Main extends Component {
 
 function create(el, userConfiguration) {
   if (!el) {
-    console.error(`singleCanvasAnnotationDetailViewer: 
-      You must provide an 'el' property in the configuration pointing 
+    console.error(`singleCanvasAnnotationDetailViewer:
+      You must provide an 'el' property in the configuration pointing
       to the DOM element you want the viewer to be mounted at.
     `);
     return;
   }
 
-  if (!userConfiguration.manifest) {
-    console.error(`singleCanvasAnnotationDetailViewer: 
+  if (!userConfiguration.manifest || !userConfiguration.jsonLdManifest) {
+    console.error(`singleCanvasAnnotationDetailViewer:
       You must provide a URL pointing to a IIIF manifest, by default the first
       canvas will be used, you can pass in a 'canvas' to control which canvas
       should be displayed.
@@ -241,32 +243,32 @@ function create(el, userConfiguration) {
 
   const config = Object.assign({}, defaultConfiguration, userConfiguration);
 
-  ReactDOM.render(<Main {...config} />, el);
+  ReactDOM.render(<PatchworkPlugin {...config} />, el);
 }
 
 const help = function() {
   console.info(`
   singleCanvasAnnotationDetailViewer
   ==================================
-  
+
   In order to get set up using single canvas annotation detail viewer you must
   provide at least 2 configuration options:
    - el: this is the HTML element to target
    - manifest: this is a link to a IIIF manifest.
-   
+
    By default the first canvas in the IIIF manifest will be used. You can
    provider a canvas configuration value to change this (index).
-   
+
    A basic configuration might look like:
 
-   singleCanvasAnnotationDetailViewer.create(document.getElementById('myViewer'), { 
+   singleCanvasAnnotationDetailViewer.create(document.getElementById('myViewer'), {
       manifest: 'http:// ... /',
    });
-   
-   You can see the full set of default configuration values printed below in the 
+
+   You can see the full set of default configuration values printed below in the
    console.
   `);
   console.log(defaultConfiguration);
 };
 
-export { create, help };
+export { create, help, PatchworkPlugin };

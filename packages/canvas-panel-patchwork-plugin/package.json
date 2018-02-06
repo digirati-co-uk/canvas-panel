@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/patchwork-plugin",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Describe canvas-panel-patchwork-plugin here",
   "main": "lib/index.js",
   "module": "es/index.js",

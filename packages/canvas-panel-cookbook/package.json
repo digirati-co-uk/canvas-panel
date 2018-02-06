@@ -12,6 +12,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "@canvas-panel/patchwork-plugin": "^0.0.1",
     "@canvas-panel/core": "^0.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
