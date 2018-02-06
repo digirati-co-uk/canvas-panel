@@ -16,6 +16,8 @@ class Patchwork extends Component {
               annotation: 'annotation-pin',
             }}
             cssClassPrefix="patchwork-"
+            height={500}
+            width={1200}
           />
         </div>
       </AnnWest>

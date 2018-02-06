@@ -22,8 +22,7 @@ const defaultConfiguration = {
   cssClassMap: {},
   animationSpeed: 500,
   animationSpeedMap: {},
-  // @todo allow growing containers
-  fitContainer: true,
+  fitContainer: false,
   // fixedSize: null, // { x, y }
   height: 500,
   annotationMargin: 600,
