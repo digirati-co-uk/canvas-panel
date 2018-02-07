@@ -7,6 +7,8 @@
   border-radius: 3px;
   padding: 15px;
   font-size: 14px;
+  max-height: 320px;
+  overflow-y: auto;
 }
 
 .patchwork-annotation-detail__label {
@@ -132,6 +134,13 @@
   border: none;
   cursor: pointer;
   line-height: 30px;
+}
+
+@media (max-width: 479px) {
+  .patchwork-annotation-detail {
+    bottom: 30px;
+    top: auto;
+  }
 }
 
 .banner {
