@@ -7,3 +7,5 @@ npm-debug.log*
 /packages/*/styleguide
 package-lock.json
 *.log
+/forks
+/packages/manifesto
