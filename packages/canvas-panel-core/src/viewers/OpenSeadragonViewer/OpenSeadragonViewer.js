@@ -15,6 +15,7 @@ type OpenSeadragonViewerPropTypes = {
   showControls: ?boolean,
   getRef: any => void,
   osdOptions: any,
+  useMaxDimensions: boolean,
 };
 
 type OpenSeadragonViewerState = {
@@ -34,6 +35,7 @@ class OpenSeadragonViewer extends Component<
   element: any;
   static defaultProps = {
     osdOptions: {},
+    useMaxDimensions: false,
   };
 
   asyncAddTile(args: any): Promise<void> {
@@ -270,12 +272,20 @@ class OpenSeadragonViewer extends Component<
   setRef = (el: any) => (this.element = el);
 
   render() {
-    const { height, width, maxWidth, maxHeight, showControls } = this.props;
+    const {
+      height,
+      width,
+      maxWidth,
+      maxHeight,
+      showControls,
+      useMaxDimensions = false,
+    } = this.props;
     const heightRatio = maxHeight ? maxHeight / height : 1;
     const widthRatio = maxWidth ? maxWidth / width : 1;
     const scale = heightRatio < widthRatio ? heightRatio : widthRatio;
-    const actualHeight = height * scale;
-    const actualWidth = width * scale;
+    const actualHeight =
+      useMaxDimensions && maxHeight ? maxHeight : height * scale;
+    const actualWidth = useMaxDimensions && maxWidth ? maxWidth : width * scale;
 
     if (this.state.fallback) {
       return null;

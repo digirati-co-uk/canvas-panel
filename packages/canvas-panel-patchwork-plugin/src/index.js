@@ -27,6 +27,7 @@ const defaultConfiguration = {
   height: 500,
   annotationMargin: 600,
   width: 1200,
+  mobileHeight: window.innerWidth,
   renderAnnotation: null,
   allowFullScreen: true,
   events: {},
@@ -143,7 +144,8 @@ class PatchworkPlugin extends Component {
       manifest,
       jsonLdManifest,
       canvas,
-      height,
+      mobileHeight,
+      height: desktopHeight,
       width,
       osdOptions,
       cssClassMap,
@@ -154,6 +156,8 @@ class PatchworkPlugin extends Component {
       fitContainer,
       mobileBreakpoint,
     } = this.props;
+    const height =
+      window.innerWidth < mobileBreakpoint ? mobileHeight : desktopHeight;
 
     const state = this.state;
 
@@ -175,6 +179,7 @@ class PatchworkPlugin extends Component {
                       <SingleTileSource viewportController={true}>
                         <OpenSeadragonViewport>
                           <OpenSeadragonViewer
+                            useMaxDimensions={true}
                             osdOptions={{
                               visibilityRatio: 1,
                               constrainDuringPan: true,
