@@ -6,6 +6,8 @@ import './App.css';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
 import homeText from '../../../introduction.md';
+import roadmapText from '../../../roadmap.md';
+import logoUrl from './digirati-logo-white.svg';
 
 const RenderMarkdown = props => (
   <section
@@ -22,6 +24,8 @@ const RenderMarkdown = props => (
 const AboutText = () => <RenderMarkdown>{aboutText}</RenderMarkdown>;
 
 const HomeText = () => <RenderMarkdown>{homeText}</RenderMarkdown>;
+
+const RoadmapText = () => <RenderMarkdown>{roadmapText}</RenderMarkdown>;
 
 const Examples = examples => () => (
   <section style={{ maxWidth: 1100, margin: 'auto', padding: 30 }}>
@@ -54,12 +58,17 @@ const App = () => (
         <ul className="app-navigation">
           <li>
             <NavLink activeClassName="navigation-active" to="/">
-              Cookbook
+              Canvas Panel
             </NavLink>
           </li>
           <li>
             <NavLink activeClassName="navigation-active" to="/about">
               About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="navigation-active" to="/roadmap">
+              Roadmap
             </NavLink>
           </li>
           <li>
@@ -70,11 +79,22 @@ const App = () => (
           <li>
             <a href="/styleguide">Documentation</a>
           </li>
+
+          <li class="logo-item">
+            <a href="https://digirati.com/" target="_blank">
+              <img
+                className="app-logo"
+                src={logoUrl}
+                alt="created by Digirati"
+              />
+            </a>
+          </li>
         </ul>
       </header>
       <Route component={ScrollToTop} />
       <Route exact path="/" component={HomeText} />
       <Route exact path="/about" component={AboutText} />
+      <Route exact path="/roadmap" component={RoadmapText} />
       <Route exact path="/examples" component={Examples(exampleList)} />
       <Route path="/examples/patchwork" component={Patchwork} />
       <Route path="/examples/fullpage" component={FullPagePatchwork} />

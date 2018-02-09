@@ -25,11 +25,20 @@ body {
   z-index: 9999;
   font-size: 14px;
 }
+.app-logo {
+  height: 25px;
+  position: relative;
+  top: 7px;
+}
 
 .app-navigation li {
   display: inline;
   margin: 0;
   padding: 0;
+}
+
+.app-navigation .logo-item {
+  float: right;
 }
 
 .app-navigation .navigation-active {
