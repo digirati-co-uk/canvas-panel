@@ -14,14 +14,16 @@ If you want to build an ad hoc user experience from IIIF resources - content ass
 
 A Canvas is a scene, with content positioned in that scene through annotation. The `motivation` property of annotations influences the user experience. The content provided by the annotations might be static images, images with tile source services for deep zoom, text, comments, markers (highlights), video and audio sources, or custom application-specific datasets. In IIIF Presentation 3 the Canvas can have a duration, allowing content to be placed in time as well as space.
 
-Here are some potential usage scenarios:
+CanvasPanel is not just a renderer of that scene. It has additional API to allow an application to drive the user around the content of that scene, from annotation to annotation. It supports user experiences where the driving is entirely up to the user, and where the narrative is externally controlled. Many scenarios have a combination of these interactions.
+
+Here are some existing applications that a Canvas-level component would make easier to build:
 
 * [The Garden of Earthly Delights](https://tuinderlusten-jheronimusbosch.ntr.nl/en)
 * [Sleep Stories](http://ghp.wellcomecollection.org/annotation-viewer/quilt/) (and [dev version with tagging annotations](http://ghp.wellcomecollection.org/annotation-viewer/quilt.html))
 * [Ann West’s Patchwork](https://www.vam.ac.uk/articles/ann-wests-patchwork), and [a variant UI](https://www.google.com/culturalinstitute/beta/story/AgISuICLClPdIQ)
 * (central panel of) [O’Shaughnessy memoir](https://exhibitions.library.nuigalway.ie/oshaughnessy-memoir/) (prototype, with linking annotations) / [latest build](https://deploy-preview-49--galway-viewer.netlify.com/)
 * Digirati [Annotation Studio](https://github.com/digirati-co-uk/annotation-studio)
-* UV’s OpenSeadragon Extension
+* UV’s [OpenSeadragon Module](https://github.com/UniversalViewer/universalviewer/tree/master/src/modules/uv-seadragoncenterpanel-module) (central panel of UV when viewing image-based material)
 * Mirador’s central panel
 * [Fire AV Demo](https://tomcrane.github.io/fire/) (and [again](https://universalviewer.io/examples/#?c=0&m=0&s=0&cv=0&manifest=https%3A%2F%2Fiiif-commons.github.io%2Fiiif-av-component%2Fexamples%2Fdata%2Fiiif%2Ffire.json)) (and [again](https://kanzaki.com/works/2016/pub/image-annotator?u=https://tomcrane.github.io/fire/manifest3.json))
 * [Tchaikovsky: Serenade for Strings, 2nd Mov](https://kanzaki.com/works/2016/pub/image-annotator?u=/works/2017/annot/tchaiko-serenade-2mov-manifest.json)
@@ -35,13 +37,13 @@ Since the first version of this document, further development activity in the II
 * IIIF-AV requires duration consideration and therefore [canvas timing](https://gist.github.com/tomcrane/97a7c27e37455fed11f16365c8d90f7e)
 * Presentation 3 introduces the [transcribing](https://github.com/IIIF/api/issues/1258) motivation, which clarifies the intent of some text annotations
 * Presentation 3 introduces [canvas-on-canvas annotation](https://github.com/IIIF/api/issues/1191), which has some interesting benefits beyond packaged reuse of complex content.
-* There are emerging algorithms and best practices for [thumbnail](http://tomcrane.github.io/iiif-expts/getthumbnail/) provision
+* There are emerging algorithms and best practices for thumbnail provision ([experimental](http://tomcrane.github.io/iiif-expts/getthumbnail/) and [used in production](https://github.com/sul-dlss/iiif-evented-canvas/blob/master/src/thumbnailFactory.js))
 
 CanvasPanel doesn’t have its own UI, either for navigation (e.g., panning and zooming) or for the styling of rendering of annotations like map markers. However, out of the box it would come with an example of configuration, navigation and map marker images that can produce the Patchwork example through configuration alone.
 
 ## Architecture
 
-CanvasPanel need only work with a Presentation 3 Canvas, for simplicity. The component is initialised with a single Canvas, as a JavaScript object. How that Canvas was acquired is not CanvasPanel’s concern, but a simple cookbook recipe can show how to load a Canvas into it, either from a standalone dereferenceable Canvas URI, or by loading a Manifest then finding the specific Canvas within it. Canvases conforming to previous versions of the API can be converted to Presentation 3 by the JavaScript (runs in a browser) version of the [converter](https://github.com/iiif-prezi/prezi-2-to-3). This JavaScript version does [not yet exist](https://iiif.slackarchive.io/softwaredevs/page-13/ts-1515689562000053), but is needed for this and many other applications.
+CanvasPanel need only work with a Presentation 3 Canvas, for simplicity. The component is initialised with a single Canvas, passed as a JavaScript object. How that Canvas was acquired is not CanvasPanel’s concern, but a simple cookbook recipe can show how to load a Canvas into it, either from a standalone dereferenceable Canvas URI, or by loading a Manifest then finding the specific Canvas within it. Canvases conforming to previous versions of the API can be converted to Presentation 3 by the JavaScript (runs in a browser) version of the [converter](https://github.com/iiif-prezi/prezi-2-to-3). This JavaScript version does [not yet exist](https://iiif.slackarchive.io/softwaredevs/page-13/ts-1515689562000053), but is needed for this and many other applications.
 
 CanvasPanel is a component that renders, in a web browser. That is, it causes pixels to be drawn. Maybe it is a Web Component. It needs to do some of the same things that (say) Mirador does when you view textual annotations or toggle the visibility of image choice, driven by an interface of events, properties, methods.
 
@@ -51,7 +53,7 @@ For example:
 
 * Text transcriptions are part of the Canvas content, and could be rendered in the Canvas viewport (on top of images, perhaps) but could also be rendered to the side, by the higher level application. User selection of text lines or parts on the text “to the side” could be echoed by selection/highlighting on the canvas surface, as in [this example](https://dspace-glam.4science.it/explore?bitstream_id=1877&handle=1234/11&provider=iiif-image#?c=0&m=0&s=0&cv=0&xywh=-5874%2C-391%2C16846%2C7798) where the UV is the higher level application.
 
-* In the Patchwork example on the V&A site, the Canvas would have a linked annotation list of commenting annotations. CanvasPanel could drive the observed user experience, but needs to be configured with information such as:
+* In the Patchwork example on the V&A site, the Canvas has a linked annotation list of commenting annotations. CanvasPanel could drive the observed user experience, but needs to be configured with information such as:
 
   * The image to use for markers of point annotations
   * The image to use for a selected marker
@@ -60,15 +62,17 @@ For example:
   * Behaviour of the panel for entering and exiting full screen
   * CSS styling for the above
 
-Compare this with the quilt example - there are many similarities; to what extent is this the same component just differing in configuration? How much code should you have to write to produce each of these two user experiences from the same component? What does that code look like? How do you style it all with CSS? Do you need to hook into rendering events to take control, injecting content into the DOM, or are these two examples simple enough to work through configuration?
+Compare this with the Quilt example - there are many similarities; to what extent is this the same component just differing in configuration? How much code should you have to write to produce each of these two user experiences from the same component? What does that code look like? How do you style it all with CSS? Do you need to hook into rendering events to take control, injecting content into the DOM, or are these two examples simple enough to work through configuration?
 
 * In the Patchwork example on the Google Arts and Culture site, similar source data produces a very different user experience.
+
+CanvasPanel is a component, but we advance and develop it by building applications that need to use it to deliver a particular user experience. Use cases come from existing deep zoom interactives, narratives, guided exploration of images and other media, viewing tools, annotation tools, content creation tools. The component's shape and boundaries emerge slowly from this process.
 
 ## As a component
 
 If you’re looking to build a bespoke Manifest viewer, CanvasPanel is a major component of it. In this respect it can work with the UV just like the UV’s current OpenSeadragon module. It can sit in other harnesses too, the simplest being a web page that emits multiple CanvasPanels, one for each page, and passes them their appropriate Canvas after parsing the Manifest.
 
-The UV uses libraries like Manifesto, but so would CanvasPanel. What’s the relationship between them, the division of responsibility? CanvasPanel, to function as a standalone component, needs certain capabilities that typical containing applications are also likely to need. For example, collecting the text content of multiple canvases for some purpose. CanvasPanel has the means of collecting the text annotations because it might want to draw them; can the containing application reuse this capability for content collection and processing? That is, use CanvasPanel’s functionality on top of the Canvas model for its own purposes? Then CanvasPanel is doing two things - it’s a renderer, and a library of functionality on top of the model, like Manifesto+Manifold. CanvasPanel and the containing application are likely to be referencing the same libraries, implying a separation and collaboration between the containing application, CanvasPanel and these libraries - but that would hinder standalone usage. In the other direction, the Manifest-level client’s understanding of IIIF Ranges may be expressed by drawing range boundaries on the Canvas, through CanvasPanel’s API. An example Range is a newspaper article spread across pages and columns, covering parts of several Canvases. These boundaries/highlights aren’t coming from annotation content that the CanvasPanel component can see, they are Manifest-level structural information that the higher level client needs to express by highlighting the Range boundaries on the Canvas, through CanvasPanel’s API.
+The UV uses libraries like Manifesto, but so does CanvasPanel. What’s the relationship between them, the division of responsibility? CanvasPanel, to function as a standalone component, needs certain capabilities that typical containing applications are also likely to need. For example, collecting the text content of multiple canvases for some purpose. CanvasPanel has the means of collecting the text annotations because it might want to draw them; can the containing application reuse this capability for content collection and processing? That is, use CanvasPanel’s functionality on top of the Canvas model for its own purposes? Then CanvasPanel is doing two things - it’s a renderer, and a library of functionality on top of the model, like Manifesto+Manifold. CanvasPanel and the containing application are likely to be referencing the same libraries, implying a separation and collaboration between the containing application, CanvasPanel and these libraries - but that would hinder standalone usage. In the other direction, the Manifest-level client’s understanding of IIIF Ranges may be expressed by drawing range boundaries on the Canvas, through CanvasPanel’s API. An example Range is a newspaper article spread across pages and columns, covering parts of several Canvases. These boundaries/highlights aren’t coming from annotation content that the CanvasPanel component can see, they are Manifest-level structural information that the higher level client needs to express by highlighting the Range boundaries on the Canvas, through CanvasPanel’s API.
 
 CanvasPanel, then, needs to work with other components to render non-painting annotations outside of itself, but can supply those other components with prepared or transformed content to render. For example, text transcriptions; it can render them itself, on the canvas; or it can pass constructed text or html representation externally for rendering by a larger client (like the UV). “This is a representation of canvas content that you can choose to display off-canvas”. Same for commentary, textual and other media annotations that are not painting.
 
@@ -85,8 +89,6 @@ The rationale for this is ease of reuse of complex aggregations of content - an 
 CanvasPanel therefore needs to be able to understand and render Canvases annotated onto Canvases. Once it can do this, it has an interesting new capability: 2-up, or n-up renderings of content are the same thing as the single canvas view. If you want a 2-up, paged view, just construct a new Canvas on the fly, annotate the two pages onto it in the right places, and send the new Canvas to be rendered - CanvasPanel doesn’t care, it’s all just a single canvas. Nothing new is required for facing pages renderings of two Canvases, the containing application constructs a new Canvas with the two facing canvases positioned correctly and then passes this to CanvasPanel.
 
 When combined with iiifManifestLayouts’ approach to thumbnails, this becomes really interesting. iiifManifestLayouts renders a canvas using its thumbnail property until the canvas is big enough in the viewport to require “full” rendering (and returns to thumbnail when it drops back down). An n-up display created by annotating multiple canvases onto a single parent canvas then works like iiifManifestLayouts. The thumbnail selection code can be further enhanced, including support for non-image thumbs. Performance is optimized by not loading or rendering canvas resources until the canvas is ready, or big enough to make rendering that content useful. This deferred loading is still useful in 1-up mode where CanvasPanel can evaluate what content is available for quick display while the canvas content loads.
-
-The UV’s left hand thumb panel, opened-out gallery view and Mirador’s thumbnail strip could all be implemented by CanvasPanel with appropriate behaviour - although the UV’s iiif-gallery-component has additional functionality and potential Collection-handling capabilities that might not make this approach worthwhile.
 
 ## Scene Evaluation
 
@@ -110,42 +112,4 @@ What is the behaviour of a CanvasPanel instance declared like this? It should ta
 
 CanvasPanel probably does not handle all of the authentication interaction patterns for a Canvas’s content, but needs to be aware that content might be subject to access control. Presentation of access control messaging is likely to be orchestrated by the higher level application (the UV does this, not the content renderer) - but what about using CanvasPanel on its own for access controlled content?
 
-## Minimum Viable Product
-
-Where to start?
-
-To test the assumptions and direction described above, a short development project - taking components from Digirati’s annotation studio, and simple viewer for Galway.
-
-### Iteration 1
-
-Prototype the desired developer experience that would produce the V&A’s patchwork example (ignoring content creation itself). What does the code look like to produce the Patchwork?
-
-The V&A’s Patchwork example is a simpler expression of the Bosch layout.
-
-The MVP works on a single IIIF Presentation 3 Canvas that links to an Annotation Collection of commenting annotations (W3C model) each of which target a point, using `<x>,<y>,1,1` fragment syntax. Label and text generates the boxes. Textual content can be HTML if images and formatting are required.
-
-Configuration produces the behaviour seen in the linked example above.
-
-The aim is to finesse the API and development experience to make reuse as easy as possible.
-
-#### Interaction with the parent page
-
-Gather further requirements from the V&A and other interested parties keen on seeing a reusable Canvas component.
-
-Deliver a robust and working piece of software for the V&A and others to use in similar circumstances.
-
-### Iteration 2
-
-Advanced Association Features - handle the [various composition possibilities](http://iiif.io/api/presentation/2.1/#advanced-association-features) described in the current P2 specification (which will be part of an external cookbook for P3), taking inspiration from iiifManifestLayouts
-
-## Further iterations
-
-* Uncovering the event model by prototyping
-* Refining the API to suit development requirements for common use cases
-* Text handling
-* Time-based media
-* Use in content creation tools (Annotation Studio) - using CanvasPanel as the capture surface
-* More advanced text handling - overlaying HTML representation from annotations
-* Canvas on Canvas support
-* Thumbnail optimisation
-* Access-controlled content
+_See more in [roadmap](roadmap.md)_
