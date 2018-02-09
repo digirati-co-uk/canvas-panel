@@ -79,6 +79,7 @@ class PopOut extends Component {
             <PopOutViewport>
               <SingleTileSource viewportController={true}>
                 <OpenSeadragonViewport
+                  useMaxDimensions={true}
                   osdOptions={{
                     visibilityRatio: 1,
                     constrainDuringPan: true,
