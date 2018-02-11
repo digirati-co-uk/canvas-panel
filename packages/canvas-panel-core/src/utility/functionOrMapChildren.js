@@ -9,11 +9,9 @@ export default function functionOrMapChildren(children, withProps) {
   }
 
   return (
-    <div>
-      {React.Children.map(children, child => {
-        return React.cloneElement(child, withProps);
-      }) || <div>Could not clone children</div>}
-    </div>
+    React.Children.map(children, child => {
+      return React.cloneElement(child, withProps);
+    }) || <div>Could not clone children</div>
   );
 }
 
