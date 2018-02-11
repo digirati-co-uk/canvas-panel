@@ -72,7 +72,7 @@ class PopOutViewport extends Component {
   lastScrollY = 0;
 
   componentWillMount() {
-    this.setState({ isAtTop: window.scrollY > 50 });
+    this.setState({ isAtTop: window.scrollY < 100 });
   }
 
   componentDidMount() {
@@ -99,7 +99,7 @@ class PopOutViewport extends Component {
   handleScroll = () => {
     this.scheduledAnimationFrame = false;
     // Double tilde quicker than Math.floor, useful for scroll events.
-    const isAtTop = this.lastScrollY > 50; // 50 = threshold
+    const isAtTop = this.lastScrollY < 100; // 50 = threshold
     if (isAtTop === false && this.state.currentView !== DEFAULT_VIEW) {
       this.setState(() => ({
         currentView: DEFAULT_VIEW,
