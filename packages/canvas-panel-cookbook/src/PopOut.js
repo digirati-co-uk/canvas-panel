@@ -101,6 +101,12 @@ class PopOutViewport extends Component {
     if (position.isZoomedOut && this.state.currentView === INTERACTIVE_VIEW) {
       this.setState({ currentView: DEFAULT_VIEW });
     }
+    if (
+      position.isZoomedOut === false &&
+      this.state.currentView === OPEN_VIEW
+    ) {
+      this.setState({ currentView: INTERACTIVE_VIEW });
+    }
   };
 
   render() {
