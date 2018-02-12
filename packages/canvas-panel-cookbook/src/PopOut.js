@@ -10,26 +10,6 @@ import {
   functionOrMapChildren,
 } from '@canvas-panel/core';
 
-const ViewportCover = props => {
-  if (!props.viewport || props.position.isZoomedOut === false) {
-    return <div />;
-  }
-
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        zIndex: 9,
-      }}
-      onClick={() => props.viewport.zoomIn() && props.viewport.zoomIn()}
-    />
-  );
-};
-
 // Height: 500px -> 80vh -> 80vh
 // Width: container -> full -> full
 // Pointer: none -> none -> all
@@ -138,7 +118,6 @@ class PopOutViewport extends Component {
               setRef={this.setViewport}
               onUpdateViewport={this.setPosition}
             >
-              <ViewportCover viewport={this.state.viewport} />
               {functionOrMapChildren(children, {
                 ...props,
                 height: PopOutViewport.views[currentView].height,
