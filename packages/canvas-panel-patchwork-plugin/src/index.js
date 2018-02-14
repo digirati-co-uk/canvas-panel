@@ -237,7 +237,7 @@ function create(el, userConfiguration) {
     return;
   }
 
-  if (!userConfiguration.manifest || !userConfiguration.jsonLdManifest) {
+  if (!userConfiguration.manifest && !userConfiguration.jsonLdManifest) {
     console.error(`singleCanvasAnnotationDetailViewer:
       You must provide a URL pointing to a IIIF manifest, by default the first
       canvas will be used, you can pass in a 'canvas' to control which canvas

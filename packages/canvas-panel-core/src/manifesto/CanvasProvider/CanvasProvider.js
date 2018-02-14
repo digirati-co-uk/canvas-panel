@@ -13,7 +13,7 @@ class CanvasProvider extends Component {
 
   static propTypes = {
     sequence: PropTypes.number,
-    startCanvas: PropTypes.number,
+    startCanvas: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]),
     manifest: PropTypes.instanceOf(Manifesto.Manifest),
     children: FunctionOrMapChildrenType,
   };
@@ -25,6 +25,17 @@ class CanvasProvider extends Component {
 
   static NEXT_CANVAS = 'NEXT_CANVAS';
   static PREV_CANVAS = 'PREV_CANVAS';
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.currentCanvas !== this.props.currentCanvas) {
+      const sequence = newProps.manifest.getSequenceByIndex(newProps.sequence);
+      this.setState({
+        currentCanvas: Number.isInteger(newProps.currentCanvas)
+          ? newProps.currentCanvas
+          : sequence.getCanvasIndexById(),
+      });
+    }
+  }
 
   static reducer(state, action) {
     switch (action.type) {
@@ -63,7 +74,9 @@ class CanvasProvider extends Component {
     const { currentCanvas } = this.state;
 
     const sequence = manifest.getSequenceByIndex(this.props.sequence);
-    const canvas = sequence.getCanvasByIndex(currentCanvas);
+    const canvas = Number.isInteger(currentCanvas)
+      ? sequence.getCanvasByIndex(currentCanvas)
+      : sequence.getCanvasById(currentCanvas);
 
     return functionOrMapChildren(children, {
       manifest,
