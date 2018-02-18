@@ -1,35 +1,37 @@
 import React, { Component } from 'react';
-import { withBemClass } from '@canvas-panel/core';
 import { connect } from 'react-redux';
 import './Slider.scss';
 import { manifestSetCanvas } from '../../redux/spaces/manifest';
+import RangeSlider from 'react-rangeslider';
 
 class Slider extends Component {
+  state = { value: 0 };
+
+  handleOnChange = value => {
+    this.setState({ value });
+  };
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.currentCanvas !== this.state.value) {
+      this.setState({ value: newProps.currentCanvas });
+    }
+  }
+
+  handleOnChangeComplete = () => {
+    this.props.dispatch(manifestSetCanvas(this.state.value));
+  };
+
   render() {
-    const { bem, canvases, dispatch } = this.props;
+    const { canvases, currentCanvas } = this.props;
+
     return (
-      <div
-        className={bem}
-        style={{ display: 'flex', width: '100%', flexDirection: 'row' }}
-      >
-        {canvases
-          ? canvases.map((canvas, index) => {
-              return (
-                <div
-                  className={bem.element('image')}
-                  style={{ flex: 1, flexShrink: 1, width: 'auto' }}
-                >
-                  <img
-                    onClick={() => dispatch(manifestSetCanvas(index))}
-                    style={{ width: '100%' }}
-                    src={`${
-                      canvas.images[0].resource.service['@id']
-                    }/full/50,/0/default.jpg`}
-                  />
-                </div>
-              );
-            })
-          : 'loading'}
+      <div style={{ flex: 1 }}>
+        <RangeSlider
+          value={this.state.value || currentCanvas}
+          onChange={this.handleOnChange}
+          onChangeComplete={this.handleOnChangeComplete}
+          max={canvases.length}
+        />
       </div>
     );
   }
@@ -37,12 +39,10 @@ class Slider extends Component {
 
 function mapStateToProps(state) {
   const manifest = state.manifest.jsonLd;
-
-  console.log(manifest);
-
   return {
+    currentCanvas: state.manifest.currentCanvas,
     canvases: manifest ? manifest.sequences[0].canvases || [] : [],
   };
 }
 
-export default connect(mapStateToProps)(withBemClass('slider')(Slider));
+export default connect(mapStateToProps)(Slider);
