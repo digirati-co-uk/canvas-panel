@@ -1,11 +1,222 @@
-.slider {
-  background: #000;
+/**
+* Rangeslider
+*/
+.rangeslider {
+  max-width: 100%;
+  margin: 10px 0;
+  position: relative;
+  background: rgba(#018786, 0.2);
+  -ms-touch-action: none;
+  touch-action: none;
+  display: block;
+  box-shadow: none;
+  box-sizing: border-box;
+  border: 10px solid #333;
+  border-radius: 0;
+  * {
+    box-sizing: border-box;
+  }
 
-  &__image {
+  &__fill {
+    display: block;
+    box-shadow: none;
+  }
+
+  &__handle {
+    background: rgba(#fff, 0.8);
+    box-shadow: none;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s;
-    &:hover {
-      transform: scale(5) translateY(-5px);
+    display: inline-block;
+    position: absolute;
+  }
+  &__active {
+    opacity: 1;
+  }
+  &__handle-tooltip {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-weight: normal;
+    font-size: 14px;
+    transition: all 100ms ease-in;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    box-shadow: none;
+  }
+  &__handle-tooltip span {
+    margin-top: 12px;
+    display: inline-block;
+    line-height: 100%;
+  }
+  &__handle-tooltip:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+/**
+* Rangeslider - Horizontal slider
+*/
+.rangeslider-horizontal {
+  height: 23px;
+
+  .rangeslider__fill {
+    height: 100%;
+    background-color: #018786;
+    border-radius: 10px;
+    top: 0;
+    box-shadow: none;
+  }
+
+  &:active,
+  &:focus .rangeslider__handle {
+    background: rgba(#018786, 0.25);
+  }
+
+  .rangeslider__handle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    background: rgba(#018786, 0);
+    border: none;
+    box-shadow: none;
+    top: 50%;
+    transform: translate3d(-23px, -18px, 0);
+    &:active,
+    &:focus {
+      background: rgba(#018786, 0.25);
     }
   }
+
+  .rangeslider__handle:after {
+    content: ' ';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 13px;
+    left: 13px;
+    border-radius: 50%;
+    background: #018786;
+    box-shadow: none;
+  }
+  .rangeslider__handle-tooltip {
+    top: -55px;
+  }
+
+  .rangeslider__handle-tooltip:after {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(0, 0, 0, 0.8);
+    left: 50%;
+    bottom: -8px;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/**
+* Rangeslider - Vertical slider
+*/
+.rangeslider-vertical {
+  margin: 20px auto;
+  height: 150px;
+  max-width: 10px;
+  background-color: transparent;
+
+  .rangeslider__fill,
+  .rangeslider__handle {
+    position: absolute;
+  }
+
+  .rangeslider__fill {
+    width: 100%;
+    background-color: #7cb342;
+    box-shadow: none;
+    bottom: 0;
+  }
+
+  .rangeslider__handle {
+    width: 30px;
+    height: 10px;
+    left: -10px;
+    box-shadow: none;
+  }
+
+  .rangeslider__handle-tooltip {
+    left: -100%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  .rangeslider__handle-tooltip:after {
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid rgba(0, 0, 0, 0.8);
+    left: 100%;
+    top: 12px;
+  }
+}
+
+/**
+* Rangeslider - Reverse
+*/
+.rangeslider-reverse.rangeslider-horizontal .rangeslider__fill {
+  right: 0;
+}
+
+.rangeslider-reverse.rangeslider-vertical .rangeslider__fill {
+  top: 0;
+  bottom: inherit;
+}
+
+/**
+* Rangeslider - Labels
+*/
+.rangeslider__labels {
+  position: relative;
+}
+
+.rangeslider-vertical .rangeslider__labels {
+  position: relative;
+  list-style-type: none;
+  margin: 0 0 0 24px;
+  padding: 0;
+  text-align: left;
+  width: 250px;
+  height: 100%;
+  left: 10px;
+}
+
+.rangeslider-vertical .rangeslider__labels .rangeslider__label-item {
+  position: absolute;
+  transform: translate3d(0, -50%, 0);
+}
+
+.rangeslider-vertical .rangeslider__labels .rangeslider__label-item::before {
+  content: '';
+  width: 10px;
+  height: 2px;
+  background: black;
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.rangeslider__labels .rangeslider__label-item {
+  position: absolute;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  top: 10px;
+  transform: translate3d(-50%, 0, 0);
 }

@@ -12,6 +12,8 @@ import createCustomStore from './redux/createStore';
 import { manifestRequest } from './redux/spaces/manifest';
 import Drawer from './components/Drawer/Drawer';
 import Slider from './components/Slider/Slider';
+import RangeSlider from './components/RangeSlider/RangeSlider';
+import Controls from './components/Controls/Controls';
 
 const store = createCustomStore();
 
@@ -66,7 +68,7 @@ class App extends Component<Props> {
             </div>
           )}
           content={() => <Viewer />}
-          footer={() => <Slider />}
+          footer={() => [<RangeSlider />, <Controls />]}
         />
       </Provider>
     );
