@@ -67,12 +67,19 @@ function constructBemFromContext(
 
 export function withBemClass(className: string) {
   return (WrappedComponent: any) => {
-    return class extends Component<any> {
+    return class extends Component<any, any> {
+      wrappedInstance = null;
+      getWrappedInstance() {
+        return this.wrappedInstance;
+      }
       render() {
         return (
           <BemContext.Consumer>
             {bemCtx => (
               <WrappedComponent
+                ref={wrappedInstance => {
+                  this.wrappedInstance = wrappedInstance;
+                }}
                 {...this.props}
                 bem={constructBemFromContext(
                   className,

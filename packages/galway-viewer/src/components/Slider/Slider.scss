@@ -1,0 +1,11 @@
+.slider {
+  background: #000;
+
+  &__image {
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(5) translateY(-5px);
+    }
+  }
+}

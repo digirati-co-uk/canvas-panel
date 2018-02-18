@@ -1,0 +1,114 @@
+$pallet-3-3: #00aeb2 !default;
+$drawer-width: 340px !default;
+$link-color: $pallet-3-3 !default;
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  &--inactive {
+    pointer-events: none;
+  }
+
+  &__menu {
+    background: #fff;
+    width: $drawer-width;
+    z-index: 120;
+    margin-right: 20px;
+    padding: 15px;
+    transition: transform 0.4s;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+
+    .drawer--inactive & {
+      transform: translateX(-$drawer-width);
+    }
+  }
+
+  &__background {
+    content: '';
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 109;
+    transition: background 0.4s;
+
+    .drawer--inactive & {
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__list {
+    margin: 0 0 40px 0;
+    padding: 0 0 0 10px; // indent size
+  }
+
+  &__list-link {
+    color: inherit;
+    cursor: pointer;
+  }
+
+  &__temporal {
+    font-size: 12px;
+    line-height: 18px;
+    color: #555;
+  }
+
+  &__list-item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+    font-weight: bold;
+    height: auto;
+    transition: height 0.3s;
+    line-height: 24px;
+
+    .drawer__list {
+      display: none;
+      margin-bottom: 0;
+    }
+
+    .drawer__list-item {
+      display: none;
+      font-weight: normal;
+      color: $link-color;
+      padding: 16px 8px;
+      font-size: 16px;
+      margin-bottom: 0;
+      &:hover {
+        color: mix(#fff, $link-color, 50%);
+      }
+    }
+
+    &--active .drawer__list-item--active {
+      border-left: 3px solid lime;
+    }
+
+    &--active .drawer__list-item {
+      display: block;
+    }
+
+    &--active .drawer__list {
+      display: block;
+    }
+  }
+}
