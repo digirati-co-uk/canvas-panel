@@ -1,0 +1,20 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-left);
+  }
+
+  &__content {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-left);
+    flex: 1;
+  }
+
+  &__footer {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-left);
+  }
+}

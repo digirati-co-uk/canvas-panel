@@ -1,0 +1,36 @@
+{
+  "name": "galway-viewer",
+  "version": "1.0.0",
+  "description": "Describe galway-viewer here",
+  "private": true,
+  "scripts": {
+    "build": "nwb build-react-app",
+    "clean": "nwb clean-app",
+    "start": "nwb serve-react-app",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {
+    "@canvas-panel/core": "^0.0.1",
+    "cookies-js": "^1.2.3",
+    "digirati-bem-js": "^1.0.0",
+    "immutability-helper": "^2.6.4",
+    "material-components-web": "^0.30.0",
+    "nwb-sass": "^0.8.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-rangeslider": "^2.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1"
+  },
+  "devDependencies": {
+    "nwb": "0.21.x"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": ""
+}
