@@ -158,3 +158,11 @@
     }
   }
 }
+
+.annotation {
+  outline: 3px solid #fff;
+
+  &--selected {
+    outline-color: red;
+  }
+}

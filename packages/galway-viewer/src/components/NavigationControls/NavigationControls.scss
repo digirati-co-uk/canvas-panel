@@ -1,4 +1,4 @@
-.galway-controls {
+.navigation-controls {
   background: #333;
   //height: 50px;
   display: flex;
@@ -6,11 +6,6 @@
   box-sizing: border-box;
   * {
     box-sizing: border-box;
-  }
-
-  &__slider {
-    margin: 0 30px;
-    flex: 1;
   }
 
   &__button {
