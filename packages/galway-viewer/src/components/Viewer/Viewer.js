@@ -107,10 +107,6 @@ class Viewer extends Component {
                 {props => (
                   <div>
                     <Paging canvas={props.canvas} />
-                    <Supplemental
-                      annotation={currentAnnotationData}
-                      onClose={() => dispatch(deselectAnnotation())}
-                    />
                     <div className={bem.element('osd')}>
                       <FullPageViewport
                         interactive={true}
@@ -135,7 +131,9 @@ class Viewer extends Component {
                           ratio={0.1}
                           growthStyle="fixed"
                           bemModifiers={annotation => ({
-                            selected: annotation.id === currentAnnotation,
+                            selected:
+                              annotation.id &&
+                              annotation.id === currentAnnotation,
                           })}
                           onClickAnnotation={annotation =>
                             dispatch(

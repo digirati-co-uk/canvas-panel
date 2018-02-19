@@ -98,7 +98,7 @@ export function expander(mapped) {
 
 export function createStructure(topLevel, mapped, canvasNumMap) {
   const expand = expander(mapped);
-  return topLevel.members.map(enhancedStructure(expand, canvasNumMap));
+  return (topLevel.members || []).map(enhancedStructure(expand, canvasNumMap));
 }
 
 export function enhancedStructure(expand, canvasNumMap) {
@@ -145,7 +145,11 @@ export function manifestToStructure(manifest) {
   const mapped = manifest.structures.reduce(createMap, {});
   const topLevel = manifest.structures.reduce(findTopLevel, false);
 
-  return createStructure(topLevel, mapped, canvasNumMap);
+  return createStructure(
+    topLevel || manifest.structures[0],
+    mapped,
+    canvasNumMap
+  );
 }
 
 export function flattenDepth(object, targetLevel, level = 0) {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withBemClass } from '../../../../canvas-panel-core/src';
+import { connect } from 'react-redux';
 import './Supplemental.scss';
 import {
   Manifest,
@@ -10,6 +11,7 @@ import {
   FullPageViewport,
 } from '@canvas-panel/core';
 import OpenSeadragonViewport from '../../../../canvas-panel-core/src/viewers/OpenSeadragonViewport/OpenSeadragonViewport';
+import { deselectAnnotation } from '../../redux/spaces/annotations';
 
 function getManifestData(annotation) {
   const jsonLd = annotation.annotation.__jsonld;
@@ -72,10 +74,8 @@ class Supplemental extends Component {
   }
 
   close = () => {
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
     this.setState({ active: false });
+    this.props.dispatch(deselectAnnotation());
   };
 
   render() {
@@ -139,4 +139,15 @@ class Supplemental extends Component {
   }
 }
 
-export default withBemClass('supplemental')(Supplemental);
+function mapStateToProps(state) {
+  return {
+    annotationId: state.annotations.selected.id,
+    annotation: state.annotations.selected.id
+      ? state.annotations.index[state.annotations.selected.id]
+      : null,
+  };
+}
+
+export default connect(mapStateToProps)(
+  withBemClass('supplemental')(Supplemental)
+);

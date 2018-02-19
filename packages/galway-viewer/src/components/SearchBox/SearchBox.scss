@@ -1,0 +1,27 @@
+.search-box {
+  height: 50px;
+  width: 200px;
+  margin-right: 20px;
+  color: #fff;
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  &__input {
+    color: #fff;
+    width: 100%;
+    margin: 10px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(#fff, 0.5);
+    padding: 5px;
+    font-size: 10px;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid rgba(#fff, 1);
+      background: rgba(#fff, 0.1);
+    }
+  }
+}
