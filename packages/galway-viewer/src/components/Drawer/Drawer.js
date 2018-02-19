@@ -70,6 +70,10 @@ class Drawer extends Component {
     );
   };
 
+  isEmpty() {
+    return !this.props.structure;
+  }
+
   render() {
     const { inactive } = this.state;
     const { bem, structure } = this.props;
@@ -78,7 +82,9 @@ class Drawer extends Component {
       <aside className={bem.modifiers({ inactive })}>
         <div className={bem.element('menu')}>
           <ul className={bem.element('list')}>
-            {structure ? structure.map(this.renderItemList) : 'loading...'}
+            {structure
+              ? structure.map(this.renderItemList)
+              : 'There is no structure data available.'}
           </ul>
         </div>
         <div onClick={this.closeDrawer} className={bem.element('background')} />

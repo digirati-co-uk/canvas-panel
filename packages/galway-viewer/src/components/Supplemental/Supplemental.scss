@@ -12,6 +12,10 @@ $pallet-3-3: #00aeb2 !default;
   z-index: 1;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
 
   &__inner-content {
     right: 20px;

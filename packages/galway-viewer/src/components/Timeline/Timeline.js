@@ -123,7 +123,7 @@ class Timeline extends Component {
     const { hoveredItem, hover } = this.state;
     const { flatItems, bem, canvasIndex, activeItem, breadcrumbs } = this.props;
     if (!flatItems) {
-      return <div>Loading...</div>;
+      return <div />;
     }
     return (
       <nav className="galway-timeline galway-layout__top">

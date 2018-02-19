@@ -14,6 +14,8 @@ import Drawer from './components/Drawer/Drawer';
 import Slider from './components/Slider/Slider';
 import RangeSlider from './components/RangeSlider/RangeSlider';
 import NavigationControls from './components/NavigationControls/NavigationControls';
+import Supplemental from './components/Supplemental/Supplemental';
+import SearchBox from './components/SearchBox/SearchBox';
 
 const store = createCustomStore();
 
@@ -50,6 +52,7 @@ class App extends Component<Props> {
         <Layout
           header={() => (
             <div>
+              <Supplemental />
               <StartScreen
                 ref={startScreen =>
                   (this.startScreen = startScreen.getWrappedInstance())
@@ -70,7 +73,11 @@ class App extends Component<Props> {
             </div>
           )}
           content={() => <Viewer />}
-          footer={() => [<RangeSlider />, <NavigationControls />]}
+          footer={() => [
+            <SearchBox />,
+            <RangeSlider />,
+            <NavigationControls />,
+          ]}
         />
       </Provider>
     );
