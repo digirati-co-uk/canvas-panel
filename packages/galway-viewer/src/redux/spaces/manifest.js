@@ -1,6 +1,7 @@
 import { createActions, handleActions } from 'redux-actions';
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, all, select } from 'redux-saga/effects';
 import update from 'immutability-helper';
+import Manifesto from 'manifesto.js';
 
 const MANIFEST_REQUEST = 'MANIFEST_REQUEST';
 const MANIFEST_SUCCESS = 'MANIFEST_SUCCESS';
@@ -25,25 +26,59 @@ const {
   manifestPrevCanvas,
   manifestSetCanvas,
 } = createActions({
-  [MANIFEST_REQUEST]: (manifestUrl, locale) => ({ manifestUrl, locale }),
-  [MANIFEST_SUCCESS]: (manifestUrl, manifest) => ({ manifestUrl, manifest }),
+  [MANIFEST_REQUEST]: (manifestUrl, locale, { startCanvas }) => ({
+    manifestUrl,
+    locale,
+    metaData: { startCanvas },
+  }),
+  [MANIFEST_SUCCESS]: (manifestUrl, manifest, locale) => ({
+    manifestUrl,
+    manifest,
+    manifesto: Manifesto.create(manifest, { locale }),
+  }),
   [MANIFEST_FAILURE]: (manifestUrl, error) => ({ manifestUrl, error }),
   [MANIFEST_NEXT_CANVAS]: () => {},
   [MANIFEST_PREV_CANVAS]: () => {},
   [MANIFEST_SET_CANVAS]: canvasIndex => ({ canvasIndex }),
 });
 
-function* fetchManifestSaga({ payload: { manifestUrl } }) {
+function* fetchManifestSaga({
+  payload: { manifestUrl, locale, metaData: { startCanvas } },
+}) {
   try {
     const manifest = yield call(fetchManifest, manifestUrl);
-    yield put(manifestSuccess(manifestUrl, manifest));
+    yield put(manifestSuccess(manifestUrl, manifest, locale));
+    if (startCanvas) {
+      yield put(manifestSetCanvas(startCanvas));
+    }
   } catch (err) {
     yield put(manifestFailure(manifestUrl, err));
   }
 }
 
+function* handleNextCanvas() {
+  const state = yield select();
+  if (
+    state.manifest.jsonLd.sequences[0].canvases.length - 1 >
+    state.manifest.currentCanvas
+  ) {
+    yield put(manifestSetCanvas(state.manifest.currentCanvas + 1));
+  }
+}
+
+function* handlePrevCanvas() {
+  const state = yield select();
+  if (state.manifest.currentCanvas > 0) {
+    yield put(manifestSetCanvas(state.manifest.currentCanvas - 1));
+  }
+}
+
 function* saga() {
-  yield takeEvery(MANIFEST_REQUEST, fetchManifestSaga);
+  yield all([
+    takeEvery(MANIFEST_REQUEST, fetchManifestSaga),
+    takeEvery(MANIFEST_NEXT_CANVAS, handleNextCanvas),
+    takeEvery(MANIFEST_PREV_CANVAS, handlePrevCanvas),
+  ]);
 }
 
 const defaultState = {
@@ -52,7 +87,7 @@ const defaultState = {
   jsonLd: null,
   error: false,
   errorMessage: null,
-  currentCanvas: 2, // @todo change back to 0
+  currentCanvas: 0,
 };
 
 const reducer = handleActions(
@@ -66,9 +101,14 @@ const reducer = handleActions(
       }),
 
     // After a successful manifest request we store it.
-    [manifestSuccess]: (state, { payload: { manifestUrl, manifest } }) =>
+    [manifestSuccess]: (
+      state,
+      { payload: { manifestUrl, manifest, manifesto, locale } }
+    ) =>
       update(state, {
         jsonLd: { $set: manifest },
+        manifesto: { $set: manifesto },
+        locale: { $set: locale },
         isPending: { $set: false },
       }),
 
@@ -78,16 +118,6 @@ const reducer = handleActions(
         isPending: { $set: false },
         error: true,
         errorMessage: error,
-      }),
-
-    [manifestNextCanvas]: state =>
-      update(state, {
-        currentCanvas: { $apply: index => index + 1 },
-      }),
-
-    [manifestPrevCanvas]: state =>
-      update(state, {
-        currentCanvas: { $apply: index => (index === 0 ? 0 : index - 1) },
       }),
 
     [manifestSetCanvas]: (state, { payload: { canvasIndex } }) =>
@@ -102,6 +132,9 @@ export {
   MANIFEST_REQUEST,
   MANIFEST_SUCCESS,
   MANIFEST_FAILURE,
+  MANIFEST_NEXT_CANVAS,
+  MANIFEST_PREV_CANVAS,
+  MANIFEST_SET_CANVAS,
   manifestRequest,
   manifestSuccess,
   manifestFailure,

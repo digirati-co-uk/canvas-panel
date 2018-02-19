@@ -20,6 +20,7 @@ import SizedViewport from './viewers/SizedViewport/SizedViewport';
 import StaticImageViewport from './viewers/StaticImageViewport/StaticImageViewport';
 import Viewport from './viewers/Viewport/Viewport';
 import functionOrMapChildren from './utility/functionOrMapChildren';
+import AnnotationSelector from './utility/AnnotationSelector';
 
 export {
   // Components.
@@ -46,6 +47,7 @@ export {
   StaticImageViewport,
   Viewport,
   // Utils
+  AnnotationSelector,
   functionOrMapChildren,
   withBemClass,
 };

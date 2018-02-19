@@ -9,11 +9,11 @@ import Layout from './components/Layout/Layout';
 import Timeline from './components/Timeline/Timeline';
 import { Provider } from 'react-redux';
 import createCustomStore from './redux/createStore';
-import { manifestRequest } from './redux/spaces/manifest';
+import { manifestRequest, manifestSetCanvas } from './redux/spaces/manifest';
 import Drawer from './components/Drawer/Drawer';
 import Slider from './components/Slider/Slider';
 import RangeSlider from './components/RangeSlider/RangeSlider';
-import Controls from './components/Controls/Controls';
+import NavigationControls from './components/NavigationControls/NavigationControls';
 
 const store = createCustomStore();
 
@@ -39,7 +39,9 @@ class App extends Component<Props> {
   };
 
   componentWillMount() {
-    store.dispatch(manifestRequest(this.props.manifestUri, 'en-GB'));
+    store.dispatch(
+      manifestRequest(this.props.manifestUri, 'en-GB', { startCanvas: 2 })
+    );
   }
 
   render() {
@@ -68,7 +70,7 @@ class App extends Component<Props> {
             </div>
           )}
           content={() => <Viewer />}
-          footer={() => [<RangeSlider />, <Controls />]}
+          footer={() => [<RangeSlider />, <NavigationControls />]}
         />
       </Provider>
     );

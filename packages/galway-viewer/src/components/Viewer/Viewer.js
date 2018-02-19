@@ -8,6 +8,7 @@ import {
   OpenSeadragonViewer,
   OpenSeadragonViewport,
   FullPageViewport,
+  AnnotationRepresentation,
 } from '@canvas-panel/core';
 import './Viewer.scss';
 import {
@@ -17,6 +18,11 @@ import {
 import Paging from '../Paging/Paging';
 import Fullscreen from '../../../../canvas-panel-core/src/components/Fullscreen/Fullscreen';
 import AnnotationCanvasRepresentation from '../../../../canvas-panel-core/src/components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation';
+import {
+  deselectAnnotation,
+  selectAnnotation,
+} from '../../redux/spaces/annotations';
+import Supplemental from '../Supplemental/Supplemental';
 
 class Controls extends Component {
   render() {
@@ -69,6 +75,10 @@ class Viewer extends Component {
       isPending,
       error,
       currentCanvas,
+      annotations,
+      dispatch,
+      currentAnnotation,
+      currentAnnotationData,
     } = this.props;
 
     if (error) {
@@ -97,6 +107,10 @@ class Viewer extends Component {
                 {props => (
                   <div>
                     <Paging canvas={props.canvas} />
+                    <Supplemental
+                      annotation={currentAnnotationData}
+                      onClose={() => dispatch(deselectAnnotation())}
+                    />
                     <div className={bem.element('osd')}>
                       <FullPageViewport
                         interactive={true}
@@ -116,10 +130,18 @@ class Viewer extends Component {
                             />
                           </OpenSeadragonViewport>
                         </SingleTileSource>
-                        <AnnotationCanvasRepresentation
+                        <AnnotationRepresentation
+                          annotations={annotations || []}
                           ratio={0.1}
-                          annotationStyle={{ outline: '2px solid #fff' }}
                           growthStyle="fixed"
+                          bemModifiers={annotation => ({
+                            selected: annotation.id === currentAnnotation,
+                          })}
+                          onClickAnnotation={annotation =>
+                            dispatch(
+                              selectAnnotation(annotation.id, 'otherContent')
+                            )
+                          }
                         />
                       </FullPageViewport>
                     </div>
@@ -135,12 +157,30 @@ class Viewer extends Component {
 }
 
 function mapStateToProps(state) {
+  const currentCanvasIndex = state.manifest.currentCanvas;
+  const currentCanvas = state.manifest.manifesto
+    ? state.manifest.manifesto
+        .getSequenceByIndex(0)
+        .getCanvasByIndex(currentCanvasIndex)
+    : null;
+  const annotationIds = currentCanvas
+    ? state.annotations.canvasMap[currentCanvas.id]
+    : null;
+
   return {
     isLoaded: !!state.manifest.currentManifest,
     manifest: state.manifest.jsonLd,
     isPending: state.manifest.isPending,
     error: state.manifest.errorMessage,
     currentCanvas: state.manifest.currentCanvas,
+    currentAnnotation: state.annotations.selected.id,
+    currentAnnotationData: state.annotations.selected.id
+      ? state.annotations.index[state.annotations.selected.id]
+      : null,
+    annotationIds,
+    annotations: annotationIds
+      ? annotationIds.map(id => state.annotations.index[id])
+      : [],
   };
 }
 
