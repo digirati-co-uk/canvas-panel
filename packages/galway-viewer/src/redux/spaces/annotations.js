@@ -1,7 +1,7 @@
 import { createActions, handleActions } from 'redux-actions';
-import { call, all, put, select, takeEvery } from 'redux-saga/effects';
+import { call, all, fork, put, select, takeEvery } from 'redux-saga/effects';
 import update from 'immutability-helper';
-import { MANIFEST_SET_CANVAS } from './manifest';
+import { MANIFEST_SET_CANVAS, MANIFEST_SUCCESS } from './manifest';
 import AnnotationSelector from '../../../../canvas-panel-core/src/utility/AnnotationSelector';
 
 const IMPORT_ANNOTATION = 'IMPORT_ANNOTATION';
@@ -70,11 +70,10 @@ const reducer = handleActions(
       };
       // Add canvas mapping.
       if (canvasId) {
-        updateMethod.canvasMap = pushOrSetUniqueItemOnMap(
-          state.canvasMap,
-          id,
-          canvasId
-        );
+        const toPush = pushOrSetUniqueItemOnMap(state.canvasMap, id, canvasId);
+        if (toPush) {
+          updateMethod.canvasMap = toPush;
+        }
       }
       return update(state, updateMethod);
     },
@@ -153,7 +152,7 @@ function* importCanvasAnnotations(canvas) {
     allAnnotations.map(annotationList =>
       all(
         annotationList.getResources().map(annotation =>
-          call(importSingleAnnotation, annotation, {
+          fork(importSingleAnnotation, annotation, {
             canvasId: canvas.id,
             type: 'otherContent',
           })
@@ -167,7 +166,7 @@ function* importManifestAnnotations({ payload: { manifesto } }) {
   const sequence = manifesto.getSequenceByIndex(0);
 
   yield all(
-    sequence.getCanvases().map(canvas => call(importCanvasAnnotations, canvas))
+    sequence.getCanvases().map(canvas => fork(importCanvasAnnotations, canvas))
   );
 }
 

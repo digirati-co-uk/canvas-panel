@@ -79,6 +79,7 @@ class Viewer extends Component {
       dispatch,
       currentAnnotation,
       currentAnnotationData,
+      search,
     } = this.props;
 
     if (error) {
@@ -126,21 +127,31 @@ class Viewer extends Component {
                             />
                           </OpenSeadragonViewport>
                         </SingleTileSource>
-                        <AnnotationRepresentation
-                          annotations={annotations || []}
-                          ratio={0.1}
-                          growthStyle="fixed"
-                          bemModifiers={annotation => ({
-                            selected:
-                              annotation.id &&
-                              annotation.id === currentAnnotation,
-                          })}
-                          onClickAnnotation={annotation =>
-                            dispatch(
-                              selectAnnotation(annotation.id, 'otherContent')
-                            )
-                          }
-                        />
+                        {search &&
+                        search.currentQuery &&
+                        search.isLoading === false ? (
+                          <AnnotationRepresentation
+                            annotations={search.annotations || []}
+                            ratio={0.1}
+                            growthStyle="fixed"
+                          />
+                        ) : (
+                          <AnnotationRepresentation
+                            annotations={annotations || []}
+                            ratio={0.1}
+                            growthStyle="fixed"
+                            bemModifiers={annotation => ({
+                              selected:
+                                annotation.id &&
+                                annotation.id === currentAnnotation,
+                            })}
+                            onClickAnnotation={annotation =>
+                              dispatch(
+                                selectAnnotation(annotation.id, 'otherContent')
+                              )
+                            }
+                          />
+                        )}
                       </FullPageViewport>
                     </div>
                   </div>
@@ -154,6 +165,26 @@ class Viewer extends Component {
   }
 }
 
+function mapSearchState(state, currentCanvas) {
+  const searchState = state.search;
+  if (!searchState) {
+    return null;
+  }
+  const { currentQuery, isLoading, queries, error } = searchState;
+  const currentQueryResults = queries[currentQuery];
+
+  return {
+    currentQuery,
+    isLoading,
+    error,
+    currentQueryResults,
+    annotations:
+      currentQueryResults && currentQueryResults.canvasMap
+        ? currentQueryResults.canvasMap[currentCanvas.id] || []
+        : [],
+  };
+}
+
 function mapStateToProps(state) {
   const currentCanvasIndex = state.manifest.currentCanvas;
   const currentCanvas = state.manifest.manifesto
@@ -164,8 +195,10 @@ function mapStateToProps(state) {
   const annotationIds = currentCanvas
     ? state.annotations.canvasMap[currentCanvas.id]
     : null;
+  const search = mapSearchState(state, currentCanvas);
 
   return {
+    search,
     isLoaded: !!state.manifest.currentManifest,
     manifest: state.manifest.jsonLd,
     isPending: state.manifest.isPending,
