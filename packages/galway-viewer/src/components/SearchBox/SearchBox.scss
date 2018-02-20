@@ -3,14 +3,19 @@
   width: 200px;
   margin-right: 20px;
   color: #fff;
+  display: flex;
   box-sizing: border-box;
   * {
     box-sizing: border-box;
   }
 
+  &__button {
+    width: 30px;
+  }
+
   &__input {
     color: #fff;
-    width: 100%;
+    flex: 1;
     margin: 10px;
     height: 30px;
     background: transparent;

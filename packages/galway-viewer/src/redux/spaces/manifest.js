@@ -9,6 +9,7 @@ const MANIFEST_FAILURE = 'MANIFEST_FAILURE';
 const MANIFEST_NEXT_CANVAS = 'MANIFEST_NEXT_CANVAS';
 const MANIFEST_PREV_CANVAS = 'MANIFEST_PREV_CANVAS';
 const MANIFEST_SET_CANVAS = 'MANIFEST_SET_CANVAS';
+const MANIFEST_SET_CANVAS_ID = 'MANIFEST_SET_CANVAS_ID';
 
 async function fetchManifest(manifestUrl) {
   const manifest = await fetch(manifestUrl);
@@ -25,6 +26,7 @@ const {
   manifestNextCanvas,
   manifestPrevCanvas,
   manifestSetCanvas,
+  manifestSetCanvasId,
 } = createActions({
   [MANIFEST_REQUEST]: (manifestUrl, locale, { startCanvas }) => ({
     manifestUrl,
@@ -40,7 +42,15 @@ const {
   [MANIFEST_NEXT_CANVAS]: () => {},
   [MANIFEST_PREV_CANVAS]: () => {},
   [MANIFEST_SET_CANVAS]: canvasIndex => ({ canvasIndex }),
+  [MANIFEST_SET_CANVAS_ID]: canvasId => ({ canvasId }),
 });
+
+function canvasIdToCanvasIndex(manifesto: Manifesto.Manifest) {
+  return function*({ payload: { canvasId } }) {
+    const index = manifesto.getSequenceByIndex(0).getCanvasIndexById(canvasId);
+    yield put(manifestSetCanvas(index));
+  };
+}
 
 function* fetchManifestSaga({
   payload: { manifestUrl, locale, metaData: { startCanvas } },
@@ -73,9 +83,14 @@ function* handlePrevCanvas() {
   }
 }
 
+function* manifestoAccess({ payload: { manifesto } }) {
+  yield takeEvery(MANIFEST_SET_CANVAS_ID, canvasIdToCanvasIndex(manifesto));
+}
+
 function* saga() {
   yield all([
     takeEvery(MANIFEST_REQUEST, fetchManifestSaga),
+    takeEvery(MANIFEST_SUCCESS, manifestoAccess),
     takeEvery(MANIFEST_NEXT_CANVAS, handleNextCanvas),
     takeEvery(MANIFEST_PREV_CANVAS, handlePrevCanvas),
   ]);
@@ -141,6 +156,7 @@ export {
   manifestNextCanvas,
   manifestPrevCanvas,
   manifestSetCanvas,
+  manifestSetCanvasId,
   saga,
   reducer,
 };
