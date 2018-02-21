@@ -1,0 +1,28 @@
+.range-highlights {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  height: 20px;
+
+  &__item {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    color: #018786;
+    width: 20px;
+    text-align: left;
+    line-height: 10px;
+    font-size: 30px;
+    top: 0;
+    left: -15px;
+    &--current {
+      color: #fff;
+    }
+  }
+}

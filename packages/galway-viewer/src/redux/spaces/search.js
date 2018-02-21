@@ -62,6 +62,7 @@ type Query = {
 };
 
 const SEARCH_ENABLE = 'SEARCH_ENABLE';
+const SEARCH_CANCEL = 'SEARCH_CANCEL';
 const SEARCH_REQUEST = 'SEARCH_REQUEST';
 const SEARCH_REQUEST_STARTED = 'SEARCH_REQUEST_STARTED';
 const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
@@ -79,6 +80,7 @@ const noop = e => e;
 
 const {
   searchEnable,
+  searchCancel,
   searchRequest,
   searchRequestStarted,
   searchSuccess,
@@ -93,6 +95,7 @@ const {
   searchApplyFilter,
 } = createActions({
   [SEARCH_ENABLE]: (service: string) => ({ service }),
+  [SEARCH_CANCEL]: noop,
   [SEARCH_REQUEST]: (query: Query) => ({
     query: constructSearchQuery(query),
   }),
@@ -134,6 +137,8 @@ const reducer = handleActions(
   {
     [searchEnable]: (state, { payload: { service } }) =>
       update(state, { service: { $set: service } }),
+
+    [searchCancel]: state => update(state, { currentQuery: { $set: null } }),
 
     [searchRequest]: (state, { payload: { query } }) =>
       update(state, {
@@ -419,6 +424,7 @@ export {
   searchSuccess,
   searchError,
   searchGoToCanvas,
+  searchCancel,
   searchNextCanvas,
   searchPrevCanvas,
   searchGoTo,

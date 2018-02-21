@@ -1,8 +1,17 @@
+/**
+ * @flow
+ */
 import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import './Header.scss';
 
-class Header extends Component {
+type Props = {
+  bem: any,
+  onClickInfo: any => void,
+  onClickMenu: any => void,
+};
+
+class Header extends Component<Props> {
   render() {
     const { bem, onClickInfo, onClickMenu } = this.props;
     return (

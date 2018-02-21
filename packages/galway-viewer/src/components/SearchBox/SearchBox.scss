@@ -1,7 +1,6 @@
 .search-box {
   height: 50px;
-  width: 200px;
-  margin-right: 20px;
+  max-width: 450px;
   color: #fff;
   display: flex;
   box-sizing: border-box;
@@ -9,24 +8,103 @@
     box-sizing: border-box;
   }
 
+  .search-box__container {
+    transition: max-width 0.3s, opacity 0.6s;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+  }
+
+  &__results-label {
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-size: 10px;
+    line-height: 50px;
+    padding: 0 10px;
+    color: #018786;
+    width: 50px;
+  }
+
+  &--open {
+    .search-box__container {
+      max-width: 400px;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .search-box__search-icon {
+      color: #fff;
+    }
+  }
+
+  &__search-icon {
+    height: 50px;
+    text-align: center;
+    width: 50px;
+    cursor: pointer;
+    line-height: 50px;
+    padding: 0 10px;
+    color: rgba(#fff, 0.5);
+    background: transparent;
+    border: none;
+
+    &:hover {
+      color: #fff;
+    }
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: -4px;
+    }
+    &:active {
+      background: #222;
+    }
+  }
+
   &__button {
     width: 30px;
+    height: 30px;
+    margin: 10px 5px;
+    cursor: pointer;
+    background: rgba(#00aeb2, 0);
+    color: #fff;
+    border: 1px solid #00aeb2;
+    transition: background 0.2s, opacity 0.2s;
+    font-size: 16px;
+    &:active,
+    &:focus {
+      outline: 2px solid rgba(#00aeb2, 0.3);
+      background: rgba(#00aeb2, 0.1);
+    }
+
+    &--disabled,
+    &--disabled:active,
+    &--disabled:focus {
+      pointer-events: none;
+      border-color: #555;
+      background: rgba(#00aeb2, 0);
+      color: #555;
+      outline: none;
+    }
   }
 
   &__input {
     color: #fff;
     flex: 1;
-    margin: 10px;
-    height: 30px;
+    margin: 5px 10px 10px;
+    height: 35px;
+    min-width: 200px;
+    font-size: 16px;
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(#fff, 0.5);
+    transition: all 0.2s;
     padding: 5px;
-    font-size: 10px;
+    border-bottom: 1px solid rgba(#00aeb2, 1);
     &:focus {
       outline: none;
-      border-bottom: 1px solid rgba(#fff, 1);
-      background: rgba(#fff, 0.1);
+      //background: rgba(#fff, 0.1);
     }
   }
 }

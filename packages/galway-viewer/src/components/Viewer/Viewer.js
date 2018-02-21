@@ -23,34 +23,7 @@ import {
   selectAnnotation,
 } from '../../redux/spaces/annotations';
 import Supplemental from '../Supplemental/Supplemental';
-
-class Controls extends Component {
-  render() {
-    const { onZoomIn, onZoomOut, isFullscreen, onFullscreen } = this.props;
-    return (
-      <nav className="controls controls--active">
-        <button
-          onClick={onZoomIn}
-          className="controls__control material-icons control--zoom-in"
-        >
-          add
-        </button>
-        <button
-          onClick={onZoomOut}
-          className="controls__control material-icons control--zoom-out"
-        >
-          remove
-        </button>
-        <button
-          onClick={onFullscreen}
-          className="controls__control material-icons control--fullscreen"
-        >
-          {isFullscreen ? 'close' : 'fullscreen'}
-        </button>
-      </nav>
-    );
-  }
-}
+import ViewerControls from '../ViewerControls/ViewerControls';
 
 class Viewer extends Component {
   setViewport = viewport => (this.viewport = viewport);
@@ -77,8 +50,8 @@ class Viewer extends Component {
       currentCanvas,
       annotations,
       dispatch,
+      searchAvailable,
       currentAnnotation,
-      currentAnnotationData,
       search,
     } = this.props;
 
@@ -93,16 +66,13 @@ class Viewer extends Component {
     return (
       <Fullscreen>
         {({ isFullscreen, exitFullscreen, goFullscreen }) => (
-          <div className={bem} style={{ width: '100%' }}>
-            <div className="galway-paging">Page 001 of 175</div>
-
-            <Controls
+          <div className={bem}>
+            <ViewerControls
               onZoomIn={this.zoomIn}
               onZoomOut={this.zoomOut}
               isFullscreen={isFullscreen}
               onFullscreen={isFullscreen ? exitFullscreen : goFullscreen}
             />
-
             <Manifest jsonLd={manifest}>
               <CanvasProvider startCanvas={2} currentCanvas={currentCanvas}>
                 {props => (
@@ -123,17 +93,17 @@ class Viewer extends Component {
                                 visibilityRatio: 1,
                                 constrainDuringPan: true,
                                 showNavigator: false,
+                                immediateRender: false,
                               }}
                             />
                           </OpenSeadragonViewport>
                         </SingleTileSource>
-                        {search &&
-                        search.currentQuery &&
-                        search.isLoading === false ? (
+                        {searchAvailable ? (
                           <AnnotationRepresentation
                             annotations={search.annotations || []}
                             ratio={0.1}
                             growthStyle="fixed"
+                            bemModifiers={() => ({ search: true })}
                           />
                         ) : (
                           <AnnotationRepresentation
@@ -199,15 +169,20 @@ function mapStateToProps(state) {
 
   return {
     search,
+    searchAvailable:
+      search && search.currentQuery && search.isLoading === false,
     isLoaded: !!state.manifest.currentManifest,
     manifest: state.manifest.jsonLd,
     isPending: state.manifest.isPending,
     error: state.manifest.errorMessage,
     currentCanvas: state.manifest.currentCanvas,
-    currentAnnotation: state.annotations.selected.id,
-    currentAnnotationData: state.annotations.selected.id
-      ? state.annotations.index[state.annotations.selected.id]
+    currentAnnotation: state.annotations.selected
+      ? state.annotations.selected.id
       : null,
+    currentAnnotationData:
+      state.annotations.selected && state.annotations.selected.id
+        ? state.annotations.index[state.annotations.selected.id]
+        : null,
     annotationIds,
     annotations: annotationIds
       ? annotationIds.map(id => state.annotations.index[id])

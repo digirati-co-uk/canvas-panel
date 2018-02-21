@@ -1,25 +1,34 @@
+/**
+ * @flow
+ */
 import React, { Component } from 'react';
+import { withBemClass } from '@canvas-panel/core';
+import './Breadcrumbs.scss';
 
-class Breadcrumbs extends Component {
+type Props = {
+  bem: any,
+  breadcrumbs: {
+    path: Array<{ label: string }>,
+  },
+  onBack: (e: MouseEvent) => void,
+};
+
+class Breadcrumbs extends Component<Props> {
   render() {
-    const { breadcrumbs, onBack } = this.props;
+    const { bem, breadcrumbs, onBack } = this.props;
 
     return (
-      <div className="galway-timeline__breadcrumbs galway-timeline__breadcrumbs--active">
-        <div className="galway-timeline__breadcrumb-container">
+      <div className={bem}>
+        <div className={bem.element('container')}>
           {breadcrumbs.path && breadcrumbs.path.length !== 0 ? (
             breadcrumbs.path.map((item, key) => (
-              <div
-                key={key}
-                onClick={onBack}
-                className="galway-timeline__breadcrumb-item"
-              >
+              <div key={key} onClick={onBack} className={bem.element('item')}>
                 <div className="material-icons">navigate_before</div>{' '}
                 {item.label}
               </div>
             ))
           ) : (
-            <div className="galway-timeline__breadcrumb-static">Timeline</div>
+            <div className={bem.element('static')}>Timeline</div>
           )}
         </div>
       </div>
@@ -27,4 +36,4 @@ class Breadcrumbs extends Component {
   }
 }
 
-export default Breadcrumbs;
+export default withBemClass('breadcrumbs')(Breadcrumbs);

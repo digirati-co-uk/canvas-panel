@@ -90,22 +90,6 @@ class Supplemental extends Component {
               &times;
             </div>
             <div className={bem.element('inner')}>
-              {/*
-              div({className: 'galway-supplemental__aside'}, [
-                div({className: 'galway-supplemental__title'}, [
-                  manifest.label,
-                ]),
-                div({className: 'galway-supplemental__description'}, [
-                  manifest.description || '(no description)',
-                ]),
-                repo
-              ])
-            );
-
-            this.$inner.appendChild(
-              div({className: 'galway-supplemental__images'}, images)
-            );
-          */}
               <div className={bem.element('aside')}>
                 <div className={bem.element('title')}>{manifest.label}</div>
                 <div className={bem.element('description')}>

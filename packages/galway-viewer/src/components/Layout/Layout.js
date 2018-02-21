@@ -1,8 +1,18 @@
+/**
+ * @flow
+ */
 import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import './Layout.scss';
 
-class Layout extends Component {
+type Props = {
+  bem: any,
+  header: void => any,
+  content: void => any,
+  footer: void => any,
+};
+
+class Layout extends Component<Props> {
   render() {
     const { bem, header, content, footer } = this.props;
 

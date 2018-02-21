@@ -66,8 +66,8 @@ function constructBemFromContext(
 }
 
 export function withBemClass(className: string) {
-  return (WrappedComponent: any) => {
-    return class extends Component<any, any> {
+  return (WrappedComponent: any) =>
+    class extends Component<any, any> {
       wrappedInstance = null;
       getWrappedInstance() {
         return this.wrappedInstance;
@@ -91,7 +91,6 @@ export function withBemClass(className: string) {
         );
       }
     };
-  };
 }
 
 export default Bem;
