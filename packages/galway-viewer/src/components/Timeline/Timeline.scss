@@ -8,7 +8,7 @@ $hide-breadcrumbs: false !default;
 $center-titles: true !default;
 $disable-timeline-mobile: true !default;
 
-.galway-timeline {
+.timeline {
   background: #fff;
   //height: 145px;
   * {
@@ -107,80 +107,6 @@ $disable-timeline-mobile: true !default;
     font-size: 16px;
   }
 
-  &__breadcrumbs {
-    clear: both;
-    display: flex;
-    flex-direction: row;
-    margin: 10px 15px;
-    //transition: height $transition-speed;
-    @if ($hide-breadcrumbs) {
-      height: 0;
-    }
-    overflow: hidden;
-
-    &--active {
-      @if ($hide-breadcrumbs) {
-        height: 25px;
-
-        & ~ .galway-timeline__title h1 {
-          font-size: 1em;
-          line-height: 1.2em;
-        }
-      }
-    }
-    @media (max-width: 40em) {
-      display: none;
-    }
-  }
-
-  &__breadcrumb-back {
-    flex: 0 0 20px;
-  }
-  &__breadcrumb-container {
-    flex: 1;
-  }
-
-  &__breadcrumb-static {
-    flex: 1;
-    padding-left: 10px;
-    font-size: 16px;
-    line-height: 22px;
-    //@if ($center-titles) {
-    //  text-align: center;
-    //}
-  }
-
-  & .material-icons {
-    font-size: 13px;
-    transform: scale(1.6);
-    margin-right: 10px;
-  }
-
-  &__breadcrumb-item {
-    flex: 1;
-    color: $link-color;
-    padding-left: 10px;
-    font-size: 16px;
-    line-height: 22px;
-    cursor: pointer;
-    //@if ($center-titles) {
-    //  text-align: center;
-    //}
-
-    &:hover {
-      color: darken($link-color, 10%);
-    }
-
-    &:before {
-      color: #000;
-      left: -15px;
-      position: absolute;
-      content: '\027A4';
-      font-size: 8px;
-      line-height: 20px;
-    }
-  }
-
   &__representation {
     background: $inactive-item;
     height: 15px;
@@ -190,7 +116,7 @@ $disable-timeline-mobile: true !default;
     transition: opacity $transition-speed, transform $transition-speed;
     cursor: pointer;
 
-    .galway-timeline__item--children.galway-timeline__item--active:hover & {
+    .timeline__item--children.timeline__item--active:hover & {
       animation: galway-timeline__item--pulse 1s infinite;
 
       @at-root {
@@ -212,8 +138,8 @@ $disable-timeline-mobile: true !default;
       height: 5px;
     }
 
-    .galway-timeline__item--active &,
-    .galway-timeline__item:hover & {
+    .timeline__item--active &,
+    .timeline__item:hover & {
       transform: scaleY(1.3);
       opacity: 1;
     }
@@ -237,8 +163,8 @@ $disable-timeline-mobile: true !default;
       display: none;
     }
 
-    .galway-timeline__item--active &,
-    .galway-timeline__item:hover & {
+    .timeline__item--active &,
+    .timeline__item:hover & {
       position: absolute;
       color: #000;
       background: #fff;
@@ -247,7 +173,7 @@ $disable-timeline-mobile: true !default;
       font-weight: 600;
     }
 
-    .galway-timeline__item--active.galway-timeline__item--children & {
+    .timeline__item--active.timeline__item--children & {
       color: $link-color;
       font-size: 13px;
       z-index: 9;

@@ -8,29 +8,11 @@ import { withBemClass } from '@canvas-panel/core';
 import './Drawer.scss';
 import { renderTemporal } from '../../utils';
 import { manifestSetCanvas } from '../../redux/spaces/manifest';
+import DrawerItem from '../DrawerItem/DrawerItem';
 
 class Drawer extends Component {
   state = {
     inactive: true,
-  };
-
-  renderItem = (item, active, children) => {
-    const { bem } = this.props;
-    return (
-      <li
-        key={item.id}
-        className={bem.element('list-item').modifiers({ active })}
-      >
-        <div
-          onClick={this.handleItemClick(item)}
-          className={bem.element('list-link')}
-        >
-          {item.label}
-          <div className={bem.element('temporal')}>{renderTemporal(item)}</div>
-        </div>
-        {children}
-      </li>
-    );
   };
 
   handleItemClick = item => e => {
@@ -58,15 +40,27 @@ class Drawer extends Component {
     const { bem, top } = this.props;
     const isActive = top && item.id === top.id;
     if (!item.children) {
-      return this.renderItem(item, isActive);
+      return (
+        <DrawerItem
+          bem={bem}
+          onClick={this.handleItemClick}
+          item={item}
+          active={isActive}
+        />
+      );
     }
 
-    return this.renderItem(
-      item,
-      isActive,
-      <ul key={key} className={bem.element('list')}>
-        {item.children.map(this.renderItemList)}
-      </ul>
+    return (
+      <DrawerItem
+        bem={bem}
+        onClick={this.handleItemClick}
+        item={item}
+        active={isActive}
+      >
+        <ul key={key} className={bem.element('list')}>
+          {item.children.map(this.renderItemList)}
+        </ul>
+      </DrawerItem>
     );
   };
 

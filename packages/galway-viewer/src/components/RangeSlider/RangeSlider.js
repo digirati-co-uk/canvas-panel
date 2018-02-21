@@ -1,10 +1,27 @@
+/**
+ * @flow
+ */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { manifestSetCanvas } from '../../redux/spaces/manifest';
 import './RangeSlider.scss';
 import Rheostat from 'rheostat';
+import RangeHighlights from '../RangeHighlights/RangeHighlights';
 
-class RangeSlider extends Component {
+type Props = {
+  currentCanvas: number,
+  canvases: Array<any>,
+  currentQuery: string,
+  highlights: Array<string>,
+  dispatch: any => void,
+  currentHighlight: number,
+};
+
+type State = {
+  value: number,
+};
+
+class RangeSlider extends Component<Props, State> {
   state = { value: 0 };
   clicked = false;
 
@@ -30,8 +47,10 @@ class RangeSlider extends Component {
 
   render() {
     const { canvases } = this.props;
+
     return (
-      <div style={{ flex: 1 }}>
+      <div style={{ flex: 1, position: 'relative' }}>
+        <RangeHighlights canvases={canvases} />
         <Rheostat
           min={0}
           max={canvases.length - 1}
@@ -51,9 +70,11 @@ class RangeSlider extends Component {
 
 function mapStateToProps(state) {
   const manifest = state.manifest.jsonLd;
+  const canvases = manifest ? manifest.sequences[0].canvases || [] : [];
+  const currentCanvas = state.manifest.currentCanvas;
   return {
-    currentCanvas: state.manifest.currentCanvas,
-    canvases: manifest ? manifest.sequences[0].canvases || [] : [],
+    currentCanvas,
+    canvases,
   };
 }
 
