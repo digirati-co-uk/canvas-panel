@@ -19,6 +19,8 @@ import { selectAnnotation } from '@canvas-panel/redux/es/spaces/annotations';
 import Paging from '../Paging/Paging';
 import ViewerControls from '../ViewerControls/ViewerControls';
 import './Viewer.scss';
+import StaticImageViewport from '../../../../canvas-panel-core/src/viewers/StaticImageViewport/StaticImageViewport';
+import ImageContainer from '../ImageContainer/ImageContainer';
 
 class Viewer extends Component {
   setViewport = viewport => (this.viewport = viewport);
@@ -93,6 +95,11 @@ class Viewer extends Component {
                   <div>
                     <Paging canvas={props.canvas} />
                     <div className={bem.element('osd')}>
+                      <ImageContainer
+                        canvas={props.canvas}
+                        width={props.width}
+                        height={props.height}
+                      />
                       <FullPageViewport
                         interactive={true}
                         position="relative"
@@ -107,7 +114,7 @@ class Viewer extends Component {
                                 visibilityRatio: 1,
                                 constrainDuringPan: true,
                                 showNavigator: false,
-                                immediateRender: false,
+                                // immediateRender: false,
                               }}
                             />
                           </OpenSeadragonViewport>

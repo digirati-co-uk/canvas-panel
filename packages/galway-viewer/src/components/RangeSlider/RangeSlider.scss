@@ -2,14 +2,15 @@ $pill-size: 23px;
 
 .rheostat {
   overflow: visible;
-  margin: 0 10px;
+  margin: 0 20px;
   height: 50px;
 }
 
 .rheostat-background {
   background: #fff;
-  height: 1px;
-  margin: ($pill-size - 1) 0;
+  background: rgba(#018786, 0.25);
+  height: 2px;
+  margin: 24px 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -18,20 +19,22 @@ $pill-size: 23px;
 
 .rheostat-progress {
   background-color: #018786;
-  height: 1px;
-  margin: ($pill-size - 1) 0;
+  height: 2px;
+  margin: 24px 0;
   position: absolute;
 }
 
 .rheostat-handle {
-  margin-top: 16px;
+  margin-top: 19px;
   height: 13px;
   width: 13px;
   min-width: 13px;
   min-height: 13px;
   padding: 0;
   background-color: #fff;
+  //background-color: #018786;
   border: 1px solid #d8d8d8;
+  //border: none;
   transform: translate3d(-50%, 0, 0);
   border-radius: 50%;
   outline: none;
