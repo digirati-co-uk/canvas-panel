@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import {
   increaseStructureDepth,
   mapStateToProps,
-} from '../../redux/spaces/structure';
+} from '@canvas-panel/timeline/es/redux/structure';
 import { withBemClass } from '@canvas-panel/core';
 import './Drawer.scss';
-import { renderTemporal } from '../../utils';
-import { manifestSetCanvas } from '../../redux/spaces/manifest';
+import { manifestSetCanvas } from '@canvas-panel/redux/es/spaces/manifest';
 import DrawerItem from '../DrawerItem/DrawerItem';
 
 class Drawer extends Component {

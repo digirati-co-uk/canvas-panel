@@ -7,7 +7,7 @@ import {
   searchNextCanvas,
   searchPrevCanvas,
   searchRequest,
-} from '../../redux/spaces/search';
+} from '@canvas-panel/redux/es/spaces/search';
 
 class SearchBox extends Component {
   input = null;

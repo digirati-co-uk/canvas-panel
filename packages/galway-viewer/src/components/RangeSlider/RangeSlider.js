@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { manifestSetCanvas } from '../../redux/spaces/manifest';
+import { manifestSetCanvas } from '@canvas-panel/redux/es/spaces/manifest';
 import './RangeSlider.scss';
 import Rheostat from 'rheostat';
 import RangeHighlights from '../RangeHighlights/RangeHighlights';
