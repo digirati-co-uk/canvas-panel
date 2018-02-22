@@ -1,11 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html,
+body,
+#app {
+  height: 100%;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html,
 body {
   font-family: 'Roboto', sans-serif;
   position: fixed;
   width: 100%;
   overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 main {

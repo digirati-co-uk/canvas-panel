@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   manifestNextCanvas,
   manifestPrevCanvas,
-} from '../../redux/spaces/manifest';
+} from '@canvas-panel/redux/es/spaces/manifest';
 import { withBemClass } from '@canvas-panel/core';
 import './NavigationControls.scss';
 

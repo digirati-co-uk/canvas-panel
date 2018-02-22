@@ -9,9 +9,9 @@ import {
   SingleTileSource,
   OpenSeadragonViewer,
   FullPageViewport,
+  OpenSeadragonViewport,
 } from '@canvas-panel/core';
-import OpenSeadragonViewport from '../../../../canvas-panel-core/src/viewers/OpenSeadragonViewport/OpenSeadragonViewport';
-import { deselectAnnotation } from '../../redux/spaces/annotations';
+import { deselectAnnotation } from '@canvas-panel/redux/es/spaces/annotations';
 
 function getManifestData(annotation) {
   const jsonLd = annotation.annotation.__jsonld;

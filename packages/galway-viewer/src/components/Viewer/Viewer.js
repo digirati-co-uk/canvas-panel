@@ -9,21 +9,16 @@ import {
   OpenSeadragonViewport,
   FullPageViewport,
   AnnotationRepresentation,
+  Fullscreen,
 } from '@canvas-panel/core';
-import './Viewer.scss';
 import {
   manifestNextCanvas,
   manifestPrevCanvas,
-} from '../../redux/spaces/manifest';
+} from '@canvas-panel/redux/es/spaces/manifest';
+import { selectAnnotation } from '@canvas-panel/redux/es/spaces/annotations';
 import Paging from '../Paging/Paging';
-import Fullscreen from '../../../../canvas-panel-core/src/components/Fullscreen/Fullscreen';
-import AnnotationCanvasRepresentation from '../../../../canvas-panel-core/src/components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation';
-import {
-  deselectAnnotation,
-  selectAnnotation,
-} from '../../redux/spaces/annotations';
-import Supplemental from '../Supplemental/Supplemental';
 import ViewerControls from '../ViewerControls/ViewerControls';
+import './Viewer.scss';
 
 class Viewer extends Component {
   setViewport = viewport => (this.viewport = viewport);

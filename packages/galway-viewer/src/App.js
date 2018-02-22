@@ -12,7 +12,7 @@ import './components/main.scss';
 import Viewer from './components/Viewer/Viewer';
 import Layout from './components/Layout/Layout';
 import { Provider } from 'react-redux';
-import { manifestRequest } from './redux/spaces/manifest';
+import { manifestRequest } from '@canvas-panel/redux/es/spaces/manifest';
 import Drawer from './components/Drawer/Drawer';
 import RangeSlider from './components/RangeSlider/RangeSlider';
 import NavigationControls from './components/NavigationControls/NavigationControls';
