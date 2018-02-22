@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { createStore } from '@canvas-panel/redux';
+import {
+  reducer as timelineReducer,
+  saga as timelineSaga,
+  Timeline,
+} from '@canvas-panel/timeline';
+
 import StartScreen from './components/StartScreen/StartScreen';
 import Header from './components/Header/Header';
 import './components/main.scss';
 import Viewer from './components/Viewer/Viewer';
 import Layout from './components/Layout/Layout';
-import Timeline from './components/Timeline/Timeline';
 import { Provider } from 'react-redux';
-import createCustomStore from './redux/createStore';
 import { manifestRequest } from './redux/spaces/manifest';
 import Drawer from './components/Drawer/Drawer';
 import RangeSlider from './components/RangeSlider/RangeSlider';
@@ -14,7 +19,7 @@ import NavigationControls from './components/NavigationControls/NavigationContro
 import Supplemental from './components/Supplemental/Supplemental';
 import SearchBox from './components/SearchBox/SearchBox';
 
-const store = createCustomStore();
+const store = createStore({ structure: timelineReducer }, [], [timelineSaga]);
 
 type Props = {
   manifestUri: string,

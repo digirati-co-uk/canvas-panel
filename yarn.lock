@@ -5718,6 +5718,12 @@ immutability-helper@^2.6.4:
   dependencies:
     invariant "^2.2.0"
 
+immutability-helper@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-2.6.5.tgz#94a10f18f1196244b2dea92d46522d2b4dce7b73"
+  dependencies:
+    invariant "^2.2.0"
+
 import-lazy@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
@@ -10200,10 +10206,6 @@ require-uncached@^1.0.2:
 requires-port@1.0.x, requires-port@1.x.x, requires-port@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
-
-reselect@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
 resize-observer-polyfill@^1.4.2:
   version "1.5.0"

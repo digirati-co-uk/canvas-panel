@@ -42,6 +42,16 @@ class Supplemental extends Component {
     this.setAnnotation(this.props.annotation);
   }
 
+  pressEscape = e => (e.keyCode === 27 ? this.close() : null);
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.pressEscape);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.pressEscape);
+  }
+
   componentWillReceiveProps(newProps) {
     if (newProps.annotation !== this.props.annotation) {
       this.setAnnotation(newProps.annotation);

@@ -15,6 +15,16 @@ class Drawer extends Component {
     inactive: true,
   };
 
+  pressEscape = e => (e.keyCode === 27 ? this.closeDrawer() : null);
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.pressEscape);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.pressEscape);
+  }
+
   handleItemClick = item => e => {
     const { dispatch } = this.props;
 

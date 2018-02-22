@@ -14,10 +14,10 @@ type Props = {
 
 class Layout extends Component<Props> {
   render() {
-    const { bem, header, content, footer } = this.props;
+    const { bem, header, content, footer, ...props } = this.props;
 
     return (
-      <main className={bem}>
+      <main className={bem} {...props}>
         <header className={bem.element('header')}>{header()}</header>
         <section className={bem.element('content')}>{content()}</section>
         <footer className={bem.element('footer')}>{footer()}</footer>
