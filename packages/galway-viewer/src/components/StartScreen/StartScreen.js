@@ -12,6 +12,16 @@ class StartScreen extends Component {
     hidden: this.hasCookieBoolean,
   };
 
+  pressEscape = e => (e.keyCode === 27 ? this.closeStartScreen() : null);
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.pressEscape);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.pressEscape);
+  }
+
   toggleStartScreen() {
     this.setState({ hidden: !this.state.hidden });
   }

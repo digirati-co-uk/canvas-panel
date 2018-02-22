@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@canvas-panel/core": "^0.0.1",
+    "@canvas-panel/redux": "^0.0.1",
+    "@canvas-panel/timeline": "^0.0.1",
     "cookies-js": "^1.2.3",
     "digirati-bem-js": "^1.0.0",
     "immutability-helper": "^2.6.4",
@@ -25,10 +27,6 @@
     "react-dom": "^16.2.0",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "redux-actions": "^2.2.1",
-    "redux-saga": "^0.16.0",
-    "reselect": "^3.0.1",
     "rheostat": "^2.1.3"
   },
   "devDependencies": {

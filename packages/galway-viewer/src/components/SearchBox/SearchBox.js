@@ -14,6 +14,24 @@ class SearchBox extends Component {
 
   state = { open: false };
 
+  pressEscape = e => {
+    if (e.keyCode === 27) {
+      if (this.input && this.state.open) {
+        this.input.value = '';
+        this.props.dispatch(searchCancel());
+        this.setState({ open: false });
+      }
+    }
+  };
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.pressEscape);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.pressEscape);
+  }
+
   openSearch = () => {
     if (!this.state.open) {
       setTimeout(() => this.input.focus(), 120);

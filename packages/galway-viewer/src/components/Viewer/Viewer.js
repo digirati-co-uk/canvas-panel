@@ -40,6 +40,25 @@ class Viewer extends Component {
     }
   };
 
+  pressArrows = e => {
+    const { dispatch } = this.props;
+
+    if (e.keyCode === 37 /* left arrow */) {
+      dispatch(manifestPrevCanvas());
+    }
+    if (e.keyCode === 39 /* right arrow */) {
+      dispatch(manifestNextCanvas());
+    }
+
+    if (e.keyCode === 189 /* dash */) {
+      this.zoomOut();
+    }
+
+    if (e.keyCode === 187 /* equals */) {
+      this.zoomIn();
+    }
+  };
+
   render() {
     const {
       bem,
@@ -66,7 +85,7 @@ class Viewer extends Component {
     return (
       <Fullscreen>
         {({ isFullscreen, exitFullscreen, goFullscreen }) => (
-          <div className={bem}>
+          <div className={bem} onKeyDown={this.pressArrows}>
             <ViewerControls
               onZoomIn={this.zoomIn}
               onZoomOut={this.zoomOut}
