@@ -21,6 +21,9 @@
   "devDependencies": {
     "nwb": "0.19.x"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",

@@ -37,6 +37,9 @@
     "prop-types": "^15.6.0",
     "react-styleguidist": "^6.1.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
