@@ -22,10 +22,12 @@
     "node": "8.x"
   },
   "scripts": {
+    "build": "lerna run build && lerna link",
     "precommit": "lint-staged",
     "release": "fesk-release",
     "merge": "fesk-merge",
     "link": "lerna link",
+    "postinstall": "lerna bootstrap",
     "build-core": "cd packages/canvas-panel-core && yarn run build",
     "build-docs": "cd packages/canvas-panel-core && yarn run styleguide:build",
     "build-patchwork-plugin":

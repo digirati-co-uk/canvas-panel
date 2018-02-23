@@ -2,20 +2,8 @@
 # Clean up previous build
 rm -rf ./dist
 
-# Link dependencies correctly.
-yarn run link
-
-# Build core (dependency)
-yarn run build-core || { echo '@canvas-panel/core failed to build' ; exit 1; }
-
-# Link dependencies after building.
-yarn run link
-
-# Build plugin (dependency of cookbook)
-yarn run build-patchwork-plugin || { echo '@canvas-panel/patchwork-plugin failed to build' ; exit 1; }
-
-# Link dependencies after building
-yarn run link
+# Build everything.
+yarn run build || { echo '@canvas-panel failed to build' ; exit 1; }
 
 # Build cookbook example site (base)
 yarn run build-cookbook || { echo 'Cookbook failed to build' ; exit 1; }
