@@ -9,6 +9,7 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module",
     "test": "nwb test",
+    "prepublish": "npm run build",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server"
   },
@@ -20,8 +21,9 @@
   "devDependencies": {
     "nwb": "0.19.x"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": ""
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-patchwork-plugin"
 }

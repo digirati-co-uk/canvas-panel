@@ -1,0 +1,17 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+  - "$HOME/.npm"
+notifications:
+  email: false
+node_js:
+- 8.9.4
+script:
+- "./node_modules/.bin/lerna bootstrap"
+- "./buildDocs.sh"
+after_success:
+- "./deploy.sh"
+env:
+  matrix:
+    secure: e7ULyGKH86WC5EH+l5bgCKOkPDfJE1uV/NO9FPUNBJcXd2aNy+U95CBaMBXootYSxo+BE6lV4xFk8I8u6faNSKUsbW7ccWfoDcXLpI/tm8Fk05HZ8nOhuqEZXHYlFuFfzEbi5Oy+VZi3c6JWqScuiFypUZ7He6hP0t9daabYP00ugMFzWTf4oL+l80PN+VJ9dWA38HqossGOYOE0SLhBWz3PUSWW9ZgI7ALzyTpyaxAAi8M5VEPcX15HqExA9LO5ACsQ/ljpaidP8ZDG1iyjo3i8EDpbs8ZVwtizz4FS6MY5d8Q8tc/Iq5YAsAhujJT+FBVELW4nF00EFni3YIZ0utWuaRrePnC1xZkOeqODrQ8tuhEsiefYO0BcAIPaf/udqXaILqVm4MoSocd/YmDmORdex50PAxWYbdVbNLzTNn1i/5ryqG85GkTmC8c/lGOIcTT4cEIXbUdCIwTnsjoESLA8J0oVsQiTynfS8Y147hf5GM+3Ej/8dx2Pn/1bl2W1TgeMLbeWxXQHs9e5WnYr7iKU6BH/XMqJq7zqHcLIUhDSZoyCh4pMUsU9/63fGwiU4AMsbh3RwBeHINcUbG4A2P2C5KVvRR0GieBCUO400rUHIx1Bi/HBy/I/6ADXY87zBZIRPo3s27XD6x3I6NKvbFHZkJy0yUf1X8QIdoMrL4I=

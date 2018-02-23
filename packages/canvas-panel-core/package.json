@@ -3,15 +3,16 @@
   "version": "0.0.1",
   "description":
     "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
-  "private": true,
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
+  "files": ["es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-app",
     "start": "npm run styleguide",
     "test": "nwb test-react",
+    "prepublish": "npm run build",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test:coverage": "nwb test-react --coverage",
@@ -36,7 +37,8 @@
     "prop-types": "^15.6.0",
     "react-styleguidist": "^6.1.0"
   },
-  "author": "Digirati Limited",
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
   "license": "MIT",
   "repository": "https://github.com/digirati-co-uk/canvas-panel"
 }
