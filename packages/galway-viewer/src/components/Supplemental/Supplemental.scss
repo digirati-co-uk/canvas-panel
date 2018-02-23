@@ -1,0 +1,197 @@
+$pallet-3-3: #00aeb2 !default;
+.supplemental {
+  transition: all 0.2s;
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  &__inner-content {
+    right: 20px;
+    left: 20px;
+    position: absolute;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 30px;
+    @media (max-width: 40em) {
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      padding: 0;
+    }
+  }
+
+  &__inner {
+    background: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    padding-right: 80px;
+
+    @media (max-width: 40em) {
+      padding-top: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 0;
+      height: 100vh;
+    }
+  }
+
+  &__aside {
+    flex: 1;
+    margin: 30px;
+    padding-left: 50px;
+    @media (max-width: 970px) {
+      flex: 2;
+    }
+    @media (max-width: 40em) {
+      margin: 20px;
+      padding-left: 0;
+      flex: initial;
+      order: 2;
+    }
+  }
+
+  &__images {
+    position: relative;
+    min-height: 60vh;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 30px;
+    flex: 1;
+    min-width: 120px;
+    @media (max-width: 970px) {
+      flex: 3;
+    }
+    @media (max-width: 40em) {
+      order: 1;
+      max-height: inherit;
+      overflow: auto;
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100vh;
+    @media (max-width: 40em) {
+      flex: 0 1;
+      margin: auto;
+      max-width: initial;
+      max-height: 100%;
+    }
+  }
+
+  &__lightbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    display: block;
+    z-index: 0;
+  }
+
+  &__title {
+    //flex-grow: 1;
+    font-size: 40px;
+    margin-bottom: 30px;
+    @media (max-width: 40em) {
+      font-weight: 500;
+      font-size: 2.8vh;
+      line-height: 4vh;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 28px;
+    @media (max-width: 40em) {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    margin-top: 20px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 10px 20px;
+    background: $pallet-3-3;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.4s;
+
+    .material-icons {
+      line-height: inherit;
+      font-size: inherit;
+      transform: scale(1.4);
+      margin-left: 15px;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+        0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 40em) {
+      margin: 0;
+      font-size: 13px;
+      padding: 10px 20px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 53px;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 100;
+    @media (max-width: 40em) {
+      top: 0;
+      right: 20px;
+    }
+  }
+
+  &--active {
+    pointer-events: initial;
+    opacity: 1;
+    z-index: 50;
+  }
+}
+
+// Safari hacks
+@media screen and (max-width: 767px) {
+  _::-webkit-full-page-media,
+  _:future,
+  :root .supplemental__inner {
+    height: calc(100vh - 50px);
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .supplemental__inner {
+    height: calc(100vh - 110px) !important;
+  }
+}

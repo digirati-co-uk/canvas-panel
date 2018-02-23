@@ -170,11 +170,15 @@ class OpenSeadragonViewer extends Component<
   };
 
   zoomIn = (speed: number) => {
-    this.viewportAction('zoomBy', [1 / 0.7], speed);
+    if (this.getZoom() < this.getMaxZoom()) {
+      this.viewportAction('zoomBy', [1 / 0.7], speed);
+    }
   };
 
   zoomOut = (speed: number) => {
-    this.viewportAction('zoomBy', [0.7], speed);
+    if (this.getZoom() > this.getMinZoom()) {
+      this.viewportAction('zoomBy', [0.7], speed);
+    }
   };
 
   resetView = (speed: number) => {

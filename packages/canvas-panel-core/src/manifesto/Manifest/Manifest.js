@@ -40,6 +40,7 @@ class Manifest extends Component {
         });
       })
       .catch(error => {
+        console.error('error', error);
         this.setState({
           error: 'something went wrong fetching this manifest.',
         });
