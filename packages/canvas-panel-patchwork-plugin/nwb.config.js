@@ -6,19 +6,22 @@ module.exports = {
       global: 'singleCanvasAnnotationDetailViewer',
       externals: {
         openseadragon: 'OpenSeadragon',
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        'manifesto.js': 'Manifesto',
+        // react: 'React',
+        // 'react-dom': 'ReactDOM',
+        // 'manifesto.js': 'Manifesto',
       },
     },
   },
   babel: {
-    runtime: false,
-    loose: false,
+    env: {
+      targets: {
+        browsers: ['last 2 versions', 'IE >= 9'],
+      },
+    },
   },
   webpack: {
     extra: {
-      node: { Buffer: false }, // You need to comment this out if you want to build Manifesto.
+      // node: { Buffer: false }, // You need to comment this out if you want to build Manifesto.
     },
   },
 };

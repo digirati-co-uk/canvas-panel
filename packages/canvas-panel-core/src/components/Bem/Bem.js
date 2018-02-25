@@ -3,7 +3,7 @@
  */
 import React, { Component, type Node } from 'react';
 import createReactContext from 'create-react-context';
-import BEM from 'digirati-bem-js';
+import BEM from '@fesk/bem-js';
 
 const defaultContext = {
   prefix: '',

@@ -4,4 +4,12 @@ module.exports = {
     esModules: true,
     umd: false,
   },
+  babel: {
+    env: {
+      targets: {
+        browsers: ['last 2 versions', 'ie 10', 'ie 11'],
+      },
+      modules: false,
+    },
+  },
 };

@@ -32,7 +32,7 @@ class OpenSeadragonViewer extends Component<
     fallback: false,
   };
   viewer: ?OpenSeadragon = null;
-  element: any;
+  element: any = null;
   static defaultProps = {
     osdOptions: {},
     useMaxDimensions: false,
@@ -135,7 +135,6 @@ class OpenSeadragonViewer extends Component<
     if (getRef) {
       getRef(this);
     }
-
     Promise.all(
       tileSources.map(tileSource => this.asyncAddTile({ tileSource }))
     ).then(e => {

@@ -20,11 +20,15 @@ class Fullscreen extends Component<any, State> {
   };
 
   componentWillMount() {
-    screenfull.on('change', this.handleChangeFullScreenState);
+    if (screenfull.on) {
+      screenfull.on('change', this.handleChangeFullScreenState);
+    }
   }
 
   componentWillUnmount() {
-    screenfull.off('change', this.handleChangeFullScreenState);
+    if (screenfull.off) {
+      screenfull.off('change', this.handleChangeFullScreenState);
+    }
   }
 
   toggleFullscreen = () => {
