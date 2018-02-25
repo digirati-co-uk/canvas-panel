@@ -21,7 +21,7 @@ module.exports = {
   },
   webpack: {
     extra: {
-      // node: { Buffer: false }, // You need to comment this out if you want to build Manifesto.
+      //      node: { Buffer: false }, // You need to comment this out if you want to build Manifesto.
     },
   },
 };
