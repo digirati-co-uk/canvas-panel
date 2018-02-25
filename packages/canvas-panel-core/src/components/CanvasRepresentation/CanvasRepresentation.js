@@ -26,7 +26,6 @@ class CanvasRepresentation extends Component {
         width: child.props.width * ratio * zam,
         transform: 'scale(' + 1 / zam + ')',
         transformOrigin: 'top left',
-        pointerEvents: 'initial',
       };
     }
 
@@ -41,7 +40,6 @@ class CanvasRepresentation extends Component {
       left: child.props.x * ratio,
       height: child.props.height * ratio,
       width: child.props.width * ratio,
-      pointerEvents: 'initial',
     };
   }
 
