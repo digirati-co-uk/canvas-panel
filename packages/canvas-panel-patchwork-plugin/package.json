@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/patchwork-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Describe canvas-panel-patchwork-plugin here",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -18,7 +18,7 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.3",
+    "@canvas-panel/core": "^0.0.4",
     "babel-preset-es2015-native-modules": "^6.9.4",
     "react-dom": "^16.2.0"
   },
