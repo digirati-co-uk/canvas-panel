@@ -1,5 +1,6 @@
 import './index.css';
 
+import '@canvas-panel/core/lib/polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 

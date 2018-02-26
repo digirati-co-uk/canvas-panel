@@ -27,7 +27,7 @@ const defaultConfiguration = {
   height: 500,
   annotationMargin: 600,
   width: 1200,
-  mobileHeight: window.innerWidth,
+  // mobileHeight: window.innerWidth,
   renderAnnotation: null,
   allowFullScreen: true,
   events: {},

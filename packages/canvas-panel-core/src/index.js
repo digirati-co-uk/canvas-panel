@@ -1,3 +1,4 @@
+import './polyfill';
 import Manifest from './manifesto/Manifest/Manifest';
 import Annotation from './components/Annotation/Annotation';
 import AnnotationCanvasRepresentation from './components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation';
