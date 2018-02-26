@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
-import * as Manifesto from 'manifesto.js';
+import * as Manifesto from '@stephenwf-forks/manifesto.js';
 import functionOrMapChildren, {
   FunctionOrMapChildrenType,
 } from '../../utility/functionOrMapChildren';

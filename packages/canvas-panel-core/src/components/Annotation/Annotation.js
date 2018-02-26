@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from 'react';
-import * as Manifesto from 'manifesto.js';
+import * as Manifesto from '@stephenwf-forks/manifesto.js';
 import { withBemClass } from '../Bem/Bem';
 import type { BemBlockType } from '../Bem/Bem';
 

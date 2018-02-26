@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
-import * as Manifesto from 'manifesto.js';
+import * as Manifesto from '@stephenwf-forks/manifesto.js';
 import LocaleString from '../LocaleString/LocaleString';
 import functionOrMapChildren, {
   FunctionOrMapChildrenType,
@@ -13,7 +13,7 @@ class CanvasProvider extends Component {
 
   static propTypes = {
     sequence: PropTypes.number,
-    startCanvas: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]),
+    startCanvas: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     manifest: PropTypes.instanceOf(Manifesto.Manifest),
     children: FunctionOrMapChildrenType,
   };
