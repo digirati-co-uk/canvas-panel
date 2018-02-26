@@ -1,15 +1,12 @@
 {
   "name": "@canvas-panel/core",
   "version": "0.0.3",
-  "description": "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
+  "description":
+    "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "files": [
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-app",
@@ -23,10 +20,10 @@
   },
   "dependencies": {
     "@fesk/bem-js": "^1.0.0",
+    "@iiif/manifold": "^1.2.19",
     "@stephenwf-forks/manifesto.js": "^2.2.10",
     "core-js": "^2.5.3",
     "create-react-context": "^0.1.4",
-    "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
     "openseadragon": "^2.3.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

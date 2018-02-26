@@ -85,6 +85,12 @@
     semver "^5.5.0"
     yargs "^11.0.0"
 
+"@iiif/manifold@^1.2.19":
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/@iiif/manifold/-/manifold-1.2.19.tgz#3debcc115ee770cdfb064fe329bf7aaf6be4fe6f"
+  dependencies:
+    "@types/jquery" "^2.0.40"
+
 "@stephenwf-forks/manifesto.js@^2.2.10":
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.10.tgz#4bf643202cb77516d63e1d22d6ac386a6183e7be"
@@ -3588,7 +3594,7 @@ exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
 
-"exjs@github:BSick7/exjs#0.5.0":
+exjs@BSick7/exjs#0.5.0:
   version "0.5.0"
   resolved "https://codeload.github.com/BSick7/exjs/tar.gz/98195810790c0e61cb5beb510da4b756528f92f2"
 
@@ -4713,7 +4719,7 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-"http-status-codes@github:edsilv/http-status-codes#v0.0.7":
+http-status-codes@edsilv/http-status-codes#v0.0.7:
   version "0.0.7"
   resolved "https://codeload.github.com/edsilv/http-status-codes/tar.gz/af3a8ab9970b1f291a79b03c7382dc16aebee749"
 

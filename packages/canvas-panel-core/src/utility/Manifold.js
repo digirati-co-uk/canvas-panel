@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import 'manifold';
+import '@iiif/manifold';
 
 global.$ = global.$ ? global.$ : {};
 global.$.ajax = ({ url, type, dataType, beforeSend }) => {
