@@ -24,7 +24,10 @@
   position: relative;
   outline: none;
   pointer-events: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
+
 
 .patchwork-annotation-pin:hover {
   /*outline: 2px dotted rgba(0, 0, 0, .6);*/
@@ -55,6 +58,7 @@
   background: #eee;
   border-radius: 3px;
   border: none;
+  transform: translateZ(0);
 }
 
 .patchwork-fullscreen-toggle--is-mobile {
@@ -75,46 +79,22 @@
   margin-right: auto;
 }
 
-.patchwork-annotation-pin:before {
-  cursor: pointer;
-  pointer-events: initial;
-  content: '+';
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  left: 50%;
-  margin-left: -15px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #000;
-  top: -20px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 28px;
-}
-
-.patchwork-annotation-pin--selected:before {
-  content: '×';
-  background: #000;
-  color: #fff;
-}
-
 .patchwork-annotation-pin:after {
   content: '';
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 41"><g fill="none" fill-rule="evenodd"><circle cx="14" cy="14" r="14" fill="%23ffffff" stroke="%232C1E20" stroke-width="1"/><path stroke="%23ffffff" stroke-width="4" d="M14 28.5V39" stroke-linecap="square"/><g fill="%23333436"><path d="M8 13h12v2H8z"/><path d="M15 8v12h-2V8z"/></g></g></svg>');
+  background-size: 100%;
+  transform: translate3d(0,0,0);
+  cursor: pointer;
+  pointer-events: initial;
   position: absolute;
-  background: #fff;
+  top: -20px;
+  width: 30px;
+  height: 40px;
   left: 50%;
-  margin-left: -2px;
-  width: 4px;
-  height: 20px;
-  top: 9px;
-  text-align: center;
-  line-height: 28px;
 }
 
 .patchwork-annotation-pin--selected:after {
-  background: #000;
-  color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 41"><g fill="none" fill-rule="evenodd"><circle cx="14" cy="14" r="14" fill="%231D1E20"/><path stroke="%232C1E20" stroke-width="4" d="M14 28.5V39" stroke-linecap="square"/><path fill="%23ffffff" d="M14 12.586L10.464 9.05 9.05 10.464 12.586 14 9.05 17.536l1.414 1.414L14 15.414l3.536 3.536 1.414-1.414L15.414 14l3.536-3.536-1.414-1.414L14 12.586z"/></g></svg>');
 }
 
 .patchwork-container {
@@ -123,6 +103,7 @@
   max-width: 1200px;
   width: 100%;
   height: 100%;
+  transform: translateZ(0);
 }
 
 .patchwork-annotation-detail__close {
