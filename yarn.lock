@@ -6103,12 +6103,6 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
-"manifold@git://github.com/IIIF-Commons/manifold.git#v1.2.16":
-  version "1.2.16"
-  resolved "git://github.com/IIIF-Commons/manifold.git#13078d7c0fe201735a0bc9fe8a69d3642b0664ae"
-  dependencies:
-    "@types/jquery" "^2.0.40"
-
 map-cache@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"

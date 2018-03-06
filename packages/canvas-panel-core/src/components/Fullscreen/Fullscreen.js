@@ -58,6 +58,7 @@ class Fullscreen extends Component<any, State> {
     const { isFullscreen } = this.state;
 
     return functionOrMapChildren(children, {
+      fullscreenEnabled: screenfull.enabled,
       isFullscreen,
       toggleFullscreen: this.toggleFullscreen,
       goFullscreen: this.goFullscreen,
