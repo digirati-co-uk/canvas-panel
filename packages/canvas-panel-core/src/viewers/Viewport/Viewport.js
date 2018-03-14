@@ -139,7 +139,7 @@ class Viewport extends Component {
         }}
       >
         {React.Children.map(children, child => {
-          if (child === null) {
+          if (child === null || child.props['data-static']) {
             return child;
           }
           if (child.props.viewportController === true) {
