@@ -50,7 +50,7 @@ const AdaptiveViewport = ({
 }) => {
   if (fullViewport || isFullscreen) {
     return (
-      <FullPageViewport interactive={true} {...props}>
+      <FullPageViewport position="absolute" interactive={true} {...props}>
         {props.children}
       </FullPageViewport>
     );
