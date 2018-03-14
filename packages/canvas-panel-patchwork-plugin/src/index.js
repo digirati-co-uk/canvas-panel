@@ -192,6 +192,7 @@ class PatchworkPlugin extends Component {
                               visibilityRatio: 1,
                               constrainDuringPan: true,
                               showNavigator: false,
+                              immediateRender: false,
                               ...osdOptions,
                             }}
                           />
