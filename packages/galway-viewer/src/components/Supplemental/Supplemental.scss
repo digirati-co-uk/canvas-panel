@@ -24,6 +24,10 @@ $pallet-3-3: #00aeb2 !default;
     max-width: 1100px;
     margin: auto;
     padding: 0 30px;
+    width: 100%;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      top: 50px;
+    }
     @media (max-width: 40em) {
       right: 0;
       left: 0;
@@ -175,7 +179,7 @@ $pallet-3-3: #00aeb2 !default;
   }
 
   &--active {
-    pointer-events: initial;
+    pointer-events: visible;
     opacity: 1;
     z-index: 50;
   }

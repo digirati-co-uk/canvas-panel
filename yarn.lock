@@ -78,21 +78,6 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@canvas-panel/core@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.0.1.tgz#dc1d0ca9cf0876d0276cb07e0ff834390069dd3c"
-  dependencies:
-    create-react-context "^0.1.4"
-    digirati-bem-js "^1.0.0"
-    manifesto.js "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1"
-    manifold "git://github.com/IIIF-Commons/manifold.git#v1.2.16"
-    openseadragon "^2.3.1"
-    react "^16.2.0"
-    react-dom "^16.2.0"
-    react-draggable "^3.0.5"
-    react-measure "^2.0.2"
-    screenfull "^3.3.2"
-
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@fesk/bem-js/-/bem-js-1.0.1.tgz#ac7c74351e34835274aef0506146709d3046cef1"
