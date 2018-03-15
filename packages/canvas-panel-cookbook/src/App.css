@@ -7,6 +7,10 @@ body {
   margin-top: 40px;
 }
 
+html:-ms-fullscreen {
+  width: 100%; /* needed to center contents in IE */
+}
+
 .app-navigation {
   height: 40px;
   background: #333;

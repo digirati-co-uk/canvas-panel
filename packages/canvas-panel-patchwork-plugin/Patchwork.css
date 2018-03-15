@@ -26,6 +26,10 @@
   transform: translateZ(0);
 }
 
+.fullscreen {
+  background: #000;
+}
+
 .patchwork-annotation-pin:hover {
   /*outline: 2px dotted rgba(0, 0, 0, .6);*/
   /*border: 1px solid #fff;*/

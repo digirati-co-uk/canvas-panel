@@ -5,60 +5,35 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import screenfull from 'screenfull';
 import functionOrMapChildren from '../../utility/functionOrMapChildren';
+import Fullscreenable from 'react-fullscreenable';
 
-type State = {
-  isFullscreen: boolean,
-};
-
-class Fullscreen extends Component<any, State> {
-  state = {
+class Fullscreen extends Component<any, any> {
+  static defaultProps = {
     isFullscreen: false,
+    toggleFullscreen: () => {},
   };
-
-  handleChangeFullScreenState = () => {
-    this.setState(() => ({ isFullscreen: screenfull.isFullscreen }));
-  };
-
-  componentWillMount() {
-    if (screenfull.on) {
-      screenfull.on('change', this.handleChangeFullScreenState);
-    }
-  }
-
-  componentWillUnmount() {
-    if (screenfull.off) {
-      screenfull.off('change', this.handleChangeFullScreenState);
-    }
-  }
 
   toggleFullscreen = () => {
-    if (this.state.isFullscreen) {
-      this.exitFullscreen();
-    } else {
-      this.goFullscreen();
-    }
+    this.props.toggleFullscreen();
   };
 
   goFullscreen = () => {
-    const node = ReactDOM.findDOMNode(this);
-    if (node) {
-      screenfull.request(node);
+    if (this.isFullscreen === false) {
+      this.props.toggleFullscreen();
     }
   };
 
   exitFullscreen = () => {
-    const node = ReactDOM.findDOMNode(this);
-    if (node) {
-      screenfull.exit(node);
+    if (this.isFullscreen === true) {
+      this.props.toggleFullscreen();
     }
   };
 
   render() {
-    const { children, ...props } = this.props;
-    const { isFullscreen } = this.state;
+    const { children, isFullscreen, ...props } = this.props;
 
     return functionOrMapChildren(children, {
-      fullscreenEnabled: screenfull.enabled,
+      fullscreenEnabled: true,
       isFullscreen,
       toggleFullscreen: this.toggleFullscreen,
       goFullscreen: this.goFullscreen,
@@ -68,4 +43,4 @@ class Fullscreen extends Component<any, State> {
   }
 }
 
-export default Fullscreen;
+export default Fullscreenable()(Fullscreen);
