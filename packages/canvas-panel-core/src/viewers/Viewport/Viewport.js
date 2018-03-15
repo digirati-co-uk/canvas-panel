@@ -104,6 +104,24 @@ class Viewport extends Component {
     }
   };
 
+  getChildRatio({ ratioFromMaxWidth, ratio, scale }) {
+    const width = this.props.width;
+
+    if (ratioFromMaxWidth) {
+      return ratioFromMaxWidth / width;
+    }
+
+    if (scale) {
+      return scale;
+    }
+
+    if (ratio) {
+      return ratio;
+    }
+
+    return window.innerWidth / width; // Defaults to max width of screen.
+  }
+
   render() {
     const { x, y, zoom, scale, rotation, imageRatio, isZoomedOut } = this.state;
     const { maxWidth, maxHeight, children, style, ...props } = this.props;
@@ -121,6 +139,9 @@ class Viewport extends Component {
         }}
       >
         {React.Children.map(children, child => {
+          if (child === null || child.props['data-static']) {
+            return child;
+          }
           if (child.props.viewportController === true) {
             return React.cloneElement(child, {
               getPosition: this.onUpdateViewport,
@@ -130,7 +151,7 @@ class Viewport extends Component {
               ...props,
             });
           }
-          const ratio = child.props.ratio || child.props.scale || 1;
+          const ratio = this.getChildRatio(child.props);
           return React.cloneElement(child, {
             style: {
               transform: `translate(${x}px,${y}px) scale(${zoom *
@@ -154,6 +175,7 @@ class Viewport extends Component {
               imageRatio,
               isZoomedOut,
             },
+            ratio,
             maxWidth,
             ...props,
           });

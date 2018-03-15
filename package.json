@@ -16,6 +16,7 @@
     "husky": "^0.14.3",
     "lerna": "2.9.0",
     "lint-staged": "^6.0.0",
+    "npm-run-all": "^4.1.2",
     "prettier": "^1.9.2"
   },
   "devEngines": {
@@ -23,6 +24,11 @@
   },
   "scripts": {
     "build": "lerna run build && lerna link",
+    "build-all": "lerna run build",
+    "build-ci": "npm-run-all build build-docs",
+    "start": "run-p watch start-docs",
+    "start-docs": "cd packages/canvas-panel-core && yarn start",
+    "watch": "lerna run watch --parallel --concurrency=4",
     "precommit": "lint-staged",
     "release": "fesk-release",
     "merge": "fesk-merge",

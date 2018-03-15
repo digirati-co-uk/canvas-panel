@@ -1,25 +1,29 @@
 {
   "name": "@canvas-panel/core",
   "version": "0.0.4",
-  "description": "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
+  "description":
+    "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "files": [
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-app",
     "start": "npm run styleguide",
     "test": "nwb test-react",
-    "prepublish": "npm run build",
+    "prepublish": "NODE_ENV=production npm run build",
+    "watch": "npm-watch",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
+  },
+  "watch": {
+    "build": {
+      "patterns": ["src"],
+      "extensions": "js,json,scss"
+    }
   },
   "dependencies": {
     "@fesk/bem-js": "^1.0.0",
@@ -38,6 +42,7 @@
   "devDependencies": {
     "babel-loader": "^7.1.2",
     "create-nwb-webpack-config": "^1.0.0",
+    "npm-watch": "^0.3.0",
     "nwb": "0.18.x",
     "prop-types": "^15.6.0",
     "react-styleguidist": "^6.0.0"

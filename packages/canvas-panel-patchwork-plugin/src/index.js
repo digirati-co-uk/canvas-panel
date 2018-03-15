@@ -27,7 +27,7 @@ const defaultConfiguration = {
   height: 500,
   annotationMargin: 600,
   width: 1200,
-  // mobileHeight: window.innerWidth,
+  mobileHeight: window.innerWidth,
   renderAnnotation: null,
   allowFullScreen: true,
   events: {},
@@ -50,7 +50,7 @@ const AdaptiveViewport = ({
 }) => {
   if (fullViewport || isFullscreen) {
     return (
-      <FullPageViewport interactive={true} {...props}>
+      <FullPageViewport position="absolute" interactive={true} {...props}>
         {props.children}
       </FullPageViewport>
     );
@@ -90,7 +90,7 @@ const FullscreenCover = withBemClass('fullscreen-cover')(
 class PatchworkPlugin extends Component {
   viewport = null;
   animationSpeed = 1;
-  state = { annotation: null };
+  state = { annotation: null, isMobileFullscreen: false };
 
   static defaultProps = defaultConfiguration;
 
@@ -123,6 +123,10 @@ class PatchworkPlugin extends Component {
     }
     return this.props.animationSpeed / 1000;
   }
+
+  toggleMobileFullscreen = () => {
+    this.setState({ isMobileFullscreen: !this.state.isMobileFullscreen });
+  };
 
   onClose = () => {
     this.dispatch('onClose', { annotation: this.state.annotation });
@@ -164,13 +168,17 @@ class PatchworkPlugin extends Component {
     return (
       <div style={relativeContainer ? { position: 'relative' } : {}}>
         <Fullscreen>
-          {({ isFullscreen, toggleFullscreen }) => (
+          {({ isFullscreen, fullscreenEnabled, toggleFullscreen }) => (
             <div>
               <Bem cssClassMap={cssClassMap} prefix={cssClassPrefix}>
                 <Manifest url={manifest} jsonLd={jsonLdManifest}>
                   <CanvasProvider startCanvas={canvas}>
                     <AdaptiveViewport
-                      isFullscreen={isFullscreen}
+                      isFullscreen={
+                        fullscreenEnabled
+                          ? isFullscreen
+                          : state.isMobileFullscreen
+                      }
                       fullViewport={fitContainer}
                       maxWidth={width}
                       maxHeight={height}
@@ -184,12 +192,15 @@ class PatchworkPlugin extends Component {
                               visibilityRatio: 1,
                               constrainDuringPan: true,
                               showNavigator: false,
+                              immediateRender: false,
                               ...osdOptions,
                             }}
                           />
                         </OpenSeadragonViewport>
                       </SingleTileSource>
                       <AnnotationCanvasRepresentation
+                        ratio={0.1}
+                        ratioFromMaxWidth={1000}
                         growthStyle={growthStyle}
                         bemModifiers={annotation => ({
                           selected: state.annotation
@@ -198,27 +209,35 @@ class PatchworkPlugin extends Component {
                         })}
                         onClickAnnotation={this.onClickAnnotation}
                       />
-                      {window.innerWidth < mobileBreakpoint &&
-                      isFullscreen === false ? (
-                        <FullscreenCover toggleFullscreen={toggleFullscreen} />
-                      ) : (
-                        <div />
-                      )}
+                      {mobileBreakpoint > window.innerWidth &&
+                      state.isMobileFullscreen === false ? (
+                        <FullscreenCover
+                          toggleFullscreen={this.toggleMobileFullscreen}
+                        />
+                      ) : null}
                       <FullScreenToggle
-                        isFullscreen={isFullscreen}
-                        toggleFullscreen={toggleFullscreen}
+                        isFullscreen={
+                          fullscreenEnabled
+                            ? isFullscreen
+                            : state.isMobileFullscreen
+                        }
+                        toggleFullscreen={
+                          fullscreenEnabled
+                            ? toggleFullscreen
+                            : this.toggleMobileFullscreen
+                        }
                         mobileBreakpoint={mobileBreakpoint}
                       />
+                      {state.annotation ? (
+                        <AnnotationDetail
+                          closeText={closeText}
+                          annotation={state.annotation}
+                          onClose={this.onClose}
+                        />
+                      ) : null}
                     </AdaptiveViewport>
                   </CanvasProvider>
                 </Manifest>
-                {state.annotation ? (
-                  <AnnotationDetail
-                    closeText={closeText}
-                    annotation={state.annotation}
-                    onClose={this.onClose}
-                  />
-                ) : null}
               </Bem>
             </div>
           )}

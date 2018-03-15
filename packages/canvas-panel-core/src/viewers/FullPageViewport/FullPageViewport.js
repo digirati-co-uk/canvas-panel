@@ -9,7 +9,14 @@ class FullPageViewport extends Component {
   };
 
   render() {
-    const { children, style, interactive, position, ...props } = this.props;
+    const {
+      children,
+      style,
+      zIndex,
+      interactive,
+      position,
+      ...props
+    } = this.props;
     const computedStyle = Object.assign(
       {
         position: position === 'fixed' ? 'fixed' : 'absolute',
@@ -17,6 +24,7 @@ class FullPageViewport extends Component {
         left: 0,
         bottom: 0,
         right: 0,
+        zIndex: zIndex || 10,
       },
       style
     );
