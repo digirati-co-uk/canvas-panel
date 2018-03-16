@@ -91,6 +91,7 @@
   width: 30px;
   height: 40px;
   left: 50%;
+  margin-left: -15px;
 }
 
 .patchwork-annotation-pin--selected:after {
