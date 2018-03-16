@@ -29,6 +29,11 @@ html:-ms-fullscreen {
   z-index: 9999;
   font-size: 14px;
 }
+
+.cvp-mobile-fullscreen .app-navigation {
+  display: none;
+}
+
 .app-logo {
   height: 25px;
   position: relative;
