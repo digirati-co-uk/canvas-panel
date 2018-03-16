@@ -55,7 +55,6 @@ const AdaptiveViewport = ({
       </FullPageViewport>
     );
   }
-
   return (
     <Viewport maxWidth={maxWidth} maxHeight={maxHeight} {...props}>
       {props.children}
@@ -212,10 +211,12 @@ class PatchworkPlugin extends Component {
                       {mobileBreakpoint > window.innerWidth &&
                       state.isMobileFullscreen === false ? (
                         <FullscreenCover
+                          data-static
                           toggleFullscreen={this.toggleMobileFullscreen}
                         />
                       ) : null}
                       <FullScreenToggle
+                        data-static
                         isFullscreen={
                           fullscreenEnabled
                             ? isFullscreen
@@ -230,6 +231,7 @@ class PatchworkPlugin extends Component {
                       />
                       {state.annotation ? (
                         <AnnotationDetail
+                          data-static
                           closeText={closeText}
                           annotation={state.annotation}
                           onClose={this.onClose}
