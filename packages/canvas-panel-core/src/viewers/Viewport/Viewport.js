@@ -1,5 +1,35 @@
 import React, { Component } from 'react';
 
+/**
+ * Creates valid transforms for FF + SF9
+ * @todo move to utility.
+ */
+function transformGenerator({
+  x: dX,
+  y: dY,
+  scale: dScale,
+  rotation: dRotation,
+}) {
+  const parts = [];
+  const floor = val => {
+    const retVal = val.toFixed(4);
+    if (retVal < 0.001 && retVal > -0.001) {
+      return 0;
+    }
+    return retVal || 0;
+  };
+  if (dX || dY) {
+    parts.push(`translate(${floor(dX)}px,${floor(dY)}px)`);
+  }
+  if (dScale) {
+    parts.push(`scale(${floor(dScale)})`);
+  }
+  if (dRotation) {
+    parts.push(`rotate(${floor(dRotation)})`);
+  }
+  return parts.join(' ');
+}
+
 class Viewport extends Component {
   state = {
     x: 0,
@@ -7,6 +37,7 @@ class Viewport extends Component {
     zoom: 1,
     scale: 1,
     rotation: 0,
+    isLoading: true,
   };
 
   componentDidMount() {
@@ -31,6 +62,7 @@ class Viewport extends Component {
     isZoomedOut = true,
   }) => {
     this.setState({
+      isLoading: false,
       x,
       y,
       zoom,
@@ -122,8 +154,47 @@ class Viewport extends Component {
     return window.innerWidth / width; // Defaults to max width of screen.
   }
 
+  shouldComponentUpdate(newProps, newState) {
+    const {
+      x,
+      y,
+      zoom,
+      scale,
+      rotation,
+      imageRatio,
+      isZoomedOut,
+      isLoading,
+    } = this.state;
+    const { maxWidth, maxHeight, children, style, setRef } = this.props;
+
+    return (
+      x !== newState.x ||
+      y !== newState.y ||
+      zoom !== newState.zoom ||
+      scale !== newState.scale ||
+      rotation !== newState.rotation ||
+      imageRatio !== newState.imageRatio ||
+      isZoomedOut !== newState.isZoomedOut ||
+      isLoading !== newState.isLoading ||
+      setRef !== newProps.setRef ||
+      maxWidth !== newProps.maxWidth ||
+      maxHeight !== newProps.maxHeight ||
+      children !== newProps.children ||
+      style !== newProps.style
+    );
+  }
+
   render() {
-    const { x, y, zoom, scale, rotation, imageRatio, isZoomedOut } = this.state;
+    const {
+      x,
+      y,
+      zoom,
+      scale,
+      rotation,
+      imageRatio,
+      isZoomedOut,
+      isLoading,
+    } = this.state;
     const { maxWidth, maxHeight, children, style, ...props } = this.props;
 
     return (
@@ -151,12 +222,19 @@ class Viewport extends Component {
               ...props,
             });
           }
+          if (isLoading === true) {
+            return <div data-loading />;
+          }
+
           const ratio = this.getChildRatio(child.props);
           return React.cloneElement(child, {
             style: {
-              transform: `translate(${x}px,${y}px) scale(${zoom *
-                scale /
-                ratio}) rotate(${rotation})`,
+              transform: transformGenerator({
+                x,
+                y,
+                scale: zoom * scale / ratio,
+                rotation,
+              }),
               transformOrigin: '0 0 0',
               maxHeight,
               ...child.props.style,
