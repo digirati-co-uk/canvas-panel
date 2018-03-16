@@ -50,7 +50,7 @@ const AdaptiveViewport = ({
 }) => {
   if (fullViewport || isFullscreen) {
     return (
-      <FullPageViewport position="fixed" interactive={true} {...props}>
+      <FullPageViewport position="absolute" interactive={true} {...props}>
         {props.children}
       </FullPageViewport>
     );
@@ -204,10 +204,14 @@ class PatchworkPlugin extends Component {
                       isFullscreen={fullscreenEnabled ? isFullscreen : false}
                       fullViewport={fitContainer}
                       maxWidth={
-                        state.isMobileFullscreen ? window.innerWidth : width
+                        isFullscreen || state.isMobileFullscreen
+                          ? window.innerWidth
+                          : width
                       }
                       maxHeight={
-                        state.isMobileFullscreen ? window.innerHeight : height
+                        isFullscreen || state.isMobileFullscreen
+                          ? window.innerHeight
+                          : height
                       }
                       setRef={this.setViewport}
                     >

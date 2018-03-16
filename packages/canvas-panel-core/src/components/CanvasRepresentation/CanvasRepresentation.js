@@ -4,7 +4,7 @@ import * as Manifesto from '@stephenwf-forks/manifesto.js';
 
 class CanvasRepresentation extends Component {
   static propTypes = {
-    canvas: PropTypes.instanceOf(Manifesto.Canvas),
+    // canvas: PropTypes.instanceOf(Manifesto.Canvas),
   };
 
   static defaultProps = {
@@ -15,9 +15,11 @@ class CanvasRepresentation extends Component {
   processChildStyle(child) {
     const { position, ratio } = this.props;
     const { maxHeight, ...style } = child.props.style;
+    const computedMaxHeight = maxHeight ? 'auto' : maxHeight * ratio;
 
     if (child.props.growthStyle === 'fixed') {
       const zam = position ? position.zoom * (1 / ratio) : 1;
+      const fixedMaxHeight = maxHeight && zam ? maxHeight / (1 / zam) : 'auto';
       return {
         ...style,
         position: 'absolute',
@@ -25,7 +27,7 @@ class CanvasRepresentation extends Component {
         left: child.props.x * ratio,
         height: child.props.height * ratio * zam,
         width: child.props.width * ratio * zam,
-        maxHeight: maxHeight / (1 / zam),
+        maxHeight: fixedMaxHeight,
         transform: 'scale(' + 1 / zam + ')',
         transformOrigin: 'top left',
       };
@@ -42,7 +44,7 @@ class CanvasRepresentation extends Component {
       left: child.props.x * ratio,
       height: child.props.height * ratio,
       width: child.props.width * ratio,
-      maxHeight: maxHeight * ratio,
+      maxHeight: computedMaxHeight,
     };
   }
 

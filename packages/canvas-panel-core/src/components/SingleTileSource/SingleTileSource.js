@@ -13,8 +13,8 @@ class SingleTileSource extends Component {
   };
 
   static propTypes = {
-    canvas: PropTypes.instanceOf(Manifesto.Canvas),
-    manifest: PropTypes.instanceOf(Manifesto.Manifest),
+    // canvas: PropTypes.instanceOf(Manifesto.Canvas),
+    // manifest: PropTypes.instanceOf(Manifesto.Manifest),
     preLoad: PropTypes.func,
     children: FunctionOrMapChildrenType,
     fallbackWidth: PropTypes.number,

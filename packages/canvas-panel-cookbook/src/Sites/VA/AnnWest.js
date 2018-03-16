@@ -46,7 +46,7 @@ export default props => {
               <p>Click the pins to explore the patchwork in detail:</p>
             </div>
             {props.children}
-            <figcaption class="sir-trevor-image__caption">
+            <figcaption className="sir-trevor-image__caption">
               Patchwork hanging, Ann West, 1820, England. Museum no. T.23-2007.
               © Victoria and Albert Museum, London
             </figcaption>
@@ -73,7 +73,7 @@ export default props => {
             </div>
             <figure className="sir-trevor-image sir-trevor-image--showcase">
               <img
-                srcset="https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/39b3de74-783a-48f4-9931-ebf20747da53/Ann-West-animals-CROPPED.jpg 320w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/065be8c1-d865-498e-a44a-4079619f041e/Ann-West-animals-CROPPED.jpg 640w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/29f1db0b-27c0-43a9-ac0f-f4ff91d2e7db/Ann-West-animals-CROPPED.jpg 960w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/467a14f5-b7de-4405-b4e8-ed7f0f17db8e/Ann-West-animals-CROPPED.jpg 1280w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/13/dcfea7f0-7f79-44d8-86c4-f419f4c1cbb4/Ann-West-animals-CROPPED.jpg 1920w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/13/a776672e-7a5e-450e-a9df-5611ad60b5d7/Ann-West-animals-CROPPED.jpg 2560w"
+                srcSet="https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/39b3de74-783a-48f4-9931-ebf20747da53/Ann-West-animals-CROPPED.jpg 320w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/065be8c1-d865-498e-a44a-4079619f041e/Ann-West-animals-CROPPED.jpg 640w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/29f1db0b-27c0-43a9-ac0f-f4ff91d2e7db/Ann-West-animals-CROPPED.jpg 960w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/467a14f5-b7de-4405-b4e8-ed7f0f17db8e/Ann-West-animals-CROPPED.jpg 1280w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/13/dcfea7f0-7f79-44d8-86c4-f419f4c1cbb4/Ann-West-animals-CROPPED.jpg 1920w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/13/a776672e-7a5e-450e-a9df-5611ad60b5d7/Ann-West-animals-CROPPED.jpg 2560w"
                 sizes="(min-width: 1250px) 1130px, (min-width: 800px) calc(100vw - 144px), 100vw"
                 className="sir-trevor-image__source"
                 src="https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/31/12/39b3de74-783a-48f4-9931-ebf20747da53/Ann-West-animals-CROPPED.jpg"
@@ -103,7 +103,7 @@ export default props => {
             </div>
             <figure className="sir-trevor-image sir-trevor-image--inline">
               <img
-                srcset="https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/46/51012e3e-67d9-4e88-97cb-1e3cffb2cb0d/Ann-West-signature-2-CROP.jpg 320w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/46/61c25cd0-7e06-44b5-a659-106c9845fb87/Ann-West-signature-2-CROP.jpg 640w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/46/5dc373b7-6a30-49a5-b6a8-472b27ef54ec/Ann-West-signature-2-CROP.jpg 960w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/47/d8fad7ef-4a5f-4f7f-8513-7bbf1072100b/Ann-West-signature-2-CROP.jpg 1280w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/47/2a115d7d-79ad-44b2-8962-f4f6a0d88af1/Ann-West-signature-2-CROP.jpg 1920w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/47/816b4fd7-4691-4a91-b64a-b7d083d6e760/Ann-West-signature-2-CROP.jpg 2560w"
+                srcSet="https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/46/51012e3e-67d9-4e88-97cb-1e3cffb2cb0d/Ann-West-signature-2-CROP.jpg 320w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/46/61c25cd0-7e06-44b5-a659-106c9845fb87/Ann-West-signature-2-CROP.jpg 640w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/46/5dc373b7-6a30-49a5-b6a8-472b27ef54ec/Ann-West-signature-2-CROP.jpg 960w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/47/d8fad7ef-4a5f-4f7f-8513-7bbf1072100b/Ann-West-signature-2-CROP.jpg 1280w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/47/2a115d7d-79ad-44b2-8962-f4f6a0d88af1/Ann-West-signature-2-CROP.jpg 1920w, https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/47/816b4fd7-4691-4a91-b64a-b7d083d6e760/Ann-West-signature-2-CROP.jpg 2560w"
                 sizes="(min-width: 689px) 689px, 100vw"
                 className="sir-trevor-image__source"
                 src="https://vanda-production-assets.s3.amazonaws.com/2018/01/09/11/33/46/51012e3e-67d9-4e88-97cb-1e3cffb2cb0d/Ann-West-signature-2-CROP.jpg"

@@ -200,8 +200,8 @@ class Viewport extends Component {
     return (
       <div
         style={{
-          maxWidth,
-          maxHeight,
+          maxWidth: Number.isNaN(maxWidth) ? 'auto' : maxWidth,
+          maxHeight: Number.isNaN(maxHeight) ? 'auto' : maxHeight,
           position: 'relative',
           display: 'inline-block',
           overflow: 'hidden',

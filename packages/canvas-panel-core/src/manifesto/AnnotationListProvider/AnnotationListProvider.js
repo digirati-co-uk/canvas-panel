@@ -9,7 +9,7 @@ class AnnotationListProvider extends Component {
   state = { annotationLists: null };
 
   static propTypes = {
-    canvas: PropTypes.instanceOf(Manifesto.Canvas),
+    // canvas: PropTypes.instanceOf(Manifesto.Canvas),
     children: FunctionOrMapChildrenType,
   };
 

@@ -14,7 +14,7 @@ class CanvasProvider extends Component {
   static propTypes = {
     sequence: PropTypes.number,
     startCanvas: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    manifest: PropTypes.instanceOf(Manifesto.Manifest),
+    // manifest: PropTypes.instanceOf(Manifesto.Manifest),
     children: FunctionOrMapChildrenType,
   };
 
