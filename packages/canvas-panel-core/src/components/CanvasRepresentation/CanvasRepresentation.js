@@ -14,16 +14,18 @@ class CanvasRepresentation extends Component {
 
   processChildStyle(child) {
     const { position, ratio } = this.props;
+    const { maxHeight, ...style } = child.props.style;
 
     if (child.props.growthStyle === 'fixed') {
       const zam = position ? position.zoom * (1 / ratio) : 1;
       return {
-        ...child.props.style,
+        ...style,
         position: 'absolute',
         top: child.props.y * ratio,
         left: child.props.x * ratio,
         height: child.props.height * ratio * zam,
         width: child.props.width * ratio * zam,
+        maxHeight: maxHeight / (1 / zam),
         transform: 'scale(' + 1 / zam + ')',
         transformOrigin: 'top left',
       };
@@ -34,12 +36,13 @@ class CanvasRepresentation extends Component {
     }
 
     return {
-      ...child.props.style,
+      ...style,
       position: 'absolute',
       top: child.props.y * ratio,
       left: child.props.x * ratio,
       height: child.props.height * ratio,
       width: child.props.width * ratio,
+      maxHeight: maxHeight * ratio,
     };
   }
 
