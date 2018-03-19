@@ -182,6 +182,10 @@ acorn@^5.0.0, acorn@^5.0.3, acorn@^5.4.1, acorn@^5.5.0:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
 
+add-event-listener@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/add-event-listener/-/add-event-listener-0.0.1.tgz#a76229ebc64c8aefae204a16273a2f255abea2d0"
+
 add-stream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/add-stream/-/add-stream-1.0.0.tgz#6a7990437ca736d5e1288db92bd3266d5f5cb2aa"
@@ -3679,7 +3683,7 @@ exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
 
-"exjs@github:BSick7/exjs#0.5.0":
+exjs@BSick7/exjs#0.5.0:
   version "0.5.0"
   resolved "https://codeload.github.com/BSick7/exjs/tar.gz/98195810790c0e61cb5beb510da4b756528f92f2"
 
@@ -4204,6 +4208,12 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
+
+fullscreen@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/fullscreen/-/fullscreen-1.1.1.tgz#b9017c3bf9b23e07effd1bbce910cf5ec2459129"
+  dependencies:
+    add-event-listener "0.0.1"
 
 function-bind@^1.0.2, function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
@@ -4826,7 +4836,7 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-"http-status-codes@github:edsilv/http-status-codes#v0.0.7":
+http-status-codes@edsilv/http-status-codes#v0.0.7:
   version "0.0.7"
   resolved "https://codeload.github.com/edsilv/http-status-codes/tar.gz/af3a8ab9970b1f291a79b03c7382dc16aebee749"
 
@@ -8063,6 +8073,10 @@ react-dev-utils@^4.2.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
+react-display-name@^0.2.0:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-display-name/-/react-display-name-0.2.3.tgz#f50204d430c9ca819bc0bade0306e9175d8d1987"
+
 react-docgen-annotation-resolver@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-docgen-annotation-resolver/-/react-docgen-annotation-resolver-1.0.0.tgz#abbb343698b3b319537142082b6bb7d835fe2f1f"
@@ -8104,6 +8118,14 @@ react-draggable@^3.0.5:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
+
+react-fullscreenable@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/react-fullscreenable/-/react-fullscreenable-2.4.3.tgz#27bb62e1bf4fa71085d0d6f272768080d0018d51"
+  dependencies:
+    classnames "^2.2.5"
+    fullscreen "^1.1.1"
+    react-display-name "^0.2.0"
 
 react-group@^1.0.5:
   version "1.0.5"

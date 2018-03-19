@@ -55,7 +55,6 @@ const AdaptiveViewport = ({
       </FullPageViewport>
     );
   }
-
   return (
     <Viewport maxWidth={maxWidth} maxHeight={maxHeight} {...props}>
       {props.children}
@@ -125,7 +124,26 @@ class PatchworkPlugin extends Component {
   }
 
   toggleMobileFullscreen = () => {
+    if (this.ref.scrollIntoView) {
+      this.ref.scrollIntoView();
+    }
+    if (this.state.isMobileFullscreen) {
+      document.body.classList.remove('cvp-mobile-fullscreen');
+      document.removeEventListener('scroll', this.handleOnScroll);
+    } else {
+      document.body.classList.add('cvp-mobile-fullscreen');
+      // Small timeout to allow the scrollIntoView.
+      setTimeout(
+        () => document.addEventListener('scroll', this.handleOnScroll),
+        100
+      );
+    }
     this.setState({ isMobileFullscreen: !this.state.isMobileFullscreen });
+  };
+
+  handleOnScroll = () => {
+    this.setState({ isMobileFullscreen: false });
+    document.removeEventListener('scroll', this.handleOnScroll);
   };
 
   onClose = () => {
@@ -142,6 +160,8 @@ class PatchworkPlugin extends Component {
       this.props.events[name](args, this.viewport);
     }
   };
+
+  setRef = ref => (this.ref = ref);
 
   render() {
     const {
@@ -166,22 +186,33 @@ class PatchworkPlugin extends Component {
     const state = this.state;
 
     return (
-      <div style={relativeContainer ? { position: 'relative' } : {}}>
+      <div
+        ref={this.setRef}
+        style={{
+          position: relativeContainer ? 'relative' : null,
+        }}
+      >
         <Fullscreen>
           {({ isFullscreen, fullscreenEnabled, toggleFullscreen }) => (
-            <div>
+            <div
+              style={{ zIndex: this.state.isMobileFullscreen ? '10000' : null }}
+            >
               <Bem cssClassMap={cssClassMap} prefix={cssClassPrefix}>
                 <Manifest url={manifest} jsonLd={jsonLdManifest}>
                   <CanvasProvider startCanvas={canvas}>
                     <AdaptiveViewport
-                      isFullscreen={
-                        fullscreenEnabled
-                          ? isFullscreen
-                          : state.isMobileFullscreen
-                      }
+                      isFullscreen={fullscreenEnabled ? isFullscreen : false}
                       fullViewport={fitContainer}
-                      maxWidth={width}
-                      maxHeight={height}
+                      maxWidth={
+                        isFullscreen || state.isMobileFullscreen
+                          ? window.innerWidth
+                          : width
+                      }
+                      maxHeight={
+                        isFullscreen || state.isMobileFullscreen
+                          ? window.innerHeight
+                          : height
+                      }
                       setRef={this.setViewport}
                     >
                       <SingleTileSource viewportController={true}>
@@ -209,13 +240,15 @@ class PatchworkPlugin extends Component {
                         })}
                         onClickAnnotation={this.onClickAnnotation}
                       />
-                      {mobileBreakpoint > window.innerWidth &&
+                      {fullscreenEnabled === false &&
                       state.isMobileFullscreen === false ? (
                         <FullscreenCover
+                          data-static
                           toggleFullscreen={this.toggleMobileFullscreen}
                         />
                       ) : null}
                       <FullScreenToggle
+                        data-static
                         isFullscreen={
                           fullscreenEnabled
                             ? isFullscreen
@@ -230,6 +263,7 @@ class PatchworkPlugin extends Component {
                       />
                       {state.annotation ? (
                         <AnnotationDetail
+                          data-static
                           closeText={closeText}
                           annotation={state.annotation}
                           onClose={this.onClose}

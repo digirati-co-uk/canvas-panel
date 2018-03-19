@@ -80,7 +80,7 @@ const App = () => (
             <a href="/styleguide">Documentation</a>
           </li>
 
-          <li class="logo-item">
+          <li className="logo-item">
             <a href="https://digirati.com/" target="_blank">
               <img
                 className="app-logo"

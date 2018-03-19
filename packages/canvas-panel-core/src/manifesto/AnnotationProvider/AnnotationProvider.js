@@ -8,7 +8,7 @@ import AnnotationSelector from '../../utility/AnnotationSelector';
 
 class AnnotationProvider extends Component {
   static propTypes = {
-    canvas: PropTypes.instanceOf(Manifesto.Canvas),
+    // canvas: PropTypes.instanceOf(Manifesto.Canvas),
     children: FunctionOrMapChildrenType,
   };
 

@@ -7,6 +7,10 @@ body {
   margin-top: 40px;
 }
 
+html:-ms-fullscreen {
+  width: 100%; /* needed to center contents in IE */
+}
+
 .app-navigation {
   height: 40px;
   background: #333;
@@ -25,6 +29,11 @@ body {
   z-index: 9999;
   font-size: 14px;
 }
+
+.cvp-mobile-fullscreen .app-navigation {
+  display: none;
+}
+
 .app-logo {
   height: 25px;
   position: relative;
