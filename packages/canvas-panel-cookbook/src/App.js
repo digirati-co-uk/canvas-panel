@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './Patchwork';
 import FullPagePatchwork from './FullPagePatchwork';
-import './App.css';
+import './App.scss';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
 import homeText from '../../../introduction.md';
@@ -56,7 +56,7 @@ const App = () => (
     <main>
       <header>
         <ul className="app-navigation">
-          <li>
+          <li className="app-brand">
             <NavLink activeClassName="navigation-active" to="/">
               Canvas Panel
             </NavLink>
