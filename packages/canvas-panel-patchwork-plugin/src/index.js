@@ -163,6 +163,24 @@ class PatchworkPlugin extends Component {
 
   setRef = ref => (this.ref = ref);
 
+  getClasses({ fullscreenEnabled, isFullscreen, isMobileFullscreen }) {
+    const classNames = [];
+    if (fullscreenEnabled) {
+      classNames.push('fullscreen-available');
+    }
+    if (isFullscreen) {
+      classNames.push('fullscreen-native-enabled');
+    }
+    if (isMobileFullscreen) {
+      classNames.push('fullscreen-mobile-enabled');
+    }
+    if (isFullscreen || isMobileFullscreen) {
+      classNames.push('fullscreen-active');
+    }
+
+    return classNames;
+  }
+
   render() {
     const {
       manifest,
@@ -195,6 +213,11 @@ class PatchworkPlugin extends Component {
         <Fullscreen>
           {({ isFullscreen, fullscreenEnabled, toggleFullscreen }) => (
             <div
+              className={this.getClasses({
+                fullscreenEnabled,
+                isFullscreen,
+                isMobileFullscreen: this.state.isMobileFullscreen,
+              }).join(' ')}
               style={{ zIndex: this.state.isMobileFullscreen ? '10000' : null }}
             >
               <Bem cssClassMap={cssClassMap} prefix={cssClassPrefix}>
