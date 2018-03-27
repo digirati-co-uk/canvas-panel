@@ -90,7 +90,7 @@ const App = () => (
           </li>
           <li>
             <NavLink activeClassName="navigation-active" to="/roadmap">
-              Roadmap
+              Road map
             </NavLink>
           </li>
           <li>
