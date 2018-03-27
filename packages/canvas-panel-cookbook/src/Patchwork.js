@@ -11,7 +11,7 @@ class Patchwork extends Component {
       <AnnWest>
         <div className="patchwork-container">
           <PatchworkPlugin
-            jsonLdManifest={p3manifest}
+            manifest="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json"
             cssClassMap={{
               annotation: 'annotation-pin',
             }}
@@ -20,6 +20,14 @@ class Patchwork extends Component {
             width={1200}
           />
         </div>
+        <div />
+        <a
+          className="btn btn--big btn--green"
+          style={{ width: 'auto', margin: 30 }}
+          href="https://www.vam.ac.uk/exhibitions/ocean-liners-speed-style"
+        >
+          See on the V&A
+        </a>
       </AnnWest>
     );
   }
