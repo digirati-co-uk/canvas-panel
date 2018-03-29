@@ -15,7 +15,7 @@ const RenderMarkdown = props => (
   >
     <div
       dangerouslySetInnerHTML={{
-        __html: props.children.replace(/"about.md"/, '#/about'),
+        __html: props.children.replace(/about\.md/, '#/about'),
       }}
     />
   </section>

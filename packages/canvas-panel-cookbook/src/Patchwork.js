@@ -20,14 +20,6 @@ class Patchwork extends Component {
             width={1200}
           />
         </div>
-        <div />
-        <a
-          className="btn btn--big btn--green"
-          style={{ width: 'auto', margin: 30 }}
-          href="https://www.vam.ac.uk/exhibitions/ocean-liners-speed-style"
-        >
-          See on the V&A
-        </a>
       </AnnWest>
     );
   }

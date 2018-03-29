@@ -4,11 +4,11 @@ Focus on image use cases first. Build useful applications around CanvasPanel for
 
 Where to start for Minimum Viable Product
 
-### 1. V&A Patchwork
+### 1. V&A Ocean Liners
 
-[V&A - Ann West's Patchwork](https://canvas-panel.netlify.com/#/examples/patchwork)
+[V&A - Ocean Liners](https://canvas-panel.netlify.com/#/examples/oceanliners)
 
-The V&A’s Patchwork example is a simpler expression of the Bosch layout. Prototype the desired developer experience to reproduce the V&A’s patchwork example (ignoring content creation itself). What does the code look like to produce the Patchwork?
+The V&A’s Ocean Liners example is a simpler expression of the Bosch layout. Prototype the desired developer experience to reproduce the V&A’s Ocean Liners example (ignoring content creation itself). What does the code look like to produce the Ocean Liners?
 
 The MVP works on a single IIIF Presentation 3 Canvas that links to an Annotation Collection of commenting annotations (W3C model) each of which target a point, using `<x>,<y>,1,1` fragment syntax. Label and text generates the boxes. Textual content can be HTML if images and formatting are required. Configuration produces the behaviour seen in the linked example above.
 
@@ -16,7 +16,7 @@ The aim is to finesse the API and development experience to make reuse as easy a
 
 ### 2. Reproduce the simpler Google Arts And Culture UI with pure IIIF
 
-[Google version of Ann West's Patchwork](https://canvas-panel.netlify.com/#/examples/fullpage)
+[Ocean Liners in style of Google Arts and Culture](https://canvas-panel.netlify.com/#/examples/fullpage)
 
 Initial version done, needs more work on how it is used by a containing page.
 

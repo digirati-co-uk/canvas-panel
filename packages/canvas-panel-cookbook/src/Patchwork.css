@@ -132,13 +132,13 @@
 }
 
 .banner {
-  background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/930c0360-f7df-4690-85a1-d14302040106/320.jpg');
+  background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/22/e19e1c3b-df1d-4b98-b0ba-4761594d1b0b/320.jpg');
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-  url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/930c0360-f7df-4690-85a1-d14302040106/320.jpg');
+  url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/22/e19e1c3b-df1d-4b98-b0ba-4761594d1b0b/320.jpg');
   background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-  url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/930c0360-f7df-4690-85a1-d14302040106/320.jpg');
+  url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/22/e19e1c3b-df1d-4b98-b0ba-4761594d1b0b/320.jpg');
   background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-  url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/930c0360-f7df-4690-85a1-d14302040106/320.jpg');
+  url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/22/e19e1c3b-df1d-4b98-b0ba-4761594d1b0b/320.jpg');
 }
 
 @media (-webkit-min-device-pixel-ratio: 2),
@@ -146,25 +146,25 @@
 (min-resolution: 2dppx),
 (min-resolution: 192dpi) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
   }
 }
 
 @media (min-width: 321px) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/8d48193f-253b-4ac6-a101-9cd15aca3969/640.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/478c75d8-f72c-4778-aa37-dbde5f5db222/640.jpg');
   }
 }
 
@@ -173,25 +173,25 @@
 (min-width: 321px) and (min-resolution: 2dppx),
 (min-width: 321px) and (min-resolution: 192dpi) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
   }
 }
 
 @media (min-width: 641px) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/210f11b2-dfa0-4b18-9825-04d23a4a29fb/960.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/e1fb6d4a-2136-4299-b865-7f6c47130df3/960.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/210f11b2-dfa0-4b18-9825-04d23a4a29fb/960.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/e1fb6d4a-2136-4299-b865-7f6c47130df3/960.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/210f11b2-dfa0-4b18-9825-04d23a4a29fb/960.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/e1fb6d4a-2136-4299-b865-7f6c47130df3/960.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/210f11b2-dfa0-4b18-9825-04d23a4a29fb/960.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/e1fb6d4a-2136-4299-b865-7f6c47130df3/960.jpg');
   }
 }
 
@@ -200,49 +200,49 @@
 (min-width: 641px) and (min-resolution: 2dppx),
 (min-width: 641px) and (min-resolution: 192dpi) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
   }
 }
 
 @media (min-width: 961px) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/52/825f03af-af79-45c5-a9f2-f8f074d5086e/1280.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/ff8dec70-e658-4cab-89ca-78c00e8431b9/1280.jpg');
   }
 }
 
 @media (min-width: 1281px) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/698f6be9-9296-4818-97ed-21db08fb3485/1920.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/8bd98860-13d7-46c9-bc90-219a9fcda6d5/1920.jpg');
   }
 }
 
 @media (min-width: 1921px) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
   }
 }
 
@@ -251,13 +251,13 @@
 (min-width: 961px) and (min-resolution: 2dppx),
 (min-width: 961px) and (min-resolution: 192dpi) {
   .banner {
-    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    background-image: url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
     background-image: -moz-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-    url('https://vanda-production-assets.s3.amazonaws.com/2018/02/05/13/51/53/db126fba-38c1-4883-84e4-314397f2c890/2560.jpg');
+    url('https://vanda-production-assets.s3.amazonaws.com/2018/03/09/11/57/23/2eacac5d-0e7a-426e-b339-67d07d62ddf7/2560.jpg');
   }
 }
 
