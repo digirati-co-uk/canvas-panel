@@ -8,7 +8,10 @@ import {
   OpenSeadragonViewport,
   SizedViewport,
   functionOrMapChildren,
+  AnnotationDetail,
 } from '@canvas-panel/core';
+import AnnotationListProvider from '../../canvas-panel-core/src/manifesto/AnnotationListProvider/AnnotationListProvider';
+import AnnotationProvider from '../../canvas-panel-core/src/manifesto/AnnotationProvider/AnnotationProvider';
 
 // Height: 500px -> 80vh -> 80vh
 // Width: container -> full -> full
@@ -141,7 +144,7 @@ class PopOut extends Component {
     return (
       <div style={{ maxWidth: 900, margin: 'auto' }}>
         <h1>Zoom in example</h1>
-        <Manifest jsonLd={require('../../../tests/patchwork')}>
+        <Manifest url="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json">
           <CanvasProvider>
             <PopOutViewport>
               <SingleTileSource viewportController={true}>
@@ -156,11 +159,19 @@ class PopOut extends Component {
                 />
               </SingleTileSource>
             </PopOutViewport>
+            <AnnotationListProvider>
+              <AnnotationProvider>
+                {({ annotations }) =>
+                  annotations.map(({ annotation, on }, key) => (
+                    <div key={key} style={{ marginBottom: 40 }}>
+                      <AnnotationDetail annotation={annotation} />
+                    </div>
+                  ))
+                }
+              </AnnotationProvider>
+            </AnnotationListProvider>
           </CanvasProvider>
         </Manifest>
-        {new Array(50)
-          .fill(1)
-          .map((n, k) => <p key={k}>Lots of text lots of text</p>)}
       </div>
     );
   }
