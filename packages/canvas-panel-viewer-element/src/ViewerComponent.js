@@ -4,6 +4,7 @@ import {
   CanvasProvider,
   SingleTileSource,
   OpenSeadragonViewer,
+  FullPageViewport,
 } from '@canvas-panel/core';
 
 export default class extends Component {
@@ -11,25 +12,34 @@ export default class extends Component {
     const {
       manifest,
       canvas,
-      maxHeight,
       currentCanvas,
       getRef,
+      maxHeight,
       ...props
     } = this.props;
+
     return (
-      <div>
-        <Manifest url={manifest}>
-          <CanvasProvider startCanvas={canvas} currentCanvas={currentCanvas}>
-            <SingleTileSource>
+      <Manifest url={manifest}>
+        <CanvasProvider startCanvas={canvas} currentCanvas={currentCanvas}>
+          <SingleTileSource>
+            {maxHeight ? (
               <OpenSeadragonViewer
                 getRef={getRef}
-                maxHeight={maxHeight || 500}
+                maxHeight={maxHeight}
                 {...props}
               />
-            </SingleTileSource>
-          </CanvasProvider>
-        </Manifest>
-      </div>
+            ) : (
+              <FullPageViewport
+                position="absolute"
+                interactive={true}
+                getRef={getRef}
+              >
+                <OpenSeadragonViewer viewportController={true} {...props} />
+              </FullPageViewport>
+            )}
+          </SingleTileSource>
+        </CanvasProvider>
+      </Manifest>
     );
   }
 }
