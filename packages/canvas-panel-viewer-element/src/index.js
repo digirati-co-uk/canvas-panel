@@ -1,36 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { ObservableElement, htmlElementObserver } from '@canvas-panel/core';
 import ViewerComponent from './ViewerComponent';
-import ObservableElement from './ObservableElement';
-
-function setupObserver($element, onChange) {
-  try {
-    const observer = new MutationObserver(mutations => {
-      mutations.forEach(({ type }) => {
-        if (type === 'attributes') {
-          onChange({ ...$element.dataset });
-        }
-      });
-    });
-
-    observer.observe($element, { attributes: true });
-  } catch (e) {
-    console.warn('Could not set up observer', e);
-  }
-}
 
 function createViewerComponent($viewer) {
   const initialProps = { ...$viewer.dataset };
 
   render(
     <ObservableElement
+      observer={htmlElementObserver($viewer)}
       initialProps={initialProps}
       render={props =>
         props.manifest ? (
           <ViewerComponent {...props} getRef={osd => ($viewer.osd = osd)} />
         ) : null
       }
-      observe={callback => setupObserver($viewer, callback)}
     />,
     $viewer
   );
