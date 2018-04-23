@@ -7,7 +7,15 @@ import {
 
 class TimelineItem extends Component {
   render() {
-    const { bem, visibility, onClick, isActive, item, ...props } = this.props;
+    const {
+      bem,
+      visibility,
+      onClick,
+      isActive,
+      item,
+      maxItems,
+      ...props
+    } = this.props;
     return (
       <div
         onClick={onClick(item, isActive)}
@@ -15,7 +23,7 @@ class TimelineItem extends Component {
           active: isActive,
           children: isActive && item.children,
         })}
-        style={computeStyleFromItem(visibility, item)}
+        style={computeStyleFromItem(visibility, item, maxItems)}
         {...props}
       >
         <div

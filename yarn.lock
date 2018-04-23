@@ -78,23 +78,6 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@canvas-panel/core@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.0.4.tgz#77dfd50e2d38affd6909d5539f2f5fda32cb85c0"
-  dependencies:
-    "@fesk/bem-js" "^1.0.0"
-    "@iiif/manifold" "^1.2.19"
-    "@stephenwf-forks/manifesto.js" "^2.2.10"
-    core-js "^2.5.3"
-    create-react-context "^0.1.4"
-    openseadragon "^2.3.1"
-    react "^16.2.0"
-    react-dom "^16.2.0"
-    react-draggable "^3.0.5"
-    react-measure "^2.0.2"
-    screenfull "^3.3.2"
-    whatwg-fetch "^2.0.3"
-
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@fesk/bem-js/-/bem-js-1.0.1.tgz#ac7c74351e34835274aef0506146709d3046cef1"
@@ -2734,15 +2717,19 @@ commander@2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
-commander@2.15.x, commander@^2.11.0, commander@^2.8.1, commander@^2.9.0, commander@~2.15.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.0.tgz#ad2a23a1c3b036e392469b8012cec6b33b4c1322"
+commander@2.14.x, commander@~2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
 
 commander@2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
     graceful-readlink ">= 1.0.0"
+
+commander@^2.11.0, commander@^2.8.1, commander@^2.9.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.0.tgz#ad2a23a1c3b036e392469b8012cec6b33b4c1322"
 
 commander@~2.1.0:
   version "2.1.0"

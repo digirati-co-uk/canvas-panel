@@ -85,8 +85,8 @@ $disable-timeline-mobile: true !default;
 
   &__item {
     overflow: hidden;
-    flex: 1;
-    transition: flex $transition-speed;
+    //flex: 1;
+    transition: transform $transition-speed, width $transition-speed;
     cursor: pointer;
     padding-top: 2px;
 

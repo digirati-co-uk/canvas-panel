@@ -90,16 +90,11 @@ class Viewer extends Component {
               onFullscreen={isFullscreen ? exitFullscreen : goFullscreen}
             />
             <Manifest jsonLd={manifest}>
-              <CanvasProvider startCanvas={2} currentCanvas={currentCanvas}>
+              <CanvasProvider currentCanvas={currentCanvas}>
                 {props => (
                   <div>
                     <Paging canvas={props.canvas} />
                     <div className={bem.element('osd')}>
-                      <ImageContainer
-                        canvas={props.canvas}
-                        width={props.width}
-                        height={props.height}
-                      />
                       <FullPageViewport
                         interactive={true}
                         position="relative"

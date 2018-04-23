@@ -278,17 +278,16 @@ export const RANGE_DISPLAY_NONE = 'RANGE_DISPLAY_NONE';
 export const RANGE_DISPLAY_LARGE = 'RANGE_DISPLAY_LARGE';
 export const RANGE_DISPLAY_PREV_NEXT = 'RANGE_DISPLAY_PREV_NEXT';
 
-export function computeStyleFromItem(visibility, item) {
+export function computeStyleFromItem(visibility, item, maxItems) {
   if (visibility === RANGE_DISPLAY_NONE) {
-    return { flex: 0.0001, flexBasis: '0px', transform: 'translateX(3px)' };
+    return { width: '0%', transform: 'translateX(3px)' };
   }
   if (visibility === RANGE_DISPLAY_PREV_NEXT) {
-    return { flex: '0 0 80px', transform: 'initial' };
+    return { width: '5%', transform: 'initial' };
   }
   if (visibility === RANGE_DISPLAY_LARGE && item) {
     return {
-      flex: item.range[1] - item.range[0],
-      flexBasis: '0px',
+      width: `${(item.range[1] - item.range[0]) / maxItems * 100}%`,
       transform: 'initial',
     };
   }

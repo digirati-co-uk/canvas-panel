@@ -1,6 +1,6 @@
 {
   "name": "galway-viewer",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "Describe galway-viewer here",
   "private": true,
   "scripts": {
@@ -12,9 +12,9 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.4",
-    "@canvas-panel/redux": "^0.0.4",
-    "@canvas-panel/timeline": "^0.0.4",
+    "@canvas-panel/core": "^0.0.5",
+    "@canvas-panel/redux": "^0.0.5",
+    "@canvas-panel/timeline": "^0.0.5",
     "cookies-js": "^1.2.3",
     "digirati-bem-js": "^1.0.0",
     "immutability-helper": "^2.6.4",

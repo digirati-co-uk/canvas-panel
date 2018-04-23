@@ -87,6 +87,14 @@ class Timeline extends Component {
     if (!flatItems) {
       return <div />;
     }
+    const maxItems = flatItems
+      .filter(
+        (item, key) =>
+          this.getVisibilityFromItem(item, key) === RANGE_DISPLAY_LARGE
+      )
+      .map(item => item.range[1] - item.range[0])
+      .reduce((acc, next) => acc + next, 0);
+
     return (
       <nav className={`${bem}  galway-layout__top`}>
         <Breadcrumbs breadcrumbs={breadcrumbs} onBack={this.handleBack} />
@@ -105,6 +113,7 @@ class Timeline extends Component {
               item={item}
               isActive={matchesRange(item, canvasIndex)}
               visibility={this.getVisibilityFromItem(item, key)}
+              maxItems={maxItems}
               onClick={this.handleOnClick}
               onMouseEnter={this.handleMouseIn(item)}
               onMouseMove={this.handleMouseMove}

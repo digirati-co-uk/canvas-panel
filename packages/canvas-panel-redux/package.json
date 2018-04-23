@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/redux",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "canvas-panel-redux React component",
   "main": "lib/index.js",
   "module": "es/index",
@@ -15,7 +15,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.4",
+    "@canvas-panel/core": "^0.0.5",
     "immutability-helper": "^2.6.5",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
