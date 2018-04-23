@@ -78,6 +78,23 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@canvas-panel/core@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.0.4.tgz#77dfd50e2d38affd6909d5539f2f5fda32cb85c0"
+  dependencies:
+    "@fesk/bem-js" "^1.0.0"
+    "@iiif/manifold" "^1.2.19"
+    "@stephenwf-forks/manifesto.js" "^2.2.10"
+    core-js "^2.5.3"
+    create-react-context "^0.1.4"
+    openseadragon "^2.3.1"
+    react "^16.2.0"
+    react-dom "^16.2.0"
+    react-draggable "^3.0.5"
+    react-measure "^2.0.2"
+    screenfull "^3.3.2"
+    whatwg-fetch "^2.0.3"
+
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@fesk/bem-js/-/bem-js-1.0.1.tgz#ac7c74351e34835274aef0506146709d3046cef1"
@@ -93,8 +110,8 @@
     yargs "^11.0.0"
 
 "@iiif/manifold@^1.2.19":
-  version "1.2.22"
-  resolved "https://registry.yarnpkg.com/@iiif/manifold/-/manifold-1.2.22.tgz#bfbfa8a8dd9c2c959eae40f662b811ffebb758a1"
+  version "1.2.21"
+  resolved "https://registry.yarnpkg.com/@iiif/manifold/-/manifold-1.2.21.tgz#5bfae18aee98434271f7bbb74dc1b0a6354ebeda"
   dependencies:
     "@types/jquery" "^2.0.40"
 
@@ -2333,10 +2350,14 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000815"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000815.tgz#0e218fa133d0d071c886aa041b435258cc746891"
+  version "1.0.30000814"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000814.tgz#2c9eed7fbc2724066474cb7e1a924f0ea12fe4a2"
 
-caniuse-lite@^1.0.30000697, caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000791, caniuse-lite@^1.0.30000792:
+caniuse-lite@^1.0.30000697, caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792:
+  version "1.0.30000814"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000814.tgz#73eb6925ac2e54d495218f1ea0007da3940e488b"
+
+caniuse-lite@^1.0.30000791:
   version "1.0.30000815"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000815.tgz#3a4258e6850362185adb11b0d754a48402d35bf6"
 
@@ -5520,12 +5541,12 @@ html-loader@^0.5.5:
     object-assign "^4.1.1"
 
 html-minifier@^3.2.3, html-minifier@^3.5.8:
-  version "3.5.11"
-  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.11.tgz#f248927f2e076733f58c136de0376553beb101f8"
+  version "3.5.10"
+  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.10.tgz#8522c772c388db81aa5c26f62033302d906ea1c7"
   dependencies:
     camel-case "3.0.x"
     clean-css "4.1.x"
-    commander "2.15.x"
+    commander "2.14.x"
     he "1.1.x"
     ncname "1.0.x"
     param-case "2.1.x"
@@ -7291,8 +7312,8 @@ markdown-table@^1.1.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.1.tgz#4b3dd3a133d1518b8ef0dbc709bf2a1b4824bc8c"
 
 markdown-to-jsx@^6.4.1:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.5.2.tgz#0a7dbc0524bed5a707d914b61670593a30646f53"
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.5.1.tgz#e3373c47cd94ab19b759384612e693240c5cdbf2"
   dependencies:
     prop-types "^15.5.10"
     unquote "^1.1.0"
@@ -8059,7 +8080,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nwb-sass@^0.8.2:
+nwb-sass@^0.8.2, nwb-sass@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/nwb-sass/-/nwb-sass-0.8.3.tgz#6c921169b42798731681b98aadfa444258bf2466"
   dependencies:
@@ -9481,9 +9502,9 @@ react-docgen@^3.0.0-beta9:
     node-dir "^0.1.10"
     recast "^0.12.6"
 
-react-dom@^16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
+react-dom@^16.2.0, react-dom@^16.3.2:
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -9645,9 +9666,9 @@ react-transform-hmr@1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@^16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+react@^16.2.0, react@^16.3.2:
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -11235,6 +11256,10 @@ syntax-error@^1.1.1:
   dependencies:
     acorn-node "^1.2.0"
 
+system-font-css@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/system-font-css/-/system-font-css-2.0.1.tgz#5e16978f490a96b5be0bae5060193457eaf7d0b4"
+
 tabbable@^1.0.3:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-1.1.2.tgz#b171680aea6e0a3e9281ff23532e2e5de11c0d94"
@@ -11545,10 +11570,10 @@ uglify-es@^3.3.4:
     source-map "~0.6.1"
 
 uglify-js@3.3.x:
-  version "3.3.15"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.3.15.tgz#5b8783b6856110d3a03a9b81e07324a3b925f2dd"
+  version "3.3.14"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.3.14.tgz#d3d84d18722ff342fa96029cca71c67367700079"
   dependencies:
-    commander "~2.15.0"
+    commander "~2.14.1"
     source-map "~0.6.1"
 
 uglify-js@^2.6, uglify-js@^2.8.29:

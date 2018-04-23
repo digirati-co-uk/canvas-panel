@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './Patchwork';
 import FullPagePatchwork from './FullPagePatchwork';
-import './App.css';
+import './App.scss';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
 import homeText from '../../../introduction.md';
@@ -15,7 +15,10 @@ const RenderMarkdown = props => (
   >
     <div
       dangerouslySetInnerHTML={{
-        __html: props.children.replace(/"about.md"/, '#/about'),
+        __html: props.children.replace(
+          /(about|roadmap)\.md/,
+          (match, type) => '#/' + type
+        ),
       }}
     />
   </section>
@@ -29,10 +32,17 @@ const RoadmapText = () => <RenderMarkdown>{roadmapText}</RenderMarkdown>;
 
 const Examples = examples => () => (
   <section style={{ maxWidth: 1100, margin: 'auto', padding: 30 }}>
-    {examples.map(({ label, link }, key) => (
+    {examples.map(({ label, link, image }, key) => (
       <NavLink activeClassName="navigation-active" to={link} key={key}>
         <article style={{ width: '33.3333%', float: 'left', padding: 30 }}>
-          <div style={{ height: 200, background: '#ddd' }} />
+          <div
+            style={{
+              height: 200,
+              background: '#ddd',
+              backgroundSize: 'cover',
+              backgroundImage: `url(${image}`,
+            }}
+          />
           <h3>{label}</h3>
         </article>
       </NavLink>
@@ -41,9 +51,24 @@ const Examples = examples => () => (
 );
 
 const exampleList = [
-  { label: 'Patchwork example', link: '/examples/patchwork' },
-  { label: 'Full page example', link: '/examples/fullpage' },
-  { label: 'Pop out example', link: '/examples/popout' },
+  {
+    label: 'V&A Ocean Liners',
+    link: '/examples/oceanliners',
+    image:
+      'https://vanda-production-assets.s3.amazonaws.com/2018/03/14/12/54/22/445782b9-4b20-405b-9f99-54f15974aeb0/ocean-liners-conference-rescheduled_960.jpg',
+  },
+  {
+    label: 'Full page example',
+    link: '/examples/fullpage',
+    image:
+      'https://framemark.vam.ac.uk/collections/2013GU2911/1536,2048,512,256/512,/0/default.jpg',
+  },
+  {
+    label: 'Pop out example',
+    link: '/examples/popout',
+    image:
+      'https://framemark.vam.ac.uk/collections/2013GU2911/2048,4580,1024,512/512,/0/default.jpg',
+  },
 ];
 
 const ScrollToTop = () => {
@@ -56,7 +81,7 @@ const App = () => (
     <main>
       <header>
         <ul className="app-navigation">
-          <li>
+          <li className="app-brand">
             <NavLink activeClassName="navigation-active" to="/">
               Canvas Panel
             </NavLink>
@@ -68,7 +93,7 @@ const App = () => (
           </li>
           <li>
             <NavLink activeClassName="navigation-active" to="/roadmap">
-              Roadmap
+              Road map
             </NavLink>
           </li>
           <li>
@@ -80,7 +105,7 @@ const App = () => (
             <a href="/styleguide">Documentation</a>
           </li>
 
-          <li class="logo-item">
+          <li className="logo-item">
             <a href="https://digirati.com/" target="_blank">
               <img
                 className="app-logo"
@@ -96,7 +121,7 @@ const App = () => (
       <Route exact path="/about" component={AboutText} />
       <Route exact path="/roadmap" component={RoadmapText} />
       <Route exact path="/examples" component={Examples(exampleList)} />
-      <Route path="/examples/patchwork" component={Patchwork} />
+      <Route path="/examples/oceanliners" component={Patchwork} />
       <Route path="/examples/fullpage" component={FullPagePatchwork} />
       <Route path="/examples/popout" component={PopOut} />
     </main>

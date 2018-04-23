@@ -11,7 +11,7 @@ class Patchwork extends Component {
       <AnnWest>
         <div className="patchwork-container">
           <PatchworkPlugin
-            jsonLdManifest={p3manifest}
+            manifest="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json"
             cssClassMap={{
               annotation: 'annotation-pin',
             }}

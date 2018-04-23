@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Canvas panel viewer demo</title>
+</head>
+<body>
+
+<div style="height: 800px; border: 2px solid lightcoral; padding: 5px; position: relative">
+  <div id="viewer"
+       data-element="canvas-panel-viewer"
+       data-manifest="https://view.nls.uk/manifest/7446/74464117/manifest.json"
+       data-canvas="https://view.nls.uk/iiif/7446/74464117/canvas/2"
+  ></div>
+</div>
+
+<button id="in">Zoom in</button>
+<button id="out">Zoom out</button>
+<button id="home">Reset</button>
+<script>
+
+  const $viewer = document.getElementById('viewer');
+
+  document.getElementById('in').addEventListener('click', () => {
+    $viewer.osd.zoomIn();
+  });
+
+  document.getElementById('out').addEventListener('click', () => {
+    $viewer.osd.zoomOut();
+  });
+
+  document.getElementById('home').addEventListener('click', () => {
+    $viewer.osd.resetView();
+  });
+
+</script>
+
+<script type="text/javascript" src="/demo.js"></script></body>
+</html>

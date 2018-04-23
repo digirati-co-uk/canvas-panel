@@ -18,6 +18,13 @@ class CanvasProvider extends Component<Props> {
     currentCanvas: null,
   };
 
+  static propTypes = {
+    sequence: PropTypes.number,
+    startCanvas: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    // manifest: PropTypes.instanceOf(Manifesto.Manifest),
+    children: FunctionOrMapChildrenType,
+  };
+
   static defaultProps = {
     sequence: 0,
     startCanvas: 0,

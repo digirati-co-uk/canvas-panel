@@ -148,7 +148,7 @@ class FullPagePatchwork extends Component {
   render() {
     return (
       <div>
-        <Manifest jsonLd={require('../../../tests/patchwork')}>
+        <Manifest url="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json">
           <CanvasProvider>
             <FullPageViewport setRef={this.setViewport}>
               <SingleTileSource viewportController={true}>
@@ -161,8 +161,11 @@ class FullPagePatchwork extends Component {
             </FullPageViewport>
             <Container>
               <TitlePanel>
-                <h1>Patchwork</h1>
+                <h1>Ocean Liners</h1>
                 <p>scroll demo</p>
+                <span className="muted">
+                  © Victoria and Albert Museum, London 2018
+                </span>
               </TitlePanel>
               <AnnotationListProvider>
                 <AnnotationProvider>

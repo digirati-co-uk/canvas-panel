@@ -9,6 +9,7 @@ import CanvasNavigation from './components/CanvasNavigation/CanvasNavigation';
 import CanvasRepresentation from './components/CanvasRepresentation/CanvasRepresentation';
 import Fullscreen from './components/Fullscreen/Fullscreen';
 import SingleTileSource from './components/SingleTileSource/SingleTileSource';
+import ObservableElement from './components/ObservableElement/ObservableElement';
 import AnnotationListProvider from './manifesto/AnnotationListProvider/AnnotationListProvider';
 import AnnotationProvider from './manifesto/AnnotationProvider/AnnotationProvider';
 import CanvasProvider from './manifesto/CanvasProvider/CanvasProvider';
@@ -21,6 +22,7 @@ import StaticImageViewport from './viewers/StaticImageViewport/StaticImageViewpo
 import Viewport from './viewers/Viewport/Viewport';
 import functionOrMapChildren from './utility/functionOrMapChildren';
 import AnnotationSelector from './utility/AnnotationSelector';
+import htmlElementObserver from './utility/htmlElementObserver';
 
 export {
   // Components.
@@ -33,6 +35,7 @@ export {
   CanvasRepresentation,
   Fullscreen,
   SingleTileSource,
+  ObservableElement,
   // Manifesto
   AnnotationListProvider,
   AnnotationProvider,
@@ -49,5 +52,6 @@ export {
   // Utils
   AnnotationSelector,
   functionOrMapChildren,
+  htmlElementObserver,
   withBemClass,
 };

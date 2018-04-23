@@ -20,6 +20,14 @@ class SingleTileSource extends Component<Props> {
     tileSources: [],
   };
 
+  static propTypes = {
+    // canvas: PropTypes.instanceOf(Manifesto.Canvas),
+    // manifest: PropTypes.instanceOf(Manifesto.Manifest),
+    preLoad: PropTypes.func,
+    children: FunctionOrMapChildrenType,
+    fallbackWidth: PropTypes.number,
+  };
+
   static defaultProps = {
     fallbackWidth: 200,
   };
