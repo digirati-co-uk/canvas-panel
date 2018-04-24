@@ -3,63 +3,21 @@
  */
 import Manifesto from 'manifesto.js';
 import { AnnotationSelector } from '@canvas-panel/core';
+import { manifest } from '@canvas-panel/redux';
 import { createActions, handleActions } from 'redux-actions';
 import { call, put, takeEvery, all, select } from 'redux-saga/effects';
 import update from 'immutability-helper';
-import { MANIFEST_SUCCESS, manifestSetCanvasId } from './manifest';
-
-type SearchResource = string;
-
-type Motivation =
-  | 'painting'
-  | 'non-painting'
-  | 'commenting'
-  | 'describing'
-  | 'tagging'
-  | 'linking';
-
-type SearchHit = {
-  annotations: Array<string>,
-  before: string,
-  after: string,
-  term: string,
-};
-
-type Annotation = {
-  annotation: Manifesto.Annotation,
-  on: AnnotationSelector,
-};
-
-type SearchHitSelector = {
-  exact: string,
-  prefix: string,
-  suffix: string,
-};
-
-type SearchQueryResult = {
-  within: {
-    total: number,
-    first?: SearchResource,
-    last?: SearchResource,
-  },
-
-  next: SearchResource | null,
-  previous: SearchResource | null,
-  startIndex: number | null,
-
-  resources: Array<Manifesto.Annotation>,
-  hits: Array<SearchHit>,
-  selectors: Array<SearchHitSelector>,
-  resourceMap: { [string]: Annotation },
-  canvasMap: { [string]: Array<Manifesto.Annotation> },
-};
-
-type Query = {
-  q: string | Array<string> | null,
-  motivation?: Motivation | Array<Motivation> | null,
-  date?: string | Array<string> | null,
-  user?: string | Array<string> | null,
-};
+import {
+  constructSearchQuery,
+  fetchSearchResults,
+  noop,
+} from './search.utility';
+import type {
+  Query,
+  SearchHit,
+  SearchQueryResult,
+  SearchResource,
+} from './search.utility';
 
 const SEARCH_ENABLE = 'SEARCH_ENABLE';
 const SEARCH_CANCEL = 'SEARCH_CANCEL';
@@ -75,8 +33,6 @@ const SEARCH_NEXT = 'SEARCH_NEXT';
 const SEARCH_PREV = 'SEARCH_PREV';
 const SEARCH_HIGHLIGHT = 'SEARCH_HIGHLIGHT';
 const SEARCH_APPLY_FILTER = 'SEARCH_APPLY_FILTER'; // future.
-
-const noop = e => e;
 
 const {
   searchEnable,
@@ -167,11 +123,6 @@ const reducer = handleActions(
   defaultState
 );
 
-async function fetchSearchResults(query: string) {
-  const response = await fetch(query);
-  return await response.json();
-}
-
 function* executeSearch({ queries, service }, query) {
   if (queries[query]) {
     return queries[query];
@@ -201,7 +152,7 @@ function* runSearchQuery({ payload: { query } }) {
     yield put(searchGoTo(searchQueryResults.resources[0].id)); // Reset flow back to 0.
     const canvas = searchQueryResults.resources[0].getOn().split('#')[0];
     if (canvas) {
-      yield put(manifestSetCanvasId(canvas));
+      yield put(manifest.manifestSetCanvasId(canvas));
     }
   }
 }
@@ -276,7 +227,7 @@ function* searchCanvasNavigation({ type, payload }) {
         ? results.canvasMap[keys[targetIndex]][0].annotation.id
         : null;
     yield put(searchGoTo(id));
-    yield put(manifestSetCanvasId(keys[targetIndex]));
+    yield put(manifest.manifestSetCanvasId(keys[targetIndex]));
   }
 }
 
@@ -293,7 +244,7 @@ function* importSearchService({ payload: { manifesto } }) {
 function* saga(): Generator<*, *, *> {
   yield all([
     // Detect and add search service
-    takeEvery(MANIFEST_SUCCESS, importSearchService),
+    takeEvery(manifest.MANIFEST_SUCCESS, importSearchService),
 
     // Handle search requests
     takeEvery(SEARCH_REQUEST, runSearchQuery),
@@ -370,40 +321,6 @@ function createSearchQueryResult(jsonLd): SearchQueryResult {
     resources,
     selectors: [], // @todo selector list.?
   };
-}
-
-function formatSingleParam(name: string, value: any | Array<any>) {
-  if (Array.isArray(value)) {
-    return `${name}=${value.join(' ')}`;
-  }
-  return `${name}=${value}`;
-}
-
-function constructSearchQuery(query: Query) {
-  const params = [];
-  const { q, motivation, date, user } = query;
-
-  if (q) {
-    params.push(formatSingleParam('q', q));
-  }
-
-  if (motivation) {
-    params.push(formatSingleParam('motivation', motivation));
-  }
-
-  if (date) {
-    params.push(formatSingleParam('date', date));
-  }
-
-  if (user) {
-    params.push(formatSingleParam('user', user));
-  }
-
-  if (params.length === 0) {
-    return null;
-  }
-
-  return params.join('&');
 }
 
 export {

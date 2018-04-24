@@ -5,7 +5,12 @@ import {
   saga as timelineSaga,
   Timeline,
 } from '@canvas-panel/timeline';
-
+import {
+  reducer as searchReducer,
+  saga as searchSaga,
+  SearchBox,
+  RangeSlider,
+} from '@canvas-panel/search';
 import StartScreen from './components/StartScreen/StartScreen';
 import Header from './components/Header/Header';
 import './components/main.scss';
@@ -17,12 +22,17 @@ import {
   manifestSetCanvasId,
 } from '@canvas-panel/redux/es/spaces/manifest';
 import Drawer from './components/Drawer/Drawer';
-import RangeSlider from './components/RangeSlider/RangeSlider';
 import NavigationControls from './components/NavigationControls/NavigationControls';
 import Supplemental from './components/Supplemental/Supplemental';
-import SearchBox from './components/SearchBox/SearchBox';
 
-const store = createStore({ structure: timelineReducer }, [], [timelineSaga]);
+const store = createStore(
+  {
+    structure: timelineReducer,
+    search: searchReducer,
+  },
+  [],
+  [timelineSaga, searchSaga]
+);
 
 type Props = {
   manifestUri: string,

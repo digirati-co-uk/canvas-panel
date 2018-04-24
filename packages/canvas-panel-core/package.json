@@ -13,7 +13,7 @@
     "start": "npm run styleguide",
     "test": "nwb test-react",
     "prepublish": "NODE_ENV=production npm run build",
-    "watch": "npm-watch",
+    "watch": "nwb-watch-module",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test:coverage": "nwb test-react --coverage",
@@ -45,6 +45,7 @@
     "npm-watch": "^0.3.0",
     "nwb": "0.18.x",
     "prop-types": "^15.6.0",
+    "nwb-watch": "0.0.5",
     "react-styleguidist": "^6.0.0"
   },
   "publishConfig": {

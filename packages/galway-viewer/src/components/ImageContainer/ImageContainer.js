@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import './ImageContainer.scss';
-import type BEM from 'digirati-bem-js';
+import type BEM from '@fesk/bem-js';
 
 type Props = {
   bem: BEM,

@@ -1,0 +1,17 @@
+{
+  "name": "nwb-watch",
+  "version": "0.0.5",
+  "main": "index.js",
+  "private": true,
+  "files": ["index.js", "bin"],
+  "bin": {
+    "nwb-watch-module": "./bin/nwb-watch-module.js"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "nwb": "^0.21.5"
+  },
+  "dependencies": {
+    "cross-spawn": "^6.0.5"
+  }
+}
