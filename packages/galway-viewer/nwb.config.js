@@ -1,7 +1,14 @@
+const sassDefine = require('sass-define');
+
 module.exports = {
   type: 'react-app',
   webpack: {
     publicPath: '',
+    rules: {
+      sass: {
+        data: sassDefine(require('./sassConfig')),
+      },
+    },
   },
   babel: {
     env: {
