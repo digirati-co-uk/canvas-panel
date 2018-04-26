@@ -1,0 +1,40 @@
+{
+  "name": "galway-viewer",
+  "version": "0.0.5",
+  "description": "Describe galway-viewer here",
+  "private": true,
+  "scripts": {
+    "build": "nwb build-react-app",
+    "clean": "nwb clean-app",
+    "start": "nwb serve-react-app",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {
+    "@canvas-panel/core": "^0.0.5",
+    "@canvas-panel/redux": "^0.0.5",
+    "@canvas-panel/search": "^0.0.5",
+    "@canvas-panel/timeline": "^0.0.5",
+    "@fesk/bem-js": "^1.0.0",
+    "cookies-js": "^1.2.3",
+    "immutability-helper": "^2.6.4",
+    "manifesto.js":
+      "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
+    "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
+    "material-components-web": "^0.30.0",
+    "nwb-sass": "^0.8.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-rangeslider": "^2.2.0",
+    "react-redux": "^5.0.6",
+    "rheostat": "^2.1.3"
+  },
+  "devDependencies": {
+    "sass-define": "0.0.5",
+    "nwb": "0.21.x"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": ""
+}
