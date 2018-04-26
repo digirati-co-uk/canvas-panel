@@ -1,0 +1,22 @@
+.layout {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+  &__header {
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  &__main {
+    flex: 1;
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  &__footer {
+    max-width: 1280px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  &__button {
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    height: 50px;
+    width: 50px;
+    transition: background 0.5s;
+    color: #fff;
+    text-align: center;
+
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: -4px;
+    }
+    &:active {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

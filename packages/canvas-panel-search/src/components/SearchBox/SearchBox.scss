@@ -1,3 +1,6 @@
+$search-box-text-colour: #018786 !default;
+$search-box-theme: #00aeb2 !default;
+
 .search-box {
   height: 50px;
   max-width: 450px;
@@ -23,7 +26,7 @@
     font-size: 10px;
     line-height: 50px;
     padding: 0 10px;
-    color: #018786;
+    color: $search-box-text-colour;
     width: 50px;
   }
 
@@ -67,15 +70,15 @@
     height: 30px;
     margin: 10px 5px;
     cursor: pointer;
-    background: rgba(#00aeb2, 0);
+    background: rgba($search-box-theme, 0);
     color: #fff;
-    border: 1px solid #00aeb2;
+    border: 1px solid $search-box-theme;
     transition: background 0.2s, opacity 0.2s;
     font-size: 16px;
     &:active,
     &:focus {
-      outline: 2px solid rgba(#00aeb2, 0.3);
-      background: rgba(#00aeb2, 0.1);
+      outline: 2px solid rgba($search-box-theme, 0.3);
+      background: rgba($search-box-theme, 0.1);
     }
 
     &--disabled,
@@ -83,7 +86,7 @@
     &--disabled:focus {
       pointer-events: none;
       border-color: #555;
-      background: rgba(#00aeb2, 0);
+      background: rgba($search-box-theme, 0);
       color: #555;
       outline: none;
     }
@@ -101,7 +104,7 @@
     border-bottom: 1px solid rgba(#fff, 0.5);
     transition: all 0.2s;
     padding: 5px;
-    border-bottom: 1px solid rgba(#00aeb2, 1);
+    border-bottom: 1px solid rgba($search-box-theme, 1);
     &:focus {
       outline: none;
       //background: rgba(#fff, 0.1);

@@ -1,4 +1,8 @@
-$pill-size: 23px;
+$range-colour: #018786 !default;
+$range-background: rgba($range-colour, 0.25) !default;
+$range-border: #d8d8d8 !default;
+$range-handle-background: #fff !default;
+$range-handle-colour: #dadfe8 !default;
 
 .rheostat {
   overflow: visible;
@@ -8,7 +12,7 @@ $pill-size: 23px;
 
 .rheostat-background {
   background: #fff;
-  background: rgba(#018786, 0.25);
+  background: rgba($range-colour, 0.25);
   height: 2px;
   margin: 24px 0;
   position: absolute;
@@ -18,7 +22,7 @@ $pill-size: 23px;
 }
 
 .rheostat-progress {
-  background-color: #018786;
+  background-color: $range-colour;
   height: 2px;
   margin: 24px 0;
   position: absolute;
@@ -31,9 +35,9 @@ $pill-size: 23px;
   min-width: 13px;
   min-height: 13px;
   padding: 0;
-  background-color: #fff;
+  background-color: $range-handle-background;
   //background-color: #018786;
-  border: 1px solid #d8d8d8;
+  border: 1px solid $range-border;
   //border: none;
   transform: translate3d(-50%, 0, 0);
   border-radius: 50%;
@@ -46,5 +50,5 @@ $pill-size: 23px;
   content: '';
   display: block;
   position: absolute;
-  background-color: #dadfe8;
+  background-color: $range-handle-colour;
 }

@@ -1,0 +1,38 @@
+.viewer-controls {
+  z-index: 19;
+  margin: 0 10px;
+  opacity: 0;
+  pointer-events: none;
+
+  &--active {
+    pointer-events: initial;
+    opacity: 1;
+  }
+
+  &__control {
+    background: transparent;
+    border: none;
+    height: 36px;
+    width: 36px;
+    font-size: 14px;
+    padding: 0;
+    margin-left: 4px;
+    border-radius: 0;
+    transition: background 0.5s;
+    color: #fff;
+    text-align: center;
+
+    @media (max-width: 40em) {
+      height: 20px;
+      width: 20px;
+    }
+
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: -3px;
+    }
+    &:active {
+      background: #111;
+    }
+  }
+}
