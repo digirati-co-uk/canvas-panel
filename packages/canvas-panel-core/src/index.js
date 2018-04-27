@@ -21,6 +21,7 @@ import SizedViewport from './viewers/SizedViewport/SizedViewport';
 import StaticImageViewport from './viewers/StaticImageViewport/StaticImageViewport';
 import Viewport from './viewers/Viewport/Viewport';
 import functionOrMapChildren from './utility/functionOrMapChildren';
+import AnnotationSelector from './utility/AnnotationSelector';
 import htmlElementObserver from './utility/htmlElementObserver';
 
 export {
@@ -49,6 +50,7 @@ export {
   StaticImageViewport,
   Viewport,
   // Utils
+  AnnotationSelector,
   functionOrMapChildren,
   htmlElementObserver,
   withBemClass,

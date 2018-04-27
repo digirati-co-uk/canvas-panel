@@ -1,0 +1,137 @@
+.viewer {
+  background: transparent;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  .openseadragon-canvas:focus {
+    outline: none;
+  }
+
+  &--loading {
+    cursor: wait;
+    pointer-events: none;
+  }
+  &--loading * {
+    cursor: wait;
+    pointer-events: none;
+  }
+
+  &--loading:after {
+    content: 'loading...';
+    color: #fff;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    text-align: center;
+  }
+  &--error:after {
+    content: "Something went wrong, we can't display this content at the moment";
+    color: #fff;
+    padding: 20px;
+    background: rgba(140, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+  }
+
+  &__controls {
+    z-index: 19;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 0;
+    pointer-events: none;
+
+    &--active {
+      pointer-events: initial;
+      opacity: 1;
+    }
+  }
+
+  &__control {
+    background: rgba(#000, 0.7);
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 0;
+    transition: background 0.5s;
+    color: #fff;
+    text-align: center;
+
+    @media (max-width: 40em) {
+      height: 40px;
+      width: 40px;
+    }
+
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: -3px;
+    }
+    &:active {
+      background: #111;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      pointer-events: none;
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      left: 0;
+      right: 0;
+    }
+    &--disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__osd {
+    background: #222;
+    transition: all 0.2s;
+    //opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &--active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
+
+.annotation {
+  outline: 1px solid #ff7855;
+  background: rgba(#ff7855, 0.2);
+  cursor: pointer;
+  pointer-events: visible;
+
+  &--search {
+    cursor: initial;
+    background: rgba(#ff7855, 0.3);
+    outline: 1px solid #ff7855;
+  }
+}

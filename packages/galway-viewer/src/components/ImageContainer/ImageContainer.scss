@@ -1,0 +1,27 @@
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    left: 0;
+    right: 0;
+  }
+
+  &--disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

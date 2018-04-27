@@ -1,0 +1,5405 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://mattmcgrattan.github.io/Vol208_viewer.json",
+  "@type": "sc:Manifest",
+  "metadata": [
+    {
+      "label": "Title",
+      "value": "Created by DLCS."
+    }
+  ],
+  "sequences": [
+    {
+      "@id":
+        "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/sequence/s0",
+      "@type": "sc:Sequence",
+      "label": "Sequence 0",
+      "canvases": [
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c2",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/34997844-ab07-428e-95b7-90e7c243f357/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/34997844-ab07-428e-95b7-90e7c243f357",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 749,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 749,
+                  "height": 1024
+                },
+                {
+                  "width": 293,
+                  "height": 400
+                },
+                {
+                  "width": 146,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2026,
+          "width": 1482,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/34997844-ab07-428e-95b7-90e7c243f357/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/34997844-ab07-428e-95b7-90e7c243f357/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2026,
+                "width": 1482,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/34997844-ab07-428e-95b7-90e7c243f357",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2026,
+                  "width": 1482,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c2"
+            }
+          ],
+          "label": "2",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c2.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c3",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/e6db3e6a-3b3b-49b2-bd1e-780fa02a9a12/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/e6db3e6a-3b3b-49b2-bd1e-780fa02a9a12",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 724,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 724,
+                  "height": 1024
+                },
+                {
+                  "width": 283,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1441,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/e6db3e6a-3b3b-49b2-bd1e-780fa02a9a12/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/e6db3e6a-3b3b-49b2-bd1e-780fa02a9a12/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1441,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/e6db3e6a-3b3b-49b2-bd1e-780fa02a9a12",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1441,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c3"
+            }
+          ],
+          "label": "3",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c3.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c9",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/462b2a7c-d28b-440f-b75a-2fb2f1560d57/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/462b2a7c-d28b-440f-b75a-2fb2f1560d57",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 732,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 732,
+                  "height": 1024
+                },
+                {
+                  "width": 286,
+                  "height": 400
+                },
+                {
+                  "width": 143,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2052,
+          "width": 1466,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/462b2a7c-d28b-440f-b75a-2fb2f1560d57/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/462b2a7c-d28b-440f-b75a-2fb2f1560d57/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2052,
+                "width": 1466,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/462b2a7c-d28b-440f-b75a-2fb2f1560d57",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2052,
+                  "width": 1466,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c9"
+            }
+          ],
+          "label": "9",
+          "otherContent": [
+            {
+              "@id": "./pmc-fixture/c9.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c10",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/5aeae7cd-72be-4d65-b3ce-d476f6c3e8e1/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/5aeae7cd-72be-4d65-b3ce-d476f6c3e8e1",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 736,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 736,
+                  "height": 1024
+                },
+                {
+                  "width": 287,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2042,
+          "width": 1467,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/5aeae7cd-72be-4d65-b3ce-d476f6c3e8e1/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/5aeae7cd-72be-4d65-b3ce-d476f6c3e8e1/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2042,
+                "width": 1467,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/5aeae7cd-72be-4d65-b3ce-d476f6c3e8e1",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2042,
+                  "width": 1467,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c10"
+            }
+          ],
+          "label": "10",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c10.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c11",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/69dd33ca-3dd3-4044-a257-5efcd819ebbc/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/69dd33ca-3dd3-4044-a257-5efcd819ebbc",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 736,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 736,
+                  "height": 1024
+                },
+                {
+                  "width": 287,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2042,
+          "width": 1467,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/69dd33ca-3dd3-4044-a257-5efcd819ebbc/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/69dd33ca-3dd3-4044-a257-5efcd819ebbc/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2042,
+                "width": 1467,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/69dd33ca-3dd3-4044-a257-5efcd819ebbc",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2042,
+                  "width": 1467,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c11"
+            }
+          ],
+          "label": "11",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c11.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c12",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/90500862-a870-49d0-9741-50d7fbc5c570/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/90500862-a870-49d0-9741-50d7fbc5c570",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 745,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 745,
+                  "height": 1024
+                },
+                {
+                  "width": 291,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1477,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/90500862-a870-49d0-9741-50d7fbc5c570/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/90500862-a870-49d0-9741-50d7fbc5c570/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1477,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/90500862-a870-49d0-9741-50d7fbc5c570",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1477,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c12"
+            }
+          ],
+          "label": "12",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c12.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c13",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/11480751-fa5f-435e-b02a-28467b600bf8/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/11480751-fa5f-435e-b02a-28467b600bf8",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 729,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 729,
+                  "height": 1024
+                },
+                {
+                  "width": 285,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2052,
+          "width": 1461,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/11480751-fa5f-435e-b02a-28467b600bf8/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/11480751-fa5f-435e-b02a-28467b600bf8/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2052,
+                "width": 1461,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/11480751-fa5f-435e-b02a-28467b600bf8",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2052,
+                  "width": 1461,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c13"
+            }
+          ],
+          "label": "13",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c13.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c14",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/24f83ed9-843e-49c8-9332-78f800f43469/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/24f83ed9-843e-49c8-9332-78f800f43469",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 740,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 740,
+                  "height": 1024
+                },
+                {
+                  "width": 289,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/24f83ed9-843e-49c8-9332-78f800f43469/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/24f83ed9-843e-49c8-9332-78f800f43469/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/24f83ed9-843e-49c8-9332-78f800f43469",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c14"
+            }
+          ],
+          "label": "14",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c14.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c15",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/f4f7b79a-d499-4866-83aa-e6e11b5584e7/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/f4f7b79a-d499-4866-83aa-e6e11b5584e7",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 732,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 732,
+                  "height": 1024
+                },
+                {
+                  "width": 286,
+                  "height": 400
+                },
+                {
+                  "width": 143,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2016,
+          "width": 1441,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/f4f7b79a-d499-4866-83aa-e6e11b5584e7/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/f4f7b79a-d499-4866-83aa-e6e11b5584e7/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2016,
+                "width": 1441,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/f4f7b79a-d499-4866-83aa-e6e11b5584e7",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2016,
+                  "width": 1441,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c15"
+            }
+          ],
+          "label": "15",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c15.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c16",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/8cfc6d84-f57f-4b2a-a866-ff7a51e16646/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/8cfc6d84-f57f-4b2a-a866-ff7a51e16646",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 737,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 737,
+                  "height": 1024
+                },
+                {
+                  "width": 288,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1467,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/8cfc6d84-f57f-4b2a-a866-ff7a51e16646/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/8cfc6d84-f57f-4b2a-a866-ff7a51e16646/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1467,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/8cfc6d84-f57f-4b2a-a866-ff7a51e16646",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1467,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c16"
+            }
+          ],
+          "label": "16",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c16.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c17",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/d72666e0-00bd-46b0-91d6-d8b04a836290/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/d72666e0-00bd-46b0-91d6-d8b04a836290",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 736,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 736,
+                  "height": 1024
+                },
+                {
+                  "width": 288,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2047,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/d72666e0-00bd-46b0-91d6-d8b04a836290/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/d72666e0-00bd-46b0-91d6-d8b04a836290/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2047,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/d72666e0-00bd-46b0-91d6-d8b04a836290",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2047,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c17"
+            }
+          ],
+          "label": "17",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c17.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c18",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/6d270423-0c7a-4875-b44e-50afe4fd634f/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/6d270423-0c7a-4875-b44e-50afe4fd634f",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 737,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 737,
+                  "height": 1024
+                },
+                {
+                  "width": 288,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1467,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/6d270423-0c7a-4875-b44e-50afe4fd634f/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/6d270423-0c7a-4875-b44e-50afe4fd634f/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1467,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/6d270423-0c7a-4875-b44e-50afe4fd634f",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1467,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c18"
+            }
+          ],
+          "label": "18",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c18.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c19",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/3028bf5f-a66f-4f85-83b0-8b4cde765351/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/3028bf5f-a66f-4f85-83b0-8b4cde765351",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 720,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 720,
+                  "height": 1024
+                },
+                {
+                  "width": 281,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2078,
+          "width": 1461,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/3028bf5f-a66f-4f85-83b0-8b4cde765351/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/3028bf5f-a66f-4f85-83b0-8b4cde765351/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2078,
+                "width": 1461,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/3028bf5f-a66f-4f85-83b0-8b4cde765351",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2078,
+                  "width": 1461,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c19"
+            }
+          ],
+          "label": "19",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c19.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c20",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/05f93884-63cd-410f-b9ab-d5cf22c5ccdc/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/05f93884-63cd-410f-b9ab-d5cf22c5ccdc",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 738,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 738,
+                  "height": 1024
+                },
+                {
+                  "width": 288,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2063,
+          "width": 1487,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/05f93884-63cd-410f-b9ab-d5cf22c5ccdc/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/05f93884-63cd-410f-b9ab-d5cf22c5ccdc/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2063,
+                "width": 1487,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/05f93884-63cd-410f-b9ab-d5cf22c5ccdc",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2063,
+                  "width": 1487,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c20"
+            }
+          ],
+          "label": "20",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c20.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c21",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/a2bcbfd8-897e-4e4e-994a-91ba7e336ca6/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/a2bcbfd8-897e-4e4e-994a-91ba7e336ca6",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 726,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 726,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1466,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/a2bcbfd8-897e-4e4e-994a-91ba7e336ca6/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/a2bcbfd8-897e-4e4e-994a-91ba7e336ca6/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1466,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/a2bcbfd8-897e-4e4e-994a-91ba7e336ca6",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1466,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c21"
+            }
+          ],
+          "label": "21",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c21.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c22",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/a411211d-3e0d-4e46-b6cb-e7e0f577c801/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/a411211d-3e0d-4e46-b6cb-e7e0f577c801",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 742,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 742,
+                  "height": 1024
+                },
+                {
+                  "width": 290,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2052,
+          "width": 1487,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/a411211d-3e0d-4e46-b6cb-e7e0f577c801/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/a411211d-3e0d-4e46-b6cb-e7e0f577c801/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2052,
+                "width": 1487,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/a411211d-3e0d-4e46-b6cb-e7e0f577c801",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2052,
+                  "width": 1487,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c22"
+            }
+          ],
+          "label": "22",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c22.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c23",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/36ec16fd-cdcb-4f03-a6a0-d4173b879cf8/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/36ec16fd-cdcb-4f03-a6a0-d4173b879cf8",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 719,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 719,
+                  "height": 1024
+                },
+                {
+                  "width": 281,
+                  "height": 400
+                },
+                {
+                  "width": 140,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2120,
+          "width": 1488,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/36ec16fd-cdcb-4f03-a6a0-d4173b879cf8/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/36ec16fd-cdcb-4f03-a6a0-d4173b879cf8/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2120,
+                "width": 1488,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/36ec16fd-cdcb-4f03-a6a0-d4173b879cf8",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2120,
+                  "width": 1488,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c23"
+            }
+          ],
+          "label": "23",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c23.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c24",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/7db89c93-3ae0-402f-825b-5501b109e46d/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/7db89c93-3ae0-402f-825b-5501b109e46d",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 739,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 739,
+                  "height": 1024
+                },
+                {
+                  "width": 289,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2010,
+          "width": 1451,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/7db89c93-3ae0-402f-825b-5501b109e46d/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/7db89c93-3ae0-402f-825b-5501b109e46d/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2010,
+                "width": 1451,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/7db89c93-3ae0-402f-825b-5501b109e46d",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2010,
+                  "width": 1451,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c24"
+            }
+          ],
+          "label": "24",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c24.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c25",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/9bc60fcf-fee5-446e-832f-5633db02ba33/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/9bc60fcf-fee5-446e-832f-5633db02ba33",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 727,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 727,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2057,
+          "width": 1461,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/9bc60fcf-fee5-446e-832f-5633db02ba33/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/9bc60fcf-fee5-446e-832f-5633db02ba33/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2057,
+                "width": 1461,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/9bc60fcf-fee5-446e-832f-5633db02ba33",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2057,
+                  "width": 1461,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c25"
+            }
+          ],
+          "label": "25",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c25.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c26",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/d11a94fb-6948-494b-8a8d-84c3cb5fb93a/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/d11a94fb-6948-494b-8a8d-84c3cb5fb93a",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 742,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 742,
+                  "height": 1024
+                },
+                {
+                  "width": 290,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/d11a94fb-6948-494b-8a8d-84c3cb5fb93a/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/d11a94fb-6948-494b-8a8d-84c3cb5fb93a/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/d11a94fb-6948-494b-8a8d-84c3cb5fb93a",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c26"
+            }
+          ],
+          "label": "26",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c26.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c27",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/648fb10d-3583-4f16-9256-e4a0a4cafba0/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/648fb10d-3583-4f16-9256-e4a0a4cafba0",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 710,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 710,
+                  "height": 1024
+                },
+                {
+                  "width": 277,
+                  "height": 400
+                },
+                {
+                  "width": 139,
+                  "height": 200
+                },
+                {
+                  "width": 69,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2083,
+          "width": 1445,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/648fb10d-3583-4f16-9256-e4a0a4cafba0/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/648fb10d-3583-4f16-9256-e4a0a4cafba0/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2083,
+                "width": 1445,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/648fb10d-3583-4f16-9256-e4a0a4cafba0",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2083,
+                  "width": 1445,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c27"
+            }
+          ],
+          "label": "27",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c27.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c28",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/9766655b-0f83-4252-807f-63a9b66daca0/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/9766655b-0f83-4252-807f-63a9b66daca0",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 744,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 744,
+                  "height": 1024
+                },
+                {
+                  "width": 291,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2026,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/9766655b-0f83-4252-807f-63a9b66daca0/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/9766655b-0f83-4252-807f-63a9b66daca0/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2026,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/9766655b-0f83-4252-807f-63a9b66daca0",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2026,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c28"
+            }
+          ],
+          "label": "28",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c28.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c29",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/95e760d7-b7c5-4729-9c48-4b85bb5a09b3/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/95e760d7-b7c5-4729-9c48-4b85bb5a09b3",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 726,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 726,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1466,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/95e760d7-b7c5-4729-9c48-4b85bb5a09b3/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/95e760d7-b7c5-4729-9c48-4b85bb5a09b3/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1466,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/95e760d7-b7c5-4729-9c48-4b85bb5a09b3",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1466,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c29"
+            }
+          ],
+          "label": "29",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c29.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c30",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/551fc2f2-d2a2-4e51-94df-02786ac6c1bd/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/551fc2f2-d2a2-4e51-94df-02786ac6c1bd",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 748,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 748,
+                  "height": 1024
+                },
+                {
+                  "width": 292,
+                  "height": 400
+                },
+                {
+                  "width": 146,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1488,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/551fc2f2-d2a2-4e51-94df-02786ac6c1bd/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/551fc2f2-d2a2-4e51-94df-02786ac6c1bd/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1488,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/551fc2f2-d2a2-4e51-94df-02786ac6c1bd",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1488,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c30"
+            }
+          ],
+          "label": "30",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c30.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c31",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/ad5f20f7-133f-4507-bb54-4b6edb392664/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/ad5f20f7-133f-4507-bb54-4b6edb392664",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 728,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 728,
+                  "height": 1024
+                },
+                {
+                  "width": 285,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2047,
+          "width": 1456,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/ad5f20f7-133f-4507-bb54-4b6edb392664/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/ad5f20f7-133f-4507-bb54-4b6edb392664/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2047,
+                "width": 1456,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/ad5f20f7-133f-4507-bb54-4b6edb392664",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2047,
+                  "width": 1456,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c31"
+            }
+          ],
+          "label": "31",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c31.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c32",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/63166c7a-967c-4b8f-a321-bf1c86df900f/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/63166c7a-967c-4b8f-a321-bf1c86df900f",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 748,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 748,
+                  "height": 1024
+                },
+                {
+                  "width": 292,
+                  "height": 400
+                },
+                {
+                  "width": 146,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2057,
+          "width": 1503,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/63166c7a-967c-4b8f-a321-bf1c86df900f/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/63166c7a-967c-4b8f-a321-bf1c86df900f/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2057,
+                "width": 1503,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/63166c7a-967c-4b8f-a321-bf1c86df900f",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2057,
+                  "width": 1503,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c32"
+            }
+          ],
+          "label": "32",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c32.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c33",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/f3a2294a-0491-4c01-a643-eb79f27a16cd/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/f3a2294a-0491-4c01-a643-eb79f27a16cd",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 729,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 729,
+                  "height": 1024
+                },
+                {
+                  "width": 285,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/f3a2294a-0491-4c01-a643-eb79f27a16cd/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/f3a2294a-0491-4c01-a643-eb79f27a16cd/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/f3a2294a-0491-4c01-a643-eb79f27a16cd",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c33"
+            }
+          ],
+          "label": "33",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c33.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c34",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/64969bc3-a2d4-4645-964b-a03c1c546628/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/64969bc3-a2d4-4645-964b-a03c1c546628",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 742,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 742,
+                  "height": 1024
+                },
+                {
+                  "width": 290,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1498,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/64969bc3-a2d4-4645-964b-a03c1c546628/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/64969bc3-a2d4-4645-964b-a03c1c546628/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1498,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/64969bc3-a2d4-4645-964b-a03c1c546628",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1498,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c34"
+            }
+          ],
+          "label": "34",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c34.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c35",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/f6f61001-e64f-4134-a24d-23a2a7a4aab7/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/f6f61001-e64f-4134-a24d-23a2a7a4aab7",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 715,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 715,
+                  "height": 1024
+                },
+                {
+                  "width": 279,
+                  "height": 400
+                },
+                {
+                  "width": 140,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2078,
+          "width": 1451,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/f6f61001-e64f-4134-a24d-23a2a7a4aab7/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/f6f61001-e64f-4134-a24d-23a2a7a4aab7/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2078,
+                "width": 1451,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/f6f61001-e64f-4134-a24d-23a2a7a4aab7",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2078,
+                  "width": 1451,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c35"
+            }
+          ],
+          "label": "35",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c35.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c36",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/0cf9363e-3089-4403-ad8e-a0aa64442f94/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/0cf9363e-3089-4403-ad8e-a0aa64442f94",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 753,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 753,
+                  "height": 1024
+                },
+                {
+                  "width": 294,
+                  "height": 400
+                },
+                {
+                  "width": 147,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1493,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/0cf9363e-3089-4403-ad8e-a0aa64442f94/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/0cf9363e-3089-4403-ad8e-a0aa64442f94/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1493,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/0cf9363e-3089-4403-ad8e-a0aa64442f94",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1493,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c36"
+            }
+          ],
+          "label": "36",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c36.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c37",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/53d2a922-921f-4312-89c4-c41ce277c8c2/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/53d2a922-921f-4312-89c4-c41ce277c8c2",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 720,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 720,
+                  "height": 1024
+                },
+                {
+                  "width": 281,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2057,
+          "width": 1446,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/53d2a922-921f-4312-89c4-c41ce277c8c2/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/53d2a922-921f-4312-89c4-c41ce277c8c2/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2057,
+                "width": 1446,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/53d2a922-921f-4312-89c4-c41ce277c8c2",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2057,
+                  "width": 1446,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c37"
+            }
+          ],
+          "label": "37",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c37.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c38",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/c1a0cc3a-33ca-4057-b40f-3d42350d4f1b/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/c1a0cc3a-33ca-4057-b40f-3d42350d4f1b",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 755,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 755,
+                  "height": 1024
+                },
+                {
+                  "width": 295,
+                  "height": 400
+                },
+                {
+                  "width": 148,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1498,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/c1a0cc3a-33ca-4057-b40f-3d42350d4f1b/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/c1a0cc3a-33ca-4057-b40f-3d42350d4f1b/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1498,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/c1a0cc3a-33ca-4057-b40f-3d42350d4f1b",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1498,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c38"
+            }
+          ],
+          "label": "38",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c38.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c39",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/08ddb88a-32a6-4edd-b72e-313bbc5fa877/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/08ddb88a-32a6-4edd-b72e-313bbc5fa877",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 726,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 726,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2047,
+          "width": 1451,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/08ddb88a-32a6-4edd-b72e-313bbc5fa877/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/08ddb88a-32a6-4edd-b72e-313bbc5fa877/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2047,
+                "width": 1451,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/08ddb88a-32a6-4edd-b72e-313bbc5fa877",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2047,
+                  "width": 1451,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c39"
+            }
+          ],
+          "label": "39",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c39.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c40",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/4c053a01-bd32-43ef-a115-6aca3af28255/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/4c053a01-bd32-43ef-a115-6aca3af28255",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 753,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 753,
+                  "height": 1024
+                },
+                {
+                  "width": 294,
+                  "height": 400
+                },
+                {
+                  "width": 147,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2021,
+          "width": 1487,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/4c053a01-bd32-43ef-a115-6aca3af28255/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/4c053a01-bd32-43ef-a115-6aca3af28255/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2021,
+                "width": 1487,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/4c053a01-bd32-43ef-a115-6aca3af28255",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2021,
+                  "width": 1487,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c40"
+            }
+          ],
+          "label": "40",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c40.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c41",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/0b4729ee-6fe1-40b0-bdfc-052d125617b4/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/0b4729ee-6fe1-40b0-bdfc-052d125617b4",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 719,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 719,
+                  "height": 1024
+                },
+                {
+                  "width": 281,
+                  "height": 400
+                },
+                {
+                  "width": 140,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2089,
+          "width": 1467,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/0b4729ee-6fe1-40b0-bdfc-052d125617b4/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/0b4729ee-6fe1-40b0-bdfc-052d125617b4/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2089,
+                "width": 1467,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/0b4729ee-6fe1-40b0-bdfc-052d125617b4",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2089,
+                  "width": 1467,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c41"
+            }
+          ],
+          "label": "41",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c41.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c42",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/75584280-1d7c-443d-a25e-046bfcc62f32/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/75584280-1d7c-443d-a25e-046bfcc62f32",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 751,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 751,
+                  "height": 1024
+                },
+                {
+                  "width": 293,
+                  "height": 400
+                },
+                {
+                  "width": 147,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1493,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/75584280-1d7c-443d-a25e-046bfcc62f32/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/75584280-1d7c-443d-a25e-046bfcc62f32/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1493,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/75584280-1d7c-443d-a25e-046bfcc62f32",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1493,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c42"
+            }
+          ],
+          "label": "42",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c42.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c43",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/e5d824df-2ca7-4e3d-8c91-22bf3ea2ce35/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/e5d824df-2ca7-4e3d-8c91-22bf3ea2ce35",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 718,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 718,
+                  "height": 1024
+                },
+                {
+                  "width": 280,
+                  "height": 400
+                },
+                {
+                  "width": 140,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2063,
+          "width": 1446,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/e5d824df-2ca7-4e3d-8c91-22bf3ea2ce35/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/e5d824df-2ca7-4e3d-8c91-22bf3ea2ce35/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2063,
+                "width": 1446,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/e5d824df-2ca7-4e3d-8c91-22bf3ea2ce35",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2063,
+                  "width": 1446,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c43"
+            }
+          ],
+          "label": "43",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c43.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c44",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/dfae87af-b9a4-473f-ae14-5f1adf3efc9f/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/dfae87af-b9a4-473f-ae14-5f1adf3efc9f",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 740,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 740,
+                  "height": 1024
+                },
+                {
+                  "width": 289,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/dfae87af-b9a4-473f-ae14-5f1adf3efc9f/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/dfae87af-b9a4-473f-ae14-5f1adf3efc9f/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/dfae87af-b9a4-473f-ae14-5f1adf3efc9f",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c44"
+            }
+          ],
+          "label": "44",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c44.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c45",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/ad5de023-6ed8-4baa-aec8-36e29a607148/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/ad5de023-6ed8-4baa-aec8-36e29a607148",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 726,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 726,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1440,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/ad5de023-6ed8-4baa-aec8-36e29a607148/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/ad5de023-6ed8-4baa-aec8-36e29a607148/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1440,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/ad5de023-6ed8-4baa-aec8-36e29a607148",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1440,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c45"
+            }
+          ],
+          "label": "45",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c45.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c46",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/4b80ea83-ff50-4a5a-b126-c3ba316a188a/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/4b80ea83-ff50-4a5a-b126-c3ba316a188a",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 758,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 758,
+                  "height": 1024
+                },
+                {
+                  "width": 296,
+                  "height": 400
+                },
+                {
+                  "width": 148,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 1995,
+          "width": 1477,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/4b80ea83-ff50-4a5a-b126-c3ba316a188a/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/4b80ea83-ff50-4a5a-b126-c3ba316a188a/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 1995,
+                "width": 1477,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/4b80ea83-ff50-4a5a-b126-c3ba316a188a",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 1995,
+                  "width": 1477,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c46"
+            }
+          ],
+          "label": "46",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c46.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c47",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/7e801b7d-f144-4a26-851d-67efa759ef72/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/7e801b7d-f144-4a26-851d-67efa759ef72",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 726,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 726,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2047,
+          "width": 1451,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/7e801b7d-f144-4a26-851d-67efa759ef72/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/7e801b7d-f144-4a26-851d-67efa759ef72/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2047,
+                "width": 1451,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/7e801b7d-f144-4a26-851d-67efa759ef72",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2047,
+                  "width": 1451,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c47"
+            }
+          ],
+          "label": "47",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c47.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c48",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/8c50d01e-2a31-4815-9f11-0f81696daab6/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/8c50d01e-2a31-4815-9f11-0f81696daab6",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 744,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 744,
+                  "height": 1024
+                },
+                {
+                  "width": 291,
+                  "height": 400
+                },
+                {
+                  "width": 145,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1503,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/8c50d01e-2a31-4815-9f11-0f81696daab6/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/8c50d01e-2a31-4815-9f11-0f81696daab6/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1503,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/8c50d01e-2a31-4815-9f11-0f81696daab6",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1503,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c48"
+            }
+          ],
+          "label": "48",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c48.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c49",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/f8d9fe39-fd66-4559-bf40-d734d08a50ac/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/f8d9fe39-fd66-4559-bf40-d734d08a50ac",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 724,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 724,
+                  "height": 1024
+                },
+                {
+                  "width": 283,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2052,
+          "width": 1451,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/f8d9fe39-fd66-4559-bf40-d734d08a50ac/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/f8d9fe39-fd66-4559-bf40-d734d08a50ac/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2052,
+                "width": 1451,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/f8d9fe39-fd66-4559-bf40-d734d08a50ac",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2052,
+                  "width": 1451,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c49"
+            }
+          ],
+          "label": "49",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c49.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c50",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/87ce4fd2-13f6-419e-9031-ffd974c81188/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/87ce4fd2-13f6-419e-9031-ffd974c81188",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 737,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 737,
+                  "height": 1024
+                },
+                {
+                  "width": 288,
+                  "height": 400
+                },
+                {
+                  "width": 144,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2036,
+          "width": 1466,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/87ce4fd2-13f6-419e-9031-ffd974c81188/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/87ce4fd2-13f6-419e-9031-ffd974c81188/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2036,
+                "width": 1466,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/87ce4fd2-13f6-419e-9031-ffd974c81188",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2036,
+                  "width": 1466,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c50"
+            }
+          ],
+          "label": "50",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c50.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c51",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/e39ec994-652f-4f53-97e2-b2e13f35ecef/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/e39ec994-652f-4f53-97e2-b2e13f35ecef",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 733,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 733,
+                  "height": 1024
+                },
+                {
+                  "width": 286,
+                  "height": 400
+                },
+                {
+                  "width": 143,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2026,
+          "width": 1451,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/e39ec994-652f-4f53-97e2-b2e13f35ecef/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/e39ec994-652f-4f53-97e2-b2e13f35ecef/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2026,
+                "width": 1451,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/e39ec994-652f-4f53-97e2-b2e13f35ecef",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2026,
+                  "width": 1451,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c51"
+            }
+          ],
+          "label": "51",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c51.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c52",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/4a43da3b-e247-4c0b-a98b-89b32218e259/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/4a43da3b-e247-4c0b-a98b-89b32218e259",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 763,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 763,
+                  "height": 1024
+                },
+                {
+                  "width": 298,
+                  "height": 400
+                },
+                {
+                  "width": 149,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2005,
+          "width": 1493,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/4a43da3b-e247-4c0b-a98b-89b32218e259/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/4a43da3b-e247-4c0b-a98b-89b32218e259/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2005,
+                "width": 1493,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/4a43da3b-e247-4c0b-a98b-89b32218e259",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2005,
+                  "width": 1493,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c52"
+            }
+          ],
+          "label": "52",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c52.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c53",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/e583f2b1-e3c3-4714-a614-5296f3449ccc/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/e583f2b1-e3c3-4714-a614-5296f3449ccc",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 714,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 714,
+                  "height": 1024
+                },
+                {
+                  "width": 279,
+                  "height": 400
+                },
+                {
+                  "width": 140,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2073,
+          "width": 1446,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/e583f2b1-e3c3-4714-a614-5296f3449ccc/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/e583f2b1-e3c3-4714-a614-5296f3449ccc/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2073,
+                "width": 1446,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/e583f2b1-e3c3-4714-a614-5296f3449ccc",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2073,
+                  "width": 1446,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c53"
+            }
+          ],
+          "label": "53",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c53.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c54",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/90c61718-1b2c-4746-960a-be547dec3353/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/90c61718-1b2c-4746-960a-be547dec3353",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 758,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 758,
+                  "height": 1024
+                },
+                {
+                  "width": 296,
+                  "height": 400
+                },
+                {
+                  "width": 148,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1508,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/90c61718-1b2c-4746-960a-be547dec3353/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/90c61718-1b2c-4746-960a-be547dec3353/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1508,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/90c61718-1b2c-4746-960a-be547dec3353",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1508,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c54"
+            }
+          ],
+          "label": "54",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c54.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c55",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/4cf4c494-a091-4b2a-a2b4-0c738addec2f/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/4cf4c494-a091-4b2a-a2b4-0c738addec2f",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 723,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 723,
+                  "height": 1024
+                },
+                {
+                  "width": 283,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2047,
+          "width": 1446,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/4cf4c494-a091-4b2a-a2b4-0c738addec2f/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/4cf4c494-a091-4b2a-a2b4-0c738addec2f/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2047,
+                "width": 1446,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/4cf4c494-a091-4b2a-a2b4-0c738addec2f",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2047,
+                  "width": 1446,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c55"
+            }
+          ],
+          "label": "55",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c55.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c56",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/0e8cf044-1052-4c84-964b-6432e3417277/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/0e8cf044-1052-4c84-964b-6432e3417277",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 756,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 756,
+                  "height": 1024
+                },
+                {
+                  "width": 295,
+                  "height": 400
+                },
+                {
+                  "width": 148,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2042,
+          "width": 1508,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/0e8cf044-1052-4c84-964b-6432e3417277/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/0e8cf044-1052-4c84-964b-6432e3417277/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2042,
+                "width": 1508,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/0e8cf044-1052-4c84-964b-6432e3417277",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2042,
+                  "width": 1508,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c56"
+            }
+          ],
+          "label": "56",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c56.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c57",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/0b3d3280-da43-43d2-8a1a-aa2b69658560/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/0b3d3280-da43-43d2-8a1a-aa2b69658560",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 725,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 725,
+                  "height": 1024
+                },
+                {
+                  "width": 283,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2063,
+          "width": 1461,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/0b3d3280-da43-43d2-8a1a-aa2b69658560/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/0b3d3280-da43-43d2-8a1a-aa2b69658560/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2063,
+                "width": 1461,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/0b3d3280-da43-43d2-8a1a-aa2b69658560",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2063,
+                  "width": 1461,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c57"
+            }
+          ],
+          "label": "57",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c57.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c58",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/d16bd185-f5be-4ab3-a07c-f51cbaac2e7b/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/d16bd185-f5be-4ab3-a07c-f51cbaac2e7b",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 757,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 757,
+                  "height": 1024
+                },
+                {
+                  "width": 296,
+                  "height": 400
+                },
+                {
+                  "width": 148,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2026,
+          "width": 1498,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/d16bd185-f5be-4ab3-a07c-f51cbaac2e7b/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/d16bd185-f5be-4ab3-a07c-f51cbaac2e7b/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2026,
+                "width": 1498,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/d16bd185-f5be-4ab3-a07c-f51cbaac2e7b",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2026,
+                  "width": 1498,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c58"
+            }
+          ],
+          "label": "58",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c58.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c59",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/91e2febe-3366-40d2-a335-251a6517cc08/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/91e2febe-3366-40d2-a335-251a6517cc08",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 723,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 723,
+                  "height": 1024
+                },
+                {
+                  "width": 282,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2063,
+          "width": 1456,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/91e2febe-3366-40d2-a335-251a6517cc08/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/91e2febe-3366-40d2-a335-251a6517cc08/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2063,
+                "width": 1456,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/91e2febe-3366-40d2-a335-251a6517cc08",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2063,
+                  "width": 1456,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c59"
+            }
+          ],
+          "label": "59",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c59.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c60",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/e35ec179-3ff0-447b-892a-c4d5da721042/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/e35ec179-3ff0-447b-892a-c4d5da721042",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 762,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 762,
+                  "height": 1024
+                },
+                {
+                  "width": 298,
+                  "height": 400
+                },
+                {
+                  "width": 149,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2026,
+          "width": 1508,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/e35ec179-3ff0-447b-892a-c4d5da721042/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/e35ec179-3ff0-447b-892a-c4d5da721042/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2026,
+                "width": 1508,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/e35ec179-3ff0-447b-892a-c4d5da721042",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2026,
+                  "width": 1508,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c60"
+            }
+          ],
+          "label": "60",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c60.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c61",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/15564526-0ff2-4e3e-9a69-3e51ae2f8efc/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/15564526-0ff2-4e3e-9a69-3e51ae2f8efc",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 733,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 733,
+                  "height": 1024
+                },
+                {
+                  "width": 286,
+                  "height": 400
+                },
+                {
+                  "width": 143,
+                  "height": 200
+                },
+                {
+                  "width": 72,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2026,
+          "width": 1451,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/15564526-0ff2-4e3e-9a69-3e51ae2f8efc/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/15564526-0ff2-4e3e-9a69-3e51ae2f8efc/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2026,
+                "width": 1451,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/15564526-0ff2-4e3e-9a69-3e51ae2f8efc",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2026,
+                  "width": 1451,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c61"
+            }
+          ],
+          "label": "61",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c61.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c62",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/c9441934-919c-4d17-beea-c56c75ee3e4d/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/c9441934-919c-4d17-beea-c56c75ee3e4d",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 755,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 755,
+                  "height": 1024
+                },
+                {
+                  "width": 295,
+                  "height": 400
+                },
+                {
+                  "width": 147,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1524,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/c9441934-919c-4d17-beea-c56c75ee3e4d/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/c9441934-919c-4d17-beea-c56c75ee3e4d/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1524,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/c9441934-919c-4d17-beea-c56c75ee3e4d",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1524,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c62"
+            }
+          ],
+          "label": "62",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c62.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c63",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/953c82ba-200a-4e5e-9e32-cc28b1c258e1/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/953c82ba-200a-4e5e-9e32-cc28b1c258e1",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 727,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 727,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2073,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/953c82ba-200a-4e5e-9e32-cc28b1c258e1/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/953c82ba-200a-4e5e-9e32-cc28b1c258e1/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2073,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/953c82ba-200a-4e5e-9e32-cc28b1c258e1",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2073,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c63"
+            }
+          ],
+          "label": "63",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c63.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c64",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/c2c0cd19-c128-492c-9a81-55b5d8443da9/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/c2c0cd19-c128-492c-9a81-55b5d8443da9",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 763,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 763,
+                  "height": 1024
+                },
+                {
+                  "width": 298,
+                  "height": 400
+                },
+                {
+                  "width": 149,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1513,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/c2c0cd19-c128-492c-9a81-55b5d8443da9/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/c2c0cd19-c128-492c-9a81-55b5d8443da9/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1513,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/c2c0cd19-c128-492c-9a81-55b5d8443da9",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1513,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c64"
+            }
+          ],
+          "label": "64",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c64.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c65",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/b480c49c-684e-42ff-b390-1e84dedb3ca8/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/b480c49c-684e-42ff-b390-1e84dedb3ca8",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 727,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 727,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1446,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/b480c49c-684e-42ff-b390-1e84dedb3ca8/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/b480c49c-684e-42ff-b390-1e84dedb3ca8/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1446,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/b480c49c-684e-42ff-b390-1e84dedb3ca8",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1446,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c65"
+            }
+          ],
+          "label": "65",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c65.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c66",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/96184018-979c-4a7d-b9b2-f310c5973eb7/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/96184018-979c-4a7d-b9b2-f310c5973eb7",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 752,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 752,
+                  "height": 1024
+                },
+                {
+                  "width": 294,
+                  "height": 400
+                },
+                {
+                  "width": 147,
+                  "height": 200
+                },
+                {
+                  "width": 73,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2026,
+          "width": 1488,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/96184018-979c-4a7d-b9b2-f310c5973eb7/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/96184018-979c-4a7d-b9b2-f310c5973eb7/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2026,
+                "width": 1488,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/96184018-979c-4a7d-b9b2-f310c5973eb7",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2026,
+                  "width": 1488,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c66"
+            }
+          ],
+          "label": "66",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c66.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c67",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/77d4c326-128a-4029-a414-1b4cf88e4e87/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/77d4c326-128a-4029-a414-1b4cf88e4e87",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 726,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 726,
+                  "height": 1024
+                },
+                {
+                  "width": 284,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1440,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/77d4c326-128a-4029-a414-1b4cf88e4e87/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/77d4c326-128a-4029-a414-1b4cf88e4e87/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1440,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/77d4c326-128a-4029-a414-1b4cf88e4e87",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1440,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c67"
+            }
+          ],
+          "label": "67",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c67.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c68",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/05cf5aa9-5195-45ae-b362-96ef02194751/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/05cf5aa9-5195-45ae-b362-96ef02194751",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 762,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 762,
+                  "height": 1024
+                },
+                {
+                  "width": 298,
+                  "height": 400
+                },
+                {
+                  "width": 149,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2042,
+          "width": 1519,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/05cf5aa9-5195-45ae-b362-96ef02194751/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/05cf5aa9-5195-45ae-b362-96ef02194751/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2042,
+                "width": 1519,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/05cf5aa9-5195-45ae-b362-96ef02194751",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2042,
+                  "width": 1519,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c68"
+            }
+          ],
+          "label": "68",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c68.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c69",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/8877ee7c-7578-4c49-8dae-ac3934303dfb/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/8877ee7c-7578-4c49-8dae-ac3934303dfb",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 729,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 729,
+                  "height": 1024
+                },
+                {
+                  "width": 285,
+                  "height": 400
+                },
+                {
+                  "width": 142,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1472,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/8877ee7c-7578-4c49-8dae-ac3934303dfb/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/8877ee7c-7578-4c49-8dae-ac3934303dfb/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1472,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/8877ee7c-7578-4c49-8dae-ac3934303dfb",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1472,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c69"
+            }
+          ],
+          "label": "69",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c69.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c70",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/2120042f-d21a-4bd9-8953-ef9e9a70740f/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/2120042f-d21a-4bd9-8953-ef9e9a70740f",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 774,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 774,
+                  "height": 1024
+                },
+                {
+                  "width": 302,
+                  "height": 400
+                },
+                {
+                  "width": 151,
+                  "height": 200
+                },
+                {
+                  "width": 76,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2037,
+          "width": 1540,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/2120042f-d21a-4bd9-8953-ef9e9a70740f/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/2120042f-d21a-4bd9-8953-ef9e9a70740f/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2037,
+                "width": 1540,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/2120042f-d21a-4bd9-8953-ef9e9a70740f",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2037,
+                  "width": 1540,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c70"
+            }
+          ],
+          "label": "70",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c70.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c71",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/6675cb8d-e9a3-4a0b-a936-4c76cf4c1f12/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/6675cb8d-e9a3-4a0b-a936-4c76cf4c1f12",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 720,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 720,
+                  "height": 1024
+                },
+                {
+                  "width": 281,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2047,
+          "width": 1440,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/6675cb8d-e9a3-4a0b-a936-4c76cf4c1f12/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/6675cb8d-e9a3-4a0b-a936-4c76cf4c1f12/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2047,
+                "width": 1440,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/6675cb8d-e9a3-4a0b-a936-4c76cf4c1f12",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2047,
+                  "width": 1440,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c71"
+            }
+          ],
+          "label": "71",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c71.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c72",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/4ddb6ffc-34a7-47cf-b054-d6128b365e30/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/4ddb6ffc-34a7-47cf-b054-d6128b365e30",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 764,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 764,
+                  "height": 1024
+                },
+                {
+                  "width": 299,
+                  "height": 400
+                },
+                {
+                  "width": 149,
+                  "height": 200
+                },
+                {
+                  "width": 75,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2042,
+          "width": 1524,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/4ddb6ffc-34a7-47cf-b054-d6128b365e30/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/4ddb6ffc-34a7-47cf-b054-d6128b365e30/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2042,
+                "width": 1524,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/4ddb6ffc-34a7-47cf-b054-d6128b365e30",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2042,
+                  "width": 1524,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c72"
+            }
+          ],
+          "label": "72",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c72.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c73",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/e726c1c6-14de-425f-8bd2-b2b1a3439df0/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/e726c1c6-14de-425f-8bd2-b2b1a3439df0",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 722,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 722,
+                  "height": 1024
+                },
+                {
+                  "width": 282,
+                  "height": 400
+                },
+                {
+                  "width": 141,
+                  "height": 200
+                },
+                {
+                  "width": 71,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2042,
+          "width": 1440,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/e726c1c6-14de-425f-8bd2-b2b1a3439df0/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/e726c1c6-14de-425f-8bd2-b2b1a3439df0/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2042,
+                "width": 1440,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/e726c1c6-14de-425f-8bd2-b2b1a3439df0",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2042,
+                  "width": 1440,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c73"
+            }
+          ],
+          "label": "73",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c73.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c74",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/8ddf9c85-4068-4ad7-be97-029b4111298b/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/8ddf9c85-4068-4ad7-be97-029b4111298b",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 753,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 753,
+                  "height": 1024
+                },
+                {
+                  "width": 294,
+                  "height": 400
+                },
+                {
+                  "width": 147,
+                  "height": 200
+                },
+                {
+                  "width": 74,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2031,
+          "width": 1493,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/8ddf9c85-4068-4ad7-be97-029b4111298b/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/8ddf9c85-4068-4ad7-be97-029b4111298b/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2031,
+                "width": 1493,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/8ddf9c85-4068-4ad7-be97-029b4111298b",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2031,
+                  "width": 1493,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c74"
+            }
+          ],
+          "label": "74",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c74.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        },
+        {
+          "@id":
+            "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c75",
+          "@type": "sc:Canvas",
+          "thumbnail": {
+            "@id":
+              "https://dlc.services/thumbs/48/19/0f8c3f83-789b-436f-868d-233c78c140b2/full/full/0/default.jpg",
+            "@type": "dctypes:Image",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id":
+                "https://dlc.services/thumbs/48/19/0f8c3f83-789b-436f-868d-233c78c140b2",
+              "profile": [
+                "http://iiif.io/api/image/2/level0.json",
+                {
+                  "formats": ["jpg"],
+                  "qualities": ["color"],
+                  "supports": ["sizeByWhListed"]
+                }
+              ],
+              "width": 713,
+              "height": 1024,
+              "sizes": [
+                {
+                  "width": 713,
+                  "height": 1024
+                },
+                {
+                  "width": 279,
+                  "height": 400
+                },
+                {
+                  "width": 139,
+                  "height": 200
+                },
+                {
+                  "width": 70,
+                  "height": 100
+                }
+              ]
+            }
+          },
+          "height": 2068,
+          "width": 1440,
+          "images": [
+            {
+              "@id":
+                "https://dlc.services/iiif-img/48/19/0f8c3f83-789b-436f-868d-233c78c140b2/anno",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id":
+                  "https://dlc.services/iiif-img/48/19/0f8c3f83-789b-436f-868d-233c78c140b2/full/!2000,2000/0/default.jpg",
+                "@type": "dctypes:Image",
+                "height": 2068,
+                "width": 1440,
+                "service": {
+                  "@id":
+                    "https://dlc.services/iiif-img/48/19/0f8c3f83-789b-436f-868d-233c78c140b2",
+                  "protocol": "http://iiif.io/api/image",
+                  "height": 2068,
+                  "width": 1440,
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on":
+                "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c75"
+            }
+          ],
+          "label": "75",
+          "otherContent": [
+            {
+              "@id": "https://mattmcgrattan.github.io/Vol208/c75.json",
+              "@type": "sc:AnnotationList",
+              "label": "Tags"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "label": "Test Manifest",
+  "navDate": "1976-01-01T00:00:00+00:00Z"
+}

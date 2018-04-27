@@ -1,0 +1,37 @@
+{
+  "name": "pmc-viewer",
+  "version": "0.0.5",
+  "description": "Canvas panel driven viewing experience for PMC project",
+  "private": true,
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "start": "nwb serve-react-demo --copy-files",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {
+    "@canvas-panel/core": "^0.0.5",
+    "@canvas-panel/redux": "^0.0.5",
+    "@canvas-panel/search": "^0.0.5",
+    "@fesk/bem-js": "^1.0.0",
+    "@fesk/react-bem": "^0.0.1",
+    "immutability-helper": "^2.6.4",
+    "manifesto.js":
+      "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
+    "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
+    "material-components-web": "^0.30.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.6"
+  },
+  "devDependencies": {
+    "nwb": "0.21.x",
+    "nwb-sass": "^0.8.4",
+    "sass-define": "0.0.5"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": ""
+}
