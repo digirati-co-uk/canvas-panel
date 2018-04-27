@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 class Close extends Component {
   render() {
+    const { onClose } = this.props;
     return (
       <div
+        onClick={onClose}
         style={{
           position: 'absolute',
           top: 10,

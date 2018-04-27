@@ -1,0 +1,31 @@
+{
+  "@id": "/pmc-fixture/c9.json",
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@type": "sc:AnnotationList",
+  "resources": [
+    {
+      "@id": "https://mattmcgrattan.github.io/Vol208/c9/0",
+      "@type": "oa:Annotation",
+      "motivation": "oa:linking",
+      "on":
+        "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c9#xywh=420,1143,236,41",
+      "resource": {
+        "@id":
+          "https://chronicle250.com/index/exhibitors/C#carel+weight+%28painter%29",
+        "label": "Carel Weight (Painter)"
+      }
+    },
+    {
+      "@id": "https://mattmcgrattan.github.io/Vol208/c9/1",
+      "@type": "oa:Annotation",
+      "motivation": "oa:linking",
+      "on":
+        "https://presley-pmc.dlc.services/iiif/pmctest02/Vol208/canvas/c9#xywh=364,1488,202,36",
+      "resource": {
+        "label": "Peter Blake (Painter)",
+        "@id":
+          "https://chronicle250.com/index/exhibitors/P#peter+blake+%28painter%29"
+      }
+    }
+  ]
+}

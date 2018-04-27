@@ -1,0 +1,39 @@
+.pmc-viewer-component {
+  &__viewer {
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: opacity 0.3s;
+
+    .viewer {
+      transform: scale(0.95);
+      transition: transform 0.3s;
+    }
+    .layout__footer {
+      transform: translateY(100px);
+      transition: transform 0.3s;
+    }
+    .layout__header {
+      transform: translateY(-100px);
+      transition: transform 0.3s;
+    }
+    &--isOpen {
+      pointer-events: visible;
+      opacity: 1;
+      .viewer {
+        transform: scale(1);
+      }
+      .layout__footer {
+        transform: translateY(0);
+      }
+      .layout__header {
+        transform: translateY(0);
+      }
+    }
+  }
+}

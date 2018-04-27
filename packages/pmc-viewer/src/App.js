@@ -30,20 +30,37 @@ class App extends Component {
 
   componentWillMount() {
     store.dispatch(
-      manifestRequest(this.props.manifestUri, 'en-GB', { startCanvas: 2 })
+      manifestRequest(this.props.manifest, 'en-GB', {
+        startCanvas:
+          this.props.startCanvas === 0 ? 0 : this.props.startCanvas || 2,
+      })
     );
   }
 
+  handleClickAnnotation = anno => {
+    window.location = anno['@id'];
+  };
+
   render() {
+    const {
+      onClose,
+      onClickAnnotation = this.handleClickAnnotation,
+    } = this.props;
     const { viewportAvailable } = this.state;
     return (
       <Provider store={store}>
         <Layout style={{ background: '#2D3135' }}>
           <Layout.Header>
-            <Header viewport={viewportAvailable ? this.viewport : null} />
+            <Header
+              onClose={onClose}
+              viewport={viewportAvailable ? this.viewport : null}
+            />
           </Layout.Header>
           <Layout.Main>
-            <Viewer setViewport={this.setViewport} />
+            <Viewer
+              onClickAnnotation={onClickAnnotation}
+              setViewport={this.setViewport}
+            />
           </Layout.Main>
           <Layout.Footer>
             <Footer />

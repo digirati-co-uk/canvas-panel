@@ -9,11 +9,11 @@ import IIIFLink from '../IIIFLink/IIIFLink';
 
 class Header extends Component {
   render() {
-    const { viewport } = this.props;
+    const { viewport, onClose } = this.props;
     return (
       <div style={{ position: 'relative' }}>
         <Title>{this.props.label}</Title>
-        <Close />
+        {onClose ? <Close onClose={onClose} /> : null}
         <ControlBar>
           <ControlBar.Left>
             <Pager>{this.props.canvasLabel}</Pager>

@@ -9,13 +9,11 @@ import {
   OpenSeadragonViewport,
   FullPageViewport,
   AnnotationRepresentation,
-  Fullscreen,
 } from '@canvas-panel/core';
 import {
   manifestNextCanvas,
   manifestPrevCanvas,
 } from '@canvas-panel/redux/es/spaces/manifest';
-import { selectAnnotation } from '@canvas-panel/redux/es/spaces/annotations';
 import './Viewer.scss';
 
 class Viewer extends Component {
@@ -66,10 +64,10 @@ class Viewer extends Component {
       error,
       currentCanvas,
       annotations,
-      dispatch,
       searchAvailable,
       currentAnnotation,
       search,
+      onClickAnnotation,
     } = this.props;
 
     if (error) {
@@ -81,7 +79,7 @@ class Viewer extends Component {
     }
 
     const renderAnnotations = annotations.filter(
-      single => single.annotation.getMotivation() === 'sc:Linking'
+      single => single.annotation.getMotivation().toString() === 'oa:linking'
     );
 
     return (
@@ -103,7 +101,7 @@ class Viewer extends Component {
                         visibilityRatio: 1,
                         constrainDuringPan: true,
                         showNavigator: false,
-                        // immediateRender: false,
+                        immediateRender: false,
                       }}
                     />
                   </OpenSeadragonViewport>
@@ -125,7 +123,7 @@ class Viewer extends Component {
                         annotation.id && annotation.id === currentAnnotation,
                     })}
                     onClickAnnotation={annotation =>
-                      dispatch(selectAnnotation(annotation.id, 'otherContent'))
+                      onClickAnnotation(annotation.__jsonld.resource)
                     }
                   />
                 )}
