@@ -7,7 +7,7 @@
     "@types/prop-types": "15.5.2",
     "@types/react": "16.3.13",
     "babel-eslint": "8.2.3",
-    "eslint": "3.19.0",
+    "eslint": "4.19.1",
     "eslint-plugin-babel": "3.3.0",
     "eslint-plugin-flow": "2.29.1",
     "eslint-plugin-flowtype": "2.46.3",
