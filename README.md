@@ -1,5 +1,7 @@
 # Canvas panel prototype
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/digirati-co-uk/canvas-panel.svg)](https://greenkeeper.io/)
+
 Prototype covering the specification of Canvas Panel, and supporting components
 for composing bespoke IIIF viewers and lightweight experiences, conforming to the
 IIIF Presentation 3 specification.
