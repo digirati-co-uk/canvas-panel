@@ -6,7 +6,14 @@ import functionOrMapChildren, {
   FunctionOrMapChildrenType,
 } from '../../utility/functionOrMapChildren';
 
-class CanvasProvider extends Component {
+type Props = {
+  sequence?: number,
+  startCanvas?: number | string,
+  manifest: Manifesto.Manifest,
+  children: any,
+};
+
+class CanvasProvider extends Component<Props> {
   state = {
     currentCanvas: null,
   };

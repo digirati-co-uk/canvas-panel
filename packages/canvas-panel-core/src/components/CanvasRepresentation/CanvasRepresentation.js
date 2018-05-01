@@ -14,7 +14,8 @@ class CanvasRepresentation extends Component {
 
   processChildStyle(child) {
     const { position, ratio } = this.props;
-    const { maxHeight, ...style } = child.props.style;
+    const { maxHeight, ...style } = child.props.style || {};
+
     const computedMaxHeight = maxHeight ? 'auto' : maxHeight * ratio;
 
     if (child.props.growthStyle === 'fixed') {

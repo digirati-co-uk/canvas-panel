@@ -6,7 +6,15 @@ import functionOrMapChildren, {
   FunctionOrMapChildrenType,
 } from '../../utility/functionOrMapChildren';
 
-class SingleTileSource extends Component {
+type Props = {
+  preLoad: any => any,
+  manifest: Manifesto.Manifest,
+  canvas: Manifesto.Canvas,
+  children: any,
+  fallbackWidth: number,
+};
+
+class SingleTileSource extends Component<Props> {
   state = {
     imageUri: null,
     tileSources: [],

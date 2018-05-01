@@ -46,7 +46,7 @@ class SearchProvider extends Component<Props, State> {
     return `${name}=${value}`;
   }
 
-  constructSearchQuery(
+  static constructSearchQuery(
     searchService: Manifesto.Service,
     q: string | Array<string> | null,
     motivation: Motivation | Array<Motivation> | null,
@@ -117,7 +117,7 @@ class SearchProvider extends Component<Props, State> {
     user: string | Array<string> | null,
     searchService: Manifesto.Service | null
   ) {
-    const query = this.constructSearchQuery(
+    const query = SearchProvider.constructSearchQuery(
       searchService,
       q,
       motivation,
