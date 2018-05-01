@@ -32,8 +32,8 @@
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "npm-watch": "^0.3.0",
-    "nwb": "^0.21.5"
+    "npm-watch": "0.3.0",
+    "nwb": "0.21.5"
   },
   "publishConfig": {
     "access": "public"
