@@ -45,13 +45,13 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "babel-loader": "^7.1.2",
-    "create-nwb-webpack-config": "^1.0.0",
-    "npm-watch": "^0.3.0",
-    "nwb": "^0.21.5",
+    "babel-loader": "7.1.4",
+    "create-nwb-webpack-config": "1.0.0",
+    "npm-watch": "0.3.0",
+    "nwb": "0.21.5",
     "nwb-watch": "1.0.0",
-    "prop-types": "^15.6.0",
-    "react-styleguidist": "^6.0.0"
+    "prop-types": "15.6.1",
+    "react-styleguidist": "6.5.3"
   },
   "publishConfig": {
     "access": "public"

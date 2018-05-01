@@ -25,9 +25,9 @@
     "react": "^16.3.2"
   },
   "devDependencies": {
-    "nwb": "^0.21.5",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "nwb": "0.21.5",
+    "react": "16.3.2",
+    "react-dom": "16.3.2"
   },
   "publishConfig": {
     "access": "public"

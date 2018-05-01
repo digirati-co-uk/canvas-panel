@@ -27,13 +27,13 @@
     "redux-saga": "^0.16.0"
   },
   "devDependencies": {
-    "immutability-helper": "^2.6.5",
-    "nwb": "^0.21.5",
-    "nwb-sass": "^0.8.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "redux-actions": "^2.2.1",
-    "redux-saga": "^0.16.0"
+    "immutability-helper": "2.7.0",
+    "nwb": "0.21.5",
+    "nwb-sass": "0.8.4",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "redux-actions": "2.3.0",
+    "redux-saga": "0.16.0"
   },
   "publishConfig": {
     "access": "public"
