@@ -82,9 +82,9 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@fesk/bem-js/-/bem-js-1.0.1.tgz#ac7c74351e34835274aef0506146709d3046cef1"
 
-"@fesk/module-release@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@fesk/module-release/-/module-release-0.0.1.tgz#95618a9d87b12e02b43e9e99792ee384bc295b86"
+"@fesk/module-release@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@fesk/module-release/-/module-release-0.0.2.tgz#394c45565813d98976565281ad240d32662ddba3"
   dependencies:
     chalk "^2.3.1"
     execa "^0.9.0"
