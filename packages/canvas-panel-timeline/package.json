@@ -1,11 +1,16 @@
 {
   "name": "@canvas-panel/timeline",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "canvas-panel-timeline React component",
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -36,6 +41,5 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository":
-    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-timeline"
+  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-timeline"
 }
