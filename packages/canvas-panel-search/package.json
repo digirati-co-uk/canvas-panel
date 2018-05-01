@@ -10,6 +10,7 @@
     "build": "nwb build-react-component --no-demo --copy-files",
     "clean": "nwb clean-module",
     "test": "nwb test-react",
+    "prepublish": "NODE_ENV=production npm run build",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
