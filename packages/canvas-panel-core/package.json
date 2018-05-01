@@ -30,7 +30,7 @@
     "@iiif/manifold": "^1.2.19",
     "@stephenwf-forks/manifesto.js": "^2.2.10",
     "core-js": "^2.5.3",
-    "create-react-context": "^0.1.4",
+    "create-react-context": "^0.2.2",
     "openseadragon": "^2.3.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -46,7 +46,7 @@
     "nwb": "^0.21.5",
     "prop-types": "^15.6.0",
     "nwb-watch": "1.0.0",
-    "react-styleguidist": "^6.0.0"
+    "react-styleguidist": "^7.0.8"
   },
   "publishConfig": {
     "access": "public"
