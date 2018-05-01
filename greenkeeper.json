@@ -1,0 +1,16 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/canvas-panel-cookbook/package.json",
+        "packages/canvas-panel-core/package.json",
+        "packages/canvas-panel-patchwork-plugin/package.json",
+        "packages/canvas-panel-redux/package.json",
+        "packages/canvas-panel-search/package.json",
+        "packages/canvas-panel-timeline/package.json",
+        "packages/canvas-panel-viewer-element/package.json"
+      ]
+    }
+  }
+}
