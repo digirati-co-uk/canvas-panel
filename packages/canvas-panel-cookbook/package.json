@@ -23,10 +23,11 @@
     "system-font-css": "^2.0.1"
   },
   "devDependencies": {
-    "nwb": "0.18.x",
+    "nwb": "^0.21.5",
     "nwb-sass": "^0.8.3"
   },
-  "author": "",
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": ""
+  "repository": "https://github.com/digirati-co-uk/canvas-panel"
 }

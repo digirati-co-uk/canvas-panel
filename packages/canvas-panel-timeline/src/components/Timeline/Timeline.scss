@@ -1,0 +1,222 @@
+$pallet-3-3: #00aeb2 !default;
+$subtitle-colour: #ccc !default;
+$active-item: #8bc34a !default;
+$inactive-item: #c8e6c9 !default;
+$link-color: $pallet-3-3 !default;
+$transition-speed: 0.5s;
+$hide-breadcrumbs: false !default;
+$center-titles: true !default;
+$disable-timeline-mobile: true !default;
+
+.timeline {
+  background: #fff;
+  //height: 145px;
+  * {
+    box-sizing: border-box;
+  }
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    margin: 15px;
+
+    h1 {
+      font-size: 28px;
+      line-height: 24px;
+      font-weight: normal;
+      @if ($center-titles) {
+        margin: 0;
+      } @else {
+        margin: 0 12px 0 0;
+      }
+
+      &.alternate {
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: normal;
+        margin: 0;
+        width: auto;
+        text-align: center;
+        position: absolute;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.8);
+        display: inline-block;
+        top: 166px;
+        padding: 5px 16px;
+      }
+      //transition: all $transition-speed;
+
+      @media (max-width: 40em) {
+        flex: 1;
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      @if ($center-titles) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    span {
+      display: none;
+      color: $subtitle-colour;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__item-container {
+    //height: 50px;
+    margin: 15px;
+    display: flex;
+    @media (max-width: 40em) {
+      @if ($disable-timeline-mobile) {
+        display: none;
+      }
+      margin: 5px 10px;
+      height: 5px;
+      pointer-events: none;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    //flex: 1;
+    transition: transform $transition-speed, width $transition-speed;
+    cursor: pointer;
+    padding-top: 2px;
+
+    @media (max-width: 40em) {
+      //padding-top: 5px;
+
+      &--active {
+        //margin-top: 0;
+        height: 15px;
+      }
+    }
+  }
+
+  &__breadcrumb-prefix {
+    //color: $link-color;
+    color: #000;
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+  &__representation {
+    background: $inactive-item;
+    height: 15px;
+    margin: 1px 1px 5px;
+    flex: 100;
+    opacity: 0.5;
+    transition: opacity $transition-speed, transform $transition-speed;
+    cursor: pointer;
+
+    .timeline__item--children.timeline__item--active:hover & {
+      animation: galway-timeline__item--pulse 1s infinite;
+
+      @at-root {
+        @keyframes galway-timeline__item--pulse {
+          0% {
+            opacity: 0.75;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 40em) {
+      height: 5px;
+    }
+
+    .timeline__item--active &,
+    .timeline__item:hover & {
+      transform: scaleY(1.3);
+      opacity: 1;
+    }
+  }
+
+  &__sub-title {
+    display: flex;
+    margin: 10px 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__temporal {
+    color: #999;
+    font-size: 12px;
+    line-height: 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all $transition-speed;
+    @media (max-width: 40em) {
+      display: none;
+    }
+
+    .timeline__item--active &,
+    .timeline__item:hover & {
+      position: absolute;
+      color: #000;
+      background: #fff;
+      padding-right: 6px;
+      z-index: 10;
+      font-weight: 600;
+    }
+
+    .timeline__item--active.timeline__item--children & {
+      color: $link-color;
+      font-size: 13px;
+      z-index: 9;
+      white-space: nowrap;
+      overflow: visible;
+      position: absolute;
+      background: #fff;
+      padding-right: 6px;
+
+      &:hover {
+        color: darken($link-color, 10%);
+      }
+      &:after {
+        transform: scale(2);
+        font-size: 18px;
+        padding-left: 5px;
+        content: ' \25BE';
+      }
+    }
+  }
+
+  &__tooltip {
+    position: relative;
+  }
+
+  &__tooltip-float {
+    transition: opacity 0.2s;
+    opacity: 0;
+    bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 16px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    color: #fff;
+    z-index: 9;
+    background: #000;
+    white-space: nowrap;
+    pointer-events: none;
+    height: 30px;
+
+    &--active {
+      pointer-events: initial;
+      opacity: 1;
+    }
+  }
+}

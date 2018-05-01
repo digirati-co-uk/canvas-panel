@@ -1,0 +1,42 @@
+{
+  "name": "@canvas-panel/timeline",
+  "version": "0.0.5",
+  "description": "canvas-panel-timeline React component",
+  "main": "lib/index.js",
+  "module": "es/index",
+  "jsnext:main": "es/index",
+  "files": ["css", "es", "lib", "umd"],
+  "scripts": {
+    "build": "nwb build-react-component --copy-files",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "start": "nwb serve-react-demo",
+    "prepublish": "NODE_ENV=production npm run build",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "16.x",
+    "immutability-helper": "^2.6.5",
+    "redux-actions": "^2.2.1",
+    "redux-saga": "^0.16.0"
+  },
+  "devDependencies": {
+    "immutability-helper": "^2.6.5",
+    "nwb": "^0.21.5",
+    "nwb-sass": "^0.8.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "redux-actions": "^2.2.1",
+    "redux-saga": "^0.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
+  "license": "MIT",
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-timeline"
+}
