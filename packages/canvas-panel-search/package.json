@@ -37,9 +37,13 @@
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.6"
   },
-  "author": "",
-  "homepage": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": "",
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-search",
   "keywords": ["react-component"]
 }

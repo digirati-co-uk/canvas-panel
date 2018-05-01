@@ -27,9 +27,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": "",
-  "keywords": ["react-component"]
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-viewer-element"
 }

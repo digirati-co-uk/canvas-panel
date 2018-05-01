@@ -33,9 +33,12 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
-  "author": "",
-  "homepage": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": "",
-  "keywords": ["react-component"]
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-redux"
 }

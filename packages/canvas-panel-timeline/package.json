@@ -30,9 +30,12 @@
     "redux-actions": "^2.2.1",
     "redux-saga": "^0.16.0"
   },
-  "author": "",
-  "homepage": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": "",
-  "keywords": ["react-component"]
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-timeline"
 }

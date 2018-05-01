@@ -53,5 +53,6 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": "https://github.com/digirati-co-uk/canvas-panel"
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-core"
 }
