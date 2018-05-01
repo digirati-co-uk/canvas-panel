@@ -1,12 +1,15 @@
 {
   "name": "@canvas-panel/core",
-  "version": "0.0.5",
-  "description":
-    "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
+  "version": "0.0.6",
+  "description": "Prototype covering the specification of Canvas Panel, and supporting components for composing bespoke IIIF viewers and lightweight experiences, conforming to the IIIF Presentation 3 specification.",
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "files": ["es", "lib", "umd"],
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-app",
@@ -21,7 +24,9 @@
   },
   "watch": {
     "build": {
-      "patterns": ["src"],
+      "patterns": [
+        "src"
+      ],
       "extensions": "js,json,scss"
     }
   },
@@ -53,6 +58,5 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository":
-    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-core"
+  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-core"
 }

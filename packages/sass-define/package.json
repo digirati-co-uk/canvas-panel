@@ -1,6 +1,6 @@
 {
   "name": "sass-define",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "index.js",
   "private": true,
   "dependencies": {
@@ -9,6 +9,5 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository":
-    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/sass-define"
+  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/sass-define"
 }

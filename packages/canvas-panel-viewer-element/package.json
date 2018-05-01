@@ -1,9 +1,14 @@
 {
   "name": "@canvas-panel/viewer-element",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple drop-in viewer",
   "main": "lib/index.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -14,7 +19,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.5"
+    "@canvas-panel/core": "^0.0.6"
   },
   "peerDependencies": {
     "react": "^16.3.2"
@@ -30,6 +35,5 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository":
-    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-viewer-element"
+  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-viewer-element"
 }
