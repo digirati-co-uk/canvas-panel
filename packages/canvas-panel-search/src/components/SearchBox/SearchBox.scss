@@ -1,0 +1,113 @@
+$search-box-text-colour: #018786 !default;
+$search-box-theme: #00aeb2 !default;
+
+.search-box {
+  height: 50px;
+  max-width: 450px;
+  color: #fff;
+  display: flex;
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  .search-box__container {
+    transition: max-width 0.3s, opacity 0.6s;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+  }
+
+  &__results-label {
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-size: 10px;
+    line-height: 50px;
+    padding: 0 10px;
+    color: $search-box-text-colour;
+    width: 50px;
+  }
+
+  &--open {
+    .search-box__container {
+      max-width: 400px;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .search-box__search-icon {
+      color: #fff;
+    }
+  }
+
+  &__search-icon {
+    height: 50px;
+    text-align: center;
+    width: 50px;
+    cursor: pointer;
+    line-height: 50px;
+    padding: 0 10px;
+    color: rgba(#fff, 0.5);
+    background: transparent;
+    border: none;
+
+    &:hover {
+      color: #fff;
+    }
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: -4px;
+    }
+    &:active {
+      background: #222;
+    }
+  }
+
+  &__button {
+    width: 30px;
+    height: 30px;
+    margin: 10px 5px;
+    cursor: pointer;
+    background: rgba($search-box-theme, 0);
+    color: #fff;
+    border: 1px solid $search-box-theme;
+    transition: background 0.2s, opacity 0.2s;
+    font-size: 16px;
+    &:active,
+    &:focus {
+      outline: 2px solid rgba($search-box-theme, 0.3);
+      background: rgba($search-box-theme, 0.1);
+    }
+
+    &--disabled,
+    &--disabled:active,
+    &--disabled:focus {
+      pointer-events: none;
+      border-color: #555;
+      background: rgba($search-box-theme, 0);
+      color: #555;
+      outline: none;
+    }
+  }
+
+  &__input {
+    color: #fff;
+    flex: 1;
+    margin: 5px 10px 10px;
+    height: 35px;
+    min-width: 200px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(#fff, 0.5);
+    transition: all 0.2s;
+    padding: 5px;
+    border-bottom: 1px solid rgba($search-box-theme, 1);
+    &:focus {
+      outline: none;
+      //background: rgba(#fff, 0.1);
+    }
+  }
+}
