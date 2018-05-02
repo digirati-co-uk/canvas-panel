@@ -4,7 +4,7 @@
 import '@iiif/manifold';
 
 global.$ = global.$ ? global.$ : {};
-global.$.ajax = ({ url, type, dataType, beforeSend }) => {
+global.$.ajax = global.$.ajax ? global.$.ajax : ({ url, type, dataType, beforeSend }) => {
   const fake = {
     headers: {},
     setRequestHeader(name, value) {
