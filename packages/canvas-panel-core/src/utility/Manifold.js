@@ -4,14 +4,16 @@
 import '@iiif/manifold';
 
 global.$ = global.$ ? global.$ : {};
-global.$.ajax = ({ url, type, dataType, beforeSend }) => {
+global.$.ajax = global.$.ajax ? global.$.ajax : ({ url, type, dataType, beforeSend }) => {
   const fake = {
     headers: {},
     setRequestHeader(name, value) {
       this.headers[name] = value;
     },
   };
-  beforeSend(fake);
+  if (beforeSend) {
+    beforeSend(fake);
+  }
   return {
     done(func) {
       const obj = {
