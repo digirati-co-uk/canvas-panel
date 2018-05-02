@@ -11,7 +11,9 @@ global.$.ajax = global.$.ajax ? global.$.ajax : ({ url, type, dataType, beforeSe
       this.headers[name] = value;
     },
   };
-  beforeSend(fake);
+  if (beforeSend) {
+    beforeSend(fake);
+  }
   return {
     done(func) {
       const obj = {
