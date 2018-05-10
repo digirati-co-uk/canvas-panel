@@ -451,9 +451,9 @@
   dependencies:
     csstype "^2.2.0"
 
-"@vxna/mini-html-webpack-template@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@vxna/mini-html-webpack-template/-/mini-html-webpack-template-0.1.6.tgz#64225d564da5fe610b6445523c245572923c00b8"
+"@vxna/mini-html-webpack-template@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@vxna/mini-html-webpack-template/-/mini-html-webpack-template-0.1.7.tgz#2a8270e513ee14f395cc17c2ce22ced383c45d22"
   dependencies:
     common-tags "^1.7.2"
 
@@ -9485,11 +9485,11 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-styleguidist@7.0.9:
-  version "7.0.9"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.9.tgz#57b851ac61231ec4b2d1085869b42d841ff25ed8"
+react-styleguidist@7.0.11:
+  version "7.0.11"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.11.tgz#9db1e3a51d1da79cddc0c997c98718faeadf4794"
   dependencies:
-    "@vxna/mini-html-webpack-template" "^0.1.6"
+    "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.5.3"
     ast-types "^0.11.3"
     buble "^0.19.3"
