@@ -12,7 +12,7 @@ import {
 } from '@canvas-panel/core';
 import BezierEasing from 'bezier-easing';
 
-import './FullPagePatchwork.css';
+import './FullPagePatchwork.scss';
 
 class Container extends Component {
   lastScrollY = -1;
