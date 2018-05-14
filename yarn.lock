@@ -7286,9 +7286,9 @@ markdown-table@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
 
-markdown-to-jsx@^6.4.1:
-  version "6.6.1"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.6.1.tgz#858b37f8a92526b1f3407593ff77c95927720bef"
+markdown-to-jsx@^6.6.3:
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.6.3.tgz#ccb248236257d4116822b8994fbf9606d045d187"
   dependencies:
     prop-types "^15.5.10"
     unquote "^1.1.0"
@@ -9485,9 +9485,9 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-styleguidist@7.0.11:
-  version "7.0.11"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.11.tgz#9db1e3a51d1da79cddc0c997c98718faeadf4794"
+react-styleguidist@7.0.13:
+  version "7.0.13"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.13.tgz#3f1827d988a12fe429dae2da0bad84b3eb7f28a9"
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.5.3"
@@ -9525,7 +9525,7 @@ react-styleguidist@7.0.11:
     loader-utils "^1.1.0"
     lodash "^4.17.5"
     lowercase-keys "^1.0.1"
-    markdown-to-jsx "^6.4.1"
+    markdown-to-jsx "^6.6.3"
     mini-html-webpack-plugin "^0.2.3"
     minimist "^1.2.0"
     ora "^2.0.0"
