@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.openseadragon-canvas:focus {
+  outline: none;
+}
+
 body {
   font-family: system-ui, Arial, Helvetica, sans-serif;
   margin-top: 40px;

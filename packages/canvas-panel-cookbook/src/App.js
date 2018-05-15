@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './Patchwork';
-import FullPagePatchwork from './FullPagePatchwork';
+import FullPage from './FullPage';
 import './App.scss';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
@@ -122,7 +122,7 @@ const App = () => (
       <Route exact path="/roadmap" component={RoadmapText} />
       <Route exact path="/examples" component={Examples(exampleList)} />
       <Route path="/examples/oceanliners" component={Patchwork} />
-      <Route path="/examples/fullpage" component={FullPagePatchwork} />
+      <Route path="/examples/fullpage" component={FullPage} />
       <Route path="/examples/popout" component={PopOut} />
     </main>
   </Router>

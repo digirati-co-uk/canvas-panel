@@ -1,0 +1,41 @@
+{
+  "name": "@canvas-panel/full-page-plugin",
+  "version": "0.0.8",
+  "description": "Canvas panel plugin - full page scroll",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": ["es", "lib", "umd"],
+  "scripts": {
+    "build": "nwb build-react-component --copy-files",
+    "clean": "nwb clean-module",
+    "test": "nwb test",
+    "prepublish": "NODE_ENV=production npm run build",
+    "test:coverage": "nwb test --coverage",
+    "test:watch": "nwb test --server",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "build": {
+      "patterns": ["src"],
+      "extensions": "js"
+    }
+  },
+  "dependencies": {
+    "@canvas-panel/core": "^0.0.8",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "npm-watch": "0.3.0",
+    "nwb": "0.21.5",
+    "nwb-sass": "^0.8.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Digirati",
+  "homepage": "https://digirati.com/",
+  "license": "MIT",
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-full-page-plugin"
+}

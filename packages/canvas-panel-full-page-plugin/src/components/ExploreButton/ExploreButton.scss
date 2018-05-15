@@ -1,0 +1,16 @@
+.explore-button {
+  &--interactive {
+    background: cornflowerblue;
+  }
+
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  z-index: 10000;
+  line-height: 40px;
+  font-size: 18px;
+  margin-left: -100px;
+  width: 200px;
+  background: #fff;
+  border: none;
+}

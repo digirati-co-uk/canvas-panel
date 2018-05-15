@@ -1,0 +1,55 @@
+.page-panel {
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translateX(0);
+  opacity: 1;
+  will-change: transform, opactiy;
+  width: 50%;
+  max-width: 500px;
+  height: 100vh;
+  display: flex;
+  // Maybe a styling preference.
+  //align-items: center;
+  pointer-events: none;
+  align-items: flex-start;
+
+  &--disabled {
+    opacity: 0.3;
+    transform: translateX(-25%);
+  }
+
+  &__inner {
+    background: #fff;
+    padding: 15px 30px;
+    margin-left: 40px;
+    width: 100%;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+
+    // Annotation hacks.
+    img {
+      height: 140px;
+      width: auto;
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 0.9em;
+      line-height: 1.5em;
+      text-align: left;
+    }
+    .annotatedzoom-annotation-detail__credit {
+      font-size: 0.75em;
+      color: #999;
+    }
+  }
+
+  &--sticky {
+    .page-panel__inner {
+      position: sticky;
+      top: 30%;
+      margin-bottom: 220px;
+    }
+  }
+}

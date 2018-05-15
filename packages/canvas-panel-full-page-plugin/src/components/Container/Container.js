@@ -1,0 +1,81 @@
+import React, { Component } from 'react';
+import { functionOrMapChildren, withBemClass } from '@canvas-panel/core';
+import './Container.scss';
+
+class Container extends Component {
+  lastScrollY = -1;
+  scheduledAnimationFrame = false;
+
+  state = { current: 0 };
+
+  static defaultProps = {
+    windowHeight: window.innerHeight,
+    onLoadDelay: 500,
+  };
+
+  componentWillMount() {
+    this.setState(() => ({
+      // Double tilde quicker than Math.floor, useful for scroll events.
+      current: ~~(this.lastScrollY / this.props.windowHeight),
+    }));
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.windowHeight !== this.props.windowHeight) {
+      this.setState(() => ({
+        // Double tilde quicker than Math.floor, useful for scroll events.
+        current: ~~(this.lastScrollY / newProps.windowHeight),
+      }));
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScrollThrottled);
+    setTimeout(() => {
+      this.props.updateIndividual(window.scrollY / this.props.windowHeight);
+    }, this.props.onLoadDelay);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScrollThrottled);
+  }
+
+  handleScrollThrottled = () => {
+    // Store the scroll value for later.
+    this.lastScrollY = window.scrollY;
+
+    // Prevent multiple rAF callbacks.
+    if (this.scheduledAnimationFrame) {
+      return;
+    }
+
+    this.scheduledAnimationFrame = true;
+    requestAnimationFrame(this.handleScroll);
+  };
+
+  handleScroll = () => {
+    this.scheduledAnimationFrame = false;
+    const currentAccurate = this.lastScrollY / this.props.windowHeight;
+    // Double tilde quicker than Math.floor, useful for scroll events.
+    const current = ~~currentAccurate;
+    this.props.updateIndividual(currentAccurate);
+    if (current !== this.state.current) {
+      this.setState(() => ({
+        current,
+      }));
+    }
+  };
+
+  render() {
+    const { children, bem, style, disabled, ...props } = this.props;
+    const { current } = this.state;
+
+    return (
+      <div className={bem.modifiers({ disabled })} style={style}>
+        {functionOrMapChildren(children, { ...props, current })}
+      </div>
+    );
+  }
+}
+
+export default withBemClass('full-page-container')(Container);
