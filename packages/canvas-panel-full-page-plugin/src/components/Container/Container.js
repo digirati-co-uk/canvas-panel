@@ -20,7 +20,7 @@ class Container extends Component {
     }));
   }
 
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps(newProps, nextContext) {
     if (newProps.windowHeight !== this.props.windowHeight) {
       this.setState(() => ({
         // Double tilde quicker than Math.floor, useful for scroll events.
@@ -32,7 +32,9 @@ class Container extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScrollThrottled);
     setTimeout(() => {
-      this.props.updateIndividual(window.scrollY / this.props.windowHeight);
+      this.props.updateIndividual(
+        Container.getCurrentScrollY() / this.props.windowHeight
+      );
     }, this.props.onLoadDelay);
   }
 
@@ -40,9 +42,16 @@ class Container extends Component {
     window.removeEventListener('scroll', this.handleScrollThrottled);
   }
 
+  static getCurrentScrollY() {
+    return window.pageYOffset !== undefined
+      ? window.pageYOffset
+      : (document.documentElement || document.body.parentNode || document.body)
+          .scrollTop;
+  }
+
   handleScrollThrottled = () => {
     // Store the scroll value for later.
-    this.lastScrollY = window.scrollY;
+    this.lastScrollY = Container.getCurrentScrollY();
 
     // Prevent multiple rAF callbacks.
     if (this.scheduledAnimationFrame) {

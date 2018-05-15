@@ -40,7 +40,7 @@ class Viewer extends Component {
 
   toggleInteractive = () => {
     if (this.state.interactive === true) {
-      this.updateIndividual(window.scrollY / window.innerHeight);
+      this.updateIndividual(Container.getCurrentScrollY() / window.innerHeight);
     } else {
       this.state.viewport.zoomOut(this.props.zoomOutSpeed);
     }
