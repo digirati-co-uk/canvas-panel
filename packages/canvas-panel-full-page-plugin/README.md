@@ -1,17 +1,54 @@
-# canvas-panel-patchwork-plugin
+# Canvas Panel - Full page plugin
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+The full page canvas panel example can be seen [here](https://canvas-panel.digirati.com/#/examples/fullpage)
 
-Describe canvas-panel-patchwork-plugin here.
+## Installation
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+## Package
+
+using yarn:
+
+```
+$ yarn add @canvas-panel/full-page-plugin
+```
+
+using npm:
+
+```
+$ npm install @canvas-panel/full-page-plugin --save
+```
+
+## Usage
+
+In existing React application
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { FullScreenPlugin } from '@canvas-panel/full-page-plugin';
+
+ReactDOM.render(
+  <FullScreenPlugin
+    manifest="http://.../manifest"
+    // ... other props
+  />,
+  document.getElementById('app')
+);
+```
+
+Standalone plugin (see below for dependencies):
+
+```html
+<link href="https://unpkg.com/@canvas-panel/full-page-plugin@latest/umd/@canvas-panel/full-page-plugin.min.js" />
+<script src="https://unpkg.com/@canvas-panel/full-page-plugin@latest/umd/@canvas-panel/full-page-plugin.min.js"></script>
+<script type="application/javascript">
+  fullPageCanvasPanelPlugin.create(document.getElementById('viewer'), {
+    manifest: 'https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json',
+    title: 'testing',
+    children: 'Hello content',
+  })
+</script>
+```
 
 ## Note about UMD builds and bundle size
 
