@@ -28,10 +28,9 @@ import ReactDOM from 'react-dom';
 import { FullScreenPlugin } from '@canvas-panel/full-page-plugin';
 
 ReactDOM.render(
-  <FullScreenPlugin
-    manifest="http://.../manifest"
-    // ... other props
-  />,
+  <FullScreenPlugin manifest="http://.../manifest" title="Testing title">
+    <p>Some content for the main page</p>
+  </FullScreenPlugin>,
   document.getElementById('app')
 );
 ```
@@ -45,7 +44,7 @@ Standalone plugin (see below for dependencies):
   fullPageCanvasPanelPlugin.create(document.getElementById('viewer'), {
     manifest: 'https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json',
     title: 'testing',
-    children: 'Hello content',
+    children: 'Some content for the main page',
   })
 </script>
 ```
