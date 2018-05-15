@@ -13,6 +13,7 @@ import Container from '../Container/Container';
 import TitlePanel from '../TitlePanel/TitlePanel';
 import AnnotationListView from '../AnnotationListView/AnnotationListView';
 import ExploreButton from '../ExploreButton/ExploreButton';
+import getCurrentScrollY from '../../utils/getCurrentScrollY';
 
 class Viewer extends Component {
   static defaultProps = {
@@ -40,7 +41,7 @@ class Viewer extends Component {
 
   toggleInteractive = () => {
     if (this.state.interactive === true) {
-      this.updateIndividual(Container.getCurrentScrollY() / window.innerHeight);
+      this.updateIndividual(getCurrentScrollY() / window.innerHeight);
     } else {
       this.state.viewport.zoomOut(this.props.zoomOutSpeed);
     }

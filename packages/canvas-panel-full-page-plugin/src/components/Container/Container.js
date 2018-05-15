@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { functionOrMapChildren, withBemClass } from '@canvas-panel/core';
 import './Container.scss';
+import getCurrentScrollY from '../../utils/getCurrentScrollY';
 
 class Container extends Component {
   lastScrollY = -1;
@@ -33,7 +34,7 @@ class Container extends Component {
     window.addEventListener('scroll', this.handleScrollThrottled);
     setTimeout(() => {
       this.props.updateIndividual(
-        Container.getCurrentScrollY() / this.props.windowHeight
+        getCurrentScrollY() / this.props.windowHeight
       );
     }, this.props.onLoadDelay);
   }
@@ -42,16 +43,9 @@ class Container extends Component {
     window.removeEventListener('scroll', this.handleScrollThrottled);
   }
 
-  static getCurrentScrollY() {
-    return window.pageYOffset !== undefined
-      ? window.pageYOffset
-      : (document.documentElement || document.body.parentNode || document.body)
-          .scrollTop;
-  }
-
   handleScrollThrottled = () => {
     // Store the scroll value for later.
-    this.lastScrollY = Container.getCurrentScrollY();
+    this.lastScrollY = getCurrentScrollY();
 
     // Prevent multiple rAF callbacks.
     if (this.scheduledAnimationFrame) {
