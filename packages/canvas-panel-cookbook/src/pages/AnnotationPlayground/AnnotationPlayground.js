@@ -83,7 +83,7 @@ class Viewer extends Component {
 
     const on = AnnotationSelector.parse(annotation.target.id);
     setTimeout(() => {
-      this.viewer.goToRect(on.selector, 200, 0.4);
+      this.viewer.goToRect(on.selector, 200, 1.5);
     }, 500);
   }
 
