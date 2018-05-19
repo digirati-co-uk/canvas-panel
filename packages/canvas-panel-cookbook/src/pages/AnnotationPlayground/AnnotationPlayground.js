@@ -23,9 +23,9 @@ const defaultAnnotation = `
 {
   "type": "Annotation",
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "label": "test title",
+  "label": "In the core",
   "body": {
-    "value": "test description",
+    "value": "In the core - as shown in the photograph many thousands of times larger - the answer lies in the quest of the genome.",
     "type": "TextualBody",
     "purpose": "tagging",
     "format": "text/plain"

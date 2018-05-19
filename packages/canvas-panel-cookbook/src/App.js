@@ -73,7 +73,8 @@ const exampleList = [
   {
     label: 'Annotation playground',
     link: '/examples/annotation-playground',
-    image: null,
+    image:
+      'https://dlcs.io/iiif-img/wellcome/1/4ff70079-fac3-4259-814e-021f7dcf43b6/195,150,2146,2146/512,/0/default.jpg',
   },
 ];
 
