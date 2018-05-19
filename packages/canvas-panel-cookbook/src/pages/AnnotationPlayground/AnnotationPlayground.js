@@ -142,9 +142,18 @@ class AnnotationPlayground extends Component {
     this.setState({ currentAnnotation: value });
   };
 
+  getAnnotation() {
+    const { currentAnnotation } = this.state;
+    try {
+      return currentAnnotation ? JSON.parse(currentAnnotation) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
   render() {
     const { currentAnnotation } = this.state;
-    const annotation = currentAnnotation ? JSON.parse(currentAnnotation) : null;
+    const annotation = this.getAnnotation();
 
     return (
       <div>
@@ -173,7 +182,9 @@ class AnnotationPlayground extends Component {
                 <div>
                   <h1>{annotation.label}</h1>
                   <p
-                    dangerouslySetInnerHTML={{ __html: annotation.body.value }}
+                    dangerouslySetInnerHTML={{
+                      __html: annotation.body ? annotation.body.value : '',
+                    }}
                   />
                 </div>
               ) : null}
