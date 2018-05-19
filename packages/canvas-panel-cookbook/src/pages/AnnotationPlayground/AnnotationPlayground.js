@@ -31,7 +31,7 @@ const defaultAnnotation = `
     "format": "text/plain"
   },
   "target": {
-    "id": "https://wellcomelibrary.org/iiif/b18035723/canvas/c4#xywh=193,150,2146,755",
+    "id": "https://wellcomelibrary.org/iiif/b18035723/canvas/c4#xywh=979,513,470,388",
     "type": "Canvas",
     "dcterms:isPartOf": {
       "id": "https://wellcomelibrary.org/iiif/b18035723/manifest",
@@ -80,6 +80,11 @@ class Viewer extends Component {
         manifest: annotation.target['dcterms:isPartOf'].id,
       });
     }
+
+    const on = AnnotationSelector.parse(annotation.target.id);
+    setTimeout(() => {
+      this.viewer.goToRect(on.selector, 200, 0.4);
+    }, 500);
   }
 
   render() {
@@ -101,7 +106,11 @@ class Viewer extends Component {
       <Manifest url={manifest}>
         <CanvasProvider startCanvas={canvas} currentCanvas={canvas}>
           <SingleTileSource viewportController={true}>
-            <FullPageViewport position="relative" interactive={true}>
+            <FullPageViewport
+              setRef={viewer => (this.viewer = viewer)}
+              position="relative"
+              interactive={true}
+            >
               <OpenSeadragonViewport
                 useMaxDimensions={true}
                 osdOptions={{
