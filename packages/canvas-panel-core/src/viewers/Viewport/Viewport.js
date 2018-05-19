@@ -165,7 +165,14 @@ class Viewport extends Component {
       isZoomedOut,
       isLoading,
     } = this.state;
-    const { maxWidth, maxHeight, children, style, setRef } = this.props;
+    const {
+      maxWidth,
+      maxHeight,
+      children,
+      style,
+      setRef,
+      tileSources,
+    } = this.props;
 
     return (
       x !== newState.x ||
@@ -180,7 +187,8 @@ class Viewport extends Component {
       maxWidth !== newProps.maxWidth ||
       maxHeight !== newProps.maxHeight ||
       children !== newProps.children ||
-      style !== newProps.style
+      style !== newProps.style ||
+      tileSources !== newProps.tileSources
     );
   }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
-import Patchwork from './Patchwork';
-import FullPagePatchwork from './FullPagePatchwork';
+import Patchwork from './pages/Patchwork/Patchwork';
+import FullPagePatchwork from './pages/FullPagePatchwork/FullPagePatchwork';
+import AnnotationPlayground from './pages/AnnotationPlayground/AnnotationPlayground';
 import './App.scss';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
@@ -69,6 +70,11 @@ const exampleList = [
     image:
       'https://framemark.vam.ac.uk/collections/2013GU2911/2048,4580,1024,512/512,/0/default.jpg',
   },
+  {
+    label: 'Annotation playground',
+    link: '/examples/annotation-playground',
+    image: null,
+  },
 ];
 
 const ScrollToTop = () => {
@@ -124,6 +130,10 @@ const App = () => (
       <Route path="/examples/oceanliners" component={Patchwork} />
       <Route path="/examples/fullpage" component={FullPagePatchwork} />
       <Route path="/examples/popout" component={PopOut} />
+      <Route
+        path="/examples/annotation-playground"
+        component={AnnotationPlayground}
+      />
     </main>
   </Router>
 );
