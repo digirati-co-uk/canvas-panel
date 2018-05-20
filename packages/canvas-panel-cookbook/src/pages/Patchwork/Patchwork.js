@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { PatchworkPlugin } from '@canvas-panel/patchwork-plugin';
 
-import p3manifest from '../../../tests/patchwork';
-import AnnWest from './Sites/VA/AnnWest';
+import p3manifest from '../../../../../tests/patchwork';
+import AnnWest from '../../Sites/VA/AnnWest';
 import './Patchwork.css';
 
 class Patchwork extends Component {
