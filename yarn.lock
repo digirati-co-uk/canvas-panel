@@ -430,7 +430,7 @@
   version "0.35.0"
   resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.35.0.tgz#23ad7eb7c9789e69c7c3fa54df8fc311cd7fc4b1"
 
-"@stephenwf-forks/manifesto.js@^2.2.10":
+"@stephenwf-forks/manifesto.js@2.2.10", "@stephenwf-forks/manifesto.js@^2.2.10":
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.10.tgz#4bf643202cb77516d63e1d22d6ac386a6183e7be"
   dependencies:
@@ -1959,7 +1959,7 @@ brace-expansion@^1.0.0, brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-brace@^0.11.0, brace@^0.11.1:
+brace@0.11.1, brace@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/brace/-/brace-0.11.1.tgz#4896fcc9d544eef45f4bb7660db320d3b379fe58"
 
@@ -9361,7 +9361,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-ace@^6.1.1:
+react-ace@6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-6.1.1.tgz#c8339b4f0a27401bff53f477f125d3d7eac2a090"
   dependencies:
