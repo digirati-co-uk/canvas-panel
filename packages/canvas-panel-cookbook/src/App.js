@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './pages/Patchwork/Patchwork';
-import FullPage from './pages/FullPagePatchwork/FullPagePatchwork';
+import FullPage from './pages/FullPage/FullPage';
 import AnnotationPlayground from './pages/AnnotationPlayground/AnnotationPlayground';
 
 import './App.scss';

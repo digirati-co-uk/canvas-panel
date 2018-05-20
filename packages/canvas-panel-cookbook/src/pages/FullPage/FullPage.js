@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FullPageViewer } from '@canvas-panel/full-page-plugin';
-import './FullPage.css';
 
 class FullPage extends Component {
   render() {
