@@ -59,7 +59,9 @@ a fullscreen OSD viewer. This is useful on mobile where it won't interfere with 
           }
         >
           <div
-            style={isFullscreen ? { position: 'absolute', zIndex: 2 } : null}
+            style={
+              isFullscreen ? { position: 'absolute', zIndex: 10000 } : null
+            }
           >
             {isFullscreen ? (
               <button onClick={exitFullscreen}>Exit fullscreen</button>
