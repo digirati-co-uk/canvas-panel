@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/viewer-element",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simple drop-in viewer",
   "main": "lib/index.js",
   "files": [
@@ -19,7 +19,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.8"
+    "@canvas-panel/core": "^0.0.9"
   },
   "peerDependencies": {
     "react": "^16.3.2"
