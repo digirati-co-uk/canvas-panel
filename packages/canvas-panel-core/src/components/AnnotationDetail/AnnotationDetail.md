@@ -40,6 +40,7 @@ initialState = { annotation: null, viewport: null };
     </Bem>
     <style>{`
       .annotation-detail-md-annotation {
+        pointer-events: visible;
         outline: 2px solid purple;
       }
       .annotation-detail-md-annotation--selected {
@@ -90,7 +91,10 @@ initialState = { annotation: null, viewport: null };
               setState({ annotation });
               viewport.goToRect(bounds, 1000, animationSpeed);
             }}
-            annotationStyle={{ outline: '10px solid lime' }}
+            annotationStyle={{
+              outline: '10px solid lime',
+              pointerEvents: 'visible',
+            }}
           />
         </Viewport>
       </CanvasProvider>

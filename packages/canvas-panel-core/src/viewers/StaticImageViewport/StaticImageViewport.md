@@ -4,10 +4,10 @@ Static image viewport.
 
 ```js
 <Manifest url={manifests.main}>
-  <CanvasProvider startCanvas={4}>
+  <CanvasProvider startCanvas={2}>
     <Viewport maxWidth={500}>
       <StaticImageViewport
-        draggable={true}
+        draggable={false}
         viewportController={true}
         maxHeight={500}
         maxWidth={500}
