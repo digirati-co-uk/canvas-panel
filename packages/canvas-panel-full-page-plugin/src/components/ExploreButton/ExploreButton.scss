@@ -1,16 +1,22 @@
 .explore-button {
   &--interactive {
-    background: cornflowerblue;
+    background: #fff;
   }
 
   position: fixed;
-  bottom: 100px;
-  left: 50%;
+  bottom: 40px;
+  right: 40px;
   z-index: 10000;
-  line-height: 40px;
-  font-size: 18px;
-  margin-left: -100px;
-  width: 200px;
-  background: #fff;
-  border: none;
+  line-height: 30px;
+  font-size: 14px;
+  width: 150px;
+  color: #1d1e20;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.2s, color 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  &:focus,
+  &:active {
+    outline: 2px solid #fc4420;
+  }
 }

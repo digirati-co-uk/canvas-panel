@@ -7,7 +7,7 @@ class ExploreButton extends Component {
     const { bem, onClick, interactive } = this.props;
     return (
       <button className={bem.modifiers({ interactive })} onClick={onClick}>
-        {interactive ? 'Back to tour' : 'Explore'}
+        {interactive ? 'Back to tour' : 'Exit tour'}
       </button>
     );
   }
