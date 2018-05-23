@@ -14,6 +14,7 @@ import TitlePanel from '../TitlePanel/TitlePanel';
 import AnnotationListView from '../AnnotationListView/AnnotationListView';
 import ExploreButton from '../ExploreButton/ExploreButton';
 import getCurrentScrollY from '../../utils/getCurrentScrollY';
+import ScrollDownIcon from '../ScrollDownIcon/ScrollDownIcon';
 
 class Viewer extends Component {
   static defaultProps = {
@@ -54,12 +55,12 @@ class Viewer extends Component {
     const { manifest, title, children } = this.props;
     return (
       <div>
+        <ExploreButton
+          interactive={this.state.interactive}
+          onClick={this.toggleInteractive}
+        />
         <Manifest url={manifest}>
           <CanvasProvider>
-            <ExploreButton
-              interactive={this.state.interactive}
-              onClick={this.toggleInteractive}
-            />
             <FullPageViewport
               setRef={this.setViewport}
               interactive={this.state.interactive}
