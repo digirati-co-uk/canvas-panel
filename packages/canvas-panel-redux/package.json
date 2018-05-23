@@ -1,16 +1,11 @@
 {
   "name": "@canvas-panel/redux",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "canvas-panel-redux React component",
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["css", "es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -21,18 +16,20 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.8",
+    "@canvas-panel/core": "^0.0.9",
     "immutability-helper": "^2.6.5",
     "redux": "^4.0.0",
     "redux-actions": "^2.2.1",
     "redux-saga": "^0.16.0"
   },
   "peerDependencies": {
-    "manifesto.js": "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
+    "manifesto.js":
+      "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
     "react": "16.x"
   },
   "devDependencies": {
-    "manifesto.js": "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
+    "manifesto.js":
+      "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
     "nwb": "0.21.5",
     "react": "16.3.2",
     "react-dom": "16.3.2"
@@ -43,5 +40,6 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-redux"
+  "repository":
+    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-redux"
 }
