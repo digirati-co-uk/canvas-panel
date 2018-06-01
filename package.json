@@ -10,7 +10,7 @@
     "eslint": "4.19.1",
     "eslint-plugin-babel": "5.1.0",
     "eslint-plugin-flow": "2.29.1",
-    "eslint-plugin-flowtype": "2.48.0",
+    "eslint-plugin-flowtype": "2.49.0",
     "eslint-plugin-prettier": "2.6.0",
     "flow-bin": "0.73.0",
     "husky": "0.14.3",
