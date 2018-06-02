@@ -9273,9 +9273,9 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-styleguidist@7.0.15:
-  version "7.0.15"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.15.tgz#508165b56feb8645956009f6b140d6a5bccf304e"
+react-styleguidist@7.0.16:
+  version "7.0.16"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.16.tgz#9d62aa52c94a65634198ea31ee3b17eac37e1328"
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.5.3"
