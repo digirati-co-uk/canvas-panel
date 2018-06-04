@@ -26,7 +26,7 @@
     "immutability-helper": "^2.6.4",
     "manifesto.js": "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
     "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
-    "material-components-web": "^0.35.0",
+    "material-components-web": "^0.36.0",
     "nwb-sass": "^0.8.2",
     "rheostat": "^2.1.3"
   },
