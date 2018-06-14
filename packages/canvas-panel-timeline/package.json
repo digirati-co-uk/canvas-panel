@@ -30,8 +30,8 @@
     "immutability-helper": "2.7.0",
     "nwb": "0.21.5",
     "nwb-sass": "0.8.4",
-    "react": "16.4.0",
-    "react-dom": "16.4.0",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
     "redux-actions": "2.4.0",
     "redux-saga": "0.16.0"
   },
