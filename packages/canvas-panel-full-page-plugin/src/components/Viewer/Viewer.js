@@ -14,7 +14,8 @@ import TitlePanel from '../TitlePanel/TitlePanel';
 import AnnotationListView from '../AnnotationListView/AnnotationListView';
 import ExploreButton from '../ExploreButton/ExploreButton';
 import getCurrentScrollY from '../../utils/getCurrentScrollY';
-import ScrollDownIcon from '../ScrollDownIcon/ScrollDownIcon';
+import './Viewer.scss';
+import ZoomButtons from '../ZoomButtons/ZoomButtons';
 
 class Viewer extends Component {
   static defaultProps = {
@@ -22,6 +23,8 @@ class Viewer extends Component {
     children: null,
     zoomOutSpeed: 0.5,
   };
+
+  container = React.createRef();
 
   state = { viewport: null, updater: false, interactive: false };
 
@@ -35,6 +38,18 @@ class Viewer extends Component {
     }
   };
 
+  zoomIn = () => {
+    if (this.state.viewport) {
+      this.state.viewport.zoomIn();
+    }
+  };
+
+  zoomOut = () => {
+    if (this.state.viewport) {
+      this.state.viewport.zoomOut();
+    }
+  };
+
   setUpdater = updater => {
     this.setState({ updater: true });
     this.updateIndividualFunc = updater;
@@ -42,7 +57,9 @@ class Viewer extends Component {
 
   toggleInteractive = () => {
     if (this.state.interactive === true) {
-      this.updateIndividual(getCurrentScrollY() / window.innerHeight);
+      this.updateIndividual(
+        getCurrentScrollY(this.getContainer()) / window.innerHeight
+      );
     } else {
       this.state.viewport.zoomOut(this.props.zoomOutSpeed);
     }
@@ -51,14 +68,19 @@ class Viewer extends Component {
     });
   };
 
+  getContainer = () => this.container;
+
   render() {
-    const { manifest, title, children } = this.props;
+    const { manifest, title, children, bem, style } = this.props;
     return (
-      <div>
+      <div ref={ref => (this.container = ref)} className={bem} style={style}>
         <ExploreButton
           interactive={this.state.interactive}
           onClick={this.toggleInteractive}
         />
+        {this.state.interactive ? (
+          <ZoomButtons onZoomIn={this.zoomIn} onZoomOut={this.zoomOut} />
+        ) : null}
         <Manifest url={manifest}>
           <CanvasProvider>
             <FullPageViewport
@@ -78,8 +100,12 @@ class Viewer extends Component {
               updateIndividual={this.updateIndividual}
               updater={this.state.updater}
               disabled={this.state.interactive}
+              getContainer={this.getContainer}
             >
-              <TitlePanel disabled={this.state.interactive}>
+              <TitlePanel
+                getContainer={this.getContainer}
+                disabled={this.state.interactive}
+              >
                 {title ? <h1>{title}</h1> : null}
                 {children}
               </TitlePanel>
@@ -90,6 +116,14 @@ class Viewer extends Component {
                     offset={1}
                     viewport={this.state.viewport}
                     disabled={this.state.interactive}
+                    onNext={(annotation, key) =>
+                      (this.container.scrollTop =
+                        (key + 1) * window.innerHeight - 10)
+                    }
+                    onPrevious={(annotation, key) =>
+                      (this.container.scrollTop =
+                        (key + 1) * window.innerHeight)
+                    }
                   />
                 </AnnotationProvider>
               </AnnotationListProvider>

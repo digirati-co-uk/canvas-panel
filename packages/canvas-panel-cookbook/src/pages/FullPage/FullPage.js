@@ -5,6 +5,7 @@ class FullPage extends Component {
   render() {
     return (
       <FullPageViewer
+        style={{ marginTop: 40, position: 'relative' }}
         manifest="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json"
         title="Ocean liners"
       >

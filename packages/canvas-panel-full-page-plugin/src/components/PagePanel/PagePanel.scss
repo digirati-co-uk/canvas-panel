@@ -8,40 +8,101 @@
   height: 100vh;
   display: flex;
   // Maybe a styling preference.
-  //align-items: center;
-  pointer-events: none;
-  align-items: flex-start;
+  align-items: center;
+  //pointer-events: none;
+  //align-items: flex-start;
 
   &--disabled {
     opacity: 0;
     transform: translateX(-25%);
   }
 
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    //max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+  }
+
+  //&__inner:hover {
+  //  .page-panel__footer {
+  //    max-height: 100px
+  //  }
+  //}
+
+  &__next {
+    margin-left: auto;
+  }
+
+  &__previous {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &__next,
+  &__previous {
+    pointer-events: visible;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 12px;
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
   &__inner {
-    background: #fff;
-    padding: 15px 30px;
-    margin-left: 40px;
-    width: 100%;
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
+    width: 320px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.34);
+
+    //background: #fff;
+    padding: 20px;
+    margin-left: 20px;
+    //box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
 
     // Annotation hacks.
     img {
-      height: 140px;
-      width: auto;
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 15px;
+      max-width: 100%;
+      height: auto;
+      //height: 140px;
+      //width: auto;
+      //float: left;
+      //margin-right: 15px;
+      //margin-bottom: 15px;
     }
     p {
-      font-size: 0.9em;
-      line-height: 1.5em;
+      font-size: 0.8em;
       text-align: left;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: #1d1e20;
+    }
+    .annotatedzoom-annotation-detail__label {
+      width: 259px;
+      height: 26px;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.44;
+      letter-spacing: normal;
+      color: #1d1e20;
+      text-align: left;
+      margin: 0 0 20px;
     }
     .annotatedzoom-annotation-detail__credit {
       font-size: 0.75em;
-      color: #999;
+      line-height: 1.54;
+      color: #747c80;
     }
   }
 

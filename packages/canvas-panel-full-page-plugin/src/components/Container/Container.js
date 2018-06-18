@@ -6,7 +6,6 @@ import getCurrentScrollY from '../../utils/getCurrentScrollY';
 class Container extends Component {
   lastScrollY = -1;
   scheduledAnimationFrame = false;
-
   state = { current: 0 };
 
   static defaultProps = {
@@ -31,21 +30,27 @@ class Container extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScrollThrottled);
+    this.props
+      .getContainer()
+      .addEventListener('scroll', this.handleScrollThrottled);
+
+    // Set timeout, configured with load delay setting.
     setTimeout(() => {
       this.props.updateIndividual(
-        getCurrentScrollY() / this.props.windowHeight
+        getCurrentScrollY(this.props.getContainer()) / this.props.windowHeight
       );
     }, this.props.onLoadDelay);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScrollThrottled);
+    this.props
+      .getContainer()
+      .removeEventListener('scroll', this.handleScrollThrottled);
   }
 
   handleScrollThrottled = () => {
     // Store the scroll value for later.
-    this.lastScrollY = getCurrentScrollY();
+    this.lastScrollY = getCurrentScrollY(this.props.getContainer());
 
     // Prevent multiple rAF callbacks.
     if (this.scheduledAnimationFrame) {

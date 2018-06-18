@@ -43,6 +43,7 @@ class AnnotationListView extends Component {
 
   update = n => {
     const t = this.tween.list[~~n];
+
     if (t) {
       const ease = this.ease(n - ~~n);
       this.props.viewport.goToRect(
@@ -73,11 +74,28 @@ class AnnotationListView extends Component {
     // }
   }
 
+  onNext = (annotation, key) =>
+    this.props.onNext ? () => this.props.onNext(annotation, key) : null;
+
+  onPrevious = (annotation, key) =>
+    this.props.onPrevious ? () => this.props.onPrevious(annotation, key) : null;
+
   render() {
     const { annotations, disabled } = this.props;
 
     return (annotations || []).map(({ annotation, on }, key) => (
-      <PagePanel disabled={disabled} key={key}>
+      <PagePanel
+        disabled={disabled}
+        key={key}
+        onNext={
+          annotations.length - 1 > key
+            ? this.onNext(annotations[key + 1], key + 1)
+            : null
+        }
+        onPrevious={
+          key > 0 ? this.onPrevious(annotations[key - 1], key - 1) : null
+        }
+      >
         <AnnotationDetail annotation={annotation} />
       </PagePanel>
     ));

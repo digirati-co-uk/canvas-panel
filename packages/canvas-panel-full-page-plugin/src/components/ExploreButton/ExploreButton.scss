@@ -1,22 +1,18 @@
 .explore-button {
-  &--interactive {
-    background: #fff;
-  }
-
+  width: 134px;
+  height: 32px;
+  border-radius: 2px;
+  background-color: #eaeaea;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.33);
   position: fixed;
   bottom: 40px;
   right: 40px;
   z-index: 10000;
   line-height: 30px;
-  font-size: 14px;
-  width: 150px;
   color: #1d1e20;
-  background: rgba(255, 255, 255, 0.3);
-  transition: background 0.2s, color 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
   border: 1px solid rgba(255, 255, 255, 0.4);
-
-  &:focus,
-  &:active {
-    outline: 2px solid #fc4420;
-  }
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.3px;
 }

@@ -1,0 +1,19 @@
+.zoom-buttons {
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  z-index: 10000;
+
+  &__button {
+    width: 32px;
+    height: 32px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px 1px;
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    display: block;
+    margin: 10px;
+    font-size: 18px;
+  }
+}

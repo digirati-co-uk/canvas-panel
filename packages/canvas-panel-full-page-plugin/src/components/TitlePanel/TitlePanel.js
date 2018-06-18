@@ -5,12 +5,15 @@ import ScrollDownIcon from '../../../es/components/ScrollDownIcon/ScrollDownIcon
 
 class TitlePanel extends Component {
   render() {
-    const { style, bem, disabled, current } = this.props;
-    console.log(current);
+    const { style, bem, disabled, getContainer, current } = this.props;
+
     return (
       <div className={bem.modifiers({ disabled })} style={style}>
         <div className={bem.element('inner')}>{this.props.children}</div>
-        <ScrollDownIcon style={{ opacity: current === 0 ? 1 : 0 }} />
+        <ScrollDownIcon
+          getContainer={getContainer}
+          style={{ opacity: current === 0 ? 1 : 0 }}
+        />
       </div>
     );
   }
