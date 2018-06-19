@@ -50,7 +50,7 @@
     "npm-watch": "0.3.0",
     "nwb": "0.21.5",
     "nwb-watch": "1.0.0",
-    "prop-types": "15.6.1",
+    "prop-types": "15.6.2",
     "react-styleguidist": "7.0.17"
   },
   "publishConfig": {
