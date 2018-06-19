@@ -4,6 +4,7 @@ import Patchwork from './pages/Patchwork/Patchwork';
 import FullPage from './pages/FullPage/FullPage';
 import AnnotationPlayground from './pages/AnnotationPlayground/AnnotationPlayground';
 
+import SlideShow from './pages/SlideShow/SlideShow';
 import './App.scss';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
@@ -84,6 +85,12 @@ const exampleList = [
     image:
       'https://framemark.vam.ac.uk/collections/2013GU2911/1536,2048,512,256/512,/0/default.jpg',
   },
+  {
+    label: 'V&A Slide Show',
+    link: '/examples/slide-show',
+    image:
+      'https://vanda-production-assets.s3.amazonaws.com/2018/03/14/12/54/22/445782b9-4b20-405b-9f99-54f15974aeb0/ocean-liners-conference-rescheduled_960.jpg',
+  },
 ];
 
 const ScrollToTop = () => {
@@ -144,6 +151,7 @@ const App = () => (
         path="/examples/annotation-playground"
         component={AnnotationPlayground}
       />
+      <Route path="/examples/slide-show" component={SlideShow} />
     </main>
   </Router>
 );

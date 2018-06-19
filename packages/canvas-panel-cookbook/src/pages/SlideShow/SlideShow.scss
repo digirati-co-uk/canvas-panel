@@ -1,0 +1,49 @@
+#app {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+.slideshow-demo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  img {
+    object-fit: cover;
+  }
+}
+
+.canvas-overlay {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-navigation {
+  position: absolute;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  pointer-events: visible;
+  z-index: 10;
+  &__previous,
+  &__next {
+    position: absolute;
+    top: 50%;
+    transform: translate(0 -50%);
+  }
+  &__previous {
+    left: 16px;
+  }
+  &__next {
+    right: 16px;
+  }
+}
