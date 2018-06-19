@@ -16,4 +16,11 @@
     margin: 10px;
     font-size: 18px;
   }
+
+  &--mobile {
+    top: auto;
+    left: auto;
+    bottom: 10px;
+    right: 10px;
+  }
 }

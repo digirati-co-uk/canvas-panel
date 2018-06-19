@@ -43,9 +43,10 @@ class Container extends Component {
   }
 
   componentWillUnmount() {
-    this.props
-      .getContainer()
-      .removeEventListener('scroll', this.handleScrollThrottled);
+    const container = this.props.getContainer();
+    if (container) {
+      container.removeEventListener('scroll', this.handleScrollThrottled);
+    }
   }
 
   handleScrollThrottled = () => {

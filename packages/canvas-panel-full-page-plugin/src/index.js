@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FullPageViewer from './components/Viewer/Viewer';
+import PopOutViewer from './components/PopOutViewer/PopOutViewer';
 
 const defaultConfiguration = {};
 
@@ -25,5 +26,5 @@ function create(el, userConfiguration) {
   ReactDOM.render(<FullPageViewer {...config} />, el);
 }
 
-export { create, FullPageViewer };
-export default { create, FullPageViewer };
+export { create, FullPageViewer, PopOutViewer };
+export default { create, FullPageViewer, PopOutViewer };

@@ -18,11 +18,6 @@
   }
 
   &__footer {
-    display: flex;
-    justify-content: space-between;
-    //max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
     margin-left: -10px;
     margin-right: -10px;
     margin-bottom: -10px;
@@ -33,29 +28,6 @@
   //    max-height: 100px
   //  }
   //}
-
-  &__next {
-    margin-left: auto;
-  }
-
-  &__previous {
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  &__next,
-  &__previous {
-    pointer-events: visible;
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 12px;
-
-    &--disabled {
-      pointer-events: none;
-      opacity: 0.5;
-    }
-  }
 
   &__inner {
     width: 320px;
@@ -85,6 +57,11 @@
       line-height: 1.43;
       letter-spacing: normal;
       color: #1d1e20;
+    }
+
+    .annotatedzoom-annotation-detail__content {
+      max-height: 80vh;
+      overflow-y: auto;
     }
     .annotatedzoom-annotation-detail__label {
       width: 259px;

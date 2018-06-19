@@ -10,6 +10,7 @@ import aboutText from '../../../about.md';
 import homeText from '../../../introduction.md';
 import roadmapText from '../../../roadmap.md';
 import logoUrl from './digirati-logo-white.svg';
+import FullPageVA from './pages/FullPageVA/FullPageVA';
 
 const RenderMarkdown = props => (
   <section
@@ -77,6 +78,12 @@ const exampleList = [
     image:
       'https://dlcs.io/iiif-img/wellcome/1/4ff70079-fac3-4259-814e-021f7dcf43b6/195,150,2146,2146/512,/0/default.jpg',
   },
+  {
+    label: 'Full page on V&A',
+    link: '/examples/fullpage-va',
+    image:
+      'https://framemark.vam.ac.uk/collections/2013GU2911/1536,2048,512,256/512,/0/default.jpg',
+  },
 ];
 
 const ScrollToTop = () => {
@@ -131,6 +138,7 @@ const App = () => (
       <Route exact path="/examples" component={Examples(exampleList)} />
       <Route path="/examples/oceanliners" component={Patchwork} />
       <Route path="/examples/fullpage" component={FullPage} />
+      <Route path="/examples/fullpage-va" component={FullPageVA} />
       <Route path="/examples/popout" component={PopOut} />
       <Route
         path="/examples/annotation-playground"

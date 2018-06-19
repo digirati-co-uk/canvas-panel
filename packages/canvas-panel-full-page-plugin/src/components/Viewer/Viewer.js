@@ -7,6 +7,7 @@ import {
   OpenSeadragonViewport,
   AnnotationProvider,
   AnnotationListProvider,
+  Responsive,
   withBemClass,
 } from '@canvas-panel/core';
 import Container from '../Container/Container';
@@ -16,6 +17,7 @@ import ExploreButton from '../ExploreButton/ExploreButton';
 import getCurrentScrollY from '../../utils/getCurrentScrollY';
 import './Viewer.scss';
 import ZoomButtons from '../ZoomButtons/ZoomButtons';
+import MobileAnnotationView from '../MobileAnnotationView/MobileAnnotationView';
 
 class Viewer extends Component {
   static defaultProps = {
@@ -89,6 +91,7 @@ class Viewer extends Component {
             >
               <SingleTileSource viewportController={true}>
                 <OpenSeadragonViewport
+                  useMaxDimensions={true}
                   osdOptions={{
                     immediateRender: false,
                     showNavigator: false,
@@ -96,38 +99,54 @@ class Viewer extends Component {
                 />
               </SingleTileSource>
             </FullPageViewport>
-            <Container
-              updateIndividual={this.updateIndividual}
-              updater={this.state.updater}
-              disabled={this.state.interactive}
-              getContainer={this.getContainer}
+            <Responsive
+              phoneOnly={props => (
+                <AnnotationListProvider {...props}>
+                  <AnnotationProvider>
+                    <MobileAnnotationView
+                      viewport={this.state.viewport}
+                      disabled={this.state.interactive}
+                    >
+                      {title ? <h1>{title}</h1> : null}
+                      {children}
+                    </MobileAnnotationView>
+                  </AnnotationProvider>
+                </AnnotationListProvider>
+              )}
             >
-              <TitlePanel
-                getContainer={this.getContainer}
+              <Container
+                updateIndividual={this.updateIndividual}
+                updater={this.state.updater}
                 disabled={this.state.interactive}
+                getContainer={this.getContainer}
               >
-                {title ? <h1>{title}</h1> : null}
-                {children}
-              </TitlePanel>
-              <AnnotationListProvider>
-                <AnnotationProvider>
-                  <AnnotationListView
-                    setUpdater={this.setUpdater}
-                    offset={1}
-                    viewport={this.state.viewport}
-                    disabled={this.state.interactive}
-                    onNext={(annotation, key) =>
-                      (this.container.scrollTop =
-                        (key + 1) * window.innerHeight - 10)
-                    }
-                    onPrevious={(annotation, key) =>
-                      (this.container.scrollTop =
-                        (key + 1) * window.innerHeight)
-                    }
-                  />
-                </AnnotationProvider>
-              </AnnotationListProvider>
-            </Container>
+                <TitlePanel
+                  getContainer={this.getContainer}
+                  disabled={this.state.interactive}
+                >
+                  {title ? <h1>{title}</h1> : null}
+                  {children}
+                </TitlePanel>
+                <AnnotationListProvider>
+                  <AnnotationProvider>
+                    <AnnotationListView
+                      setUpdater={this.setUpdater}
+                      offset={1}
+                      viewport={this.state.viewport}
+                      disabled={this.state.interactive}
+                      onNext={(annotation, key) =>
+                        (this.container.scrollTop =
+                          (key + 1) * window.innerHeight - 10)
+                      }
+                      onPrevious={(annotation, key) =>
+                        (this.container.scrollTop =
+                          (key + 1) * window.innerHeight)
+                      }
+                    />
+                  </AnnotationProvider>
+                </AnnotationListProvider>
+              </Container>
+            </Responsive>
           </CanvasProvider>
         </Manifest>
       </div>

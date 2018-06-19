@@ -12,7 +12,10 @@
 
 body {
   font-family: system-ui, Arial, Helvetica, sans-serif;
-  margin-top: 40px;
+}
+
+#app {
+  padding-top: 40px;
 }
 
 .app-navigation {
@@ -21,6 +24,9 @@ body {
   color: #fff;
   letter-spacing: 0.25px;
   font-weight: 300;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .app-navigation {
