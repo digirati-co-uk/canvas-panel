@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames/bind';
 import {
   Manifest,
   CanvasProvider,
@@ -24,23 +25,31 @@ class SlideShow extends Component {
               currentCanvas,
               startCanvas,
               dispatch,
-            }) => (
-              <div className="slide">
-                <FullPageViewport position="absolute" interactive={false}>
-                  <StaticImageViewport
-                    draggable={false}
-                    viewportController={true}
-                    maxHeight={500}
-                    maxWidth={500}
-                    canvas={canvas}
-                  />
-                </FullPageViewport>
-                <div className="canvas-overlay">
-                  <LocaleString>{canvas.getLabel()}</LocaleString>
+            }) => {
+              var slideClasses = classNames('slide', {
+                'slide--cover': currentCanvas === 0,
+                'slide--even': currentCanvas !== 0 && currentCanvas % 2 === 0,
+                'slide--odd': currentCanvas % 2 !== 0,
+              });
+              return (
+                <div className={slideClasses}>
+                  <div className="slide__viewport">
+                    <FullPageViewport position="absolute" interactive={false}>
+                      <StaticImageViewport
+                        draggable={false}
+                        viewportController={true}
+                        canvas={canvas}
+                      />
+                    </FullPageViewport>
+                  </div>
+                  <div className="slide__overlay">
+                    <h2>Demo Text</h2>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                  <CanvasNavigation dispatch={dispatch} />
                 </div>
-                <CanvasNavigation dispatch={dispatch} />
-              </div>
-            )}
+              );
+            }}
           </CanvasProvider>
         </Manifest>
       </div>

@@ -1,13 +1,24 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+header {
+  height: 40px;
+}
 #app {
   display: flex;
   flex-direction: column;
 }
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .slideshow-demo {
   width: 100%;
-  height: 100%;
+  flex: 1;
   position: relative;
 }
 
@@ -18,13 +29,56 @@ main {
   img {
     object-fit: cover;
   }
-}
-
-.canvas-overlay {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  &__viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+  }
+  &--cover {
+    .slide__overlay {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &--even {
+    display: flex;
+    flex-direction: row;
+    .slide__viewport {
+      position: relative;
+      flex: 4;
+    }
+    .slide__overlay {
+      position: relative;
+      flex: 1;
+      padding: 40px;
+    }
+  }
+  &--odd {
+    display: flex;
+    flex-direction: row-reverse;
+    .slide__viewport {
+      position: relative;
+      flex: 4;
+    }
+    .slide__overlay {
+      position: relative;
+      flex: 1;
+      padding: 40px;
+    }
+  }
 }
 
 .canvas-navigation {
@@ -34,6 +88,8 @@ main {
   height: 100%;
   pointer-events: visible;
   z-index: 10;
+  top: 0;
+  left: 0;
   &__previous,
   &__next {
     position: absolute;
