@@ -18,6 +18,8 @@
     "@canvas-panel/core": "^0.0.9",
     "@canvas-panel/patchwork-plugin": "^0.0.9",
     "@stephenwf-forks/manifesto.js": "2.2.25",
+    "brace": "0.11.1",
+    "classnames": "^2.2.6",
     "html-loader": "0.5.5",
     "markdown-loader": "3.0.0",
     "react": "16.4.2",
