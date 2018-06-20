@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames/bind';
 import {
   Manifest,
@@ -10,13 +11,28 @@ import {
   OpenSeadragonViewport,
   SingleTileSource,
   withBemClass,
-  Bem,
-  functionOrMapChildren,
 } from '@canvas-panel/core';
 
-//import { FunctionOrMapChildrenType } from '@canvas-panel/core/utility/functionOrMapChildren';
+import lorem from 'lorem-ipsum-simple';
 import * as PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './SlideShow.scss';
+
+const lipsumN = paragraphs =>
+  Array.apply(null, Array(paragraphs)).map(() =>
+    lorem(100).replace(/\s+/g, ' ')
+  );
+
+const lipsumP = paragraphs =>
+  lipsumN(paragraphs).map((lipsum, idx) => <p key={idx}>{lipsum}</p>);
+
+console.log(lipsumN(2));
+const demoData = {
+  label: 'Demo label',
+  description: lipsumN(2).join('\n'),
+  requiredStatement: 'Lorem Ipsum',
+  containerCls: 'slide__overlay',
+};
 
 const ProgressIndicatorBase = props => {
   const { currentCanvas, totalCanvases, bem } = props;
@@ -65,7 +81,11 @@ const SimpleSlideContent = props => {
 };
 
 class SwappableView extends Component {
-  state = { isInteractive: false };
+  state = {
+    isInteractive: false,
+    itemWidth: 0,
+    itemHeight: 0,
+  };
 
   constructor(props) {
     super(props);
@@ -107,8 +127,8 @@ class SwappableView extends Component {
     return (
       <div className="slide__viewport">
         <SingleTileSource {...{ manifest, canvas }}>
-          <FullPageViewport position="absolute" interactive={true}>
-            {isInteractive ? (
+          {isInteractive ? (
+            <FullPageViewport position="absolute" interactive={true}>
               <OpenSeadragonViewport
                 useMaxDimensions={true}
                 osdOptions={{
@@ -117,14 +137,16 @@ class SwappableView extends Component {
                   showNavigator: false,
                 }}
               />
-            ) : (
+            </FullPageViewport>
+          ) : (
+            <div className="slide-cover">
               <StaticImageViewport
                 draggable={false}
                 viewportController={true}
                 canvas={canvas}
               />
-            )}
-          </FullPageViewport>
+            </div>
+          )}
         </SingleTileSource>
         {isInteractive ? (
           <button
@@ -190,16 +212,12 @@ const PageTransition = withBemClass('transition')(PageTransitionBase);
 
 class SlideShow extends Component {
   render() {
+    let { manifesturi } = this.props;
     return (
-      <div className="slideshow-demo">
+      <div className="slideshow">
         <Fullscreen>
-          {({
-            toggleFullscreen,
-            exitFullscreen,
-            goFullscreen,
-            isFullscreen,
-          }) => (
-            <Manifest url="https://wellcomelibrary.org/iiif/b18934717/manifest?manifest=https://wellcomelibrary.org/iiif/b18934717/manifest">
+          {({ exitFullscreen, goFullscreen, isFullscreen }) => (
+            <Manifest url={manifesturi}>
               <CanvasProvider startCanvas={0}>
                 {({ sequence, manifest, canvas, currentCanvas, dispatch }) => {
                   var slideClasses = classNames('slide', {
@@ -210,54 +228,37 @@ class SlideShow extends Component {
                   });
                   let totalCanvases = sequence.getTotalCanvases();
                   return (
-                    <PageTransition currentCanvas={currentCanvas}>
-                      <div className={slideClasses}>
-                        <SwappableView {...{ manifest, canvas }} />
-                        <SimpleSlideContent
-                          {...{
-                            label: 'Demo label',
-                            description:
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-                      Vestibulum eget nulla ut quam bibendum rutrum at et ligula. Vestibulum \
-                      quis eros dignissim, gravida nunc eget, iaculis purus. Sed vitae nunc eros. \
-                      Phasellus et lacus ut ipsum rutrum dictum. Nunc dictum mi vitae lorem \
-                      bibendum, ut sollicitudin diam pharetra. Nunc ante nunc, fermentum eu \
-                      felis non, porta euismod elit. Nunc elementum luctus erat, eget aliquam \
-                      eros tristique vitae. Aenean aliquet eros sit amet mollis lobortis. \
-                      Aliquam interdum ultrices sem id porta. Curabitur massa turpis, rutrum vitae \
-                      mi eu, condimentum venenatis diam. Donec at ligula convallis justo \
-                      malesuada facilisis. Mauris ullamcorper sit amet turpis vel pretium.\n\
-                      Quisque cursus tincidunt ligula eu porta. Pellentesque eu augue libero. \
-                      Nullam ultrices augue purus, a vestibulum lorem vulputate ut. \
-                      Pellentesque vulputate suscipit quam, a dignissim elit pellentesque a. \
-                      Nunc commodo eget augue vel mattis. Vestibulum ut quam vitae eros rhoncus \
-                      elementum. In sit amet sollicitudin dolor. Vestibulum sit amet mollis \
-                      orci, eu tempus ipsum.',
-                            requiredStatement: 'Lorem Ipsum',
-                            containerCls: 'slide__overlay',
-                          }}
-                        />
-                        <CanvasNavigation dispatch={dispatch} />
-                        <ProgressIndicator
-                          {...{ currentCanvas, totalCanvases }}
-                        />
-                        {isFullscreen ? (
-                          <button
-                            onClick={exitFullscreen}
-                            className="fullscreen-btn fullscreen-btn--off"
-                          >
-                            Exit fullscreen
-                          </button>
-                        ) : (
-                          <button
-                            onClick={goFullscreen}
-                            className="fullscreen-btn fullscreen-btn--on"
-                          >
-                            Go fullscreen
-                          </button>
-                        )}
-                      </div>
-                    </PageTransition>
+                    <TransitionGroup className="slide-transitions">
+                      <CSSTransition
+                        key={'canvas_' + currentCanvas}
+                        timeout={500}
+                        classNames="fade"
+                      >
+                        <div className={slideClasses}>
+                          <SwappableView {...{ manifest, canvas }} />
+                          <SimpleSlideContent {...demoData} />
+                          <CanvasNavigation dispatch={dispatch} />
+                          <ProgressIndicator
+                            {...{ currentCanvas, totalCanvases }}
+                          />
+                          {isFullscreen ? (
+                            <button
+                              onClick={exitFullscreen}
+                              className="fullscreen-btn fullscreen-btn--off"
+                            >
+                              Exit fullscreen
+                            </button>
+                          ) : (
+                            <button
+                              onClick={goFullscreen}
+                              className="fullscreen-btn fullscreen-btn--on"
+                            >
+                              Go fullscreen
+                            </button>
+                          )}
+                        </div>
+                      </CSSTransition>
+                    </TransitionGroup>
                   );
                 }}
               </CanvasProvider>
@@ -269,4 +270,93 @@ class SlideShow extends Component {
   }
 }
 
-export default SlideShow;
+class SlideShowConfigurator extends Component {
+  render() {
+    let { children } = this.props;
+    return (
+      <div className="slideshow-configurator">
+        <div className="slideshow-configurator__panel">
+          <form>
+            <legend>Configuration</legend>
+            <label>Manifest url</label>
+            <input name="manifest" />
+          </form>
+        </div>
+        <div className="slideshow-configurator__previews">{children}</div>
+      </div>
+    );
+  }
+}
+
+class SlideShowDemoBase extends Component {
+  render() {
+    let { bem } = this.props;
+    return (
+      <article className={bem}>
+        <h1 className={bem.element('title')}>SlideShow Component</h1>
+        <section className={bem.element('section')}>
+          <h2 className={bem.element('subtitle')}>Small Inline SlideShow</h2>
+          <p>
+            This example is the most basic version of the slideshow embedded
+            into a webpage.
+          </p>
+          <div
+            style={{
+              width: 1024,
+              height: 768,
+              margin: '0 auto',
+              position: 'relative',
+            }}
+          >
+            <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest?manifest=https://wellcomelibrary.org/iiif/b18934717/manifest" />
+          </div>
+        </section>
+        <section className={bem.element('section').modifier('full-width')}>
+          <h2 className={bem.element('subtitle')}>Full with SlideShow</h2>
+          <div
+            style={{
+              width: '100vw',
+              height: 'calc(100vh - 40px)',
+              margin: '0 auto',
+              position: 'relative',
+            }}
+          >
+            <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest?manifest=https://wellcomelibrary.org/iiif/b18934717/manifest" />
+          </div>
+        </section>
+        <section className={bem.element('section')}>
+          <h2 className={bem.element('subtitle')}>Custom Styles</h2>
+          <div
+            style={{
+              width: 1024,
+              height: 768,
+              margin: '0 auto',
+              position: 'relative',
+            }}
+          >
+            <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest?manifest=https://wellcomelibrary.org/iiif/b18934717/manifest" />
+          </div>
+        </section>
+        <section className={bem.element('section').modifier('full-width')}>
+          <h2 className={bem.element('subtitle')}>Configure Your Own</h2>
+          <div
+            style={{
+              width: '100vw',
+              height: 'calc(100vh - 40px)',
+              margin: '0 auto',
+              position: 'relative',
+            }}
+          >
+            <SlideShowConfigurator>
+              <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest?manifest=https://wellcomelibrary.org/iiif/b18934717/manifest" />
+            </SlideShowConfigurator>
+          </div>
+        </section>
+      </article>
+    );
+  }
+}
+
+const SlideShowDemo = withBemClass('slideshow-demo')(SlideShowDemoBase);
+
+export default SlideShowDemo;
