@@ -5,15 +5,12 @@ import {
   CanvasProvider,
   StaticImageViewport,
   CanvasNavigation,
-  LocaleString,
   FullPageViewport,
   Fullscreen,
   OpenSeadragonViewport,
   SingleTileSource,
   withBemClass,
 } from '@canvas-panel/core';
-import * as PropTypes from 'prop-types';
-import * as Manifesto from '@stephenwf-forks/manifesto.js';
 import './SlideShow.scss';
 
 const ProgressIndicatorBase = props => {
@@ -64,11 +61,6 @@ const SimpleSlideContent = props => {
 
 class SwappableView extends Component {
   state = { isInteractive: false };
-
-  // static propTypes = {
-  //   canvas: PropTypes.instanceOf(Manifesto.Canvas),
-  //   manifest: PropTypes.instanceOf(Manifesto.Manifest),
-  // };
 
   constructor(props) {
     super(props);
@@ -146,14 +138,7 @@ class SlideShow extends Component {
           }) => (
             <Manifest url="https://wellcomelibrary.org/iiif/b18934717/manifest?manifest=https://wellcomelibrary.org/iiif/b18934717/manifest">
               <CanvasProvider startCanvas={0}>
-                {({
-                  sequence,
-                  manifest,
-                  canvas,
-                  currentCanvas,
-                  startCanvas,
-                  dispatch,
-                }) => {
+                {({ sequence, manifest, canvas, currentCanvas, dispatch }) => {
                   var slideClasses = classNames('slide', {
                     'slide--cover': currentCanvas === 0,
                     'slide--even':
@@ -163,12 +148,7 @@ class SlideShow extends Component {
                   let isInteractive = false;
                   return (
                     <div className={slideClasses}>
-                      <SwappableView
-                        {...{
-                          manifest,
-                          canvas,
-                        }}
-                      />
+                      <SwappableView {...{ manifest, canvas }} />
                       <SimpleSlideContent
                         {...{
                           label: 'Demo label',
