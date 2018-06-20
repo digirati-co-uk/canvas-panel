@@ -10,18 +10,23 @@ import {
   OpenSeadragonViewport,
   SingleTileSource,
   withBemClass,
+  Bem,
+  functionOrMapChildren,
 } from '@canvas-panel/core';
+
+//import { FunctionOrMapChildrenType } from '@canvas-panel/core/utility/functionOrMapChildren';
+import * as PropTypes from 'prop-types';
 import './SlideShow.scss';
 
 const ProgressIndicatorBase = props => {
-  const { currentCanvas, sequence, bem } = props;
+  const { currentCanvas, totalCanvases, bem } = props;
   return (
     <div className={bem}>
       <div className={bem.element('track')}>
         <div
           className={bem.element('value')}
           style={{
-            width: (currentCanvas / sequence.getTotalCanvases()) * 100 + '%',
+            width: (currentCanvas / totalCanvases) * 100 + '%',
           }}
         />
       </div>
@@ -67,6 +72,17 @@ class SwappableView extends Component {
     this.setViewportToStatic = this.setViewportToStatic.bind(this);
     this.setViewportToInteractive = this.setViewportToInteractive.bind(this);
   }
+  static propTypes = {
+    exitInteractiveModeButtonLabel: PropTypes.string,
+    enterInteractiveModeButtonLabel: PropTypes.string,
+    canvas: PropTypes.any,
+    manifest: PropTypes.any,
+  };
+
+  static defaultProps = {
+    exitInteractiveModeButtonLabel: 'Exit Interactive Mode',
+    enterInteractiveModeButtonLabel: 'Explore',
+  };
 
   setViewportToStatic() {
     this.setState({
@@ -82,7 +98,12 @@ class SwappableView extends Component {
 
   render() {
     let { isInteractive } = this.state;
-    let { manifest, canvas } = this.props;
+    let {
+      manifest,
+      canvas,
+      exitInteractiveModeButtonLabel,
+      enterInteractiveModeButtonLabel,
+    } = this.props;
     return (
       <div className="slide__viewport">
         <SingleTileSource {...{ manifest, canvas }}>
@@ -110,20 +131,87 @@ class SwappableView extends Component {
             onClick={this.setViewportToStatic}
             className="interactive-btn interactive-btn--off"
           >
-            Exit Interactive Mode
+            {exitInteractiveModeButtonLabel}
           </button>
         ) : (
           <button
             onClick={this.setViewportToInteractive}
             className="interactive-btn interactive-btn--on"
           >
-            Explore
+            {enterInteractiveModeButtonLabel}
           </button>
         )}
       </div>
     );
   }
 }
+
+class PageTransitionBase extends Component {
+  state = {
+    animationCache: '',
+    direction: 0,
+  };
+  constructor(props) {
+    super(props);
+    this.getStyle = this.getStyle.bind(this);
+  }
+
+  // static propTypes = {
+  //   bem: PropTypes.instanceOf(Bem),
+  //   children: functionOrMapChildren,
+  // };
+
+  componentWillUpdate(nextProps, nextState) {
+    let transitionEl = document.querySelector('.transition');
+    let oldState = document.querySelector('.transition__children');
+    let direction = nextProps.currentCanvas - this.props.currentCanvas;
+    this.state.animationCache = oldState.innerHTML;
+    this.state.direction = nextState.direction = direction;
+    if (direction !== 0) {
+      setTimeout(() => {
+        transitionEl.classList.add(
+          'transition' + (direction > 0 ? '--forward' : '--backward')
+        );
+      }, 0);
+    }
+  }
+  getStyle() {
+    if (this.state.direction !== 0) {
+      if (this.state.direction > 0) {
+        return {
+          transform: 'translate(100%, 0);',
+          webkitTransform: 'translate(100%, 0);',
+        };
+      } else {
+        return {
+          transform: 'translate(-100%, 0);',
+          webkitTransform: 'translate(-100%, 0);',
+        };
+      }
+    }
+    return {};
+  }
+  render() {
+    let { children, bem } = this.props;
+    let { animationCache } = this.state;
+    let styles = this.getStyle();
+    return (
+      <div className={bem}>
+        <div className={bem.element('children')} style={styles}>
+          {children}
+        </div>
+        <div
+          className={bem.element('animation')}
+          dangerouslySetInnerHTML={{
+            __html: animationCache,
+          }}
+        />
+      </div>
+    );
+  }
+}
+
+const PageTransition = withBemClass('transition')(PageTransitionBase);
 
 class SlideShow extends Component {
   render() {
@@ -145,15 +233,16 @@ class SlideShow extends Component {
                       currentCanvas !== 0 && currentCanvas % 2 === 0,
                     'slide--odd': currentCanvas % 2 !== 0,
                   });
-                  let isInteractive = false;
+                  let totalCanvases = sequence.getTotalCanvases();
                   return (
-                    <div className={slideClasses}>
-                      <SwappableView {...{ manifest, canvas }} />
-                      <SimpleSlideContent
-                        {...{
-                          label: 'Demo label',
-                          description:
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+                    <PageTransition currentCanvas={currentCanvas}>
+                      <div className={slideClasses}>
+                        <SwappableView {...{ manifest, canvas }} />
+                        <SimpleSlideContent
+                          {...{
+                            label: 'Demo label',
+                            description:
+                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
                       Vestibulum eget nulla ut quam bibendum rutrum at et ligula. Vestibulum \
                       quis eros dignissim, gravida nunc eget, iaculis purus. Sed vitae nunc eros. \
                       Phasellus et lacus ut ipsum rutrum dictum. Nunc dictum mi vitae lorem \
@@ -169,28 +258,31 @@ class SlideShow extends Component {
                       Nunc commodo eget augue vel mattis. Vestibulum ut quam vitae eros rhoncus \
                       elementum. In sit amet sollicitudin dolor. Vestibulum sit amet mollis \
                       orci, eu tempus ipsum.',
-                          requiredStatement: 'Lorem Ipsum',
-                          containerCls: 'slide__overlay',
-                        }}
-                      />
-                      <CanvasNavigation dispatch={dispatch} />
-                      <ProgressIndicator {...{ sequence, currentCanvas }} />
-                      {isFullscreen ? (
-                        <button
-                          onClick={exitFullscreen}
-                          className="fullscreen-btn fullscreen-btn--off"
-                        >
-                          Exit fullscreen
-                        </button>
-                      ) : (
-                        <button
-                          onClick={goFullscreen}
-                          className="fullscreen-btn fullscreen-btn--on"
-                        >
-                          Go fullscreen
-                        </button>
-                      )}
-                    </div>
+                            requiredStatement: 'Lorem Ipsum',
+                            containerCls: 'slide__overlay',
+                          }}
+                        />
+                        <CanvasNavigation dispatch={dispatch} />
+                        <ProgressIndicator
+                          {...{ currentCanvas, totalCanvases }}
+                        />
+                        {isFullscreen ? (
+                          <button
+                            onClick={exitFullscreen}
+                            className="fullscreen-btn fullscreen-btn--off"
+                          >
+                            Exit fullscreen
+                          </button>
+                        ) : (
+                          <button
+                            onClick={goFullscreen}
+                            className="fullscreen-btn fullscreen-btn--on"
+                          >
+                            Go fullscreen
+                          </button>
+                        )}
+                      </div>
+                    </PageTransition>
                   );
                 }}
               </CanvasProvider>
