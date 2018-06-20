@@ -12,7 +12,8 @@ import {
   SingleTileSource,
   withBemClass,
 } from '@canvas-panel/core';
-
+import * as PropTypes from 'prop-types';
+import * as Manifesto from '@stephenwf-forks/manifesto.js';
 import './SlideShow.scss';
 
 const ProgressIndicatorBase = props => {
@@ -61,6 +62,77 @@ const SimpleSlideContent = props => {
   );
 };
 
+class SwappableView extends Component {
+  state = { isInteractive: false };
+
+  // static propTypes = {
+  //   canvas: PropTypes.instanceOf(Manifesto.Canvas),
+  //   manifest: PropTypes.instanceOf(Manifesto.Manifest),
+  // };
+
+  constructor(props) {
+    super(props);
+    this.setViewportToStatic = this.setViewportToStatic.bind(this);
+    this.setViewportToInteractive = this.setViewportToInteractive.bind(this);
+  }
+
+  setViewportToStatic() {
+    this.setState({
+      isInteractive: false,
+    });
+  }
+
+  setViewportToInteractive() {
+    this.setState({
+      isInteractive: true,
+    });
+  }
+
+  render() {
+    let { isInteractive } = this.state;
+    let { manifest, canvas } = this.props;
+    return (
+      <div className="slide__viewport">
+        <SingleTileSource {...{ manifest, canvas }}>
+          <FullPageViewport position="absolute" interactive={true}>
+            {isInteractive ? (
+              <OpenSeadragonViewport
+                useMaxDimensions={true}
+                osdOptions={{
+                  visibilityRatio: 1,
+                  constrainDuringPan: true,
+                  showNavigator: false,
+                }}
+              />
+            ) : (
+              <StaticImageViewport
+                draggable={false}
+                viewportController={true}
+                canvas={canvas}
+              />
+            )}
+          </FullPageViewport>
+        </SingleTileSource>
+        {isInteractive ? (
+          <button
+            onClick={this.setViewportToStatic}
+            className="interactive-btn interactive-btn--off"
+          >
+            Exit Interactive Mode
+          </button>
+        ) : (
+          <button
+            onClick={this.setViewportToInteractive}
+            className="interactive-btn interactive-btn--on"
+          >
+            Explore
+          </button>
+        )}
+      </div>
+    );
+  }
+}
+
 class SlideShow extends Component {
   render() {
     return (
@@ -88,33 +160,15 @@ class SlideShow extends Component {
                       currentCanvas !== 0 && currentCanvas % 2 === 0,
                     'slide--odd': currentCanvas % 2 !== 0,
                   });
+                  let isInteractive = false;
                   return (
                     <div className={slideClasses}>
-                      <div className="slide__viewport">
-                        <SingleTileSource manifest={manifest} canvas={canvas}>
-                          <FullPageViewport
-                            position="absolute"
-                            interactive={true}
-                          >
-                            {true ? (
-                              <OpenSeadragonViewport
-                                useMaxDimensions={true}
-                                osdOptions={{
-                                  visibilityRatio: 1,
-                                  constrainDuringPan: true,
-                                  showNavigator: false,
-                                }}
-                              />
-                            ) : (
-                              <StaticImageViewport
-                                draggable={false}
-                                viewportController={true}
-                                canvas={canvas}
-                              />
-                            )}
-                          </FullPageViewport>
-                        </SingleTileSource>
-                      </div>
+                      <SwappableView
+                        {...{
+                          manifest,
+                          canvas,
+                        }}
+                      />
                       <SimpleSlideContent
                         {...{
                           label: 'Demo label',

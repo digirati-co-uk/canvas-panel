@@ -65,6 +65,7 @@ main {
       align-items: center;
       flex-direction: column;
       justify-content: center;
+      pointer-events: none;
     }
     .slide__viewport > div > div > div {
       display: flex;
@@ -123,7 +124,9 @@ main {
     width: 64px;
     height: 64px;
     outline: 0;
+    filter: drop-shadow(0 0 4px transparent);
     &:hover {
+      transition: filter 0.15s linear;
       filter: drop-shadow(0 0 4px #000);
     }
   }
@@ -163,7 +166,7 @@ main {
 
   left: 0;
   &__track {
-    height: 2px;
+    height: 4px;
     background: #333;
     position: absolute;
     bottom: 0;
@@ -209,4 +212,19 @@ main {
       content: '\f066';
     }
   }
+}
+
+.interactive-btn {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  background: #e36049;
+  color: white;
+  border: 0 none;
+  z-index: 1000;
+  padding: 8px 16px 9px;
+  outline: 0;
+  font-family: 'Source Sans Pro', Sans-Serif;
+  font-size: 16px;
+  letter-spacing: -0.3px;
 }
