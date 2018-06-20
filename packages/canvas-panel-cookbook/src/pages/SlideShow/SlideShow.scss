@@ -1,31 +1,91 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro');
 @import url('https://use.fontawesome.com/releases/v5.0.13/css/solid.css');
 
-html,
-body {
+.slideshow-demo {
+  background: antiquewhite;
+  &__title {
+    max-width: 1024px;
+    margin: 0 auto;
+    font-size: 2.8em;
+    line-height: 1.5em;
+    font-family: 'Playfair Display', Serif;
+    letter-spacing: -3px;
+    background: white;
+    padding: 90px 110px 30px;
+  }
+  &__subtitle {
+    max-width: 1024px;
+    margin: 0 auto 0;
+    font-size: 1.8em;
+    line-height: 1.5em;
+
+    font-family: 'Playfair Display', Serif;
+    letter-spacing: 5px;
+    padding: 0 110px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+    top: 0;
+    margin-bottom: 1.5em;
+    background: white;
+    text-transform: uppercase;
+    &:before {
+      position: absolute;
+      top: -1.5em;
+      height: 1.5em;
+      left: 0;
+      right: 0;
+      background: white;
+      transform: translate(0, -1px);
+      content: ' ';
+    }
+    &:after {
+      position: absolute;
+      top: 1.5em;
+      height: 1.5em;
+      left: 0;
+      right: 0;
+      background: white;
+      content: ' ';
+    }
+  }
+  &__section {
+    padding: 3em 0 9em;
+    background: white;
+    font-family: 'Source Sans Pro', Sans-Serif;
+    & > p {
+      max-width: 800px;
+      //padding: 0px 100px;
+      margin: 1.4em auto 1.4em;
+      font-size: 1.4em;
+    }
+    &:before,
+    &:after {
+      clear: both;
+    }
+    max-width: 1024px;
+    margin: 0 auto;
+    &--full-width {
+      padding: 0;
+      max-width: max-content;
+      background: transparent;
+    }
+  }
+}
+
+.slideshow {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-}
-#app {
-  display: flex;
-  flex-direction: column;
-}
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.slideshow-demo {
-  width: 100%;
-  height: calc(100vh - 40px);
   position: relative;
+  background: black;
+  overflow: hidden;
 }
 
 .slide {
   width: 100%;
   height: 100%;
   position: relative;
+  background: black;
   img {
     object-fit: cover;
   }
@@ -54,10 +114,21 @@ main {
 
   &--cover {
     .slide__title {
-      max-width: 40%;
+      text-align: center;
+      width: 35%;
+      min-width: 320px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      margin: 0;
+      padding: 20px 32px;
     }
     .slide__text {
-      max-width: 40%;
+      width: 35%;
+      min-width: 320px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      margin: 0;
+      padding: 0px 32px 24px;
     }
     .slide__overlay {
       width: 100%;
@@ -66,6 +137,8 @@ main {
       flex-direction: column;
       justify-content: center;
       pointer-events: none;
+      flex-grow: 1;
+      flex-basis: 0;
     }
     .slide__viewport > div > div > div {
       display: flex;
@@ -75,6 +148,7 @@ main {
   }
   &--even {
     display: flex;
+
     flex-direction: row;
     .slide__viewport {
       position: relative;
@@ -84,6 +158,7 @@ main {
       position: relative;
       flex: 1;
       padding: 40px 60px;
+      background: white;
     }
   }
   &--odd {
@@ -98,6 +173,7 @@ main {
       position: relative;
       flex: 1;
       padding: 40px 60px;
+      background: white;
     }
   }
 }
@@ -124,10 +200,18 @@ main {
     width: 64px;
     height: 64px;
     outline: 0;
-    filter: drop-shadow(0 0 4px transparent);
+    filter: drop-shadow(0 0 0px transparent);
     &:hover {
       transition: filter 0.15s linear;
-      filter: drop-shadow(0 0 4px #000);
+      filter: drop-shadow(0px 0 75px rgba(0, 0, 0, 0.45));
+      &:before {
+        font-size: 1.8em;
+        transition: font-size 0.15s linear;
+      }
+      &:after {
+        font-size: 1.8em;
+        transition: font-size 0.15s linear;
+      }
     }
   }
   &__previous {
@@ -136,7 +220,7 @@ main {
     &:before {
       position: absolute;
       top: 50%;
-      left: 70%;
+      left: 65%;
       transform: translate(-50%, -50%);
       content: '\f053';
       color: #e36049;
@@ -149,7 +233,7 @@ main {
     &:after {
       position: absolute;
       top: 50%;
-      left: 30%;
+      left: 35%;
       transform: translate(-50%, -50%);
       content: '\f054';
       color: #e36049;
@@ -163,8 +247,8 @@ main {
   position: absolute;
   bottom: 0;
   height: 24px;
-
   left: 0;
+  z-index: 1000;
   &__track {
     height: 4px;
     background: #333;
@@ -188,8 +272,8 @@ main {
 
 .fullscreen-btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 24px;
+  right: 24px;
   z-index: 1000;
   background: transparent;
   color: transparent;
@@ -227,6 +311,20 @@ main {
   font-family: 'Source Sans Pro', Sans-Serif;
   font-size: 16px;
   letter-spacing: -0.3px;
+}
+
+.slide-cover {
+  width: 100%;
+  height: 100%;
+  & > div {
+    width: 100%;
+    height: 100%;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
 }
 
 .transition {
@@ -276,5 +374,76 @@ main {
       -webkit-transform: translate(100%, 0);
       transition: transform 0.3s ease-out;
     }
+  }
+}
+
+.slide-transitions {
+  width: 100%;
+  height: 100%;
+}
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 250ms ease-in;
+}
+
+.slide--even {
+  &.fade-enter {
+    .slide__overlay {
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+    }
+  }
+  &.fade-enter-active {
+    .slide__overlay {
+      -webkit-transform: translateX(0.01%);
+      -webkit-transition: -webkit-transform 250ms
+        cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      -webkit-transition-delay: 250ms;
+      transform: translateX(0.01%);
+      transition: transform 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      transition-delay: 250ms;
+    }
+  }
+}
+.slide--odd {
+  &.fade-enter {
+    .slide__overlay {
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+    }
+  }
+  &.fade-enter-active {
+    .slide__overlay {
+      -webkit-transform: translateX(0.01%);
+      -webkit-transition: -webkit-transform 250ms
+        cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      -webkit-transition-delay: 250ms;
+      transform: translateX(0.01%);
+      transition: transform 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      transition-delay: 250ms;
+    }
+  }
+}
+
+.slideshow-configurator {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  &__panel {
+    flex: 1;
+  }
+  &__previews {
+    flex: 5;
   }
 }
