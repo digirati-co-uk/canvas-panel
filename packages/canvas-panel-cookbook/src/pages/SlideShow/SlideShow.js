@@ -153,13 +153,7 @@ class PageTransitionBase extends Component {
   };
   constructor(props) {
     super(props);
-    this.getStyle = this.getStyle.bind(this);
   }
-
-  // static propTypes = {
-  //   bem: PropTypes.instanceOf(Bem),
-  //   children: functionOrMapChildren,
-  // };
 
   componentWillUpdate(nextProps, nextState) {
     let transitionEl = document.querySelector('.transition');
@@ -175,31 +169,12 @@ class PageTransitionBase extends Component {
       }, 0);
     }
   }
-  getStyle() {
-    if (this.state.direction !== 0) {
-      if (this.state.direction > 0) {
-        return {
-          transform: 'translate(100%, 0);',
-          webkitTransform: 'translate(100%, 0);',
-        };
-      } else {
-        return {
-          transform: 'translate(-100%, 0);',
-          webkitTransform: 'translate(-100%, 0);',
-        };
-      }
-    }
-    return {};
-  }
   render() {
     let { children, bem } = this.props;
     let { animationCache } = this.state;
-    let styles = this.getStyle();
     return (
       <div className={bem}>
-        <div className={bem.element('children')} style={styles}>
-          {children}
-        </div>
+        <div className={bem.element('children')}>{children}</div>
         <div
           className={bem.element('animation')}
           dangerouslySetInnerHTML={{
