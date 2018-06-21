@@ -1,0 +1,215 @@
+.slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: black;
+  overflow: hidden;
+  &__inner-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: black;
+  img {
+    object-fit: cover;
+  }
+  &__viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: black;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    font-family: 'Source Sans Pro', Sans-Serif;
+    font-size: 16px;
+  }
+  &__title {
+    font-family: 'Playfair Display', Serif;
+    font-size: 48px;
+  }
+
+  &--cover {
+    .slide__title {
+      text-align: center;
+      width: 35%;
+      min-width: 320px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      margin: 0;
+      padding: 20px 32px;
+    }
+    .slide__text {
+      width: 35%;
+      min-width: 320px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      margin: 0;
+      padding: 0px 32px 24px;
+    }
+    .slide__overlay {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      pointer-events: none;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    // .slide__viewport > div > div > div {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    // }
+  }
+  &--even {
+    display: flex;
+
+    flex-direction: row;
+    .slide__viewport {
+      position: relative;
+      flex: 4;
+    }
+    .slide__overlay {
+      position: relative;
+      flex: 1;
+      padding: 40px 60px;
+      background: white;
+    }
+  }
+  &--odd {
+    display: flex;
+
+    flex-direction: row-reverse;
+    .slide__viewport {
+      position: relative;
+      flex: 4;
+    }
+    .slide__overlay {
+      position: relative;
+      flex: 1;
+      padding: 40px 60px;
+      background: white;
+    }
+  }
+}
+
+.canvas-navigation {
+  position: absolute;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  &__previous,
+  &__next {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    pointer-events: all;
+    color: transparent;
+    background: transparent;
+    border: 0;
+    background: rgba(255, 255, 255, 1);
+    width: 64px;
+    height: 64px;
+    outline: 0;
+    filter: drop-shadow(0 0 0px transparent);
+    &:hover {
+      transition: filter 0.15s linear;
+      filter: drop-shadow(0px 0 75px rgba(0, 0, 0, 0.45));
+      &:before {
+        font-size: 1.8em;
+        transition: font-size 0.15s linear;
+      }
+      &:after {
+        font-size: 1.8em;
+        transition: font-size 0.15s linear;
+      }
+    }
+  }
+  &__previous {
+    left: -32px;
+    border-radius: 0 50% 50% 0;
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+      content: '\f053';
+      color: #e36049;
+      font-family: 'Font Awesome\ 5 Free';
+    }
+  }
+  &__next {
+    right: -32px;
+    border-radius: 50% 0 0 50%;
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      content: '\f054';
+      color: #e36049;
+      font-family: 'Font Awesome\ 5 Free';
+    }
+  }
+}
+
+.fullscreen-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: transparent;
+  color: transparent;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  outline: 0;
+  &:before {
+    font-family: 'Font Awesome\ 5 Free';
+    color: #e36049;
+    font-size: 16px;
+  }
+  &--on {
+    &:before {
+      content: '\f065';
+    }
+  }
+  &--off {
+    &:before {
+      content: '\f066';
+    }
+  }
+}
+
+.slide-cover {
+  width: 100%;
+  height: 100%;
+  & > div {
+    width: 100%;
+    height: 100%;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

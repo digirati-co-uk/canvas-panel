@@ -6,7 +6,10 @@ import {
   FullPageViewport,
   OpenSeadragonViewport,
   SingleTileSource,
+  withBemClass,
 } from '@canvas-panel/core';
+
+import './SwappableView.scss';
 
 class SwappableView extends Component {
   state = {
@@ -79,14 +82,14 @@ class SwappableView extends Component {
         {isInteractive ? (
           <button
             onClick={this.setViewportToStatic}
-            className="interactive-btn interactive-btn--off"
+            className="slide__interactive-btn"
           >
             {exitInteractiveModeButtonLabel}
           </button>
         ) : (
           <button
             onClick={this.setViewportToInteractive}
-            className="interactive-btn interactive-btn--on"
+            className="slide__interactive-btn"
           >
             {enterInteractiveModeButtonLabel}
           </button>

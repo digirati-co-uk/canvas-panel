@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import classNames from 'classnames/bind';
-import { withBemClass } from '@canvas-panel/core';
 
+import { withBemClass } from '@canvas-panel/core';
 import SlideShow from './components/SlideShow';
 import SlideShowConfigurator from './components/SlideShowConfigurator';
 import P2SlideContent from './views/P2SlideContent';

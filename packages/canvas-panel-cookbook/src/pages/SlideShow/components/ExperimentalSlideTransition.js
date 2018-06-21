@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-class PageTransitionBase extends Component {
+import './ExperimentalSlideTransition.scss';
+
+class PageTransition extends Component {
   state = {
     animationCache: '',
     direction: 0,
@@ -39,6 +41,6 @@ class PageTransitionBase extends Component {
   }
 }
 
-const PageTransition = withBemClass('transition')(PageTransitionBase);
+const ExperimentalSlideTransition = withBemClass('transition')(PageTransition);
 
-export default PageTransition;
+export default ExperimentalSlideTransition;

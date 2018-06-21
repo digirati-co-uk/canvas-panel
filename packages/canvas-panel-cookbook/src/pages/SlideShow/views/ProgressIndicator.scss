@@ -1,13 +1,18 @@
+$progress-indicator-track-color: #333;
+$progress-indicator-progress-color: #e36049;
+$progress-indicator-open-height: 16px;
+$progress-indicator-collapsed-height: 4px;
+
 .progress-indicator {
   width: 100%;
   position: absolute;
   bottom: 0;
-  height: 24px;
+  height: $progress-indicator-open-height;
   left: 0;
   z-index: 1000;
   &__track {
-    height: 4px;
-    background: #333;
+    height: $progress-indicator-collapsed-height;
+    background: $progress-indicator-track-color;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -15,12 +20,12 @@
   }
   &__value {
     height: 100%;
-    background: #e36049;
+    background: $progress-indicator-progress-color;
   }
 
   &:hover {
     .progress-indicator__track {
-      height: 24px;
+      height: $progress-indicator-open-height;
       transition: height 0.15s linear;
     }
   }

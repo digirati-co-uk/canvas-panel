@@ -1,0 +1,171 @@
+// for the V&A custom styles
+@font-face {
+  font-family: 'The Sans';
+  font-style: normal;
+  font-weight: 200;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_300_Light.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_300_Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_300_Light.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_300_Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_500_Regular.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_500_Regular.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: italic;
+  font-weight: 500;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_500_Regular-Italic.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_500_Regular-Italic.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: italic;
+  font-weight: 500;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_500_Regular-Italic-Numbers.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_500_Regular-Italic-Numbers.woff')
+      format('woff');
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_600_SemiBold.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_600_SemiBold.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_700_Bold.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_700_Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_700_Bold-Italic.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_700_Bold-Italic.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'The Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('https://www.vam.ac.uk/fonts/TheSans_LP_700_Bold-Italic-Numbers.woff2')
+      format('woff2'),
+    url('https://www.vam.ac.uk/fonts/TheSans_LP_700_Bold-Italic-Numbers.woff')
+      format('woff');
+  unicode-range: U+0030-0039;
+}
+
+$vna-colour-blue: #5bb4f9;
+$vna-colour-lime: #dbde0e;
+$vna-colour-orange: #ffac3c;
+$vna-colour-citrus: #fcf05b;
+$vna-colour-pistachio: #96c99c;
+$vna-colour-text: #1d1e20;
+
+@mixin vna-button {
+  border-radius: 2px;
+
+  cursor: pointer;
+  display: inline-block;
+  font-family: The Sans, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.7;
+  outline: 0;
+  background-color: rgba(29, 29, 32, 0.8);
+  padding: 1.1em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+  -webkit-transition: border 0.2s, background-color 0.2s, color 0.2s;
+  transition: border 0.2s, background-color 0.2s, color 0.2s;
+
+  .blue-theme & {
+    background: $vna-colour-blue;
+  }
+  .lime-theme & {
+    background: $vna-colour-lime;
+  }
+  .orange-theme & {
+    background: $vna-colour-orange;
+  }
+  .citrus-theme & {
+    background: $vna-colour-citrus;
+  }
+  .pistachio-theme & {
+    background: $vna-colour-pistachio;
+  }
+}
+
+@mixin vna-main-heading {
+  font-size: 32px;
+  @media screen and (min-width: 768px) {
+    font-size: 56px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 68px;
+  }
+}
+
+@mixin vna-lede-paragraph {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0 auto 21px;
+  max-width: 689px;
+  padding: 0 10px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 44px;
+    padding: 0;
+  }
+}
+
+@mixin vna-paragraph {
+  font-family: The Sans, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0 auto 16px;
+  max-width: 689px;
+  padding: 0 10px;
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+}
