@@ -6,6 +6,7 @@ import {
   CanvasNavigation,
   CanvasProvider,
   Fullscreen,
+  RangeNavigationProvider,
 } from '@canvas-panel/core';
 
 import SimpleSlideTransition from './SimpleSlideTransition';
@@ -28,15 +29,23 @@ export default class SlideShow extends Component {
         <Fullscreen>
           {({ exitFullscreen, goFullscreen, isFullscreen }) => (
             <Manifest url={manifesturi}>
-              <CanvasProvider startCanvas={0}>
-                {({ sequence, manifest, canvas, currentCanvas, dispatch }) => {
+              <RangeNavigationProvider>
+                {({
+                  manifest,
+                  canvas,
+                  canvasList,
+                  currentIndex,
+                  previousRange,
+                  nextRange,
+                }) => {
+                  let currentCanvas = currentIndex;
                   var slideClasses = classNames('slide', {
                     'slide--cover': currentCanvas === 0,
                     'slide--even':
                       currentCanvas !== 0 && currentCanvas % 2 === 0,
                     'slide--odd': currentCanvas % 2 !== 0,
                   });
-                  let totalCanvases = sequence.getTotalCanvases();
+                  let totalCanvases = canvasList.length;
                   return (
                     <div className="slideshow__inner-frame">
                       <SlideTransitionComponent>
@@ -60,14 +69,27 @@ export default class SlideShow extends Component {
                           Fullscreen
                         </button>
                       )}
-                      {/*<CanvasNavigation dispatch={dispatch} />*/}
+                      <div className="canvas-navigation">
+                        <button
+                          className="canvas-navigation__previous"
+                          onClick={previousRange}
+                        >
+                          Prev
+                        </button>
+                        <button
+                          className="canvas-navigation__next"
+                          onClick={nextRange}
+                        >
+                          Next
+                        </button>
+                      </div>
                       <ProgressIndicator
                         {...{ currentCanvas, totalCanvases }}
                       />
                     </div>
                   );
                 }}
-              </CanvasProvider>
+              </RangeNavigationProvider>
             </Manifest>
           )}
         </Fullscreen>
