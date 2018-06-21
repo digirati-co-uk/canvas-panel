@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './pages/Patchwork/Patchwork';
 import FullPagePatchwork from './pages/FullPagePatchwork/FullPagePatchwork';
 import AnnotationPlayground from './pages/AnnotationPlayground/AnnotationPlayground';
-import SlideShow from './pages/SlideShow/SlideShow';
+import { default as SlideShowDemo } from './pages/SlideShow/SlideShowDemo';
 import './App.scss';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
@@ -142,7 +142,7 @@ const App = () => (
         path="/examples/annotation-playground"
         component={AnnotationPlayground}
       />
-      <Route path="/examples/slide-show" component={SlideShow} />
+      <Route path="/examples/slide-show" component={SlideShowDemo} />
     </main>
   </Router>
 );
