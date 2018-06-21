@@ -27,7 +27,7 @@ type State = {
 type RangeLike = {
   canvasList: Array<string>,
   id: string,
-} | null;
+};
 
 class RangeNavigationProvider extends Component<Props, State> {
   state = {
@@ -50,43 +50,6 @@ class RangeNavigationProvider extends Component<Props, State> {
         canvasList: matchingRange.canvasList,
       });
     }
-  }
-
-  setRanges({ manifest, rangeId, rangeViewingHint }: Props) {
-    const allRanges: Array<Manifesto.Range> = manifest.getAllRanges();
-
-    // Get range by viewing hint or ID.
-    const matchingRange: Manifesto.Range = allRanges.reduce(
-      (match, next: Manifesto.Range) => {
-        if (match) return match;
-        if (rangeId && next.id === rangeId) {
-          return next;
-        }
-        if (
-          rangeViewingHint &&
-          next.getViewingHint().toString() === rangeViewingHint
-        ) {
-          return next;
-        }
-        return null;
-      },
-      null
-    );
-
-    if (matchingRange) {
-      this.setState({
-        currentRange: matchingRange.id,
-        canvasList: matchingRange.getCanvasIds(),
-      });
-    }
-
-    return {
-      currentRange: manifest.id,
-      canvasList: manifest
-        .getSequenceByIndex(0)
-        .getCanvases()
-        .map((canvas: Manifesto.Canvas) => canvas.id),
-    };
   }
 
   getMatchingRange({ manifest, rangeId, rangeViewingHint }: Props): RangeLike {
@@ -131,6 +94,18 @@ class RangeNavigationProvider extends Component<Props, State> {
     ) {
       // We have a controlled input.
       this.setState({ currentIndex: newProps.currentIndex });
+    }
+
+    if (
+      newProps.rangeId !== this.props.rangeId ||
+      newProps.rangeViewingHint !== this.props.rangeViewingHint ||
+      newProps.manifest !== this.props.manifest
+    ) {
+      const matchingRange = this.getMatchingRange(this.props);
+      this.setState({
+        currentRange: matchingRange.id,
+        canvasList: matchingRange.canvasList,
+      });
     }
   }
 
