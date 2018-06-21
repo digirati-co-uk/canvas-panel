@@ -1,0 +1,42 @@
+.scroll-down-icon {
+  height: 50px;
+  width: 30px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  transition: opacity 0.4s;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -15px;
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #fff;
+    border-radius: 2px;
+    height: 8px;
+    top: 10px;
+    left: 11px;
+    animation: scroll-down-animation-wheel 1s infinite;
+  }
+
+  @keyframes scroll-down-animation-wheel {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    80% {
+      transform: translateY(5px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+}

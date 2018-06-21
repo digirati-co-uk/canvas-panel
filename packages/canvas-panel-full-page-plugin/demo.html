@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Full page plugin</title>
+  <link href="./umd/main.css" rel="stylesheet">
+  <style>
+    html, body, #viewer {
+      height: 100%;
+    }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="viewer"></div>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
+<script crossorigin src="https://cdn.rawgit.com/stephenwf/manifesto/feature/p3-alpha/dist/client/manifesto.js"></script>
+<script src="./umd/@canvas-panel/full-page-plugin.min.js"></script>
+<script>
+
+  fullPageCanvasPanelPlugin.create(document.getElementById('viewer'), {
+    manifest: 'https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json',
+    title: 'testing',
+    children: 'Hello content',
+    // cssClassMap: {
+    //   annotation: 'annotation-pin',
+    // },
+    // cssClassPrefix: 'patchwork-'
+  })
+</script>
+</body>
+</html>

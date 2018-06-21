@@ -428,12 +428,13 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@stephenwf-forks/manifesto.js@2.2.10", "@stephenwf-forks/manifesto.js@^2.2.10":
-  version "2.2.10"
-  resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.10.tgz#4bf643202cb77516d63e1d22d6ac386a6183e7be"
+"@stephenwf-forks/manifesto.js@2.2.25":
+  version "2.2.25"
+  resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.25.tgz#69a7251479648c4078dc439c33dcbb2384916567"
   dependencies:
     exjs BSick7/exjs#0.5.0
     http-status-codes edsilv/http-status-codes#v0.0.7
+    request "^2.83.0"
 
 "@types/jquery@^2.0.40":
   version "2.0.49"
@@ -1838,6 +1839,10 @@ better-assert@~1.0.0:
   dependencies:
     callsite "1.0.0"
 
+bezier-easing@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.0.3.tgz#cb493fddb7f8920ecca00973344ce0518885f17e"
+
 big.js@^3.1.3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
@@ -1943,7 +1948,7 @@ brace-expansion@^1.0.0, brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-brace@0.11.1, brace@^0.11.0:
+brace@^0.11.0, brace@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/brace/-/brace-0.11.1.tgz#4896fcc9d544eef45f4bb7660db320d3b379fe58"
 
@@ -4268,7 +4273,7 @@ exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
 
-exjs@BSick7/exjs#0.5.0:
+exjs@BSick7/exjs#0.5.0, "exjs@github:BSick7/exjs#0.5.0":
   version "0.5.0"
   resolved "https://codeload.github.com/BSick7/exjs/tar.gz/98195810790c0e61cb5beb510da4b756528f92f2"
 
@@ -5483,7 +5488,7 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-http-status-codes@edsilv/http-status-codes#v0.0.7:
+http-status-codes@edsilv/http-status-codes#v0.0.7, "http-status-codes@github:edsilv/http-status-codes#v0.0.7":
   version "0.0.7"
   resolved "https://codeload.github.com/edsilv/http-status-codes/tar.gz/af3a8ab9970b1f291a79b03c7382dc16aebee749"
 
@@ -7396,6 +7401,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+mobile-detect@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/mobile-detect/-/mobile-detect-1.4.2.tgz#d45ffff8d0a641aeecbc35a15d88149a34a18350"
+
 mocha@3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/mocha/-/mocha-3.5.3.tgz#1e0480fe36d2da5858d1eb6acc38418b26eaa20d"
@@ -7865,7 +7874,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nwb-sass@0.8.4, nwb-sass@^0.8.2:
+nwb-sass@0.8.4, nwb-sass@^0.8.2, nwb-sass@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/nwb-sass/-/nwb-sass-0.8.4.tgz#7f97a40f5ea4e62f8f63cad23fa6844f2b94c60b"
   dependencies:
@@ -9830,6 +9839,31 @@ request@2.75.x:
     stringstream "~0.0.4"
     tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
+
+request@^2.83.0:
+  version "2.87.0"
+  resolved "https://registry.yarnpkg.com/request/-/request-2.87.0.tgz#32f00235cd08d482b4d0d68db93a829c0ed5756e"
+  dependencies:
+    aws-sign2 "~0.7.0"
+    aws4 "^1.6.0"
+    caseless "~0.12.0"
+    combined-stream "~1.0.5"
+    extend "~3.0.1"
+    forever-agent "~0.6.1"
+    form-data "~2.3.1"
+    har-validator "~5.0.3"
+    http-signature "~1.2.0"
+    is-typedarray "~1.0.0"
+    isstream "~0.1.2"
+    json-stringify-safe "~5.0.1"
+    mime-types "~2.1.17"
+    oauth-sign "~0.8.2"
+    performance-now "^2.1.0"
+    qs "~6.5.1"
+    safe-buffer "^5.1.1"
+    tough-cookie "~2.3.3"
+    tunnel-agent "^0.6.0"
+    uuid "^3.1.0"
 
 request@~2.79.0:
   version "2.79.0"

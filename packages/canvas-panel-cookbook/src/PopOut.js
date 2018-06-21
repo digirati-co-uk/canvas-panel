@@ -31,13 +31,13 @@ class PopOutViewport extends Component {
     },
     [OPEN_VIEW]: {
       width: '100%',
-      height: '80vh',
+      height: 'calc(100vh - 90px)',
       transition: 'all .2s',
       pointerEvents: 'initial',
     },
     [INTERACTIVE_VIEW]: {
       width: '100%',
-      height: '80vh',
+      height: 'calc(100vh - 90px)',
       transition: 'all .2s',
       pointerEvents: 'initial',
     },
@@ -117,10 +117,44 @@ class PopOutViewport extends Component {
     const { children, ...props } = this.props;
     return (
       <div>
-        <button style={{ pointerEvents: 'initial' }} onClick={this.onClose}>
-          Close
-        </button>
-        <div onClick={this.handleClick}>
+        <div
+          onClick={this.handleClick}
+          style={{ position: 'relative', paddingTop: 10 }}
+        >
+          <div
+            style={{
+              background:
+                currentView !== DEFAULT_VIEW
+                  ? 'rgba(255,255,255,1)'
+                  : 'rgba(255,255,255,0)',
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              pointerEvents: 'none',
+              transition: 'all .2s',
+            }}
+          />
+          {currentView !== DEFAULT_VIEW ? (
+            <button
+              style={{
+                pointerEvents: 'initial',
+                position: 'absolute',
+                right: 50,
+                top: 50,
+                background: 'transparent',
+                lineHeight: '40px',
+                border: 'none',
+                padding: '0 10px 10px 10px',
+                zIndex: 1,
+                fontSize: 40,
+              }}
+              onClick={this.onClose}
+            >
+              &times;
+            </button>
+          ) : null}
           <div style={PopOutViewport.views[currentView]}>
             <SizedViewport
               style={{ width: '100%', height: '100%' }}
@@ -142,8 +176,7 @@ class PopOutViewport extends Component {
 class PopOut extends Component {
   render() {
     return (
-      <div style={{ maxWidth: 900, margin: 'auto' }}>
-        <h1>Zoom in example</h1>
+      <div style={{ maxWidth: 1100, margin: 'auto' }}>
         <Manifest url="https://stephenwf.github.io/ocean-liners.json">
           <CanvasProvider>
             <PopOutViewport>
@@ -159,6 +192,7 @@ class PopOut extends Component {
                 />
               </SingleTileSource>
             </PopOutViewport>
+            <h1>Zoom in example</h1>
             <AnnotationListProvider>
               <AnnotationProvider>
                 {({ annotations }) =>
