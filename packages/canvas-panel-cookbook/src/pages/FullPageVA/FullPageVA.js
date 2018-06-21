@@ -18,7 +18,7 @@ class FullPageVA extends Component {
               top: 0,
               zIndex: 10,
             }}
-            manifest="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json"
+            manifest="https://stephenwf.github.io/ocean-liners.json"
             title="Ocean liners"
             innerHtml={`
             <article class="b-promo__item js-object-fit-container">

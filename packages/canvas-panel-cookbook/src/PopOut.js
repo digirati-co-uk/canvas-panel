@@ -177,7 +177,7 @@ class PopOut extends Component {
   render() {
     return (
       <div style={{ maxWidth: 1100, margin: 'auto' }}>
-        <Manifest url="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json">
+        <Manifest url="https://stephenwf.github.io/ocean-liners.json">
           <CanvasProvider>
             <PopOutViewport>
               <SingleTileSource viewportController={true}>

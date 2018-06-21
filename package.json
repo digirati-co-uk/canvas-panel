@@ -1,23 +1,25 @@
 {
   "private": true,
   "name": "canvas-panel",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@fesk/module-release": "0.0.2",
     "@types/prop-types": "15.5.3",
-    "@types/react": "16.3.14",
+    "@types/react": "16.4.1",
     "babel-eslint": "8.2.3",
     "eslint": "4.19.1",
     "eslint-plugin-babel": "5.1.0",
     "eslint-plugin-flow": "2.29.1",
-    "eslint-plugin-flowtype": "2.47.1",
+    "eslint-plugin-flowtype": "2.49.3",
     "eslint-plugin-prettier": "2.6.0",
-    "flow-bin": "0.72.0",
+    "flow-bin": "0.74.0",
     "husky": "0.14.3",
     "lerna": "2.11.0",
-    "lint-staged": "7.1.2",
+    "lint-staged": "7.2.0",
     "npm-run-all": "4.1.3",
-    "prettier": "1.12.1"
+    "prettier": "1.13.5"
   },
   "devEngines": {
     "node": "8.x"
@@ -36,14 +38,19 @@
     "postinstall": "lerna link",
     "build-core": "cd packages/canvas-panel-core && yarn run build",
     "build-docs": "cd packages/canvas-panel-core && yarn run styleguide:build",
-    "build-patchwork-plugin":
-      "cd packages/canvas-panel-patchwork-plugin && yarn run build",
+    "build-patchwork-plugin": "cd packages/canvas-panel-patchwork-plugin && yarn run build",
     "build-cookbook": "cd packages/canvas-panel-cookbook && yarn run build",
     "build-redux": "cd packages/canvas-panel-redux && yarn run build",
     "build-timeline": "cd packages/canvas-panel-timeline && yarn run build"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.{js,json,scss,md}": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,json,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

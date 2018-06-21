@@ -6,7 +6,7 @@ class FullPage extends Component {
     return (
       <div>
         <FullPageViewer
-          manifest="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json"
+          manifest="https://stephenwf.github.io/ocean-liners.json"
           title="Ocean liners"
         >
           <p>Full page plugin. Scroll down to start experience.</p>

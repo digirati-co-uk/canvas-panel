@@ -5,7 +5,12 @@
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -22,12 +27,12 @@
     "redux-saga": "^0.16.0"
   },
   "devDependencies": {
-    "immutability-helper": "2.7.0",
+    "immutability-helper": "2.7.1",
     "nwb": "0.21.5",
     "nwb-sass": "0.8.4",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
-    "redux-actions": "2.3.2",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "redux-actions": "2.4.0",
     "redux-saga": "0.16.0"
   },
   "publishConfig": {
@@ -36,6 +41,5 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository":
-    "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-timeline"
+  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-timeline"
 }
