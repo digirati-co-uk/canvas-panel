@@ -33,9 +33,10 @@
   "dependencies": {
     "@fesk/bem-js": "^1.0.0",
     "@iiif/manifold": "^1.2.19",
-    "@stephenwf-forks/manifesto.js": "^2.2.10",
+    "@stephenwf-forks/manifesto.js": "2.2.25",
     "core-js": "^2.5.3",
     "create-react-context": "^0.2.0",
+    "mobile-detect": "^1.4.2",
     "openseadragon": "^2.3.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -50,7 +51,7 @@
     "npm-watch": "0.3.0",
     "nwb": "0.21.5",
     "nwb-watch": "1.0.0",
-    "prop-types": "15.6.1",
+    "prop-types": "15.6.2",
     "react-styleguidist": "7.0.17"
   },
   "publishConfig": {

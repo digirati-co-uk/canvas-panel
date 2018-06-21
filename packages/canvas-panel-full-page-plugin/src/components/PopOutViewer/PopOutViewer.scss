@@ -1,0 +1,27 @@
+.pop-out-viewer {
+  &__close {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 104px;
+    height: 32px;
+    border-radius: 2px;
+    background-color: #eaeaea;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.33);
+    border: none;
+    font-size: 12px;
+    //font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #1d1e20;
+    text-transform: uppercase;
+    z-index: 10000;
+    @media (max-width: 480px) {
+      top: 50px;
+      right: 10px;
+    }
+  }
+}

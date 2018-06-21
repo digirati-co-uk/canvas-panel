@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import Patchwork from './pages/Patchwork/Patchwork';
-import FullPagePatchwork from './pages/FullPagePatchwork/FullPagePatchwork';
+import FullPage from './pages/FullPage/FullPage';
 import AnnotationPlayground from './pages/AnnotationPlayground/AnnotationPlayground';
 import { default as SlideShowDemo } from './pages/SlideShow/SlideShowDemo';
 import './App.scss';
@@ -10,6 +10,7 @@ import aboutText from '../../../about.md';
 import homeText from '../../../introduction.md';
 import roadmapText from '../../../roadmap.md';
 import logoUrl from './digirati-logo-white.svg';
+import FullPageVA from './pages/FullPageVA/FullPageVA';
 
 const RenderMarkdown = props => (
   <section
@@ -136,7 +137,8 @@ const App = () => (
       <Route exact path="/roadmap" component={RoadmapText} />
       <Route exact path="/examples" component={Examples(exampleList)} />
       <Route path="/examples/oceanliners" component={Patchwork} />
-      <Route path="/examples/fullpage" component={FullPagePatchwork} />
+      <Route path="/examples/fullpage" component={FullPage} />
+      <Route path="/examples/fullpage-va" component={FullPageVA} />
       <Route path="/examples/popout" component={PopOut} />
       <Route
         path="/examples/annotation-playground"

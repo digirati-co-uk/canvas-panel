@@ -1,0 +1,28 @@
+.annotation-navigation {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  &__next {
+    margin-left: auto;
+  }
+
+  &__previous {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &__next,
+  &__previous {
+    pointer-events: visible;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 12px;
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+}

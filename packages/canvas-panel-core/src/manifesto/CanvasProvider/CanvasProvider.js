@@ -39,7 +39,7 @@ class CanvasProvider extends Component<Props> {
       this.setState({
         currentCanvas: Number.isInteger(newProps.currentCanvas)
           ? newProps.currentCanvas
-          : sequence.getCanvasIndexById(),
+          : sequence.getCanvasIndexById(newProps.currentCanvas),
       });
     }
   }

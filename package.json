@@ -1,11 +1,13 @@
 {
   "private": true,
   "name": "canvas-panel",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@fesk/module-release": "0.0.2",
     "@types/prop-types": "15.5.3",
-    "@types/react": "16.3.18",
+    "@types/react": "16.4.1",
     "babel-eslint": "8.2.3",
     "eslint": "4.19.1",
     "eslint-plugin-babel": "5.1.0",
@@ -36,14 +38,19 @@
     "postinstall": "lerna link",
     "build-core": "cd packages/canvas-panel-core && yarn run build",
     "build-docs": "cd packages/canvas-panel-core && yarn run styleguide:build",
-    "build-patchwork-plugin":
-      "cd packages/canvas-panel-patchwork-plugin && yarn run build",
+    "build-patchwork-plugin": "cd packages/canvas-panel-patchwork-plugin && yarn run build",
     "build-cookbook": "cd packages/canvas-panel-cookbook && yarn run build",
     "build-redux": "cd packages/canvas-panel-redux && yarn run build",
     "build-timeline": "cd packages/canvas-panel-timeline && yarn run build"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.{js,json,scss,md}": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,json,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
