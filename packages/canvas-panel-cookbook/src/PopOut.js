@@ -144,7 +144,7 @@ class PopOut extends Component {
     return (
       <div style={{ maxWidth: 900, margin: 'auto' }}>
         <h1>Zoom in example</h1>
-        <Manifest url="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json">
+        <Manifest url="https://stephenwf.github.io/ocean-liners.json">
           <CanvasProvider>
             <PopOutViewport>
               <SingleTileSource viewportController={true}>

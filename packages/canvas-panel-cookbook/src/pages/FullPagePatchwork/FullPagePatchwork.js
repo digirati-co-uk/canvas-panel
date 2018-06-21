@@ -148,7 +148,7 @@ class FullPagePatchwork extends Component {
   render() {
     return (
       <div>
-        <Manifest url="https://iiif.vam.ac.uk/collections-public/O1023003/manifest.json">
+        <Manifest url="https://stephenwf.github.io/ocean-liners.json">
           <CanvasProvider>
             <FullPageViewport setRef={this.setViewport}>
               <SingleTileSource viewportController={true}>
