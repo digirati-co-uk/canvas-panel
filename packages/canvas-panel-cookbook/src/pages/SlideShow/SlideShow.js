@@ -15,6 +15,7 @@ import { default as SimpleSlideTransition } from './components/SimpleSlideTransi
 
 import { default as ProgressIndicator } from './views/ProgressIndicator';
 import { default as DummySlideContent } from './views/DummySlideContent';
+import { default as P2SlideContent } from './views/P2SlideContent';
 import { default as SwappableView } from './views/SwappableView';
 
 class SlideShow extends Component {
@@ -42,7 +43,7 @@ class SlideShow extends Component {
                     <SlideTransitionComponent>
                       <div className={slideClasses}>
                         <SwappableView {...{ manifest, canvas }} />
-                        <SlideContentComponent {...canvas} />
+                        <SlideContentComponent canvas={canvas} />
                         <CanvasNavigation dispatch={dispatch} />
                         <ProgressIndicator
                           {...{ currentCanvas, totalCanvases }}
@@ -130,7 +131,10 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest" />
+            <SlideShow
+              manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest"
+              slideContentComponent={P2SlideContent}
+            />
           </div>
         </section>
         <section className={bem.element('section')}>
