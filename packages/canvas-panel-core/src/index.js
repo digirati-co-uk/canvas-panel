@@ -23,6 +23,7 @@ import Viewport from './viewers/Viewport/Viewport';
 import functionOrMapChildren from './utility/functionOrMapChildren';
 import AnnotationSelector from './utility/AnnotationSelector';
 import htmlElementObserver from './utility/htmlElementObserver';
+import Responsive from './utility/Responsive';
 
 export {
   // Components.
@@ -51,6 +52,7 @@ export {
   Viewport,
   // Utils
   AnnotationSelector,
+  Responsive,
   functionOrMapChildren,
   htmlElementObserver,
   withBemClass,

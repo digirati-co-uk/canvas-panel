@@ -6,6 +6,7 @@ function getDataUriFromImages(images) {
   const firstImage = images[0];
   const resource = firstImage.getResource();
   const services = resource.getServices();
+
   if (services.length) {
     for (let i = 0; i < services.length; i++) {
       const service = services[i];
