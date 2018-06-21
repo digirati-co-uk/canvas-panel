@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
+import './SlideShowConfigurator.scss';
 
 class SlideShowConfiguratorBase extends Component {
   render() {

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import classNames from 'classnames/bind';
+
 import {
   Manifest,
-  CanvasProvider,
   CanvasNavigation,
+  CanvasProvider,
   Fullscreen,
 } from '@canvas-panel/core';
 
@@ -12,14 +13,16 @@ import ProgressIndicator from '../views/ProgressIndicator';
 import DummySlideContent from '../views/DummySlideContent';
 import SwappableView from '../views/SwappableView';
 
+import './SlideShow.scss';
+
 export default class SlideShow extends Component {
   render() {
     let { manifesturi } = this.props;
-    // TODO: Make This work with the majestic nwb babbel...
-    // let SlideContentComponent =
-    //   this.props.slideContentComponent || DummySlideContent;
-    // let SlideTransitionComponent =
-    //   this.props.slideTransitionComponent || SimpleSlideTransition;
+    //TODO: Make This work with the majestic nwb babbel...
+    const SlideContentComponent =
+      this.props.slideContentComponent || DummySlideContent;
+    const SlideTransitionComponent =
+      this.props.slideTransitionComponent || SimpleSlideTransition;
     return (
       <div className="slideshow">
         <Fullscreen>
@@ -35,31 +38,33 @@ export default class SlideShow extends Component {
                   });
                   let totalCanvases = sequence.getTotalCanvases();
                   return (
-                    <SimpleSlideTransition>
-                      <div className={slideClasses}>
-                        <SwappableView {...{ manifest, canvas }} />
-                        <DummySlideContent canvas={canvas} />
-                        <CanvasNavigation dispatch={dispatch} />
-                        <ProgressIndicator
-                          {...{ currentCanvas, totalCanvases }}
-                        />
-                        {isFullscreen ? (
-                          <button
-                            onClick={exitFullscreen}
-                            className="fullscreen-btn fullscreen-btn--off"
-                          >
-                            Exit fullscreen
-                          </button>
-                        ) : (
-                          <button
-                            onClick={goFullscreen}
-                            className="fullscreen-btn fullscreen-btn--on"
-                          >
-                            Fullscreen
-                          </button>
-                        )}
-                      </div>
-                    </SimpleSlideTransition>
+                    <div className="slideshow__inner-frame">
+                      <SlideTransitionComponent>
+                        <div className={slideClasses}>
+                          <SwappableView {...{ manifest, canvas }} />
+                          <SlideContentComponent canvas={canvas} />
+                        </div>
+                      </SlideTransitionComponent>
+                      {isFullscreen ? (
+                        <button
+                          onClick={exitFullscreen}
+                          className="fullscreen-btn fullscreen-btn--off"
+                        >
+                          Exit fullscreen
+                        </button>
+                      ) : (
+                        <button
+                          onClick={goFullscreen}
+                          className="fullscreen-btn fullscreen-btn--on"
+                        >
+                          Fullscreen
+                        </button>
+                      )}
+                      {/*<CanvasNavigation dispatch={dispatch} />*/}
+                      <ProgressIndicator
+                        {...{ currentCanvas, totalCanvases }}
+                      />
+                    </div>
                   );
                 }}
               </CanvasProvider>
