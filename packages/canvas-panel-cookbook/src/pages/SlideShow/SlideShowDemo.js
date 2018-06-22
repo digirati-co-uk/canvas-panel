@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import SlideShow from './components/SlideShow';
 import SlideShowConfigurator from './components/SlideShowConfigurator';
-import P2SlideContent from './views/P2SlideContent';
+import P2SlideContent from './components/P2SlideContent';
+import P3SlideContent from './components/P3SlideContent';
+import ExperimentalSlideTransition from './components/ExperimentalSlideTransition';
 
 import './SlideShowDemo.scss';
 
@@ -27,7 +29,10 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest" />
+            <SlideShow
+              manifesturi="http://localhost:3000/public/balenciaga1.json"
+              slideContentComponent={P3SlideContent}
+            />
           </div>
         </section>
         <section className={bem.element('section').modifier('full-width')}>
@@ -40,13 +45,10 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow
-              manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest"
-              slideContentComponent={P2SlideContent}
-            />
+            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json" />
           </div>
         </section>
-        <section className={bem.element('section')}>
+        {/*<section className={bem.element('section')}>
           <h2 className={bem.element('subtitle')}>Custom Styles</h2>
           <div
             style={{
@@ -56,10 +58,13 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest" />
+            <SlideShow
+              manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest"
+              slideTransitionComponent={ExperimentalSlideTransition}
+            />
           </div>
-        </section>
-        <section className={bem.element('section').modifier('full-width')}>
+        </section>*/}
+        {/*<section className={bem.element('section').modifier('full-width')}>
           <h2 className={bem.element('subtitle')}>Configure Your Own</h2>
           <div
             style={{
@@ -73,7 +78,7 @@ class SlideShowDemoBase extends Component {
               <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest" />
             </SlideShowConfigurator>
           </div>
-        </section>
+          </section>*/}
       </article>
     );
   }
