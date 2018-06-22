@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import {
   Manifest,
-  CanvasNavigation,
   CanvasProvider,
   Fullscreen,
   RangeNavigationProvider,
@@ -13,6 +13,7 @@ import SimpleSlideTransition from './SimpleSlideTransition';
 import ProgressIndicator from '../views/ProgressIndicator';
 import DummySlideContent from '../views/DummySlideContent';
 import SwappableView from '../views/SwappableView';
+import CanvasNavigation from './CanvasNavigation';
 
 import './SlideShow.scss';
 
@@ -69,20 +70,12 @@ export default class SlideShow extends Component {
                           Fullscreen
                         </button>
                       )}
-                      <div className="canvas-navigation">
-                        <button
-                          className="canvas-navigation__previous"
-                          onClick={previousRange}
-                        >
-                          Prev
-                        </button>
-                        <button
-                          className="canvas-navigation__next"
-                          onClick={nextRange}
-                        >
-                          Next
-                        </button>
-                      </div>
+                      <CanvasNavigation
+                        previousRange={previousRange}
+                        nextRange={nextRange}
+                        canvasList={canvasList}
+                        currentIndex={currentIndex}
+                      />
                       <ProgressIndicator
                         {...{ currentCanvas, totalCanvases }}
                       />
