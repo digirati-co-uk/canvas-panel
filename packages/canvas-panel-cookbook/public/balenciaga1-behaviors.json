@@ -1,0 +1,404 @@
+{
+  "@context": [
+    "http://digirati.com/canvaspanel/vocab.json",
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://digirati.com/balenciaga1.json",
+  "type": "Manifest",
+  "label": { "en": ["Balenciaga: Master Craftsman"] },
+  "metadata": [
+    {
+      "label": { "en": ["Comment"] },
+      "value": {
+        "@none": [
+          "Simplest version: no ranges, just labels and description/summary on canvases, with a viewing hint for layout (left, right, overlay)"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": [
+      "Known as 'The Master' of haute couture, Cristóbal Balenciaga revolutionised the female silhouette"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "#TODO",
+      "type": "Image",
+      "width": 200,
+      "height": 300,
+      "service": [
+        {
+          "id": "#TODO",
+          "type": "ImageService2",
+          "profile": "level1"
+        }
+      ]
+    }
+  ],
+  "posterCanvas": {
+    "id": "https://digirati.com/balenciaga/poster",
+    "requiredStatement": {
+      "label": { "en": [""] },
+      "value": {
+        "en": [
+          "<a href=\"#\" title=\"Evening outfit\">Evening outfit</a> (1967)<br/><a href=\"#\">by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+        ]
+      }
+    },
+    "width": 900,
+    "height": 1200,
+    "label": { "en": ["Balenciaga: Master Craftsman"] },
+    "summary": {
+      "en": [
+        "Known as 'The Master' of haute couture, Cristóbal Balenciaga revolutionised the female silhouette"
+      ]
+    },
+    "items": [
+      {
+        "id": "https://digirati.com/balenciaga/poster/page",
+        "type": "AnnotationPage",
+        "items": [
+          {
+            "id": "https://digirati.com/balenciaga/poster/page/imageanno1",
+            "type": "Annotation",
+            "motivation": "painting",
+            "body": {
+              "id":
+                "https://dlc.services/iiif-img/5/15/7f1ef85a-50a7-413a-9303-2ec722608484/full/full/0/default.jpg",
+              "type": "Image",
+              "format": "image/jpeg",
+              "width": 900,
+              "height": 1200,
+              "service": [
+                {
+                  "id":
+                    "https://dlc.services/iiif-img/5/15/7f1ef85a-50a7-413a-9303-2ec722608484",
+                  "type": "ImageService2",
+                  "profile": "level1"
+                }
+              ]
+            },
+            "target": "https://digirati.com/balenciaga/poster"
+          }
+        ]
+      }
+    ]
+  },
+  "rights": "https://creativecommons.org/licenses/by/4.0/",
+  "homepage": {
+    "id": "#TODO - this can link to the page on V&A for the narrative viewer",
+    "type": "Text",
+    "label": { "en": ["Home page Balenciaga"] },
+    "format": "text/html"
+  },
+  "items": [
+    {
+      "id": "https://digirati.com/balenciaga/c1",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-split"],
+      "label": { "en": ["Balenciaga: Master Craftsman"] },
+      "summary": {
+        "en": [
+          "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
+        ]
+      },
+      "width": 900,
+      "height": 1200,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Evening dress\">Evening dress</a> (1960 - 1962)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c1/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c1/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 900,
+                "height": 1200,
+                "service": [
+                  {
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c1"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "https://digirati.com/balenciaga/c2",
+      "type": "Canvas",
+      "width": 730,
+      "height": 1200,
+      "behavior": ["info-position-center", "layout-split"],
+      "label": { "en": ["Balenciaga: Master Craftsman"] },
+      "summary": {
+        "en": [
+          "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
+        ]
+      },
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Hitchcock Directing\">Hitchcock Directing</a> (1951)<br/><a href=\"#\" >by Gjon Mili</a><br/>LIFE Photo Collection"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c2/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c2/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 730,
+                "height": 1200,
+                "service": [
+                  {
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c2"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "https://digirati.com/balenciaga/c3",
+      "type": "Canvas",
+      "behavior": ["info-position-right", "layout-split"],
+      "label": { "en": ["Spanish colours"] },
+      "summary": {
+        "en": [
+          "Balenciaga was a Spaniard. Many of his most iconic designs show an affinity for Spanish heritage and costume – from the 'chaquetillas' worn by bullfighters to the traditional flamenco dress. A writer from Woman's Journal stated, 'Inspirations from Spain! Balenciaga is young, Spanish and new to Paris. His beautiful clothes have the warm, colourful drama of his country.'"
+        ]
+      },
+      "width": 900,
+      "height": 1200,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Gazar evening dress, Cristóbal Balenciaga\">Gazar evening dress, Cristóbal Balenciaga</a> (1962)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c3/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c3/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 900,
+                "height": 1200,
+                "service": [
+                  {
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c3"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "https://digirati.com/balenciaga/c7",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "summary": {
+        "en": [
+          "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
+        ]
+      },
+      "width": 990,
+      "height": 1200,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Evening dress, embroidered silk organza\">Evening dress, embroidered silk organza</a> (1960)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c7/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c7/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 990,
+                "height": 1200,
+                "service": [
+                  {
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/balenciaga/c8",
+      "type": "Canvas",
+      "behavior": ["info-position-center", "layout-overlay"],
+      "summary": {
+        "en": [
+          "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
+        ]
+      },
+      "width": 990,
+      "height": 1200,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Evening dress, embroidered silk organza\">Evening dress, embroidered silk organza</a> (1960)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c8/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c8/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 990,
+                "height": 1200,
+                "service": [
+                  {
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/balenciaga/c9",
+      "type": "Canvas",
+      "behavior": ["info-position-right", "layout-overlay"],
+      "summary": {
+        "en": [
+          "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
+        ]
+      },
+      "width": 990,
+      "height": 1200,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Evening dress, embroidered silk organza\">Evening dress, embroidered silk organza</a> (1960)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c9/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c9/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 990,
+                "height": 1200,
+                "service": [
+                  {
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c9"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

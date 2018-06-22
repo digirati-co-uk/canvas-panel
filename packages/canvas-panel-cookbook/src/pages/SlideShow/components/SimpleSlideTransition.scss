@@ -17,41 +17,41 @@
   transition: opacity 250ms ease-in;
 }
 
-.slide--even {
-  &.fade-enter {
-    .slide__overlay {
-      transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-    }
-  }
-  &.fade-enter-active {
-    .slide__overlay {
-      -webkit-transform: translateX(0.01%);
-      -webkit-transition: -webkit-transform 250ms
-        cubic-bezier(0.55, 0.085, 0.68, 0.53);
-      -webkit-transition-delay: 250ms;
-      transform: translateX(0.01%);
-      transition: transform 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
-      transition-delay: 250ms;
-    }
-  }
-}
-.slide--odd {
-  &.fade-enter {
-    .slide__overlay {
-      transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-    }
-  }
-  &.fade-enter-active {
-    .slide__overlay {
-      -webkit-transform: translateX(0.01%);
-      -webkit-transition: -webkit-transform 250ms
-        cubic-bezier(0.55, 0.085, 0.68, 0.53);
-      -webkit-transition-delay: 250ms;
-      transform: translateX(0.01%);
-      transition: transform 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
-      transition-delay: 250ms;
-    }
-  }
-}
+// .slide--even {
+//   &.fade-enter {
+//     .slide__overlay {
+//       transform: translateX(100%);
+//       -webkit-transform: translateX(100%);
+//     }
+//   }
+//   &.fade-enter-active {
+//     .slide__overlay {
+//       -webkit-transform: translateX(0.01%);
+//       -webkit-transition: -webkit-transform 250ms
+//         cubic-bezier(0.55, 0.085, 0.68, 0.53);
+//       -webkit-transition-delay: 250ms;
+//       transform: translateX(0.01%);
+//       transition: transform 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+//       transition-delay: 250ms;
+//     }
+//   }
+// }
+// .slide--odd {
+//   &.fade-enter {
+//     .slide__overlay {
+//       transform: translateX(-100%);
+//       -webkit-transform: translateX(-100%);
+//     }
+//   }
+//   &.fade-enter-active {
+//     .slide__overlay {
+//       -webkit-transform: translateX(0.01%);
+//       -webkit-transition: -webkit-transform 250ms
+//         cubic-bezier(0.55, 0.085, 0.68, 0.53);
+//       -webkit-transition-delay: 250ms;
+//       transform: translateX(0.01%);
+//       transition: transform 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+//       transition-delay: 250ms;
+//     }
+//   }
+// }

@@ -13,9 +13,13 @@ const P2SlideContent = props => {
     ));
   return (
     <div className={containerCls}>
-      <h2 className="slide__title">{label}</h2>
-      {descriptionLines}
-      <p className="slide__text">{attribution}</p>
+      <div className={containerCls + '-content'}>
+        {label ? <h2 className="slide__title">{label}</h2> : ''}
+        {descriptionLines}
+      </div>
+      <div className={containerCls + '-floating'}>
+        <p className="slide__required-statement">{attribution}</p>
+      </div>
     </div>
   );
 };
