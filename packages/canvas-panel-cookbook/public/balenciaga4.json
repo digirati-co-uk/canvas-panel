@@ -1,0 +1,386 @@
+{
+  "@context": [
+    "http://digirati.com/canvaspanel/vocab.json",
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://digirati.com/balenciaga2.json",
+  "type": "Manifest",
+  "label": { "en": ["Balenciaga: Master Craftsman"] },
+  "metadata": [
+    {
+      "label": { "en": ["Comment"] },
+      "value": {
+        "en": [
+          "Next: add support to take journey from range[behavior=sequence], which gives us the ability for a next=> operation to zoom in to part of an image"
+        ]
+      }
+    },
+    {
+      "label": { "en": ["Comment"] },
+      "value": {
+        "en": [
+          "That will appear in Mirador or UV, probably not used in presentation viewer"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": [
+      "Known as 'The Master' of haute couture, Cristóbal Balenciaga revolutionised the female silhouette"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "#TODO",
+      "type": "Image",
+      "width": 200,
+      "height": 300,
+      "service": [
+        {
+          "id": "#TODO",
+          "type": "ImageService2",
+          "profile": "level1"
+        }
+      ]
+    }
+  ],
+  "posterCanvas": {
+    "id": "https://digirati.com/balenciaga/poster",
+    "requiredStatement": {
+      "label": { "en": [""] },
+      "value": {
+        "en": [
+          "<a href=\"#\" title=\"Evening outfit\">Evening outfit</a> (1967)<br/><a href=\"#\">by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+        ]
+      }
+    },
+    "width": 2000,
+    "height": 6000,
+    "label": { "en": ["Balenciaga: Master Craftsman"] },
+    "summary": {
+      "en": [
+        "Known as 'The Master' of haute couture, Cristóbal Balenciaga revolutionised the female silhouette"
+      ]
+    },
+    "items": [
+      {
+        "id": "https://digirati.com/balenciaga/poster/page",
+        "type": "AnnotationPage",
+        "items": [
+          {
+            "id": "https://digirati.com/balenciaga/poster/page/imageanno1",
+            "type": "Annotation",
+            "motivation": "painting",
+            "body": {
+              "id": "#TODO - cover page dress.jpg",
+              "type": "Image",
+              "format": "image/jpeg",
+              "width": 2000,
+              "height": 6000,
+              "service": [
+                {
+                  "id": "#TODO",
+                  "type": "ImageService2",
+                  "profile": "level1"
+                }
+              ]
+            },
+            "target": "https://digirati.com/balenciaga/poster"
+          }
+        ]
+      }
+    ]
+  },
+  "rights": "https://creativecommons.org/licenses/by/4.0/",
+  "homepage": {
+    "id": "#TODO - this can link to the page on V&A for the narrative viewer",
+    "type": "Text",
+    "label": { "en": ["Home page Balenciaga"] },
+    "format": "text/html"
+  },
+  "items": [
+    {
+      "id": "https://digirati.com/balenciaga/c1",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-split"],
+      "label": { "en": ["Balenciaga: Master Craftsman"] },
+      "summary": {
+        "en": [
+          "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
+        ]
+      },
+      "width": 6000,
+      "height": 8000,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Evening dress\">Evening dress</a> (1960 - 1962)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c1/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c1/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "#TODO - dress 2",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1200,
+                "height": 1600,
+                "service": [
+                  {
+                    "id": "#TODO",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://digirati.com/balenciaga/c1/annos",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c1/annos/1",
+              "type": "Annotation",
+              "motivation": "layout-viewport-focus",
+              "target": "https://digirati.com/balenciaga/c1#2000,2000,1500,1500"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "https://digirati.com/balenciaga/c2",
+      "type": "Canvas",
+      "width": 4000,
+      "height": 8000,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Hitchcock Directing\">Hitchcock Directing</a> (1951)<br/><a href=\"#\" >by Gjon Mili</a><br/>LIFE Photo Collection"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c2/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c2/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "#TODO - hitchcock directing",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 800,
+                "height": 1600,
+                "service": [
+                  {
+                    "id": "#TODO",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c2"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "https://digirati.com/balenciaga/c3",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-split"],
+      "label": { "en": ["Spanish colours"] },
+      "summary": {
+        "en": [
+          "Balenciaga was a Spaniard. Many of his most iconic designs show an affinity for Spanish heritage and costume – from the 'chaquetillas' worn by bullfighters to the traditional flamenco dress. A writer from Woman's Journal stated, 'Inspirations from Spain! Balenciaga is young, Spanish and new to Paris. His beautiful clothes have the warm, colourful drama of his country.'"
+        ]
+      },
+      "width": 4000,
+      "height": 4000,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Gazar evening dress, Cristóbal Balenciaga\">Gazar evening dress, Cristóbal Balenciaga</a> (1962)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c3/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c3/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "#TODO - dress spanish",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 800,
+                "height": 800,
+                "service": [
+                  {
+                    "id": "#TODO",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://digirati.com/balenciaga/c3/annos",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c3/annos/1",
+              "type": "Annotation",
+              "motivation": "layout-viewport-focus",
+              "target": "https://digirati.com/balenciaga/c3#3000,3000,1000,1000"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "https://digirati.com/balenciaga/c7",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "summary": {
+        "en": [
+          "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
+        ]
+      },
+      "width": 8000,
+      "height": 4000,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": [
+            "<a href=\"#\" title=\"Evening dress, embroidered silk organza\">Evening dress, embroidered silk organza</a> (1960)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
+          ]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c7/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c7/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "#TODO - dress organza",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1600,
+                "height": 800,
+                "service": [
+                  {
+                    "id": "#TODO",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/balenciaga/c7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://digirati.com/balenciaga/c3/annos",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/balenciaga/c3/annos/1",
+              "type": "Annotation",
+              "motivation": "layout-viewport-focus",
+              "target": "https://digirati.com/balenciaga/c7#100,4000,3000,3000"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "structures": [
+    {
+      "id": "https://digirati.com/balenciaga/sequence",
+      "type": "Range",
+      "behavior": ["sequence"],
+      "label": {
+        "en": ["Probably don't need to show this label in our viewer"]
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/balenciaga/c1",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://digirati.com/balenciaga/c2",
+          "type": "Canvas",
+          "label": { "en": ["This canvas has been given a different label"] },
+          "summary": {
+            "en": [
+              "In the viewer, when the sequence range is being used, I think we want the range label and summary to override the canvas label and summary"
+            ]
+          }
+        },
+        {
+          "id": "https://digirati.com/balenciaga/c3",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://digirati.com/balenciaga/c7",
+          "type": "Canvas"
+        },
+        {
+          "type": "SpecificResource",
+          "source": "https://digirati.com/balenciaga/c7",
+          "selector": {
+            "type": "FragmentSelector",
+            "value": "xywh=2000,2000,300,300"
+          },
+          "label": { "en": ["A region-specific label"] },
+          "summary": {
+            "en": [
+              "Here the full version of the canvas gets the canvas label and summary, but when we move to the detail slide, the range label and summary are used."
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

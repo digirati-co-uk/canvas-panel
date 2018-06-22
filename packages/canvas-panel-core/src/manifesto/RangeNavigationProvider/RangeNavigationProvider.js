@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import * as Manifesto from '@stephenwf-forks/manifesto.js';
 import functionOrMapChildren from '../../utility/functionOrMapChildren';
+import extractCanvasAndRegionsFromRange from '../../utility/extractCanvasAndRegionsFromRange';
 
 type Props = {
   manifest: Manifesto.Manifest,
@@ -21,19 +22,25 @@ type Props = {
 type State = {
   currentIndex: number,
   currentRange: ?string,
+  currentRangeObject: ?Manifesto.Range,
   canvasList: Array<string>,
+  regionList: Array<any>,
 };
 
 type RangeLike = {
+  range: ?Manifesto.Range,
   canvasList: Array<string>,
+  regionList: Array<any>,
   id: string,
 };
 
 class RangeNavigationProvider extends Component<Props, State> {
   state = {
     currentIndex: 0,
+    currentRangeObject: null,
     currentRange: null,
     canvasList: [],
+    regionList: [],
   };
 
   static defaultProps = {
@@ -46,40 +53,65 @@ class RangeNavigationProvider extends Component<Props, State> {
     const matchingRange = this.getMatchingRange(this.props);
     if (matchingRange) {
       return this.setState({
+        currentRangeObject: matchingRange.range,
         currentRange: matchingRange.id,
         canvasList: matchingRange.canvasList,
+        regionList: matchingRange.regionList || [],
       });
     }
   }
 
   getMatchingRange({ manifest, rangeId, rangeViewingHint }: Props): RangeLike {
     const allRanges: Array<Manifesto.Range> = manifest.getAllRanges();
+
     const matchingRange: Manifesto.Range = allRanges.reduce(
       (match, next: Manifesto.Range) => {
         if (match) return match;
+
+        // Allow exact match range.
         if (rangeId && next.id === rangeId) {
           return next;
         }
+
+        // Allow by viewing hint.
         if (
           rangeViewingHint &&
+          next.getViewingHint() &&
           next.getViewingHint().toString() === rangeViewingHint
         ) {
           return next;
         }
+
+        // Also allow sequences.
+        if (
+          next.getBehavior() &&
+          next.getBehavior().toString() === 'sequence'
+        ) {
+          return next;
+        }
+
         return null;
       },
       null
     );
 
     if (matchingRange) {
+      const { canvases, regions } = extractCanvasAndRegionsFromRange(
+        matchingRange
+      );
+
       return {
+        range: matchingRange,
         id: matchingRange.id,
-        canvasList: matchingRange.getCanvasIds(),
+        canvasList: canvases,
+        regionList: regions,
       };
     }
 
     return {
+      range: null,
       id: manifest.id,
+      regionList: [], // @todo maybe points of interest will be somewhere else?
       canvasList: manifest
         .getSequenceByIndex(0)
         .getCanvases()
@@ -103,8 +135,10 @@ class RangeNavigationProvider extends Component<Props, State> {
     ) {
       const matchingRange = this.getMatchingRange(this.props);
       this.setState({
+        currentRangeObject: matchingRange.range,
         currentRange: matchingRange.id,
         canvasList: matchingRange.canvasList,
+        regionList: matchingRange.regionList || [],
       });
     }
   }
@@ -146,7 +180,13 @@ class RangeNavigationProvider extends Component<Props, State> {
 
   render() {
     const { children, ...props } = this.props;
-    const { currentIndex, currentRange, canvasList } = this.state;
+    const {
+      currentIndex,
+      currentRange,
+      canvasList,
+      regionList,
+      currentRangeObject,
+    } = this.state;
 
     if (!props.manifest) {
       return null;
@@ -159,13 +199,17 @@ class RangeNavigationProvider extends Component<Props, State> {
             .getCanvasById(canvasList[currentIndex])
         : null;
 
+    const region = regionList.length !== 0 ? regionList[currentIndex] : null;
+
     return functionOrMapChildren(children, {
       ...props,
       nextRange: this.nextRange,
       previousRange: this.previousRange,
       currentIndex,
       rangeId: currentRange,
+      range: currentRangeObject,
       canvasList,
+      region,
       currentCanvasId: canvas ? canvas.id : null,
       canvas,
     });
