@@ -130,14 +130,16 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - dress 2",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
                 "width": 1200,
                 "height": 1600,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -187,14 +189,16 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - hitchcock directing",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
                 "width": 800,
                 "height": 1600,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -237,14 +241,16 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - dress spanish",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
                 "width": 800,
                 "height": 800,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -300,14 +306,16 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - dress organza",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
                 "width": 1600,
                 "height": 800,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
