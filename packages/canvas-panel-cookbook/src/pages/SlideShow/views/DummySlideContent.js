@@ -9,7 +9,6 @@ const demoData = {
 };
 
 const DummySlideContent = props => {
-  const { canvas } = props;
   const { label, description, requiredStatement, containerCls } = demoData;
   const descriptionLines = (description || '')
     .split(/\n+/g)
