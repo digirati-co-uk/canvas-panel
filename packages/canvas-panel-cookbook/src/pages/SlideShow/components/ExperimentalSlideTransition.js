@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withBemClass } from '@canvas-panel/core';
 import './ExperimentalSlideTransition.scss';
 
 class PageTransition extends Component {

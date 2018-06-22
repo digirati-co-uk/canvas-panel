@@ -10,9 +10,9 @@ import {
 } from '@canvas-panel/core';
 
 import SimpleSlideTransition from './SimpleSlideTransition';
-import ProgressIndicator from '../views/ProgressIndicator';
-import DummySlideContent from '../views/DummySlideContent';
-import SwappableView from '../views/SwappableView';
+import ProgressIndicator from './ProgressIndicator';
+import DummySlideContent from './DummySlideContent';
+import SwappableView from './SwappableView';
 import CanvasNavigation from './CanvasNavigation';
 
 import './SlideShow.scss';

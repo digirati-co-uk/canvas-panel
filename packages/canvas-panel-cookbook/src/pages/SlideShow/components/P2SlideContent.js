@@ -7,23 +7,15 @@ const P2SlideContent = props => {
   const descriptionLines = (description || '')
     .split(/\n+/g)
     .map((line, idx) => (
-      <p
-        key={'description_' + idx}
-        className="slide__text"
-        title="canvas-description"
-      >
+      <p key={'description_' + idx} className="slide__text">
         {line}
       </p>
     ));
   return (
     <div className={containerCls}>
-      <h2 className="slide__title" title="canvas-label">
-        {label}
-      </h2>
+      <h2 className="slide__title">{label}</h2>
       {descriptionLines}
-      <p className="slide__text" title="canvas-required-statement">
-        {attribution}
-      </p>
+      <p className="slide__text">{attribution}</p>
     </div>
   );
 };
