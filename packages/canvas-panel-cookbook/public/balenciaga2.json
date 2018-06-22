@@ -55,8 +55,8 @@
         ]
       }
     },
-    "width": 2000,
-    "height": 6000,
+    "width": 900,
+    "height": 1200,
     "label": { "en": ["Balenciaga: Master Craftsman"] },
     "summary": {
       "en": [
@@ -76,8 +76,8 @@
               "id": "#TODO - cover page dress.jpg",
               "type": "Image",
               "format": "image/jpeg",
-              "width": 2000,
-              "height": 6000,
+              "width": 900,
+              "height": 1200,
               "service": [
                 {
                   "id": "#TODO",
@@ -110,8 +110,8 @@
           "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
         ]
       },
-      "width": 6000,
-      "height": 8000,
+      "width": 900,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -133,8 +133,8 @@
                 "id": "#TODO - dress 2",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 1200,
-                "height": 1600,
+                "width": 900,
+                "height": 1200,
                 "service": [
                   {
                     "id": "#TODO",
@@ -157,7 +157,7 @@
               "id": "https://digirati.com/balenciaga/c1/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c1#2000,2000,1500,1500"
+              "target": "https://digirati.com/balenciaga/c1#300,300,400,400"
             }
           ]
         }
@@ -167,8 +167,8 @@
     {
       "id": "https://digirati.com/balenciaga/c2",
       "type": "Canvas",
-      "width": 4000,
-      "height": 8000,
+      "width": 730,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -190,8 +190,8 @@
                 "id": "#TODO - hitchcock directing",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 800,
-                "height": 1600,
+                "width": 730,
+                "height": 1200,
                 "service": [
                   {
                     "id": "#TODO",
@@ -217,8 +217,8 @@
           "Balenciaga was a Spaniard. Many of his most iconic designs show an affinity for Spanish heritage and costume – from the 'chaquetillas' worn by bullfighters to the traditional flamenco dress. A writer from Woman's Journal stated, 'Inspirations from Spain! Balenciaga is young, Spanish and new to Paris. His beautiful clothes have the warm, colourful drama of his country.'"
         ]
       },
-      "width": 4000,
-      "height": 4000,
+      "width": 900,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -240,8 +240,8 @@
                 "id": "#TODO - dress spanish",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 800,
-                "height": 800,
+                "width": 900,
+                "height": 1200,
                 "service": [
                   {
                     "id": "#TODO",
@@ -264,7 +264,7 @@
               "id": "https://digirati.com/balenciaga/c3/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c3#3000,3000,1000,1000"
+              "target": "https://digirati.com/balenciaga/c3#300,500,400,400"
             }
           ]
         }
@@ -280,8 +280,8 @@
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
         ]
       },
-      "width": 8000,
-      "height": 4000,
+      "width": 990,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -303,8 +303,8 @@
                 "id": "#TODO - dress organza",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 1600,
-                "height": 800,
+                "width": 990,
+                "height": 1200,
                 "service": [
                   {
                     "id": "#TODO",
@@ -327,7 +327,7 @@
               "id": "https://digirati.com/balenciaga/c3/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c7#100,4000,3000,3000"
+              "target": "https://digirati.com/balenciaga/c7#200,300,400,500"
             }
           ]
         }

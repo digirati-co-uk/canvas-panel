@@ -29,10 +29,28 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow
-              manifesturi="http://localhost:3000/public/balenciaga1.json"
-              slideContentComponent={P3SlideContent}
-            />
+            <SlideShow manifesturi="http://localhost:3000/public/balenciaga1.json">
+              <P3SlideContent />
+            </SlideShow>
+          </div>
+        </section>
+        <section className={bem.element('section')}>
+          <h2 className={bem.element('subtitle')}>Small Inline SlideShow</h2>
+          <p>
+            This example is the most basic version of the slideshow embedded
+            into a webpage.
+          </p>
+          <div
+            style={{
+              width: 1024,
+              height: 768,
+              margin: '0 auto',
+              position: 'relative',
+            }}
+          >
+            <SlideShow manifesturi="http://localhost:3000/public/balenciaga2.json">
+              <P3SlideContent />
+            </SlideShow>
           </div>
         </section>
         <section className={bem.element('section').modifier('full-width')}>
