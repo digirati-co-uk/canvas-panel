@@ -103,7 +103,7 @@
     {
       "id": "https://digirati.com/balenciaga/c1",
       "type": "Canvas",
-      "behavior": ["layout-left", "layout-full-height"],
+      "behavior": ["info-position-left", "layout-split"],
       "label": { "en": ["Balenciaga: Master Craftsman"] },
       "summary": {
         "en": [
@@ -210,7 +210,7 @@
     {
       "id": "https://digirati.com/balenciaga/c3",
       "type": "Canvas",
-      "behavior": ["layout-left", "layout-full-height"],
+      "behavior": ["info-position-left", "layout-split"],
       "label": { "en": ["Spanish colours"] },
       "summary": {
         "en": [
@@ -274,7 +274,7 @@
     {
       "id": "https://digirati.com/balenciaga/c7",
       "type": "Canvas",
-      "behavior": ["layout-left", "layout-overlay"],
+      "behavior": ["info-position-left", "layout-overlay"],
       "summary": {
         "en": [
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
