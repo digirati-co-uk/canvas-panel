@@ -47,8 +47,8 @@
         ]
       }
     },
-    "width": 2000,
-    "height": 6000,
+    "width": 900,
+    "height": 1200,
     "label": { "en": ["Balenciaga: Master Craftsman"] },
     "summary": {
       "en": [
@@ -69,8 +69,8 @@
                 "https://dlc.services/iiif-img/5/15/7f1ef85a-50a7-413a-9303-2ec722608484/full/full/0/default.jpg",
               "type": "Image",
               "format": "image/jpeg",
-              "width": 2000,
-              "height": 6000,
+              "width": 900,
+              "height": 1200,
               "service": [
                 {
                   "id":
@@ -104,8 +104,8 @@
           "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
         ]
       },
-      "width": 6000,
-      "height": 8000,
+      "width": 900,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -128,8 +128,8 @@
                   "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 1200,
-                "height": 1600,
+                "width": 900,
+                "height": 1200,
                 "service": [
                   {
                     "id":
@@ -149,8 +149,8 @@
     {
       "id": "https://digirati.com/balenciaga/c2",
       "type": "Canvas",
-      "width": 4000,
-      "height": 8000,
+      "width": 730,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -173,8 +173,8 @@
                   "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 800,
-                "height": 1600,
+                "width": 730,
+                "height": 1200,
                 "service": [
                   {
                     "id":
@@ -201,8 +201,8 @@
           "Balenciaga was a Spaniard. Many of his most iconic designs show an affinity for Spanish heritage and costume – from the 'chaquetillas' worn by bullfighters to the traditional flamenco dress. A writer from Woman's Journal stated, 'Inspirations from Spain! Balenciaga is young, Spanish and new to Paris. His beautiful clothes have the warm, colourful drama of his country.'"
         ]
       },
-      "width": 4000,
-      "height": 4000,
+      "width": 900,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -225,8 +225,8 @@
                   "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 800,
-                "height": 800,
+                "width": 900,
+                "height": 1200,
                 "service": [
                   {
                     "id":
@@ -252,8 +252,8 @@
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
         ]
       },
-      "width": 8000,
-      "height": 4000,
+      "width": 990,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -276,8 +276,8 @@
                   "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 1600,
-                "height": 800,
+                "width": 990,
+                "height": 1200,
                 "service": [
                   {
                     "id":

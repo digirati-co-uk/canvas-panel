@@ -7,7 +7,12 @@ import {
   CanvasProvider,
   Fullscreen,
   RangeNavigationProvider,
+  functionOrMapChildren,
 } from '@canvas-panel/core';
+
+// import functionOrMapChildren, {
+//   FunctionOrMapChildrenType,
+// } from '../../utility/functionOrMapChildren';
 
 import SimpleSlideTransition from './SimpleSlideTransition';
 import ProgressIndicator from './ProgressIndicator';
@@ -19,10 +24,11 @@ import './SlideShow.scss';
 
 export default class SlideShow extends Component {
   render() {
-    let { manifesturi } = this.props;
+    let { manifesturi, children } = this.props;
+    //console.log(children);
     //TODO: Make This work with the majestic nwb babbel...
-    const SlideContentComponent =
-      this.props.slideContentComponent || DummySlideContent;
+    // const SlideContentComponent =
+    //   this.props.slideContentComponent || DummySlideContent;
     const SlideTransitionComponent =
       this.props.slideTransitionComponent || SimpleSlideTransition;
     return (
@@ -47,12 +53,20 @@ export default class SlideShow extends Component {
                     'slide--odd': currentCanvas % 2 !== 0,
                   });
                   let totalCanvases = canvasList.length;
+                  const newChildren = functionOrMapChildren(children, {
+                    canvas,
+                  });
                   return (
                     <div className="slideshow__inner-frame">
                       <SlideTransitionComponent>
                         <div className={slideClasses}>
                           <SwappableView {...{ manifest, canvas }} />
-                          <SlideContentComponent canvas={canvas} />
+                          {/*children.length ? (
+                            newChildren
+                          ) : (
+                            <DummySlideContent canvas={canvas} />
+                          )*/}
+                          <DummySlideContent canvas={canvas} />
                         </div>
                       </SlideTransitionComponent>
                       {isFullscreen ? (
