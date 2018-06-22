@@ -16,6 +16,35 @@ type CanvasRegion = {
   regions: Array<Region | null>,
 };
 
+function getCanvasId(item): string | null {
+  if (typeof item === 'string') {
+    return item;
+  }
+  if (item.type === 'Canvas') {
+    return item.id;
+  }
+  if (item.type === 'SpecificResource') {
+    return typeof item.source === 'string' ? item.source : item.source.id;
+  }
+  return null;
+}
+
+function getSelector(item, canvasId) {
+  const selector = parseSelectorTarget(canvasId);
+  if (selector && selector !== canvasId) {
+    return selector;
+  }
+  if (item.selector) {
+    const selectorValue = item.selector.value || item.selector;
+    const itemSelector = parseSelectorTarget(`#${selectorValue}`);
+
+    if (itemSelector !== selectorValue) {
+      return itemSelector;
+    }
+  }
+  return null;
+}
+
 export default function extractCanvasAndRegionsFromRange(
   range: Manifesto.Range
 ): CanvasRegion {
@@ -29,35 +58,6 @@ export default function extractCanvasAndRegionsFromRange(
       canvases: manifestoCanvasIds,
       regions: [],
     };
-  }
-
-  function getCanvasId(item): string | null {
-    if (typeof item === 'string') {
-      return item;
-    }
-    if (item.type === 'Canvas') {
-      return item.id;
-    }
-    if (item.type === 'SpecificResource') {
-      return typeof item.source === 'string' ? item.source : item.source.id;
-    }
-    return null;
-  }
-
-  function getSelector(item, canvasId) {
-    const selector = parseSelectorTarget(canvasId);
-    if (selector && selector !== canvasId) {
-      return selector;
-    }
-    if (item.selector) {
-      const selectorValue = item.selector.value || item.selector;
-      const itemSelector = parseSelectorTarget(`#${selectorValue}`);
-
-      if (itemSelector !== selectorValue) {
-        return itemSelector;
-      }
-    }
-    return null;
   }
 
   return range.__jsonld.items.reduce(
