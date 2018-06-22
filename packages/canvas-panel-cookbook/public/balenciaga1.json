@@ -6,14 +6,10 @@
   ],
   "id": "https://digirati.com/balenciaga1.json",
   "type": "Manifest",
-  "label": {
-    "en": ["Balenciaga: Master Craftsman"]
-  },
+  "label": { "en": ["Balenciaga: Master Craftsman"] },
   "metadata": [
     {
-      "label": {
-        "en": ["Comment"]
-      },
+      "label": { "en": ["Comment"] },
       "value": {
         "@none": [
           "Simplest version: no ranges, just labels and description/summary on canvases, with a viewing hint for layout (left, right, overlay)"
@@ -44,9 +40,7 @@
   "posterCanvas": {
     "id": "https://digirati.com/balenciaga/poster",
     "requiredStatement": {
-      "label": {
-        "en": [""]
-      },
+      "label": { "en": [""] },
       "value": {
         "en": [
           "<a href=\"#\" title=\"Evening outfit\">Evening outfit</a> (1967)<br/><a href=\"#\">by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
@@ -55,9 +49,7 @@
     },
     "width": 2000,
     "height": 6000,
-    "label": {
-      "en": ["Balenciaga: Master Craftsman"]
-    },
+    "label": { "en": ["Balenciaga: Master Craftsman"] },
     "summary": {
       "en": [
         "Known as 'The Master' of haute couture, Cristóbal Balenciaga revolutionised the female silhouette"
@@ -98,19 +90,15 @@
   "homepage": {
     "id": "#TODO - this can link to the page on V&A for the narrative viewer",
     "type": "Text",
-    "label": {
-      "en": ["Home page Balenciaga"]
-    },
+    "label": { "en": ["Home page Balenciaga"] },
     "format": "text/html"
   },
   "items": [
     {
       "id": "https://digirati.com/balenciaga/c1",
       "type": "Canvas",
-      "behavior": ["layout-left", "layout-full-height"],
-      "label": {
-        "en": ["Balenciaga: Master Craftsman"]
-      },
+      "behavior": ["info-position-left", "layout-split"],
+      "label": { "en": ["Balenciaga: Master Craftsman"] },
       "summary": {
         "en": [
           "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
@@ -119,9 +107,7 @@
       "width": 6000,
       "height": 8000,
       "requiredStatement": {
-        "label": {
-          "en": [""]
-        },
+        "label": { "en": [""] },
         "value": {
           "en": [
             "<a href=\"#\" title=\"Evening dress\">Evening dress</a> (1960 - 1962)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
@@ -159,15 +145,14 @@
         }
       ]
     },
+
     {
       "id": "https://digirati.com/balenciaga/c2",
       "type": "Canvas",
       "width": 4000,
       "height": 8000,
       "requiredStatement": {
-        "label": {
-          "en": [""]
-        },
+        "label": { "en": [""] },
         "value": {
           "en": [
             "<a href=\"#\" title=\"Hitchcock Directing\">Hitchcock Directing</a> (1951)<br/><a href=\"#\" >by Gjon Mili</a><br/>LIFE Photo Collection"
@@ -205,13 +190,12 @@
         }
       ]
     },
+
     {
       "id": "https://digirati.com/balenciaga/c3",
       "type": "Canvas",
-      "behavior": ["layout-left", "layout-full-height"],
-      "label": {
-        "en": ["Spanish colours"]
-      },
+      "behavior": ["info-position-left", "layout-split"],
+      "label": { "en": ["Spanish colours"] },
       "summary": {
         "en": [
           "Balenciaga was a Spaniard. Many of his most iconic designs show an affinity for Spanish heritage and costume – from the 'chaquetillas' worn by bullfighters to the traditional flamenco dress. A writer from Woman's Journal stated, 'Inspirations from Spain! Balenciaga is young, Spanish and new to Paris. His beautiful clothes have the warm, colourful drama of his country.'"
@@ -220,9 +204,7 @@
       "width": 4000,
       "height": 4000,
       "requiredStatement": {
-        "label": {
-          "en": [""]
-        },
+        "label": { "en": [""] },
         "value": {
           "en": [
             "<a href=\"#\" title=\"Gazar evening dress, Cristóbal Balenciaga\">Gazar evening dress, Cristóbal Balenciaga</a> (1962)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
@@ -260,10 +242,11 @@
         }
       ]
     },
+
     {
       "id": "https://digirati.com/balenciaga/c7",
       "type": "Canvas",
-      "behavior": ["layout-left", "layout-overlay"],
+      "behavior": ["info-position-left", "layout-overlay"],
       "summary": {
         "en": [
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
@@ -272,9 +255,7 @@
       "width": 8000,
       "height": 4000,
       "requiredStatement": {
-        "label": {
-          "en": [""]
-        },
+        "label": { "en": [""] },
         "value": {
           "en": [
             "<a href=\"#\" title=\"Evening dress, embroidered silk organza\">Evening dress, embroidered silk organza</a> (1960)<br/><a href=\"#\" >by Cristóbal Balenciaga</a><br/>The Victoria and Albert Museum"
