@@ -19,9 +19,13 @@ const DummySlideContent = props => {
     ));
   return (
     <div className={containerCls}>
-      <h2 className="slide__title">{label}</h2>
-      {descriptionLines}
-      <p className="slide__text">{requiredStatement}</p>
+      <div className={containerCls + '-content'}>
+        <h2 className="slide__title">{label}</h2>
+        {descriptionLines}
+      </div>
+      <div className={containerCls + '-floating'}>
+        <p className="slide__required-statement">{requiredStatement}</p>
+      </div>
     </div>
   );
 };

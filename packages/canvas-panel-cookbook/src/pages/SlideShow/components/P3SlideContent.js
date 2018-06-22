@@ -21,23 +21,33 @@ const P3SlideContent = props => {
   const { canvas } = props;
   const { requiredStatement, summary } = canvas.__jsonld;
   const containerCls = 'slide__overlay';
+  const label = canvas.getLabel();
+  console.log(label);
   return (
     <div className={containerCls}>
-      <h2 className="slide__title">
-        <LocaleString>{canvas.getLabel()}</LocaleString>
-      </h2>
-      <p
-        className="slide__text"
-        dangerouslySetInnerHTML={{
-          __html: getLocaleHack(summary),
-        }}
-      />
-      <p
-        className="slide__text"
-        dangerouslySetInnerHTML={{
-          __html: getLocaleHack(requiredStatement.value),
-        }}
-      />
+      <div className={containerCls + '-content'}>
+        {label.length ? (
+          <h2 className="slide__title">
+            <LocaleString>{label}</LocaleString>
+          </h2>
+        ) : (
+          ''
+        )}
+        <p
+          className="slide__text"
+          dangerouslySetInnerHTML={{
+            __html: getLocaleHack(summary),
+          }}
+        />
+      </div>
+      <div className={containerCls + '-floating'}>
+        <p
+          className="slide__required-statement"
+          dangerouslySetInnerHTML={{
+            __html: getLocaleHack(requiredStatement.value),
+          }}
+        />
+      </div>
     </div>
   );
 };

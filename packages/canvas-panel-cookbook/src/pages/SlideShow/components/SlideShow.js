@@ -27,10 +27,8 @@ export default class SlideShow extends Component {
     let { manifesturi, children } = this.props;
     //console.log(children);
     //TODO: Make This work with the majestic nwb babbel...
-    // const SlideContentComponent =
-    //   this.props.slideContentComponent || DummySlideContent;
-    const SlideTransitionComponent =
-      this.props.slideTransitionComponent || SimpleSlideTransition;
+    // const SlideTransitionComponent =
+    //   this.props.slideTransitionComponent || SimpleSlideTransition;
     return (
       <div className="slideshow">
         <Fullscreen>
@@ -46,29 +44,25 @@ export default class SlideShow extends Component {
                   nextRange,
                 }) => {
                   let currentCanvas = currentIndex;
-                  var slideClasses = classNames('slide', {
-                    'slide--cover': currentCanvas === 0,
-                    'slide--even':
-                      currentCanvas !== 0 && currentCanvas % 2 === 0,
-                    'slide--odd': currentCanvas % 2 !== 0,
-                  });
+                  var slideClasses = classNames.apply(
+                    null,
+                    ['slide'].concat(
+                      (canvas.__jsonld.behavior || []).map(
+                        behaviour => `slide--${behaviour}`
+                      )
+                    )
+                  );
                   let totalCanvases = canvasList.length;
-                  const newChildren = functionOrMapChildren(children, {
-                    canvas,
-                  });
                   return (
                     <div className="slideshow__inner-frame">
-                      <SlideTransitionComponent>
+                      <SimpleSlideTransition>
                         <div className={slideClasses}>
                           <SwappableView {...{ manifest, canvas }} />
-                          {/*children.length ? (
-                            newChildren
-                          ) : (
-                            <DummySlideContent canvas={canvas} />
-                          )*/}
-                          <DummySlideContent canvas={canvas} />
+                          {functionOrMapChildren(children, {
+                            canvas: canvas,
+                          })}
                         </div>
-                      </SlideTransitionComponent>
+                      </SimpleSlideTransition>
                       {isFullscreen ? (
                         <button
                           onClick={exitFullscreen}

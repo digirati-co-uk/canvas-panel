@@ -5,6 +5,7 @@ import SlideShow from './components/SlideShow';
 import SlideShowConfigurator from './components/SlideShowConfigurator';
 import P2SlideContent from './components/P2SlideContent';
 import P3SlideContent from './components/P3SlideContent';
+import DummySlideContent from './components/DummySlideContent';
 import ExperimentalSlideTransition from './components/ExperimentalSlideTransition';
 
 import './SlideShowDemo.scss';
@@ -29,7 +30,7 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="http://localhost:3000/public/balenciaga1.json">
+            <SlideShow manifesturi="http://localhost:3000/public/balenciaga1-behaviors.json">
               <P3SlideContent />
             </SlideShow>
           </div>
@@ -63,7 +64,9 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json" />
+            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json">
+              <DummySlideContent />
+            </SlideShow>
           </div>
         </section>
         {/*<section className={bem.element('section')}>
