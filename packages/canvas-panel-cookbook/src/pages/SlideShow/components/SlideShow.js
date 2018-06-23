@@ -10,10 +10,6 @@ import {
   functionOrMapChildren,
 } from '@canvas-panel/core';
 
-// import functionOrMapChildren, {
-//   FunctionOrMapChildrenType,
-// } from '../../utility/functionOrMapChildren';
-
 import SimpleSlideTransition from './SimpleSlideTransition';
 import ProgressIndicator from './ProgressIndicator';
 import DummySlideContent from './DummySlideContent';
