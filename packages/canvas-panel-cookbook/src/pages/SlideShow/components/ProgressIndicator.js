@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import './ProgressIndicator.scss';
 
-const ProgressIndicatorBase = props => {
-  const { currentCanvas, totalCanvases, bem } = props;
+const ProgressIndicator = props => {
+  const { currentCanvas, totalCanvases } = props;
   const progressPrecent = (currentCanvas / (totalCanvases - 1)) * 100;
   return (
-    <div className={bem}>
-      <div className={bem.element('track')}>
+    <div className="progress-indicator">
+      <div className="progress-indicator__track">
         <div
-          className={bem.element('value')}
+          className="progress-indicator__value"
           style={{
             width: `${progressPrecent}%`,
           }}
@@ -18,9 +18,5 @@ const ProgressIndicatorBase = props => {
     </div>
   );
 };
-
-const ProgressIndicator = withBemClass('progress-indicator')(
-  ProgressIndicatorBase
-);
 
 export default ProgressIndicator;

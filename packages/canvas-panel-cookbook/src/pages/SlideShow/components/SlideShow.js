@@ -21,7 +21,6 @@ import './SlideShow.scss';
 export default class SlideShow extends Component {
   render() {
     let { manifesturi, children } = this.props;
-    //console.log(children);
     //TODO: Make This work with the majestic nwb babbel...
     // const SlideTransitionComponent =
     //   this.props.slideTransitionComponent || SimpleSlideTransition;
