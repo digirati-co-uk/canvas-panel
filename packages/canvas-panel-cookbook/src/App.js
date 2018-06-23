@@ -82,7 +82,7 @@ const exampleList = [
     label: 'V&A Slide Show',
     link: '/examples/slide-show',
     image:
-      'https://vanda-production-assets.s3.amazonaws.com/2018/03/14/12/54/22/445782b9-4b20-405b-9f99-54f15974aeb0/ocean-liners-conference-rescheduled_960.jpg',
+      'https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg',
   },
 ];
 
