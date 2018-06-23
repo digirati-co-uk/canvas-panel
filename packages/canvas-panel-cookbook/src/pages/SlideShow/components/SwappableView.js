@@ -11,6 +11,10 @@ import {
 
 import './SwappableView.scss';
 
+const StaticSlideViewportBounds = props => (
+  <div className="slide-cover">{props.children}</div>
+);
+
 class SwappableView extends Component {
   state = {
     isInteractive: false,
@@ -70,13 +74,13 @@ class SwappableView extends Component {
               />
             </FullPageViewport>
           ) : (
-            <div className="slide-cover">
+            <StaticSlideViewportBounds>
               <StaticImageViewport
                 draggable={false}
-                viewportController={true}
+                viewportController={false}
                 canvas={canvas}
               />
-            </div>
+            </StaticSlideViewportBounds>
           )}
         </SingleTileSource>
         {isInteractive ? (

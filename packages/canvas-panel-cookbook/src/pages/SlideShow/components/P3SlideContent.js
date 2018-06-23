@@ -22,7 +22,6 @@ const P3SlideContent = props => {
   const { requiredStatement, summary } = canvas.__jsonld;
   const containerCls = 'slide__overlay';
   const label = canvas.getLabel();
-  console.log(label);
   return (
     <div className={containerCls}>
       <div className={containerCls + '-content'}>
