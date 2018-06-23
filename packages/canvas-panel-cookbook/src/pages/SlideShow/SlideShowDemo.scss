@@ -71,7 +71,12 @@ $mobile: 425px;
     }
   }
   &__section {
-    padding: 3em 0 9em;
+    @include tablet-up {
+      padding: 3em 0 6em;
+    }
+    @include tablet-down {
+      padding: 3em 0;
+    }
     background: white;
     font-family: 'Source Sans Pro', Sans-Serif;
     & > p {
