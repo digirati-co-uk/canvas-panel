@@ -2,52 +2,68 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro');
 @import url('https://use.fontawesome.com/releases/v5.0.13/css/solid.css');
 
+// breakpoints
+$tablet: 768px;
+$desktop: 1000px; //1280px;
+$mobile: 425px;
+
+@import 'SlideShowDemo.mediaqueries';
+
 .slideshow-demo {
   background: antiquewhite;
   &__title {
-    max-width: 1024px;
-    margin: 0 auto;
+    @include desktop {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 90px 110px 30px;
+    }
+    @include desktop-down {
+      margin: 0;
+      padding: 1em 16px 0em;
+    }
     font-size: 2.8em;
     line-height: 1.5em;
     font-family: 'Playfair Display', Serif;
     letter-spacing: -3px;
     background: white;
-    padding: 90px 110px 30px;
   }
   &__subtitle {
-    max-width: 1024px;
-    margin: 0 auto 0;
+    @include desktop {
+      max-width: 1024px;
+      padding: 0 110px;
+    }
+    @include desktop-down {
+      padding-left: 16px;
+    }
+    margin: 0 auto 1.5em;
     font-size: 1.8em;
     line-height: 1.5em;
 
     font-family: 'Playfair Display', Serif;
     letter-spacing: 5px;
-    padding: 0 110px;
+
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     position: relative;
     top: 0;
-    margin-bottom: 1.5em;
+    //margin-bottom: 1.5em;
     background: white;
     text-transform: uppercase;
-    &:before {
-      position: absolute;
-      top: -1.5em;
-      height: 1.5em;
-      left: 0;
-      right: 0;
-      background: white;
-      transform: translate(0, -1px);
-      content: ' ';
-    }
+    &:before,
     &:after {
       position: absolute;
-      top: 1.5em;
       height: 1.5em;
       left: 0;
       right: 0;
       background: white;
       content: ' ';
+    }
+    &:before {
+      top: -1.5em;
+      transform: translate(0, -1px);
+    }
+    &:after {
+      bottom: -1.5em;
       transform: translate(0, 1px);
     }
   }
@@ -56,7 +72,12 @@
     background: white;
     font-family: 'Source Sans Pro', Sans-Serif;
     & > p {
-      max-width: 800px;
+      @include desktop {
+        max-width: 800px;
+      }
+      @include desktop-down {
+        padding: 0 16px;
+      }
       margin: 1.4em auto 1.4em;
       font-size: 1.4em;
     }
@@ -64,17 +85,56 @@
     &:after {
       clear: both;
     }
-    max-width: 1024px;
+    @include desktop {
+      max-width: 1024px;
+    }
     margin: 0 auto;
     &--full-width {
       padding: 0;
-      max-width: max-content;
+      //max-width: max-content;
+      max-width: 100vw;
       background: transparent;
       & > p {
-        max-width: 1024px;
+        @include desktop {
+          max-width: 1024px;
+          padding: 1.4em 110px;
+        }
+        @include desktop-down {
+          padding: 0 16px 1.4em;
+        }
         margin: 1.4em auto 0;
-        padding: 1.4em 110px;
       }
+    }
+  }
+  &__inline-container {
+    @include desktop {
+      width: 1024px;
+    }
+    @include tablet-up {
+      height: 0;
+      padding: 0 0 75%;
+      .slideshow {
+        position: absolute;
+      }
+    }
+    @include tablet-down {
+      width: 100vw;
+      height: calc(100vh - 40px);
+      .slideshow {
+        position: relative;
+      }
+    }
+
+    margin: 0 auto;
+    position: relative;
+  }
+  &__full-with-container {
+    width: 100vw;
+    height: calc(100vh - 40px);
+    margin: 0 auto;
+    position: relative;
+    .slideshow {
+      position: relative;
     }
   }
 }

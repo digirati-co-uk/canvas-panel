@@ -25,14 +25,7 @@ class SlideShowDemoBase extends Component {
             embedded into a webpage. It also demonstrates the all possible slide
             layouts using behaviours.
           </p>
-          <div
-            style={{
-              width: 1024,
-              height: 768,
-              margin: '0 auto',
-              position: 'relative',
-            }}
-          >
+          <div className={bem.element('inline-container')}>
             <SlideShow
               manifesturi={currentDomain + '/public/balenciaga1-behaviors.json'}
             >
@@ -53,14 +46,7 @@ class SlideShowDemoBase extends Component {
               the older version
             </a>&nbsp;of the viewer using a IIIF Presentation 3 manifest.
           </p>
-          <div
-            style={{
-              width: 1024,
-              height: 768,
-              margin: '0 auto',
-              position: 'relative',
-            }}
-          >
+          <div className={bem.element('inline-container')}>
             <SlideShow manifesturi={currentDomain + '/public/balenciaga2.json'}>
               <P3SlideContent />
             </SlideShow>
@@ -72,14 +58,7 @@ class SlideShowDemoBase extends Component {
             It demonstrates the responsive behaviors and
             IIIF&nbsp;Presentation&nbsp;2.1 backwards compatibility.
           </p>
-          <div
-            style={{
-              width: '100vw',
-              height: 'calc(100vh - 40px)',
-              margin: '0 auto',
-              position: 'relative',
-            }}
-          >
+          <div className={bem.element('full-width-container')}>
             <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json" />
           </div>
         </section>
