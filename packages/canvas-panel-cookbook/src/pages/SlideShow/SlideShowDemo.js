@@ -3,15 +3,17 @@ import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import SlideShow from './components/SlideShow';
 import SlideShowConfigurator from './components/SlideShowConfigurator';
+//import ExperimentalSlideTransition from './components/ExperimentalSlideTransition';
+import LayoutDebugSlideContent from './components/LayoutDebugSlideContent';
 import P2SlideContent from './components/P2SlideContent';
 import P3SlideContent from './components/P3SlideContent';
 import DummySlideContent from './components/DummySlideContent';
-import ExperimentalSlideTransition from './components/ExperimentalSlideTransition';
 
 import './SlideShowDemo.scss';
 
 class SlideShowDemoBase extends Component {
   render() {
+    const currentDomain = window.location.origin;
     let { bem } = this.props;
     return (
       <article className={bem}>
@@ -19,8 +21,9 @@ class SlideShowDemoBase extends Component {
         <section className={bem.element('section')}>
           <h2 className={bem.element('subtitle')}>Small Inline SlideShow</h2>
           <p>
-            This example is the most basic version of the slideshow embedded
-            into a webpage.
+            The first example is the most basic version of the slideshow
+            embedded into a webpage. It also demonstrates the all possible slide
+            layouts using behaviours.
           </p>
           <div
             style={{
@@ -30,16 +33,25 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="http://localhost:3000/public/balenciaga1-behaviors.json">
-              <P3SlideContent />
+            <SlideShow
+              manifesturi={currentDomain + '/public/balenciaga1-behaviors.json'}
+            >
+              <LayoutDebugSlideContent />
             </SlideShow>
           </div>
         </section>
         <section className={bem.element('section')}>
-          <h2 className={bem.element('subtitle')}>Small Inline SlideShow</h2>
+          <h2 className={bem.element('subtitle')}>
+            V&amp;A Museum - Balenciaga Collection
+          </h2>
           <p>
-            This example is the most basic version of the slideshow embedded
-            into a webpage.
+            The example aims to replicate&nbsp;
+            <a
+              href="https://artsandculture.google.com/exhibit/-wIivb9hDv4rJQ"
+              target="_blank"
+            >
+              the older version
+            </a>&nbsp;of the viewer using a IIIF Presentation 3 manifest.
           </p>
           <div
             style={{
@@ -49,13 +61,17 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="http://localhost:3000/public/balenciaga2.json">
+            <SlideShow manifesturi={currentDomain + '/public/balenciaga2.json'}>
               <P3SlideContent />
             </SlideShow>
           </div>
         </section>
         <section className={bem.element('section').modifier('full-width')}>
-          <h2 className={bem.element('subtitle')}>Full with SlideShow</h2>
+          <h2 className={bem.element('subtitle')}>Full width SlideShow</h2>
+          <p style={{ background: 'white' }}>
+            It demonstrates the responsive behaviors and
+            IIIF&nbsp;Presentation&nbsp;2.1 backwards compatibility.
+          </p>
           <div
             style={{
               width: '100vw',
@@ -64,9 +80,7 @@ class SlideShowDemoBase extends Component {
               position: 'relative',
             }}
           >
-            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json">
-              <DummySlideContent />
-            </SlideShow>
+            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json" />
           </div>
         </section>
         {/*<section className={bem.element('section')}>
