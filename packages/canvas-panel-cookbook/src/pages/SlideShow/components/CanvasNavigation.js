@@ -18,14 +18,26 @@ class CanvasNavigation extends Component {
     return (
       <div className={bem}>
         {isFirstPage ? (
-          <button className={bem.element('previous')} onClick={previousRange}>
+          <button
+            className={bem.element('previous')}
+            onClick={ev => {
+              ev.preventDefault();
+              previousRange();
+            }}
+          >
             Prev
           </button>
         ) : (
           ''
         )}
         {isLastPage ? (
-          <button className={bem.element('next')} onClick={nextRange}>
+          <button
+            className={bem.element('next')}
+            onClick={ev => {
+              ev.preventDefault();
+              nextRange();
+            }}
+          >
             Next
           </button>
         ) : (
