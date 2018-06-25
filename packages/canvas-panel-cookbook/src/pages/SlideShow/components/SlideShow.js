@@ -11,6 +11,7 @@ import {
 } from '@canvas-panel/core';
 
 import SimpleSlideTransition from './SimpleSlideTransition';
+import ExperimentalSlideTransition from './ExperimentalSlideTransition';
 import ProgressIndicator from './ProgressIndicator';
 import DummySlideContent from './DummySlideContent';
 import SwappableView from './SwappableView';
