@@ -249,6 +249,7 @@
                 "height": 800,
                 "service": [
                   {
+
                     "id":
                       "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415",
                     "type": "ImageService2",
