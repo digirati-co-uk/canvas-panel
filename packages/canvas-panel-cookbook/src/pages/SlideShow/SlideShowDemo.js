@@ -26,9 +26,7 @@ class SlideShowDemoBase extends Component {
             layouts using behaviours.
           </p>
           <div className={bem.element('inline-container')}>
-            <SlideShow
-              manifesturi={currentDomain + '/public/balenciaga1-behaviors.json'}
-            >
+            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga1-behaviors.json">
               <LayoutDebugSlideContent />
             </SlideShow>
           </div>
@@ -47,7 +45,7 @@ class SlideShowDemoBase extends Component {
             </a>&nbsp;of the viewer using a IIIF Presentation 3 manifest.
           </p>
           <div className={bem.element('inline-container')}>
-            <SlideShow manifesturi={currentDomain + '/public/balenciaga2.json'}>
+            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga2.json">
               <P3SlideContent />
             </SlideShow>
           </div>
@@ -79,20 +77,11 @@ class SlideShowDemoBase extends Component {
           </div>
         </section>*/}
         {/*<section className={bem.element('section').modifier('full-width')}>
-          <h2 className={bem.element('subtitle')}>Configure Your Own</h2>
-          <div
-            style={{
-              width: '100vw',
-              height: 'calc(100vh - 40px)',
-              margin: '0 auto',
-              position: 'relative',
-            }}
-          >
-            <SlideShowConfigurator>
-              <SlideShow manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest" />
-            </SlideShowConfigurator>
-          </div>
-          </section>*/}
+          <h2 className={bem.element('subtitle')}>
+            Test it with your manifest
+          </h2>
+          <SlideShowConfigurator />
+      </section>*/}
       </article>
     );
   }
