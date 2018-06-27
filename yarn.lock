@@ -9145,9 +9145,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-ace@6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-6.1.1.tgz#c8339b4f0a27401bff53f477f125d3d7eac2a090"
+react-ace@6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-6.1.2.tgz#e14b1fee2c39a27bbd44837d43d4189fd6c1a2e0"
   dependencies:
     brace "^0.11.0"
     diff-match-patch "^1.0.0"
