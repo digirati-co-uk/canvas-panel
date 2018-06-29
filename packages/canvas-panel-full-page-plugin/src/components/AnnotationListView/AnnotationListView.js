@@ -85,6 +85,7 @@ class AnnotationListView extends Component {
 
     return (annotations || []).map(({ annotation, on }, key) => (
       <PagePanel
+        position="bottom"
         disabled={disabled}
         key={key}
         onNext={

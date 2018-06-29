@@ -126,6 +126,14 @@ class Viewer extends Component {
                 >
                   {title ? <h1>{title}</h1> : null}
                   {children}
+                  <button
+                    className={bem.element('start-button')}
+                    onClick={() =>
+                      (this.container.scrollTop = window.innerHeight - 10)
+                    }
+                  >
+                    Start tour
+                  </button>
                 </TitlePanel>
                 <AnnotationListProvider>
                   <AnnotationProvider>
