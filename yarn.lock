@@ -9253,6 +9253,10 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
+react-lifecycles-compat@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
 react-measure@2.0.2, react-measure@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.0.2.tgz#072a9a5fafc01dfbadc1fa5fb09fc351037f636c"
@@ -9302,9 +9306,9 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-styleguidist@7.0.19:
-  version "7.0.19"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.19.tgz#e1eb63d608379a6e7372969b8bbbe1b242794bab"
+react-styleguidist@7.0.20:
+  version "7.0.20"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.0.20.tgz#b221b108e85bcd4c0852059dfbf4da2e3673732d"
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.5.3"
@@ -9355,6 +9359,7 @@ react-styleguidist@7.0.19:
     react-docgen-displayname-handler "^1.0.1"
     react-group "^1.0.5"
     react-icons "^2.2.7"
+    react-lifecycles-compat "^3.0.4"
     remark "^9.0.0"
     style-loader "^0.20.3"
     to-ast "^1.0.0"
