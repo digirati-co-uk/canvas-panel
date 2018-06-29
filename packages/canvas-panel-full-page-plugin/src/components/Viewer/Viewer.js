@@ -24,6 +24,7 @@ class Viewer extends Component {
     title: null,
     children: null,
     zoomOutSpeed: 0.5,
+    annotationPosition: 'top',
   };
 
   container = React.createRef();
@@ -138,6 +139,7 @@ class Viewer extends Component {
                 <AnnotationListProvider>
                   <AnnotationProvider>
                     <AnnotationListView
+                      annotationPosition={this.props.annotationPosition}
                       setUpdater={this.setUpdater}
                       offset={1}
                       viewport={this.state.viewport}
