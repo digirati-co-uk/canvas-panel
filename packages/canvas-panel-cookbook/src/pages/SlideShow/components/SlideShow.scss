@@ -16,9 +16,9 @@
   height: 100%;
   position: relative;
   background: black;
-  img {
-    object-fit: cover;
-  }
+  // img {
+  //   object-fit: cover;
+  // }
   &__viewport {
     position: absolute;
     top: 0;
@@ -219,8 +219,12 @@
 
 .fullscreen-btn {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 14px;
+  right: 12px;
+  @media screen and (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
   z-index: 1000;
   background: transparent;
   color: transparent;
@@ -228,6 +232,7 @@
   width: 24px;
   height: 24px;
   outline: 0;
+
   &:before {
     font-family: 'Font Awesome\ 5 Free';
     color: #e36049;
@@ -255,6 +260,9 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+      &.cover {
+        object-fit: cover;
+      }
     }
   }
 }
