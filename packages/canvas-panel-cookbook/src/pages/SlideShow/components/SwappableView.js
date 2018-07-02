@@ -59,6 +59,7 @@ class SwappableView extends Component {
     super(props);
     this.setViewportToStatic = this.setViewportToStatic.bind(this);
     this.setViewportToInteractive = this.setViewportToInteractive.bind(this);
+    this.setViewport = this.setViewport.bind(this);
   }
   static propTypes = {
     exitInteractiveModeButtonLabel: PropTypes.string,
@@ -84,6 +85,30 @@ class SwappableView extends Component {
     });
   }
 
+  setViewport(viewport) {
+    this.setState({ viewport });
+  }
+
+  getEmbededAnnotations(canvas) {
+    if (canvas.__jsonld.annotations) {
+      let annotations = [];
+      canvas.__jsonld.annotations.forEach(item => {
+        if (item.type === 'AnnotationPage' && item.hasOwnProperty('items')) {
+          item.items.forEach(annotation => {
+            if (annotation.type === 'Annotation') {
+              annotations.push(annotation);
+            }
+          });
+        } else if (item.type === 'Annotation') {
+          annotations.push(item);
+        }
+      });
+      return annotations;
+    } else {
+      return [];
+    }
+  }
+
   render() {
     let { isInteractive } = this.state;
     let {
@@ -94,10 +119,30 @@ class SwappableView extends Component {
     } = this.props;
     const cls = 'slide__viewport';
     const classes = [cls, isInteractive ? cls + '--interactive' : ''].join(' ');
+    const viewportFocuses = this.getEmbededAnnotations(canvas).filter(
+      annotation => annotation.motivation === 'layout-viewport-focus'
+    );
+    if (viewportFocuses.length > 0) {
+      // we only care about the first for now
+      let viewportFocus = viewportFocuses[0];
+      let position = viewportFocus.target.split('#')[1];
+      let [_left, _top, _width, _height] = position
+        .split(',')
+        .map(i => parseInt(i, 10));
+      if (this.state.viewport) {
+        this.state.viewport.goToRect({
+          x: _left,
+          y: _top,
+          width: _width,
+          height: _height,
+        });
+      }
+    }
+
     return (
       <div className={classes}>
         <SingleTileSource {...{ manifest, canvas }}>
-          {isInteractive ? (
+          {/*isInteractive ? (
             <FullPageViewport position="absolute" interactive={true}>
               <OpenSeadragonViewport
                 useMaxDimensions={true}
@@ -116,7 +161,22 @@ class SwappableView extends Component {
                 canvas={canvas}
               />
             </StaticSlideViewportBounds>
-          )}
+          )*/}
+          <FullPageViewport
+            setRef={this.setViewport}
+            position="absolute"
+            interactive={isInteractive}
+          >
+            <OpenSeadragonViewport
+              useMaxDimensions={true}
+              osdOptions={{
+                visibilityRatio: 1,
+                constrainDuringPan: true,
+                showNavigator: false,
+                immediateRender: true,
+              }}
+            />
+          </FullPageViewport>
         </SingleTileSource>
         {isInteractive ? (
           <button
