@@ -59,7 +59,7 @@
     left: 20px;
     right: auto;
     max-width: 35%;
-    //display: inline-block;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
   }
 
   &--layout-split {
@@ -73,7 +73,7 @@
         height: 100%;
         position: relative;
         display: inline-block;
-        padding: 40px 60px;
+        padding: 23px 60px;
       }
       .slide__viewport {
       }
@@ -149,6 +149,7 @@
         max-width: 40%;
         padding: 20px;
         margin: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       }
       &.slide--info-position-left {
         .slide__overlay {
