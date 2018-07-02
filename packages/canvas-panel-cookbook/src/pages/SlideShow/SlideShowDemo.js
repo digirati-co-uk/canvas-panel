@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 
 import { withBemClass } from '@canvas-panel/core';
 import SlideShow from './components/SlideShow';
-import SlideShowConfigurator from './components/SlideShowConfigurator';
-//import ExperimentalSlideTransition from './components/ExperimentalSlideTransition';
+//import SlideShowConfigurator from './components/SlideShowConfigurator';
 import LayoutDebugSlideContent from './components/LayoutDebugSlideContent';
-import P2SlideContent from './components/P2SlideContent';
 import P3SlideContent from './components/P3SlideContent';
-import DummySlideContent from './components/DummySlideContent';
 
 import './SlideShowDemo.scss';
 
 class SlideShowDemoBase extends Component {
   render() {
-    const currentDomain = window.location.origin;
     let { bem } = this.props;
     return (
       <article className={bem}>
@@ -22,13 +18,11 @@ class SlideShowDemoBase extends Component {
           <h2 className={bem.element('subtitle')}>Small Inline SlideShow</h2>
           <p>
             The first example is the most basic version of the slideshow
-            embedded into a webpage. It also demonstrates the all possible slide
-            layouts using behaviours.
+            embedded into a webpage. IIIF&nbsp;Presentation&nbsp;2.1 backwards
+            compatibility.
           </p>
           <div className={bem.element('inline-container')}>
-            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga1-behaviors.json">
-              <LayoutDebugSlideContent />
-            </SlideShow>
+            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json" />
           </div>
         </section>
         <section className={bem.element('section')}>
@@ -53,29 +47,15 @@ class SlideShowDemoBase extends Component {
         <section className={bem.element('section').modifier('full-width')}>
           <h2 className={bem.element('subtitle')}>Full width SlideShow</h2>
           <p style={{ background: 'white' }}>
-            It demonstrates the responsive behaviors and
-            IIIF&nbsp;Presentation&nbsp;2.1 backwards compatibility.
+            It demonstrates the responsive behaviors and the all possible slide
+            layouts using behaviours.
           </p>
           <div className={bem.element('full-width-container')}>
-            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json" />
+            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga1-behaviors.json">
+              <LayoutDebugSlideContent />
+            </SlideShow>
           </div>
         </section>
-        {/*<section className={bem.element('section')}>
-          <h2 className={bem.element('subtitle')}>Custom Styles</h2>
-          <div
-            style={{
-              width: 1024,
-              height: 768,
-              margin: '0 auto',
-              position: 'relative',
-            }}
-          >
-            <SlideShow
-              manifesturi="https://wellcomelibrary.org/iiif/b18934717/manifest"
-              slideTransitionComponent={ExperimentalSlideTransition}
-            />
-          </div>
-        </section>*/}
         {/*<section className={bem.element('section').modifier('full-width')}>
           <h2 className={bem.element('subtitle')}>
             Test it with your manifest
