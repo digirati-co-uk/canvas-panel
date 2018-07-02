@@ -59,20 +59,24 @@ export default class SlideShow extends Component {
                           })}
                         </div>
                       </SimpleSlideTransition>
-                      {isFullscreen ? (
-                        <button
-                          onClick={exitFullscreen}
-                          className="fullscreen-btn fullscreen-btn--off"
-                        >
-                          Exit fullscreen
-                        </button>
+                      {document.body.requestFullscreen ? (
+                        isFullscreen ? (
+                          <button
+                            onClick={exitFullscreen}
+                            className="fullscreen-btn fullscreen-btn--off"
+                          >
+                            Exit fullscreen
+                          </button>
+                        ) : (
+                          <button
+                            onClick={goFullscreen}
+                            className="fullscreen-btn fullscreen-btn--on"
+                          >
+                            Fullscreen
+                          </button>
+                        )
                       ) : (
-                        <button
-                          onClick={goFullscreen}
-                          className="fullscreen-btn fullscreen-btn--on"
-                        >
-                          Fullscreen
-                        </button>
+                        ''
                       )}
                       <CanvasNavigation
                         previousRange={previousRange}

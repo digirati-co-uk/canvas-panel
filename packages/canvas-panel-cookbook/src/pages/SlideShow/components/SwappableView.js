@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
+import Measure from 'react-measure';
 
 import {
   StaticImageViewport,
@@ -9,11 +10,43 @@ import {
   withBemClass,
 } from '@canvas-panel/core';
 
+import SlideStaticImageViewport from './SlideStaticImageViewport';
+
 import './SwappableView.scss';
 
-const StaticSlideViewportBounds = props => (
-  <div className="slide-cover">{props.children}</div>
-);
+class StaticSlideViewportBounds extends Component {
+  state = {
+    dimensions: {
+      width: -1,
+      height: -1,
+    },
+  };
+
+  render() {
+    const { style, ...props } = this.props;
+    const { width, height } = this.state.dimensions;
+    return (
+      <Measure
+        bounds
+        onResize={contentRect => {
+          this.setState({ dimensions: contentRect.bounds });
+        }}
+      >
+        {({ measureRef }) => (
+          <div className="slide-cover">
+            {React.Children.map(props.children, child => {
+              return React.cloneElement(child, {
+                ...child.props,
+                maxWidth: width,
+                maxHeight: height,
+              });
+            })}
+          </div>
+        )}
+      </Measure>
+    );
+  }
+}
 
 class SwappableView extends Component {
   state = {
@@ -59,8 +92,10 @@ class SwappableView extends Component {
       exitInteractiveModeButtonLabel,
       enterInteractiveModeButtonLabel,
     } = this.props;
+    const cls = 'slide__viewport';
+    const classes = [cls, isInteractive ? cls + '--interactive' : ''].join(' ');
     return (
-      <div className="slide__viewport">
+      <div className={classes}>
         <SingleTileSource {...{ manifest, canvas }}>
           {isInteractive ? (
             <FullPageViewport position="absolute" interactive={true}>
@@ -75,7 +110,7 @@ class SwappableView extends Component {
             </FullPageViewport>
           ) : (
             <StaticSlideViewportBounds>
-              <StaticImageViewport
+              <SlideStaticImageViewport
                 draggable={false}
                 viewportController={false}
                 canvas={canvas}
