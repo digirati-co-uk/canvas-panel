@@ -10,43 +10,7 @@ import {
   withBemClass,
 } from '@canvas-panel/core';
 
-import SlideStaticImageViewport from './SlideStaticImageViewport';
-
 import './SwappableView.scss';
-
-class StaticSlideViewportBounds extends Component {
-  state = {
-    dimensions: {
-      width: -1,
-      height: -1,
-    },
-  };
-
-  render() {
-    const { style, ...props } = this.props;
-    const { width, height } = this.state.dimensions;
-    return (
-      <Measure
-        bounds
-        onResize={contentRect => {
-          this.setState({ dimensions: contentRect.bounds });
-        }}
-      >
-        {({ measureRef }) => (
-          <div className="slide-cover">
-            {React.Children.map(props.children, child => {
-              return React.cloneElement(child, {
-                ...child.props,
-                maxWidth: width,
-                maxHeight: height,
-              });
-            })}
-          </div>
-        )}
-      </Measure>
-    );
-  }
-}
 
 class SwappableView extends Component {
   state = {
@@ -122,6 +86,7 @@ class SwappableView extends Component {
     const viewportFocuses = this.getEmbededAnnotations(canvas).filter(
       annotation => annotation.motivation === 'layout-viewport-focus'
     );
+    let initialBounds = null;
     if (viewportFocuses.length > 0) {
       // we only care about the first for now
       let viewportFocus = viewportFocuses[0];
@@ -129,39 +94,21 @@ class SwappableView extends Component {
       let [_left, _top, _width, _height] = position
         .split(',')
         .map(i => parseInt(i, 10));
-      if (this.state.viewport) {
-        this.state.viewport.goToRect({
-          x: _left,
-          y: _top,
-          width: _width,
-          height: _height,
-        });
-      }
+      initialBounds = {
+        x: _left,
+        y: _top,
+        width: _width,
+        height: _height,
+      };
     }
-
     return (
-      <div className={classes}>
+      <div
+        ref={el => {
+          this.containerEl = el;
+        }}
+        className={classes}
+      >
         <SingleTileSource {...{ manifest, canvas }}>
-          {/*isInteractive ? (
-            <FullPageViewport position="absolute" interactive={true}>
-              <OpenSeadragonViewport
-                useMaxDimensions={true}
-                osdOptions={{
-                  visibilityRatio: 1,
-                  constrainDuringPan: true,
-                  showNavigator: false,
-                }}
-              />
-            </FullPageViewport>
-          ) : (
-            <StaticSlideViewportBounds>
-              <SlideStaticImageViewport
-                draggable={false}
-                viewportController={false}
-                canvas={canvas}
-              />
-            </StaticSlideViewportBounds>
-          )*/}
           <FullPageViewport
             setRef={this.setViewport}
             position="absolute"
@@ -169,11 +116,14 @@ class SwappableView extends Component {
           >
             <OpenSeadragonViewport
               useMaxDimensions={true}
+              interactive={isInteractive}
+              initialBounds={initialBounds}
               osdOptions={{
                 visibilityRatio: 1,
                 constrainDuringPan: true,
                 showNavigator: false,
-                immediateRender: true,
+                immediateRender: false,
+                preload: true,
               }}
             />
           </FullPageViewport>

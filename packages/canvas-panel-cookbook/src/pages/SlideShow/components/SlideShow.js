@@ -59,7 +59,10 @@ export default class SlideShow extends Component {
                           })}
                         </div>
                       </SimpleSlideTransition>
-                      {document.body.requestFullscreen ? (
+                      {document.body.requestFullScreen ||
+                      document.body.webkitRequestFullScreen ||
+                      document.body.oRequestFullScreen ||
+                      document.body.msRequestFullScreen ? (
                         isFullscreen ? (
                           <button
                             onClick={exitFullscreen}
