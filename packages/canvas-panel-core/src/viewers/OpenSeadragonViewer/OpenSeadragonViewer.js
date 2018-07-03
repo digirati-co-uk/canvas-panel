@@ -16,6 +16,7 @@ type OpenSeadragonViewerPropTypes = {
   getRef: any => void,
   osdOptions: any,
   useMaxDimensions: boolean,
+  initialBounds: any,
 };
 
 type OpenSeadragonViewerState = {
@@ -139,7 +140,18 @@ class OpenSeadragonViewer extends Component<
       tileSources.map(tileSource => this.asyncAddTile({ tileSource }))
     ).then(e => {
       if (this.viewer) {
-        this.viewer.viewport.goHome(true);
+        if (!this.props.initialBounds) {
+          this.viewer.viewport.goHome(true);
+        } else {
+          const { x, y, width, height } = this.props.initialBounds;
+          const selectHighlight = this.viewer.viewport.imageToViewportRectangle(
+            new OpenSeadragon.Rect(x, y, width, height, 0)
+          );
+          this.viewer.viewport.fitBounds.apply(this.viewer.viewport, [
+            selectHighlight,
+            false,
+          ]);
+        }
       }
       if (onImageLoaded) {
         onImageLoaded(this.viewer, e);
@@ -192,6 +204,7 @@ class OpenSeadragonViewer extends Component<
     if (!this.viewer) {
       return null;
     }
+
     const selectHighlight = this.viewer.viewport.imageToViewportRectangle(
       new OpenSeadragon.Rect(
         x - padding / 2,
@@ -202,7 +215,7 @@ class OpenSeadragonViewer extends Component<
       )
     );
 
-    this.viewportAction('fitBounds', [selectHighlight], speed || 1);
+    this.viewportAction('fitBounds', [selectHighlight, speed === null], speed);
   }
 
   panTo(x: number, y: number, speed: number) {
