@@ -39,7 +39,7 @@ class SlideShowDemoBase extends Component {
             </a>&nbsp;of the viewer using a IIIF Presentation 3 manifest.
           </p>
           <div className={bem.element('inline-container')}>
-            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga2.json">
+            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga4.json">
               <P3SlideContent />
             </SlideShow>
           </div>

@@ -46,7 +46,7 @@
     }
   ],
   "posterCanvas": {
-    "id": "https://digirati.com/balenciaga/poster",
+    "id": "https://digirati.com/balenciaga2/poster",
     "requiredStatement": {
       "label": { "en": [""] },
       "value": {
@@ -65,11 +65,11 @@
     },
     "items": [
       {
-        "id": "https://digirati.com/balenciaga/poster/page",
+        "id": "https://digirati.com/balenciaga2/poster/page",
         "type": "AnnotationPage",
         "items": [
           {
-            "id": "https://digirati.com/balenciaga/poster/page/imageanno1",
+            "id": "https://digirati.com/balenciaga2/poster/page/imageanno1",
             "type": "Annotation",
             "motivation": "painting",
             "body": {
@@ -86,7 +86,7 @@
                 }
               ]
             },
-            "target": "https://digirati.com/balenciaga/poster"
+            "target": "https://digirati.com/balenciaga2/poster"
           }
         ]
       }
@@ -101,7 +101,7 @@
   },
   "items": [
     {
-      "id": "https://digirati.com/balenciaga/c1",
+      "id": "https://digirati.com/balenciaga2/c1",
       "type": "Canvas",
       "behavior": ["info-position-left", "layout-split"],
       "label": { "en": ["Balenciaga: Master Craftsman"] },
@@ -122,11 +122,11 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c1/page",
+          "id": "https://digirati.com/balenciaga2/c1/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c1/page/imageanno1",
+              "id": "https://digirati.com/balenciaga2/c1/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
@@ -143,21 +143,22 @@
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c1"
+              "target": "https://digirati.com/balenciaga2/c1"
             }
           ]
         }
       ],
       "annotations": [
         {
-          "id": "https://digirati.com/balenciaga/c1/annos",
+          "id": "https://digirati.com/balenciaga2/c1/annos",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c1/annos/1",
+              "id": "https://digirati.com/balenciaga2/c1/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c1#300,300,400,400"
+              "target":
+                "https://digirati.com/balenciaga2/c1#xywh=300,300,400,400"
             }
           ]
         }
@@ -165,7 +166,7 @@
     },
 
     {
-      "id": "https://digirati.com/balenciaga/c2",
+      "id": "https://digirati.com/balenciaga2/c2",
       "type": "Canvas",
       "width": 730,
       "height": 1200,
@@ -179,11 +180,11 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c2/page",
+          "id": "https://digirati.com/balenciaga2/c2/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c2/page/imageanno1",
+              "id": "https://digirati.com/balenciaga2/c2/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
@@ -200,7 +201,7 @@
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c2"
+              "target": "https://digirati.com/balenciaga2/c2"
             }
           ]
         }
@@ -208,7 +209,7 @@
     },
 
     {
-      "id": "https://digirati.com/balenciaga/c3",
+      "id": "https://digirati.com/balenciaga2/c3",
       "type": "Canvas",
       "behavior": ["info-position-left", "layout-split"],
       "label": { "en": ["Spanish colours"] },
@@ -229,11 +230,11 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c3/page",
+          "id": "https://digirati.com/balenciaga2/c3/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c3/page/imageanno1",
+              "id": "https://digirati.com/balenciaga2/c3/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
@@ -250,21 +251,22 @@
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c3"
+              "target": "https://digirati.com/balenciaga2/c3"
             }
           ]
         }
       ],
       "annotations": [
         {
-          "id": "https://digirati.com/balenciaga/c3/annos",
+          "id": "https://digirati.com/balenciaga2/c3/annos",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c3/annos/1",
+              "id": "https://digirati.com/balenciaga2/c3/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c3#300,500,400,400"
+              "target":
+                "https://digirati.com/balenciaga2/c3#xywh=300,500,400,400"
             }
           ]
         }
@@ -272,7 +274,7 @@
     },
 
     {
-      "id": "https://digirati.com/balenciaga/c7",
+      "id": "https://digirati.com/balenciaga2/c7",
       "type": "Canvas",
       "behavior": ["info-position-left", "layout-overlay"],
       "summary": {
@@ -292,11 +294,11 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c7/page",
+          "id": "https://digirati.com/balenciaga2/c7/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c7/page/imageanno1",
+              "id": "https://digirati.com/balenciaga2/c7/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
@@ -313,21 +315,22 @@
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c7"
+              "target": "https://digirati.com/balenciaga2/c7"
             }
           ]
         }
       ],
       "annotations": [
         {
-          "id": "https://digirati.com/balenciaga/c3/annos",
+          "id": "https://digirati.com/balenciaga2/c3/annos",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c3/annos/1",
+              "id": "https://digirati.com/balenciaga2/c3/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c7#200,300,400,500"
+              "target":
+                "https://digirati.com/balenciaga2/c7#xywh=200,300,400,500"
             }
           ]
         }
