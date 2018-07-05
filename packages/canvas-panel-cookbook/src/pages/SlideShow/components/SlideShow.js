@@ -38,6 +38,7 @@ export default class SlideShow extends Component {
                   currentIndex,
                   previousRange,
                   nextRange,
+                  region,
                 }) => {
                   let currentCanvas = currentIndex;
                   var slideClasses = classNames.apply(
@@ -53,7 +54,7 @@ export default class SlideShow extends Component {
                     <div className="slideshow__inner-frame">
                       <SimpleSlideTransition>
                         <div className={slideClasses}>
-                          <SwappableView {...{ manifest, canvas }} />
+                          <SwappableView {...{ manifest, canvas, region }} />
                           {functionOrMapChildren(children, {
                             canvas: canvas,
                           })}

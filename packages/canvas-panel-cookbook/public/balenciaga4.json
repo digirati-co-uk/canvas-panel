@@ -4,7 +4,7 @@
     "http://www.w3.org/ns/anno.jsonld",
     "http://iiif.io/api/presentation/3/context.json"
   ],
-  "id": "https://digirati.com/balenciaga2.json",
+  "id": "https://digirati.com/balenciaga4.json",
   "type": "Manifest",
   "label": { "en": ["Balenciaga: Master Craftsman"] },
   "metadata": [
@@ -46,7 +46,7 @@
     }
   ],
   "posterCanvas": {
-    "id": "https://digirati.com/balenciaga/poster",
+    "id": "https://digirati.com/balenciaga4/poster",
     "requiredStatement": {
       "label": { "en": [""] },
       "value": {
@@ -55,8 +55,8 @@
         ]
       }
     },
-    "width": 2000,
-    "height": 6000,
+    "width": 900,
+    "height": 1200,
     "label": { "en": ["Balenciaga: Master Craftsman"] },
     "summary": {
       "en": [
@@ -65,28 +65,30 @@
     },
     "items": [
       {
-        "id": "https://digirati.com/balenciaga/poster/page",
+        "id": "https://digirati.com/balenciaga4/poster/page",
         "type": "AnnotationPage",
         "items": [
           {
-            "id": "https://digirati.com/balenciaga/poster/page/imageanno1",
+            "id": "https://digirati.com/balenciaga4/poster/page/imageanno1",
             "type": "Annotation",
             "motivation": "painting",
             "body": {
-              "id": "#TODO - cover page dress.jpg",
+              "id":
+                "https://dlc.services/iiif-img/5/15/7f1ef85a-50a7-413a-9303-2ec722608484/full/full/0/default.jpg",
               "type": "Image",
               "format": "image/jpeg",
-              "width": 2000,
-              "height": 6000,
+              "width": 900,
+              "height": 1200,
               "service": [
                 {
-                  "id": "#TODO",
+                  "id":
+                    "https://dlc.services/iiif-img/5/15/7f1ef85a-50a7-413a-9303-2ec722608484",
                   "type": "ImageService2",
                   "profile": "level1"
                 }
               ]
             },
-            "target": "https://digirati.com/balenciaga/poster"
+            "target": "https://digirati.com/balenciaga4/poster"
           }
         ]
       }
@@ -101,7 +103,7 @@
   },
   "items": [
     {
-      "id": "https://digirati.com/balenciaga/c1",
+      "id": "https://digirati.com/balenciaga4/c1",
       "type": "Canvas",
       "behavior": ["info-position-left", "layout-split"],
       "label": { "en": ["Balenciaga: Master Craftsman"] },
@@ -110,8 +112,8 @@
           "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
         ]
       },
-      "width": 6000,
-      "height": 8000,
+      "width": 900,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -122,42 +124,45 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c1/page",
+          "id": "https://digirati.com/balenciaga4/c1/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c1/page/imageanno1",
+              "id": "https://digirati.com/balenciaga4/c1/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - dress 2",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 1200,
-                "height": 1600,
+                "width": 900,
+                "height": 1200,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c1"
+              "target": "https://digirati.com/balenciaga4/c1"
             }
           ]
         }
       ],
       "annotations": [
         {
-          "id": "https://digirati.com/balenciaga/c1/annos",
+          "id": "https://digirati.com/balenciaga4/c1/annos",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c1/annos/1",
+              "id": "https://digirati.com/balenciaga4/c1/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c1#2000,2000,1500,1500"
+              "target":
+                "https://digirati.com/balenciaga4/c1#xywh=300,300,400,400"
             }
           ]
         }
@@ -165,10 +170,10 @@
     },
 
     {
-      "id": "https://digirati.com/balenciaga/c2",
+      "id": "https://digirati.com/balenciaga4/c2",
       "type": "Canvas",
-      "width": 4000,
-      "height": 8000,
+      "width": 730,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -179,28 +184,30 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c2/page",
+          "id": "https://digirati.com/balenciaga4/c2/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c2/page/imageanno1",
+              "id": "https://digirati.com/balenciaga4/c2/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - hitchcock directing",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 800,
-                "height": 1600,
+                "width": 730,
+                "height": 1200,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c2"
+              "target": "https://digirati.com/balenciaga4/c2"
             }
           ]
         }
@@ -208,7 +215,7 @@
     },
 
     {
-      "id": "https://digirati.com/balenciaga/c3",
+      "id": "https://digirati.com/balenciaga4/c3",
       "type": "Canvas",
       "behavior": ["info-position-left", "layout-split"],
       "label": { "en": ["Spanish colours"] },
@@ -217,8 +224,8 @@
           "Balenciaga was a Spaniard. Many of his most iconic designs show an affinity for Spanish heritage and costume – from the 'chaquetillas' worn by bullfighters to the traditional flamenco dress. A writer from Woman's Journal stated, 'Inspirations from Spain! Balenciaga is young, Spanish and new to Paris. His beautiful clothes have the warm, colourful drama of his country.'"
         ]
       },
-      "width": 4000,
-      "height": 4000,
+      "width": 900,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -229,42 +236,45 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c3/page",
+          "id": "https://digirati.com/balenciaga4/c3/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c3/page/imageanno1",
+              "id": "https://digirati.com/balenciaga4/c3/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - dress spanish",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 800,
-                "height": 800,
+                "width": 900,
+                "height": 1200,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c3"
+              "target": "https://digirati.com/balenciaga4/c3"
             }
           ]
         }
       ],
       "annotations": [
         {
-          "id": "https://digirati.com/balenciaga/c3/annos",
+          "id": "https://digirati.com/balenciaga4/c3/annos",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c3/annos/1",
+              "id": "https://digirati.com/balenciaga4/c3/annos/1",
               "type": "Annotation",
               "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c3#3000,3000,1000,1000"
+              "target":
+                "https://digirati.com/balenciaga4/c3#xywh=300,500,400,400"
             }
           ]
         }
@@ -272,7 +282,7 @@
     },
 
     {
-      "id": "https://digirati.com/balenciaga/c7",
+      "id": "https://digirati.com/balenciaga4/c7",
       "type": "Canvas",
       "behavior": ["info-position-left", "layout-overlay"],
       "summary": {
@@ -280,8 +290,8 @@
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
         ]
       },
-      "width": 8000,
-      "height": 4000,
+      "width": 990,
+      "height": 1200,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -292,52 +302,41 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c7/page",
+          "id": "https://digirati.com/balenciaga4/c7/page",
           "type": "AnnotationPage",
           "items": [
             {
-              "id": "https://digirati.com/balenciaga/c7/page/imageanno1",
+              "id": "https://digirati.com/balenciaga4/c7/page/imageanno1",
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "#TODO - dress organza",
+                "id":
+                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 1600,
-                "height": 800,
+                "width": 990,
+                "height": 1200,
                 "service": [
                   {
-                    "id": "#TODO",
+                    "id":
+                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
                 ]
               },
-              "target": "https://digirati.com/balenciaga/c7"
+              "target": "https://digirati.com/balenciaga4/c7"
             }
           ]
         }
       ],
-      "annotations": [
-        {
-          "id": "https://digirati.com/balenciaga/c3/annos",
-          "type": "AnnotationPage",
-          "items": [
-            {
-              "id": "https://digirati.com/balenciaga/c3/annos/1",
-              "type": "Annotation",
-              "motivation": "layout-viewport-focus",
-              "target": "https://digirati.com/balenciaga/c7#100,4000,3000,3000"
-            }
-          ]
-        }
-      ]
+      "annotations": []
     }
   ],
 
   "structures": [
     {
-      "id": "https://digirati.com/balenciaga/sequence",
+      "id": "https://digirati.com/balenciaga4/sequence",
       "type": "Range",
       "behavior": ["sequence"],
       "label": {
@@ -345,11 +344,11 @@
       },
       "items": [
         {
-          "id": "https://digirati.com/balenciaga/c1",
+          "id": "https://digirati.com/balenciaga4/c1",
           "type": "Canvas"
         },
         {
-          "id": "https://digirati.com/balenciaga/c2",
+          "id": "https://digirati.com/balenciaga4/c2",
           "type": "Canvas",
           "label": { "en": ["This canvas has been given a different label"] },
           "summary": {
@@ -359,19 +358,19 @@
           }
         },
         {
-          "id": "https://digirati.com/balenciaga/c3",
+          "id": "https://digirati.com/balenciaga4/c3",
           "type": "Canvas"
         },
         {
-          "id": "https://digirati.com/balenciaga/c7",
+          "id": "https://digirati.com/balenciaga4/c7",
           "type": "Canvas"
         },
         {
           "type": "SpecificResource",
-          "source": "https://digirati.com/balenciaga/c7",
+          "source": "https://digirati.com/balenciaga4/c7",
           "selector": {
             "type": "FragmentSelector",
-            "value": "xywh=2000,2000,300,300"
+            "value": "xywh=200,300,400,500"
           },
           "label": { "en": ["A region-specific label"] },
           "summary": {
