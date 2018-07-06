@@ -23,6 +23,12 @@ function create(el, userConfiguration) {
 
   const config = Object.assign({}, defaultConfiguration, userConfiguration);
 
+  if (!config.children) {
+    config.children = (
+      <div dangerouslySetInnerHTML={{ __html: el.innerHTML }} />
+    );
+  }
+
   ReactDOM.render(<FullPageViewer {...config} />, el);
 }
 
