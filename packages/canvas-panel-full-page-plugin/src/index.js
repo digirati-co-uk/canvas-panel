@@ -23,6 +23,16 @@ function create(el, userConfiguration) {
 
   const config = Object.assign({}, defaultConfiguration, userConfiguration);
 
+  if (config.type === 'pop-out') {
+    if (!config.innerHtml) {
+      config.innerHtml = el.innerHTML;
+    }
+
+    ReactDOM.render(<PopOutViewer {...config} />, el);
+
+    return;
+  }
+
   if (!config.children) {
     config.children = (
       <div dangerouslySetInnerHTML={{ __html: el.innerHTML }} />

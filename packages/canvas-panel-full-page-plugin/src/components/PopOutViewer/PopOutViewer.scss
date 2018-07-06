@@ -1,4 +1,7 @@
 .pop-out-viewer {
+  pointerevents: visible;
+  overflow: hidden;
+
   &__close {
     position: fixed;
     top: 60px;
