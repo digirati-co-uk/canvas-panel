@@ -7,7 +7,7 @@
   "devDependencies": {
     "@fesk/module-release": "0.0.3",
     "@types/prop-types": "15.5.3",
-    "@types/react": "16.4.6",
+    "@types/react": "16.4.7",
     "babel-eslint": "8.2.5",
     "eslint": "4.19.1",
     "eslint-plugin-babel": "5.1.0",
