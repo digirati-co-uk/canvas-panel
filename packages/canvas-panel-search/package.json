@@ -28,7 +28,7 @@
     "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
     "material-components-web": "^0.36.0",
     "nwb-sass": "^0.8.2",
-    "rheostat": "^2.1.3"
+    "rheostat": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
