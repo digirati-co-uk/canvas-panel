@@ -9,6 +9,7 @@ class AnnotationListView extends Component {
     animationFramePadding: 600,
     animationSpeed: 1, // seconds
     bezierEasing: [0.6, 0.02, 0.0, 0.75],
+    annotationPosition: 'top',
   };
 
   componentWillMount() {
@@ -85,6 +86,7 @@ class AnnotationListView extends Component {
 
     return (annotations || []).map(({ annotation, on }, key) => (
       <PagePanel
+        position={this.props.annotationPosition}
         disabled={disabled}
         key={key}
         onNext={

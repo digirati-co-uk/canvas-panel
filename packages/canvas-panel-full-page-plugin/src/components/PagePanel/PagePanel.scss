@@ -7,10 +7,21 @@
   max-width: 500px;
   height: 100vh;
   display: flex;
-  // Maybe a styling preference.
   align-items: center;
-  //pointer-events: none;
-  //align-items: flex-start;
+
+  &--top {
+    align-items: flex-start;
+    .page-panel__inner {
+      margin-top: 50px; // maybe change for distro.
+    }
+  }
+
+  &--bottom {
+    align-items: flex-end;
+    .page-panel__inner {
+      margin-bottom: 20px;
+    }
+  }
 
   &--disabled {
     opacity: 0;

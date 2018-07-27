@@ -8,8 +8,9 @@ class FullPage extends Component {
         <FullPageViewer
           manifest="https://stephenwf.github.io/ocean-liners.json"
           title="Ocean liners"
+          annotationPosition="top"
         >
-          <p>Full page plugin. Scroll down to start experience.</p>
+          <p>Scroll down to start or click the 'start tour' button.</p>
           <span className="muted">
             © Victoria and Albert Museum, London 2018
           </span>

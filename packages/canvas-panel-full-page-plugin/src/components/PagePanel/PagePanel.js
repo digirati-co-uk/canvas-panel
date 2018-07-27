@@ -5,10 +5,14 @@ import AnnotationNavigation from '../AnnotationNavigation/AnnotationNavigation';
 
 class PagePanel extends Component {
   render() {
-    const { style, bem, onPrevious, onNext } = this.props;
+    const { style, bem, onPrevious, onNext, position } = this.props;
     return (
       <div
-        className={bem.modifiers({ disabled: this.props.disabled })}
+        className={bem.modifiers({
+          disabled: this.props.disabled,
+          top: position === 'top',
+          bottom: position === 'bottom',
+        })}
         style={style}
       >
         <div className={bem.element('inner')}>

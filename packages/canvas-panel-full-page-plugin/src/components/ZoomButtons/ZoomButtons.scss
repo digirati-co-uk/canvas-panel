@@ -5,16 +5,29 @@
   z-index: 10000;
 
   &__button {
-    width: 32px;
-    height: 32px;
-    background: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px 1px;
-    border-radius: 50%;
-    text-align: center;
+    background: transparent;
+    //width: 32px;
+    //height: 32px;
+    //background: rgb(255, 255, 255);
+    //box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px 1px;
+    //border-radius: 50%;
+    //text-align: center;
     border: none;
     display: block;
     margin: 10px;
-    font-size: 18px;
+    //font-size: 18px;
+    outline: none;
+
+    svg {
+      transition: filter 0.3s;
+      filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.4));
+    }
+
+    &:active {
+      svg {
+        filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+      }
+    }
   }
 
   &--mobile {

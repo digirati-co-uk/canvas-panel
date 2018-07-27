@@ -50,6 +50,7 @@
     margin: 20px auto 0;
     background: transparent;
     text-transform: uppercase;
+    display: block;
   }
 
   &__annotation-panel {
@@ -88,6 +89,8 @@
   .annotatedzoom-annotation-detail__image {
     height: auto;
     min-width: 100%;
+    max-width: 100%;
+    width: 100%;
   }
 
   // Size fix.
