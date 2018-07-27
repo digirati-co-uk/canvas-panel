@@ -112,7 +112,6 @@ export function enhancedStructure(expand, canvasNumMap) {
         .filter(member => member['@type'] === 'sc:Range')
         .map(enhancedStructure(expand, canvasNumMap));
     }
-    // console.log(canvasToNumber);
     range.canvasNumbers = range.canvases.map(i => canvasNumMap[i]);
     range.range =
       range.canvasNumbers.length === 1
@@ -287,7 +286,7 @@ export function computeStyleFromItem(visibility, item, maxItems) {
   }
   if (visibility === RANGE_DISPLAY_LARGE && item) {
     return {
-      width: `${(item.range[1] - item.range[0]) / maxItems * 100}%`,
+      width: `${((item.range[1] - item.range[0]) / maxItems) * 100}%`,
       transform: 'initial',
     };
   }

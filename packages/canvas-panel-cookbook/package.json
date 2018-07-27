@@ -12,19 +12,24 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/full-page-plugin": "^0.0.8",
-    "bezier-easing": "2.1.0",
-    "brace": "0.11.1",
     "@canvas-panel/core": "^0.0.9",
+    "@canvas-panel/full-page-plugin": "^0.0.8",
     "@canvas-panel/patchwork-plugin": "^0.0.9",
     "@stephenwf-forks/manifesto.js": "2.2.25",
+    "bezier-easing": "2.1.0",
+    "brace": "0.11.1",
+    "classnames": "^2.2.6",
     "html-loader": "0.5.5",
+    "iiif-prezi2to3": "^1.0.8",
+    "lorem-ipsum-simple": "^0.0.20",
     "markdown-loader": "3.0.0",
     "react": "16.4.1",
     "react-ace": "6.1.4",
     "react-dom": "16.4.1",
     "react-measure": "2.0.2",
+    "react-promise": "^2.0.3",
     "react-router-dom": "4.3.1",
+    "react-transition-group": "^2.3.1",
     "system-font-css": "2.0.2"
   },
   "devDependencies": {

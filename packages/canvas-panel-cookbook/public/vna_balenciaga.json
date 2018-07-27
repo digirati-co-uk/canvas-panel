@@ -1,0 +1,110 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://adam.meszaros.github.io/vna_balenciaga.json",
+  "type": "Collection",
+  "label": {
+    "en": ["V&A Balenciaga demos"]
+  },
+  "requiredStatement": {
+    "label": { "en": ["Attribution"] },
+    "value": { "en": ["Provided by V&A Museum of Arts"] }
+  },
+  "items": [
+    {
+      "id": "https://adam-digirati.github.io/balenciaga1.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["V&A Balenciaga Slideshow Stage 1"]
+      },
+      "summary": {
+        "en": [
+          "Simplest version: no ranges, just labels and description/summary on canvases, with a viewing hint for layout (left, right, overlay)."
+        ]
+      },
+      "thumbnail": [
+        {
+          "id":
+            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://adam-digirati.github.io/balenciaga2.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["V&A Balenciaga Slideshow Stage 2"]
+      },
+      "summary": {
+        "en": [
+          "Add use of annotation to indicate point of interest (could be a highlighting motivation)."
+        ]
+      },
+      "thumbnail": [
+        {
+          "id":
+            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://adam-digirati.github.io/balenciaga3.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["V&A Balenciaga Slideshow Stage 3"]
+      },
+      "summary": {
+        "en": [
+          "add support to take journey from range[behavior=sequence], which gives us the ability for a next=> operation to zoom in to part of an image"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id":
+            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://adam-digirati.github.io/balenciaga4.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["V&A Balenciaga Slideshow Stage 4"]
+      },
+      "summary": {
+        "en": [
+          "add support to take journey from range[behavior=sequence], which gives us the ability for a next=> operation to zoom in to part of an image"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id":
+            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://adam-digirati.github.io/balenciaga1-behaviours.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["V&A Balenciaga Layouts"]
+      },
+      "summary": {
+        "en": ["demonstrates the layouts."]
+      },
+      "thumbnail": [
+        {
+          "id":
+            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ]
+}
