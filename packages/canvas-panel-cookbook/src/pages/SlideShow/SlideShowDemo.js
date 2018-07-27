@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import { withBemClass } from '@canvas-panel/core';
-import SlideShow from './components/SlideShow';
+import SlideShow from '../../components/SlideShow';
 //import SlideShowConfigurator from './components/SlideShowConfigurator';
-import LayoutDebugSlideContent from './components/LayoutDebugSlideContent';
-import P3SlideContent from './components/P3SlideContent';
+import LayoutDebugSlideContent from '../../components/LayoutDebugSlideContent';
+import P3SlideContent from '../../components/P3SlideContent';
 
 import './SlideShowDemo.scss';
 
