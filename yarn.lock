@@ -551,11 +551,6 @@ agent-base@2:
     extend "~3.0.0"
     semver "~5.0.1"
 
-
-ajv-keywords@^1.1.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.1.tgz#314dd0a4b3368fad3dfcdc54ede6171b886daf3c"
-
 airbnb-prop-types@^2.10.0, airbnb-prop-types@^2.8.1:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/airbnb-prop-types/-/airbnb-prop-types-2.10.0.tgz#c2da66a1d31c3dbe21c2fe8e758f774c718dd30d"
@@ -570,6 +565,9 @@ airbnb-prop-types@^2.10.0, airbnb-prop-types@^2.8.1:
     prop-types "^15.6.1"
     prop-types-exact "^1.1.2"
 
+ajv-keywords@^1.1.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.1.tgz#314dd0a4b3368fad3dfcdc54ede6171b886daf3c"
 
 ajv-keywords@^2.0.0, ajv-keywords@^2.1.0:
   version "2.1.1"
@@ -5717,6 +5715,12 @@ ignore@^3.3.3, ignore@^3.3.5:
   version "3.3.8"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.8.tgz#3f8e9c35d38708a3a7e0e9abb6c73e7ee7707b2b"
 
+iiif-prezi2to3@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/iiif-prezi2to3/-/iiif-prezi2to3-1.0.8.tgz#4eda777bb826d00a5785135ca962b2eb71f94a2c"
+  dependencies:
+    uuid "^3.3.0"
+
 immutability-helper@2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-2.7.1.tgz#5636dbb593e3deb5e572766d42249ea06bae7640"
@@ -9465,6 +9469,12 @@ react-measure@2.0.2, react-measure@^2.0.2:
     prop-types "^15.5.10"
     resize-observer-polyfill "^1.4.2"
 
+react-promise@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-promise/-/react-promise-2.0.3.tgz#6f9cf49972fd3f0a0aef63be59e142f261d88905"
+  dependencies:
+    prop-types "^15.6.1"
+
 react-proxy@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-1.1.8.tgz#9dbfd9d927528c3aa9f444e4558c37830ab8c26a"
@@ -11818,6 +11828,10 @@ uuid@^2.0.1, uuid@^2.0.2:
 uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
+
+uuid@^3.3.0:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
 uws@~9.14.0:
   version "9.14.0"

@@ -17,12 +17,9 @@ class SlideShowConfiguratorBase extends Component {
         slideClass: 'DummySlideContent',
       },
     };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange = event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -32,18 +29,17 @@ class SlideShowConfiguratorBase extends Component {
     };
     newState.formValues[name] = value;
     this.setState(newState);
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
     this.setState({
       submitted: Object.assign({}, this.state.formValues),
     });
-  }
+  };
 
   render() {
     let { children, bem } = this.props;
-    console.log(this.state);
     return (
       <div className={bem}>
         <div className={bem.element('panel')}>
