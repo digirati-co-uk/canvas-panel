@@ -36,12 +36,12 @@ class SlideStaticImageViewport extends Component {
     }
   }
 
-  getRatio() {
+  getRatio = () => {
     const { height, width, maxHeight, maxWidth } = this.props;
     const heightRatio = height / (maxHeight || 500);
     const widthRatio = width / (maxWidth || maxHeight || 500);
     return heightRatio > widthRatio ? heightRatio : widthRatio;
-  }
+  };
 
   onDrag = ratio => (e, data) => {
     if (this.props.getPosition) {
@@ -98,22 +98,6 @@ class SlideStaticImageViewport extends Component {
       let [_left, _top, _width, _height] = position
         .split(',')
         .map(i => parseInt(i, 10));
-      /*if (_width > _height) {
-
-      } else {
-
-      }*/
-      console.log(
-        canvas.getWidth(),
-        canvas.getHeight(),
-        _width,
-        _height,
-        canvas.getWidth() / canvas.getHeight(),
-        _width / _height,
-        this,
-        this.props.maxHeight,
-        this.props.maxWidth
-      );
 
       imageUri = imageURIParts.join('/');
       isCover = true;
