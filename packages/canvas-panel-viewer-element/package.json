@@ -25,7 +25,7 @@
     "react": "^16.3.2"
   },
   "devDependencies": {
-    "nwb": "0.21.5",
+    "nwb": "0.23.0",
     "react": "16.4.1",
     "react-dom": "16.4.1"
   },

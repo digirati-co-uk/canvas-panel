@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "manifesto.js": "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
-    "nwb": "0.21.5",
+    "nwb": "0.23.0",
     "react": "16.4.1",
     "react-dom": "16.4.1"
   },
