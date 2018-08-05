@@ -23,7 +23,7 @@
     "react": "16.4.1",
     "react-ace": "6.1.4",
     "react-dom": "16.4.1",
-    "react-measure": "2.0.2",
+    "react-measure": "2.1.0",
     "react-router-dom": "4.3.1",
     "system-font-css": "2.0.2"
   },
