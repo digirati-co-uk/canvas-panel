@@ -38,8 +38,8 @@
   "devDependencies": {
     "nwb": "0.21.5",
     "nwb-watch": "1.0.0",
-    "react": "16.4.1",
-    "react-dom": "16.4.1",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
     "react-redux": "5.0.7"
   },
   "publishConfig": {
