@@ -20,9 +20,9 @@
     "@stephenwf-forks/manifesto.js": "2.2.25",
     "html-loader": "0.5.5",
     "markdown-loader": "3.0.0",
-    "react": "16.4.1",
+    "react": "16.4.2",
     "react-ace": "6.1.4",
-    "react-dom": "16.4.1",
+    "react-dom": "16.4.2",
     "react-measure": "2.1.0",
     "react-router-dom": "4.3.1",
     "system-font-css": "2.0.2"
