@@ -79,9 +79,22 @@ class OpenSeadragonViewer extends Component<
     };
   }
 
+  goToInitialBounds(speed = 0.0000001) {
+    if (this.props.initialBounds) {
+      const { x, y, width, height } = this.props.initialBounds;
+      // const selectHighlight = this.viewer.viewport.imageToViewportRectangle(
+      //   new OpenSeadragon.Rect(x, y, width, height, 0)
+      // );
+      // console.log();
+      console.log('GOING TO INITIAL BOUNDS', this.props.initialBounds);
+      this.goToRect(this.props.initialBounds, 0, speed);
+    } else {
+      this.viewer.viewport.goHome(true);
+    }
+  }
+
   componentWillReceiveProps(newProps: OpenSeadragonViewerPropTypes) {
     const { tileSources } = this.props;
-
     if (newProps.tileSources !== tileSources && this.viewer) {
       this.viewer.close();
       Promise.all(
@@ -90,7 +103,7 @@ class OpenSeadragonViewer extends Component<
         )
       ).then(e => {
         if (this.viewer) {
-          this.viewer.viewport.goHome(true);
+          this.goToInitialBounds();
           if (newProps.onImageLoaded) {
             newProps.onImageLoaded(this.viewer, e);
           }
@@ -136,26 +149,31 @@ class OpenSeadragonViewer extends Component<
     if (getRef) {
       getRef(this);
     }
-    Promise.all(
-      tileSources.map(tileSource => this.asyncAddTile({ tileSource }))
-    ).then(e => {
-      if (this.viewer) {
-        if (!this.props.initialBounds) {
-          this.viewer.viewport.goHome(true);
-        } else {
-          const { x, y, width, height } = this.props.initialBounds;
-          const selectHighlight = this.viewer.viewport.imageToViewportRectangle(
-            new OpenSeadragon.Rect(x, y, width, height, 0)
-          );
-          this.viewer.viewport.fitBounds.apply(this.viewer.viewport, [
-            selectHighlight,
-            false,
-          ]);
+    if (tileSources.length) {
+      Promise.all(
+        tileSources.map(tileSource => this.asyncAddTile({ tileSource }))
+      ).then(e => {
+        if (this.viewer) {
+          this.goToInitialBounds();
         }
+        if (onImageLoaded) {
+          onImageLoaded(this.viewer, e);
+        }
+      });
+    }
+
+    this.viewerReady = new Promise(resolve => {
+      const { x } = this.viewer.viewport._contentSize;
+      if (x > 1) {
+        resolve();
       }
-      if (onImageLoaded) {
-        onImageLoaded(this.viewer, e);
-      }
+
+      const handle = args => {
+        console.log('resized', args);
+        this.viewer.removeHandler('resize', handle);
+        resolve();
+      };
+      this.viewer.addHandler('resize', handle);
     });
   }
 
@@ -233,17 +251,22 @@ class OpenSeadragonViewer extends Component<
 
   viewportAction(name: string, args: Array<any> = [], speed: number) {
     if (!this.viewer) {
+      console.warn(`Viewport not available to run action: ${name}`, args);
       return null;
     }
     const func = this.viewer.viewport[name];
     if (func) {
-      if (speed) {
-        return this.runAtSpeed(
-          speed,
-          () => (this.viewer ? func.apply(this.viewer.viewport, args) : null)
-        );
-      }
-      return this.viewer ? func.apply(this.viewer.viewport, args) : null;
+      this.viewerReady.then(() => {
+        if (speed || speed === 0) {
+          return this.runAtSpeed(
+            speed,
+            () => (this.viewer ? func.apply(this.viewer.viewport, args) : null)
+          );
+        }
+        return this.viewer ? func.apply(this.viewer.viewport, args) : null;
+      });
+    } else {
+      console.warn(`Viewport action ${name} not found`, args);
     }
   }
 
