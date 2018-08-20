@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
-import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
-
 import {
   Manifest,
-  CanvasProvider,
   Fullscreen,
   RangeNavigationProvider,
-  functionOrMapChildren,
+  withBemClass,
 } from '@canvas-panel/core';
-
+import FullscreenButton from './FullscreenButton/FullscreenButton';
 import SimpleSlideTransition from './SimpleSlideTransition';
-import ExperimentalSlideTransition from './ExperimentalSlideTransition';
 import ProgressIndicator from './ProgressIndicator';
-import DummySlideContent from './DummySlideContent';
-import SwappableView from './SwappableView';
+import Slide from './Slide/Slide';
 import CanvasNavigation from './CanvasNavigation';
 
 import './SlideShow.scss';
 
-export default class SlideShow extends Component {
+class SlideShow extends Component {
   render() {
-    let { manifesturi, children } = this.props;
-    //TODO: Make This work with the majestic nwb babbel...
-    // const SlideTransitionComponent =
-    //   this.props.slideTransitionComponent || SimpleSlideTransition;
+    const { manifestUri, children, bem } = this.props;
     return (
-      <div className="slideshow">
+      <div className={bem}>
         <Fullscreen>
-          {({ exitFullscreen, goFullscreen, isFullscreen }) => (
-            <Manifest url={manifesturi}>
+          {fullscreenProps => (
+            <Manifest url={manifestUri}>
               <RangeNavigationProvider>
                 {({
                   manifest,
@@ -40,48 +31,20 @@ export default class SlideShow extends Component {
                   nextRange,
                   region,
                 }) => {
-                  let currentCanvas = currentIndex;
-                  var slideClasses = classNames.apply(
-                    null,
-                    ['slide'].concat(
-                      (canvas.__jsonld.behavior || []).map(
-                        behaviour => `slide--${behaviour}`
-                      )
-                    )
-                  );
-                  let totalCanvases = canvasList.length;
                   return (
-                    <div className="slideshow__inner-frame">
-                      <SimpleSlideTransition>
-                        <div className={slideClasses}>
-                          <SwappableView {...{ manifest, canvas, region }} />
-                          {functionOrMapChildren(children, {
-                            canvas: canvas,
-                          })}
-                        </div>
+                    <div className={bem.element('inner-frame')}>
+                      <SimpleSlideTransition id={currentIndex}>
+                        <Slide
+                          key={currentIndex}
+                          behaviors={canvas.__jsonld.behavior || []}
+                          manifest={manifest}
+                          canvas={canvas}
+                          region={region}
+                        >
+                          {children}
+                        </Slide>
                       </SimpleSlideTransition>
-                      {document.body.requestFullScreen ||
-                      document.body.webkitRequestFullScreen ||
-                      document.body.oRequestFullScreen ||
-                      document.body.msRequestFullScreen ? (
-                        isFullscreen ? (
-                          <button
-                            onClick={exitFullscreen}
-                            className="fullscreen-btn fullscreen-btn--off"
-                          >
-                            Exit fullscreen
-                          </button>
-                        ) : (
-                          <button
-                            onClick={goFullscreen}
-                            className="fullscreen-btn fullscreen-btn--on"
-                          >
-                            Fullscreen
-                          </button>
-                        )
-                      ) : (
-                        ''
-                      )}
+                      <FullscreenButton {...fullscreenProps} />
                       <CanvasNavigation
                         previousRange={previousRange}
                         nextRange={nextRange}
@@ -89,7 +52,8 @@ export default class SlideShow extends Component {
                         currentIndex={currentIndex}
                       />
                       <ProgressIndicator
-                        {...{ currentCanvas, totalCanvases }}
+                        currentCanvas={currentIndex}
+                        totalCanvases={canvasList.length}
                       />
                     </div>
                   );
@@ -102,3 +66,5 @@ export default class SlideShow extends Component {
     );
   }
 }
+
+export default withBemClass('slideshow')(SlideShow);

@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import SlideShow from '../../components/SlideShow';
-import LayoutDebugSlideContent from '../../components/LayoutDebugSlideContent';
-import P3SlideContent from '../../components/P3SlideContent';
 import QueryStringProvider from '../../QueryStringProvider';
 
 import './SlideShowDemo.scss';
@@ -18,22 +15,19 @@ class SlideShowDemoBase extends QueryStringProvider {
     };
   }
   render() {
-    const self = this;
-    let { bem } = this.props;
-    let manifestURI =
-      'https://view.nls.uk/manifest/8397/83973988/manifest.json';
-    if (
+    const { bem } = this.props;
+    const manifestUri =
       this.urlParams.hasOwnProperty('manifest') &&
       this.urlParams.manifest.constructor === String
-    ) {
-      manifestURI = this.urlParams.manifest;
-    }
-    if (this.state.loadedManifestUri !== manifestURI) {
-      fetch(manifestURI)
+        ? this.urlParams.manifest
+        : 'https://view.nls.uk/manifest/8397/83973988/manifest.json';
+
+    if (this.state.loadedManifestUri !== manifestUri) {
+      fetch(manifestUri)
         .then(response => response.json())
         .then(manifest => {
           let newState = {
-            loadedManifestUri: manifestURI,
+            loadedManifestUri: manifestUri,
           };
           if (manifest.label) {
             if (manifest.label.constructor === String) {
@@ -53,7 +47,7 @@ class SlideShowDemoBase extends QueryStringProvider {
           if (manifest.metadata) {
             newState.description = manifest.metadata;
           }
-          self.setState(newState);
+          this.setState(newState);
         });
     }
     return (
@@ -86,7 +80,7 @@ class SlideShowDemoBase extends QueryStringProvider {
             }
           })}
           <div className={bem.element('inline-container')}>
-            <SlideShow manifesturi={manifestURI} />
+            <SlideShow manifestUri={manifestUri} />
           </div>
         </section>
       </article>

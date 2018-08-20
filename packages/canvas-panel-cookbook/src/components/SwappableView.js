@@ -7,6 +7,7 @@ import {
   SingleTileSource,
   withBemClass,
   OpenSeadragonViewport,
+  AnnotationProvider,
 } from '@canvas-panel/core';
 
 import './SwappableView.scss';
@@ -82,16 +83,24 @@ class SwappableView extends Component {
     itemHeight: 0,
   };
 
-  constructor(props) {
-    super(props);
-    this.region = this.props.region;
-    if (!this.region) {
-      this.region = createRegionFromAnnotations(this.props.canvas);
-    }
-    this.setViewportToStatic = this.setViewportToStatic.bind(this);
-    this.setViewportToInteractive = this.setViewportToInteractive.bind(this);
-    this.setViewport = this.setViewport.bind(this);
-  }
+  osdOptions = {
+    visibilityRatio: 1,
+    constrainDuringPan: true,
+    showNavigator: false,
+    immediateRender: false,
+    preload: true,
+  };
+
+  // constructor(props) {
+  //   super(props);
+  //   // this.region = this.props.region;
+  //   // if (!this.region) {
+  //   //   this.region = createRegionFromAnnotations(this.props.canvas);
+  //   // }
+  //   // this.setViewportToStatic = this.setViewportToStatic.bind(this);
+  //   // this.setViewportToInteractive = this.setViewportToInteractive.bind(this);
+  //   // this.setViewport = this.setViewport.bind(this);
+  // }
   static propTypes = {
     exitInteractiveModeButtonLabel: PropTypes.string,
     enterInteractiveModeButtonLabel: PropTypes.string,
@@ -104,52 +113,66 @@ class SwappableView extends Component {
     enterInteractiveModeButtonLabel: 'Explore',
   };
 
-  setViewportToStatic() {
+  setViewportToStatic = () => {
     this.setState({
       isInteractive: false,
     });
-  }
+  };
 
-  setViewportToInteractive() {
+  setViewportToInteractive = () => {
     this.setState({
       isInteractive: true,
     });
+  };
+
+  setViewport = viewport => {
+    this.viewport = viewport;
+    if (this.viewport && this.props.region) {
+      this.viewport.goToRect(this.props.region, 0, 0);
+    }
+  };
+
+  componentDidMount() {
+    if (this.props.region) {
+      this.viewport.goToRect(this.props.region, 0, 0.0000001);
+    } else {
+      const region = createRegionFromAnnotations(this.props.canvas);
+      if (region) {
+        this.setState({ region });
+      }
+    }
   }
 
-  setViewport(viewport) {
-    this.setState({ viewport });
-    if (viewport && this.region) {
-      viewport.goToRect(this.region, 0, 0);
+  componentWillReceiveProps(nextProps, nextContext) {
+    if (nextProps.canvas !== this.props.canvas && this.state.viewport) {
+      if (nextProps.region) {
+        this.viewport.goToRect(nextProps.region, 0, 0.00000001);
+      } else {
+        const region = createRegionFromAnnotations(this.props.canvas);
+        if (region) {
+          this.setState({ region });
+        }
+      }
     }
   }
 
   render() {
-    let { isInteractive } = this.state;
-    let {
+    const { isInteractive, region } = this.state;
+    const {
       manifest,
       canvas,
       exitInteractiveModeButtonLabel,
       enterInteractiveModeButtonLabel,
+      bem,
     } = this.props;
-    const cls = 'slide__viewport';
-    const classes = [cls, isInteractive ? cls + '--interactive' : ''].join(' ');
-    // TODO: comment this if showing it to Stephen,
-    // uncomment if showing it to Tom. And reach an aggreement...
-    if (!this.region) {
-      this.region = createRegionFromAnnotations(canvas);
-    }
 
-    if (this.state.viewport && this.region) {
-      this.state.viewport.goToRect(this.region, 0, 0);
-    }
     return (
       <div
-        ref={el => {
-          this.containerEl = el;
-        }}
-        className={classes}
+        className={bem
+          .element('viewport')
+          .modifiers({ interactive: isInteractive })}
       >
-        <SingleTileSource {...{ manifest, canvas }}>
+        <SingleTileSource manifest={manifest} canvas={canvas}>
           <FullPageViewport
             setRef={this.setViewport}
             position="absolute"
@@ -158,27 +181,22 @@ class SwappableView extends Component {
             <OpenSeadragonViewport
               useMaxDimensions={true}
               interactive={isInteractive}
-              osdOptions={{
-                visibilityRatio: 1,
-                constrainDuringPan: true,
-                showNavigator: false,
-                immediateRender: false,
-                preload: true,
-              }}
+              osdOptions={this.osdOptions}
+              initialBounds={region}
             />
           </FullPageViewport>
         </SingleTileSource>
         {isInteractive ? (
           <button
             onClick={this.setViewportToStatic}
-            className="slide__interactive-btn"
+            className={bem.element('interactive-btn')}
           >
             {exitInteractiveModeButtonLabel}
           </button>
         ) : (
           <button
             onClick={this.setViewportToInteractive}
-            className="slide__interactive-btn"
+            className={bem.element('interactive-btn')}
           >
             {enterInteractiveModeButtonLabel}
           </button>
@@ -188,4 +206,4 @@ class SwappableView extends Component {
   }
 }
 
-export default SwappableView;
+export default withBemClass('slide')(SwappableView);

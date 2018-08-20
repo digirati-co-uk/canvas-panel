@@ -9,11 +9,11 @@ class SlideShowConfiguratorBase extends Component {
     super(props);
     this.state = {
       formValues: {
-        manifesturi: 'https://wellcomelibrary.org/iiif/b18934717/manifest',
+        manifestUri: 'https://wellcomelibrary.org/iiif/b18934717/manifest',
         slideClass: 'DummySlideContent',
       },
       submitted: {
-        manifesturi: 'https://wellcomelibrary.org/iiif/b18934717/manifest',
+        manifestUri: 'https://wellcomelibrary.org/iiif/b18934717/manifest',
         slideClass: 'DummySlideContent',
       },
     };
@@ -47,8 +47,8 @@ class SlideShowConfiguratorBase extends Component {
             <legend className={bem.element('legend')}>Configuration</legend>
             <label className={bem.element('label')}>Manifest Url:</label>
             <input
-              name="manifesturi"
-              value={this.state.formValues.manifesturi}
+              name="manifestUri"
+              value={this.state.formValues.manifestUri}
               type="text"
               onChange={this.handleInputChange}
               className={bem.element('input')}
@@ -75,7 +75,7 @@ class SlideShowConfiguratorBase extends Component {
           </form>
         </div>
         <div className={bem.element('previews')}>
-          <SlideShow manifesturi={this.state.submitted.manifesturi} />
+          <SlideShow manifesturi={this.state.submitted.manifestUri} />
         </div>
       </div>
     );
