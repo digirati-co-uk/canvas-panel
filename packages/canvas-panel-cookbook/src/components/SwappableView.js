@@ -8,6 +8,7 @@ import {
   withBemClass,
   OpenSeadragonViewport,
   AnnotationProvider,
+  parseSelectorTarget,
 } from '@canvas-panel/core';
 
 import './SwappableView.scss';
@@ -22,57 +23,28 @@ import './SwappableView.scss';
 // from Tom.
 //---------------------------------------
 function getEmbededAnnotations(canvas) {
-  if (canvas.__jsonld.annotations) {
-    let annotations = [];
-    canvas.__jsonld.annotations.forEach(item => {
-      if (item.type === 'AnnotationPage' && item.hasOwnProperty('items')) {
-        item.items.forEach(annotation => {
-          if (annotation.type === 'Annotation') {
-            annotations.push(annotation);
-          }
-        });
-      } else if (item.type === 'Annotation') {
-        annotations.push(item);
-      }
-    });
-    return annotations;
-  } else {
-    return [];
-  }
+  return (canvas.__jsonld.annotations || []).reduce((list, next) => {
+    if (next.type === 'AnnotationPage') {
+      return (next.items || []).reduce((innerList, annotation) => {
+        innerList.push(annotation);
+        return innerList;
+      }, list);
+    }
+    if (next.type === 'Annotation') {
+      list.push(next);
+    }
+    return list;
+  }, []);
 }
 
 function createRegionFromAnnotations(canvas) {
   const viewportFocuses = getEmbededAnnotations(canvas).filter(
     annotation => annotation.motivation === 'layout-viewport-focus'
   );
-  let initialBounds = null;
   if (viewportFocuses.length > 0) {
-    // we only care about the first for now
-    let viewportFocus = viewportFocuses[0];
-    let parametersStr = viewportFocus.target.split('#')[1];
-    let parameters = parametersStr
-      .split('&')
-      .map(el => el.split('='))
-      .reduce((pre, cur) => {
-        pre[cur[0]] = cur[1];
-        return pre;
-      }, {});
-    let position = parameters.xywh;
-    if (position) {
-      let [_left, _top, _width, _height] = position
-        .split(',')
-        .map(i => parseInt(i, 10));
-      return {
-        expanded: true,
-        scale: 1,
-        unit: 'pixel',
-        x: _left,
-        y: _top,
-        width: _width,
-        height: _height,
-      };
-    }
-    return null;
+    return parseSelectorTarget(
+      viewportFocuses[0].target || viewportFocuses[0].on
+    );
   }
 }
 
@@ -91,16 +63,6 @@ class SwappableView extends Component {
     preload: true,
   };
 
-  // constructor(props) {
-  //   super(props);
-  //   // this.region = this.props.region;
-  //   // if (!this.region) {
-  //   //   this.region = createRegionFromAnnotations(this.props.canvas);
-  //   // }
-  //   // this.setViewportToStatic = this.setViewportToStatic.bind(this);
-  //   // this.setViewportToInteractive = this.setViewportToInteractive.bind(this);
-  //   // this.setViewport = this.setViewport.bind(this);
-  // }
   static propTypes = {
     exitInteractiveModeButtonLabel: PropTypes.string,
     enterInteractiveModeButtonLabel: PropTypes.string,
