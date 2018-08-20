@@ -18,6 +18,12 @@ class OpenSeadragonViewport extends Component {
     }
   }
 
+  unmounted = false;
+
+  componentWillUnmount() {
+    this.unmounted = true;
+  }
+
   bindEvents(viewer) {
     viewer.addHandler('update-viewport', () => this.resize(viewer));
     viewer.addHandler('open', () => this.resize(viewer));
@@ -46,8 +52,8 @@ class OpenSeadragonViewport extends Component {
     const viewportZoom = viewer.viewport.getZoom(true);
     const zoom = firstImage.viewportToImageZoom(viewportZoom);
     const imageRatio =
-      firstImage._scaleSpring.current.value *
-      firstImage.viewport._containerInnerSize.x /
+      (firstImage._scaleSpring.current.value *
+        firstImage.viewport._containerInnerSize.x) /
       firstImage.source.dimensions.x;
 
     const isZoomedOut =
@@ -56,15 +62,13 @@ class OpenSeadragonViewport extends Component {
     const rotation = viewer.viewport.getRotation();
 
     const x =
-      (viewportOrigin.x / imgWidth - viewportOrigin.x) /
-      viewportWidth *
+      ((viewportOrigin.x / imgWidth - viewportOrigin.x) / viewportWidth) *
       viewer.container.clientWidth;
     const y =
-      (viewportOrigin.y / imgHeight - viewportOrigin.y) /
-      viewportHeight *
+      ((viewportOrigin.y / imgHeight - viewportOrigin.y) / viewportHeight) *
       viewer.container.clientHeight;
 
-    if (this.viewer) {
+    if (this.viewer && this.unmounted === false) {
       // Set position for parents.
       if (this.props.getPosition) {
         this.props.getPosition({
