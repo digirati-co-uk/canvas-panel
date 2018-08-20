@@ -1,17 +1,14 @@
 import React from 'react';
+import { withBemClass } from '@canvas-panel/core';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './SimpleSlideTransition.scss';
 
-let cnt = 0;
-const SimpleSlideTransition = props => {
-  let { children } = props;
-  return (
-    <TransitionGroup className="slide-transitions">
-      <CSSTransition key={cnt++} timeout={500} classNames="fade">
-        {children}
-      </CSSTransition>
-    </TransitionGroup>
-  );
-};
+const SimpleSlideTransition = ({ children, id, bem, timeout = 500 }) => (
+  <TransitionGroup className={bem}>
+    <CSSTransition key={id} timeout={timeout} classNames="fade">
+      {children}
+    </CSSTransition>
+  </TransitionGroup>
+);
 
-export default SimpleSlideTransition;
+export default withBemClass('slide-transitions')(SimpleSlideTransition);
