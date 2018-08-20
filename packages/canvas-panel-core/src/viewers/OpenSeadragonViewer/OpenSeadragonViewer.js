@@ -81,12 +81,6 @@ class OpenSeadragonViewer extends Component<
 
   goToInitialBounds(speed = 0.0000001) {
     if (this.props.initialBounds) {
-      const { x, y, width, height } = this.props.initialBounds;
-      // const selectHighlight = this.viewer.viewport.imageToViewportRectangle(
-      //   new OpenSeadragon.Rect(x, y, width, height, 0)
-      // );
-      // console.log();
-      console.log('GOING TO INITIAL BOUNDS', this.props.initialBounds);
       this.goToRect(this.props.initialBounds, 0, speed);
     } else {
       this.viewer.viewport.goHome(true);
@@ -167,9 +161,7 @@ class OpenSeadragonViewer extends Component<
       if (x > 1) {
         resolve();
       }
-
-      const handle = args => {
-        console.log('resized', args);
+      const handle = () => {
         this.viewer.removeHandler('resize', handle);
         resolve();
       };
