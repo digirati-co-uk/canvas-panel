@@ -19,7 +19,7 @@
     "@canvas-panel/patchwork-plugin": "^0.0.9",
     "@stephenwf-forks/manifesto.js": "2.2.25",
     "html-loader": "0.5.5",
-    "markdown-loader": "3.0.0",
+    "markdown-loader": "4.0.0",
     "react": "16.4.2",
     "react-ace": "6.1.4",
     "react-dom": "16.4.2",
