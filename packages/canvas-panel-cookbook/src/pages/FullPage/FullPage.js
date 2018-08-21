@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import { FullPageViewer } from '@canvas-panel/full-page-plugin';
+import QueryStringProvider from '../../QueryStringProvider';
 
-class FullPage extends Component {
+class FullPage extends QueryStringProvider {
   render() {
+    let manifestURI = 'https://stephenwf.github.io/ocean-liners.json';
+    if (
+      this.urlParams.hasOwnProperty('manifest') &&
+      this.urlParams.manifest.constructor === String
+    ) {
+      manifestURI = this.urlParams.manifest;
+    }
     return (
       <div>
         <FullPageViewer
-          manifest="https://stephenwf.github.io/ocean-liners.json"
+          manifest={manifestURI}
           title="Ocean liners"
+          annotationPosition="top"
         >
-          <p>Full page plugin. Scroll down to start experience.</p>
+          <p>Scroll down to start or click the 'start tour' button.</p>
           <span className="muted">
             © Victoria and Albert Museum, London 2018
           </span>

@@ -3,15 +3,32 @@ import * as Manifesto from '@stephenwf-forks/manifesto.js';
 import * as PropTypes from 'prop-types';
 
 class LocaleString extends PureComponent {
-  static propTypes = {
-    children: PropTypes.arrayOf(PropTypes.instanceOf(Manifesto.Translation)),
-  };
-
   render() {
-    if (!this.props.children) {
+    const { children, renderList, lang } = this.props;
+    if (!children) {
       return null;
     }
-    return Manifesto.TranslationCollection.getValue(this.props.children);
+
+    if (Array.isArray(children)) {
+      return Manifesto.TranslationCollection.getValue(children);
+    }
+
+    if (children[lang]) {
+      return renderList
+        ? renderList(children[lang])
+        : Manifesto.TranslationCollection.getValue(children[lang]);
+    }
+
+    const values = Object.values(children);
+    if (values.length) {
+      return renderList ? (
+        renderList(values[0])
+      ) : (
+        <span dangerouslySetInnerHTML={{ __html: values[0].join('\n') }} />
+      );
+    }
+
+    return '';
   }
 }
 

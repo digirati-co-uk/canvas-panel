@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
 import { withBemClass } from '@canvas-panel/core';
-import SlideShow from '../../components/SlideShow';
-//import SlideShowConfigurator from './components/SlideShowConfigurator';
-import LayoutDebugSlideContent from '../../components/LayoutDebugSlideContent';
-import P3SlideContent from '../../components/P3SlideContent';
+import SlideShow from '../../components/Slideshow/SlideShow';
 
 import './SlideShowDemo.scss';
+import AnnotationDetail from '../../../../canvas-panel-core/src/components/AnnotationDetail/AnnotationDetail';
 
 class SlideShowDemoBase extends Component {
   render() {
@@ -22,7 +20,7 @@ class SlideShowDemoBase extends Component {
             compatibility.
           </p>
           <div className={bem.element('inline-container')}>
-            <SlideShow manifesturi="https://view.nls.uk/manifest/8397/83973988/manifest.json" />
+            <SlideShow manifestUri="https://stephenwf.github.io/va-example.json" />
           </div>
         </section>
         <section className={bem.element('section')}>
@@ -39,29 +37,11 @@ class SlideShowDemoBase extends Component {
             </a>&nbsp;of the viewer using a IIIF Presentation 3 manifest.
           </p>
           <div className={bem.element('inline-container')}>
-            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga4.json">
-              <P3SlideContent />
+            <SlideShow manifestUri="https://adam-digirati.github.io/balenciaga4.json">
+              <AnnotationDetail />
             </SlideShow>
           </div>
         </section>
-        <section className={bem.element('section').modifier('full-width')}>
-          <h2 className={bem.element('subtitle')}>Full width SlideShow</h2>
-          <p style={{ background: 'white' }}>
-            It demonstrates the responsive behaviors and the all possible slide
-            layouts using behaviours.
-          </p>
-          <div className={bem.element('full-width-container')}>
-            <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga1-behaviors.json">
-              <LayoutDebugSlideContent />
-            </SlideShow>
-          </div>
-        </section>
-        {/*<section className={bem.element('section').modifier('full-width')}>
-          <h2 className={bem.element('subtitle')}>
-            Test it with your manifest
-          </h2>
-          <SlideShowConfigurator />
-      </section>*/}
       </article>
     );
   }
