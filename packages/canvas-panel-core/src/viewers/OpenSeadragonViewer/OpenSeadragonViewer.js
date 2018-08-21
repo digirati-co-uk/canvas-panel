@@ -34,6 +34,7 @@ class OpenSeadragonViewer extends Component<
   };
   viewer: ?OpenSeadragon = null;
   element: any = null;
+  viewerReady: Promise<void> = Promise.resolve();
   static defaultProps = {
     osdOptions: {},
     useMaxDimensions: false,
@@ -79,7 +80,10 @@ class OpenSeadragonViewer extends Component<
     };
   }
 
-  goToInitialBounds(speed = 0.0000001) {
+  goToInitialBounds(speed: number = 0.0000001) {
+    if (!this.viewer) {
+      return null;
+    }
     if (this.props.initialBounds) {
       this.goToRect(this.props.initialBounds, 0, speed);
     } else {
@@ -156,13 +160,19 @@ class OpenSeadragonViewer extends Component<
       });
     }
 
-    this.viewerReady = new Promise(resolve => {
+    this.viewerReady = new Promise((resolve, err) => {
+      if (!this.viewer) {
+        return err();
+      }
       const { x } = this.viewer.viewport._contentSize;
       if (x > 1) {
         resolve();
       }
       const handle = () => {
-        this.viewer.removeHandler('resize', handle);
+        if (this.viewer) {
+          this.viewer.removeHandler('resize', handle);
+        }
+
         resolve();
       };
       this.viewer.addHandler('resize', handle);
@@ -209,7 +219,7 @@ class OpenSeadragonViewer extends Component<
   goToRect(
     { x, y, width, height }: Bounds,
     padding: number = 0,
-    speed: ?number
+    speed: number
   ) {
     if (!this.viewer) {
       return null;
