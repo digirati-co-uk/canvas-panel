@@ -3,7 +3,6 @@ import Async from 'react-promise';
 import Upgrader from 'iiif-prezi2to3';
 import Examples from '../../Examples';
 import QueryStringProvider from '../../QueryStringProvider';
-import './CollectionLister.scss';
 
 const IIIF_PRESENTATION_V3_CONTEXT =
   'http://iiif.io/api/presentation/3/context.json';

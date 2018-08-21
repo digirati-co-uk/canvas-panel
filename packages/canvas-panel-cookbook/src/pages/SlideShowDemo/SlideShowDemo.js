@@ -1,6 +1,6 @@
 import React from 'react';
 import { withBemClass } from '@canvas-panel/core';
-import SlideShow from '../../components/SlideShow';
+import SlideShow from '../../components/Slideshow/SlideShow';
 import QueryStringProvider from '../../QueryStringProvider';
 
 import './SlideShowDemo.scss';

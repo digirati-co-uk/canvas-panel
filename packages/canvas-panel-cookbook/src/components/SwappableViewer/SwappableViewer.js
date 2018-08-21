@@ -1,28 +1,17 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
-import Measure from 'react-measure';
 
 import {
   FullPageViewport,
   SingleTileSource,
   withBemClass,
   OpenSeadragonViewport,
-  AnnotationProvider,
   parseSelectorTarget,
-} from '@canvas-panel/core';
+} from '../../../../canvas-panel-core/es/index';
 
-import './SwappableView.scss';
+import './SwappableViewer.scss';
 
-//---------------------------------------
-// NOTE: this code should not be in here
-// just I've already created it when Stephen
-// told me to NOT to. Obviosly, it is crutial
-// to undersand that it is cannot stay, but
-// on the other hand if, I don't have this
-// here I cannot satisfy the requirements
-// from Tom.
-//---------------------------------------
-function getEmbededAnnotations(canvas) {
+function getEmbeddedAnnotations(canvas) {
   return (canvas.__jsonld.annotations || []).reduce((list, next) => {
     if (next.type === 'AnnotationPage') {
       return (next.items || []).reduce((innerList, annotation) => {
@@ -38,7 +27,7 @@ function getEmbededAnnotations(canvas) {
 }
 
 function createRegionFromAnnotations(canvas) {
-  const viewportFocuses = getEmbededAnnotations(canvas).filter(
+  const viewportFocuses = getEmbeddedAnnotations(canvas).filter(
     annotation => annotation.motivation === 'layout-viewport-focus'
   );
   if (viewportFocuses.length > 0) {
@@ -48,7 +37,7 @@ function createRegionFromAnnotations(canvas) {
   }
 }
 
-class SwappableView extends Component {
+class SwappableViewer extends Component {
   state = {
     isInteractive: false,
     itemWidth: 0,
@@ -168,4 +157,4 @@ class SwappableView extends Component {
   }
 }
 
-export default withBemClass('slide')(SwappableView);
+export default withBemClass('slide')(SwappableViewer);

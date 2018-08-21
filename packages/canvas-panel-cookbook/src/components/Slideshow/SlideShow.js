@@ -4,18 +4,18 @@ import {
   Fullscreen,
   RangeNavigationProvider,
   withBemClass,
-} from '@canvas-panel/core';
-import FullscreenButton from './FullscreenButton/FullscreenButton';
-import SimpleSlideTransition from './SimpleSlideTransition';
-import ProgressIndicator from './ProgressIndicator';
-import Slide from './Slide/Slide';
-import CanvasNavigation from './CanvasNavigation';
+} from '../../../../canvas-panel-core/es/index';
+import FullscreenButton from '../FullscreenButton/FullscreenButton';
+import SimpleSlideTransition from '../SimpleSlideTransition/SimpleSlideTransition';
+import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
+import Slide from '../Slide/Slide';
+import CanvasNavigation from '../CanvasNavigation/CanvasNavigation';
 
 import './SlideShow.scss';
 
 class SlideShow extends Component {
   render() {
-    const { manifestUri, children, bem } = this.props;
+    const { manifestUri, renderPanel, bem } = this.props;
     return (
       <div className={bem}>
         <Fullscreen>
@@ -35,14 +35,13 @@ class SlideShow extends Component {
                     <div className={bem.element('inner-frame')}>
                       <SimpleSlideTransition id={currentIndex}>
                         <Slide
-                          key={currentIndex}
+                          // key={currentIndex}
                           behaviors={canvas.__jsonld.behavior || []}
                           manifest={manifest}
                           canvas={canvas}
                           region={region}
-                        >
-                          {children}
-                        </Slide>
+                          renderPanel={renderPanel}
+                        />
                       </SimpleSlideTransition>
                       <FullscreenButton {...fullscreenProps} />
                       <CanvasNavigation

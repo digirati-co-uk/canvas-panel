@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 import { withBemClass } from '@canvas-panel/core';
-import SlideShow from '../../components/SlideShow';
-import LayoutDebugSlideContent from '../../components/LayoutDebugSlideContent';
-import P3SlideContent from '../../components/P3SlideContent';
+import SlideShow from '../../components/Slideshow/SlideShow';
 
 import './SlideShowDemo.scss';
+import AnnotationDetail from '../../../../canvas-panel-core/src/components/AnnotationDetail/AnnotationDetail';
 
 class SlideShowDemoBase extends Component {
   render() {
@@ -39,19 +38,7 @@ class SlideShowDemoBase extends Component {
           </p>
           <div className={bem.element('inline-container')}>
             <SlideShow manifestUri="https://adam-digirati.github.io/balenciaga4.json">
-              <P3SlideContent />
-            </SlideShow>
-          </div>
-        </section>
-        <section className={bem.element('section').modifier('full-width')}>
-          <h2 className={bem.element('subtitle')}>Full width SlideShow</h2>
-          <p style={{ background: 'white' }}>
-            It demonstrates the responsive behaviors and the all possible slide
-            layouts using behaviours.
-          </p>
-          <div className={bem.element('full-width-container')}>
-            <SlideShow manifestUri="https://adam-digirati.github.io/balenciaga1-behaviors.json">
-              <LayoutDebugSlideContent />
+              <AnnotationDetail />
             </SlideShow>
           </div>
         </section>

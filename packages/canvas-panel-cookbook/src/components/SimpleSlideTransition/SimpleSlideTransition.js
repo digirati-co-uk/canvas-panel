@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withBemClass } from '@canvas-panel/core';
+import { withBemClass } from '../../../../canvas-panel-core/es/index';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './SimpleSlideTransition.scss';
 
@@ -8,7 +8,14 @@ class SimpleSlideTransition extends Component {
     const { children, id, bem, timeout = 500 } = this.props;
     return (
       <TransitionGroup className={bem}>
-        <CSSTransition key={id} timeout={timeout} classNames="fade">
+        <CSSTransition
+          key={id}
+          timeout={{
+            enter: 1000,
+            exit: 1000,
+          }}
+          classNames="fade"
+        >
           {children}
         </CSSTransition>
       </TransitionGroup>

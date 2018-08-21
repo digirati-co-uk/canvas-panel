@@ -14,13 +14,13 @@
     transform: translate(0, -50%);
     pointer-events: all;
     color: transparent;
-    background: transparent;
     border: 0;
     background: rgba(255, 255, 255, 1);
     width: 64px;
     height: 64px;
     outline: 0;
     filter: drop-shadow(0 0 0px transparent);
+    transition: opacity 0.3s;
     &:hover {
       &:before {
         font-size: 1.8em;
@@ -45,6 +45,9 @@
       color: #e36049;
       font-family: 'Font Awesome\ 5 Free';
     }
+    &--isFirstPage {
+      opacity: 0;
+    }
   }
   &__next {
     right: -32px;
@@ -58,6 +61,9 @@
       content: '\f054';
       color: #e36049;
       font-family: 'Font Awesome\ 5 Free';
+    }
+    &--isLastPage {
+      opacity: 0;
     }
   }
 }
