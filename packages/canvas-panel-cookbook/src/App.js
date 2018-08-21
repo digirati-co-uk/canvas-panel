@@ -104,7 +104,12 @@ const ScrollToTop = () => {
 const App = () => (
   <Router>
     <main>
-      <header>
+      <header
+        style={{
+          display:
+            window.location.hash.indexOf('no-header=1') !== -1 ? 'none' : '',
+        }}
+      >
         <ul className="app-navigation">
           <li className="app-brand">
             <NavLink activeClassName="navigation-active" to="/">

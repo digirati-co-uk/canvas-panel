@@ -52,6 +52,12 @@ class Viewport extends Component {
     }
   }
 
+  unmounted = false;
+
+  componentWillUnmount() {
+    this.umounted = true;
+  }
+
   onUpdateViewport = ({
     x,
     y,
@@ -61,6 +67,7 @@ class Viewport extends Component {
     imageRatio,
     isZoomedOut = true,
   }) => {
+    if (this.umounted) return;
     this.setState({
       isLoading: false,
       x,
@@ -240,7 +247,7 @@ class Viewport extends Component {
               transform: transformGenerator({
                 x,
                 y,
-                scale: zoom * scale / ratio,
+                scale: (zoom * scale) / ratio,
                 rotation,
               }),
               transformOrigin: '0 0 0',

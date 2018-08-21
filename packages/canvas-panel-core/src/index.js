@@ -25,6 +25,7 @@ import functionOrMapChildren from './utility/functionOrMapChildren';
 import AnnotationSelector from './utility/AnnotationSelector';
 import htmlElementObserver from './utility/htmlElementObserver';
 import Responsive from './utility/Responsive';
+import parseSelectorTarget from './utility/parseSelectorTarget';
 
 export {
   // Components.
@@ -58,4 +59,5 @@ export {
   functionOrMapChildren,
   htmlElementObserver,
   withBemClass,
+  parseSelectorTarget,
 };

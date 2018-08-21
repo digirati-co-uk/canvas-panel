@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import { withBemClass } from '@canvas-panel/core';
-import SlideShow from '../../components/SlideShow';
-import LayoutDebugSlideContent from '../../components/LayoutDebugSlideContent';
+import SlideShow from '../../components/Slideshow/SlideShow';
 
 import './SlideShowFullScreenDemo.scss';
+import AnnotationDetail from '../../../../canvas-panel-core/src/components/AnnotationDetail/AnnotationDetail';
 
 class SlideShowDemoBase extends Component {
   render() {
@@ -12,8 +12,8 @@ class SlideShowDemoBase extends Component {
     return (
       <article className={bem}>
         <div className={bem.element('full-width-container')}>
-          <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga2.json">
-            <LayoutDebugSlideContent />
+          <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga4.json">
+            <AnnotationDetail />
           </SlideShow>
         </div>
       </article>
