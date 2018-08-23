@@ -28,6 +28,7 @@
     "build": "lerna run build && lerna link",
     "build-all": "lerna run build",
     "build-ci": "npm-run-all build build-docs",
+    "preview": "./buildDocs.sh && netlifyctl deploy --draft -m 'Local deployment preview'",
     "start": "run-p watch start-docs",
     "start-docs": "cd packages/canvas-panel-core && yarn start",
     "watch": "lerna run watch --parallel --concurrency=4",
