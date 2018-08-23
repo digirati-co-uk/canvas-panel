@@ -7,9 +7,10 @@ import {
   withBemClass,
   OpenSeadragonViewport,
   parseSelectorTarget,
-} from '../../../../canvas-panel-core/es/index';
+} from '@canvas-panel/core';
 
 import './SwappableViewer.scss';
+import ZoomButtons from '../ZoomButtons/ZoomButtons';
 import FullscreenButton from '../FullscreenButton/FullscreenButton';
 
 function getEmbeddedAnnotations(canvas) {
@@ -100,8 +101,23 @@ class SwappableViewer extends Component {
     }
   }
 
+  zoomOut = () => {
+    this.viewport.zoomOut();
+  };
+
+  zoomIn = () => {
+    this.viewport.zoomIn();
+  };
+
+  updateViewport = ({ isZoomedOut }) => {
+    if (this.state.isZoomedOut === false && isZoomedOut) {
+      this.viewport.resetView();
+    }
+    this.setState({ isZoomedOut });
+  };
+
   render() {
-    const { region } = this.state;
+    const { region, isZoomedOut } = this.state;
     const {
       isInteractive,
       manifest,
@@ -115,13 +131,16 @@ class SwappableViewer extends Component {
         className={bem
           .element('viewport')
           .modifiers({ interactive: isInteractive })}
+        onWheel={this.onWheel}
       >
         <SingleTileSource manifest={manifest} canvas={canvas}>
           <FullscreenButton {...fullscreenProps} />
+          <ZoomButtons onZoomOut={this.zoomOut} onZoomIn={this.zoomIn} />
           <FullPageViewport
+            onUpdateViewport={this.updateViewport}
             setRef={this.setViewport}
             position="absolute"
-            interactive={isInteractive}
+            interactive={isInteractive || !isZoomedOut}
           >
             <OpenSeadragonViewport
               useMaxDimensions={true}

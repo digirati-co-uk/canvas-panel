@@ -1,4 +1,5 @@
 .slide__viewport {
+  position: relative;
   &--interactive,
   &--interactive * {
     cursor: zoom-in;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import SwappableViewer from '../SwappableViewer/SwappableViewer';
 import CanvasDetail from '../CanvasDetail/CanvasDetail';
+import './Slide.scss';
 
 class Slide extends Component {
   render() {

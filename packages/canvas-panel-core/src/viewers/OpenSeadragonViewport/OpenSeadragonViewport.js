@@ -57,7 +57,7 @@ class OpenSeadragonViewport extends Component {
       firstImage.source.dimensions.x;
 
     const isZoomedOut =
-      viewportZoom.toFixed(2) === viewer.viewport.getMinZoom().toFixed(2);
+      viewportZoom.toFixed(2) <= viewer.viewport.getMinZoom().toFixed(2);
 
     const rotation = viewer.viewport.getRotation();
 
