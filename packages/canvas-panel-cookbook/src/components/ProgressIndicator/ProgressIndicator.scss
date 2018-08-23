@@ -11,6 +11,7 @@ $progress-indicator-collapsed-height: 4px;
   left: 0;
   z-index: 1000;
   &__track {
+    transition: height 0.15s linear;
     height: $progress-indicator-collapsed-height;
     background: $progress-indicator-track-color;
     position: absolute;
@@ -20,13 +21,13 @@ $progress-indicator-collapsed-height: 4px;
   }
   &__value {
     height: 100%;
+    transition: width 0.3s;
     background: $progress-indicator-progress-color;
   }
 
   &:hover {
     .progress-indicator__track {
       height: $progress-indicator-open-height;
-      transition: height 0.15s linear;
     }
   }
 }
