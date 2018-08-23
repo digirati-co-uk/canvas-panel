@@ -1,0 +1,9 @@
+[Settings]
+  ID = "4bcaed26-96d1-4dc1-b8c7-561f3c62460d"
+
+[Build]
+  base    = "/"
+  functions = ""
+  command = "./buildDocs.sh"
+  publish = "dist"
+  environment = { YARN_FLAGS = "--no-ignore-optional", YARN_VERSION = "1.3.2" }
