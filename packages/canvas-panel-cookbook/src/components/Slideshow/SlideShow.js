@@ -36,6 +36,7 @@ class SlideShow extends Component {
                       <SimpleSlideTransition id={currentIndex}>
                         <Slide
                           // key={currentIndex}
+                          fullscreenProps={fullscreenProps}
                           behaviors={canvas.__jsonld.behavior || []}
                           manifest={manifest}
                           canvas={canvas}
@@ -43,7 +44,6 @@ class SlideShow extends Component {
                           renderPanel={renderPanel}
                         />
                       </SimpleSlideTransition>
-                      <FullscreenButton {...fullscreenProps} />
                       <CanvasNavigation
                         previousRange={previousRange}
                         nextRange={nextRange}

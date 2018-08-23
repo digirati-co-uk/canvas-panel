@@ -12,6 +12,7 @@ class Slide extends Component {
       canvas,
       region,
       renderPanel,
+      fullscreenProps,
     } = this.props;
     return (
       <div
@@ -22,7 +23,13 @@ class Slide extends Component {
           }, {})
         )}
       >
-        <SwappableViewer manifest={manifest} canvas={canvas} region={region} />
+        <SwappableViewer
+          fullscreenProps={fullscreenProps}
+          isInteractive={fullscreenProps.isFullscreen}
+          manifest={manifest}
+          canvas={canvas}
+          region={region}
+        />
         {renderPanel ? (
           renderPanel(this.props)
         ) : (

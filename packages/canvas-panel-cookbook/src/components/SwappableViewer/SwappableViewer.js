@@ -10,6 +10,7 @@ import {
 } from '../../../../canvas-panel-core/es/index';
 
 import './SwappableViewer.scss';
+import FullscreenButton from '../FullscreenButton/FullscreenButton';
 
 function getEmbeddedAnnotations(canvas) {
   return (canvas.__jsonld.annotations || []).reduce((list, next) => {
@@ -53,27 +54,19 @@ class SwappableViewer extends Component {
   };
 
   static propTypes = {
-    exitInteractiveModeButtonLabel: PropTypes.string,
-    enterInteractiveModeButtonLabel: PropTypes.string,
     canvas: PropTypes.any,
     manifest: PropTypes.any,
+    isInteractive: PropTypes.bool,
+    fullscreenProps: PropTypes.shape({
+      isFullscreen: PropTypes.bool,
+      isFullscreenEnabled: PropTypes.bool,
+      exitFullscreen: PropTypes.func,
+      goFullscreen: PropTypes.func,
+    }),
   };
 
   static defaultProps = {
-    exitInteractiveModeButtonLabel: 'Exit Interactive Mode',
-    enterInteractiveModeButtonLabel: 'Explore',
-  };
-
-  setViewportToStatic = () => {
-    this.setState({
-      isInteractive: false,
-    });
-  };
-
-  setViewportToInteractive = () => {
-    this.setState({
-      isInteractive: true,
-    });
+    isInteractive: false,
   };
 
   setViewport = viewport => {
@@ -108,13 +101,13 @@ class SwappableViewer extends Component {
   }
 
   render() {
-    const { isInteractive, region } = this.state;
+    const { region } = this.state;
     const {
+      isInteractive,
       manifest,
       canvas,
-      exitInteractiveModeButtonLabel,
-      enterInteractiveModeButtonLabel,
       bem,
+      fullscreenProps,
     } = this.props;
 
     return (
@@ -124,6 +117,7 @@ class SwappableViewer extends Component {
           .modifiers({ interactive: isInteractive })}
       >
         <SingleTileSource manifest={manifest} canvas={canvas}>
+          <FullscreenButton {...fullscreenProps} />
           <FullPageViewport
             setRef={this.setViewport}
             position="absolute"
@@ -137,21 +131,6 @@ class SwappableViewer extends Component {
             />
           </FullPageViewport>
         </SingleTileSource>
-        {isInteractive ? (
-          <button
-            onClick={this.setViewportToStatic}
-            className={bem.element('interactive-btn')}
-          >
-            {exitInteractiveModeButtonLabel}
-          </button>
-        ) : (
-          <button
-            onClick={this.setViewportToInteractive}
-            className={bem.element('interactive-btn')}
-          >
-            {enterInteractiveModeButtonLabel}
-          </button>
-        )}
       </div>
     );
   }
