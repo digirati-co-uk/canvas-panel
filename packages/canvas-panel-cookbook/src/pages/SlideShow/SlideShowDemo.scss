@@ -1,6 +1,6 @@
 // Basic page fonts
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro');
-@import url('https://use.fontawesome.com/releases/v5.0.13/css/solid.css');
+//@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro');
+//@import url('https://use.fontawesome.com/releases/v5.0.13/css/solid.css');
 
 // breakpoints
 $tablet: 768px;
@@ -127,10 +127,10 @@ $mobile: 425px;
     }
     @include tablet-down {
       width: 100%;
-      height: calc(100vh - 40px);
-      .slideshow {
-        position: absolute;
-      }
+      ////height: calc(100vh - 40px);
+      //.slideshow {
+      //  position: absolute;
+      //}
     }
 
     margin: 0 auto;

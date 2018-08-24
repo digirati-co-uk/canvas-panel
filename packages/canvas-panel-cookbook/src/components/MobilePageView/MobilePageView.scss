@@ -1,0 +1,41 @@
+.mobile-page-view {
+  &__canvas {
+    position: relative;
+    background: #fff;
+  }
+
+  &__detail {
+    padding: 10px 20px;
+
+    &-label {
+      margin: 10px 0;
+    }
+
+    &-body {
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+  }
+  &__metadata {
+    position: relative;
+  }
+
+  &__attribution {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 10000;
+    text-shadow: 1px 1px 1px #1d1e20;
+    line-height: 1.4;
+    color: white;
+    & * {
+      line-height: 1.4;
+      color: white;
+    }
+  }
+
+  &__canvas-image {
+    position: relative;
+    max-width: 100%;
+  }
+}

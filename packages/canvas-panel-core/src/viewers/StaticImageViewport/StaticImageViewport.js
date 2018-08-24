@@ -13,7 +13,7 @@ class StaticImageViewport extends Component {
     width: PropTypes.number,
     draggable: PropTypes.bool,
     onClick: PropTypes.func,
-    canvas: PropTypes.instanceOf(Manifesto.Canvas),
+    canvas: PropTypes.any,
   };
 
   static defaultProps = {
@@ -55,19 +55,33 @@ class StaticImageViewport extends Component {
   };
 
   render() {
-    const { canvas, width, draggable, onClick } = this.props;
+    const {
+      canvas,
+      className,
+      children,
+      width,
+      draggable,
+      onClick,
+      style,
+    } = this.props;
     const ratio = this.getRatio();
     const targetWidth = Math.floor(width / ratio);
     const pixelRatio = window.devicePixelRatio || 1;
 
     const body = (
-      <div onClick={onClick}>
+      <div className={className} onClick={onClick}>
         <img
           src={canvas.getCanonicalImageUri(
             Math.floor(targetWidth * pixelRatio)
           )}
-          style={{ width: width / ratio, pointerEvents: 'none' }}
+          style={{
+            width: width / ratio,
+            pointerEvents: 'none',
+            maxWidth: '100%',
+            ...style,
+          }}
         />
+        {children}
       </div>
     );
 

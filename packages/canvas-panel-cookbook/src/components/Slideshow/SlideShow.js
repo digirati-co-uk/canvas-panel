@@ -4,8 +4,10 @@ import {
   Fullscreen,
   RangeNavigationProvider,
   withBemClass,
+  Responsive,
 } from '../../../../canvas-panel-core/es/index';
 import FullscreenButton from '../FullscreenButton/FullscreenButton';
+import MobilePageView from '../MobilePageView/MobilePageView';
 import SimpleSlideTransition from '../SimpleSlideTransition/SimpleSlideTransition';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 import Slide from '../Slide/Slide';
@@ -17,7 +19,11 @@ class SlideShow extends Component {
   render() {
     const { manifestUri, renderPanel, bem } = this.props;
     return (
-      <div className={bem}>
+      <div
+        className={bem.modifiers({
+          isMobile: Responsive.md.phone(),
+        })}
+      >
         <Fullscreen>
           {fullscreenProps => (
             <Manifest url={manifestUri}>
@@ -33,27 +39,31 @@ class SlideShow extends Component {
                 }) => {
                   return (
                     <div className={bem.element('inner-frame')}>
-                      <SimpleSlideTransition id={currentIndex}>
-                        <Slide
-                          // key={currentIndex}
-                          fullscreenProps={fullscreenProps}
-                          behaviors={canvas.__jsonld.behavior || []}
-                          manifest={manifest}
-                          canvas={canvas}
-                          region={region}
-                          renderPanel={renderPanel}
+                      <Responsive
+                        phoneOnly={() => <MobilePageView manifest={manifest} />}
+                      >
+                        <SimpleSlideTransition id={currentIndex}>
+                          <Slide
+                            // key={currentIndex}
+                            fullscreenProps={fullscreenProps}
+                            behaviors={canvas.__jsonld.behavior || []}
+                            manifest={manifest}
+                            canvas={canvas}
+                            region={region}
+                            renderPanel={renderPanel}
+                          />
+                        </SimpleSlideTransition>
+                        <CanvasNavigation
+                          previousRange={previousRange}
+                          nextRange={nextRange}
+                          canvasList={canvasList}
+                          currentIndex={currentIndex}
                         />
-                      </SimpleSlideTransition>
-                      <CanvasNavigation
-                        previousRange={previousRange}
-                        nextRange={nextRange}
-                        canvasList={canvasList}
-                        currentIndex={currentIndex}
-                      />
-                      <ProgressIndicator
-                        currentCanvas={currentIndex}
-                        totalCanvases={canvasList.length}
-                      />
+                        <ProgressIndicator
+                          currentCanvas={currentIndex}
+                          totalCanvases={canvasList.length}
+                        />
+                      </Responsive>
                     </div>
                   );
                 }}
