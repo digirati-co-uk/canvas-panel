@@ -46,7 +46,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "babel-loader": "7.1.5",
+    "babel-loader": "8.0.0",
     "create-nwb-webpack-config": "1.0.0",
     "npm-watch": "0.3.0",
     "nwb": "0.21.5",
