@@ -14,6 +14,7 @@ import AnnotationListProvider from './manifesto/AnnotationListProvider/Annotatio
 import AnnotationProvider from './manifesto/AnnotationProvider/AnnotationProvider';
 import CanvasProvider from './manifesto/CanvasProvider/CanvasProvider';
 import LocaleString from './manifesto/LocaleString/LocaleString';
+import RangeNavigationProvider from './manifesto/RangeNavigationProvider/RangeNavigationProvider';
 import FullPageViewport from './viewers/FullPageViewport/FullPageViewport';
 import OpenSeadragonViewer from './viewers/OpenSeadragonViewer/OpenSeadragonViewer';
 import OpenSeadragonViewport from './viewers/OpenSeadragonViewport/OpenSeadragonViewport';
@@ -24,6 +25,7 @@ import functionOrMapChildren from './utility/functionOrMapChildren';
 import AnnotationSelector from './utility/AnnotationSelector';
 import htmlElementObserver from './utility/htmlElementObserver';
 import Responsive from './utility/Responsive';
+import parseSelectorTarget from './utility/parseSelectorTarget';
 
 export {
   // Components.
@@ -43,6 +45,7 @@ export {
   CanvasProvider,
   LocaleString,
   Manifest,
+  RangeNavigationProvider,
   // Viewers
   FullPageViewport,
   OpenSeadragonViewer,
@@ -56,4 +59,5 @@ export {
   functionOrMapChildren,
   htmlElementObserver,
   withBemClass,
+  parseSelectorTarget,
 };

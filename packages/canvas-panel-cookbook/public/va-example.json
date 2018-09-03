@@ -1,0 +1,322 @@
+{
+  "@context": [
+    "http://digirati.com/canvaspanel/vocab.json",
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://digirati.com/va-example.json",
+  "type": "Manifest",
+  "label": { "en": ["V&A Test Manifest"] },
+  "metadata": [
+    {
+      "label": { "en": ["Comment"] },
+      "value": {
+        "@none": ["V&A Test manifest created from IIIF image sources"]
+      }
+    }
+  ],
+  "rights": "https://creativecommons.org/licenses/by/4.0/",
+  "items": [
+    {
+      "id": "https://digirati.com/va-example/c1",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "label": { "en": ["V&A Test canvas 1"] },
+      "width": 5304,
+      "height": 7072,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": ["The Victoria and Albert Museum"]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/va-example/c1/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/va-example/c1/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://framemark.vam.ac.uk/collections/2010EJ5060/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 5304,
+                "height": 7072,
+                "service": [
+                  {
+                    "id": "https://framemark.vam.ac.uk/collections/2010EJ5060/",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/va-example/c1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/va-example/c2",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "label": { "en": ["V&A Test canvas 1"] },
+      "width": 4710,
+      "height": 4710,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": ["The Victoria and Albert Museum"]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/va-example/c2/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/va-example/c2/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://framemark.vam.ac.uk/collections/2008BW3940/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 4710,
+                "height": 4710,
+                "service": [
+                  {
+                    "id": "https://framemark.vam.ac.uk/collections/2008BW3940/",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/va-example/c2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/va-example/c3",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "label": { "en": ["V&A Test canvas 1"] },
+      "width": 4710,
+      "height": 4710,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": ["The Victoria and Albert Museum"]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/va-example/c3/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/va-example/c3/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://framemark.vam.ac.uk/collections/2008BW3941/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 4710,
+                "height": 4710,
+                "service": [
+                  {
+                    "id": "https://framemark.vam.ac.uk/collections/2008BW3941/",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/va-example/c3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/va-example/c4",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "label": { "en": ["V&A Test canvas 1"] },
+      "width": 5440,
+      "height": 4080,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": ["The Victoria and Albert Museum"]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/va-example/c4/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/va-example/c4/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://framemark.vam.ac.uk/collections/2015HM1871/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 5440,
+                "height": 4080,
+                "service": [
+                  {
+                    "id": "https://framemark.vam.ac.uk/collections/2015HM1871/",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/va-example/c4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/va-example/c5",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "label": { "en": ["V&A Test canvas 1"] },
+      "width": 5440,
+      "height": 4080,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": ["The Victoria and Albert Museum"]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/va-example/c5/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/va-example/c5/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://framemark.vam.ac.uk/collections/2015HM1873/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 5440,
+                "height": 4080,
+                "service": [
+                  {
+                    "id": "https://framemark.vam.ac.uk/collections/2015HM1873/",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/va-example/c5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/va-example/c6",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "label": { "en": ["V&A Test canvas 1"] },
+      "width": 4064,
+      "height": 2704,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": ["The Victoria and Albert Museum"]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/va-example/c6/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/va-example/c6/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://framemark.vam.ac.uk/collections/2008BU1844/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 4064,
+                "height": 2704,
+                "service": [
+                  {
+                    "id": "https://framemark.vam.ac.uk/collections/2008BU1844/",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/va-example/c6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://digirati.com/va-example/c7",
+      "type": "Canvas",
+      "behavior": ["info-position-left", "layout-overlay"],
+      "label": { "en": ["V&A Test canvas 1"] },
+      "width": 4710,
+      "height": 4710,
+      "requiredStatement": {
+        "label": { "en": [""] },
+        "value": {
+          "en": ["The Victoria and Albert Museum"]
+        }
+      },
+      "items": [
+        {
+          "id": "https://digirati.com/va-example/c7/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digirati.com/va-example/c7/page/imageanno1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id":
+                  "https://framemark.vam.ac.uk/collections/2008BU2188/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 4710,
+                "height": 4710,
+                "service": [
+                  {
+                    "id": "https://framemark.vam.ac.uk/collections/2008BU2188/",
+                    "type": "ImageService2",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "target": "https://digirati.com/va-example/c7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

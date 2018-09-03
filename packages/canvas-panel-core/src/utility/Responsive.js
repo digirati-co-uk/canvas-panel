@@ -2,13 +2,9 @@ import React, { PureComponent } from 'react';
 import MobileDetect from 'mobile-detect';
 import functionOrMapChildren from './functionOrMapChildren';
 
-const md = new MobileDetect(window.navigator.userAgent);
-
 class Responsive extends PureComponent {
-  md = md;
-
   static isMobile() {
-    return !!md.phone();
+    return !!Responsive.md.phone();
   }
 
   render() {
@@ -28,19 +24,19 @@ class Responsive extends PureComponent {
       );
     }
 
-    if (is && this.md.is(is)) {
+    if (is && Responsive.md.is(is)) {
       return functionOrMapChildren(children, props);
     }
 
-    if (phoneOnly && this.md.phone()) {
+    if (phoneOnly && Responsive.md.phone()) {
       return phoneOnly(props);
     }
 
-    if (tabletOnly && this.md.tablet()) {
+    if (tabletOnly && Responsive.md.tablet()) {
       return tabletOnly(props);
     }
 
-    if (tabletDown && this.md.mobile()) {
+    if (tabletDown && Responsive.md.mobile()) {
       return tabletDown(props);
     }
 
@@ -49,5 +45,7 @@ class Responsive extends PureComponent {
       : functionOrMapChildren(children, props);
   }
 }
+
+Responsive.md = new MobileDetect(window.navigator.userAgent);
 
 export default Responsive;

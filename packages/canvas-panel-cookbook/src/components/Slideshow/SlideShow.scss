@@ -1,0 +1,17 @@
+.slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: black;
+  overflow: hidden;
+
+  &--isMobile {
+    background: #fff;
+    position: relative;
+  }
+  &__inner-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}

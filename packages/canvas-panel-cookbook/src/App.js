@@ -4,6 +4,10 @@ import Patchwork from './pages/Patchwork/Patchwork';
 import FullPage from './pages/FullPage/FullPage';
 import AnnotationPlayground from './pages/AnnotationPlayground/AnnotationPlayground';
 
+import SlideShowExamples from './pages/SlideShow/SlideShowDemo';
+import SlideShowDemo from './pages/SlideShowDemo/SlideShowDemo';
+import SlideShowFullScreenDemo from './pages/SlideShowFullScreen/SlideShowFullScreenDemo';
+import CollectionLister from './pages/CollectionLister/CollectionLister';
 import './App.scss';
 import PopOut from './PopOut';
 import aboutText from '../../../about.md';
@@ -84,6 +88,12 @@ const exampleList = [
     image:
       'https://framemark.vam.ac.uk/collections/2013GU2911/1536,2048,512,256/512,/0/default.jpg',
   },
+  {
+    label: 'V&A Slide Show',
+    link: '/examples/slide-show',
+    image:
+      'https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg',
+  },
 ];
 
 const ScrollToTop = () => {
@@ -94,7 +104,12 @@ const ScrollToTop = () => {
 const App = () => (
   <Router>
     <main>
-      <header>
+      <header
+        style={{
+          display:
+            window.location.hash.indexOf('no-header=1') !== -1 ? 'none' : '',
+        }}
+      >
         <ul className="app-navigation">
           <li className="app-brand">
             <NavLink activeClassName="navigation-active" to="/">
@@ -135,7 +150,7 @@ const App = () => (
       <Route exact path="/" component={HomeText} />
       <Route exact path="/about" component={AboutText} />
       <Route exact path="/roadmap" component={RoadmapText} />
-      <Route exact path="/examples" component={Examples(exampleList)} />
+      <Route exact path="/examples" component={CollectionLister} />
       <Route path="/examples/oceanliners" component={Patchwork} />
       <Route path="/examples/fullpage" component={FullPage} />
       <Route path="/examples/fullpage-va" component={FullPageVA} />
@@ -144,6 +159,12 @@ const App = () => (
         path="/examples/annotation-playground"
         component={AnnotationPlayground}
       />
+      <Route path="/examples/slide-show" component={SlideShowExamples} />
+      <Route
+        path="/examples/slideshow-fullscreen"
+        component={SlideShowFullScreenDemo}
+      />
+      <Route path="/examples/slideshow-demo" component={SlideShowDemo} />
     </main>
   </Router>
 );

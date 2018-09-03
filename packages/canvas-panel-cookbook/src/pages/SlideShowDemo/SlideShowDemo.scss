@@ -1,0 +1,160 @@
+//// Basic page fonts
+//@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro');
+//@import url('https://use.fontawesome.com/releases/v5.0.13/css/solid.css');
+//
+//// breakpoints
+//$tablet: 768px;
+//$desktop: 1000px; //1280px;
+//$mobile: 425px;
+//
+//@import 'SlideShowDemo.mediaqueries';
+//
+//.slideshow-demo {
+//  background: antiquewhite;
+//  @include mobile-down {
+//    font-size: 12px;
+//  }
+//  &__title {
+//    @include desktop {
+//      max-width: 1024px;
+//      margin: 0 auto;
+//      padding: 90px 110px 30px;
+//    }
+//    @include desktop-down {
+//      margin: 0;
+//      padding: 1em 16px 0em;
+//    }
+//    font-size: 2.8em;
+//    line-height: 1.5em;
+//    font-family: 'Playfair Display', Serif;
+//    letter-spacing: -3px;
+//    background: white;
+//  }
+//  &__subtitle {
+//    @include desktop {
+//      max-width: 1024px;
+//      padding: 0 110px;
+//    }
+//    @include desktop-down {
+//      padding-left: 16px;
+//    }
+//    margin: 0 auto 1.5em;
+//    font-size: 1.8em;
+//    line-height: 1.5em;
+//
+//    font-family: 'Playfair Display', Serif;
+//    letter-spacing: 5px;
+//
+//    border-top: 1px solid black;
+//    border-bottom: 1px solid black;
+//    position: relative;
+//    top: 0;
+//    //margin-bottom: 1.5em;
+//    background: white;
+//    text-transform: uppercase;
+//    &:before,
+//    &:after {
+//      position: absolute;
+//      height: 1.5em;
+//      left: 0;
+//      right: 0;
+//      background: white;
+//      content: ' ';
+//    }
+//    &:before {
+//      top: -1.5em;
+//      transform: translate(0, -1px);
+//    }
+//    &:after {
+//      bottom: -1.5em;
+//      transform: translate(0, 1px);
+//    }
+//  }
+//  &__section {
+//    @include tablet-up {
+//      padding: 3em 0 6em;
+//    }
+//    @include tablet-down {
+//      padding: 3em 0;
+//    }
+//    background: white;
+//    font-family: 'Source Sans Pro', Sans-Serif;
+//    & > p {
+//      @include desktop {
+//        max-width: 800px;
+//      }
+//      @include desktop-down {
+//        padding: 0 16px;
+//      }
+//      margin: 1.4em auto 1.4em;
+//      font-size: 1.4em;
+//    }
+//    &:before,
+//    &:after {
+//      clear: both;
+//    }
+//    @include desktop {
+//      max-width: 1024px;
+//    }
+//    margin: 0 auto;
+//    &--full-width {
+//      padding: 0;
+//      //max-width: max-content;
+//      max-width: 100%;
+//      background: transparent;
+//      & > p {
+//        @include desktop {
+//          max-width: 1024px;
+//          padding: 1.4em 110px;
+//        }
+//        @include desktop-down {
+//          padding: 0 16px 1.4em;
+//        }
+//        margin: 1.4em auto 0;
+//      }
+//    }
+//  }
+//  &__inline-container {
+//    @include desktop {
+//      width: 1024px;
+//    }
+//    @include tablet-up {
+//      height: 0;
+//      padding: 0 0 75%;
+//      .slideshow {
+//        position: absolute;
+//      }
+//    }
+//    @include tablet-down {
+//      width: 100%;
+//      //height: calc(100vh - 40px);
+//      height: auto;
+//      .slideshow {
+//        position: absolute;
+//      }
+//    }
+//
+//    margin: 0 auto;
+//    position: relative;
+//  }
+//  &__full-width-container {
+//    width: 100%;
+//    //height: calc(100vh - 40px);
+//    height: auto;
+//    margin: 0 auto;
+//    position: relative;
+//    .slideshow {
+//      position: absolute;
+//    }
+//  }
+//}
+//
+//// Style overrides
+//.slide__interactive-btn {
+//  background: #e36049;
+//  color: white;
+//  font-family: 'Source Sans Pro', Sans-Serif;
+//  font-size: 16px;
+//  letter-spacing: -0.3px;
+//  padding: 8px 16px 9px;
+//}
