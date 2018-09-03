@@ -33,10 +33,7 @@ class PopOutViewer extends Component {
     const { innerHtml, bem, ...props } = this.props;
 
     return (
-      <div
-        className={bem}
-        style={{ pointerEvents: 'visible', overflow: 'hidden' }}
-      >
+      <div className={bem}>
         {open ? (
           <button className={bem.element('close')} onClick={this.close}>
             Exit
