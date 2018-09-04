@@ -1954,7 +1954,7 @@ better-assert@~1.0.0:
   dependencies:
     callsite "1.0.0"
 
-bezier-easing@2.1.0:
+bezier-easing@2.1.0, bezier-easing@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
 
@@ -9612,9 +9612,9 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-styleguidist@7.3.4:
-  version "7.3.4"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.3.4.tgz#3b5f768345e05f2aad8649ba60a705f4ff27a882"
+react-styleguidist@7.3.5:
+  version "7.3.5"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.3.5.tgz#396b9beaf961c7f72c97a3c68e368275a5280e06"
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.7.1"
