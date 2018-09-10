@@ -26,7 +26,7 @@
     "react": "16.5.0",
     "react-ace": "6.1.4",
     "react-dom": "16.5.0",
-    "react-measure": "2.1.1",
+    "react-measure": "2.1.2",
     "react-promise": "2.0.3",
     "react-router-dom": "4.3.1",
     "react-transition-group": "2.3.1",
