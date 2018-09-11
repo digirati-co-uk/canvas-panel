@@ -9549,9 +9549,9 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-measure@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.1.1.tgz#f69b95f072eef3d1ec9e2783e966badf2c409744"
+react-measure@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.1.2.tgz#2fa690cc657d1e7a1271902b7a5937e0055338d5"
   dependencies:
     get-node-dimensions "^1.2.0"
     prop-types "^15.5.10"
