@@ -8096,9 +8096,9 @@ npm-run-path@^2.0.0:
   dependencies:
     path-key "^2.0.0"
 
-npm-watch@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/npm-watch/-/npm-watch-0.3.0.tgz#8f4272c0143e2f4720dbafb111fb91d015fbf82d"
+npm-watch@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/npm-watch/-/npm-watch-0.4.0.tgz#24fb7af68f3795f9d79eb0d893d582bc2a32f543"
   dependencies:
     nodemon "^1.12.1"
     through2 "^2.0.0"
