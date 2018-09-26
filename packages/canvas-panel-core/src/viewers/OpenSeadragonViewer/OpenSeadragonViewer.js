@@ -175,9 +175,7 @@ class OpenSeadragonViewer extends Component<
     if (!this.viewer) {
       return null;
     }
-    // setInterval(() => {
-    //   console.log('viewer ready?', this.viewer.viewport._contentSize);
-    // }, 500);
+
     const { x } = this.viewer.viewport._contentSize;
     if (x > 1) {
       return this.resolveViewer();
