@@ -211,8 +211,9 @@ class PatchworkPlugin extends Component {
         }}
       >
         <Fullscreen>
-          {({ isFullscreen, fullscreenEnabled, toggleFullscreen }) => (
+          {({ isFullscreen, fullscreenEnabled, toggleFullscreen, ref }) => (
             <div
+              ref={ref}
               className={this.getClasses({
                 fullscreenEnabled,
                 isFullscreen,
