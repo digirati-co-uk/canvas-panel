@@ -198,7 +198,7 @@ class OpenSeadragonViewer extends Component<
         return clearInterval(interval);
       }
       state.count += state.interval;
-      if (this.viewer.viewport._contentSize.x > 1) {
+      if (this.viewer && this.viewer.viewport._contentSize.x > 1) {
         this.resolveViewer();
         clearInterval(interval);
       }
