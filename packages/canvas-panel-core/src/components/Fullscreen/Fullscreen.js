@@ -15,6 +15,8 @@ class Fullscreen extends Component<any, State> {
     isFullscreen: false,
   };
 
+  refNode: any;
+
   handleChangeFullScreenState = () => {
     this.setState(() => ({ isFullscreen: screenfull.isFullscreen }));
   };
@@ -40,14 +42,30 @@ class Fullscreen extends Component<any, State> {
   };
 
   goFullscreen = () => {
-    const node = ReactDOM.findDOMNode(this);
+    if (!this.refNode) {
+      console.error(
+        'BREAKING CHANGE: to use fullscreen component you must use the passed in `ref` property'
+      );
+      return;
+    }
+    const node = ReactDOM.findDOMNode(this.refNode);
     if (node) {
       screenfull.request(node);
     }
   };
 
+  setRef = (refNode: any) => {
+    this.refNode = refNode;
+  };
+
   exitFullscreen = () => {
-    const node = ReactDOM.findDOMNode(this);
+    if (!this.refNode) {
+      console.error(
+        'BREAKING CHANGE: to use fullscreen component you must use the passed in `ref` property'
+      );
+      return;
+    }
+    const node = ReactDOM.findDOMNode(this.refNode);
     if (node) {
       screenfull.exit(node);
     }
@@ -63,6 +81,7 @@ class Fullscreen extends Component<any, State> {
       toggleFullscreen: this.toggleFullscreen,
       goFullscreen: this.goFullscreen,
       exitFullscreen: this.exitFullscreen,
+      ref: this.setRef,
       ...props,
     });
   }

@@ -21,7 +21,7 @@ export default props => {
   return (
     <div className="page-outer js-page-outer theme-egg-yolk">
       <link
-        href="https://www.vam.ac.uk/assets/application-edb40d277c900ce86f444ba2b0d36abb8e0bbc9fc2cde5315a5a9d70a2ef0718.css"
+        href="https://www.vam.ac.uk/assets/application-eb724ecd1a3aefc09883f691749b17ce4e26a327579d46efe39b1931aee5d398.css"
         rel="stylesheet"
       />
       <div className="nav">
@@ -144,12 +144,12 @@ export default props => {
             <div className="sir-trevor-text">
               <p>
                 Ocean liners were strictly organised spaces which reflected
-                social hierarchies. The<i> Aquitania</i> provided accommodation
-                for 3,230 passengers, with 618 in first-class, 614 in
-                second-class, and 1,998 in third-class, as well as a crew of
-                972. First-class passengers occupied the upper, most-spacious
-                areas, while engineers laboured in the boiler room deep down in
-                the hull.
+                social hierarchies. The
+                <i> Aquitania</i> provided accommodation for 3,230 passengers,
+                with 618 in first-class, 614 in second-class, and 1,998 in
+                third-class, as well as a crew of 972. First-class passengers
+                occupied the upper, most-spacious areas, while engineers
+                laboured in the boiler room deep down in the hull.
               </p>
             </div>
             <div className="sir-trevor-text">

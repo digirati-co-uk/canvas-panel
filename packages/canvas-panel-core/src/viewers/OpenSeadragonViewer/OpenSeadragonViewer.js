@@ -29,12 +29,20 @@ class OpenSeadragonViewer extends Component<
   OpenSeadragonViewerPropTypes,
   OpenSeadragonViewerState
 > {
+  constructor() {
+    super();
+    this.viewerReady = new Promise(resolve => {
+      this.resolveViewer = resolve;
+    });
+  }
+
+  resolveViewer: () => any;
   state = {
     fallback: false,
   };
   viewer: ?OpenSeadragon = null;
   element: any = null;
-  viewerReady: Promise<void> = Promise.resolve();
+  viewerReady: Promise<void>;
   static defaultProps = {
     osdOptions: {},
     useMaxDimensions: false,
@@ -160,23 +168,39 @@ class OpenSeadragonViewer extends Component<
       });
     }
 
-    this.viewerReady = new Promise((resolve, err) => {
-      if (!this.viewer) {
-        return err();
-      }
-      const { x } = this.viewer.viewport._contentSize;
-      if (x > 1) {
-        resolve();
-      }
-      const handle = () => {
-        if (this.viewer) {
-          this.viewer.removeHandler('resize', handle);
-        }
+    this.ensureViewerReady();
+  }
 
-        resolve();
-      };
-      this.viewer.addHandler('resize', handle);
-    });
+  ensureViewerReady() {
+    if (!this.viewer) {
+      return null;
+    }
+
+    const { x } = this.viewer.viewport._contentSize;
+    if (x > 1) {
+      return this.resolveViewer();
+    }
+    // Sometimes this does not always work...
+    const handle = () => {
+      if (this.viewer) {
+        this.viewer.removeHandler('resize', handle);
+      }
+
+      this.resolveViewer();
+    };
+    this.viewer.addHandler('resize', handle);
+    // Failing that, we do interval, for 5 seconds.
+    const state = { count: 0, interval: 250, seconds: 5 };
+    const interval = setInterval(() => {
+      if (state.count >= state.seconds * 1000) {
+        return clearInterval(interval);
+      }
+      state.count += state.interval;
+      if (this.viewer && this.viewer.viewport._contentSize.x > 1) {
+        this.resolveViewer();
+        clearInterval(interval);
+      }
+    }, state.interval);
   }
 
   getMinZoom = () => {
@@ -257,6 +281,7 @@ class OpenSeadragonViewer extends Component<
       return null;
     }
     const func = this.viewer.viewport[name];
+
     if (func) {
       this.viewerReady.then(() => {
         if (speed || speed === 0) {

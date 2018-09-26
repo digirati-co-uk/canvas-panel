@@ -3,8 +3,14 @@ Demo of the fullscreen component
 ```js
 <div>
   <Fullscreen>
-    {({ toggleFullscreen, exitFullscreen, goFullscreen, isFullscreen }) => (
-      <div>
+    {({
+      toggleFullscreen,
+      exitFullscreen,
+      goFullscreen,
+      isFullscreen,
+      ref,
+    }) => (
+      <div ref={ref}>
         <h1>Testing full screen</h1>
         <p>Lots of text</p>
         <p>Lots of text</p>
@@ -44,9 +50,11 @@ a fullscreen OSD viewer. This is useful on mobile where it won't interfere with 
         exitFullscreen,
         goFullscreen,
         isFullscreen,
+        ref,
         ...props
       }) => (
         <div
+          ref={ref}
           style={
             isFullscreen
               ? {
