@@ -15,7 +15,7 @@
     "eslint-plugin-flowtype": "2.50.3",
     "eslint-plugin-prettier": "3.0.0",
     "flow-bin": "0.81.0",
-    "husky": "1.0.1",
+    "husky": "1.1.0",
     "lerna": "2.11.0",
     "lint-staged": "7.3.0",
     "npm-run-all": "4.1.3",
