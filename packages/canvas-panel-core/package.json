@@ -52,7 +52,7 @@
     "nwb": "0.21.5",
     "nwb-watch": "1.0.0",
     "prop-types": "15.6.2",
-    "react-styleguidist": "7.3.8"
+    "react-styleguidist": "7.3.9"
   },
   "publishConfig": {
     "access": "public"
