@@ -33,7 +33,7 @@
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "redux-actions": "2.6.1",
-    "redux-saga": "0.16.0"
+    "redux-saga": "0.16.1"
   },
   "publishConfig": {
     "access": "public"
