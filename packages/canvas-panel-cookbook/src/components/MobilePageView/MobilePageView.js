@@ -143,7 +143,10 @@ class MobilePageView extends Component {
           .getSequenceByIndex(0)
           .getCanvases()
           .map((canvas, canvasIndex) => (
-            <CanvasDetail key={canvas.id} canvas={canvas}>
+            <CanvasDetail
+              key={canvas ? canvas.id : canvasIndex}
+              canvas={canvas}
+            >
               {({ label, body, attributionLabel, attribution }) => (
                 <div className={bem.element('canvas')}>
                   <StaticImageViewport

@@ -56,7 +56,10 @@ class SlideShow extends Component {
                     region,
                   } = rangeProps;
                   return (
-                    <div className={bem.element('inner-frame')}>
+                    <div
+                      className={bem.element('inner-frame')}
+                      ref={fullscreenProps.ref}
+                    >
                       {this.qualifiesForMobile() ? (
                         <MobilePageView
                           manifest={manifest}
