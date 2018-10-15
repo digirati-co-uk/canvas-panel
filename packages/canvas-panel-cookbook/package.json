@@ -26,6 +26,7 @@
     "react": "16.5.2",
     "react-ace": "6.2.0",
     "react-dom": "16.5.2",
+    "react-flip-move": "^3.0.2",
     "react-measure": "2.1.2",
     "react-promise": "2.0.3",
     "react-router-dom": "4.3.1",

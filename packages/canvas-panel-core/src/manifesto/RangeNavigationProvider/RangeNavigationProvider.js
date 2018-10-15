@@ -205,6 +205,7 @@ class RangeNavigationProvider extends Component<Props, State> {
       ...props,
       nextRange: this.nextRange,
       previousRange: this.previousRange,
+      goToRange: this.goToRange,
       currentIndex,
       rangeId: currentRange,
       range: currentRangeObject,

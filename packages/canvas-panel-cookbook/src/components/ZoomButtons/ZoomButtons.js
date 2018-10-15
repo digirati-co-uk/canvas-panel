@@ -4,9 +4,9 @@ import './ZoomButtons.scss';
 
 class ZoomButtons extends Component {
   render() {
-    const { bem, onZoomIn, onZoomOut } = this.props;
+    const { bem, onZoomIn, onZoomOut, right } = this.props;
     return (
-      <div className={bem}>
+      <div className={bem.modifiers({ right })}>
         <button
           onClick={onZoomIn}
           className={bem.element('button').modifier('in')}

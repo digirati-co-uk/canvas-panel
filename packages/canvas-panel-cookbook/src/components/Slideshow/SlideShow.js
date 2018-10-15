@@ -6,7 +6,6 @@ import {
   withBemClass,
   Responsive,
 } from '../../../../canvas-panel-core/es/index';
-import FullscreenButton from '../FullscreenButton/FullscreenButton';
 import MobilePageView from '../MobilePageView/MobilePageView';
 import SimpleSlideTransition from '../SimpleSlideTransition/SimpleSlideTransition';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
@@ -16,6 +15,24 @@ import CanvasNavigation from '../CanvasNavigation/CanvasNavigation';
 import './SlideShow.scss';
 
 class SlideShow extends Component {
+  state = { innerWidth: window.innerWidth };
+
+  componentWillMount() {
+    window.addEventListener('resize', this.setSize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setSize);
+  }
+
+  setSize = () => {
+    this.setState({ innerWidth: window.innerWidth });
+  };
+
+  qualifiesForMobile = () => {
+    return this.state.innerWidth <= 767;
+  };
+
   render() {
     const { manifestUri, renderPanel, bem } = this.props;
     return (
@@ -28,42 +45,51 @@ class SlideShow extends Component {
           {fullscreenProps => (
             <Manifest url={manifestUri}>
               <RangeNavigationProvider>
-                {({
-                  manifest,
-                  canvas,
-                  canvasList,
-                  currentIndex,
-                  previousRange,
-                  nextRange,
-                  region,
-                }) => {
+                {rangeProps => {
+                  const {
+                    manifest,
+                    canvas,
+                    canvasList,
+                    currentIndex,
+                    previousRange,
+                    nextRange,
+                    region,
+                  } = rangeProps;
                   return (
                     <div className={bem.element('inner-frame')}>
-                      <Responsive
-                        phoneOnly={() => <MobilePageView manifest={manifest} />}
-                      >
-                        <SimpleSlideTransition id={currentIndex}>
-                          <Slide
-                            // key={currentIndex}
-                            fullscreenProps={fullscreenProps}
-                            behaviors={canvas.__jsonld.behavior || []}
-                            manifest={manifest}
-                            canvas={canvas}
-                            region={region}
-                            renderPanel={renderPanel}
-                          />
-                        </SimpleSlideTransition>
-                        <CanvasNavigation
+                      {this.qualifiesForMobile() ? (
+                        <MobilePageView
+                          manifest={manifest}
                           previousRange={previousRange}
                           nextRange={nextRange}
-                          canvasList={canvasList}
-                          currentIndex={currentIndex}
+                          fullscreenProps={fullscreenProps}
+                          {...rangeProps}
                         />
-                        <ProgressIndicator
-                          currentCanvas={currentIndex}
-                          totalCanvases={canvasList.length}
-                        />
-                      </Responsive>
+                      ) : (
+                        <React.Fragment>
+                          <SimpleSlideTransition id={currentIndex}>
+                            <Slide
+                              // key={currentIndex}
+                              fullscreenProps={fullscreenProps}
+                              behaviors={canvas.__jsonld.behavior || []}
+                              manifest={manifest}
+                              canvas={canvas}
+                              region={region}
+                              renderPanel={renderPanel}
+                            />
+                          </SimpleSlideTransition>
+                          <CanvasNavigation
+                            previousRange={previousRange}
+                            nextRange={nextRange}
+                            canvasList={canvasList}
+                            currentIndex={currentIndex}
+                          />
+                          <ProgressIndicator
+                            currentCanvas={currentIndex}
+                            totalCanvases={canvasList.length}
+                          />
+                        </React.Fragment>
+                      )}
                     </div>
                   );
                 }}

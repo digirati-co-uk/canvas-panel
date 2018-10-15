@@ -4,6 +4,11 @@
   left: 14px;
   z-index: 10000;
 
+  &--right {
+    left: auto;
+    right: 14px;
+  }
+
   &__button {
     background: transparent;
     border: none;

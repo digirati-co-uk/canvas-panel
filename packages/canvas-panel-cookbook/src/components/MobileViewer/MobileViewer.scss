@@ -1,0 +1,114 @@
+.mobile-viewer {
+  height: 100%;
+  &__inner {
+    height: 100%;
+  }
+
+  &__attribution {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    text-shadow: 1px 1px 1px #1d1e20;
+    line-height: 1.4;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.2s;
+    z-index: 12;
+    & * {
+      line-height: 1.4;
+      color: white;
+    }
+    &--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__exit-fullscreen {
+    opacity: 1;
+    transition: opacity 0.2s;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    z-index: 12;
+    text-shadow: 1px 1px 1px #1d1e20;
+    cursor: pointer;
+    animation: fadein 0.6s;
+
+    @keyframes fadein {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    &--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &-icon {
+      transform: translateY(5px);
+      filter: drop-shadow(1px 0px 1px #1d1e20);
+    }
+  }
+
+  &__navigation {
+    display: none;
+    @media (pointer: fine) {
+      display: block;
+    }
+  }
+
+  &__info {
+    position: fixed;
+    opacity: 1;
+    transition: opacity 0.2s;
+    bottom: 10px;
+    right: 10px;
+    z-index: 12;
+    background: transparent;
+
+    &--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &-icon {
+      cursor: pointer;
+      filter: drop-shadow(1px 1px 1px #1d1e20);
+    }
+
+    &-panel {
+      color: #000;
+      position: fixed;
+      height: 300px;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      transition: bottom 0.3s;
+      z-index: 13;
+      padding: 20px;
+      line-height: 1.5em;
+      &--hidden {
+        bottom: -300px;
+      }
+
+      &-close {
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        svg {
+          fill: #000;
+        }
+      }
+    }
+  }
+}
