@@ -71,6 +71,29 @@ const ExitFullscreen = ({ bem, hidden, onClick }) => (
   </div>
 );
 
+const InfoButton = ({ bem, onClick, hidden }) => (
+  <div className={bem.element('info').modifiers({ hidden })} onClick={onClick}>
+    <InfoIcon className={bem.element('info-icon')} />
+  </div>
+);
+
+const Navigation = ({ bem, children }) => (
+  <div className={bem.element('navigation')}>{children}</div>
+);
+
+const InfoPanel = ({ bem, hidden, onClose, children, label }) => (
+  <div
+    className={bem.element('info-panel').modifiers({
+      hidden,
+    })}
+    onClick={onClose}
+  >
+    <CloseIcon className={bem.element('info-panel-close')} />
+    <h2>{label}</h2>
+    <p>{children}</p>
+  </div>
+);
+
 class MobileViewer extends Component {
   static defaultProps = {
     applyOffset: () => null,
@@ -159,17 +182,14 @@ class MobileViewer extends Component {
                     hidden={!current || dragging}
                   />
                 ) : (
-                  <div />
+                  <React.Fragment />
                 )}
-                <div
-                  className={bem
-                    .element('info')
-                    .modifiers({ hidden: !current || dragging })}
+                <InfoButton
+                  bem={bem}
                   onClick={onOpen}
-                >
-                  <InfoIcon className={bem.element('info-icon')} />
-                </div>
-                <div className={bem.element('navigation')}>
+                  hidden={!current || dragging}
+                />
+                <Navigation bem={bem}>
                   <ZoomButtons
                     right
                     onZoomIn={onZoomIn}
@@ -183,7 +203,7 @@ class MobileViewer extends Component {
                       currentIndex={index}
                     />
                   ) : null}
-                </div>
+                </Navigation>
                 <FullPageViewport
                   setRef={this.props.setViewport}
                   position="absolute"
@@ -207,16 +227,14 @@ class MobileViewer extends Component {
                 </FullPageViewport>
               </SingleTileSource>
             </div>
-            <div
-              className={bem.element('info-panel').modifiers({
-                hidden: !current || dragging === true || !isOpen,
-              })}
-              onClick={onClose}
+            <InfoPanel
+              bem={bem}
+              hidden={!current || dragging === true || !isOpen}
+              onClose={onClose}
+              label={label}
             >
-              <CloseIcon className={bem.element('info-panel-close')} />
-              <h2>{label}</h2>
-              <p>{body}</p>
-            </div>
+              {body}
+            </InfoPanel>
           </div>
         )}
       </CanvasDetail>

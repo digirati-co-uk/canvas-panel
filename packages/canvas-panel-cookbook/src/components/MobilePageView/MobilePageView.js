@@ -88,17 +88,20 @@ class MobilePageView extends Component {
     const { bem, manifest } = this.props;
 
     if (isFullscreen) {
-      const { canvas, currentIndex, nextRange, previousRange } = this.props;
+      const {
+        canvas,
+        currentIndex,
+        nextRange,
+        previousRange,
+        getNextRange,
+        getPreviousRange,
+      } = this.props;
 
       const size = manifest.getSequenceByIndex(0).getCanvases().length;
 
-      const next = manifest
-        .getSequenceByIndex(0)
-        .getCanvasByIndex(currentIndex + 1);
+      const next = getNextRange();
 
-      const prev = manifest
-        .getSequenceByIndex(0)
-        .getCanvasByIndex(currentIndex - 1);
+      const prev = getPreviousRange();
 
       return (
         <PeekComponent
