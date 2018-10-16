@@ -139,6 +139,10 @@ class MobileViewer extends Component {
     } = this.props;
     const { canvas, index } = props;
 
+    if (!canvas) {
+      return <div />;
+    }
+
     return (
       <CanvasDetail key={canvas.id} canvas={canvas}>
         {({ label, body, attributionLabel, attribution }) => (
