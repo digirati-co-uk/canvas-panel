@@ -99,10 +99,6 @@ class MobilePageView extends Component {
 
       const size = manifest.getSequenceByIndex(0).getCanvases().length;
 
-      const next = getNextRange();
-
-      const prev = getPreviousRange();
-
       return (
         <PeekComponent
           down={down}
@@ -110,12 +106,12 @@ class MobilePageView extends Component {
           onNext={this.nextRange}
           onPrevious={this.previousRange}
           size={size}
-          renderLeft={() =>
-            prev ? <MobileViewer manifest={manifest} canvas={prev} /> : null
-          }
-          renderRight={() =>
-            next ? <MobileViewer manifest={manifest} canvas={next} /> : null
-          }
+          renderLeft={() => (
+            <MobileViewer manifest={manifest} canvas={getPreviousRange()} />
+          )}
+          renderRight={() => (
+            <MobileViewer manifest={manifest} canvas={getNextRange()} />
+          )}
           index={currentIndex}
         >
           <MobileViewer
