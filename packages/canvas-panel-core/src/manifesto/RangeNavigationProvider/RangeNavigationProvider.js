@@ -181,20 +181,32 @@ class RangeNavigationProvider extends Component<Props, State> {
   getCanvasAtIndex = (currentIndex: number) => {
     const { manifest } = this.props;
     const { canvasList } = this.state;
-    return canvasList.length !== 0
-      ? manifest.getSequenceByIndex(0).getCanvasById(canvasList[currentIndex])
-      : null;
+
+    try {
+      return canvasList.length !== 0
+        ? manifest.getSequenceByIndex(0).getCanvasById(canvasList[currentIndex])
+        : null;
+    } catch (err) {
+      return null;
+    }
   };
 
   getNextRange = (currentIndex: number) => () => {
     const { canvasList } = this.state;
-    return canvasList.length !== currentIndex
-      ? this.getCanvasAtIndex(currentIndex + 1)
-      : null;
+
+    if (currentIndex >= canvasList.length - 1) {
+      return;
+    }
+
+    return this.getCanvasAtIndex(currentIndex + 1);
   };
 
   getPreviousRange = (currentIndex: number) => () => {
-    return currentIndex !== 0 ? this.getCanvasAtIndex(currentIndex - 1) : null;
+    if (currentIndex === 0) {
+      return;
+    }
+
+    return this.getCanvasAtIndex(currentIndex - 1);
   };
 
   render() {
