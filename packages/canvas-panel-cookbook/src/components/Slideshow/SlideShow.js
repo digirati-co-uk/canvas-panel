@@ -42,7 +42,7 @@ class SlideShow extends Component {
         })}
       >
         <Fullscreen>
-          {fullscreenProps => (
+          {({ ref, ...fullscreenProps }) => (
             <Manifest url={manifestUri}>
               <RangeNavigationProvider>
                 {rangeProps => {
@@ -56,10 +56,7 @@ class SlideShow extends Component {
                     region,
                   } = rangeProps;
                   return (
-                    <div
-                      className={bem.element('inner-frame')}
-                      ref={fullscreenProps.ref}
-                    >
+                    <div className={bem.element('inner-frame')} ref={ref}>
                       {this.qualifiesForMobile() ? (
                         <MobilePageView
                           manifest={manifest}

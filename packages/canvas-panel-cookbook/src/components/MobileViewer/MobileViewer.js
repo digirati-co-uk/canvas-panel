@@ -172,9 +172,13 @@ class MobileViewer extends Component {
           <div className={bem}>
             <div className={bem.element('inner')}>
               <SingleTileSource {...props}>
-                <Attribution bem={bem} hidden={!current || dragging}>
-                  {attributionLabel} {attribution}
-                </Attribution>
+                {current ? (
+                  <Attribution bem={bem} hidden={!current || dragging}>
+                    {attributionLabel} {attribution}
+                  </Attribution>
+                ) : (
+                  <React.Fragment />
+                )}
                 {current ? (
                   <ExitFullscreen
                     bem={bem}
@@ -184,24 +188,42 @@ class MobileViewer extends Component {
                 ) : (
                   <React.Fragment />
                 )}
-                <InfoButton
-                  bem={bem}
-                  onClick={onOpen}
-                  hidden={!current || dragging}
-                />
-                <Navigation bem={bem}>
-                  <ZoomButtons
-                    right
-                    onZoomIn={onZoomIn}
-                    onZoomOut={onZoomOut}
+                {current ? (
+                  <InfoButton
+                    bem={bem}
+                    onClick={onOpen}
+                    hidden={!current || dragging}
                   />
+                ) : (
+                  <React.Fragment />
+                )}
+                <Navigation bem={bem}>
                   {current ? (
-                    <CanvasNavigation
-                      previousRange={previousRange}
-                      nextRange={nextRange}
-                      size={size}
-                      currentIndex={index}
-                    />
+                    <div
+                      className={bem
+                        .element('zoom-controls')
+                        .modifiers({ hidden: !current || dragging })}
+                    >
+                      <ZoomButtons
+                        right
+                        onZoomIn={onZoomIn}
+                        onZoomOut={onZoomOut}
+                      />
+                    </div>
+                  ) : null}
+                  {current ? (
+                    <div
+                      className={bem
+                        .element('canvas-navigation')
+                        .modifiers({ hidden: !current || dragging })}
+                    >
+                      <CanvasNavigation
+                        previousRange={previousRange}
+                        nextRange={nextRange}
+                        size={size}
+                        currentIndex={index}
+                      />
+                    </div>
                   ) : null}
                 </Navigation>
                 <FullPageViewport
@@ -227,14 +249,16 @@ class MobileViewer extends Component {
                 </FullPageViewport>
               </SingleTileSource>
             </div>
-            <InfoPanel
-              bem={bem}
-              hidden={!current || dragging === true || !isOpen}
-              onClose={onClose}
-              label={label}
-            >
-              {body}
-            </InfoPanel>
+            {current ? (
+              <InfoPanel
+                bem={bem}
+                hidden={dragging === true || !isOpen}
+                onClose={onClose}
+                label={label}
+              >
+                {body}
+              </InfoPanel>
+            ) : null}
           </div>
         )}
       </CanvasDetail>
