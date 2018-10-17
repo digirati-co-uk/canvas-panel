@@ -15,6 +15,14 @@
     display: block;
     margin: 10px;
     outline: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s;
+
+    &--disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
 
     svg {
       transition: filter 0.3s;

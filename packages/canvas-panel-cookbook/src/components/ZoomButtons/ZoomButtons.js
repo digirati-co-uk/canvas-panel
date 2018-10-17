@@ -9,7 +9,10 @@ class ZoomButtons extends Component {
       <div className={bem.modifiers({ right })}>
         <button
           onClick={onZoomIn}
-          className={bem.element('button').modifier('in')}
+          className={bem.element('button').modifiers({
+            in: true,
+            disabled: !onZoomIn,
+          })}
         >
           <svg
             viewBox="0 0 400 400"
@@ -32,7 +35,10 @@ class ZoomButtons extends Component {
         </button>
         <button
           onClick={onZoomOut}
-          className={bem.element('button').modifier('out')}
+          className={bem.element('button').modifiers({
+            out: true,
+            disabled: !onZoomOut,
+          })}
         >
           <svg
             viewBox="0 0 400 400"
