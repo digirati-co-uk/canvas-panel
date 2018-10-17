@@ -149,7 +149,7 @@ class SwappableViewer extends Component {
       <div
         className={bem
           .element('viewport')
-          .modifiers({ interactive: isInteractive })}
+          .modifiers({ interactive: isInteractive || !isZoomedOut })}
         onWheel={this.onWheel}
       >
         <SingleTileSource manifest={manifest} canvas={canvas}>
