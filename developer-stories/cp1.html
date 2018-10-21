@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Digirati Canvas Panel - Developer Stories 1</title>
+    <link rel="stylesheet" href="style-common.css">    
+    <link rel="stylesheet" href="highlight/styles/github.css">
+    <script src="highlight/highlight.pack.js"></script>
+    <script src="cp-common.js"></script>
+    <script src="cp1.js"></script>
+</head>
+
+<body>
+
+    <h2>Canvas Panel Developer Narrative - Version 1</h2>
+
+    <p><a href=".">Intro</a> | Version 1 | <a href="cp2.html">Version 2</a> | <a href="viewer1.html">Viewer 1</a> | <a href="collaboration.html">Collaboration</a></p>
+
+<p>First, a <i>Design principle</i> for Canvas Panel: </p>
+    
+    <blockquote>
+    Internally, work with the latest IIIF specification (Presentation 3) and 
+    <b><i>normalise</i></b> incoming resources to this specification, rather than 
+    accommodating different versions of the spec throughout the codebase.
+</blockquote> 
+
+<p>
+    Canvas Panel is a component that renders canvases. So, perhaps Canvas Panel
+     is to a IIIF Canvas what OpenSeadragon (OSD) is to a deep zoom tile source. 
+      But this analogy
+     doesn't really stretch very far; you can pass multiple tile sources to OSD, but CP's job is to render 
+     one IIIF Canvas. That Canvas might have other canvases on it, as content. It might be VERY complex. 
+     And, your viewer could use multiple CP instances to render multiple canvases. 
+     But by definition, no matter how complex the canvas is, one CP instance renders <b>one single canvas</b>.
+
+     </p><p>
+A better analogy is an <code>img</code> tag; this only takes one value for <code>src</code>. It has block level layout.
+But this doesn't quite work either. What's the block on the page that Canvas Panel occupies? Is it an exact 
+correspondence with the canvas it is rendering, and therefore of the same proportions? No, I don't think so; even though we 
+only give it one canvas to render, the UI we want is a <i>viewport</i> on that canvas: the block level element on the page
+is a viewport, in which we might zoom in to look at just part of the canvas. That seems to be the most aligned with how
+I would put together a viewer; managing a viewport independent of its content is difficult, you want the black box
+of CP taking care of that.
+</p>
+
+<p>Having said that, you could use CP in <i>locked</i> mode; where it doesn't support pan and zoom; you set a height and width
+for the element proportional (or even the same as) the Canvas dimensions. This would be better for video, for example.
+It's not incompatible with the notion of a viewport; it's just a locked viewport. So I think the Viewport model is the right
+level for the CP component, the maximum usefulness. CP is a block element that renders a canvas,
+ but there is navigational freedom over the canvas inside that block.
+</p>
+
+<p>So, another <i>Design principle</i> for Canvas Panel: </p>
+    
+    <blockquote>
+    CP is a block level element that renders a viewport on the canvas. In many scenarios this viewport may be fixed.
+</blockquote> 
+
+<p><i>For later consideration: full screen. Sometimes you might want to defer full screen rendering to CP, but other times
+    you might want to carry some of your other UI to full screen mode; i.e., it's the viewer going full screen, not CP.
+    Developers have a similar consideration when using OSD.
+</i></p>
+
+<p>I want CP to behave like a <code>div</code>, 
+    so I can treat it like other <code>div</code>s in my application, style it, apply predictable 
+    CSS to it, etc. As a web component, this feels like a <i>Customized built-in element</i>, 
+    rather than an <i>Autonomous custom element</i> 
+    (following the definitions given at 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#High-level_view">MDN</a>).
+</p>
+
+<p>My first thought is to just feed it canvases, that probably live in manifests:</p>
+
+<pre><code class="html">  &lt;div is=&quot;canvas-panel-1&quot; id=&quot;cp1&quot; class=&quot;canvaspanel&quot;    
+    data-canvas-uri=&quot;https://wellcomelibrary.org/iiif/b18035723/canvas/c8&quot;       
+    data-partof-uri=&quot;https://tomcrane.github.io/webcomponents/wunder.json&quot;&gt;   
+  &lt;/div&gt;
+</code></pre>
+
+<p>It's a div tag, extended with the <code>canvas-panel-1</code> behaviour.</p>
+       
+    <p>In this type of usage, CP is entirely declarative. It needs to go off and load things under the hood.
+        In this case it will need to load the manifest, then find the canvas in it, then render the canvas.
+
+        To be useful for people who want to do this, CP needs to have all the normalisation to P3 <i>built in</i>.
+        The resources at the other end of those attribute values could be Presentation 2 manifests and canvases; 
+        used like this, CP will have to manage the conversion to Presentation 3 itself.
+    </p>
+    <p>
+        Maybe I don't know what's on this canvas. I don't even know if it has an image, image with tilesource, 
+        multiple images, Choice, Audio, Video, text.
+
+        As my viewer gets more sophisticated, I want to deal with more potential IIIF content. If I want a component like this to 
+        insert that content into a page, I don't want different components for different types of content.
+        This declarative component would be good for that.
+    </p>
+
+    <p>As established in the viewport design principle, the thing you are setting
+         the size of in the <a href="style-common.css">linked CSS</a> isn't a canvas.
+
+        You probably don't know how big or what shape the canvas is at this point.
+        The component is a <b>viewport</b> - the space in which
+        canvas panel is free to render the canvas (or part of it).</p>
+
+<pre><code class="html">&lt;style&gt;    
+    .canvaspanel {        
+        width: 600px;        
+        height: 600px;        
+        padding:2px;        
+        border:1px solid green;        
+        background-color:black;    
+    } 
+&lt;/style&gt; 
+    
+&lt;div is=&quot;canvas-panel-1&quot; id=&quot;cp1&quot; class=&quot;canvaspanel&quot;
+    data-canvas-uri=&quot;https://wellcomelibrary.org/iiif/b18035723/canvas/c8&quot;
+    data-partof-uri=&quot;https://tomcrane.github.io/webcomponents/wunder.json&quot;&gt; 
+&lt;/div&gt;
+</code></pre>
+
+    <div is="canvas-panel-1" id="cp1" class="canvaspanel" 
+        data-canvas-uri="https://wellcomelibrary.org/iiif/b18035723/canvas/c8"
+        data-partof-uri="https://tomcrane.github.io/webcomponents/wunder.json">
+    </div>
+
+    <p>This is a 600 by 600 pixel div, rendering the canvas I have given it.</p>
+
+    <p>I haven't written any code here to respond to anything on that canvas that might need
+        a user interaction to provide the full rendering - e.g., a Choice annotation. 
+        And I can't step in to deal with user interactions in the canvas, such as a click on a linking annotation.
+    </p>
+    <p> Another example:</p>
+
+<pre><code class="html"> &lt;div is=&quot;canvas-panel-1&quot; id=&quot;cp1&quot; class=&quot;canvaspanel&quot;
+    data-canvas-uri=&quot;https://wellcomelibrary.org/iiif/b22047347/canvas/c24&quot;
+    data-partof-uri=&quot;https://tomcrane.github.io/webcomponents/wunder.json&quot;&gt; 
+ &lt;/div&gt;
+</code></pre>
+
+    <div is="canvas-panel-1" id="cp1" class="canvaspanel" 
+        data-canvas-uri="https://wellcomelibrary.org/iiif/b22047347/canvas/c24"
+        data-partof-uri="https://tomcrane.github.io/webcomponents/wunder.json">
+    </div>
+
+    <p>The red border is part of this demo Canvas Panel's rendering. You'd probably control whether 
+        it was visible (usually not) but I'm showing
+        it here to indicate the shape of the canvas that is being shown in this viewport.
+    </p>
+    <p>While the component shown here would be very useful, <i><b>I don't think this is Canvas Panel</b></i>.
+        This feels like a component that's a light <i>wrapper</i> around CP - taking the attributes and then 
+        loading the resources, like this:
+    </p>
+
+<pre><code class="html"> &lt;div is=&quot;iiif-resource-loader&quot; id=&quot;ir1&quot; class=&quot;canvaspanel&quot;
+    data-canvas-uri=&quot;https://wellcomelibrary.org/iiif/b22047347/canvas/c24&quot;
+    data-partof-uri=&quot;https://tomcrane.github.io/webcomponents/wunder.json&quot;&gt; 
+ &lt;/div&gt;
+</code></pre>
+
+    <p>or...</p>
+
+<pre><code class="html"> &lt;div is=&quot;iiif-resource-loader&quot; id=&quot;ir1&quot; class=&quot;canvaspanel&quot;
+    data-canvas-uri=&quot;https://wellcomelibrary.org/iiif/b22047347/canvas/c24&quot;
+    data-partof-uri=&quot;https://tomcrane.github.io/webcomponents/wunder.json&quot; 
+    data-xywh=&quot;100,500,300,1000&quot;&gt;
+ &lt;/div&gt;
+</code></pre>
+
+<p>In that second example I want the viewport to show a particular region of the canvas.</p>
+
+<p>The existing <a href="https://canvas-panel.digirati.com/styleguide/">React implementation</a>
+     of Canvas Panel lets you do something just like this:</p>
+
+<pre><code class="html"> &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;canvaspanel&quot;&gt;
+ &lt;div id=&quot;viewer&quot; 
+     data-element=&quot;canvas-panel-viewer&quot; 
+     data-manifest=&quot;https://wellcomelibrary.org/iiif/b18035723/manifest&quot;
+     data-canvas=&quot;https://wellcomelibrary.org/iiif/b18035723/canvas/c8&quot;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;script src=&quot;//unpkg.com/@canvas-panel/viewer-element@0.0.9/umd/@canvas-panel/viewer-element.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>
+<a href="https://codesandbox.io/s/o4nq2rkvo5">View in Sandbox</a>
+</p>
+
+    <p>Or, you would initialise it with an annotation as discussed in the
+        <a href="https://docs.google.com/document/d/1LKhEWWuYF-8KLkKcW_u2GlvX0epohwc7OYOVjICie5M">Import
+            to viewers</a> proposal.</p>
+    <p>The <code>iiif-resource-loader</code> web component isn't Canvas Panel, then, but a thin wrapper around it. 
+        A useful component in its own right, but something else.</p>
+        
+        <p>If this isn't Canvas Panel, what is?</p>
+
+    <p>On to <a href="cp2.html">Version 2</a></p>
+
+    
+    <hr/>
+    <p><a href="https://github.com/digirati-co-uk/canvas-panel/tree/master/developer-stories">View on GitHub</a></p>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
