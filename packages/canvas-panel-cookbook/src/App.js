@@ -103,7 +103,7 @@ const ScrollToTop = () => {
 
 const App = () => (
   <Router>
-    <main>
+    <article>
       <header
         style={{
           display:
@@ -165,7 +165,7 @@ const App = () => (
         component={SlideShowFullScreenDemo}
       />
       <Route path="/examples/slideshow-demo" component={SlideShowDemo} />
-    </main>
+    </article>
   </Router>
 );
 export default App;
