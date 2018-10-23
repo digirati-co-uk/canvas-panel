@@ -45,7 +45,8 @@
     "build-patchwork-plugin": "cd packages/canvas-panel-patchwork-plugin && yarn run build",
     "build-cookbook": "cd packages/canvas-panel-cookbook && yarn run build",
     "build-redux": "cd packages/canvas-panel-redux && yarn run build",
-    "build-timeline": "cd packages/canvas-panel-timeline && yarn run build"
+    "build-timeline": "cd packages/canvas-panel-timeline && yarn run build",
+    "build-slideshow": "cd packages/canvas-panel-slideshow && yarn run build"
   },
   "lint-staged": {
     "*.js": [

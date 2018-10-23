@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { withBemClass, AnnotationDetail } from '@canvas-panel/core';
-import SlideShow from '../../components/Slideshow/SlideShow';
+import { SlideShow } from '@canvas-panel/slideshow';
 import './SlideShowFullScreenDemo.scss';
 
 class SlideShowDemoBase extends Component {

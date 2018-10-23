@@ -5,7 +5,7 @@ import {
   RangeNavigationProvider,
   withBemClass,
   Responsive,
-} from '../../../../canvas-panel-core/es/index';
+} from '@canvas-panel/core';
 import MobilePageView from '../MobilePageView/MobilePageView';
 import SimpleSlideTransition from '../SimpleSlideTransition/SimpleSlideTransition';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';

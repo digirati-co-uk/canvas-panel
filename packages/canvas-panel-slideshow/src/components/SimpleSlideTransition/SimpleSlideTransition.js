@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withBemClass } from '../../../../canvas-panel-core/es/index';
+import { withBemClass } from '@canvas-panel/core';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './SimpleSlideTransition.scss';
 
