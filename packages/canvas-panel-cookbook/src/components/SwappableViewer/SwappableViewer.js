@@ -101,6 +101,25 @@ class SwappableViewer extends Component {
     }
   }
 
+  isZoomedIn = () => {
+    if (this.viewport) {
+      console.log(
+        this.viewport.getMaxZoom(),
+        this.viewport.getZoom(),
+        this.viewport.getMaxZoom() >= this.viewport.getZoom()
+      );
+      return this.viewport.getMaxZoom() <= this.viewport.getZoom();
+    }
+    return true;
+  };
+
+  isZoomedOut = () => {
+    if (this.viewport) {
+      return this.viewport.getMinZoom() >= this.viewport.getZoom();
+    }
+    return true;
+  };
+
   zoomOut = () => {
     this.viewport.zoomOut();
   };
@@ -130,12 +149,15 @@ class SwappableViewer extends Component {
       <div
         className={bem
           .element('viewport')
-          .modifiers({ interactive: isInteractive })}
+          .modifiers({ interactive: isInteractive || !isZoomedOut })}
         onWheel={this.onWheel}
       >
         <SingleTileSource manifest={manifest} canvas={canvas}>
           <FullscreenButton {...fullscreenProps} />
-          <ZoomButtons onZoomOut={this.zoomOut} onZoomIn={this.zoomIn} />
+          <ZoomButtons
+            onZoomOut={this.isZoomedOut() ? null : this.zoomOut}
+            onZoomIn={this.isZoomedIn() ? null : this.zoomIn}
+          />
           <FullPageViewport
             onUpdateViewport={this.updateViewport}
             setRef={this.setViewport}

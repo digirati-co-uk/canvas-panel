@@ -4,13 +4,14 @@ import { Responsive, withBemClass } from '@canvas-panel/core';
 
 class ZoomButtons extends Component {
   render() {
-    const { bem, onZoomIn, onZoomOut } = this.props;
+    const { bem, style, onZoomIn, onZoomOut } = this.props;
 
     return (
       <div
         className={bem.modifiers({
           mobile: Responsive.isMobile(),
         })}
+        style={style}
       >
         <button
           className={bem.element('button').modifier('in')}
