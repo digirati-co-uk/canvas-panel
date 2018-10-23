@@ -22,7 +22,9 @@
   },
   "peerDependencies": {
     "immutability-helper": "^2.6.5",
-    "react": "16.x"
+    "react": "16.x",
+    "react-transition-group": "2.5.0",
+    "react-flip-move": "^3.0.2"
   },
   "devDependencies": {
     "immutability-helper": "2.8.1",
