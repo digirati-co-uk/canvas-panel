@@ -20,11 +20,13 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "peerDependencies": {
-    "immutability-helper": "^2.6.5",
-    "react": "16.x",
+  "dependencies": {
     "react-transition-group": "2.5.0",
     "react-flip-move": "^3.0.2"
+  },
+  "peerDependencies": {
+    "immutability-helper": "^2.6.5",
+    "react": "16.x"
   },
   "devDependencies": {
     "immutability-helper": "2.8.1",

@@ -72,12 +72,14 @@ export default class CollectionLister extends QueryStringProvider {
       this.collectionURL =
         'https://adam-digirati.github.io/canvas-panel-examples.json';
     }
-
     let collectionPromise = fetch(this.collectionURL)
       .then(response => response.json())
       .then(collection =>
         upgradeCollectionToPresentationV3IfNecessary(collection)
-      );
+      )
+      .catch(error => {
+        console.log(error);
+      });
 
     return (
       <div className="container">

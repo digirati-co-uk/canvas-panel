@@ -5,3 +5,5 @@ require('core-js/fn/number/is-integer');
 require('core-js/fn/number/is-nan');
 require('core-js/fn/string/ends-with');
 require('core-js/fn/array/fill');
+require('core-js/fn/object/values');
+require('core-js/fn/array/includes');
