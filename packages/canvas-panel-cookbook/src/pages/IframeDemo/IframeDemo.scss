@@ -1,9 +1,15 @@
 .iframe-demo {
   border: 0;
-  position: absolute;
   width: 100%;
   height: 100%;
 }
 article {
-  min-height: 100%;
+  flex: 1;
+}
+
+#app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
