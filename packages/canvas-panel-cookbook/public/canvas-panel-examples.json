@@ -112,6 +112,34 @@
           "type": "Image"
         }
       ]
+    },
+    {
+      "id": "/fullpage_plugin.html",
+      "type": "Manifest",
+      "label": {
+        "en": ["Fullpage vanilla js"]
+      },
+      "behavior": ["external"],
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk/collections/2013GU2911/1536,2048,512,256/512,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "/patchwork_plugin.html",
+      "type": "Manifest",
+      "label": {
+        "en": ["Patchwork Plugin vanilla js"]
+      },
+      "behavior": ["external"],
+      "thumbnail": [
+        {
+          "id": "https://vanda-production-assets.s3.amazonaws.com/2018/03/14/12/54/22/445782b9-4b20-405b-9f99-54f15974aeb0/ocean-liners-conference-rescheduled_960.jpg",
+          "type": "Image"
+        }
+      ]
     }
   ]
 }

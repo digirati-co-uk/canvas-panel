@@ -4,6 +4,7 @@ module.exports = {
     esModules: true,
     umd: {
       global: 'fullPageCanvasPanelPlugin',
+      entry: './src/umd.js',
       externals: {
         openseadragon: 'OpenSeadragon',
         // react: 'React',

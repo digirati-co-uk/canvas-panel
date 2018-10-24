@@ -71,7 +71,8 @@ export default class CollectionLister extends QueryStringProvider {
       this.collectionURL = this.urlParams.collection;
     } else {
       this.collectionURL =
-        'https://adam-digirati.github.io/canvas-panel-examples.json';
+        //'https://adam-digirati.github.io/canvas-panel-examples.json';
+        '/canvas-panel-examples.json';
     }
     let collectionPromise = fetch(this.collectionURL)
       .then(response => response.json())

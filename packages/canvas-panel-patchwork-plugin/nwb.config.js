@@ -4,6 +4,7 @@ module.exports = {
     esModules: true,
     umd: {
       global: 'singleCanvasAnnotationDetailViewer',
+      entry: './src/umd.js',
       externals: {
         openseadragon: 'OpenSeadragon',
         // react: 'React',
