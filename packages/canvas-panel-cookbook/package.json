@@ -14,7 +14,7 @@
     "copy-slideshow-to-public": "mkdir -p ./public/lib/@canvas-panel/slideshow && cp -R ./node_modules/@canvas-panel/slideshow/umd/. ./public/lib/@canvas-panel/slideshow",
     "copy-patchwork-plugin-to-public": "mkdir -p ./public/lib/@canvas-panel/patchwork-plugin && cp -R ./node_modules/@canvas-panel/patchwork-plugin/umd/. ./public/lib/@canvas-panel/patchwork-plugin",
     "copy-full-page-plugin-to-public": "mkdir -p ./public/lib/@canvas-panel/full-page-plugin && cp -R ./node_modules/@canvas-panel/full-page-plugin/umd/. ./public/lib/@canvas-panel/full-page-plugin",
-    "build-lib-rename-css": "renamer --replace 'main.css' ./public/lib/**/main.*.css"
+    "build-lib-rename-css": "renamer --force --replace 'main.css' ./public/lib/**/main.*.css"
   },
   "dependencies": {
     "@canvas-panel/core": "^0.0.9",
