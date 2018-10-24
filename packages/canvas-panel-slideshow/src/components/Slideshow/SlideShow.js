@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   Manifest,
   Fullscreen,
@@ -17,6 +18,15 @@ import './SlideShow.scss';
 class SlideShow extends Component {
   state = { innerWidth: window.innerWidth };
 
+  propTypes = {
+    manifestUri: PropTypes.string,
+    mobileBreakpoint: PropTypes.number,
+  };
+
+  defaultProps = {
+    mobileBreakpoint: 767,
+  };
+
   componentWillMount() {
     window.addEventListener('resize', this.setSize);
   }
@@ -30,7 +40,7 @@ class SlideShow extends Component {
   };
 
   qualifiesForMobile = () => {
-    return this.state.innerWidth <= 767;
+    return this.state.innerWidth <= this.props.mobileBreakpoint;
   };
 
   render() {
@@ -69,7 +79,6 @@ class SlideShow extends Component {
                         <React.Fragment>
                           <SimpleSlideTransition id={currentIndex}>
                             <Slide
-                              // key={currentIndex}
                               fullscreenProps={fullscreenProps}
                               behaviors={canvas.__jsonld.behavior || []}
                               manifest={manifest}
