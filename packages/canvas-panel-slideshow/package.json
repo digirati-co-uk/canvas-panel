@@ -3,8 +3,7 @@
   "version": "0.0.9",
   "description": "canvas-panel-slideshow React component",
   "main": "lib/index.js",
-  "module": "es/index",
-  "jsnext:main": "es/index",
+  "module": "es/index.js",
   "files": [
     "css",
     "es",
@@ -20,12 +19,20 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js"
+    }
+  },
   "dependencies": {
+    "@canvas-panel/core": "^0.0.9",
     "react": "16.5.2",
     "react-dom": "16.5.2",
-    "@canvas-panel/core": "^0.0.9",
-    "react-transition-group": "2.5.0",
-    "react-flip-move": "^3.0.2"
+    "react-flip-move": "^3.0.2",
+    "react-transition-group": "2.5.0"
   },
   "peerDependencies": {
     "immutability-helper": "^2.6.5",
@@ -33,7 +40,7 @@
   },
   "devDependencies": {
     "immutability-helper": "2.8.1",
-    "nwb": "0.21.5",
+    "nwb": "0.23.0",
     "nwb-sass": "0.9.0",
     "react": "16.5.2",
     "react-dom": "16.5.2"

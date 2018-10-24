@@ -2,7 +2,16 @@ module.exports = {
   type: 'react-component',
   npm: {
     esModules: true,
-    umd: false,
+    umd: {
+      global: 'slideShowViewer',
+      entry: './src/umd.js',
+      externals: {
+        openseadragon: 'OpenSeadragon',
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        // 'Manifesto': 'Manifesto',
+      },
+    },
   },
   babel: {
     env: {

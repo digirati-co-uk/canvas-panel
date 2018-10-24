@@ -98,6 +98,20 @@
           "type": "Image"
         }
       ]
+    },
+    {
+      "id": "/slideshow_plugin.html",
+      "type": "Manifest",
+      "label": {
+        "en": ["Example using vanilla js"]
+      },
+      "behavior": ["external"],
+      "thumbnail": [
+        {
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
     }
   ]
 }

@@ -35,6 +35,7 @@ const DEMOPAGES = [
   'slideshow-fullscreen',
   'slideshow-demo',
   'slide-show',
+  'external',
 ];
 
 export default class CollectionLister extends QueryStringProvider {
@@ -126,6 +127,8 @@ export default class CollectionLister extends QueryStringProvider {
               const eId = iiifEntity.id;
               if (iiifEntity.type === 'Collection') {
                 listItem.link = `/examples?demopage=${demopage}&collection=${eId}`;
+              } else if (demopage === 'external') {
+                listItem.link = `/examples/${demopage}?url=${eId}`;
               } else {
                 listItem.link = `/examples/${demopage}?manifest=${eId}`;
               }
