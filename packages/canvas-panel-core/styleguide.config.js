@@ -1,8 +1,9 @@
 var path = require('path');
 var createNwbWebpackConfig = require('create-nwb-webpack-config');
-
+var wpCgf = createNwbWebpackConfig();
+delete wpCgf.optimization;
 module.exports = {
-  webpackConfig: createNwbWebpackConfig(),
+  webpackConfig: wpCgf,
   previewDelay: 1000,
   context: {
     manifests: path.resolve(__dirname, 'config/manifests.js'),
