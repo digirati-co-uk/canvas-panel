@@ -1,10 +1,6 @@
-// Basic page fonts
-//@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro');
-//@import url('https://use.fontawesome.com/releases/v5.0.13/css/solid.css');
-
 // breakpoints
 $tablet: 768px;
-$desktop: 1000px; //1280px;
+$desktop: 1000px;
 $mobile: 425px;
 
 @import 'SlideShowDemo.mediaqueries';
@@ -49,7 +45,6 @@ $mobile: 425px;
     border-bottom: 1px solid black;
     position: relative;
     top: 0;
-    //margin-bottom: 1.5em;
     background: white;
     text-transform: uppercase;
     &:before,
@@ -127,10 +122,6 @@ $mobile: 425px;
     }
     @include tablet-down {
       width: 100%;
-      ////height: calc(100vh - 40px);
-      //.slideshow {
-      //  position: absolute;
-      //}
     }
 
     margin: 0 auto;

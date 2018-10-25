@@ -16,14 +16,16 @@ import CanvasNavigation from '../CanvasNavigation/CanvasNavigation';
 import './SlideShow.scss';
 
 class SlideShow extends Component {
-  state = { innerWidth: window.innerWidth };
+  state = {
+    innerWidth: window.innerWidth,
+  };
 
-  propTypes = {
+  static propTypes = {
     manifestUri: PropTypes.string,
     mobileBreakpoint: PropTypes.number,
   };
 
-  defaultProps = {
+  static defaultProps = {
     mobileBreakpoint: 767,
   };
 
