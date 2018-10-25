@@ -10,6 +10,7 @@ import SlideShowFullScreenDemo from './pages/SlideShowFullScreen/SlideShowFullSc
 import CollectionLister from './pages/CollectionLister/CollectionLister';
 import FullPageVA from './pages/FullPageVA/FullPageVA';
 import IframeDemo from './pages/IframeDemo/IframeDemo';
+import classnames from 'classnames';
 
 import './App.scss';
 import PopOut from './PopOut';
@@ -19,9 +20,7 @@ import roadmapText from '../../../roadmap.md';
 import logoUrl from './digirati-logo-white.svg';
 
 const RenderMarkdown = props => (
-  <section
-    style={{ maxWidth: 1100, margin: 'auto', padding: 30, lineHeight: '1.8em' }}
-  >
+  <section className="article-content">
     <div
       dangerouslySetInnerHTML={{
         __html: props.children.replace(
@@ -44,17 +43,35 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App = () => (
-  <Router>
-    <article>
+class AppHeader extends React.Component {
+  state = {
+    isMenuVisible: false,
+  };
+  toggleMenu = () => {
+    if (!this.state.isMenuVisible) {
+      document.body.addEventListener('click', this.hideMenu);
+    }
+    this.setState({ isMenuVisible: !this.state.isMenuVisible });
+  };
+  hideMenu = () => this.setState({ isMenuVisible: false });
+  render() {
+    return (
       <header
+        className="app-header"
         style={{
           display:
             window.location.hash.indexOf('no-header=1') !== -1 ? 'none' : '',
         }}
       >
+        <a
+          className={classnames('app-mobile-menu', {
+            'app-mobile-menu--open': this.state.isMenuVisible,
+          })}
+          onClick={this.toggleMenu}
+        />
         <ul className="app-navigation">
           <li className="app-brand">
+            <i className="app-mobile-menu-icon" />
             <NavLink activeClassName="navigation-active" to="/">
               Canvas Panel
             </NavLink>
@@ -89,6 +106,14 @@ const App = () => (
           </li>
         </ul>
       </header>
+    );
+  }
+}
+
+const App = () => (
+  <Router>
+    <article>
+      <AppHeader />
       <Route component={ScrollToTop} />
       <Route exact path="/" component={HomeText} />
       <Route exact path="/about" component={AboutText} />
@@ -112,4 +137,5 @@ const App = () => (
     </article>
   </Router>
 );
+
 export default App;
