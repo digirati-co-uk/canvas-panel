@@ -7,15 +7,25 @@
   <title>Slideshow Example With only HTML</title>
   <link href="./lib/@canvas-panel/slideshow/main.css" rel="stylesheet">
   <style>
-    html, body, #viewer {
+    html, body {
       height: 100%;
+    }
+    @media screen and (max-width: 767px) {    
+      #viewer {
+        height: auto;
+        overflow-y: visible;
+        position: absolute;
+      }
+      .ios-iframe-fix #viewer {
+        position: relative;
+      }
     }
     body {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
     }
-    .mobile-fix {
+    .ios-iframe-fix {
       position: fixed;
       top: 0;
       right: 0;
@@ -28,16 +38,20 @@
   </style>
 </head>
 <body>
-<div class="mobile-fix">
 <div id="viewer"></div>
-</div>
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.js"></script>
 <script src="/lib/@canvas-panel/slideshow/@canvas-panel/slideshow.js"></script>
 <script>
-
-  slideShowViewer.create(document.getElementById('viewer'), {
+  var viewer = document.getElementById('viewer');
+  if (window.top !== window && /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+    var mobileFixWrapper = document.createElement('div');
+    mobileFixWrapper.className = 'ios-iframe-fix';
+    viewer.parentNode.replaceChild(mobileFixWrapper, viewer);
+    mobileFixWrapper.appendChild(viewer);
+  }
+  slideShowViewer.create(viewer, {
     manifestUri: 'https://adam-digirati.github.io/balenciaga1-behaviors.json',
   });
 </script>
