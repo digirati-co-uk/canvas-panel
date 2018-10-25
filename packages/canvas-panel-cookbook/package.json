@@ -36,12 +36,12 @@
     "react-promise": "2.0.3",
     "react-router-dom": "4.3.1",
     "system-font-css": "2.0.2",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "3.0.0"
   },
   "devDependencies": {
     "nwb": "0.23.0",
     "nwb-sass": "0.9.0",
-    "renamer": "^1.0.0"
+    "renamer": "1.0.0"
   },
   "author": "Digirati",
   "homepage": "https://digirati.com/",
