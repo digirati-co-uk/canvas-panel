@@ -55,9 +55,9 @@ class SlideShowDemoBase extends QueryStringProvider {
         <h1 className={bem.element('title')}>SlideShow Component</h1>
         <section className={bem.element('section')}>
           <h2 className={bem.element('subtitle')}>{this.state.title}</h2>
-          {this.state.description.map(item => {
+          {this.state.description.map((item, key) => {
             if (item.constructor === String) {
-              return <p>{item}</p>;
+              return <p key={key}>{item}</p>;
             } else if (
               item.hasOwnProperty('label') &&
               item.hasOwnProperty('value')
@@ -72,6 +72,7 @@ class SlideShowDemoBase extends QueryStringProvider {
                   : item.value[Object.keys(item.value)[0]][0];
               return (
                 <p
+                  key={key}
                   dangerouslySetInnerHTML={{
                     __html: `<em>${label}</em>:&nbsp;${value}`,
                   }}

@@ -6,6 +6,7 @@ import functionOrMapChildren from '../../utility/functionOrMapChildren';
 class OpenSeadragonViewport extends Component {
   state = {
     scale: 1,
+    panning: false,
   };
 
   static defaultProps = {
@@ -27,8 +28,48 @@ class OpenSeadragonViewport extends Component {
   bindEvents(viewer) {
     viewer.addHandler('update-viewport', () => this.resize(viewer));
     viewer.addHandler('open', () => this.resize(viewer));
+    viewer.addHandler('canvas-drag', this.onDragStart(viewer));
+    viewer.addHandler('canvas-drag-end', this.onDragStop(viewer));
     this.resize(viewer);
   }
+
+  onDragStart = viewer => () => {
+    if (this.state.panning === false) {
+      this.setState({ panning: true });
+
+      if (this.props.onDragStart) {
+        this.props.onDragStart(viewer);
+      }
+    }
+
+    const bounds = viewer.viewport.getBoundsNoRotate();
+    const constrainedBounds = viewer.viewport._applyBoundaryConstraints(bounds);
+
+    if (bounds.x !== constrainedBounds.x || bounds.y !== constrainedBounds.y) {
+      this.setState({ constrained: true });
+      if (this.props.onConstrain) {
+        const factor =
+          viewer.viewport._containerInnerSize.x * viewer.viewport.getZoom();
+        this.props.onConstrain(
+          viewer,
+          (bounds.x - constrainedBounds.x) * factor,
+          (bounds.y - constrainedBounds.y) * factor
+        );
+      }
+    } else {
+      this.setState({ constrained: false });
+      if (this.props.onUnconstrain) {
+        this.props.onUnconstrain(viewer);
+      }
+    }
+  };
+
+  onDragStop = viewer => () => {
+    this.setState({ panning: false });
+    if (this.props.onDragStop) {
+      this.props.onDragStop(viewer);
+    }
+  };
 
   resize(viewer) {
     const { canvas } = this.props;
@@ -99,7 +140,7 @@ class OpenSeadragonViewport extends Component {
   };
 
   render() {
-    const { canvasScale } = this.state;
+    const { canvasScale, panning } = this.state;
     const { children, ...props } = this.props;
 
     if (!children) {
@@ -113,8 +154,9 @@ class OpenSeadragonViewport extends Component {
     }
 
     return functionOrMapChildren(children, {
-      canvasScale: canvasScale,
+      canvasScale,
       onImageLoaded: this.setViewer,
+      panning,
       ...props,
     });
   }

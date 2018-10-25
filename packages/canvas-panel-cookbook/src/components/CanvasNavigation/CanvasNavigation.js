@@ -12,6 +12,8 @@ class CanvasNavigation extends Component {
       currentIndex,
       bem,
     } = this.props;
+
+    const size = canvasList ? canvasList.length : this.props.size;
     return (
       <div className={bem}>
         <button
@@ -37,7 +39,7 @@ class CanvasNavigation extends Component {
         <button
           className={bem
             .element('next')
-            .modifiers({ isLastPage: currentIndex === canvasList.length - 1 })}
+            .modifiers({ isLastPage: currentIndex === size - 1 })}
           onClick={ev => {
             ev.preventDefault();
             nextRange();

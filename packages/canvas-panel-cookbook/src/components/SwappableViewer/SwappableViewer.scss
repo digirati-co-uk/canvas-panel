@@ -1,5 +1,8 @@
 .slide__viewport {
   position: relative;
+  &--interactive {
+    cursor: grab;
+  }
 }
 
 .slide__interactive-btn {
