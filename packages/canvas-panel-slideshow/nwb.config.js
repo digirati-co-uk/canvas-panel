@@ -3,13 +3,13 @@ module.exports = {
   npm: {
     esModules: true,
     umd: {
-      global: 'singleCanvasAnnotationDetailViewer',
+      global: 'slideShowViewer',
       entry: './src/umd.js',
       externals: {
         openseadragon: 'OpenSeadragon',
-        // react: 'React',
-        // 'react-dom': 'ReactDOM',
-        // 'manifesto.js': 'Manifesto',
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        // 'Manifesto': 'Manifesto',
       },
     },
   },
@@ -18,11 +18,6 @@ module.exports = {
       targets: {
         browsers: ['last 2 versions', 'ie 10', 'ie 11'],
       },
-    },
-  },
-  webpack: {
-    extra: {
-      //      node: { Buffer: false }, // You need to comment this out if you want to build Manifesto.
     },
   },
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 import { withBemClass } from '@canvas-panel/core';
-import SlideShow from '../../components/Slideshow/SlideShow';
+import { SlideShow } from '@canvas-panel/slideshow';
 import QueryStringProvider from '../../QueryStringProvider';
 
-import './SlideShowDemo.scss';
+import '../SlideShow/SlideShowDemo.scss';
 
 class SlideShowDemoBase extends QueryStringProvider {
   constructor(props) {

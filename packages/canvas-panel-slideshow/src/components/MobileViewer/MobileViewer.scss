@@ -124,6 +124,7 @@
       z-index: 13;
       padding: 20px;
       line-height: 1.5em;
+      box-sizing: border-box;
       &--hidden {
         bottom: -300px;
       }

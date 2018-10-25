@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import './TitlePanel.scss';
-import ScrollDownIcon from '../../../es/components/ScrollDownIcon/ScrollDownIcon';
+import ScrollDownIcon from '../ScrollDownIcon/ScrollDownIcon';
 
 class TitlePanel extends Component {
   render() {

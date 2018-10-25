@@ -176,7 +176,7 @@ class PopOutViewport extends Component {
 class PopOut extends Component {
   render() {
     return (
-      <div style={{ maxWidth: 1100, margin: 'auto' }}>
+      <div className="article-content">
         <Manifest url="https://stephenwf.github.io/ocean-liners.json">
           <CanvasProvider>
             <PopOutViewport>

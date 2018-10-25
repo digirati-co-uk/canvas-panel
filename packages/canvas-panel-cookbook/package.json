@@ -4,17 +4,23 @@
   "description": "Describe canvas-panel-cookbook here",
   "private": true,
   "scripts": {
-    "build": "nwb build-react-app",
+    "build": "npm run copy-libs-to-public && nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-react-app",
+    "start": "npm run copy-libs-to-public && nwb serve-react-app",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "copy-libs-to-public": "npm run copy-slideshow-to-public && npm run copy-patchwork-plugin-to-public && npm run copy-full-page-plugin-to-public && npm run build-lib-rename-css",
+    "copy-slideshow-to-public": "mkdir -p ./public/lib/@canvas-panel/slideshow && cp -R ./node_modules/@canvas-panel/slideshow/umd/. ./public/lib/@canvas-panel/slideshow",
+    "copy-patchwork-plugin-to-public": "mkdir -p ./public/lib/@canvas-panel/patchwork-plugin && cp -R ./node_modules/@canvas-panel/patchwork-plugin/umd/. ./public/lib/@canvas-panel/patchwork-plugin",
+    "copy-full-page-plugin-to-public": "mkdir -p ./public/lib/@canvas-panel/full-page-plugin && cp -R ./node_modules/@canvas-panel/full-page-plugin/umd/. ./public/lib/@canvas-panel/full-page-plugin",
+    "build-lib-rename-css": "renamer --force --replace 'main.css' ./public/lib/**/main.*.css"
   },
   "dependencies": {
     "@canvas-panel/core": "^0.0.9",
     "@canvas-panel/full-page-plugin": "^0.0.8",
     "@canvas-panel/patchwork-plugin": "^0.0.9",
+    "@canvas-panel/slideshow": "^0.0.9",
     "@stephenwf-forks/manifesto.js": "2.2.25",
     "bezier-easing": "2.1.0",
     "brace": "0.11.1",
@@ -26,16 +32,16 @@
     "react": "16.5.2",
     "react-ace": "6.2.0",
     "react-dom": "16.5.2",
-    "react-flip-move": "^3.0.2",
     "react-measure": "2.1.2",
     "react-promise": "2.0.3",
     "react-router-dom": "4.3.1",
-    "react-transition-group": "2.5.0",
-    "system-font-css": "2.0.2"
+    "system-font-css": "2.0.2",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "nwb": "0.21.5",
-    "nwb-sass": "0.9.0"
+    "nwb": "0.23.0",
+    "nwb-sass": "0.9.0",
+    "renamer": "^1.0.0"
   },
   "author": "Digirati",
   "homepage": "https://digirati.com/",

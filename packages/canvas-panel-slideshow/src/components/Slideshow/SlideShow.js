@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   Manifest,
   Fullscreen,
   RangeNavigationProvider,
   withBemClass,
   Responsive,
-} from '../../../../canvas-panel-core/es/index';
+} from '@canvas-panel/core';
 import MobilePageView from '../MobilePageView/MobilePageView';
 import SimpleSlideTransition from '../SimpleSlideTransition/SimpleSlideTransition';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
@@ -15,7 +16,18 @@ import CanvasNavigation from '../CanvasNavigation/CanvasNavigation';
 import './SlideShow.scss';
 
 class SlideShow extends Component {
-  state = { innerWidth: window.innerWidth };
+  state = {
+    innerWidth: window.innerWidth,
+  };
+
+  static propTypes = {
+    manifestUri: PropTypes.string,
+    mobileBreakpoint: PropTypes.number,
+  };
+
+  static defaultProps = {
+    mobileBreakpoint: 767,
+  };
 
   componentWillMount() {
     window.addEventListener('resize', this.setSize);
@@ -30,7 +42,7 @@ class SlideShow extends Component {
   };
 
   qualifiesForMobile = () => {
-    return this.state.innerWidth <= 767;
+    return this.state.innerWidth <= this.props.mobileBreakpoint;
   };
 
   render() {
@@ -69,7 +81,6 @@ class SlideShow extends Component {
                         <React.Fragment>
                           <SimpleSlideTransition id={currentIndex}>
                             <Slide
-                              // key={currentIndex}
                               fullscreenProps={fullscreenProps}
                               behaviors={canvas.__jsonld.behavior || []}
                               manifest={manifest}
