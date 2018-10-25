@@ -8,6 +8,7 @@
   &--isMobile {
     background: #fff;
     position: relative;
+    overflow: auto;
   }
   &__inner-frame {
     width: 100%;
