@@ -67,7 +67,7 @@ const ExitFullscreen = ({ bem, hidden, onClick }) => (
     onClick={onClick}
   >
     <ExitFullscreenIcon className={bem.element('exit-fullscreen-icon')} />
-    exit fullscreen
+    Exit slideshow
   </div>
 );
 
