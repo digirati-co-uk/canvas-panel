@@ -27,6 +27,7 @@
     transition: opacity 0.2s;
     animation: fadein 0.6s;
     z-index: 12;
+    max-width: calc(100vw - 90px);
     & * {
       line-height: 1.4;
       color: white;
