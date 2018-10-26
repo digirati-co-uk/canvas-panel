@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Patchwork plugin only HTML</title>
+  <style>
+    html, body, #viewer {
+      height: 100%;
+    }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="viewer"></div>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.js"></script>
+<script src="/lib/@canvas-panel/patchwork-plugin/@canvas-panel/patchwork-plugin.js"></script>
+<script>
+
+  singleCanvasAnnotationDetailViewer.create(document.getElementById('viewer'), {
+    manifest: 'https://stephenwf.github.io/ocean-liners.json',
+  });
+</script>
+</body>
+</html>

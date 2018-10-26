@@ -42,7 +42,9 @@ class Responsive extends PureComponent {
 
     return desktopOnly
       ? desktopOnly(props)
-      : functionOrMapChildren(children, props);
+      : children
+        ? functionOrMapChildren(children, props)
+        : null;
   }
 }
 

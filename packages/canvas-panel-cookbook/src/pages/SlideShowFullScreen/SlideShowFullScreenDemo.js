@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
-import { withBemClass } from '@canvas-panel/core';
-import SlideShow from '../../components/Slideshow/SlideShow';
-
+import { withBemClass, AnnotationDetail } from '@canvas-panel/core';
+import { SlideShow } from '@canvas-panel/slideshow';
 import './SlideShowFullScreenDemo.scss';
-import AnnotationDetail from '../../../../canvas-panel-core/src/components/AnnotationDetail/AnnotationDetail';
 
 class SlideShowDemoBase extends Component {
   render() {

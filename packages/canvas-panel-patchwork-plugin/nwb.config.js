@@ -4,6 +4,7 @@ module.exports = {
     esModules: true,
     umd: {
       global: 'singleCanvasAnnotationDetailViewer',
+      entry: './src/umd.js',
       externals: {
         openseadragon: 'OpenSeadragon',
         // react: 'React',
@@ -15,7 +16,7 @@ module.exports = {
   babel: {
     env: {
       targets: {
-        browsers: ['last 2 versions', 'IE >= 9'],
+        browsers: ['last 2 versions', 'ie 10', 'ie 11'],
       },
     },
   },

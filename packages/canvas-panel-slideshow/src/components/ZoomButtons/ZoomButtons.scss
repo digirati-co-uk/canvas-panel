@@ -1,0 +1,45 @@
+.zoom-buttons {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10000;
+
+  &--right {
+    left: auto;
+    right: 14px;
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    display: block;
+    margin: 10px;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s;
+
+    &--disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    svg {
+      transition: filter 0.3s;
+      filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.4));
+    }
+
+    &:active {
+      svg {
+        filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &--mobile {
+    top: auto;
+    left: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+}

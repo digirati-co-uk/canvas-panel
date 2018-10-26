@@ -1,0 +1,145 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://adam.meszaros.github.io/canvas-panel-examples.json",
+  "type": "Collection",
+  "label": {
+    "en": ["Canvas Panel Examples"]
+  },
+  "requiredStatement": {
+    "label": { "en": ["Attribution"] },
+    "value": { "en": ["2018, Digirati Ltd"] }
+  },
+  "items": [
+    {
+      "id": "https://stephenwf.github.io/ocean-liners.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["V&A Ocean Liners"]
+      },
+      "behavior": ["oceanliners"],
+      "thumbnail": [
+        {
+          "id": "https://vanda-production-assets.s3.amazonaws.com/2018/03/14/12/54/22/445782b9-4b20-405b-9f99-54f15974aeb0/ocean-liners-conference-rescheduled_960.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://stephenwf.github.io/ocean-liners.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["Full page example"]
+      },
+      "behavior": ["fullpage"],
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk/collections/2013GU2911/1536,2048,512,256/512,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://stephenwf.github.io/ocean-liners.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["Pop out example"]
+      },
+      "behavior": ["popout"],
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk/collections/2013GU2911/2048,4580,1024,512/512,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://wellcomelibrary.org/iiif/b18035723/manifest",
+      "type": "Manifest",
+      "label": {
+        "en": ["Annotation playground"]
+      },
+      "behavior": ["annotation-playground"],
+      "thumbnail": [
+        {
+          "id": "https://dlcs.io/iiif-img/wellcome/1/4ff70079-fac3-4259-814e-021f7dcf43b6/195,150,2146,2146/512,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://adam-digirati.github.io/balenciaga1-behaviors.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["Slideshow Behaviours"]
+      },
+      "summary": {
+        "en": ["demonstrates the layouts."]
+      },
+      "thumbnail": [
+        {
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "https://adam-digirati.github.io/balenciaga1-behaviors.json",
+      "type": "Manifest",
+      "label": {
+        "en": ["Multiple slide shows on a page"]
+      },
+      "behavior": ["slide-show"],
+      "thumbnail": [
+        {
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "/slideshow_plugin.html",
+      "type": "Manifest",
+      "label": {
+        "en": ["Example using vanilla js"]
+      },
+      "behavior": ["external"],
+      "thumbnail": [
+        {
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "/fullpage_plugin.html",
+      "type": "Manifest",
+      "label": {
+        "en": ["Fullpage vanilla js"]
+      },
+      "behavior": ["external"],
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk/collections/2013GU2911/1536,2048,512,256/512,/0/default.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "id": "/patchwork_plugin.html",
+      "type": "Manifest",
+      "label": {
+        "en": ["Patchwork Plugin vanilla js"]
+      },
+      "behavior": ["external"],
+      "thumbnail": [
+        {
+          "id": "https://vanda-production-assets.s3.amazonaws.com/2018/03/14/12/54/22/445782b9-4b20-405b-9f99-54f15974aeb0/ocean-liners-conference-rescheduled_960.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ]
+}

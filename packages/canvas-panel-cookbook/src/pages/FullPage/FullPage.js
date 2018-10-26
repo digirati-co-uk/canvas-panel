@@ -12,7 +12,7 @@ class FullPage extends QueryStringProvider {
       manifestURI = this.urlParams.manifest;
     }
     return (
-      <div>
+      <div style={{ position: 'relative', height: '100vh' }}>
         <FullPageViewer
           manifest={manifestURI}
           title="Ocean liners"

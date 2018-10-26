@@ -39,7 +39,20 @@ class StaticImageViewport extends Component {
     const { height, width, maxHeight, maxWidth } = this.props;
     const heightRatio = height / (maxHeight || 500);
     const widthRatio = width / (maxWidth || maxHeight || 500);
-    return heightRatio > widthRatio ? heightRatio : widthRatio;
+    const ratio = heightRatio > widthRatio ? heightRatio : widthRatio;
+
+    if (Number.isNaN(ratio)) {
+      return 1;
+    }
+  }
+
+  getTargetWidth(ratio) {
+    const { width } = this.props;
+    const targetWidth = Math.floor(width / ratio);
+    if (Number.isNaN(targetWidth)) {
+      return 0;
+    }
+    return targetWidth;
   }
 
   onDrag = ratio => (e, data) => {
@@ -65,7 +78,7 @@ class StaticImageViewport extends Component {
       style,
     } = this.props;
     const ratio = this.getRatio();
-    const targetWidth = Math.floor(width / ratio);
+    const targetWidth = this.getTargetWidth(ratio);
     const pixelRatio = window.devicePixelRatio || 1;
 
     const body = (
@@ -75,7 +88,7 @@ class StaticImageViewport extends Component {
             Math.floor(targetWidth * pixelRatio)
           )}
           style={{
-            width: width / ratio,
+            width: targetWidth ? targetWidth : 'auto',
             pointerEvents: 'none',
             maxWidth: '100%',
             ...style,

@@ -1,0 +1,19 @@
+.slide__viewport {
+  position: relative;
+  &--interactive {
+    cursor: grab;
+  }
+}
+
+.slide__interactive-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  border: 0 none;
+  z-index: 1000;
+  outline: 0;
+  @media screen and (min-width: 768px) {
+    top: 32px;
+    left: 32px;
+  }
+}

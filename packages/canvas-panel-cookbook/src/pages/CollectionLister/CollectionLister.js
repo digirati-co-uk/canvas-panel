@@ -35,6 +35,7 @@ const DEMOPAGES = [
   'slideshow-fullscreen',
   'slideshow-demo',
   'slide-show',
+  'external',
 ];
 
 export default class CollectionLister extends QueryStringProvider {
@@ -70,14 +71,17 @@ export default class CollectionLister extends QueryStringProvider {
       this.collectionURL = this.urlParams.collection;
     } else {
       this.collectionURL =
-        'https://adam-digirati.github.io/canvas-panel-examples.json';
+        //'https://adam-digirati.github.io/canvas-panel-examples.json';
+        '/canvas-panel-examples.json';
     }
-
     let collectionPromise = fetch(this.collectionURL)
       .then(response => response.json())
       .then(collection =>
         upgradeCollectionToPresentationV3IfNecessary(collection)
-      );
+      )
+      .catch(error => {
+        console.log(error);
+      });
 
     return (
       <div className="container">
@@ -124,6 +128,8 @@ export default class CollectionLister extends QueryStringProvider {
               const eId = iiifEntity.id;
               if (iiifEntity.type === 'Collection') {
                 listItem.link = `/examples?demopage=${demopage}&collection=${eId}`;
+              } else if (demopage === 'external') {
+                listItem.link = `/examples/${demopage}?url=${eId}`;
               } else {
                 listItem.link = `/examples/${demopage}?manifest=${eId}`;
               }

@@ -9,7 +9,6 @@
     "@types/prop-types": "15.5.6",
     "@types/react": "16.4.18",
     "babel-eslint": "10.0.1",
-    "eslint-plugin-babel": "5.2.1",
     "eslint": "5.7.0",
     "eslint-plugin-babel": "5.2.0",
     "eslint-plugin-flow": "2.29.1",
@@ -45,7 +44,8 @@
     "build-patchwork-plugin": "cd packages/canvas-panel-patchwork-plugin && yarn run build",
     "build-cookbook": "cd packages/canvas-panel-cookbook && yarn run build",
     "build-redux": "cd packages/canvas-panel-redux && yarn run build",
-    "build-timeline": "cd packages/canvas-panel-timeline && yarn run build"
+    "build-timeline": "cd packages/canvas-panel-timeline && yarn run build",
+    "build-slideshow": "cd packages/canvas-panel-slideshow && yarn run build"
   },
   "lint-staged": {
     "*.js": [
