@@ -83,14 +83,30 @@ class MobilePageView extends Component {
     this.viewport.zoomIn();
   };
 
+  componentDidUpdate(prevProps) {
+    // only scroll into view if the active item changed last render
+    if (!this.state.isFullscreen) {
+      this.ensureActiveItemVisible();
+    }
+  }
+
+  ensureActiveItemVisible = () => {
+    if (this.activeItem) {
+      this.activeItem.scrollIntoView();
+    }
+  };
+
+  setActiveRef = element => {
+    this.activeItem = element;
+  };
+
   render() {
     const { isFullscreen, offset, down, open } = this.state;
-    const { bem, manifest } = this.props;
+    const { currentIndex, bem, manifest } = this.props;
 
     if (isFullscreen) {
       const {
         canvas,
-        currentIndex,
         nextRange,
         previousRange,
         getNextRange,
@@ -147,7 +163,10 @@ class MobilePageView extends Component {
               canvas={canvas}
             >
               {({ label, body, attributionLabel, attribution }) => (
-                <div className={bem.element('canvas')}>
+                <div
+                  ref={canvasIndex === currentIndex && this.setActiveRef}
+                  className={bem.element('canvas')}
+                >
                   <StaticImageViewport
                     className={bem.element('canvas-image')}
                     manifest={manifest}
