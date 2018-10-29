@@ -4346,7 +4346,7 @@ fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
 
-fast-diff@^1.1.2:
+fast-diff@^1.1.2, fast-diff@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
 
@@ -4916,7 +4916,7 @@ glob@^5.0.15:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@~7.1.1:
+glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@~7.1.1:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
   dependencies:
@@ -8476,7 +8476,7 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-printj@^1.1.2:
+printj@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/printj/-/printj-1.2.1.tgz#67bdc1be9958c0690d5c35e2ba8ff70ceaac26bf"
 
@@ -9411,21 +9411,21 @@ remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
 
-renamer@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/renamer/-/renamer-1.0.0.tgz#151a8b95f8b80c8785a3d89ade0270e583998aa0"
+renamer@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/renamer/-/renamer-1.1.0.tgz#cff610130b5be566af3b07c7984ccee81e28950d"
   dependencies:
     array-back "^2.0.0"
     chalk "^2.4.1"
     command-line-args "^5.0.2"
     command-line-plugin "^0.1.2"
     command-line-usage "^5.0.5"
-    fast-diff "^1.1.2"
-    glob "^7.1.2"
+    fast-diff "^1.2.0"
+    glob "^7.1.3"
     global-modules "^1.0.0"
     load-module "^1.0.0"
     node-version-matches "^1.0.0"
-    printj "^1.1.2"
+    printj "^1.2.1"
     reduce-flatten "^2.0.0"
     reduce-unique "^2.0.1"
     stream-read-all "^1.0.1"
