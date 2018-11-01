@@ -1,8 +1,9 @@
+import parseSelectorTarget from './parseSelectorTarget';
+
 export default class AnnotationSelector {
   static DIRECTION_LTR = 'ltr';
   static DIRECTION_RTL = 'rtl';
   static DIRECTION_AUTO = 'auto';
-  static W3C_SELECTOR = /[#&?]xywh=(pixel:|percent:)?(\d+),(\d+),(\d+),(\d+)/;
 
   static fromJsonLD(jsonLd) {
     return AnnotationSelector.parse(jsonLd);
@@ -87,24 +88,9 @@ export default class AnnotationSelector {
     if (selector && selector.type === 'FragmentSelector') {
       toParse = `${source}#${selector.value}`;
     }
-
-    const match = AnnotationSelector.W3C_SELECTOR.exec(toParse);
-    if (match) {
-      const [_, __, x, y, width, height] = match.map(
-        v => parseInt(v, 10) * scale
-      );
-      return {
-        unit: match[1] === 'percent:' ? 'percent' : 'pixel',
-        scale,
-        expanded: true,
-        x,
-        y,
-        width,
-        height,
-        toString() {
-          return source.split('#')[0];
-        },
-      };
+    let target = parseSelectorTarget(toParse, scale);
+    if (target !== toParse) {
+      return target;
     }
     return source;
   }
