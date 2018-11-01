@@ -26,7 +26,7 @@
     "immutability-helper": "^2.6.4",
     "manifesto.js": "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
     "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
-    "material-components-web": "^0.40.0",
+    "material-components-web": "^0.41.0",
     "rheostat": "^3.0.0"
   },
   "peerDependencies": {
@@ -36,11 +36,11 @@
   },
   "devDependencies": {
     "nwb": "0.23.0",
-    "nwb-sass": "^0.9.0",
+    "nwb-sass": "0.9.0",
     "nwb-watch": "1.0.0",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
-    "react-redux": "5.0.7"
+    "react": "16.6.0",
+    "react-dom": "16.6.0",
+    "react-redux": "5.1.0"
   },
   "publishConfig": {
     "access": "public"
