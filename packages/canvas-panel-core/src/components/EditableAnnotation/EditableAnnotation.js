@@ -43,6 +43,7 @@ export default class EditableAnnotation extends React.Component {
   static propTypes = {
     boxStyles: PropTypes.object,
     boxSizeInt: PropTypes.bool,
+    constrainToCanvasBounds: PropTypes.bool,
     x: PropTypes.number,
     y: PropTypes.number,
     width: PropTypes.number,
@@ -52,6 +53,7 @@ export default class EditableAnnotation extends React.Component {
   static defaultProps = {
     boxStyles: {},
     boxSizeInt: true,
+    constrainToCanvasBounds: true,
   };
 
   componentWillReceiveProps() {
@@ -143,12 +145,14 @@ export default class EditableAnnotation extends React.Component {
 
   dragMove = (X, Y, rzam) => {
     if (this.props.setCoords && this.state.dragStarted) {
-      this.setState({
-        dX: this.applyPrecision((X - this.state.mouseX) * rzam),
-        dY: this.applyPrecision((Y - this.state.mouseY) * rzam),
-        dragStarted: true,
-        resizeStarted: false,
-      });
+      this.setState(
+        this.applyDragConstraints({
+          dX: this.applyPrecision((X - this.state.mouseX) * rzam),
+          dY: this.applyPrecision((Y - this.state.mouseY) * rzam),
+          dragStarted: true,
+          resizeStarted: false,
+        })
+      );
     }
   };
 
@@ -189,21 +193,55 @@ export default class EditableAnnotation extends React.Component {
       const newState = {
         dragStarted: false,
       };
+      const canvas = this.props.canvas.__jsonld;
+      const { ratio } = this.props;
       if (this.state.resizeStarted.startsWith('n')) {
         newState.dHeight = this.applyPrecision(
           -((Y - this.state.mouseY) * rzam)
         );
         newState.dY = this.applyPrecision((Y - this.state.mouseY) * rzam);
+        if (this.props.constrainToCanvasBounds) {
+          newState.dY = Math.min(
+            Math.max(-this.props.y || 0, newState.dY),
+            this.props.height
+          );
+          newState.dHeight = Math.min(
+            this.props.y,
+            Math.max(newState.dHeight, -this.props.height)
+          );
+        }
       }
       if (this.state.resizeStarted.startsWith('s')) {
         newState.dHeight = this.applyPrecision((Y - this.state.mouseY) * rzam);
+        if (this.props.constrainToCanvasBounds) {
+          newState.dHeight = Math.min(
+            Math.max(newState.dHeight, -this.props.height),
+            canvas.height * ratio - (this.props.y + this.props.height)
+          );
+        }
       }
       if (this.state.resizeStarted.endsWith('e')) {
         newState.dWidth = this.applyPrecision((X - this.state.mouseX) * rzam);
+        if (this.props.constrainToCanvasBounds) {
+          newState.dWidth = Math.min(
+            Math.max(newState.dWidth, -this.props.width),
+            canvas.width * ratio - (this.props.x + this.props.width)
+          );
+        }
       }
       if (this.state.resizeStarted.endsWith('w')) {
         newState.dWidth = this.applyPrecision(-(X - this.state.mouseX) * rzam);
         newState.dX = this.applyPrecision((X - this.state.mouseX) * rzam);
+        if (this.props.constrainToCanvasBounds) {
+          newState.dX = Math.min(
+            Math.max(-this.props.x || 0, newState.dX),
+            this.props.width
+          );
+          newState.dWidth = Math.min(
+            this.props.x,
+            Math.max(newState.dWidth, -this.props.width)
+          );
+        }
       }
       this.setState(newState);
     }
@@ -228,6 +266,24 @@ export default class EditableAnnotation extends React.Component {
 
   applyPrecision = value => {
     return this.props.boxSizeInt ? parseInt(value, 10) : value;
+  };
+
+  applyDragConstraints = deltas => {
+    if (this.props.constrainToCanvasBounds) {
+      const canvas = this.props.canvas.__jsonld;
+      const { x, y, width, height, ratio } = this.props;
+
+      deltas.dX = Math.min(
+        Math.max(-x || 0, deltas.dX),
+        canvas.width * ratio - (x + width)
+      );
+
+      deltas.dY = Math.min(
+        Math.max(-y || 0, deltas.dY),
+        canvas.height * ratio - (y + height)
+      );
+    }
+    return deltas;
   };
 
   render() {
