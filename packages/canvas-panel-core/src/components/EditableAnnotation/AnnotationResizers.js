@@ -12,7 +12,7 @@ class AnnotationResizers extends React.PureComponent {
   };
 
   static defaultProps = {
-    resizerWidth: 10,
+    resizerWidth: 40,
     directions: ['se', 'ne', 'sw', 'nw', 's', 'e', 'n', 'w'],
   };
 
