@@ -32,7 +32,7 @@
     "nwb-sass": "0.9.0",
     "react": "16.6.0",
     "react-dom": "16.6.0",
-    "redux-actions": "2.6.3",
+    "redux-actions": "2.6.4",
     "redux-saga": "0.16.2"
   },
   "publishConfig": {
