@@ -1,4 +1,4 @@
-Editable annotation bounding box example, demonstrates the drag and drop and resize functionality.
+Editable annotation bounding box example, demonstrates the drag and drop and resize functionality, which works with both, mouse and touch devices.
 
 ```js
 let viewport;
@@ -49,6 +49,8 @@ initialState = {
 ```
 
 ### Custom box styles
+
+Custom box styles can be passed to the `EditableAnnotation` component using `boxStyles` property. The standard `className` attribute also available.
 
 ```js
 let viewport;

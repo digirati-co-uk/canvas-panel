@@ -231,7 +231,7 @@ export default class EditableAnnotation extends React.Component {
   };
 
   render() {
-    const { x, y, width, height, children, boxStyles } = this.props;
+    const { x, y, width, height, children, boxStyles, className } = this.props;
     const X = this.applyPrecision(x) + this.state.dX;
     const Y = this.applyPrecision(y) + this.state.dY;
     return (
@@ -243,6 +243,7 @@ export default class EditableAnnotation extends React.Component {
           width: this.applyPrecision(width) + this.state.dWidth,
           height: this.applyPrecision(height) + this.state.dHeight,
         }}
+        className={className}
         onMouseDown={this.dragStart}
         onTouchStart={this.dragStart}
       >
