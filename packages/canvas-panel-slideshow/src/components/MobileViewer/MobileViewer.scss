@@ -41,9 +41,13 @@
   &__canvas-navigation {
     .canvas-navigation__next,
     .canvas-navigation__previous {
-      opacity: 1;
       transition: opacity 0.2s;
       animation: fadein 0.6s;
+      &--isFirstPage,
+      &--isLastPage {
+        opacity: 0;
+        animation: none;
+      }
     }
     &--hidden {
       .canvas-navigation__next,
