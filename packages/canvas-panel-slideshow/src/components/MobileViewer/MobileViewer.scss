@@ -139,6 +139,11 @@
           fill: #000;
         }
       }
+
+      &-body {
+        overflow-y: auto;
+        max-height: 215px;
+      }
     }
   }
 }

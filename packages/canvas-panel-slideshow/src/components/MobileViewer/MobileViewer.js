@@ -90,7 +90,7 @@ const InfoPanel = ({ bem, hidden, onClose, children, label }) => (
   >
     <CloseIcon className={bem.element('info-panel-close')} />
     <h2>{label}</h2>
-    <p>{children}</p>
+    <p className={bem.element('info-panel-body')}>{children}</p>
   </div>
 );
 
