@@ -179,6 +179,7 @@ class Viewport extends Component {
       style,
       setRef,
       tileSources,
+      currentCanvas,
     } = this.props;
 
     return (
@@ -195,7 +196,8 @@ class Viewport extends Component {
       maxHeight !== newProps.maxHeight ||
       children !== newProps.children ||
       style !== newProps.style ||
-      tileSources !== newProps.tileSources
+      tileSources !== newProps.tileSources ||
+      currentCanvas !== newProps.currentCanvas
     );
   }
 

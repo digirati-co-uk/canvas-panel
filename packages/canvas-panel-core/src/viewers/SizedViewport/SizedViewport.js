@@ -13,6 +13,12 @@ class SizedViewport extends Component {
   render() {
     const { style, ...props } = this.props;
     const { width, height } = this.state.dimensions;
+
+    // @todo part of the layout problem.
+    if (!style.height) {
+      style.height = '100%';
+    }
+
     return (
       <Measure
         bounds

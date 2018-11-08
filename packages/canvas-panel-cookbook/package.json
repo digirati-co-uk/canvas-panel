@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run copy-libs-to-public && nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "npm run copy-libs-to-public && nwb serve-react-app",
+    "start": "npm run build && nwb serve-react-app",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
