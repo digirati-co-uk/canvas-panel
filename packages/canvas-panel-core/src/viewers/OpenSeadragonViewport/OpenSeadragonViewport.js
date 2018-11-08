@@ -30,23 +30,15 @@ class OpenSeadragonViewport extends Component {
     viewer.addHandler('open', () => this.resize(viewer));
     viewer.addHandler('canvas-drag', this.onDragStart(viewer));
     viewer.addHandler('canvas-drag-end', this.onDragStop(viewer));
+    viewer.addHandler('viewport-change', this.onViewportChange(viewer));
     this.resize(viewer);
   }
 
-  onDragStart = viewer => () => {
-    if (this.state.panning === false) {
-      this.setState({ panning: true });
-
-      if (this.props.onDragStart) {
-        this.props.onDragStart(viewer);
-      }
-    }
-
+  onViewportChange = viewer => e => {
     const bounds = viewer.viewport.getBoundsNoRotate();
     const constrainedBounds = viewer.viewport._applyBoundaryConstraints(bounds);
 
     if (bounds.x !== constrainedBounds.x || bounds.y !== constrainedBounds.y) {
-      this.setState({ constrained: true });
       if (this.props.onConstrain) {
         const factor =
           viewer.viewport._containerInnerSize.x * viewer.viewport.getZoom();
@@ -56,10 +48,21 @@ class OpenSeadragonViewport extends Component {
           (bounds.y - constrainedBounds.y) * factor
         );
       }
+      this.setState({ constrained: true });
     } else {
-      this.setState({ constrained: false });
       if (this.props.onUnconstrain) {
         this.props.onUnconstrain(viewer);
+      }
+      this.setState({ constrained: false });
+    }
+  };
+
+  onDragStart = viewer => () => {
+    if (this.state.panning === false) {
+      this.setState({ panning: true });
+
+      if (this.props.onDragStart) {
+        this.props.onDragStart(viewer);
       }
     }
   };

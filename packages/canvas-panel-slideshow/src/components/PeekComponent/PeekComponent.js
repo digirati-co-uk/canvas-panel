@@ -57,7 +57,7 @@ class PeekComponent extends Component {
               className={bem.element('wing').modifier('left')}
               style={{
                 left: `calc(-100% + ${x - 20}px)`,
-                transition: shouldAnimate ? 'left .3s' : null,
+                transition: shouldAnimate ? 'left .2s' : null,
               }}
             >
               {renderLeft()}
@@ -76,7 +76,7 @@ class PeekComponent extends Component {
               key={index + 1}
               style={{
                 left: `calc(100% + ${x + 20}px)`,
-                transition: shouldAnimate ? 'left .3s' : null,
+                transition: shouldAnimate ? 'left .2s' : null,
               }}
             >
               {renderRight()}
