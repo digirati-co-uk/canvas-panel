@@ -103,14 +103,16 @@ class MobileViewer extends Component {
   state = { open: false, constrained: false, offset: 0 };
 
   onConstrain = (viewer, x, y) => {
+    const stateToUpdate = {};
     if (this.props.applyOffset) {
       this.props.applyOffset(-x);
-      this.setState({ offset: -x });
+      stateToUpdate.offset = -x;
     }
-    this.setState({ constrained: true });
+    stateToUpdate.constrained = true;
     if (y) {
       this.applyConstraints(viewer, true);
     }
+    this.setState(stateToUpdate);
   };
 
   applyConstraints(viewer, immediately) {
@@ -129,6 +131,7 @@ class MobileViewer extends Component {
     }
     this.setState({ dragging: true });
   };
+
   onDragStop = viewer => {
     if (this.props.onDragStop) {
       this.props.onDragStop();
