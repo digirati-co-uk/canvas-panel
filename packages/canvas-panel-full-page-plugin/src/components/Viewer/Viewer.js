@@ -27,9 +27,9 @@ class Viewer extends Component {
     annotationPosition: 'top',
   };
 
-  container = React.createRef();
+  container = null;
 
-  state = { viewport: null, updater: false, interactive: false };
+  state = { viewport: null, updater: false, interactive: false, ready: false };
 
   setViewport = viewport => {
     this.setState({ viewport });
@@ -80,7 +80,6 @@ class Viewer extends Component {
 
   render() {
     const { manifest, jsonLd, title, children, bem, style } = this.props;
-
     const { ready } = this.state;
 
     const manifestProps = {};
@@ -90,7 +89,6 @@ class Viewer extends Component {
     if (jsonLd) {
       manifestProps.jsonLd = jsonLd;
     }
-
     return (
       <div ref={this.setContainer} className={bem} style={style}>
         <ExploreButton
