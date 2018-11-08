@@ -6,6 +6,7 @@ import TapDetector from '../TapDetector/TapDetector';
 import MobileViewer from '../MobileViewer/MobileViewer';
 import FullscreenButton from '../FullscreenButton/FullscreenButton';
 import PeekComponent from '../PeekComponent/PeekComponent';
+import ZoomButtons from '../ZoomButtons/ZoomButtons';
 
 class MobilePageView extends Component {
   state = {
@@ -138,13 +139,15 @@ class MobilePageView extends Component {
             onDragStart={this.onDragStart}
             onDragStop={this.onDragStop}
             applyOffset={this.applyOffset}
-            onZoomIn={this.zoomIn}
             onZoomOut={this.zoomOut}
+            canvasList={manifest.getSequenceByIndex(0).getCanvases()}
+            onZoomIn={this.zoomIn}
             onOpen={this.onOpen}
             onClose={this.onClose}
             onExitFullscreen={this.onExitFullscreen}
             isOpen={open}
             size={size}
+            index={currentIndex}
             nextRange={nextRange}
             previousRange={previousRange}
           />
