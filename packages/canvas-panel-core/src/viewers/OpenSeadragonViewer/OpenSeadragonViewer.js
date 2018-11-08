@@ -225,14 +225,24 @@ class OpenSeadragonViewer extends Component<
   };
 
   zoomIn = (speed: number) => {
+    const zoomBy = 1 / 0.7;
     if (this.getZoom() < this.getMaxZoom()) {
-      this.viewportAction('zoomBy', [1 / 0.7], speed);
+      if (this.getZoom() * zoomBy < this.getMaxZoom()) {
+        this.viewportAction('zoomBy', [zoomBy], speed);
+      } else {
+        this.viewportAction('zoomTo', [this.getMaxZoom()], speed);
+      }
     }
   };
 
   zoomOut = (speed: number) => {
+    const zoomBy = 0.7;
     if (this.getZoom() > this.getMinZoom()) {
-      this.viewportAction('zoomBy', [0.7], speed);
+      if (this.getZoom() * zoomBy > this.getMinZoom()) {
+        this.viewportAction('zoomBy', [zoomBy], speed);
+      } else {
+        this.viewportAction('zoomTo', [this.getMinZoom()], speed);
+      }
     }
   };
 
