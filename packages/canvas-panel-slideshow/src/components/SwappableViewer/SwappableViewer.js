@@ -103,11 +103,6 @@ class SwappableViewer extends Component {
 
   isZoomedIn = () => {
     if (this.viewport) {
-      console.log(
-        this.viewport.getMaxZoom(),
-        this.viewport.getZoom(),
-        this.viewport.getMaxZoom() >= this.viewport.getZoom()
-      );
       return this.viewport.getMaxZoom() <= this.viewport.getZoom();
     }
     return true;
