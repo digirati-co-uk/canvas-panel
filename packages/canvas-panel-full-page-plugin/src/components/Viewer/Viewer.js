@@ -81,9 +81,11 @@ class Viewer extends Component {
   render() {
     const { manifest, jsonLd, title, children, bem, style } = this.props;
 
+    const { ready } = this.state;
+
     const manifestProps = {};
     if (manifest) {
-      manifestProps.uri = manifest;
+      manifestProps.url = manifest;
     }
     if (jsonLd) {
       manifestProps.jsonLd = jsonLd;
