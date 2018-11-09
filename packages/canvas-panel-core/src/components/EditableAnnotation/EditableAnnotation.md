@@ -13,7 +13,7 @@ initialState = {
   },
 };
 <div>
-  <div style={{ background: 'grey' }}>
+  <div style={{ background: 'grey', position: 'relative' }}>
     <Manifest url={manifests.main}>
       <CanvasProvider>
         <SingleTileSource>
@@ -44,6 +44,23 @@ initialState = {
         </SingleTileSource>
       </CanvasProvider>
     </Manifest>
+    <div
+      style={{
+        position: 'absolute',
+        background: '#fff',
+        padding: 5,
+        opacity: 0.7,
+        top: 0,
+        right: 0,
+        zIndex: 12,
+      }}
+    >
+      Annotation: <br />
+      <b> x:</b> {state.annotation.x} <br />
+      <b> y:</b> {state.annotation.y} <br />
+      <b> height:</b> {state.annotation.height} <br />
+      <b> width:</b> {state.annotation.width} <br />
+    </div>
   </div>
 </div>;
 ```
