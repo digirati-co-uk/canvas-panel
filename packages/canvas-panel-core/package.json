@@ -36,6 +36,7 @@
     "@stephenwf-forks/manifesto.js": "2.2.25",
     "core-js": "^2.5.3",
     "create-react-context": "^0.2.0",
+    "detect-it": "^3.0.5",
     "mobile-detect": "^1.4.2",
     "openseadragon": "^2.3.1",
     "react": "^16.3.2",
