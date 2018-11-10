@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Experiment 1</title>
+</head>
+<body>    
+    <h1>Pop-up info widget - web components</h1>
+
+    <form>
+      <div>
+        <label for="cvc">Enter your CVC 
+            <popup-info 
+                img="https://mdn.github.io/web-components-examples/popup-info-box-web-component/img/alt.png" 
+                data-text="Your card validation code (CVC) is an extra security feature — it is the last 3 or 4 numbers on the back of your card.">
+        </label>
+        <input type="text" id="cvc">
+      </div>
+    </form>
+    
+    <script src="e1.js"></script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<html>
+<head>
+    <title>Digirati Canvas Panel - Collaboration scenarios</title>
+    <link rel="stylesheet" href="./style-common.css">
+    <link rel="stylesheet" href="./highlight/styles/github.css">
+    <script src="./highlight/highlight.pack.js"></script>
+    <script src="https://unpkg.com/iiif-prezi2to3/umd/iiif-prezi2to3.js"></script>
+    <script src="./cp-common.js"></script>
+    <script src="./cp2.js"></script>
+</head>
+<body>
+    <h1>Collaboration scenarios</h1>
+    <p><a href=".">Intro</a> | <a href="./cp1.html">Version 1</a> | <a href="./cp2.html">Version 2</a> | <a href="./viewer1.html">Viewer 1</a> | Collaboration</p>
+    
+    <p>Revisiting the requirements, the first two have been met (with some fudging). But what about the others?</p>
+
+
+    <h2>Requirements</h2>
+    <ol>
+        <li>Allow navigation by thumbnails</li>
+        <li>Display text transcriptions alongside the canvas</li>
+        <li><i>Render any hyperlinking annotations and allow my code to intercept them</i></li>
+        <li><i>Highlight the text on the canvas when I select it in the text panel</i></li> 
+        <li><i>Display text transcriptions overlaying the canvas, as an option</i></li> 
+        <li><i>Show other content of the canvas, besides transcriptions (e.g., comments)</i></li> 
+        <li><i>Support multiple image annotations on the canvas</i></li>
+        <li><i>Support oa:Choice</i></li> 
+    </ol>
+
+    <p>In this section I will take a look at requirements 3-8.</p>
+
+    <h2>Hyperlinking</h2>
+    <p>IIIF has great potential to encourage the extension of hyperlinking into the digital object. Often a digital object
+         is presented in a black box - the viewer; the web stops at its borders and something else takes over, 
+         isolated and disconnected. IIIF makes the digital object and its parts, at any level of granularity, 
+         part of the web too. The markup of the web page gives way to a more specialised but in fact simpler markup: 
+         the IIIF Presentation model. That model is an assembly of web standards, we don't need to leave 
+         hyperlinks at the door.</p>
+
+    <p>Some examples of hyperlinking in IIIF:</p>
+    <ul>
+        <li><a href="https://galway-viewer.digirati.com/#?canvas=https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json">The Galway Viewer</a>
+             (built using current React.js version of Canvas Panel). The links point to other IIIF resources, 
+             but rather than link directly the viewer shows a preview of the target resource. 
+             This is because we want to treat the orginal IIIF resource (the memoir) as an anchor 
+             point for the rest of the archive. 
+             <a href="https://github.com/digirati-co-uk/nui-galway-viewer/blob/master/implementation.md#model---linking">Further discussion of linking model</a>.</li>
+        <li><a href="https://chronicle250.com/1982#catalogue">Chronicle 250: The Royal Academy Summer Exhibition</a>. 
+            In this example, artist names in the catalogue link to their index entries, for further exploration.</li>
+        <li><a href="https://medium.com/@tom.crane/beyond-the-viewer-fragments-and-links-in-annotation-space-b3284e25f34">Beyond the Viewer</a> 
+            includes a section at the end on "hyperlinking the archive".</li>
+    </ul>
+    <p>
+        A hyperlink in IIIF is just an annotation with the motivation <code>linking</code>. At its simplest 
+        it could be a link from a region of a canvas, to another manifest:</code>
+    </p>
+
+    
+<pre><code class="json">
+{
+    "id": "http://example.org/linking-anno",
+    "type": "Annotation",
+    "motivation": "linking",
+    "label": "Click me",
+    "body": {
+        "id": "https://example.org/manifest1",
+        "type": "Manifest"
+    },
+    "target": "http://example.org/canvas1#xywh=1000,1000,400,50"
+}
+</code></pre>
+
+<p>Sometimes you might want to link from a region of one canvas in one work to a region of another canvas in another work. 
+    This needs a bit more information:</p>
+
+<pre><code class="json">
+{
+    "id": "http://example1.org/linking-anno",
+    "type": "Annotation",
+    "motivation": "linking",
+    "body": {
+        "id": "http://example2.org/canvas1#xywh=300,300,400,400",
+        "type": "Canvas",
+        "partOf": {
+            "id": "https://example2.org/manifest1",
+            "type": "Manifest"
+        }
+    },
+    "target": {
+        "id": "http://example1.org/canvas1#xywh=1000,1000,400,50",
+        "type": "Canvas",
+        "partOf": {
+            "id": "https://example1.org/manifest1",
+            "type": "Manifest"
+        }
+    }
+}
+</code></pre>
+           
+<p>Neither the W3C or IIIF specifications describe what the user experience of such a link is. By default
+    we could let the rendered linking annotation behave as a regular HTML hyperlink - allow the browser behaviour
+to take over - have CP render it as a hyperlink, or have a click on it produce the same result:
+</p>
+
+<pre><code class="javascript">
+    location.href = anno.body.id;
+</code></pre>
+
+<p>That would work for some things but not others. Canvas Panel needs to be a bit cleverer than that.
+    If the link is to another IIIF resource, or part of that resource, do we want to
+    load that resource straight into Canvas Panel? Sometimes we might, but for a complex digital object in a viewer, 
+    that won't work; we're more likely to want to re-initialise our viewer with the new manifest and then navigate
+    it to the correct location. In the Galway example the viewer shows an interstitial dialogue, alerting the user
+    to the fact that they are navigating away from the current object, but also offering a preview of that object
+    in-situ. In the Royal Academy example the links are like more conventional web links. They go to parts of web pages,
+    not parts of IIIF resources.
+</p>
+
+<p>The most flexible approach is for Canvas Panel to fire an event.</p>
+
+<p>Event model for hyperlinking:
+        <ul>
+            <li>By default just render them as links and let them be active. This will work <i>sometimes</i>.</li>
+            <li>Consumer (i.e., my viewer) can intercept a linkClick event, handle it, cancel it, do something else.</li>
+        </ul>
+    </p>
+
+<pre><code class="html"> &lt;!-- The Canvas Panel Component --&gt;
+&lt;div is=&quot;canvas-panel-2&quot; id=&quot;cp2&quot; class=&quot;canvaspanel&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    cp2 = document.getElementById(&quot;cp2&quot;);
+    cp2.canvas = myCanvas;
+    // ... you've already given the CP component a canvas...
+    // ... for later... consider the async behaviour of setting the canvas property of CP
+    cp2.addEventListener("linkClick", doSomethingWithLinkingAnno);
+&lt;/script&gt;
+</code></pre>
+
+<p>The <code>doSomethingWithLinkingAnno</code> function can handle the click, whenever the user clicks an annotation.
+    The event 
+    arguments include the linking annotation body (already mormalised to the W3C model) for the viewer code
+to process. If reproducing the Galway example, the viewer would use the information to overlay the modal
+dialog on top of Canvas Panel.</p>
+
+<p>There is a problem with all this. Where did the hyperlinks come from? How did Canvas Panel get hold of them?
+    In the viewer example we were talking about the textual content of canvases, and loading that lazily.
+    But here we would have had to have loaded the annotation collections containing the hyperlinks as part of the initialisation
+    of Canvas Panel. This suggests that Canvas Panel should start loading linked resources regardless, because it doesn't know
+    what it's going to find or what we're going to ask it to do with them.
+</p>
+
+<p>Maybe both modes need to be supported. After all, for a single canvas the actual size (i.e., in bytes) of linked annotation 
+    lists aren't likely to be very large. Smaller than a typical set of tile requests to show the actual content.
+    And, the viewer might wish to take control of loading behaviour for annotations, and whether linking annotations
+    should be rendered, and so on:
+</p>
+
+<pre><code class="html"> &lt;!-- The Canvas Panel Component --&gt;
+    &lt;div is=&quot;canvas-panel-2&quot; id=&quot;cp2&quot; class=&quot;canvaspanel&quot;&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+        cp2 = document.getElementById(&quot;cp2&quot;);
+        cp2.options = {
+            "loadExternalAnnotations": true,
+            "renderLinkingAnnotations": true,
+            // ... many more options to follow
+        }
+    &lt;/script&gt;
+    </code></pre>
+    
+<p>A linking annotation is the very simplest example of an annotation collaboration. So far, CP just passed the annotation
+    body as an event argument, so the viewer code can take over - follow the link, load more IIIF, whatever.
+     And in the earlier text content example, CP didn't know about 
+the annotations at all, it wasn't responsible for rendering them: the viewer was, in an external text panel or component. 
+It didn't even need to load them.</p>
+
+<p>Let's combine these two approaches a little. If we let CP load annotations anyway, <i>even if at first we'll render them
+    ourselves externally</i>, then CP has an internal model of all the annos that might be on the canvas, that it <i>might</i> 
+    need to produce some sort of visual representation of, depending on further user interaction.</p>
+
+<p>As well as passing the annotation body in the linkClick event argument (some normalised P3/W3C JSON), we can also pass
+    an object that represents CP's rendering (or potential rendering) of the annotation, for the viewer to control. </p>
+
+        
+<pre><code class="javascript">
+    function doSomethingWithLinkingAnno(e){
+        // this is the raw annotation, it looks the JSON, but normalised
+        console.log(prettyPrint(e.annotation));
+
+        // and this is an API into CP's rendering of that anno:
+        e.element.style.border = "..."; // is it just DOM element?
+    }
+</code></pre>
+
+<p>Is that second element just passing through the DOM element from the Web Component's shadow DOM, for us to influence?
+        Or is it something else - instead of, or as well as, the bare DOM element? What other API do we need?
+    It may not actually <b>be</b> a DOM element until we asked for it. If it's a linking annotation, CP will probably
+    have made a DOM element to highlight it and be clicked on, but what about other forms of annotation? Single words or 
+    lines of transcription? They may not need DOM elements until we want to do something with them from outside.
+</p>
+
+
+<h2>Textual and other annotations</h2>
+
+<p>This brings us to the next requirement:
+    <i>Highlight the text on the canvas when I select it in the text panel.</i>
+</p>
+
+<p>In the original text example, I just built up the text by concatenating the text content of the annos to a string (my 
+helpers method is very dumb):
+</p>
+<pre><code class="javascript">
+    s += res.resource.chars + "&lt;br/&gt;\r";
+</code></pre>
+
+<p>But if instead my <code>helpers.getTextForCanvasAsHtml(..)</code> function built some more sophisticated HTML, that
+included an element corresponding to the text body of the annotation with some form of data-xxx identifier for
+the id of the annotation, then I have a means of interacting with CP's rendering of that annotation.
+My helper method loaded the external annotations to build the HTML text, but CP has also loaded the external annotations (because I
+told it to in the options). Now, we may have to come back and deal with (optimise) the fact that both my viewer and CP are loading 
+the annotations, each for its own purposes. But the end result is that my <i>viewer</i> logic has built some complex HTML in its
+text panel (via a helper), and if a user interacts with that HTML they are interacting with DOM elements that record an annotation
+ id. 
+So, if a user starts selecting text in the text panel, they are selecting HTML elements that carry annotation identifiers.
+</p>
+
+<p>Which means I can tell CP to highlight the annotations for those identifiers; it loaded the annos too and is storing
+     an internal representation of them.
+    This gives us our feature requirement. How CP does this is for later consideration (it may not need to create DOM elements up front, it
+just does that as they are highlighted).</p>
+
+<p>This gives us a suggestion for our next requirement:
+        <i>Display text transcriptions overlaying the canvas, as an option.</i>
+</p>
+
+<p>
+    If CP can highlight the annotation, then it can render that box with text in it. The way I would probably want to do this
+    goes back to the tabs or drop down approach for dealing with all the linked annotations for the canvas in my viewer.
+    My viewer may not know exactly what each tab's content represents (transcription, comments etc), although it can get clues
+    from the motivations. But as a human user, I can see what these things are. I could recognise one of the tabs as the text content
+    of the page. And I could click something that says "overlay". When I click this, my viewer code takes the id of the annotation collection
+    that corresponds to that tab, and does one of two possible things:
+
+    <ol>
+        <li>Constructs an HTML layer, like the one made from the call to the helper but scaled more precisely to its annotation targets so that
+            it can sit on top of the CP representation (CP doesn't know about it).
+        </li>
+        <li>Tell CP to do this, so that CP can take care of the alignment, synchronising of zooming and so on.</li>
+    </ol>
+</p>
+
+<p>That is, it makes sense for CP to have this ability, to render text content in place in its right target boxes. 
+    All we're really doing 
+    is turning on an annotation layer from the point of view of the viewer, we're controlling what of its 
+    content CP is showing at any one time. It's job is to show text content too.
+</p>
+    <p>
+
+    So A CP requirement is that it renders text layers in place... not like the way Mirador 2 does it, as boxes with tooltips.
+    That approach may be appropriate for commenting annotations, but not actual textual content (supplementing annos) that might
+    be in the image itself.
+
+    When a text layer is enabled in this way, CP supports text selection for copying and pasting.
+    It also needs to offer enough style control (through CSS and/or options) to "knock back" the image so the text can be 
+    clearly seen.
+    Perhaps there are various opacity levels that can be set to make this work.
+</p>
+
+<p>And what about comments and other annotations? There may be many types of annotations in the various tabs of the viewer.
+    Linking, transcriptions (supplementing), comments, some specialist annotations that came out of a crowdsourcing project.
+    From this discussion we see that we want rendering control over these off the canvas, through helpers, in our viewer. 
+    But we also want to activate them for display, in Canvas Panel, either at the Annotation Collection level (turn on 
+    an entire layer) or at the individual annotation level (select some text, highlight a comment). 
+    Perhaps CP and the viewer are using the same helper library under the hood to do their respective bits, but they aren't 
+    necessarily aware of this. There are things the viewer wants to do with annotations, and things the viewer wants CP to do 
+    with annotations.
+</p>
+
+
+<pre><code class="javascript">
+    // ... click something in the viewer's tab:
+    cp2.showAnnotationCollection("https://example.org/id123/transcription", options);
+    
+    // ... click something in the viewer's tab:
+    cp2.hideAnnotationCollections();
+    cp2.showAnnotationCollection("https://example.org/id123/commentary", options);
+
+    // retrieve CP's model of an individual annotation
+    let myAnno = cp2.annotations["https://example.org/id123/commentary/anno12"];    
+    myAnno.element.style.border = "..."; 
+    console.log(prettyPrint(myAnno.annotation)); // the JSON
+</code></pre>
+
+<p>In practice, a much richer API event model is exposed for CP to bubble up activity to the viewer.
+    Actions such as:
+</p>
+    <ul>
+        <li>Annotation selection through tab index (the user cycling through the tab order of annotations on the canvas)</li>
+        <li>Mouse over, touch, and other interactions, per annotation (expose the element interaction)</li>
+        <li>Anno appears in viewport (e.g., through pan and zoom)</li>
+        <li>Anno leaves viewport</li>
+    </ul>
+    <p>The options passed to CP determine whether it loads and builds enough to track and fire all these events.
+        This kind of model allows a viewer to offer sophisticated interactions.</p>
+
+        <p><i>Note - what is the relationship of CP and Annotation Studio? Annotation studio uses this CP too:
+            
+            <ul>
+                <li>You can create a new annotation externally and pass it singly to CP, by URI reference (e.g., in an 
+                    annotation server) or as a JavaScript object.</li>
+                <li>CP has a mode that support box-drawing (and more complex SVG selection) to capture regions.
+                    Is this part of CP? Or an additional component overlaid on top, coincident with CP?
+                </li>
+            </ul></i>
+        </p>
+
+<h2>Multiple image annotations</h2>
+<p>
+    We have the ability to control CP's rendering of linked annotations - transcriptions, comments etc. But we also need
+    to cover the basics of <code>painting</code> annotations; the direct content of the canvas, linked through the
+    <code>canvas.items</code> property.    
+</p>
+
+<p>We'll come back to non-image painting content later (AV). For now, I'll concentrate on images. But the same principles
+    apply. There are two ways in which multiple images are typically applied to a canvas.
+</p>
+
+<p>Firstly, simply by having more than one image. This could be the stitching together of different photographs of a 
+    dispersed work, or for any other content composition reason. The job of CP is very clear - it should show all the images,
+    with a z-index implied by their serialisation order. If Image 2 comes after Image 1, and partly overlaps it,
+     then it occludes it. CP does not need to offer any control of this process to the containing application, or for the containing
+     application to offer user interface. The images are all asserted equally valid content of the canvas, and nothing favours any one of them?
+     save by their ordering.</p>
+
+     <p>Mirador 2 calls multiple images "layers" and offers UI control of them. While this may be occasionally useful, it is not
+         the intent of the spec, and should not be the intent of publishers. Manual control over image display is reserved for the
+         second type, use of a <code>Choice</code> annotation.</p>
+
+<p><code>Choice</code> is for things like multispectral image stacks, or foldouts or flaps where there are two views of 
+    the same canvas. In this scenario, the viewer <i>does</i> need to present UI for the user to make that choice. 
+This is the scenario that Mirador's layers UI is for, not the general content accumulation that it also gets triggered for.
+</p>
+
+<p>What does this mean for the API of CP?</p>
+
+<p>For the first type of content, consumers don't really need to know what's going on. If they are interested they can
+    look at the annotations themselves. Otherwise, they can rely on CP to render multiple images correctly, each with their
+    own tile sources when supplied. CP "just works".
+</p>
+
+<p>For the second kind of content, CP can render the default behaviour, but then <i>requires</i> further instruction 
+to show and hide the available choices. A viewer has to know what choices are available. 
+My demo viewer didn't support this. But let's borrow Mirador's UI, which offers the available images in a tab, with preview.
+Mirador also offers opacity control, very useful for many image choice scenarios. So we're going to want to be able to
+drive the correct behaviour in CP for that kind of use.
+</p>
+
+<p>We could get CP to fire an event when it detects that a Choice UI is required. Or we could just interrogate it.</p>
+
+<pre><code class="javascript">
+    cp2.addEventListener("canvasReady", makeAnyAdditionalUI);
+
+    function makeAnyAdditionalUI(e){
+        if(cp2.choices){
+            // we have at least one annotation whose body is a Choice
+            for (let choiceAnno of cp2.choices){
+                // each choiceAnno may have many images.
+                addChoiceUI(choiceAnno);
+            }
+        }
+    }
+</code></pre>
+
+<p>In practice a viewer will maintain enough state, or bind the choice elements to UI, to track this visibility 
+    of the various possible images. When an image choice is made in the containing viewer, the choice can be communicated to CP:
+</p>
+
+<pre><code class="javascript">
+    // two IDs are required - the content might be in use in more than one annotation 
+    cp2.setChoiceVisibility(choiceAnnoId, contentId, options);
+
+    // here options could include things like opacity, border highlights, etc.
+</code></pre>
+
+<h2>General support for complex content association</h2>
+
+<p>Canvas Panel doesn't really need any particular API to implement all the other types of complex content association. These
+    are the types described in <a href="https://iiif.io/api/presentation/2.1/#advanced-association-features">Section 6</a> 
+    of the 2.1 specification, and will be described in the new Cookbook accompanying
+    the Presentation 3.0 specification. Excpet where they are also part of a <code>Choice</code> content annotation, CP should
+    jjst get on with rendering them.
+</p>
+
+<h2>Canvas Panel and Frameworks</h2>
+
+<p>While it's very likely that people will want to use frameworks like React and Vue.js to build viewers and tools with 
+    Canvas Panel, it is not itself opinionated about frameworks. It binds happily to any. It doesn't <b>depend</b> on any framework 
+    at all, it is completely self contained (though may require polyfills). That is, it isn't Reast under the hood pretending
+    to be frameworkless - it's just web components, and additional libraries for content rendering.
+</p>
+
+<p>This may make Canvas Panel a bit more fundamental than it could be, and make some development of its features
+    take a bit longer than they otherwise might. But it's essential for general adoption that you can build viewers using it alone,
+    and incorporating a variety of programming styles. 
+
+    You might call the style exhibited in my examples a a naive procedural style, which I migth want to abandon for a 
+    more modern reactive approach, or binding frameowrk approach as my requirements become more complex. 
+</p>
+    <p>
+    But it's important that I can use CP in this simple style, without a framework.
+</p>
+<p>And it's important that React developers have a nice experience of it too.</p>
+<p>And it's important that Vue.js developers have a nice experience too.</p>
+
+<p>What about use of CP in a progressive enhanceent web application? What is its minimum viable rendering?</p>
+<p>That's an interesting question. it may be that CP is inherently NOT present in the "first phase" of a progressively enhanced
+    web application, it's only going to come in when bandwidth and JS support allow. But this depends on what you mean by 
+    progressive enhancement in the context of representation of digital objects. In this scenario, bandwidth usage and feature support 
+    are often diametrically opposed: 
+    
+    <ul>
+        <li>Your phone supports a very capable JavaScript and HTML rendering engine, but you are in a part of
+                the world with very limited bandwidth. Anything a compact and sophisticated JavaScript application can do
+            to reduce the bytes transferred in viewing a complex digital object is a bonus.</li>
+            <li>You have turned JavaScript off, and want a declarative HTML representation of the digital object, even if it
+                that results in loading a lot of large images.
+            </li>
+    </ul>
+
+</p>
+
+<p>As a web component, CP could actually be a great help for both types of progressive enhancement. The CP implementation used
+    in the earlier viewer example is tiny, a few dozen lines of JavaScript, and results in something that only loads static images
+    (no deep zoom, no complex content interactions). As long as it manages its own loading of additional libraries, this 
+    approach could make it much easier to enforce progressive enhancement good practice (assuming you still support JavaScript).
+</p>
+
+<p>CP doesn't need the functionality of OSD. It could load in a much more lightweight, IIIF-only tile source engine. And could use HTML5
+    for AV. A frameworkless, fully featured CP need not be huge. And it may be sharing some common libraries with 
+    other components and the parent viewer that's using them.
+</p>
+
+<p>Next - dependency and interactions between CP, libraries and other components.</p>
+    <hr/>
+    <p><a href="https://github.com/digirati-co-uk/canvas-panel/tree/master/developer-stories">View on GitHub</a></p>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

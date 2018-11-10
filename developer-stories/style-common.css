@@ -1,0 +1,21 @@
+body {
+    font-family: system-ui,Arial,Helvetica,sans-serif;
+    line-height: 1.6em;
+    margin-left: 10vw;
+}
+
+p, blockquote, ul, ol {
+    max-width: 600px;
+}
+
+.canvaspanel {
+    width: 600px;
+    height: 600px;
+    padding:2px;
+    border:1px solid green;
+    background-color:black;
+}
+
+pre {
+    max-width: 600px;
+}
