@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/full-page-plugin",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Canvas panel plugin - full page scroll",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -27,7 +27,7 @@
     }
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.9",
+    "@canvas-panel/core": "0.1.0",
     "babel-preset-es2015-native-modules": "^6.9.4",
     "bezier-easing": "^2.1.0",
     "react-dom": "^16.3.2"

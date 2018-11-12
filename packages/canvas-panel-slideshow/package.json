@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/slideshow",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "canvas-panel-slideshow React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -28,7 +28,7 @@
     }
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.9",
+    "@canvas-panel/core": "0.1.0",
     "react": "16.6.1",
     "react-dom": "16.6.1",
     "react-flip-move": "^3.0.2",
