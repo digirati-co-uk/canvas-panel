@@ -10,6 +10,7 @@ import SlideShowFullScreenDemo from './pages/SlideShowFullScreen/SlideShowFullSc
 import CollectionLister from './pages/CollectionLister/CollectionLister';
 import FullPageVA from './pages/FullPageVA/FullPageVA';
 import IframeDemo from './pages/IframeDemo/IframeDemo';
+import MultiAnnotationCanvas from './pages/MultiAnnotationCanvas/MultiAnnotationCanvas';
 import classnames from 'classnames';
 
 import './App.scss';
@@ -124,6 +125,10 @@ const App = () => (
       <Route path="/examples/fullpage-va" component={FullPageVA} />
       <Route path="/examples/popout" component={PopOut} />
       <Route path="/examples/external" component={IframeDemo} />
+      <Route
+        path="/examlpes/multi-annotation-canvas"
+        component={MultiAnnotationCanvas}
+      />
       <Route
         path="/examples/annotation-playground"
         component={AnnotationPlayground}

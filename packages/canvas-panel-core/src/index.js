@@ -26,7 +26,7 @@ import AnnotationSelector from './utility/AnnotationSelector';
 import htmlElementObserver from './utility/htmlElementObserver';
 import Responsive from './utility/Responsive';
 import parseSelectorTarget from './utility/parseSelectorTarget';
-
+import EditableAnnotation from './components/EditableAnnotation/EditableAnnotation';
 export {
   // Components.
   Annotation,
@@ -39,6 +39,7 @@ export {
   Fullscreen,
   SingleTileSource,
   ObservableElement,
+  EditableAnnotation,
   // Manifesto
   AnnotationListProvider,
   AnnotationProvider,

@@ -1,0 +1,87 @@
+{
+  "label": {
+    "en": ["Unnamed manifest"]
+  },
+  "type": "Manifest",
+  "id": "http://digirati.com/iiif/v3/temporary/manifest",
+  "items": [
+    {
+      "label": {
+        "en": ["Canvas 1"]
+      },
+      "height": 3000,
+      "width": 3000,
+      "type": "Canvas",
+      "id": "http://digirati.com/iiif/v3/temporary/canvas/c1",
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "http://digirati.com/iiif/v3/temporary/annot/c1-1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "label": {
+                "en": ["Text Annotation 1"]
+              },
+              "body": {
+                "type": "TextualBody",
+                "value": "Text Annotation",
+                "format": "text/plain"
+              },
+              "target": "http://digirati.com/iiif/v3/temporary/canvas/c1#xywh=1,0,271,308"
+            },
+            {
+              "id": "http://digirati.com/iiif/v3/temporary/annot/c1-2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "label": {
+                "en": ["Image Annotation 2"]
+              },
+              "body": {
+                "type": "Image",
+                "height": "200",
+                "width": "318"
+              },
+              "target": "http://digirati.com/iiif/v3/temporary/canvas/c1#xywh=817,331,183,291"
+            },
+            {
+              "id": "http://digirati.com/iiif/v3/temporary/annot/c1-3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "label": {
+                "en": ["Video Annotation 3"]
+              },
+              "body": {
+                "type": "Video",
+                "height": 640,
+                "width": 268,
+                "duration": 1
+              },
+              "target": "http://digirati.com/iiif/v3/temporary/canvas/c1#xywh=296,0,704,315"
+            },
+            {
+              "id": "http://digirati.com/iiif/v3/temporary/annot/c1-4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "label": {
+                "en": ["Text Annotation 4"]
+              },
+              "body": {
+                "type": "TextualBody",
+                "value": "Annotation",
+                "format": "text/plain"
+              },
+              "target": "http://digirati.com/iiif/v3/temporary/canvas/c1#xywh=0,328,788,295"
+            }
+          ],
+          "id": "http://digirati.com/iiif/v3/temporary/list/c1-ap1"
+        }
+      ]
+    }
+  ],
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ]
+}

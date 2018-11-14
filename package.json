@@ -56,5 +56,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "renamer": "^1.1.0"
   }
 }
