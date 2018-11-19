@@ -93,7 +93,15 @@ export function findTopLevel(found, range) {
 }
 
 export function expander(mapped) {
-  return item => mapped[item['@id']];
+  return item => {
+    if (!item['@id']) {
+      console.log('No item ID', item);
+    }
+    if (!mapped[item['@id']]) {
+      console.log('No mapped item id', item['@id'], Object.keys(mapped));
+    }
+    return mapped[item['@id']];
+  };
 }
 
 export function createStructure(topLevel, mapped, canvasNumMap) {
@@ -112,7 +120,13 @@ export function enhancedStructure(expand, canvasNumMap) {
         .filter(member => member['@type'] === 'sc:Range')
         .map(enhancedStructure(expand, canvasNumMap));
     }
-    range.canvasNumbers = range.canvases.map(i => canvasNumMap[i]);
+
+    range.canvasNumbers = range.canvases.map(i => {
+      if (!canvasNumMap[i] && canvasNumMap[i] !== 0) {
+        console.log(i.trim(), 'not found');
+      }
+      return canvasNumMap[i.trim()];
+    });
     range.range =
       range.canvasNumbers.length === 1
         ? range.canvasNumbers[0]

@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { manifestSetCanvas } from '@canvas-panel/redux/es/spaces/manifest';
 import './RangeSlider.scss';
-import Rheostat from 'rheostat';
+import Rheostat from 'rheostat/initialize';
 import RangeHighlights from '../RangeHighlights/RangeHighlights';
 import { selectCurrentCanvas } from '../../redux/search.selectors';
 
