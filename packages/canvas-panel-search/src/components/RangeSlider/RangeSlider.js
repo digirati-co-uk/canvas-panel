@@ -51,7 +51,7 @@ class RangeSlider extends Component<Props, State> {
     const { canvases } = this.props;
 
     return (
-      <div style={{ flex: 1, position: 'relative' }}>
+      <div className="range-slider">
         <RangeHighlights canvases={canvases} />
         <Rheostat
           min={0}
