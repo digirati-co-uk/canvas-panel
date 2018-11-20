@@ -167,7 +167,7 @@ class MobilePageView extends Component {
             >
               {({ label, body, attributionLabel, attribution }) => (
                 <div
-                  ref={canvasIndex === currentIndex && this.setActiveRef}
+                  ref={canvasIndex === currentIndex ? this.setActiveRef : null}
                   className={bem.element('canvas')}
                 >
                   <StaticImageViewport
