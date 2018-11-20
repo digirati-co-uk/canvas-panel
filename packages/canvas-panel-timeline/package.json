@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/timeline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "canvas-panel-timeline React component",
   "main": "lib/index.js",
   "module": "es/index",
