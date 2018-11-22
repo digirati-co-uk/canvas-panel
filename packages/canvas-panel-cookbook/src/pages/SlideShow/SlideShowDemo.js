@@ -3,6 +3,7 @@ import { withBemClass } from '@canvas-panel/core';
 import { SlideShow } from '@canvas-panel/slideshow';
 
 import './SlideShowDemo.scss';
+import inlineJsonExample from './inline.json';
 
 class SlideShowDemoBase extends Component {
   render() {
@@ -47,6 +48,19 @@ class SlideShowDemoBase extends Component {
           </p>
           <div className={bem.element('full-width-container')}>
             <SlideShow manifestUri="https://adam-digirati.github.io/balenciaga1-behaviors.json" />
+          </div>
+        </section>
+        <section className={bem.element('section')}>
+          <h2 className={bem.element('subtitle')}>
+            Slideshow with inline json
+          </h2>
+          <p style={{ background: 'white' }}>
+            Slideshow allows to pass a jsonld directly. It is useful if the host
+            application uses the same manifest json somewhere else - it doesn't
+            need to be downloaded multiple times.
+          </p>
+          <div className={bem.element('inline-container')}>
+            <SlideShow jsonLd={inlineJsonExample} />
           </div>
         </section>
       </article>
