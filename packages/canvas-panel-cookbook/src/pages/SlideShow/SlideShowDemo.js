@@ -56,7 +56,7 @@ class SlideShowDemoBase extends Component {
           </h2>
           <p style={{ background: 'white' }}>
             Slideshow allows to pass a jsonld directly. It is useful if the host
-            application uses the same manifest json somewhere else - it doesn't
+            application uses the same manifest json somewhere else - it does not
             need to be downloaded multiple times.
           </p>
           <div className={bem.element('inline-container')}>
