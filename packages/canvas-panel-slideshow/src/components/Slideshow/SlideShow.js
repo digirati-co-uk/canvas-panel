@@ -22,6 +22,7 @@ class SlideShow extends Component {
 
   static propTypes = {
     manifestUri: PropTypes.string,
+    jsonLd: PropTypes.object,
     mobileBreakpoint: PropTypes.number,
   };
 
@@ -46,7 +47,7 @@ class SlideShow extends Component {
   };
 
   render() {
-    const { manifestUri, renderPanel, bem } = this.props;
+    const { manifestUri, jsonLd, renderPanel, bem } = this.props;
     return (
       <div
         className={bem.modifiers({
@@ -55,7 +56,7 @@ class SlideShow extends Component {
       >
         <Fullscreen>
           {({ ref, ...fullscreenProps }) => (
-            <Manifest url={manifestUri}>
+            <Manifest url={manifestUri} jsonLd={jsonLd}>
               <RangeNavigationProvider>
                 {rangeProps => {
                   const {
