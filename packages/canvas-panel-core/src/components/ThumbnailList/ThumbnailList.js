@@ -47,12 +47,18 @@ class ThumbnailList extends React.Component {
   componentDidUpdate(/*prevProps, prevState*/) {
     if (this.selectedThumbnail) {
       const rect = this.selectedThumbnail.getBoundingClientRect();
-      if (rect.x < 0) {
-        this.list.scrollLeft = 0;
-      } else if (this.list.offsetWidth - rect.width < rect.x) {
+      if (centerSelected) {
         this.list.scrollLeft =
-          this.selectedThumbnail.offsetLeft -
-          (this.list.offsetWidth - rect.width);
+          -((this.list.offsetWidth - rect.width) / 2) +
+          this.selectedThumbnail.offsetLeft;
+      } else {
+        if (rect.x < 0) {
+          this.list.scrollLeft = 0;
+        } else if (this.list.offsetWidth - rect.width < rect.x) {
+          this.list.scrollLeft =
+            this.selectedThumbnail.offsetLeft -
+            (this.list.offsetWidth - rect.width);
+        }
       }
     }
   }
@@ -125,10 +131,12 @@ ThumbnailList.propTypes = {
   canvas: PropTypes.object,
   height: PropTypes.number,
   goToRange: PropTypes.func.isRequired,
+  centerSelected: PropTypes.bool,
 };
 
 ThumbnailList.defaultProps = {
   height: 116,
+  centerSelected: true,
 };
 
 export default withBemClass('thumbnail-list')(ThumbnailList);
