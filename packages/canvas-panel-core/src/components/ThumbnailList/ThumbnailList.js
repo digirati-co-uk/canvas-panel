@@ -46,13 +46,13 @@ class ThumbnailList extends React.Component {
 
   componentDidUpdate(/*prevProps, prevState*/) {
     if (this.selectedThumbnail) {
-      const list = this.selectedThumbnail.parentNode.parentNode;
       const rect = this.selectedThumbnail.getBoundingClientRect();
       if (rect.x < 0) {
-        list.scrollLeft = 0;
-      } else if (list.offsetWidth - rect.width < rect.x) {
-        list.scrollLeft =
-          this.selectedThumbnail.offsetLeft - (list.offsetWidth - rect.width);
+        this.list.scrollLeft = 0;
+      } else if (this.list.offsetWidth - rect.width < rect.x) {
+        this.list.scrollLeft =
+          this.selectedThumbnail.offsetLeft -
+          (this.list.offsetWidth - rect.width);
       }
     }
   }
@@ -85,7 +85,12 @@ class ThumbnailList extends React.Component {
 
     return (
       <div style={{ height: height }} className={bem}>
-        <div className={bem.element('scroll')}>
+        <div
+          ref={listEl => {
+            this.list = listEl;
+          }}
+          className={bem.element('scroll')}
+        >
           <div style={{ height: height }} className={bem.element('thumb-list')}>
             {canvasList.map((canvasId, index) => {
               const isSelected = canvasId === (canvas.id || canvas['@id']);
@@ -119,7 +124,7 @@ ThumbnailList.propTypes = {
   canvasList: PropTypes.array.isRequired,
   canvas: PropTypes.object,
   height: PropTypes.number,
-  goToRange: PropTypes.funt.isRequired,
+  goToRange: PropTypes.func.isRequired,
 };
 
 ThumbnailList.defaultProps = {
