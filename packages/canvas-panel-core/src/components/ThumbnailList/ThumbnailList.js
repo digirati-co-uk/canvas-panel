@@ -47,7 +47,7 @@ class ThumbnailList extends React.Component {
   componentDidUpdate(/*prevProps, prevState*/) {
     if (this.selectedThumbnail) {
       const rect = this.selectedThumbnail.getBoundingClientRect();
-      if (centerSelected) {
+      if (this.props.centerSelected) {
         this.list.scrollLeft =
           -((this.list.offsetWidth - rect.width) / 2) +
           this.selectedThumbnail.offsetLeft;

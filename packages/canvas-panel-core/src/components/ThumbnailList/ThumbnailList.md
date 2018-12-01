@@ -54,6 +54,44 @@
 </Manifest>
 ```
 
+# Do not center selected thumbnail
+
+```js
+<Manifest url="https://view.nls.uk/manifest/7446/74464117/manifest.json">
+  <CanvasProvider startCanvas={3}>
+    <RangeNavigationProvider>
+      {rangeProps => {
+        const {
+          manifest,
+          canvas,
+          canvasList,
+          goToRange,
+          previousRange,
+          nextRange,
+        } = rangeProps;
+        return (
+          <>
+            <p>
+              <button onClick={previousRange}>Prev</button>
+              <button onClick={nextRange}>Next</button>
+              {canvas.id}
+            </p>
+            <ThumbnailList
+              canvas={canvas}
+              manifest={manifest}
+              canvasList={canvasList}
+              height={116}
+              goToRange={goToRange}
+              centerSelected={false}
+            />
+          </>
+        );
+      }}
+    </RangeNavigationProvider>
+  </CanvasProvider>
+</Manifest>
+```
+
 ### Slideshow with thumbnail list
 
 ```js
