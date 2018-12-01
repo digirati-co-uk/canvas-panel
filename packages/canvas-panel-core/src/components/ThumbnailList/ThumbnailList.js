@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withBemClass } from '@canvas-panel/core';
-//import './ThumbnailList.scss';
+import { withBemClass } from '../Bem/Bem';
 
 const thumbnailGetSize = (thumbnail, pWidth, pHeight) => {
   const thumb = thumbnail.__jsonld;
@@ -81,16 +80,7 @@ class ThumbnailList extends React.Component {
   };
 
   render() {
-    const {
-      children,
-      manifest,
-      canvasList,
-      currentCanvas,
-      height,
-      showControls,
-      goToRange,
-      bem,
-    } = this.props;
+    const { manifest, canvasList, canvas, height, goToRange, bem } = this.props;
     const allThumbnails = this.getThumbnails(manifest);
 
     return (
@@ -98,8 +88,7 @@ class ThumbnailList extends React.Component {
         <div className={bem.element('scroll')}>
           <div style={{ height: height }} className={bem.element('thumb-list')}>
             {canvasList.map((canvasId, index) => {
-              const isSelected =
-                canvasId === (currentCanvas.id || currentCanvas['@id']);
+              const isSelected = canvasId === (canvas.id || canvas['@id']);
               return (
                 <img
                   ref={imageEl => {
@@ -118,7 +107,6 @@ class ThumbnailList extends React.Component {
               );
             })}
           </div>
-          {showControls ? children : ''}
         </div>
       </div>
     );
@@ -126,15 +114,16 @@ class ThumbnailList extends React.Component {
 }
 
 ThumbnailList.propTypes = {
+  bem: PropTypes.any,
   manifest: PropTypes.object.isRequired,
   canvasList: PropTypes.array.isRequired,
-  currentCanvas: PropTypes.object,
+  canvas: PropTypes.object,
   height: PropTypes.number,
+  goToRange: PropTypes.funt.isRequired,
 };
 
 ThumbnailList.defaultProps = {
   height: 116,
 };
 
-// NOTE: this is gatsby.js specific.
 export default withBemClass('thumbnail-list')(ThumbnailList);

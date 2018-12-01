@@ -41,7 +41,7 @@
         const { manifest, canvas, canvasList, goToRange } = rangeProps;
         return (
           <ThumbnailList
-            currentCanvas={canvas}
+            canvas={canvas}
             manifest={manifest}
             canvasList={canvasList}
             height={116}
@@ -86,7 +86,7 @@
               {canvas.id}
             </p>
             <ThumbnailList
-              currentCanvas={canvas}
+              canvas={canvas}
               manifest={manifest}
               canvasList={canvasList}
               height={116}
