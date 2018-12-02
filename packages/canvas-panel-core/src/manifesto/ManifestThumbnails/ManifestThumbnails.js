@@ -29,7 +29,9 @@ class ManifestThumbnails extends React.Component {
 }
 
 ManifestThumbnails.propTypes = {
+  /** function getting called with an object containing the thumbnails */
   children: PropTypes.func.isRequired,
+  /** IIIF Manifest */
   manifest: PropTypes.any,
 };
 
