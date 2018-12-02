@@ -47,35 +47,97 @@ class ThumbnailList extends React.Component {
     if (this.selectedThumbnail) {
       const rect = this.selectedThumbnail.getBoundingClientRect();
       if (this.props.centerSelected) {
-        this.list.scrollLeft =
-          -((this.list.offsetWidth - rect.width) / 2) +
-          this.selectedThumbnail.offsetLeft;
-      } else {
-        if (rect.x < 0) {
-          this.list.scrollLeft = 0;
-        } else if (this.list.offsetWidth - rect.width < rect.x) {
+        if (this.props.vertical) {
+          this.list.scrollTop =
+            -((this.list.offsetHeight - rect.height) / 2) +
+            this.selectedThumbnail.offsetTop;
+        } else {
           this.list.scrollLeft =
-            this.selectedThumbnail.offsetLeft -
-            (this.list.offsetWidth - rect.width);
+            -((this.list.offsetWidth - rect.width) / 2) +
+            this.selectedThumbnail.offsetLeft;
+        }
+      } else {
+        if (this.props.vertical) {
+          if (rect.y < 0) {
+            this.list.scrollTop = 0;
+          } else if (this.list.offsetHeight - rect.height < rect.y) {
+            this.list.scrollTop =
+              this.selectedThumbnail.offsetTop -
+              (this.list.offsetHeight - rect.height);
+          }
+        } else {
+          if (rect.x < 0) {
+            this.list.scrollLeft = 0;
+          } else if (this.list.offsetWidth - rect.width < rect.x) {
+            this.list.scrollLeft =
+              this.selectedThumbnail.offsetLeft -
+              (this.list.offsetWidth - rect.width);
+          }
         }
       }
     }
   }
 
   render() {
-    const { manifest, canvasList, canvas, height, goToRange, bem } = this.props;
+    const {
+      manifest,
+      canvasList,
+      canvas,
+      tileSize,
+      goToRange,
+      bem,
+      vertical,
+      style,
+      columns,
+    } = this.props;
+    const _style = Object.assign(
+      {
+        position: 'relative',
+        width: vertical ? tileSize * columns : 'auto',
+        height: vertical ? 'auto' : tileSize,
+      },
+      style
+    );
     return (
       <ManifestThumbnails manifest={manifest}>
         {({ thumbnails }) => (
-          <div style={{ height: height }} className={bem}>
+          <div style={_style} className={bem}>
             <div
               ref={listEl => {
                 this.list = listEl;
               }}
+              style={
+                vertical
+                  ? {
+                      overflowY: 'auto',
+                      overflowX: 'hidden',
+                      width: '100%',
+                      height: '100%',
+                    }
+                  : {
+                      overflowX: 'auto',
+                      overflowY: 'hidden',
+                      width: '100%',
+                      height: '100%',
+                    }
+              }
               className={bem.element('scroll')}
             >
               <div
-                style={{ height: height }}
+                style={
+                  vertical
+                    ? {
+                        display: 'flex',
+                        width: tileSize * columns,
+                        flexWrap: 'wrap',
+                        //flexDirection: 'column',
+                      }
+                    : {
+                        display: 'flex',
+                        //flexDirection: 'row',
+                        height: tileSize,
+                      }
+                }
                 className={bem.element('thumb-list')}
               >
                 {canvasList.map((canvasId, index) => {
@@ -88,10 +150,25 @@ class ThumbnailList extends React.Component {
                         }
                       }}
                       key={`${canvasId}--thumb`}
-                      src={thumbnailGetSize(thumbnails[canvasId], null, height)}
+                      src={thumbnailGetSize(
+                        thumbnails[canvasId],
+                        vertical ? tileSize : null,
+                        vertical ? null : tileSize
+                      )}
                       className={bem.element('thumb').modifiers({
                         selected: isSelected,
                       })}
+                      style={
+                        vertical
+                          ? {
+                              width: 100 / columns + '%',
+                              objectFit: 'contain',
+                              background: 'transparent',
+                            }
+                          : {
+                              height: '100%',
+                            }
+                      }
                       alt=""
                       onClick={() => goToRange(index)}
                     />
@@ -111,14 +188,20 @@ ThumbnailList.propTypes = {
   manifest: PropTypes.object.isRequired,
   canvasList: PropTypes.array.isRequired,
   canvas: PropTypes.object,
-  height: PropTypes.number,
+  tileSize: PropTypes.number,
   goToRange: PropTypes.func.isRequired,
   centerSelected: PropTypes.bool,
+  vertical: PropTypes.bool,
+  column: PropTypes.number,
+  style: PropTypes.object,
 };
 
 ThumbnailList.defaultProps = {
-  height: 116,
+  tileSize: 116,
   centerSelected: true,
+  vertical: false,
+  columns: 1,
+  style: {},
 };
 
 export default withBemClass('thumbnail-list')(ThumbnailList);
