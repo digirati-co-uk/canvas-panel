@@ -161,7 +161,8 @@ class ThumbnailList extends React.Component {
                       style={
                         vertical
                           ? {
-                              width: 100 / columns + '%',
+                              width: tileSize,
+                              height: tileSize,
                               objectFit: 'contain',
                               background: 'transparent',
                             }
