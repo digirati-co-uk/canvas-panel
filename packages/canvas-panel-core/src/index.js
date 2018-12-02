@@ -21,6 +21,7 @@ import OpenSeadragonViewport from './viewers/OpenSeadragonViewport/OpenSeadragon
 import SizedViewport from './viewers/SizedViewport/SizedViewport';
 import StaticImageViewport from './viewers/StaticImageViewport/StaticImageViewport';
 import Viewport from './viewers/Viewport/Viewport';
+import CanvasPosterViewport from './viewers/CanvasPosterViewport';
 import functionOrMapChildren from './utility/functionOrMapChildren';
 import AnnotationSelector from './utility/AnnotationSelector';
 import htmlElementObserver from './utility/htmlElementObserver';
@@ -38,6 +39,7 @@ export {
   CanvasRepresentation,
   Fullscreen,
   SingleTileSource,
+  MultipleTileSources,
   ObservableElement,
   // Manifesto
   AnnotationListProvider,
@@ -53,6 +55,7 @@ export {
   SizedViewport,
   StaticImageViewport,
   Viewport,
+  CanvasPosterViewport,
   // Utils
   AnnotationSelector,
   Responsive,
