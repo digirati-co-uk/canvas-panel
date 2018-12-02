@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withBemClass } from '../Bem/Bem';
 import ManifestThumbnails from '../../manifesto/ManifestThumbnails/ManifestThumbnails';
 
+// NOTE: This is just temporary until get thumbnail by size function getting merged to manifesto.
+// https://github.com/digirati-co-uk/manifesto/pull/1
 const thumbnailGetSize = (thumbnail, pWidth, pHeight) => {
   const thumb = thumbnail.__jsonld;
   if (
@@ -78,6 +80,57 @@ class ThumbnailList extends React.Component {
     }
   }
 
+  stylesForProps = () => {
+    const { vertical, tileSize, columns, style } = this.props;
+    const main = Object.assign(
+      {
+        position: 'relative',
+        width: vertical ? tileSize * columns : 'auto',
+        height: vertical ? 'auto' : tileSize,
+      },
+      style
+    );
+    if (vertical) {
+      return {
+        main,
+        scroll: {
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          width: '100%',
+          height: '100%',
+        },
+        thumbList: {
+          display: 'flex',
+          width: tileSize * columns,
+          flexWrap: 'wrap',
+        },
+        thumbnail: {
+          width: tileSize,
+          height: tileSize,
+          objectFit: 'contain',
+          background: 'transparent',
+        },
+      };
+    } else {
+      return {
+        main,
+        scroll: {
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          width: '100%',
+          height: '100%',
+        },
+        thumbList: {
+          display: 'flex',
+          height: tileSize,
+        },
+        thumbnail: {
+          height: '100%',
+        },
+      };
+    }
+  };
+
   render() {
     const {
       manifest,
@@ -87,57 +140,21 @@ class ThumbnailList extends React.Component {
       goToRange,
       bem,
       vertical,
-      style,
-      columns,
     } = this.props;
-    const _style = Object.assign(
-      {
-        position: 'relative',
-        width: vertical ? tileSize * columns : 'auto',
-        height: vertical ? 'auto' : tileSize,
-      },
-      style
-    );
+    const styles = this.stylesForProps();
     return (
       <ManifestThumbnails manifest={manifest}>
         {({ thumbnails }) => (
-          <div style={_style} className={bem}>
+          <div style={styles.main} className={bem}>
             <div
               ref={listEl => {
                 this.list = listEl;
               }}
-              style={
-                vertical
-                  ? {
-                      overflowY: 'auto',
-                      overflowX: 'hidden',
-                      width: '100%',
-                      height: '100%',
-                    }
-                  : {
-                      overflowX: 'auto',
-                      overflowY: 'hidden',
-                      width: '100%',
-                      height: '100%',
-                    }
-              }
+              style={styles.scroll}
               className={bem.element('scroll')}
             >
               <div
-                style={
-                  vertical
-                    ? {
-                        display: 'flex',
-                        width: tileSize * columns,
-                        flexWrap: 'wrap',
-                        //flexDirection: 'column',
-                      }
-                    : {
-                        display: 'flex',
-                        //flexDirection: 'row',
-                        height: tileSize,
-                      }
-                }
+                style={styles.thumbList}
                 className={bem.element('thumb-list')}
               >
                 {canvasList.map((canvasId, index) => {
@@ -158,18 +175,7 @@ class ThumbnailList extends React.Component {
                       className={bem.element('thumb').modifiers({
                         selected: isSelected,
                       })}
-                      style={
-                        vertical
-                          ? {
-                              width: tileSize,
-                              height: tileSize,
-                              objectFit: 'contain',
-                              background: 'transparent',
-                            }
-                          : {
-                              height: '100%',
-                            }
-                      }
+                      style={styles.thumbnail}
                       alt=""
                       onClick={() => goToRange(index)}
                     />
@@ -185,15 +191,30 @@ class ThumbnailList extends React.Component {
 }
 
 ThumbnailList.propTypes = {
+  /** Theming higher-order component */
   bem: PropTypes.any,
+  /** IIIF Manifest */
   manifest: PropTypes.object.isRequired,
+  /** List of canvas ids */
   canvasList: PropTypes.array.isRequired,
+  /** Currently active canvas */
   canvas: PropTypes.object,
+  /** In horizontal mode this is the height of the tile, in vertical mode this represents the tile box with/height */
   tileSize: PropTypes.number,
+  /** Passend from the CanvasNavigation/RangeNavigation */
   goToRange: PropTypes.func.isRequired,
+  /**
+   * if turned off the active thumbnail aligned to the right/bottom of the viewport.
+   * `TODO:` Maybe useful for vertical listings, but for horizontal the centred mode
+   * feels more natural. Perhaps remove this feature, and use the center active thumbnail as default.
+   * It simplifies the code, which is getting a little bit hectic at its current state.
+   */
   centerSelected: PropTypes.bool,
+  /** vertical scroll for side panel mode */
   vertical: PropTypes.bool,
-  column: PropTypes.number,
+  /** columns only work in vertical mode */
+  columns: PropTypes.number,
+  /** styles can be passed to the main element */
   style: PropTypes.object,
 };
 

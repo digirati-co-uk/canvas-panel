@@ -2,12 +2,8 @@
 
 <style>
   .thumbnail-list {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
+    background: black;
   }
-  
   
   .thumbnail-list__scroll::-webkit-scrollbar {display:none;}
   .thumbnail-list__thumb {
@@ -65,7 +61,7 @@
 </Manifest>
 ```
 
-# Do not center selected thumbnail
+### Do not center selected thumbnail
 
 ```js
 <Manifest url="https://view.nls.uk/manifest/7446/74464117/manifest.json">
