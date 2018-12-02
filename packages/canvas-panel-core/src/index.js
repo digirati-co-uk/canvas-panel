@@ -9,6 +9,7 @@ import CanvasNavigation from './components/CanvasNavigation/CanvasNavigation';
 import CanvasRepresentation from './components/CanvasRepresentation/CanvasRepresentation';
 import Fullscreen from './components/Fullscreen/Fullscreen';
 import SingleTileSource from './components/SingleTileSource/SingleTileSource';
+import MultipleTileSources from './components/MultipleTileSources/MultipleTileSources';
 import ObservableElement from './components/ObservableElement/ObservableElement';
 import AnnotationListProvider from './manifesto/AnnotationListProvider/AnnotationListProvider';
 import AnnotationProvider from './manifesto/AnnotationProvider/AnnotationProvider';
@@ -21,7 +22,7 @@ import OpenSeadragonViewport from './viewers/OpenSeadragonViewport/OpenSeadragon
 import SizedViewport from './viewers/SizedViewport/SizedViewport';
 import StaticImageViewport from './viewers/StaticImageViewport/StaticImageViewport';
 import Viewport from './viewers/Viewport/Viewport';
-import CanvasPosterViewport from './viewers/CanvasPosterViewport';
+import CanvasPosterViewport from './viewers/CanvasPosterViewport/CanvasPosterViewport';
 import functionOrMapChildren from './utility/functionOrMapChildren';
 import AnnotationSelector from './utility/AnnotationSelector';
 import htmlElementObserver from './utility/htmlElementObserver';
