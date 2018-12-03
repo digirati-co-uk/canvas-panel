@@ -1,0 +1,1561 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/manifest.json",
+  "@type": "sc:Manifest",
+  "label": "O'Shaughnessy Memoirs, Reminiscences of Hawaii 1920",
+  "metadata": [],
+  "description": "Michael Maurice O'Shaughnessy (MMOS) began his engineering studies at Queen's College, Cork. After a year in Cork, he transferred to Queen's College, Galway to study Civil Engineering under Professor Townsend, and in 1884 he was awarded his degree by the Royal University of Ireland. The following year O’Shaughnessy travelled to the United States. Following several decades of engineering experience in the US and in Hawaii, he was invited to become chief engineer of San Francisco by the mayor of the city in 1912, a position he served in for over 20 years.",
+  "license": "https://creativecommons.org/licenses/by/3.0/",
+  "attribution": "Published by NUI Galway Library. Written by M. M. O'Shaughnessy",
+  "startCanvas": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21674.json",
+  "structures": [
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r0",
+      "@type": "sc:Range",
+      "label": "Timeline",
+      "viewingHint": "top",
+      "members": [
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r1",
+          "@type": "sc:Range",
+          "label": "Introduction to the Hawaiian journey"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r5",
+          "@type": "sc:Range",
+          "label": "Hawaiian Islands"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r12",
+          "@type": "sc:Range",
+          "label": "First visit to Hawaii"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r17",
+          "@type": "sc:Range",
+          "label": "Subsequent visits to Hawaii"
+        }
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r1",
+      "@type": "sc:Range",
+      "label": "Introduction to the Hawaiian journey",
+      "dcterms:temporal": "1893-01-01/1899-01-01",
+      "members": [
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r2",
+          "@type": "sc:Range",
+          "label": "California Midwinter Exposition - Hawaii exhibit"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r3",
+          "@type": "sc:Range",
+          "label": "First voyage to Hawaii"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r4",
+          "@type": "sc:Range",
+          "label": "Overview of the sugar business in Hawaii"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21674.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21675.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21676.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21677.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21678.json",
+          "@type": "sc:Canvas"
+        }
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r2",
+      "@type": "sc:Range",
+      "label": "California Midwinter Exposition - Hawaii exhibit",
+      "dcterms:temporal": "1893-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21674.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r3",
+      "@type": "sc:Range",
+      "label": "First voyage to Hawaii",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21675.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21676.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21677.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r4",
+      "@type": "sc:Range",
+      "label": "Overview of the sugar business in Hawaii",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21678.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r5",
+      "@type": "sc:Range",
+      "label": "The Hawaiian Islands",
+      "dcterms:temporal": "1790-01-01/1900-01-01",
+      "members": [
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r6",
+          "@type": "sc:Range",
+          "label": "Geographical and geological features"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r7",
+          "@type": "sc:Range",
+          "label": "Moku'aweoweo and notable eruptions"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r8",
+          "@type": "sc:Range",
+          "label": "Kilauea, notable eruptions and seismic activity"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r9",
+          "@type": "sc:Range",
+          "label": "Population statistics"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r10",
+          "@type": "sc:Range",
+          "label": "Discovery of Honolulu, arrival of New England Missionaries, and establishment of laws"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r11",
+          "@type": "sc:Range",
+          "label": "Establishment of sugar plantations and development of trade"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21678.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21679.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21680.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21681.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21682.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21683.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21684.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21685.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21686.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21687.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21688.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21689.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21690.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21691.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21692.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21693.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21694.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21695.json",
+          "@type": "sc:Canvas"
+        }
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r6",
+      "@type": "sc:Range",
+      "label": "Geographical and geological features",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21678.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21679.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21680.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21681.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r7",
+      "@type": "sc:Range",
+      "label": "Moku'aweoweo and notable eruptions",
+      "dcterms:temporal": "1855-01-01/1887-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21682.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21683.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21684.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21685.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r8",
+      "@type": "sc:Range",
+      "label": "Kilauea, notable eruptions and seismic activity",
+      "dcterms:temporal": "1790-01-01/1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21686.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21687.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21688.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21689.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21690.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r9",
+      "@type": "sc:Range",
+      "label": "Population statistics",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21691.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r10",
+      "@type": "sc:Range",
+      "label": "Discovery of Honolulu, arrival of New England Missionaries, and establishment of laws",
+      "dcterms:temporal": "1794-01-01/1827-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21692.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r11",
+      "@type": "sc:Range",
+      "label": "Establishment of sugar plantations and development of trade",
+      "dcterms:temporal": "1851-01-01/1880-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21693.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21694.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21695.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r12",
+      "@type": "sc:Range",
+      "label": "First visit to Hawaii",
+      "dcterms:temporal": "1899-01-01/1900-01-01",
+      "members": [
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r13",
+          "@type": "sc:Range",
+          "label": "Eventful voyage to the Wailuku plantation"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r14",
+          "@type": "sc:Range",
+          "label": " Experience of the Malihini / newcomer"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r15",
+          "@type": "sc:Range",
+          "label": "Wailuku plantation survey"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r16",
+          "@type": "sc:Range",
+          "label": "Hawaiian Commercial Sugar Co."
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21696.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21697.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21698.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21699.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216100.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216101.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216102.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216103.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216104.json",
+          "@type": "sc:Canvas"
+        }
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r13",
+      "@type": "sc:Range",
+      "label": "Eventful voyage to the Wailuku plantation ",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21696.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21697.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21698.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r14",
+      "@type": "sc:Range",
+      "label": "Experience of the Malihini / newcomer ",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21699.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216100.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r15",
+      "@type": "sc:Range",
+      "label": "Wailuku plantation survey",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216101.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216102.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r16",
+      "@type": "sc:Range",
+      "label": "Hawaiian Commercial Sugar Co.",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216103.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216104.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r17",
+      "@type": "sc:Range",
+      "label": "Subsequent visits to Hawaii",
+      "dcterms:temporal": "1899-01-01/1906-01-01",
+      "members": [
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r18",
+          "@type": "sc:Range",
+          "label": "Water irrigation projects"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r19",
+          "@type": "sc:Range",
+          "label": "Observations on the immigrant"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r20",
+          "@type": "sc:Range",
+          "label": "Ambassador, Bush"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216105.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216106.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216107.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216108.json",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216109.json",
+          "@type": "sc:Canvas"
+        }
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r18",
+      "@type": "sc:Range",
+      "label": "Water irrigation projects",
+      "dcterms:temporal": "1899-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216105.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r19",
+      "@type": "sc:Range",
+      "label": "Observations on the immigrant",
+      "dcterms:temporal": "1900-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216106.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r20",
+      "@type": "sc:Range",
+      "label": "Ambassador, Bush",
+      "dcterms:temporal": "1900-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216107.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216108.json"
+      ]
+    },
+    {
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/range/r16",
+      "@type": "sc:Range",
+      "label": "Flora and fauna",
+      "dcterms:temporal": "1900-01-01",
+      "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/216109.json"
+      ]
+    }
+  ],
+  "sequences": [
+    {
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21674.json",
+          "@type": "sc:Canvas",
+          "label": "Title page",
+          "height": 2632,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21674/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2632,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21674",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21674.json"
+            }
+          ],
+          "key": 0
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21675.json",
+          "@type": "sc:Canvas",
+          "label": "Page 1 of 39",
+          "height": 2774,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21675/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2774,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21675",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21675.json"
+            }
+          ],
+          "key": 1
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21676.json",
+          "@type": "sc:Canvas",
+          "label": "Page 2 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21676/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21676",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21676.json"
+            }
+          ],
+          "key": 2
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21677.json",
+          "@type": "sc:Canvas",
+          "label": "Page 3 of 39",
+          "height": 2787,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21677/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2787,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21677",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21677.json"
+            }
+          ],
+          "key": 3
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21678.json",
+          "@type": "sc:Canvas",
+          "label": "Page 4 of 39",
+          "height": 2772,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21678/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2772,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21678",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21678.json"
+            }
+          ],
+          "key": 4
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21679.json",
+          "@type": "sc:Canvas",
+          "label": "Page 5 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21679/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21679",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21679.json"
+            }
+          ],
+          "key": 5
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21680.json",
+          "@type": "sc:Canvas",
+          "label": "Page 6 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21680/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21680",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21680.json"
+            }
+          ],
+          "key": 6
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21681.json",
+          "@type": "sc:Canvas",
+          "label": "Page 7 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21681/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21681",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21681.json"
+            }
+          ],
+          "key": 7
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21682.json",
+          "@type": "sc:Canvas",
+          "label": "Page 8 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21682/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21682",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21682.json"
+            }
+          ],
+          "key": 8
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21683.json",
+          "@type": "sc:Canvas",
+          "label": "Page 9 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21683/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21683",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21683.json"
+            }
+          ],
+          "key": 9
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21684.json",
+          "@type": "sc:Canvas",
+          "label": "Page 10 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21684/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21684",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21684.json"
+            }
+          ],
+          "key": 10
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21685.json",
+          "@type": "sc:Canvas",
+          "label": "Page 11 of 39",
+          "height": 2778,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21685/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2778,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21685",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21685.json"
+            }
+          ],
+          "key": 11
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21686.json",
+          "@type": "sc:Canvas",
+          "label": "Page 12 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21686/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21686",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21686.json"
+            }
+          ],
+          "key": 12
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21687.json",
+          "@type": "sc:Canvas",
+          "label": "Page 13 of 39",
+          "height": 2778,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21687/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2778,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21687",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21687.json"
+            }
+          ],
+          "key": 13
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21688.json",
+          "@type": "sc:Canvas",
+          "label": "Page 14 of 39",
+          "height": 2778,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21688/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2778,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21688",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21688.json"
+            }
+          ],
+          "key": 14
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21689.json",
+          "@type": "sc:Canvas",
+          "label": "Page 15 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21689/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21689",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21689.json"
+            }
+          ],
+          "key": 15
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21690.json",
+          "@type": "sc:Canvas",
+          "label": "Page 16 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21690/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21690",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21690.json"
+            }
+          ],
+          "key": 16
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21691.json",
+          "@type": "sc:Canvas",
+          "label": "Page 17 of 39",
+          "height": 2775,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21691/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2775,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21691",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21691.json"
+            }
+          ],
+          "key": 17
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21692.json",
+          "@type": "sc:Canvas",
+          "label": "Page 18 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21692/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21692",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21692.json"
+            }
+          ],
+          "key": 18
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21693.json",
+          "@type": "sc:Canvas",
+          "label": "Page 19 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21693/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21693",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21693.json"
+            }
+          ],
+          "key": 19
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21694.json",
+          "@type": "sc:Canvas",
+          "label": "Page 20 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21694/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21694",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21694.json"
+            }
+          ],
+          "key": 20
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21695.json",
+          "@type": "sc:Canvas",
+          "label": "Page 21 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21695/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21695",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21695.json"
+            }
+          ],
+          "key": 21
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21696.json",
+          "@type": "sc:Canvas",
+          "label": "Page 22 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21696/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21696",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21696.json"
+            }
+          ],
+          "key": 22
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21697.json",
+          "@type": "sc:Canvas",
+          "label": "Page 23 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21697/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21697",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21697.json"
+            }
+          ],
+          "key": 23
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21698.json",
+          "@type": "sc:Canvas",
+          "label": "Page 24 of 39",
+          "height": 2778,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21698/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2778,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21698",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21698.json"
+            }
+          ],
+          "key": 24
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21699.json",
+          "@type": "sc:Canvas",
+          "label": "Page 25 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21699/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21699",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21699.json"
+            }
+          ],
+          "key": 25
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21700.json",
+          "@type": "sc:Canvas",
+          "label": "Page 26 of 39",
+          "height": 2781,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21700/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2781,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21700",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21700.json"
+            }
+          ],
+          "key": 26
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21701.json",
+          "@type": "sc:Canvas",
+          "label": "Page 27 of 39",
+          "height": 2788,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21701/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2788,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21701",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21701.json"
+            }
+          ],
+          "key": 27
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21702.json",
+          "@type": "sc:Canvas",
+          "label": "Page 28 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21702/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21702",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21702.json"
+            }
+          ],
+          "key": 28
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21703.json",
+          "@type": "sc:Canvas",
+          "label": "Page 29 of 39",
+          "height": 2779,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21703/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2779,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21703",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21703.json"
+            }
+          ],
+          "key": 29
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21704.json",
+          "@type": "sc:Canvas",
+          "label": "Page 30 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21704/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21704",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21704.json"
+            }
+          ],
+          "key": 30
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21705.json",
+          "@type": "sc:Canvas",
+          "label": "Page 31 of 39",
+          "height": 2778,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21705/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2778,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21705",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21705.json"
+            }
+          ],
+          "key": 31
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21706.json",
+          "@type": "sc:Canvas",
+          "label": "Page 32 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21706/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21706",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21706.json"
+            }
+          ],
+          "key": 32
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21707.json",
+          "@type": "sc:Canvas",
+          "label": "Page 33 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21707/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21707",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21707.json"
+            }
+          ],
+          "key": 33
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21708.json",
+          "@type": "sc:Canvas",
+          "label": "Page 34 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21708/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21708",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21708.json"
+            }
+          ],
+          "key": 34
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21709.json",
+          "@type": "sc:Canvas",
+          "label": "Page 35 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21709/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21709",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21709.json"
+            }
+          ],
+          "key": 35
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21710.json",
+          "@type": "sc:Canvas",
+          "label": "Page 36 of 39",
+          "height": 2775,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21710/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2775,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21710",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21710.json"
+            }
+          ],
+          "key": 36
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21711.json",
+          "@type": "sc:Canvas",
+          "label": "Page 37 of 39",
+          "height": 2792,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21711/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2792,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21711",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21711.json"
+            }
+          ],
+          "key": 37
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21712.json",
+          "@type": "sc:Canvas",
+          "label": "Page 38 of 39",
+          "height": 2784,
+          "width": 2000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21712/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2784,
+                "width": 2000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21712",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21712.json"
+            }
+          ],
+          "key": 38
+        },
+        {
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21713.json",
+          "@type": "sc:Canvas",
+          "label": "Page 39 of 39",
+          "height": 1380,
+          "width": 1000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.library.nuigalway.ie/iiif/2/21713/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1380,
+                "width": 1000,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.library.nuigalway.ie/iiif/2/21713",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii/canvas/21713.json"
+            }
+          ],
+          "key": 39
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { manifestSetCanvas } from '@canvas-panel/redux/es/spaces/manifest';
 import './RangeSlider.scss';
+import 'rheostat/initialize';
 import Rheostat from 'rheostat';
 import RangeHighlights from '../RangeHighlights/RangeHighlights';
 import { selectCurrentCanvas } from '../../redux/search.selectors';
@@ -50,7 +51,7 @@ class RangeSlider extends Component<Props, State> {
     const { canvases } = this.props;
 
     return (
-      <div style={{ flex: 1, position: 'relative' }}>
+      <div className="range-slider">
         <RangeHighlights canvases={canvases} />
         <Rheostat
           min={0}

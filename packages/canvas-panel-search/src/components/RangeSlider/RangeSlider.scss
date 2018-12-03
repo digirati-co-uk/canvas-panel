@@ -4,51 +4,56 @@ $range-border: #d8d8d8 !default;
 $range-handle-background: #fff !default;
 $range-handle-colour: #dadfe8 !default;
 
+.range-slider {
+  flex: 1;
+  position: relative;
+  margin: 0 20px;
+}
+
 .rheostat {
   overflow: visible;
-  margin: 0 20px;
   height: 50px;
-}
 
-.rheostat-background {
-  background: #fff;
-  background: rgba($range-colour, 0.25);
-  height: 2px;
-  margin: 24px 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+  .DefaultBackground {
+    background: #fff;
+    background: rgba($range-colour, 0.25);
+    height: 2px;
+    margin: 24px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .DefaultProgressBar_progressBar {
+    background-color: $range-colour;
+    height: 2px;
+    margin: 24px 0;
+    position: absolute;
+  }
+  .handleContainer {
+    button {
+      margin-top: 19px;
+      height: 13px;
+      width: 13px;
+      min-width: 13px;
+      min-height: 13px;
+      padding: 0;
+      background-color: $range-handle-background;
+      //background-color: #018786;
+      border: 1px solid $range-border;
+      //border: none;
+      transform: translate3d(-50%, 0, 0);
+      border-radius: 50%;
+      outline: none;
+      z-index: 2;
 
-.rheostat-progress {
-  background-color: $range-colour;
-  height: 2px;
-  margin: 24px 0;
-  position: absolute;
-}
-
-.rheostat-handle {
-  margin-top: 19px;
-  height: 13px;
-  width: 13px;
-  min-width: 13px;
-  min-height: 13px;
-  padding: 0;
-  background-color: $range-handle-background;
-  //background-color: #018786;
-  border: 1px solid $range-border;
-  //border: none;
-  transform: translate3d(-50%, 0, 0);
-  border-radius: 50%;
-  outline: none;
-  z-index: 2;
-}
-
-.rheostat-handle:before,
-.rheostat-handle:after {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: $range-handle-colour;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: $range-handle-colour;
+      }
+    }
+  }
 }
