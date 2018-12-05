@@ -25,7 +25,7 @@ class CanvasNavigation extends Component {
             previousRange();
           }}
         >
-          <svg id="point-left" viewBox="0 0 100 100" width="20px" height="20px">
+          <svg viewBox="0 0 100 100" width="20px" height="20px">
             <path fill="none" d="M-1-1h582v402H-1z" />
             <g>
               <path
@@ -46,7 +46,6 @@ class CanvasNavigation extends Component {
           }}
         >
           <svg
-            id="point-right"
             viewBox="0 0 100 100"
             width="20px"
             height="20px"
