@@ -3,7 +3,7 @@ import 'brace';
 import 'brace/mode/json';
 import 'brace/theme/tomorrow_night_eighties';
 import AceEditor from 'react-ace';
-import Manifesto from '@stephenwf-forks/manifesto.js';
+import Manifesto from 'manifesto.js';
 import {
   Manifest,
   CanvasProvider,

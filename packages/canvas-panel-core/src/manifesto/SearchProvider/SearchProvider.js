@@ -2,7 +2,7 @@
  * @flow
  */
 import React, { Component } from 'react';
-import Manifesto from '@stephenwf-forks/manifesto.js';
+import Manifesto from 'manifesto.js';
 import functionOrMapChildren from '../../utility/functionOrMapChildren';
 import SearchResults from '../../utility/SearchResults';
 
