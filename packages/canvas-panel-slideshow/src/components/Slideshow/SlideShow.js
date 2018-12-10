@@ -39,7 +39,9 @@ class SlideShow extends Component {
   }
 
   setSize = () => {
-    this.setState({ innerWidth: window.innerWidth });
+    this.setState({
+      innerWidth: window.innerWidth,
+    });
   };
 
   qualifiesForMobile = () => {
