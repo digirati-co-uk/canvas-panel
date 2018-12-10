@@ -297,6 +297,7 @@ export default class EditableAnnotation extends React.Component {
       className,
       ratio,
       position,
+      ...props,
     } = this.props;
     const X = this.applyPrecision(x) + this.state.dX;
     const Y = this.applyPrecision(y) + this.state.dY;
@@ -314,6 +315,7 @@ export default class EditableAnnotation extends React.Component {
         className={className}
         onMouseDown={this.dragStart}
         onTouchStart={this.dragStart}
+        {...props}
       >
         {children}
         <AnnotationResizers
