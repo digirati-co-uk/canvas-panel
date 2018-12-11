@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
-import * as Manifesto from '@stephenwf-forks/manifesto.js';
+import * as Manifesto from 'manifesto.js';
 import getDataUriFromCanvas from '../../utility/getDataUriFromCanvas';
 import functionOrMapChildren, {
   FunctionOrMapChildrenType,

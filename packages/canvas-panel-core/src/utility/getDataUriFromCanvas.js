@@ -1,4 +1,4 @@
-import * as Manifesto from '@stephenwf-forks/manifesto.js';
+import * as Manifesto from 'manifesto.js';
 import Manifold from './Manifold';
 
 function getDataUriFromImages(images) {

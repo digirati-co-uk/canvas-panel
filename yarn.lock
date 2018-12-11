@@ -593,15 +593,6 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@stephenwf-forks/manifesto.js@2.2.25":
-  version "2.2.25"
-  resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.25.tgz#69a7251479648c4078dc439c33dcbb2384916567"
-  integrity sha512-tvPoxY9xkhKPNtU39HKb2UAkq8n0RqYzHA4uaAwy0blKS8T3Ba5zEFSvstnNe7MSQkPL2UkkFsmDOaipg8sNXw==
-  dependencies:
-    exjs BSick7/exjs#0.5.0
-    http-status-codes edsilv/http-status-codes#v0.0.7
-    request "^2.83.0"
-
 "@types/jest@23.3.10":
   version "23.3.10"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.10.tgz#4897974cc317bf99d4fe6af1efa15957fa9c94de"
@@ -8334,12 +8325,13 @@ mamacro@^0.0.3:
   resolved "https://registry.yarnpkg.com/mamacro/-/mamacro-0.0.3.tgz#ad2c9576197c9f1abf308d0787865bd975a3f3e4"
   integrity sha512-qMEwh+UujcQ+kbz3T6V+wAmO2U8veoq2w+3wY8MquqwVA3jChfwY+Tk52GZKDfACEPjuZ7r2oJLejwpt8jtwTA==
 
-"manifesto.js@git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1":
-  version "2.2.10"
-  resolved "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1"
+"manifesto.js@git://github.com/stephenwf/manifesto.git#feature/p3-alpha-3":
+  version "3.0.9"
+  resolved "git://github.com/stephenwf/manifesto.git#e7450b33c4d7b6325bb2e22b7b7082056fd35362"
   dependencies:
     exjs BSick7/exjs#0.5.0
     http-status-codes edsilv/http-status-codes#v0.0.7
+    request "^2.83.0"
 
 "manifold@git://github.com/IIIF-Commons/manifold.git#v1.2.16":
   version "1.2.16"

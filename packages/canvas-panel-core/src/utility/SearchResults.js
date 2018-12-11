@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import * as Manifesto from '@stephenwf-forks/manifesto.js';
+import * as Manifesto from 'manifesto.js';
 import AnnotationSelector from './AnnotationSelector';
 
 type SearchResource = string;

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import * as Manifesto from '@stephenwf-forks/manifesto.js';
+import * as Manifesto from 'manifesto.js';
 import * as PropTypes from 'prop-types';
 
 class LocaleString extends PureComponent {
@@ -10,13 +10,13 @@ class LocaleString extends PureComponent {
     }
 
     if (Array.isArray(children)) {
-      return Manifesto.TranslationCollection.getValue(children);
+      return Manifesto.LanguageMap.getValue(children);
     }
 
     if (children[lang]) {
       return renderList
         ? renderList(children[lang])
-        : Manifesto.TranslationCollection.getValue(children[lang]);
+        : Manifesto.LanguageMap.getValue(children[lang]);
     }
 
     const values = Object.values(children);
