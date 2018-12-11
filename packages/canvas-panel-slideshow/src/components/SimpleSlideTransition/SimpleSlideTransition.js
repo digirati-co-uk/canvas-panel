@@ -4,19 +4,30 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './SimpleSlideTransition.scss';
 
 class SimpleSlideTransition extends Component {
+  scroll = window.scrollY;
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    if (nextProps.id !== this.props.id) {
+      this.scroll = window.scrollY;
+    }
+  }
+
+  setScroll = () => {
+    window.scrollTo(0, this.scroll);
+  };
+
   render() {
     const { children, id, bem, timeout = 500 } = this.props;
+
     return (
-      <TransitionGroup className={bem}>
+      <TransitionGroup className={bem} onExiting={this.setScroll}>
         <CSSTransition
           key={id}
-          timeout={{
-            enter: 1000,
-            exit: 1000,
-          }}
+          timeout={timeout}
           classNames="fade"
+          onExiting={this.setScroll}
         >
-          {children}
+          <div style={{ height: '750px', width: '100%' }}>{children}</div>
         </CSSTransition>
       </TransitionGroup>
     );
