@@ -48,12 +48,14 @@ export default class EditableAnnotation extends React.Component {
     y: PropTypes.number,
     width: PropTypes.number,
     height: PropTypes.number,
+    resizerWidth: PropTypes.number,
   };
 
   static defaultProps = {
     boxStyles: {},
     boxSizeInt: true,
     constrainToCanvasBounds: true,
+    resizerWidth: 25,
   };
 
   componentWillReceiveProps() {
@@ -297,6 +299,8 @@ export default class EditableAnnotation extends React.Component {
       className,
       ratio,
       position,
+      resizerWidth,
+      containerProps,
       ...props,
     } = this.props;
     const X = this.applyPrecision(x) + this.state.dX;
@@ -315,12 +319,12 @@ export default class EditableAnnotation extends React.Component {
         className={className}
         onMouseDown={this.dragStart}
         onTouchStart={this.dragStart}
-        {...props}
+        {...containerProps}
       >
         {children}
         <AnnotationResizers
           resizeStart={this.resizeStart}
-          resizerWidth={25 * rzam}
+          resizerWidth={resizerWidth * rzam}
         />
       </div>
     );
