@@ -13,7 +13,7 @@ initialState = {
   },
 };
 <div>
-  <div style={{ background: 'grey', position: 'relative' }}>
+  <div style={{ background: 'grey', position: 'relative', userSelect: 'none' }}>
     <Manifest url={manifests.main}>
       <CanvasProvider>
         <SingleTileSource>
@@ -82,7 +82,7 @@ initialState = {
   },
 };
 <div>
-  <div style={{ background: 'grey' }}>
+  <div style={{ background: 'grey', userSelect: 'none' }}>
     <Manifest url={manifests.main}>
       <CanvasProvider>
         <SingleTileSource>
@@ -148,7 +148,7 @@ initialState = { annotations: [] };
       Add Annotation
     </button>
   </div>
-  <div style={{ background: 'grey' }}>
+  <div style={{ background: 'grey', userSelect: 'none' }}>
     <Manifest url={manifests.main}>
       <CanvasProvider>
         <SingleTileSource>
