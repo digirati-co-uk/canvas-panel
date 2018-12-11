@@ -3,21 +3,7 @@ import PropTypes from 'prop-types';
 import detectIt from 'detect-it';
 import AnnotationResizers from '../AnnotationResizers/AnnotationResizers';
 
-const clearSelection = () => {
-  var selection = window.getSelection
-    ? window.getSelection()
-    : document.selection
-      ? document.selection
-      : null;
-  if (!!selection) {
-    if (selection.empty) {
-      selection.empty();
-    } else {
-      selection.removeAllRanges();
-    }
-  }
-};
-
+const emptyFn = () => {};
 export default class EditableAnnotation extends React.Component {
   state = {
     mouseX: 0,
@@ -56,9 +42,20 @@ export default class EditableAnnotation extends React.Component {
     constrainToCanvasBounds: true,
   };
 
-  componentWillReceiveProps() {
-    this.detachNativeHandlers();
-    clearSelection();
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      (prevProps.x !== this.props.x ||
+        prevProps.y !== this.props.y ||
+        prevProps.width !== this.props.width ||
+        prevProps.height !== this.props.height) &&
+      (prevState.dragStarted || prevState.resizeStarted)
+    ) {
+      this.detachNativeHandlers();
+      this.setState({
+        dragStarted: false,
+        resizeStarted: false,
+      });
+    }
   }
 
   attachNativeHandlers = () => {
@@ -96,7 +93,6 @@ export default class EditableAnnotation extends React.Component {
     } else if (ev.type === 'touchmove') {
       ev.preventDefault();
     }
-    clearSelection();
     const X = ev.type === 'mousemove' ? ev.pageX : ev.touches[0].pageX;
     const Y = ev.type === 'mousemove' ? ev.pageY : ev.touches[0].pageY;
     const { position, ratio } = this.props;
@@ -110,7 +106,6 @@ export default class EditableAnnotation extends React.Component {
   };
 
   onPointerUp = ev => {
-    clearSelection();
     if (ev.type === 'mouseup') {
       ev.stopPropagation();
     } else if (ev.type === 'touchend') {
@@ -170,7 +165,6 @@ export default class EditableAnnotation extends React.Component {
   };
 
   resizeStart = direction => ev => {
-    clearSelection();
     ev.stopPropagation();
     this.attachNativeHandlers();
     this.setState({
@@ -297,7 +291,7 @@ export default class EditableAnnotation extends React.Component {
       className,
       ratio,
       position,
-      ...props,
+      onClick,
     } = this.props;
     const X = this.applyPrecision(x) + this.state.dX;
     const Y = this.applyPrecision(y) + this.state.dY;
@@ -315,7 +309,7 @@ export default class EditableAnnotation extends React.Component {
         className={className}
         onMouseDown={this.dragStart}
         onTouchStart={this.dragStart}
-        {...props}
+        onClick={onClick || emptyFn}
       >
         {children}
         <AnnotationResizers
