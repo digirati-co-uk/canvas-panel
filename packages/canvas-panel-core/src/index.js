@@ -7,6 +7,7 @@ import AnnotationRepresentation from './components/AnnotationRepresentation/Anno
 import Bem, { withBemClass } from './components/Bem/Bem';
 import CanvasNavigation from './components/CanvasNavigation/CanvasNavigation';
 import CanvasRepresentation from './components/CanvasRepresentation/CanvasRepresentation';
+import EditableAnnotation from './components/EditableAnnotation/EditableAnnotation';
 import Fullscreen from './components/Fullscreen/Fullscreen';
 import SingleTileSource from './components/SingleTileSource/SingleTileSource';
 import ObservableElement from './components/ObservableElement/ObservableElement';
@@ -39,6 +40,7 @@ export {
   Fullscreen,
   SingleTileSource,
   ObservableElement,
+  EditableAnnotation,
   // Manifesto
   AnnotationListProvider,
   AnnotationProvider,
