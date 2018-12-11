@@ -80,7 +80,7 @@
       },
       "thumbnail": [
         {
-          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/thumbs/5/3/faac9c3e-4e3a-4cf0-bcaa-492381b0330e/full/,400/0/default.jpg",
           "type": "Image"
         }
       ]
@@ -94,7 +94,7 @@
       "behavior": ["slide-show"],
       "thumbnail": [
         {
-          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/thumbs/5/3/a139697e-878c-4971-92f0-efcac57917fc/full/400,/0/default.jpg",
           "type": "Image"
         }
       ]
@@ -108,7 +108,7 @@
       "behavior": ["external"],
       "thumbnail": [
         {
-          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/thumbs/5/3/e0597bd3-2271-4102-bb19-cb4ad68ed34f/full/400,/0/default.jpg",
           "type": "Image"
         }
       ]

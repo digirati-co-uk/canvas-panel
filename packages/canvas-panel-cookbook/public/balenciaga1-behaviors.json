@@ -47,8 +47,8 @@
         ]
       }
     },
-    "width": 900,
-    "height": 1200,
+    "width": 4472,
+    "height": 6742,
     "label": { "en": ["Balenciaga: Master Craftsman"] },
     "summary": {
       "en": [
@@ -65,16 +65,14 @@
             "type": "Annotation",
             "motivation": "painting",
             "body": {
-              "id":
-                "https://dlc.services/iiif-img/5/15/7f1ef85a-50a7-413a-9303-2ec722608484/full/full/0/default.jpg",
+              "id": "https://dlc.services/iiif-img/5/3/0144b453-e7c8-4dc7-ad3d-2da1dddffaea/full/full/0/default.jpg",
               "type": "Image",
               "format": "image/jpeg",
-              "width": 900,
-              "height": 1200,
+              "width": 4472,
+              "height": 6742,
               "service": [
                 {
-                  "id":
-                    "https://dlc.services/iiif-img/5/15/7f1ef85a-50a7-413a-9303-2ec722608484",
+                  "id": "https://dlc.services/iiif-img/5/3/0144b453-e7c8-4dc7-ad3d-2da1dddffaea",
                   "type": "ImageService2",
                   "profile": "level1"
                 }
@@ -104,8 +102,8 @@
           "Known as ‘The Master’ of haute couture, Cristóbal Balenciaga (1895–1972) was one of the most revered and influential fashion designers of the 20th century. His clothes were characterised by their sculptural quality, deft manipulation of textiles and dramatic use of colour and texture."
         ]
       },
-      "width": 900,
-      "height": 1200,
+      "width": 4472,
+      "height": 6742,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -124,16 +122,14 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id":
-                  "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46/full/full/0/default.jpg",
+                "id": "https://dlc.services/iiif-img/5/3/0144b453-e7c8-4dc7-ad3d-2da1dddffaea/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 900,
-                "height": 1200,
+                "width": 4472,
+                "height": 6742,
                 "service": [
                   {
-                    "id":
-                      "https://dlc.services/iiif-img/5/15/91a3c2cb-618f-4391-a959-080b03e2bc46",
+                    "id": "https://dlc.services/iiif-img/5/3/0144b453-e7c8-4dc7-ad3d-2da1dddffaea",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -149,8 +145,8 @@
     {
       "id": "https://digirati.com/balenciaga/c2",
       "type": "Canvas",
-      "width": 730,
-      "height": 1200,
+      "width": 4080,
+      "height": 5440,
       "behavior": ["info-position-center", "layout-split"],
       "label": { "en": ["Balenciaga: Master Craftsman"] },
       "summary": {
@@ -176,16 +172,14 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id":
-                  "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67/full/full/0/default.jpg",
+                "id": "https://dlc.services/iiif-img/5/3/faac9c3e-4e3a-4cf0-bcaa-492381b0330e/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 730,
-                "height": 1200,
+                "width": 4080,
+                "height": 5440,
                 "service": [
                   {
-                    "id":
-                      "https://dlc.services/iiif-img/5/15/b68ae773-ee15-4e18-a2e1-ccf924647c67",
+                    "id": "https://dlc.services/iiif-img/5/3/faac9c3e-4e3a-4cf0-bcaa-492381b0330e",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -208,8 +202,8 @@
           "Balenciaga was a Spaniard. Many of his most iconic designs show an affinity for Spanish heritage and costume – from the 'chaquetillas' worn by bullfighters to the traditional flamenco dress. A writer from Woman's Journal stated, 'Inspirations from Spain! Balenciaga is young, Spanish and new to Paris. His beautiful clothes have the warm, colourful drama of his country.'"
         ]
       },
-      "width": 900,
-      "height": 1200,
+      "width": 4559,
+      "height": 2565,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -228,16 +222,14 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id":
-                  "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415/full/full/0/default.jpg",
+                "id": "https://dlc.services/iiif-img/5/3/a139697e-878c-4971-92f0-efcac57917fc/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 900,
-                "height": 1200,
+                "width": 4559,
+                "height": 2565,
                 "service": [
                   {
-                    "id":
-                      "https://dlc.services/iiif-img/5/15/1b2f92b3-5b10-4daf-8c50-46e21fd1c415",
+                    "id": "https://dlc.services/iiif-img/5/3/a139697e-878c-4971-92f0-efcac57917fc",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -259,8 +251,8 @@
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
         ]
       },
-      "width": 990,
-      "height": 1200,
+      "width": 4763,
+      "height": 2685,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -279,16 +271,14 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id":
-                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
+                "id": "https://dlc.services/iiif-img/5/3/e0597bd3-2271-4102-bb19-cb4ad68ed34f/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 990,
-                "height": 1200,
+                "width": 4763,
+                "height": 2685,
                 "service": [
                   {
-                    "id":
-                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
+                    "id": "https://dlc.services/iiif-img/5/3/e0597bd3-2271-4102-bb19-cb4ad68ed34f",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -309,8 +299,8 @@
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
         ]
       },
-      "width": 990,
-      "height": 1200,
+      "width": 5142,
+      "height": 2903,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -329,16 +319,14 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id":
-                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
+                "id": "https://dlc.services/iiif-img/5/3/fdf2c2f5-bd63-44d8-96a7-5bf59bd60d9a/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 990,
-                "height": 1200,
+                "width": 5142,
+                "height": 2903,
                 "service": [
                   {
-                    "id":
-                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
+                    "id": "https://dlc.services/iiif-img/5/3/fdf2c2f5-bd63-44d8-96a7-5bf59bd60d9a",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
@@ -359,8 +347,8 @@
           "Balenciaga studied books on regional Spanish costume. This evening gown of silk organza with embroidery echoes traditional Valencian dress'"
         ]
       },
-      "width": 990,
-      "height": 1200,
+      "width": 4080,
+      "height": 5440,
       "requiredStatement": {
         "label": { "en": [""] },
         "value": {
@@ -379,16 +367,14 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id":
-                  "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c/full/full/0/default.jpg",
+                "id": "https://dlc.services/iiif-img/5/3/74cb4f85-0c2c-4c17-bfd0-584632c1551f/full/full/0/default.jpg",
                 "type": "Image",
                 "format": "image/jpeg",
-                "width": 990,
-                "height": 1200,
+                "width": 4080,
+                "height": 5440,
                 "service": [
                   {
-                    "id":
-                      "https://dlc.services/iiif-img/5/15/01b659c2-0efe-4d61-9498-4be048bcdf8c",
+                    "id": "https://dlc.services/iiif-img/5/3/74cb4f85-0c2c-4c17-bfd0-584632c1551f",
                     "type": "ImageService2",
                     "profile": "level1"
                   }
