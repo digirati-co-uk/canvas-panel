@@ -613,10 +613,10 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.8.tgz#8ae4e0ea205fe95c3901a5a1df7f66495e3a56ce"
   integrity sha512-3AQoUxQcQtLHsK25wtTWIoIpgYjH3vSDroZOUr7PpCHw/jLY1RB9z9E8dBT/OSmwStVgkRNvdh+ZHNiomRieaw==
 
-"@types/react@16.7.14":
-  version "16.7.14"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.14.tgz#61230ee74370ca8e5a728e4db2fc57a4cf2e2281"
-  integrity sha512-OH4/w2NQn984tzKCbf1OEewdKwzEVXQcZ0O2A5NsEVUKB9usGLudoJUCCsrGIxTShnOSsWPsw+BSudt/C/OE9A==
+"@types/react@16.7.15":
+  version "16.7.15"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.15.tgz#640a50bc7d8ef0ef690a3583873b1cfd8e909d21"
+  integrity sha512-bYstzLUwzHtmmWbYpCGpTR8MLpg/fmebZ74E4O3IhYfq+SDzOgmrMY8dc4vihXkHesoe/Aw7nbD+K3J1Qo17TQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
