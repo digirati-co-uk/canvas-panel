@@ -18,7 +18,7 @@
     "eslint-plugin-flow": "2.29.1",
     "eslint-plugin-flowtype": "3.2.0",
     "eslint-plugin-prettier": "3.0.0",
-    "flow-bin": "0.88.0",
+    "flow-bin": "0.89.0",
     "husky": "1.2.0",
     "jest": "23.6.0",
     "jest-canvas-mock": "1.1.0",
