@@ -10628,10 +10628,10 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-measure@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.2.0.tgz#a1e341605fd75c06fe2f6ce4b0b95c2e26474e53"
-  integrity sha512-FP6ljRqM41vYfnVDrg0tGxXGAj9ZlU3DLUV3imd1FHRyfUrALADXhPhnfK+CJ2f/kVYMsCm4Ykik29yCikVqfw==
+react-measure@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.2.1.tgz#5bc50baf981f2cba7de22c003c89a2c6ed61a1b1"
+  integrity sha512-uj7uCtB2ApKgXhJOcy2WWywdw0FVg/RMSfsPLnP9eLz8I2KA2P0R05gtTc8a5VOnnumuTYmxo0qn8S1srCWahw==
   dependencies:
     get-node-dimensions "^1.2.1"
     prop-types "^15.6.2"
