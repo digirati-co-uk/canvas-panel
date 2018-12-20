@@ -10510,10 +10510,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-ace@6.2.1:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-6.2.1.tgz#abfd5f7cabe9bde28d344fe48a034dcee25af556"
-  integrity sha512-PPP0/UxE12qF4GdzgyHkMwb3XsBefqQdyivr5wFPtbe3PuCXdc0dGMZZxms4CX04uFCNaY5+cSoZl9ZKujl+Lw==
+react-ace@6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-6.3.1.tgz#4fee244bca8840f38f6d30ff932a2583efb77995"
+  integrity sha512-AbKvGjALbFW1CYhXVCcBFadJnEx1AawnYUkkWx/t6yHNWEzhMmTEAXun0CMGzx/jIzGiMHWNw2VtqqHYVsqpPw==
   dependencies:
     brace "^0.11.1"
     diff-match-patch "^1.0.4"
