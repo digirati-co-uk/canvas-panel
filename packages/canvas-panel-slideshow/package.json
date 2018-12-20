@@ -32,7 +32,7 @@
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-flip-move": "^3.0.2",
-    "react-transition-group": "2.5.1"
+    "react-transition-group": "2.5.2"
   },
   "peerDependencies": {
     "immutability-helper": "^2.6.5",
