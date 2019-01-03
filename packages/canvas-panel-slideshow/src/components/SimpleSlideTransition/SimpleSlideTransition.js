@@ -27,7 +27,7 @@ class SimpleSlideTransition extends Component {
           classNames="fade"
           onExiting={this.setScroll}
         >
-          <div style={{ height: '750px', width: '100%' }}>{children}</div>
+          <div style={{ height: '100%', width: '100%' }}>{children}</div>
         </CSSTransition>
       </TransitionGroup>
     );
