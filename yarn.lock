@@ -10687,12 +10687,12 @@ react-measure@^2.0.2:
     prop-types "^15.5.10"
     resize-observer-polyfill "^1.4.2"
 
-react-promise@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/react-promise/-/react-promise-2.0.3.tgz#6f9cf49972fd3f0a0aef63be59e142f261d88905"
-  integrity sha512-gy7/oQGqANJN5nRLGbt1Og8XaoEZllpg7k9omBQz6vL2IY97zAIw+QADeqZnVARx76X5EcwAm1poUvCpkHP5Rw==
+react-promise@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-promise/-/react-promise-2.1.0.tgz#8a8d590b4ec9dc8fca428859bafe65c6f04e151e"
+  integrity sha512-j9B97+RWlC/OS36asazn1mn24F+xfi5x6PP6b/vq1TyKZ9CfI8mFJGIvqEJCngO8orC2+OaUM4ZlvQiEsY19bQ==
   dependencies:
-    prop-types "^15.6.1"
+    prop-types "^15.6.2"
 
 react-proxy@^1.1.7:
   version "1.1.8"
