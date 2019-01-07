@@ -8364,9 +8364,9 @@ mamacro@^0.0.3:
   resolved "https://registry.yarnpkg.com/mamacro/-/mamacro-0.0.3.tgz#ad2c9576197c9f1abf308d0787865bd975a3f3e4"
   integrity sha512-qMEwh+UujcQ+kbz3T6V+wAmO2U8veoq2w+3wY8MquqwVA3jChfwY+Tk52GZKDfACEPjuZ7r2oJLejwpt8jtwTA==
 
-"manifesto.js@git://github.com/stephenwf/manifesto.git#feature/p3-alpha-3":
+"manifesto.js@https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3":
   version "3.0.9"
-  resolved "git://github.com/stephenwf/manifesto.git#e7450b33c4d7b6325bb2e22b7b7082056fd35362"
+  resolved "https://github.com/stephenwf/manifesto.git#e7450b33c4d7b6325bb2e22b7b7082056fd35362"
   dependencies:
     exjs BSick7/exjs#0.5.0
     http-status-codes edsilv/http-status-codes#v0.0.7
