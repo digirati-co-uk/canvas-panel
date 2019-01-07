@@ -24,7 +24,7 @@
     "@canvas-panel/redux": "0.1.1",
     "@fesk/bem-js": "^1.0.0",
     "immutability-helper": "^2.6.4",
-    "manifesto.js": "git://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
+    "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
     "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
     "material-components-web": "^0.42.0",
     "rheostat": "^3.0.0"

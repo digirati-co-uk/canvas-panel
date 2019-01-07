@@ -21,7 +21,7 @@
     "@canvas-panel/full-page-plugin": "0.1.1",
     "@canvas-panel/patchwork-plugin": "0.1.1",
     "@canvas-panel/slideshow": "0.1.1",
-    "manifesto.js": "git://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
+    "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
     "bezier-easing": "2.1.0",
     "brace": "0.11.1",
     "classnames": "2.2.6",
