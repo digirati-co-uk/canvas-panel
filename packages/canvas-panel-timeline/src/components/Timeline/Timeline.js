@@ -65,7 +65,11 @@ class Timeline extends Component {
     if (item.children) {
       dispatch(increaseStructureDepth());
     }
-    dispatch(manifestActions.manifestSetCanvas(item.range[0]));
+    dispatch(
+      manifestActions.manifestSetCanvas(
+        typeof item.range === 'number' ? item.range : item.range[0]
+      )
+    );
   };
 
   handleMouseMove = e => {
@@ -87,12 +91,19 @@ class Timeline extends Component {
     if (!flatItems) {
       return <div />;
     }
+
     const maxItems = flatItems
       .filter(
         (item, key) =>
           this.getVisibilityFromItem(item, key) === RANGE_DISPLAY_LARGE
       )
-      .map(item => item.range[1] - item.range[0])
+      .map(item => {
+        if (typeof item.range === 'number') {
+          return 0;
+        }
+
+        return item.range[1] - item.range[0];
+      })
       .reduce((acc, next) => acc + next, 0);
 
     return (
