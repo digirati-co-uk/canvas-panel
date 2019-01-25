@@ -5,6 +5,7 @@ import * as reducers from './reducers';
 import sagas from './sagas';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const sagaMonitor = window.__SAGA_MONITOR_EXTENSION__;
 
 export default function createCustomStore(
   customReducers = {},
@@ -12,7 +13,7 @@ export default function createCustomStore(
   customSagas = [],
   defaultState = {}
 ) {
-  const sagaMiddleware = createSagaMiddleware();
+  const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
   const store = createStore(
     combineReducers({ ...reducers, ...customReducers }),
