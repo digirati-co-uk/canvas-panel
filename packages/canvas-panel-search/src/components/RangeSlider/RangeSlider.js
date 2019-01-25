@@ -23,13 +23,19 @@ type State = {
   value: number,
 };
 
+const getValue = ({ values }) => {
+  if (typeof values === 'number') return values;
+  const [a, b] = values;
+  return a > 0 ? a : b;
+};
+
 class RangeSlider extends Component<Props, State> {
   state = { value: 0 };
   clicked = false;
 
-  handleOnChange = ({ values: [a, b] }) => {
-    const value = a > 0 ? a : b;
-    if (this.clicked) {
+  handleOnChange = ({ values }) => {
+    const value = getValue(values);
+    if (this.clicked && typeof value === 'number') {
       this.props.dispatch(manifestSetCanvas(value));
       this.clicked = false;
     }
