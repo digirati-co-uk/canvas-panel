@@ -57,7 +57,13 @@ const reducer = handleActions(
   {
     [importAnnotation]: (
       state,
-      { payload: { id, annotation, source: { type, canvasId } } }
+      {
+        payload: {
+          id,
+          annotation,
+          source: { type, canvasId },
+        },
+      }
     ) => {
       const updateMethod = {
         index: {
@@ -139,6 +145,9 @@ function* importSingleAnnotation(annotation, { canvasId, type }) {
 }
 
 async function getAllAnnotations(canvas) {
+  if (!canvas) {
+    return Promise.resolve([]);
+  }
   return await Promise.all([canvas.getOtherContent(), canvas.getAnnotations()])
     .catch(() => [])
     .then(results => results.reduce((arr, item) => [...arr, ...item], []));
