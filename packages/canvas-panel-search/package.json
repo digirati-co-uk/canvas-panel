@@ -1,6 +1,6 @@
 {
   "name": "@canvas-panel/search",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Canvas panel Search components",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -20,8 +20,8 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/core": "0.1.1",
-    "@canvas-panel/redux": "0.1.1",
+    "@canvas-panel/core": "0.1.2",
+    "@canvas-panel/redux": "0.1.2",
     "@fesk/bem-js": "^1.0.0",
     "immutability-helper": "^3.0.0",
     "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
