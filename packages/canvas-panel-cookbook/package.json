@@ -31,7 +31,7 @@
     "react": "16.7.0",
     "react-ace": "6.3.2",
     "react-dom": "16.7.0",
-    "react-measure": "2.2.3",
+    "react-measure": "2.2.4",
     "react-promise": "2.1.0",
     "react-router-dom": "4.3.1",
     "system-font-css": "2.0.2",
