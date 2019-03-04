@@ -11400,10 +11400,10 @@ reduce-unique@^2.0.1:
   resolved "https://registry.yarnpkg.com/reduce-unique/-/reduce-unique-2.0.1.tgz#fb34b90e89297c1e08d75dcf17e9a6443ea71081"
   integrity sha512-x4jH/8L1eyZGR785WY+ePtyMNhycl1N2XOLxhCbzZFaqF4AXjLzqSxa2UHgJ2ZVR/HHyPOvl1L7xRnW8ye5MdA==
 
-redux-actions@2.6.4:
-  version "2.6.4"
-  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.6.4.tgz#e1d9d7d987d274071b0134b707365d3e25ba3b26"
-  integrity sha512-Gho+gnsvyR5h0pApoMdHLYssVEu4I0DNqyC91u43Xy/BvLrEddEMtukLF8oL3WXUy7DjxqKOKZHKmpKyN6hxlQ==
+redux-actions@2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.6.5.tgz#bdca548768ee99832a63910c276def85e821a27e"
+  integrity sha512-pFhEcWFTYNk7DhQgxMGnbsB1H2glqhQJRQrtPb96kD3hWiZRzXHwwmFPswg6V2MjraXRXWNmuP9P84tvdLAJmw==
   dependencies:
     invariant "^2.2.4"
     just-curry-it "^3.1.0"
