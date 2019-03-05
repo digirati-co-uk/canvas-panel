@@ -34,8 +34,8 @@
   "devDependencies": {
     "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
     "nwb": "0.23.0",
-    "react": "16.8.3",
-    "react-dom": "16.8.3"
+    "react": "16.8.4",
+    "react-dom": "16.8.4"
   },
   "publishConfig": {
     "access": "public"
