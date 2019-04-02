@@ -11191,10 +11191,10 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-measure@2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.2.4.tgz#cec3d96d3c39e22660e958e26d5498e4a342b9e4"
-  integrity sha512-gpZA4J8sKy1TzTfnOXiiTu01GV8B5OyfF9k7Owt38T6Xxlll19PBE13HKTtauEmDdJO5u4o3XcTiGqCw5wpfjw==
+react-measure@2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.2.5.tgz#35f6be9a8c31d61a4cf847282f9d54c310eb1624"
+  integrity sha512-j1OE5U3AfX97Tk/LNkn2KSdE03hGgBOqUoQQ8QdxHoAudAvP1K1R7hvEH+S5zHILFh7ejGCKK3wWZOMDcHL3mA==
   dependencies:
     "@babel/runtime" "^7.2.0"
     get-node-dimensions "^1.2.1"
