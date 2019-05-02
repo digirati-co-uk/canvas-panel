@@ -9,7 +9,6 @@ module.exports = {
       targets: {
         browsers: ['last 2 versions', 'ie 10', 'ie 11'],
       },
-      modules: false,
     },
   },
 };
