@@ -34,7 +34,7 @@
     "@fesk/bem-js": "^1.0.0",
     "@iiif/manifold": "^1.2.19",
     "core-js": "^2.5.3",
-    "create-react-context": "^0.2.0",
+    "create-react-context": "^0.3.0",
     "detect-it": "^3.0.5",
     "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
     "mobile-detect": "^1.4.2",
