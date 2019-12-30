@@ -18,6 +18,8 @@ class Manifest extends Component {
     children: FunctionOrMapChildrenType.isRequired,
     /** Locale to fetch the manifest */
     locale: PropTypes.string,
+    /** Fetch options for manifest retrieval **/
+    fetchOptions: PropTypes.object,
   };
 
   static defaultProps = {
@@ -25,14 +27,14 @@ class Manifest extends Component {
   };
 
   componentWillMount() {
-    const { url, jsonLd } = this.props;
+    const { url, jsonLd, fetchOptions } = this.props;
 
     if (jsonLd) {
       this.setState({ manifest: this.create(jsonLd) });
       return;
     }
 
-    fetch(url, { cache: 'force-cache' })
+    fetch(url, fetchOptions || { cache: 'force-cache' })
       .then(j => j.json())
       .then(fetchedJsonLd => {
         this.setState({
