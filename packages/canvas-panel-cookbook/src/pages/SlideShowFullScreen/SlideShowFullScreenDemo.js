@@ -10,7 +10,7 @@ class SlideShowDemoBase extends Component {
     return (
       <article className={bem}>
         <div className={bem.element('full-width-container')}>
-          <SlideShow manifesturi="https://adam-digirati.github.io/balenciaga4.json">
+          <SlideShow manifesturi="https://https://github.com/stephenwf.github.io/balenciaga4.json">
             <AnnotationDetail />
           </SlideShow>
         </div>

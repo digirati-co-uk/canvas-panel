@@ -295,7 +295,7 @@ export default class EditableAnnotation extends React.Component {
       position,
       resizerWidth,
       containerProps,
-      ...props,
+      ...props
     } = this.props;
     const X = this.applyPrecision(x) + this.state.dX;
     const Y = this.applyPrecision(y) + this.state.dY;

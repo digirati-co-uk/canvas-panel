@@ -37,7 +37,7 @@ class SlideShowDemoBase extends Component {
             &nbsp;of the viewer using a IIIF Presentation 3 manifest.
           </p>
           <div className={bem.element('inline-container')}>
-            <SlideShow manifestUri="https://adam-digirati.github.io/balenciaga4.json" />
+            <SlideShow manifestUri="https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/balenciaga4.json" />
           </div>
         </section>
         <section className={bem.element('section').modifier('full-width')}>
@@ -47,7 +47,7 @@ class SlideShowDemoBase extends Component {
             layouts using behaviours.
           </p>
           <div className={bem.element('full-width-container')}>
-            <SlideShow manifestUri="https://adam-digirati.github.io/balenciaga1-behaviors.json" />
+            <SlideShow manifestUri="https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/balenciaga1-behaviors.json" />
           </div>
         </section>
         <section className={bem.element('section')}>
