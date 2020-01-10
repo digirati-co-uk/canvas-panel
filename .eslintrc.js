@@ -31,7 +31,6 @@ module.exports = {
     'prettier/prettier': ERROR,
     'accessor-pairs': OFF,
     'brace-style': [ERROR, '1tbs'],
-    'comma-dangle': [ERROR, 'always-multiline'],
     'consistent-return': OFF,
     'dot-location': [ERROR, 'property'],
     'dot-notation': ERROR,

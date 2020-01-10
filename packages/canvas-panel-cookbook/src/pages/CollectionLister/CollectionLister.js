@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Async from 'react-promise';
 import Upgrader from 'iiif-prezi2to3';
 import Examples from '../../Examples';
 import QueryStringProvider from '../../QueryStringProvider';
+import { Async } from '../../utils';
 
 const IIIF_PRESENTATION_V3_CONTEXT =
   'http://iiif.io/api/presentation/3/context.json';
@@ -71,7 +71,7 @@ export default class CollectionLister extends QueryStringProvider {
       this.collectionURL = this.urlParams.collection;
     } else {
       this.collectionURL =
-        //'https://adam-digirati.github.io/canvas-panel-examples.json';
+        //'https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/canvas-panel-examples.json';
         '/canvas-panel-examples.json';
     }
     let collectionPromise = fetch(this.collectionURL)

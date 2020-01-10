@@ -14,7 +14,7 @@
   },
   "items": [
     {
-      "id": "https://adam-digirati.github.io/balenciaga1.json",
+      "id": "https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/balenciaga1.json",
       "type": "Manifest",
       "label": {
         "en": ["V&A Balenciaga Slideshow Stage 1"]
@@ -26,14 +26,13 @@
       },
       "thumbnail": [
         {
-          "id":
-            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
           "type": "Image"
         }
       ]
     },
     {
-      "id": "https://adam-digirati.github.io/balenciaga2.json",
+      "id": "https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/balenciaga2.json",
       "type": "Manifest",
       "label": {
         "en": ["V&A Balenciaga Slideshow Stage 2"]
@@ -45,14 +44,13 @@
       },
       "thumbnail": [
         {
-          "id":
-            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
           "type": "Image"
         }
       ]
     },
     {
-      "id": "https://adam-digirati.github.io/balenciaga3.json",
+      "id": "https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/balenciaga3.json",
       "type": "Manifest",
       "label": {
         "en": ["V&A Balenciaga Slideshow Stage 3"]
@@ -64,14 +62,13 @@
       },
       "thumbnail": [
         {
-          "id":
-            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
           "type": "Image"
         }
       ]
     },
     {
-      "id": "https://adam-digirati.github.io/balenciaga4.json",
+      "id": "https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/balenciaga4.json",
       "type": "Manifest",
       "label": {
         "en": ["V&A Balenciaga Slideshow Stage 4"]
@@ -83,14 +80,13 @@
       },
       "thumbnail": [
         {
-          "id":
-            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
           "type": "Image"
         }
       ]
     },
     {
-      "id": "https://adam-digirati.github.io/balenciaga1-behaviours.json",
+      "id": "https://raw.githubusercontent.com/4d4mm/adam-digirati.github.io/master/balenciaga1-behaviours.json",
       "type": "Manifest",
       "label": {
         "en": ["V&A Balenciaga Layouts"]
@@ -100,8 +96,7 @@
       },
       "thumbnail": [
         {
-          "id":
-            "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
+          "id": "https://dlc.services/iiif-img/5/15/ce07bf6c-da42-4ef2-9245-35f80572cf9e/0,0,1200,900/300,/0/default.jpg",
           "type": "Image"
         }
       ]
