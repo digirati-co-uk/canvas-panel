@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@fesk/bem-js": "^1.0.0",
-    "@iiif/manifold": "^1.2.19",
+    "@iiif/manifold": "^2.0.0",
     "core-js": "^3.0.0",
     "create-react-context": "^0.3.0",
     "detect-it": "^3.0.5",
