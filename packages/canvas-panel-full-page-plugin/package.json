@@ -13,9 +13,10 @@
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module",
     "test": "nwb test",
-    "prepublish": "NODE_ENV=production npm run build",
+    "prepublish": "npm run snyk-protect && NODE_ENV=production npm run build",
     "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "test:watch": "nwb test --server",
+    "snyk-protect": "snyk protect"
   },
   "watch": {
     "build": {
@@ -29,7 +30,8 @@
     "@canvas-panel/core": "0.2.0",
     "babel-preset-es2015-native-modules": "^6.9.4",
     "bezier-easing": "^2.1.0",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "nwb": "0.23.0",
@@ -41,5 +43,6 @@
   "author": "Digirati",
   "homepage": "https://digirati.com/",
   "license": "MIT",
-  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-full-page-plugin"
+  "repository": "https://github.com/digirati-co-uk/canvas-panel/tree/master/packages/canvas-panel-full-page-plugin",
+  "snyk": true
 }
