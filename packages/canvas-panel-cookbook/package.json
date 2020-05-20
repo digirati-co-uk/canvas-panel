@@ -38,7 +38,7 @@
     "whatwg-fetch": "3.0.0"
   },
   "devDependencies": {
-    "nwb": "0.23.0",
+    "nwb": "0.25.2",
     "nwb-sass": "0.9.0",
     "renamer": "1.1.4"
   },
