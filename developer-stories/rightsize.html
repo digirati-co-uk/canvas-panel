@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On being the right size</title>
+    <link href="style-common.css" rel="stylesheet">
+</head>
+<body>
+    
+    <h2>On being the right size</h2>
+
+    <p>
+        Digitisation doesn't make everything equal, it just makes everything the same size. 
+    </p>
+
+    <p>
+        Typically, we are offered more pixels per millimetre for a very tiny object than for a very large one. 
+        The camera gets closer to small things, because it can. 
+        Across a diverse collection, there probably isn't a consistent dots per real-world inch policy for 
+        stamps, coins, printed books, paintings and tapestries. 
+    </p>
+    <p>
+        There's only so much zooming you can do. Capturing 
+        <a href="http://hyper-resolution.org/view.html?pointer=0.241,0.000&i=Rijksmuseum/SK-C-5/SK-C-5_VIS_20-um_2019-12-21" target="_blank">The Night Watch</a>
+        at 50 pixels per millimetre is a major undertaking. Capturing a postage stamp at this resolution 
+        is regular macro photography or scanning.</p>
+
+        <p>
+        More pixels per real-world millimeter are available for the first Holbein than the second:
+</p>
+
+<p><img src="https://framemark.vam.ac.uk/collections/2006AM5600/full/800,/0/default.jpg" 
+    title="Portrait miniature of Anne of Cleves (1515-1557), set in a turned ivory box"
+    alt="Photograph of an ivory box with a painting of Anne of Cleves on the lid. 
+    The photograph includes part of a colour chart, giving some indication that the object is very small."
+/></p>
+
+<p><i>Portrait miniature of Anne of Cleves by Hans Holbein the younger (1497-1543), set in a turned ivory box. © Victoria and Albert Museum, London. 
+    Image and metadata usage subject to V&A <a href="https://www.vam.ac.uk/info/va-websites-terms-conditions">Terms and Conditions</a>.
+</i></p>
+
+<p><img src="https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000/full/800,/0/default.jpg" 
+    title="Hans Holbein the Younger, 1497/8 - 1543. Jean de Dinteville and Georges de Selve ('The Ambassadors')."
+    alt="Photograph of Holbein's painting, The Ambassadors. The photograph does not include the frame. There is no indication of scale."
+/></p>
+
+<p><i>Hans Holbein the Younger, 1497/8 - 1543. Jean de Dinteville and Georges de Selve ('The Ambassadors'). 
+    These images are © The National Gallery, London. These works are licensed under a Creative Commons 
+    Attribution-NonCommercial-NoDerivatives 4.0 International License 
+    (<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>).
+    </i></p>
+
+<p>Our web pages have spaces for images, we tend to fill them we the images we are given. Both of these Holbeins have more detail
+    available than the arbitrary 800 pixel width shown here. We could try to use the pixel dimensions of the images to give some sense of
+    relative scale. 
+</p>
+
+(relative pics)
+
+<p>This scale is obviously hopelessy wrong. At least <i>The Ambassadors</i> comes out bigger than <i>Anne of Cleves</i> in this case. 
+    There's no reason for this to be generally true, especially here where the two images are coming from different places.</p>
+
+    <p>Maybe we can get a clue from the maximum level of detail we can find:</p>
+
+    <p>Even if we know how big things are from written descriptions, they are presented using the same number of pixels on a web page.
+        And if there is deep zoom, we're still using the same viewport from one item to the next. 
+        Maybe you can spread your fingers or spin your mousewheel more for some images than for others, get deeper into them; only 
+        context, experience and familiarity give you a clue how big something really might be. The exciting tininess of a miniature, 
+        the imposing macho spread of _The Ambassadors_ - they both become pixels in an image tag.
+    </p>
+
+    <p>
+        This is hardly a new problem. Loss of absolute scale is a tradeoff that lets more people look at art through printed
+        reproductions too. 
+</p>
+
+<p>Can IIIF help? Not really. We're still sitting in front of our monitors and looking at our phones. 
+    But there are two ways in which IIIF can do <i>something</i> with scale, 
+    that allows two objects to be presented with an idea of their actual sizes.
+</p>
+
+<p>The first is the <a href="https://iiif.io/api/annex/services/#physical-dimensions">Physical Dimensions service</a>. 
+    This is an extra piece of metadata a publisher can provide, that tells a software client what the physical scale is - 
+    how many pixels in the image make up a millimeter in the real world. Software clients typically use this information to 
+    show a dynamic ruler:
+</p>
+
+<p>
+<a href="https://gfycat.com/InexperiencedPoshArabianhorse" rel="nofollow">
+    <img src="https://camo.githubusercontent.com/3278b4189df565bfc146198376fa2c60151cf9b226d3bc3a85bc45b01d8c5e80/68747470733a2f2f7468756d62732e6766796361742e636f6d2f496e657870657269656e636564506f73684172616269616e686f7273652d73697a655f726573747269637465642e676966" alt="Demo" data-canonical-src="https://thumbs.gfycat.com/InexperiencedPoshArabianhorse-size_restricted.gif" style="max-width:100%;"></a>
+</p>
+
+<i>Example taken from <a href="https://github.com/dbmdz/mirador-plugins#physical-document-ruler">MDZ Digital Library 
+    team at the Bavarian State Library</a>.</i>
+
+<p>A user interface could also use it to show an item compared to some other real world object:</p>
+
+<p>(Waddeson Bequest example with screen shot)</p>
+
+<p>Or, present two items together with the correct relative sizes:</p>
+
+<p>Open Seadragon here with canvas composition</p>
+
+<div id="openseadragon1" style="width: 800px; height: 800px;"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/openseadragon.min.js"></script>
+<script type="text/javascript">
+    var viewer = OpenSeadragon({
+        id: "openseadragon1",
+        prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/images/",
+        tileSources: [
+            {
+                tileSource: "https://framemark.vam.ac.uk/collections/2006AM5600/info.json",
+                x: 0,
+                y: 0,
+                width: 0.1
+            },
+            {
+                tileSource: "https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000/info.json",
+                x: 0.11,
+                y: 0,
+                width: 2
+            }            
+        ]
+    });
+</script>
+
+<p>The other approach, which ends up at the same place as the above example, is to compose a IIIF Canvas with two images on it at the 
+    correct relative sizes.</p>
+
+    <p>Rather than giving two independent IIIF resources to the client, we could _place_ the items on a Canvas.</p>
+
+    <p>Diagram of Canvas with the two Holbeins on it.</p>
+
+    <p>The Canvas has been given a coordinate system (a width and a height) convenient for accomodating both of the Holbein images; 
+        each of them has then been _painted_ onto the canvas at the following positions.
+
+    </p>
+    <p></p>
+    <p>(This is included as a Canvas Panel developer story, because we would ideally like a simple component to render this 
+        Canvas, with its complex composition, rather than have to work out the details on the client.)</p>
+</body>
+</html>
