@@ -25,7 +25,7 @@
     "immutability-helper": "^3.0.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.2.1",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^1.0.0"
   },
   "peerDependencies": {
     "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
