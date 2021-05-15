@@ -1,0 +1,54 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@type": "sc:Manifest",
+  "@id": "https://data.ng-london.org.uk/iiif/0CWR-0001-0000-0000/manifest",
+  "label": "Jean de Dinteville and Georges de Selve ('The Ambassadors')",
+  "metadata": [
+    {
+      "label": "Description",
+      "value": "Hans Holbein the Younger, 1497/8 - 1543. Jean de Dinteville and Georges de Selve ('The Ambassadors'). Oil on oak. Bought, 1890. NG1314. https://www.nationalgallery.org.uk/paintings/NG1314"
+    }
+  ],
+  "description": "Hans Holbein the Younger, 1497/8 - 1543. Jean de Dinteville and Georges de Selve ('The Ambassadors'). Oil on oak. Bought, 1890. NG1314. https://www.nationalgallery.org.uk/paintings/NG1314",
+  "sequences": [
+    {
+      "@type": "sc:Sequence",
+      "@id": "https://data.ng-london.org.uk/iiif/0CWR-0001-0000-0000/sequence/normal",
+      "canvases": [
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://data.ng-london.org.uk/iiif/0CWR-0001-0000-0000/canvas/-1",
+          "thumbnail": {
+            "@type": "dctypes:Image",
+            "@id": "https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000/full/150,/0/native.jpg"
+          },
+          "height": 5124,
+          "width": 5194,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "@id": "https://data.ng-london.org.uk/iiif/0CWR-0001-0000-0000/image/-1/zoom",
+              "motivation": "sc.painting",
+              "on": "https://data.ng-london.org.uk/iiif/0CWR-0001-0000-0000/canvas/-1",
+              "resource": {
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "@id": "https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000/full/full/0/native.jpg",
+                "height": 5124,
+                "width": 5194,
+                "service": {
+                  "@id": "https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000",
+                  "@context": "http://iiif.io/api/image/1/context.json",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "attribution": "These images are \u00a9 The National Gallery, London. These works are licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0) https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "logo": "https://research.ng-london.org.uk/ng/graphics/ng_logo_tr_125.png"
+}
