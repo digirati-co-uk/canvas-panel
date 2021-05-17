@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On being the right size</title>
+    <link href="style-common.css" rel="stylesheet">
+    
+    <style>
+        .canvas{
+            background-color:cornflowerblue;
+            z-index: -1000;
+        }
+        </style>
+</head>
+
+<body>
+
+    <h1>On being the right size</h1>
+    <cite>Tom Crane, May 2021</cite>
+    <p>
+        Digitisation doesn't make everything equal, it just makes everything the same size.
+    </p>
+    <p>
+        <img src="rightsize/max_tiles.jpg" alt="Details of faces from the two paintings at the maximum resolution.
+         The faces appear to be the same size" />
+    </p>
+    <p>
+        We are usually offered more pixels per millimetre for a very tiny object than for a very large one.
+        The camera gets closer to small things, because it can. In any digitised collection, small things like 
+        stamps and coins have more detail than big things like paintings and tapestries.
+    </p>
+    <p>
+        We don't usually think about this because we are used to it. Capturing
+        <a href="http://hyper-resolution.org/view.html?pointer=0.241,0.000&i=Rijksmuseum/SK-C-5/SK-C-5_VIS_20-um_2019-12-21"
+            target="_blank">The Night Watch</a>
+        at 50 pixels per millimetre is a major undertaking. Capturing a postage stamp at this resolution is trivial on
+        a cheap home scanner.
+    </p>
+
+    <p>
+        More pixels per real-world millimeter are available for the the first Holbein below, than for the second:
+    </p>
+
+    <img src="https://framemark.vam.ac.uk/collections/2006AM5600/full/800,/0/default.jpg"
+            title="Portrait miniature of Anne of Cleves (1515-1557), set in a turned ivory box" alt="Photograph of an ivory box with a painting of Anne of Cleves on the lid. 
+    The photograph includes part of a colour chart, giving some indication that the object is very small." />
+
+    <p><i>Portrait miniature of Anne of Cleves by Hans Holbein the younger (1497-1543), set in a turned ivory box. ©
+            Victoria and Albert Museum, London.
+            Image and metadata usage subject to V&A <a
+                href="https://www.vam.ac.uk/info/va-websites-terms-conditions">Terms and Conditions</a>.
+        </i></p>
+
+    <img src="https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000/full/800,/0/default.jpg"
+            title="Hans Holbein the Younger, 1497/8 - 1543. Jean de Dinteville and Georges de Selve ('The Ambassadors')."
+            alt="Photograph of Holbein's painting, The Ambassadors. The photograph does not include the frame. There is no indication of scale." />
+    
+
+    <p><i>Hans Holbein the Younger, 1497/8 - 1543. Jean de Dinteville and Georges de Selve ('The Ambassadors').
+            These images are © The National Gallery, London. These works are licensed under a Creative Commons
+            Attribution-NonCommercial-NoDerivatives 4.0 International License
+            (<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>).
+        </i></p>
+
+    <p>Web page design leaves spaces for images, and the spaces get <i>filled</i>. What if we want to
+        introduce some notion of relative size? We could try to use the 
+        pixel dimensions of the images to give some sense of scale. The Anne of Cleves image is about 2000 pixels wide,
+        the Ambassadors about 5000, therefore:
+    </p>
+
+    <img src="rightsize/rel-pixels.jpg" alt="The two Holbeins shown scaled according to their pixel dimensions." />
+
+    <p>This scale is obviously hopelessly wrong. At least <i>The Ambassadors</i> comes out bigger than <i>Anne of
+            Cleves</i> in this case.
+        There's no reason for this to be generally true, especially here where the two images are coming from different
+        places.</p>
+
+    <p>Maybe we can get a clue from the maximum level of detail we can find in both images - how far can we zoom in?</p>
+
+    <img src="rightsize/max_tiles.jpg" alt="Details of faces from the two paintings at the maximum resolution.
+     The faces appear to be the same size" />
+
+    <p>The fact that the two faces end up at roughly the same size is probably a coincidence. But perhaps it tells
+        us a little about what we want when we look at each of these images.
+    </p>
+
+    <p>Even if we know how big things are from written descriptions, they are presented using the same pixels on a
+        screen.
+        And if there is deep zoom, we're still using the same viewport from one item to the next - we're looking at
+        everything through the same window every time.
+        Maybe you can spread your fingers or spin your mousewheel more for some images than for others, zoom deeper into
+        them; but only context, experience and familiarity give you a clue how big something <i>really</i> is. </p>
+
+        <p>
+        The exciting tininess of
+        a miniature,
+        the macho spread of The Ambassadors - they light up the same dots on the screen.
+    </p>
+
+    <p>
+        This is hardly a new idea. Deep Zoom is just one more kind of mechanical reproduction, to be added to those
+        given to us in the 19th and 20th centuries.
+    </p>
+
+    <h2>Size in IIIF: the Physical Dimensions Service</h2>
+
+    <p>Can <a href="https://iiif.io/">IIIF</a> help?</p>
+
+    <p>No, not really. We're still sitting in front of our monitors or looking at our phones.
+        But there are some ways in which IIIF can do <i>something</i> with scale,
+        that allows objects to be presented with at least an idea of their actual sizes.
+    </p>
+
+    <p>The <a href="https://iiif.io/api/annex/services/#physical-dimensions">Physical Dimensions service</a> is an
+        extension to IIIF.
+        It is an extra piece of metadata a publisher can provide, that tells a software client what the physical scale
+        is - how many pixels in the image make up a millimeter in the real world. Software clients can use this information
+        to show a dynamic ruler:
+    </p>
+
+    <p>
+        <a href="https://gfycat.com/InexperiencedPoshArabianhorse" rel="nofollow" target="_blank">
+            <img src="https://camo.githubusercontent.com/3278b4189df565bfc146198376fa2c60151cf9b226d3bc3a85bc45b01d8c5e80/68747470733a2f2f7468756d62732e6766796361742e636f6d2f496e657870657269656e636564506f73684172616269616e686f7273652d73697a655f726573747269637465642e676966"
+                alt="Demo"
+                data-canonical-src="https://thumbs.gfycat.com/InexperiencedPoshArabianhorse-size_restricted.gif"
+                style="max-width:100%;"></a>
+    </p>
+
+    <p><a href="https://gfycat.com/InexperiencedPoshArabianhorse" rel="nofollow" target="_blank">(Click for larger)</a>
+        <br/>
+        <i>Example taken from <a target="_blank"
+                href="https://github.com/dbmdz/mirador-plugins#physical-document-ruler">
+                MDZ Digital Library team at the Bavarian State Library</a>.</i></p>
+
+    <p>A user interface could also use this scale information to show an item compared to some other real world object:</p>
+
+    <img src="rightsize/wb-scale.jpg"
+        alt="screen shot showing the volumes occupied by different works compared to a tennis ball" />
+
+    <p><i>Screen shot from <a href="http://wb.britishmuseum.org/">The Waddesdon Bequest</a>, designed by
+            <a href="http://goodformandspectacle.com/">Good, Form & Spectacle</a> for The British Museum.</i>
+    </p>
+
+    <p>What could we do if the two IIIF Image Services for the two Holbeins had this extension service? 
+        First of all, what would it say?</p>
+
+    <p>The <a href="https://iiif.io/api/annex/services/#physical-dimensions">specification</a> says:</p>
+
+    <blockquote>
+        <i>
+        <p>
+            ...the physical dimensions service need only report two additional
+            pieces of information: the scale factor to multiply the dimensions by to calculate the physical
+            dimensions, and the units for those generated physical dimensions.
+        </p>
+        <p>
+            When used with the Image API, it allows a client to calculate the pixels per inch (often abbreviated
+            as PPI or DPI) of the image it is associated with. When used with the Presentation API, it gives the
+            size of the object that the Canvas is a surrogate for.
+        </p>
+    </i>
+    </blockquote>
+
+    <p>Here is what we know about the sizes of the two items:</p>
+
+    <ul>
+        <li><a
+                href="https://collections.vam.ac.uk/item/O18966/portrait-miniature-of-anne-of-portrait-miniature-hans-holbein/">The
+                Anne of Cleves Portrait</a> (set in a circle) has a diameter of 60 mm.
+        </li>
+        <li>
+            <a href="https://www.nationalgallery.org.uk/paintings/hans-holbein-the-younger-the-ambassadors">The
+                Ambassadors</a>
+            is almost square at 207 x 209.5 cm.
+        </li>
+    </ul>
+
+    <p>The <a href="https://framemark.vam.ac.uk/collections/2006AM5600/full/full/0/default.jpg">image service</a>
+        for the Anne of Cleves miniature is 2103 x 2500 pixels. Looking at the full image, we can measure the width
+        <i>in pixels</i>
+        of the object itself as 1383 x 1401:
+    </p>
+    <img src="rightsize/cleves-photoshop.jpg" alt="The Anne of Cleves image opened in Photoshop, 
+showing the rectangle occupied by the miniature in the photograph" />
+    <p>...so let's say, for the purposes of this example, that 60mm is 1400 pixels in this photograph. Which means
+        that this image, at the full size, is <b>23.33 pixels per mm</b>.
+    </p>
+
+    <p>The <a href="https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000/info.json">image service</a>
+        for <i>The Ambassadors</i> is 5194 x 5124 pixels (w x h) - almost square but ever so slightly
+        wider than it is high. But the catalogue description says 207 x 209.5 cm. Other images online are also wider,
+        including Wikimedia's 30000 × 29560
+        version. Maybe the catalogue description includes the frame? Anyway, for the example we will split the
+        difference and say that 2085mm is 5159 pixels. Which gives us <b>2.47 pixels per mm</b>.
+    </p>
+    <p>
+        Anne of Cleves is almost exactly ten times the resolution of The Ambassadors - the camera gets closer!
+    </p>
+
+    <p>Given this information, we can now show the two images in the same web page at the correct physical scale:</p>
+
+    <img src="rightsize/scale-pixels.jpg" alt="the two images at the correct relative scale" />
+
+    <p>While this respects the relative sizes of the pictures, it's next to useless if we actually want to look
+        at Anne. But with the physical dimension service on our images, we can work out how they should scale together
+        for
+        deep zoom, too:
+    </p>
+
+    <div id="openseadragon1" style="width: 800px; height: 800px; border: 1px solid gray;"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/openseadragon.min.js"></script>
+    <script>
+
+        // Simplifying the info that we would extract from the image service and the 
+        // physical dimensions service for these images. We don't actually need the
+        // height, we're not distorting anything.
+        let anne = {
+            tileSource: "https://framemark.vam.ac.uk/collections/2006AM5600/info.json",
+            width: 2103,
+            height: 2500,
+            scale: 23.33
+        };
+
+        let ambassadors = {
+            tileSource: "https://data.ng-london.org.uk/iiif/image/0UUJ-0008-0000-0000/info.json",
+            width: 5194,
+            height: 5124,
+            scale: 2.47
+        };
+
+        function normalised(info) {
+            // make the dimensions of the image agree with their scale
+            return {
+                tileSource: info.tileSource,
+                width: info.width / info.scale,
+                height: info.height / info.scale,
+            }
+        }
+
+        let anne2 = normalised(anne);
+        let ambassadors2 = normalised(ambassadors);
+
+        // we'll move The Ambassadors over slightly.
+        let offset = anne2.width + (anne2.width / 10.0);
+
+        let viewer = OpenSeadragon({
+            id: "openseadragon1",
+            prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/images/",
+            tileSources: [
+                {
+                    tileSource: anne2.tileSource,
+                    x: 0,
+                    y: 0,
+                    width: anne2.width
+                },
+                {
+                    tileSource: ambassadors2.tileSource,
+                    x: offset,
+                    y: 0,
+                    width: ambassadors2.width
+                }
+            ]
+        });
+    </script>
+
+    <p><i>Deep zoom version using OpenSeadragon. View the source of the web page to see how this is done.</i></p>
+
+    <p>Now we can zoom right into the Anne image in great detail, while maintaining the relative sizes.</p>
+
+    <p>The above example only uses the IIIF Image API. The code on this page decides that Anne should go on 
+        the left, then a little gap, then <i>The Ambassadors</i>.
+    </p>
+
+    <h2>Canvas composition</h2>
+
+    <p>The other approach, which ends up at the same place as the above example, is to compose a 
+        <a href="https://iiif.io/api/presentation/3.0/#53-canvas" target="_blank">IIIF Canvas</a> with two
+        images on it at the correct relative sizes, and publish it, and hope that clients will render it correctly.</p>
+
+        <p>In IIIF, the Canvas is a space for assembling content, like a PowerPoint slide.</p>
+
+    <p>Rather than giving two independent IIIF resources to the client, the Publisher could <i>place</i> 
+        the items on a IIIF Canvas. Imagine doing exactly the same thing in PowerPoint:</p>
+
+    <img src="rightsize/ppt.jpg" alt="assembling to two images as a PowerPoint slide" />
+
+    <p>We can do this with a IIIF Canvas, too, and publish it in a IIIF Manifest. Then a viewer 
+        could display the canvas - that is, display the composition we intend:
+    </p>
+
+    <div id="openseadragon2" style="width: 800px; height: 700px; border: 1px solid gray;"></div>
+    <p><i>
+        OpenSeadragon simulation of a CANVAS rendering. The Canvas has been shown in blue to make clear what is 
+        being displayed here. The code in the source of this page is designed to reduce the idea of
+        the canvas and how things are placed on it to the minimum level of simplicity.
+    </i></p>
+    <script>
+        // Now make a fake Canvas and place the images on it. 
+        // To demonstrate the independence of Canvas and images, we'll introduce a third
+        // coordinate space for the Canvas. We'll say it represents a wall in a gallery,
+        // it's not a square space.
+        
+        let canvas = {
+            width: 12000,
+            height: 11000,
+            content: [] // no content yet, just an empty space.
+        }
+        // think of this as like an empty PowerPoint slide, at our chosen aspect ratio 12:11.
+
+        // We want to introduce our two images into this coordinate space. We need to position them.
+        // We can't just say "put anne at x1, y1 and put ambassadors at x2, y2" - that won't tell us
+        // how much space they take up - where the far edges are. 
+        // We need to specify what rectangles - what x,y,w,h - they occupy in the canvas coordinate 
+        // space. We don't *have* to make them the correct relative scale, but in this case, we do
+        // want that. So we're not just translating the image coordinates into the canvas 
+        // coordinates - we're transforming the scale, too.
+
+        // This is the kind of thing the PUBLISHER would calculate, to put the images on the wall
+        // at the right positions. We'll just show our workings here on the client.
+        
+        // Use the already normalised versions to see how they would fit...
+        console.log(anne2.width);        // 90.14144877839692
+        console.log(ambassadors2.width); // 2102.8340080971657
+        // a factor of 5 looks OK to fill most of the wall...
+        console.log(anne2.width * 5);         // 450.7072438919846
+        console.log(anne2.height * 5);        // 535.7908272610373
+        console.log(ambassadors2.width * 5);  // 10514.170040485827
+        console.log(ambassadors2.height * 5); // 10372.469635627529
+        
+        // The following is a simplification of what we would be reading from the IIIF Canvas
+        // that the PUBLISHER provided. We would collect this data from the canvas's annotations:
+        let anneContent = {
+            image: anne, // it doesn't matter if this is anne or anne2! We're going to scale them anyway!
+            at: {
+                x: 200,
+                y: 200,
+                width: 451,
+                height: 536 // we won't actually need this, for OSD. But for CP we could use it to distort.
+            }
+        };
+        // leave a bit of a gap, then put the ambassadors on:
+        let ambassadorsContent = {
+            image: ambassadors,
+            at: {
+                x: 900,
+                y: 200,
+                width: 10514,
+                height: 10372
+            }
+        }
+
+        // So let's place these images on the canvas:
+        canvas.content = [ anneContent, ambassadorsContent ];
+
+        // let's now draw our canvas. We'll use the OSD overlay feature to show the canvas itself in blue,
+        // which we wouldn't normally do.
+
+        let viewer2 = OpenSeadragon({
+            id: "openseadragon2",
+            prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/images/",
+            tileSources: canvas.content.map(c => ({
+                tileSource: c.image.tileSource,
+                x: c.at.x,
+                y: c.at.y,
+                width: c.at.width
+            })),
+            overlays: [{
+                id: 'canvas-display',
+                x: 0,
+                y: 0,
+                width: canvas.width,
+                height: canvas.height,
+                className: 'canvas'
+            }],
+        });
+        // now zoom out so we can see the canvas
+        setTimeout(() => {
+            viewer2.viewport.fitBounds(new OpenSeadragon.Rect(-150, -150, canvas.width + 250, canvas.height + 250))
+        }, 1000); 
+
+    </script>
+
+    <p>...or rather, we <i>could</i> do this if OpenSeadragon supported a IIIF Canvas. But it doesn't, so if we
+        want to do things like this, outside of a complex viewer, we have to do the maths and the composition
+        ourselves (view the source of this page to see how) and then add the images to OpenSeadragon manually.
+    </p>
+
+    <h2>Canvas Panel</h2>
+    <p>This article is a disguised use case for <a href="https://canvas-panel.digirati.com/">Canvas Panel</a>.</p>
+
+    <p>Canvas Panel is a component that occupies the same niche as OpenSeadragon - it's not itself a viewer, it doesn't
+        understand manifests or ranges or thumbnails or navigation; it doesn't have any UI other than reacting
+        to zoom gestures. It's a rendering surface that translates an arbitrarily complex canvas composition for you,
+        so you don't have to work everything out yourself. Use it where you would use OpenSeadragon
+        (or Leaflet, or any other rendering mechanism - even static images).
+    </p>
+
+    <p>...</p>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+    
+    <p>...</p>
+</body>
+
+</html>
