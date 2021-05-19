@@ -21,6 +21,16 @@
             background-color:cornflowerblue;
             z-index: -1000;
         }
+        div, img {
+            max-width: 85vw;
+        }
+        .osd {
+            width: 800px;
+            height: 800px; 
+            max-width: 85vw;
+            max-height: 90vw;
+            border: 1px solid gray;
+        }
         </style>
 </head>
 
@@ -218,7 +228,7 @@ showing the rectangle occupied by the miniature in the photograph" />
         deep zoom, too:
     </p>
 
-    <div id="openseadragon1" style="width: 800px; height: 800px; border: 1px solid gray;"></div>
+    <div id="openseadragon1" class="osd"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/openseadragon.min.js"></script>
     <script>
 
@@ -300,7 +310,7 @@ showing the rectangle occupied by the miniature in the photograph" />
         could display the canvas - that is, display the composition we intend:
     </p>
 
-    <div id="openseadragon2" style="width: 800px; height: 700px; border: 1px solid gray;"></div>
+    <div id="openseadragon2" class="osd"></div>
     <p><i>
         OpenSeadragon simulation of a CANVAS rendering. The Canvas has been shown in blue to make clear what is 
         being displayed here. The code in the source of this page is designed to reduce the idea of
@@ -410,7 +420,7 @@ showing the rectangle occupied by the miniature in the photograph" />
 
     <p>...</p>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-    
+    <p>This article was written in collaboration with the AHRC-funded project <a href="https://tanc-ahrc.github.io/IIIF-TNC/">Practical IIIF</a>, a foundation project of <a href="https://ahrc.ukri.org/research/fundedthemesandprogrammes/tanc-opening-uk-heritage-to-the-world/">Towards a National Collection</a>.</p>
     <p>...</p>
 </body>
 
