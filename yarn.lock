@@ -12269,21 +12269,10 @@ reduce-unique@^2.0.1:
   resolved "https://registry.yarnpkg.com/reduce-unique/-/reduce-unique-2.0.1.tgz#fb34b90e89297c1e08d75dcf17e9a6443ea71081"
   integrity sha512-x4jH/8L1eyZGR785WY+ePtyMNhycl1N2XOLxhCbzZFaqF4AXjLzqSxa2UHgJ2ZVR/HHyPOvl1L7xRnW8ye5MdA==
 
-redux-actions@2.6.5:
+redux-actions@2.6.5, redux-actions@^2.2.1:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.6.5.tgz#bdca548768ee99832a63910c276def85e821a27e"
   integrity sha512-pFhEcWFTYNk7DhQgxMGnbsB1H2glqhQJRQrtPb96kD3hWiZRzXHwwmFPswg6V2MjraXRXWNmuP9P84tvdLAJmw==
-  dependencies:
-    invariant "^2.2.4"
-    just-curry-it "^3.1.0"
-    loose-envify "^1.4.0"
-    reduce-reducers "^0.4.3"
-    to-camel-case "^1.0.0"
-
-redux-actions@^2.2.1:
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.6.3.tgz#5f3123ef967b8e022af922bee14c3d528c8f0748"
-  integrity sha512-F1Po7TrtJm53RoLmH38c0LXN0yU2Yc/ReXDUJk9CqzP/SlJ/DlKZhwYxo9ngFb5k6eSQgvBydBV6W8BIgjFQZQ==
   dependencies:
     invariant "^2.2.4"
     just-curry-it "^3.1.0"
