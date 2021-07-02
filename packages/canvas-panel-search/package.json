@@ -26,7 +26,7 @@
     "immutability-helper": "^3.0.0",
     "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
     "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
-    "material-components-web": "^0.44.0",
+    "material-components-web": "^11.0.0",
     "rheostat": "^4.0.0"
   },
   "peerDependencies": {
