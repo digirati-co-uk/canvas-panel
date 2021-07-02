@@ -4376,9 +4376,8 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
 
 create-nwb-webpack-config@stephenwf/create-nwb-webpack-config:
   version "1.0.1"
-  resolved "https://codeload.github.com/stephenwf/create-nwb-webpack-config/tar.gz/47a606b01d44952ee61b732a3d586966d8798ea2"
-  dependencies:
-    nwb "^0.23.0"
+  uid ca1a2200c1d0d5236dcb54d97aed213d4ff6fbd3
+  resolved "https://codeload.github.com/stephenwf/create-nwb-webpack-config/tar.gz/ca1a2200c1d0d5236dcb54d97aed213d4ff6fbd3"
 
 create-react-context@^0.3.0:
   version "0.3.0"
@@ -10499,7 +10498,7 @@ nwb-watch@1.0.0:
   dependencies:
     cross-spawn "^6.0.5"
 
-nwb@0.23.0, nwb@^0.23.0:
+nwb@0.23.0:
   version "0.23.0"
   resolved "https://registry.yarnpkg.com/nwb/-/nwb-0.23.0.tgz#038f8e54ea36b3887cecfc8ae5d3aef7b204d75a"
   integrity sha512-FoNOQaK4J+PUUBLWn2eUDv829OEwxz2Bi9MuXPrV8ZGNf0zTDw5gCNIzDnwzf5yuwLQe9LbVjUd1JmjYh4uw6A==
