@@ -323,6 +323,11 @@
     semver "^5.5.0"
     yargs "^11.0.0"
 
+"@hyperion-framework/types@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@hyperion-framework/types/-/types-0.4.0.tgz#eccb0514ad488a75748b4bb5667a756426ac81d8"
+  integrity sha512-kuh6qD/vZVzKKMuFlTnOFxYcMBExjajBji2nB1aJBWxTQvxX0+ObxeVn99Q5znGX/uAMal913d6HlOuGMkb2Hg==
+
 "@iiif/manifold@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@iiif/manifold/-/manifold-2.0.5.tgz#2e7a9a0d65ca34f6788abf1769c96c46e08d3687"
@@ -7470,12 +7475,13 @@ ignore@^5.1.1:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.4.tgz#84b7b3dbe64552b6ef0eca99f6743dbec6d97adf"
   integrity sha512-MzbUSahkTW1u7JpKKjY7LCARd1fU5W2rLdxlM4kdkayuCwZImjkpluF9CM1aLewYJguPDqewLam18Y6AU69A8A==
 
-iiif-prezi2to3@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/iiif-prezi2to3/-/iiif-prezi2to3-1.0.8.tgz#4eda777bb826d00a5785135ca962b2eb71f94a2c"
-  integrity sha512-PrHdcXoiQMghmKt10Jz15VZ57XCXgP5iP6SS1/F38tWeD4kmIzfGOBPJWOkWt3j3bOXOLTXdqW9qJdd773jZTQ==
+iiif-prezi2to3@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/iiif-prezi2to3/-/iiif-prezi2to3-2.0.2.tgz#61f00367d9e1520d96b42aa689a1c52b4e185eb4"
+  integrity sha512-5Fnke4Rvy/KvUa/4XaK9/rAJpLRMD0gA5Whfzkpu6uM+iLLyk1U8ByoxSwsL7BbYaGYQO2GXzdLi8yZUtpkefw==
   dependencies:
-    uuid "^3.3.0"
+    "@hyperion-framework/types" "^0.4.0"
+    nanoid "^3.1.9"
 
 immutability-helper@3.0.2:
   version "3.0.2"
@@ -10259,6 +10265,11 @@ nan@^2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
+
+nanoid@^3.1.9:
+  version "3.1.23"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
+  integrity sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -15013,7 +15024,7 @@ uuid@^2.0.1:
   resolved "https://registry.npmjs.org/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
   integrity sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho=
 
-uuid@^3.0.1, uuid@^3.1.0, uuid@^3.3.0, uuid@^3.3.2:
+uuid@^3.0.1, uuid@^3.1.0, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
