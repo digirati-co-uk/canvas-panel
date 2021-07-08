@@ -41,7 +41,7 @@
   "devDependencies": {
     "immutability-helper": "3.0.2",
     "nwb": "0.23.0",
-    "nwb-sass": "0.9.0",
+    "nwb-sass": "0.10.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
