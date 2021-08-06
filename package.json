@@ -8,7 +8,7 @@
     "@fesk/module-release": "0.0.3",
     "@types/jest": "24.9.1",
     "@types/prop-types": "15.7.4",
-    "@types/react": "16.9.35",
+    "@types/react": "17.0.16",
     "babel-eslint": "10.1.0",
     "babel-jest": "24.9.0",
     "babel-runtime": "6.26.0",
