@@ -39,7 +39,7 @@
     "nwb-sass": "0.9.0",
     "nwb-watch": "1.0.0",
     "react": "16.14.0",
-    "react-dom": "16.13.1",
+    "react-dom": "16.14.0",
     "react-redux": "7.2.4"
   },
   "publishConfig": {
