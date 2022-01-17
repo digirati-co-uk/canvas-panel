@@ -13,7 +13,7 @@
     "babel-jest": "24.9.0",
     "babel-runtime": "6.26.0",
     "canvas": "2.6.1",
-    "eslint": "6.8.0",
+    "eslint": "8.7.0",
     "eslint-plugin-babel": "5.3.1",
     "eslint-plugin-flow": "2.29.1",
     "eslint-plugin-flowtype": "4.7.0",
