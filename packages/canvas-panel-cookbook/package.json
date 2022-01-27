@@ -27,7 +27,7 @@
     "html-loader": "0.5.5",
     "iiif-prezi2to3": "1.0.8",
     "manifesto.js": "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3",
-    "markdown-loader": "5.1.0",
+    "markdown-loader": "7.0.0",
     "react": "16.14.0",
     "react-ace": "6.6.0",
     "react-dom": "16.13.1",
